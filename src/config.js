@@ -7,6 +7,7 @@ module.exports = {
   alt: 'Institute for Public Policy and Practice',
   descriptor: 'Institute for Public Policy & Practice',
   url: process.env.SITE_URL || site.url,
+  turnstileSiteKey: process.env.PUBLIC_TURNSTILE_SITE_KEY || '',
   founded: 2018,
   email: site.email,
   phone: site.phone,

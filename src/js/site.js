@@ -57,9 +57,10 @@
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }
 
-  /* ---------- contact form (mailto) ---------- */
+  /* ---------- contact form (Resend with a prefilled mailto fallback) ---------- */
   function initForms() {
     $$('[data-contact-form]').forEach(function (f) {
+      if (f.elements.startedAt) f.elements.startedAt.value = String(Date.now());
       f.addEventListener('submit', function (e) {
         e.preventDefault();
         var v = function (n) { return (f.elements[n] && f.elements[n].value || '').trim(); };
@@ -67,9 +68,51 @@
         ['name', 'email', 'message'].forEach(function (n) { var el = f.elements[n]; var bad = !v(n) || (n === 'email' && !/^\S+@\S+\.\S+$/.test(v(n))); el.style.borderColor = bad ? '#e0705a' : ''; if (bad) ok = false; });
         if (!ok) { var first = $('input[style*="e0705a"],textarea[style*="e0705a"]', f); if (first) first.focus(); return; }
         var body = 'Name: ' + v('name') + '\nEmail: ' + v('email') + '\nOrganization: ' + v('organization') + '\nEngagement type: ' + v('engagement') + '\nFocus area: ' + v('focus') + '\n\n' + v('message');
-        f.classList.add('is-sent');
         var email = __IP3_CONTACT_EMAIL__;
-        window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Website enquiry — ' + v('engagement') + ' — ' + v('name')) + '&body=' + encodeURIComponent(body);
+        var status = $('.form__ok', f), error = $('[data-form-error]', f), button = $('button[type="submit"]', f);
+        var mailto = 'mailto:' + email + '?subject=' + encodeURIComponent('Website enquiry — ' + v('engagement') + ' — ' + v('name')) + '&body=' + encodeURIComponent(body);
+        var showEmailFallback = function () {
+          f.classList.remove('is-sending');
+          if (status) status.textContent = (f.dataset.fallbackMessage || 'Your message is ready.').replace(/\{\{email\}\}/g, email);
+          if (error) {
+            error.textContent = 'If your email app did not open, write to ';
+            var link = d.createElement('a'); link.href = 'mailto:' + email; link.textContent = email;
+            error.appendChild(link); error.hidden = false;
+          }
+          window.location.href = mailto;
+        };
+        if (error) error.hidden = true;
+        var tokenField = f.elements['cf-turnstile-response'];
+        var token = tokenField ? tokenField.value : '';
+        if (f.dataset.turnstileSitekey && !token) {
+          if (status) status.textContent = 'Complete the security check. Opening your email app instead.';
+          showEmailFallback();
+          return;
+        }
+        if (button) button.disabled = true;
+        f.classList.add('is-sending');
+        if (status) status.textContent = 'Sending your message…';
+        fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'same-origin',
+          cache: 'no-store',
+          body: JSON.stringify({
+            name: v('name'), email: v('email'), organization: v('organization'),
+            engagement: v('engagement'), focus: v('focus'), message: v('message'),
+            website: v('website'), startedAt: Number(v('startedAt')), turnstileToken: token,
+          }),
+        }).then(function (response) {
+          if (!response.ok) throw new Error('contact request failed');
+          f.classList.remove('is-sending');
+          f.classList.add('is-sent');
+          if (status) status.textContent = 'Thank you. Your message was sent; we will reply using the email address you provided.';
+        }).catch(function () {
+          showEmailFallback();
+        }).finally(function () {
+          if (button) button.disabled = false;
+          if (window.turnstile && typeof window.turnstile.reset === 'function') window.turnstile.reset();
+        });
       });
     });
   }

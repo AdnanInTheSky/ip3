@@ -80,8 +80,10 @@ function footer() {
 function formBlock({ light = false, id = 'contact' } = {}) {
   const caps = D.capabilities.cards.map((c) => `<option>${esc(c.title)}</option>`).join('');
   return `
-<form class="form ${light ? 'form--light' : ''}" id="${id}" data-contact-form novalidate>
+<form class="form ${light ? 'form--light' : ''}" id="${id}" data-contact-form data-turnstile-sitekey="${esc(cfg.turnstileSiteKey)}" data-fallback-message="${esc(D.pageText.contact['form-success'])}" novalidate>
   <h3>${rich(D.headings['contact-form'].title)}</h3>
+  <input type="hidden" name="startedAt" value="">
+  <div class="form__trap" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
   <div class="field--row field">
     <div class="field"><label for="${id}-name">Name</label><input id="${id}-name" name="name" autocomplete="name" required></div>
     <div class="field"><label for="${id}-email">Email</label><input id="${id}-email" name="email" type="email" autocomplete="email" required></div>
@@ -92,8 +94,10 @@ function formBlock({ light = false, id = 'contact' } = {}) {
     <div class="field"><label for="${id}-focus">Focus area</label><select id="${id}-focus" name="focus">${caps}</select></div>
   </div>
   <div class="field"><label for="${id}-msg">Tell us what you are trying to change</label><textarea id="${id}-msg" name="message" required></textarea></div>
+  ${cfg.turnstileSiteKey ? `<div class="cf-turnstile" data-sitekey="${esc(cfg.turnstileSiteKey)}"></div>` : ''}
   <button class="btn" type="submit">${esc(D.pageText.contact['form-submit'])}${arrow}</button>
-  <p class="form__ok" role="status">${esc(D.pageText.contact['form-success'].replace(/\{\{email\}\}/g, cfg.email))}</p>
+  <p class="form__ok" role="status" aria-live="polite" aria-atomic="true"></p>
+  <p class="form__error" data-form-error role="alert" aria-live="assertive" hidden></p>
   <p class="form__note">${esc(D.pageText.contact['form-note'])}</p>
 </form>`;
 }
@@ -192,7 +196,7 @@ ${footer()}
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/lenis.min.js" defer></script>
-<script src="/assets/js/site.js?v=__JSV__" defer></script>
+${cfg.turnstileSiteKey ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>\n' : ''}<script src="/assets/js/site.js?v=__JSV__" defer></script>
 </body>
 </html>
 `;

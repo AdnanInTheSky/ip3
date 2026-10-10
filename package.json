@@ -11,7 +11,7 @@
     "cms": "node build/cms.js",
     "audit": "node build/build-all.js --audit",
     "check": "node build/validate.js && node build/cms.js --check",
-    "test": "node --test build/selftest.js"
+    "test": "node --test build/selftest.js api/contact.test.js"
   },
   "engines": {
     "node": ">=18"
