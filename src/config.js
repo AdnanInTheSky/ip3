@@ -1,23 +1,34 @@
-// Site-wide constants. Everything here is client-supplied (see ip3 content master, 2026).
+// Site-wide constants. Brand identity is fixed here; contact details come from content/site.json (CMS-editable).
+const site = require('./content').file('site');
+const analyticsEnabled = process.env.VERCEL_ENV === 'production' && process.env.ENABLE_ANALYTICS === '1';
+const contactApiEnabled = process.env.CONTACT_API_ENABLED === '1';
+
 module.exports = {
   name: 'IP3 Consulting Limited',
   short: 'IP3 Consulting',
   alt: 'Institute for Public Policy and Practice',
   descriptor: 'Institute for Public Policy & Practice',
-  url: process.env.SITE_URL || 'https://ip3-bd.org',
+  url: process.env.SITE_URL || site.url,
+  contactApiEnabled,
+  turnstileSiteKey: contactApiEnabled ? (process.env.PUBLIC_TURNSTILE_SITE_KEY || '') : '',
+  analytics: {
+    enabled: analyticsEnabled,
+    webAnalyticsPath: '/_vercel/insights/script.js',
+    speedInsightsPath: '/_vercel/speed-insights/script.js',
+  },
   founded: 2018,
-  email: 'info@ip3-bd.org',
-  phone: '+880 1914 011 329',
-  phoneHref: '+8801914011329',
-  address: ['Zenith Prime, House-39, Road-35/A', 'Gulshan-2, Dhaka-1212', 'Bangladesh'],
-  hours: 'Sunday – Thursday, 09:00–18:00 (GMT+6)',
-  nav: [
-    { href: '/about', label: 'About' },
-    { href: '/approach', label: 'Approach' },
-    { href: '/capabilities', label: 'Capabilities' },
-    { href: '/sectors', label: 'Sectors' },
-    { href: '/engagements', label: 'Engagements' },
-    { href: '/insights', label: 'Insights' },
-    { href: '/people', label: 'People' },
-  ],
+  email: site.email,
+  phone: site.phone,
+  phoneHref: site.phone.replace(/[^+\d]/g, ''),
+  address: site.address,
+  streetAddress: site.streetAddress,
+  addressLocality: site.addressLocality,
+  postalCode: site.postalCode,
+  countryCode: site.countryCode,
+  hours: site.hours,
+  mapUrl: site.mapUrl,
+  officeLabel: site.officeLabel,
+  emailLabel: site.emailLabel,
+  phoneLabel: site.phoneLabel,
+  hoursLabel: site.hoursLabel,
 };

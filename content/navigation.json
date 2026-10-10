@@ -1,0 +1,62 @@
+{
+  "primary": [
+    { "label": "About", "href": "/about" },
+    { "label": "Approach", "href": "/approach" },
+    { "label": "Capabilities", "href": "/capabilities" },
+    { "label": "Sectors", "href": "/sectors" },
+    { "label": "Engagements", "href": "/engagements" },
+    { "label": "Insights", "href": "/insights" },
+    { "label": "People", "href": "/people" }
+  ],
+  "breadcrumbs": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Our approach", "href": "/approach" },
+    { "label": "Capabilities", "href": "/capabilities" },
+    { "label": "Sectors", "href": "/sectors" },
+    { "label": "Engagements", "href": "/engagements" },
+    { "label": "Insights", "href": "/insights" },
+    { "label": "People", "href": "/people" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "homeLabel": "Home",
+  "homeHref": "/",
+  "contactLabel": "Contact",
+  "contactHref": "/contact",
+  "headerCta": "Contact Us",
+  "exploreTitle": "Explore",
+  "sectorsTitle": "Sectors",
+  "officeTitle": "Dhaka office",
+  "footerDescription": "A policy and development advisory firm turning evidence into decisions, and decisions into delivery. Founded 2018, based in Dhaka.",
+  "exploreSectorLabel": "Explore the sector",
+  "previousSectorLabel": "Previous sector",
+  "nextSectorLabel": "Next sector",
+  "horizontalScrollLabel": "Scroll",
+  "explore": [
+    { "label": "About", "href": "/about" },
+    { "label": "Our approach", "href": "/approach" },
+    { "label": "Capabilities", "href": "/capabilities" },
+    { "label": "Sectors", "href": "/sectors" },
+    { "label": "Selected engagements", "href": "/engagements" },
+    { "label": "Insights", "href": "/insights" },
+    { "label": "People", "href": "/people" }
+  ],
+  "legal": [
+    { "label": "Privacy Policy", "href": "/privacy" },
+    { "label": "Terms", "href": "/terms" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "legalNavLabel": "Legal",
+  "ctaPaths": [
+    { "label": "Discuss a Consulting Assignment", "description": "Diagnostic, design, implementation or evaluation work.", "href": "/contact" },
+    { "label": "Partner With IP3", "description": "Consortium or subcontracting opportunities.", "href": "/contact" },
+    { "label": "Discuss a Research Partnership", "description": "Research, evidence generation or thought leadership.", "href": "/contact" },
+    { "label": "Request Our Capability Statement", "description": "Ask for our full capabilities document.", "href": "/contact" }
+  ],
+  "contactPathways": [
+    { "label": "Discuss a Consulting Assignment", "description": "Engage IP3 for diagnostic, design, implementation or evaluation work." },
+    { "label": "Partner With IP3", "description": "Explore consortium or subcontracting opportunities." },
+    { "label": "Discuss a Research Partnership", "description": "Collaborate on research, evidence generation or thought leadership." },
+    { "label": "Request Our Capability Statement", "description": "Ask for our full capabilities document." }
+  ]
+}

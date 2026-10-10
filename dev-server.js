@@ -1,12 +1,16 @@
-// Zero-dependency static server with Vercel-style clean URLs, for local preview: npm run dev
+// Static server with Vercel-style clean URLs, for local preview: npm run dev
 const http = require('http'), fs = require('fs'), path = require('path');
 const PORT = process.env.PORT || 3000;
 const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.mp4': 'video/mp4', '.xml': 'application/xml', '.txt': 'text/plain', '.webmanifest': 'application/manifest+json', '.ico': 'image/x-icon' };
-const root = __dirname;
+const root = path.join(__dirname, 'dist');
 function resolve(p) {
   p = decodeURIComponent(p.split('?')[0]);
   const cands = [p, p + '.html', path.join(p, 'index.html')];
-  for (const c of cands) { const f = path.join(root, c); if (f.startsWith(root) && fs.existsSync(f) && fs.statSync(f).isFile()) return f; }
+  for (const c of cands) {
+    const f = path.resolve(root, `.${path.sep}${c}`);
+    const rel = path.relative(root, f);
+    if (!rel.startsWith(`..${path.sep}`) && rel !== '..' && !path.isAbsolute(rel) && fs.existsSync(f) && fs.statSync(f).isFile()) return f;
+  }
   return null;
 }
 http.createServer((req, res) => {

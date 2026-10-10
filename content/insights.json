@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "type": "Research",
+      "title": "A Multi-Criteria Innovation Framework for Green Financial Product Design",
+      "text": "A blueprint for sustainable finance to speed the green transition in emerging markets. Centred on Bangladesh, it designs context-specific green financial products — rather than copying Western models — using a multi-criteria lens that fuses AHP and TOPSIS to balance financial viability, environmental impact and social inclusion.",
+      "tags": [
+        "Sustainable Finance",
+        "Bangladesh"
+      ],
+      "image": "/assets/img/co2.webp"
+    },
+    {
+      "type": "Research",
+      "title": "Deploying Data-Driven Tools to Monitor and Enhance Learning Outcomes in Schools",
+      "text": "Advanced monitoring and analytics are used to assess how climate and disaster risks affect student performance. Findings show that real-time data integration enables targeted interventions.",
+      "tags": [
+        "Education",
+        "Data"
+      ],
+      "image": "/assets/img/training-5.webp"
+    },
+    {
+      "type": "Analysis",
+      "title": "Bangladesh’s ESG Transition in 2025: Why It Lags India, Vietnam & ASEAN Peers",
+      "text": "By examining multiple sectors, we uncover how embedding sustainability across operations delivers tangible economic, social and environmental returns.",
+      "tags": [
+        "ESG",
+        "Competitiveness"
+      ],
+      "image": "/assets/img/smokestacks.webp"
+    },
+    {
+      "type": "Case study",
+      "title": "Transforming BMDF into a Next-Gen Municipal Financing Institution",
+      "text": "IP3 led a transformation roadmap — redesigning governance, introducing innovative finance tools (PPPs, bonds), building institutional capacity and embedding a 10-year business plan.",
+      "tags": [
+        "Municipal Finance",
+        "Institutional Reform"
+      ],
+      "image": "/assets/img/dhaka.webp"
+    }
+  ],
+  "fieldStories": [
+    { "slug": "waste", "type": "Circular economy", "title": "Waste becomes a resource", "video": "/assets/video/waste.mp4", "poster": "/assets/img/poster-waste.webp" },
+    { "slug": "textile", "type": "Textile transition", "title": "Reclaiming value from garment waste", "video": "/assets/video/textile.mp4", "poster": "/assets/img/poster-textile.webp" },
+    { "slug": "coast", "type": "Coastal Bangladesh", "title": "Where land, water and livelihoods meet", "video": "/assets/video/coast.mp4", "poster": "/assets/img/poster-coast.webp" }
+  ]
+}

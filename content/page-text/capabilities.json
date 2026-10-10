@@ -1,0 +1,24 @@
+{
+  "headings": [
+    {
+      "slug": "capabilities-start",
+      "eyebrow": "How an engagement starts",
+      "title": "Every engagement can begin at <em>any stage.</em>"
+    },
+    {
+      "slug": "capability-deliverables",
+      "title": "Typical deliverables"
+    },
+    {
+      "slug": "capability-applied",
+      "title": "Applied most in"
+    },
+    {
+      "slug": "cta-capabilities",
+      "eyebrow": "Find the right expertise",
+      "title": "Find the right expertise for the issues <em>facing your organization.</em>",
+      "lead": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required."
+    }
+  ],
+  "copy": []
+}

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://ip3-bd.org/sitemap.xml

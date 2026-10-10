@@ -1,0 +1,47 @@
+{
+  "headings": [
+    {
+      "slug": "approach-problem",
+      "title": "We begin with the problem as it exists — <em>not with a pre-packaged solution.</em>"
+    },
+    {
+      "slug": "approach-standards",
+      "title": "Six commitments that make the pathway <em>IP3.</em>"
+    },
+    {
+      "slug": "approach-orbit",
+      "title": "Policy becomes real through <em>people’s experience.</em>"
+    },
+    {
+      "slug": "approach-toolkit",
+      "title": "The pathway is consistent. <em>The toolkit changes.</em>"
+    },
+    {
+      "slug": "approach-outcomes",
+      "title": "The objective is not a better report. <em>It is a system better able to act.</em>"
+    },
+    {
+      "slug": "cta-approach",
+      "eyebrow": "Start a conversation with IP3",
+      "title": "Where would your engagement <em>start?</em>",
+      "lead": "Most conversations begin with a diagnostic question — what is actually driving this, and what would have to change. Tell us where you are and we will suggest the right entry point."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "eyebrow-define-decision",
+      "label": "Decision section eyebrow",
+      "text": "Define the decision first"
+    },
+    {
+      "slug": "eyebrow-why-different",
+      "label": "Difference section eyebrow",
+      "text": "Why the IP3 approach is different"
+    },
+    {
+      "slug": "eyebrow-beyond-recommendation",
+      "label": "Beyond recommendation eyebrow",
+      "text": "Beyond the recommendation"
+    }
+  ]
+}

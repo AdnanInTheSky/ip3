@@ -1,0 +1,97 @@
+{
+  "headings": [
+    {
+      "slug": "home-why",
+      "eyebrow": "Why IP3",
+      "title": "Four reasons clients <em>choose us.</em>"
+    },
+    {
+      "slug": "home-sectors",
+      "eyebrow": "IP3 sector expertise",
+      "title": "From polycrisis to <em>polysolutions.</em>"
+    },
+    {
+      "slug": "home-engagements",
+      "eyebrow": "Selected engagements",
+      "title": "The challenge. Our mandate. <em>What we delivered.</em>",
+      "lead": "Recent work with global development partners and national ministries, from feasibility studies to institutional transformation."
+    },
+    {
+      "slug": "home-insights",
+      "eyebrow": "Evidence & insights",
+      "title": "Research that <em>changes decisions.</em>",
+      "lead": "Thinking that ships — how institutions diagnose, finance and deliver."
+    },
+    {
+      "slug": "partners-clients",
+      "title": "Clients & partners"
+    },
+    {
+      "slug": "partners-funders",
+      "title": "Development partners our team has worked with"
+    },
+    {
+      "slug": "cta-default",
+      "eyebrow": "Ready to work with IP3?",
+      "title": "Tell us the mandate <em>you need to deliver.</em>",
+      "lead": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "capabilities-lead",
+      "label": "Capabilities introduction",
+      "text": "Six capabilities, each one built around a decision clients actually have to make — and the deliverables that carry it into delivery."
+    },
+    {
+      "slug": "cta-explore-capabilities",
+      "label": "Explore capabilities button",
+      "text": "Explore Our Capabilities"
+    },
+    {
+      "slug": "cta-all-capabilities",
+      "label": "All capabilities button",
+      "text": "All capabilities"
+    },
+    {
+      "slug": "cta-all-engagements",
+      "label": "All engagements button",
+      "text": "All engagements"
+    },
+    {
+      "slug": "cta-all-insights",
+      "label": "All insights button",
+      "text": "All insights"
+    },
+    {
+      "slug": "sector-intro",
+      "label": "Sector introduction",
+      "text": "IP3 works across eight interconnected sectors where economic, institutional, environmental and technological risks overlap. Eight sectors. One integrated delivery model."
+    },
+    {
+      "slug": "cta-all-sectors",
+      "label": "All sectors button",
+      "text": "All sectors"
+    },
+    {
+      "slug": "cta-commission-dialogue",
+      "label": "Commission a dialogue button",
+      "text": "Commission a dialogue"
+    },
+    {
+      "slug": "leadership-eyebrow",
+      "label": "Leadership eyebrow",
+      "text": "Leadership"
+    },
+    {
+      "slug": "cta-meet-people",
+      "label": "Meet people button",
+      "text": "Meet IP3 people"
+    },
+    {
+      "slug": "cta-start-conversation",
+      "label": "Start conversation button",
+      "text": "Start a conversation"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+name: Content publishing
+
+on:
+  push:
+    branches: [main]
+  workflow_run:
+    workflows: [Content check]
+    types: [completed]
+
+permissions:
+  contents: read
+
+jobs:
+  sync-content:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Merge main into content and dispatch its required check
+        run: node .github/scripts/sync-content.js
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DEFAULT_BRANCH: main
+
+  open-pr:
+    if: >-
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.head_branch == 'content' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Open or update the content review PR for the checked commit
+        run: node .github/scripts/open-content-pr.js
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CONTENT_BRANCH: ${{ github.event.workflow_run.head_branch }}
+          CHECKED_SHA: ${{ github.event.workflow_run.head_sha }}

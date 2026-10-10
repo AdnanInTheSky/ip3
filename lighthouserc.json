@@ -1,0 +1,35 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": "./dist",
+      "url": [
+        "http://localhost/index.html",
+        "http://localhost/about.html",
+        "http://localhost/contact.html",
+        "http://localhost/privacy.html",
+        "http://localhost/terms.html"
+      ],
+      "numberOfRuns": 1,
+      "settings": {
+        "formFactor": "mobile",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 375,
+          "height": 812,
+          "deviceScaleFactor": 1,
+          "disabled": false
+        },
+        "chromeFlags": "--no-sandbox"
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./.lighthouseci"
+    }
+  },
+  "assertions": {
+    "categories:seo": ["warn", { "minScore": 0.95 }],
+    "categories:accessibility": ["warn", { "minScore": 0.9 }],
+    "categories:performance": ["warn", { "minScore": 0.7 }]
+  }
+}

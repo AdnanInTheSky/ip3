@@ -1,4 +1,4 @@
-const { esc, arrow, btn, cta, page, cfg, D } = require('./layout');
+const { esc, plain, rich, arrow, btn, cta, page, cfg, D } = require('./layout');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
@@ -36,7 +36,7 @@ function mandates() {
       <span class="eyebrow" data-reveal>${m.eyebrow}</span>
       <h2 class="split" style="margin-top:20px">${m.h2}</h2>
       <p class="lead" data-reveal>${m.body}</p>
-      ${btn('Explore Our Capabilities', '/capabilities')}
+      ${btn(esc(D.pageText.home['cta-explore-capabilities']), '/capabilities')}
     </div>
     <div class="deck__cards">
       ${m.cards.map((c, i) => `<article class="card-s" style="--i:${i}" data-deck><span class="card-s__n">0${i + 1}</span><h3>${c.title}</h3><p>${c.text}</p><div class="card-s__bar"><i></i></div></article>`).join('')}
@@ -63,7 +63,7 @@ function capabilities() {
   <div class="container">
     <div class="section__head section__head--split">
       <div><span class="eyebrow" data-reveal>${c.eyebrow}</span><h2 class="split" style="margin-top:18px">${c.h2}</h2></div>
-      <div><p class="lead" data-reveal>Six capabilities, each one built around a decision clients actually have to make — and the deliverables that carry it into delivery.</p><div style="margin-top:26px" data-reveal>${btn('All capabilities', '/capabilities', 'btn--ghost')}</div></div>
+      <div><p class="lead" data-reveal>${esc(D.pageText.home['capabilities-lead'])}</p><div style="margin-top:26px" data-reveal>${btn(esc(D.pageText.home['cta-all-capabilities']), '/capabilities', 'btn--ghost')}</div></div>
     </div>
     <div class="caps" data-stagger>
       ${c.cards.map((x, i) => `<a class="cap" href="/capabilities#${x.slug}"><span class="cap__n">0${i + 1}</span><h3>${x.title}</h3><q>“${x.problem}”</q><div class="chips">${x.deliverables.slice(0, 4).map((d) => `<span class="chip">${d}</span>`).join('')}</div></a>`).join('')}
@@ -73,13 +73,14 @@ function capabilities() {
 }
 
 function why() {
+  const h = D.headings['home-why'];
   return `
 <section class="section" id="why-ip3">
   <div class="container two two--top">
     <div class="photo photo--tall clip" data-clip><img src="/assets/img/group-2.webp" width="1600" height="900" alt="IP3 colleagues and partners gathered after a policy workshop" loading="lazy" data-parallax></div>
     <div>
-      <span class="eyebrow" data-reveal>Why IP3</span>
-      <h2 class="split" style="margin:18px 0 38px">Four reasons clients <em>choose us.</em></h2>
+      <span class="eyebrow" data-reveal>${esc(h.eyebrow)}</span>
+      <h2 class="split" style="margin:18px 0 38px">${rich(h.title)}</h2>
       <ul class="checks" data-stagger style="gap:0">
         ${D.whyIp3.map((w) => `<li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">${w.n}</b><h3 style="margin:8px 0 8px">${w.title}</h3><span style="font-weight:400;font-family:var(--f-body)">${w.text}</span><br><a class="link" style="margin-top:14px" href="${w.href}">${w.cta}${arrow}</a></li>`).join('')}
       </ul>
@@ -89,17 +90,18 @@ function why() {
 }
 
 function sectors() {
+  const h = D.headings['home-sectors'];
   return `
 <section class="hs on-dark dark" id="sectors" data-hs>
   <div class="hs__pin" data-hs-pin>
     <div class="container hs__head">
-      <div><span class="eyebrow">IP3 sector expertise</span><h2 class="split" style="margin-top:18px">From polycrisis to <em>polysolutions.</em></h2></div>
-      <p>IP3 works across eight interconnected sectors where economic, institutional, environmental and technological risks overlap. Eight sectors. One integrated delivery model.</p>
+      <div><span class="eyebrow">${esc(h.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(h.title)}</h2></div>
+      <p>${esc(D.pageText.home['sector-intro'])}</p>
     </div>
     <div class="hs__track" data-hs-track>
-      ${D.sectors.map((s) => `<a class="hs__card" href="/sectors/${s.slug}"><img src="${s.card}" width="800" height="600" alt="" loading="lazy"><div><b>${s.n}</b><h3>${s.title}</h3><p>${s.problem}</p></div></a>`).join('')}
+      ${D.sectors.map((s, i) => `<a class="hs__card" href="/sectors/${s.slug}"><img src="${s.card}" width="800" height="600" alt="" loading="lazy"><div><b>${String(i + 1).padStart(2, '0')}</b><h3>${s.title}</h3><p>${s.problem}</p></div></a>`).join('')}
     </div>
-    <div class="hs__bar"><span>Scroll</span><div class="hs__line"><i data-hs-fill></i></div><a class="link" href="/sectors">All sectors${arrow}</a></div>
+    <div class="hs__bar"><span>${esc(D.navigation.horizontalScrollLabel)}</span><div class="hs__line"><i data-hs-fill></i></div><a class="link" href="/sectors">${esc(D.pageText.home['cta-all-sectors'])}${arrow}</a></div>
   </div>
 </section>`;
 }
@@ -129,12 +131,13 @@ function translation() {
 
 function engagements() {
   const list = D.engagements.slice(0, 3);
+  const h = D.headings['home-engagements'];
   return `
 <section class="section section--paper" id="engagements">
   <div class="container">
     <div class="section__head section__head--split">
-      <div><span class="eyebrow" data-reveal>Selected engagements</span><h2 class="split" style="margin-top:18px">The challenge. Our mandate. <em>What we delivered.</em></h2></div>
-      <div><p class="lead" data-reveal>Recent work with global development partners and national ministries, from feasibility studies to institutional transformation.</p><div style="margin-top:26px" data-reveal>${btn('All engagements', '/engagements', 'btn--ghost')}</div></div>
+      <div><span class="eyebrow" data-reveal>${esc(h.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(h.title)}</h2></div>
+      <div><p class="lead" data-reveal>${esc(h.lead)}</p><div style="margin-top:26px" data-reveal>${btn(esc(D.pageText.home['cta-all-engagements']), '/engagements', 'btn--ghost')}</div></div>
     </div>
     <div class="eng">
       ${list.map((e) => engRow(e)).join('')}
@@ -152,19 +155,20 @@ function engRow(e) {
     <h3>${esc(e.title)}</h3>
     <p>${esc(e.summary)}</p>
     <div class="chips" style="margin-bottom:22px">${e.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div>
-    <a class="link" href="/sectors/${e.sectorSlug}">Explore the sector${arrow}</a>
+    <a class="link" href="/sectors/${e.sectorSlug}">${esc(D.navigation.exploreSectorLabel)}${arrow}</a>
   </div>
 </article>`;
 }
 
 function insights() {
   const list = D.insights.slice(0, 2);
+  const h = D.headings['home-insights'];
   return `
 <section class="section section--sand" id="insights">
   <div class="container">
     <div class="section__head section__head--split">
-      <div><span class="eyebrow" data-reveal>Evidence &amp; insights</span><h2 class="split" style="margin-top:18px">Research that <em>changes decisions.</em></h2></div>
-      <div><p class="lead" data-reveal>Thinking that ships — how institutions diagnose, finance and deliver.</p><div style="margin-top:26px" data-reveal>${btn('All insights', '/insights', 'btn--ghost')}</div></div>
+      <div><span class="eyebrow" data-reveal>${esc(h.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(h.title)}</h2></div>
+      <div><p class="lead" data-reveal>${esc(h.lead)}</p><div style="margin-top:26px" data-reveal>${btn(esc(D.pageText.home['cta-all-insights']), '/insights', 'btn--ghost')}</div></div>
     </div>
     <div class="ins" data-stagger>${list.map(insCard).join('')}</div>
   </div>
@@ -185,10 +189,10 @@ function convening() {
       <span class="eyebrow" data-reveal>${c.eyebrow}</span>
       <h2 class="split" style="margin:20px 0 26px">${c.h2}</h2>
       <p class="lead" data-reveal>${c.body}</p>
-      <div style="margin-top:30px" data-reveal>${btn('Commission a dialogue', '/contact', 'btn--light')}</div>
+      <div style="margin-top:30px" data-reveal>${btn(esc(D.pageText.home['cta-commission-dialogue']), '/contact', 'btn--light')}</div>
     </div>
     <div class="conv__list" data-conv>
-      ${c.items.map((it, i) => `<div class="conv__item${i === 0 ? ' is-active' : ''}"><b>0${i + 1}</b><h3>${it[0]}</h3><p>${it[1]}</p></div>`).join('')}
+      ${c.items.map((it, i) => `<div class="conv__item${i === 0 ? ' is-active' : ''}"><b>0${i + 1}</b><h3>${it.title}</h3><p>${it.text}</p></div>`).join('')}
     </div>
   </div>
 </section>`;
@@ -196,12 +200,14 @@ function convening() {
 
 function proof() {
   const p = D.partners;
+  const clients = D.headings['partners-clients'];
+  const funders = D.headings['partners-funders'];
   return `
 <section class="section">
   <div class="container">
     <div class="partners" data-reveal>
-      <div><h3>Clients &amp; partners</h3><div class="names">${p.clients.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div>
-      <div><h3>Development partners our team has worked with</h3><div class="names">${p.funders.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div>
+      <div><h3>${esc(clients.title)}</h3><div class="names">${p.clients.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div>
+      <div><h3>${esc(funders.title)}</h3><div class="names">${p.funders.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div>
     </div>
     <div class="quotes" style="margin-top:clamp(50px,7vw,100px)" data-stagger>
       ${D.testimonials.map((t) => `<figure class="quote"><blockquote>${esc(t.quote)}</blockquote><footer><b>${esc(t.name)}</b><span>${esc(t.role)}</span></footer></figure>`).join('')}
@@ -217,12 +223,12 @@ function founder() {
   <div class="container founder">
     <div class="founder__img clip" data-clip><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy" data-parallax></div>
     <div>
-      <span class="eyebrow" data-reveal>Leadership</span>
+      <span class="eyebrow" data-reveal>${esc(D.pageText.home['leadership-eyebrow'])}</span>
       <h2 class="split" style="margin-top:18px">${f.name}</h2>
       <p class="founder__tag" data-reveal>${f.role} · ${f.tag}</p>
       <div class="founder__bio" data-reveal>${f.bio.map((b) => `<p>${esc(b)}</p>`).join('')}</div>
       <blockquote data-reveal>${esc(f.quote)}</blockquote>
-      <div style="display:flex;flex-wrap:wrap;gap:14px" data-reveal>${btn('Meet IP3 people', '/people')}${btn('Start a conversation', '/contact', 'btn--ghost')}</div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px" data-reveal>${btn(esc(D.pageText.home['cta-meet-people']), '/people')}${btn(esc(D.pageText.home['cta-start-conversation']), '/contact', 'btn--ghost')}</div>
     </div>
   </div>
 </section>`;
@@ -230,10 +236,10 @@ function founder() {
 
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
-  const body = [hero(), mandates(), stats(), capabilities(), why(), sectors(), translation(), engagements(), insights(), convening(), proof(), founder(), cta()].join('\n');
+  const body = [hero(), mandates(), stats(), capabilities(), why(), sectors(), translation(), engagements(), insights(), convening(), proof(), founder(), cta('cta-default')].join('\n');
   return page({
-    title: 'IP3 Consulting | Policy, Economics & International Development Advisory',
-    desc: 'IP3 Consulting helps multilateral institutions, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact.',
+    title: D.pages.home.title,
+    desc: D.pages.home.desc,
     path: '/', body, bodyClass: 'home', jsonld,
     preload: '<link rel="preload" as="image" href="/assets/img/poster-hero-1.webp" fetchpriority="high">',
   });

@@ -1,14 +1,21 @@
 {
   "name": "ip3-consulting-site",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "IP3 Consulting Limited \u2014 static website (generated HTML, GSAP + Lenis motion).",
+  "description": "IP3 Consulting Limited — CMS-driven static website built into dist/.",
   "scripts": {
     "build": "node build/build-all.js",
     "dev": "node build/build-all.js && node dev-server.js",
-    "start": "node dev-server.js"
+    "start": "node dev-server.js",
+    "validate": "node build/validate.js",
+    "cms": "node build/cms.js",
+    "audit": "node build/build-all.js --audit",
+    "links": "node build/check-links.js",
+    "verify": "npm run build && npm run links",
+    "check": "node build/validate.js && node build/cms.js --check",
+    "test": "node --test build/selftest.js build/check-links.test.js build/contact.test.js .github/scripts/publishing.test.js"
   },
   "engines": {
-    "node": ">=18"
+    "node": "24.x"
   }
 }

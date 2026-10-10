@@ -1,0 +1,96 @@
+{
+  "reassurance": [
+    "Policy & Economic Advisory",
+    "Project Preparation",
+    "Development Finance",
+    "Institutional Reform",
+    "MEL & Impact",
+    "Digital & Responsible AI"
+  ],
+  "slides": [
+    {
+      "tab": "Policy to delivery",
+      "video": {
+        "src": "/assets/video/hero-1.mp4",
+        "poster": "/assets/img/poster-hero-1.webp"
+      },
+      "eyebrow": "Policy • Economics • Development Finance • Implementation",
+      "h1": "Turning complex policy challenges into <em>implementable,</em> investable solutions.",
+      "sub": "IP3 Consulting Limited is a policy and development advisory firm helping multilateral institutions, development partners, governments, businesses and research organizations design better policies, mobilize investment, strengthen institutions and deliver measurable results.",
+      "cta": [
+        {
+          "label": "Discuss an Assignment",
+          "href": "/contact"
+        },
+        {
+          "label": "Explore Our Capabilities",
+          "href": "/capabilities",
+          "ghost": true
+        }
+      ]
+    },
+    {
+      "tab": "Sustainable finance",
+      "video": {
+        "src": "/assets/video/hero-2.mp4",
+        "poster": "/assets/img/poster-hero-2.webp"
+      },
+      "eyebrow": "Sustainable Finance • ESG • Circular Economy",
+      "h1": "Designing the <em>sustainable future</em> into policy and investment.",
+      "sub": "We integrate sustainability into policy-making and corporate governance — from ESG strategy and green finance to the circular-economy investment cases that turn commitments into credible, bankable pipelines.",
+      "cta": [
+        {
+          "label": "Sustainable finance & ESG",
+          "href": "/sectors/sustainable-finance-esg-circular-economy"
+        },
+        {
+          "label": "See our approach",
+          "href": "/approach",
+          "ghost": true
+        }
+      ]
+    },
+    {
+      "tab": "Climate & resilience",
+      "video": {
+        "src": "/assets/video/hero-3.mp4",
+        "poster": "/assets/img/poster-hero-3.webp"
+      },
+      "eyebrow": "Climate • Energy • Resilience • Livelihoods",
+      "h1": "Resilience, built with the <em>people</em> it is meant to serve.",
+      "sub": "From climate economics and adaptation investment planning to evidence gathered in the field, we help institutions turn climate ambition into projects that communities can own and capital can fund.",
+      "cta": [
+        {
+          "label": "Climate, energy & resilience",
+          "href": "/sectors/climate-energy-resilience"
+        },
+        {
+          "label": "Selected engagements",
+          "href": "/engagements",
+          "ghost": true
+        }
+      ]
+    },
+    {
+      "tab": "Institutions & data",
+      "video": {
+        "src": "/assets/video/hero-4.mp4",
+        "poster": "/assets/img/poster-hero-4.webp"
+      },
+      "eyebrow": "Institutions • Data • Digital Governance",
+      "h1": "Institutions that can <em>deliver</em> — powered by data and inclusive digital systems.",
+      "sub": "Empowering institutions with data-driven governance and inclusive digital ecosystems for resilient, future-ready public services.",
+      "cta": [
+        {
+          "label": "Digital government & data",
+          "href": "/sectors/digital-government-data-dpi"
+        },
+        {
+          "label": "Meet our people",
+          "href": "/people",
+          "ghost": true
+        }
+      ]
+    }
+  ]
+}

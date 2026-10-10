@@ -1,0 +1,30 @@
+{
+  "subtitle": "THE STANDARD INSIDE EVERY PHASE",
+  "paragraph": "The pathway describes the sequence. These describe the standard we hold ourselves to inside it.",
+  "cards": [
+    {
+      "title": "Evidence Before Assumption",
+      "text": "Decisions are only as good as the evidence they rest on. We do not start with solutions. We start with the problem as it exists, and let the evidence determine the pathway."
+    },
+    {
+      "title": "System Before Symptoms",
+      "text": "Every policy problem is part of a larger system. We address root causes, not symptoms. Connected problems require connected solutions. We map the full system — institutions, markets, technology, users and behaviours — before defining the intervention."
+    },
+    {
+      "title": "Co-Creation, Not Prescription",
+      "text": "A solution imposed is a solution resisted. We design with government, markets, communities and users. The best solutions emerge from the people who must own and sustain them."
+    },
+    {
+      "title": "Test Before Scale",
+      "text": "Designing at scale is designing blind. We prototype, test, and iterate. The pathway is built on evidence, not assumption. What works in pilot informs what works at scale."
+    },
+    {
+      "title": "Implementation Alongside Strategy",
+      "text": "Policy, research, finance, digital design, and delivery are not separate phases. They are one continuous process. We design with the end in mind, and stay with the client through implementation and adaptation."
+    },
+    {
+      "title": "Capability Beyond the Engagement",
+      "text": "Our job is to make ourselves unnecessary. The ultimate measure of success is not the report we deliver, but the capability we leave behind. We build institutional capacity so clients can sustain change after the engagement."
+    }
+  ]
+}

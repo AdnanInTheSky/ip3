@@ -1,0 +1,93 @@
+{
+  "eyebrow": "From analysis to implementation",
+  "h2": "Translation, <em>not theory.</em>",
+  "sub": "Our work is designed around the decisions institutions actually have to make: what to reform, what to finance, how to structure implementation, where risks sit, how results will be measured, and what evidence is needed to scale.",
+  "nodes": [
+    {
+      "title": "Diagnostics & Research",
+      "text": "Understanding the problem, the system, and the realistic options."
+    },
+    {
+      "title": "Policy & Strategy Design",
+      "text": "Choosing the course of action and designing the intervention."
+    },
+    {
+      "title": "Financing & Bankability",
+      "text": "Making it investable and structuring the capital."
+    },
+    {
+      "title": "Delivery Architecture",
+      "text": "Designing how it will actually be implemented."
+    },
+    {
+      "title": "Implementation Support",
+      "text": "Staying engaged through execution and adaptation."
+    },
+    {
+      "title": "Learning & Scale",
+      "text": "Measuring what works and translating evidence into uptake."
+    }
+  ],
+  "outputs": [
+    {
+      "title": "Strategies & Policy Frameworks",
+      "items": [
+        "Sector strategies",
+        "Reform road maps",
+        "Policy briefs",
+        "Regulatory frameworks",
+        "Theories of change"
+      ]
+    },
+    {
+      "title": "Project Preparation",
+      "items": [
+        "Feasibility studies",
+        "Investment concepts",
+        "Results frameworks",
+        "Risk registers",
+        "Implementation plans"
+      ]
+    },
+    {
+      "title": "Institutional Reform",
+      "items": [
+        "Institutional diagnostics",
+        "PFM reform",
+        "Governance frameworks",
+        "Capacity development",
+        "Change management"
+      ]
+    },
+    {
+      "title": "Investment & Finance",
+      "items": [
+        "Bankability assessments",
+        "Blended finance structures",
+        "PPP advisory",
+        "Financial models",
+        "Climate finance strategy"
+      ]
+    },
+    {
+      "title": "Evidence & Evaluation",
+      "items": [
+        "MEL frameworks",
+        "Baselines",
+        "Impact evaluations",
+        "Learning agendas",
+        "Dashboards"
+      ]
+    },
+    {
+      "title": "Digital & AI Transformation",
+      "items": [
+        "DPI diagnostics",
+        "Digital strategy",
+        "Data governance",
+        "AI readiness",
+        "Service design"
+      ]
+    }
+  ]
+}
