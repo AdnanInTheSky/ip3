@@ -40,5 +40,10 @@
       ],
       "image": "/assets/img/dhaka.webp"
     }
+  ],
+  "fieldStories": [
+    { "slug": "waste", "type": "Circular economy", "title": "Waste becomes a resource", "video": "/assets/video/waste.mp4", "poster": "/assets/img/poster-waste.webp" },
+    { "slug": "textile", "type": "Textile transition", "title": "Reclaiming value from garment waste", "video": "/assets/video/textile.mp4", "poster": "/assets/img/poster-textile.webp" },
+    { "slug": "coast", "type": "Coastal Bangladesh", "title": "Where land, water and livelihoods meet", "video": "/assets/video/coast.mp4", "poster": "/assets/img/poster-coast.webp" }
   ]
 }

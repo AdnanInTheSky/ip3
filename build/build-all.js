@@ -20,7 +20,7 @@ const write = (p, c) => { const f = path.join(ROOT, p); fs.mkdirSync(path.dirnam
 
 // 1. assets: copy CSS + JS (strip comments/blank space for size)
 const css = read('src/css/site.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
-const js = read('src/js/site.js');
+const js = read('src/js/site.js').replaceAll('__IP3_CONTACT_EMAIL__', JSON.stringify(cfg.email));
 write('assets/css/site.css', css);
 write('assets/js/site.js', js);
 const V = { __CSSV__: hash(css), __JSV__: hash(js) };

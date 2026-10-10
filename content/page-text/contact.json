@@ -1,0 +1,45 @@
+{
+  "headings": [
+    {
+      "slug": "contact-visit",
+      "eyebrow": "IP3 Consulting Limited — Dhaka",
+      "title": "Visit, call or write."
+    },
+    {
+      "slug": "contact-ways",
+      "eyebrow": "Four ways to start",
+      "title": "How would you like to <em>work with IP3?</em>"
+    },
+    {
+      "slug": "contact-faq",
+      "eyebrow": "Frequently asked questions",
+      "title": "Common <em>questions.</em>"
+    },
+    {
+      "slug": "contact-form",
+      "title": "Start the conversation"
+    }
+  ],
+  "copy": [
+    {
+      "slug": "cta-open-maps",
+      "label": "Map link button",
+      "text": "Open in maps"
+    },
+    {
+      "slug": "form-submit",
+      "label": "Contact form submit button",
+      "text": "Send message"
+    },
+    {
+      "slug": "form-success",
+      "label": "Contact form success message",
+      "text": "Thank you — your message is ready. If your email app did not open, write to {{email}}."
+    },
+    {
+      "slug": "form-note",
+      "label": "Contact form privacy note",
+      "text": "We aim to respond within one business day. Your details are used only to reply to this enquiry."
+    }
+  ]
+}

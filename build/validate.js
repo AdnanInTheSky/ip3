@@ -12,6 +12,23 @@ const MB = 1024 * KB;
 const LIMITS = { image: { warn: 500 * KB, max: 2 * MB }, video: { warn: 8 * MB, max: 25 * MB } };
 const EXT = { image: ['.webp', '.jpg', '.jpeg', '.png'], video: ['.mp4', '.webm'] };
 const ROUTES = ['/', '/about', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/privacy', '/terms'];
+const REQUIRED_HEADING_KEYS = [
+  'home-why', 'home-sectors', 'home-engagements', 'home-insights', 'partners-clients', 'partners-funders',
+  'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'about-network',
+  'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes',
+  'capabilities-start', 'capability-deliverables', 'capability-applied', 'sector-add-value', 'sector-capabilities',
+  'sector-related', 'insights-field', 'people-network', 'contact-visit', 'contact-ways', 'contact-faq', 'contact-form',
+  'cta-default', 'cta-about', 'cta-approach', 'cta-capabilities', 'cta-sectors', 'cta-sector',
+  'cta-engagements', 'cta-insights', 'cta-people', 'not-found',
+];
+const RICH_HEADING_KEYS = new Set([
+  'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'cta-about',
+  'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes', 'cta-approach',
+  'capabilities-start', 'cta-capabilities', 'contact-ways', 'contact-faq', 'cta-engagements',
+  'home-why', 'home-sectors', 'home-engagements', 'home-insights', 'cta-default', 'insights-field',
+  'cta-insights', 'people-network', 'cta-people', 'sector-add-value', 'sector-capabilities',
+  'sector-related', 'cta-sectors', 'cta-sector',
+]);
 const kb = (n) => (n / KB >= 1000 ? (n / MB).toFixed(1) + ' MB' : Math.round(n / KB) + ' KB');
 
 function run({ quiet = false } = {}) {
@@ -144,21 +161,45 @@ function run({ quiet = false } = {}) {
   const slugsOf = (list) => new Set((list || []).map((x) => x.slug));
   const capSlugs = slugsOf((data.capabilities || {}).cards);
   const engSlugs = slugsOf((data.engagements || {}).items);
-  const secSlugs = slugsOf(data.sectors);
+  const sectorItems = ((data.sectors || {}).items || []);
+  const secSlugs = slugsOf(sectorItems);
   const sets = { capabilities: capSlugs, engagements: engSlugs, sectors: secSlugs };
+  where.file = 'content/headings.json';
+  const headingItems = schema.content.filter((entry) => entry.name.startsWith('page_text_')).flatMap((entry) => (data[entry.name] || {}).headings || []);
+  const headingSlugs = new Set(headingItems.map((item) => item.slug));
+  if (headingSlugs.size !== headingItems.length) err('headings', 'template heading keys must be unique across all page-text forms');
+  REQUIRED_HEADING_KEYS.forEach((key) => { if (!headingSlugs.has(key)) err('items', `required template heading "${key}" is missing`); });
+  headingItems.forEach((item) => {
+    if (!RICH_HEADING_KEYS.has(item.slug) && /<\/?em>/.test(item.title)) {
+      where.file = 'content/page-text'; err(item.slug, 'does not use <em> emphasis in the existing page design');
+    }
+  });
   for (const r of refs) {
     where.file = r.file;
     if (r.kind === 'route') {
       const [route, hash] = r.value.split('#');
-      const ok = ROUTES.includes(route) || (route.startsWith('/sectors/') && secSlugs.has(route.slice(9)));
+      const ok = ROUTES.includes(route) || (route.startsWith('/sectors/') && secSlugs.has(route.slice(9)) && !sectorItems.find((sector) => sector.slug === route.slice(9)).hidden);
       if (!ok) err(r.p, `link ${r.value} does not match any page`);
       else if (hash && route === '/capabilities' && !capSlugs.has(hash)) err(r.p, `link ${r.value}: no capability with slug "${hash}"`);
     } else if (!sets[r.kind].has(r.value)) err(r.p, `"${r.value}" is not an existing ${r.kind === 'capabilities' ? 'capability' : r.kind.replace(/s$/, '')} slug`);
   }
-  (data.sectors || []).forEach((s) => {
-    where.file = 'content/sectors/' + s.slug + '.json';
+  sectorItems.forEach((s, i) => {
+    where.file = `content/sectors.json → items[${i + 1}]`;
     if (!((s.video && s.poster) || s.image)) err('', 'needs either a header video with its poster, or a header photo');
   });
+  if (!sectorItems.some((sector) => !sector.hidden)) {
+    where.file = 'content/sectors.json'; err('items', 'at least one sector must remain visible');
+  }
+  const hiddenSectorSlugs = new Set(sectorItems.filter((sector) => sector.hidden).map((sector) => sector.slug));
+  (data.engagements?.items || []).forEach((engagement, index) => {
+    if (!engagement.hidden && hiddenSectorSlugs.has(engagement.sectorSlug)) {
+      where.file = 'content/engagements.json';
+      warn(`items[${index + 1}].sectorSlug`, `visible engagement "${engagement.title}" references hidden sector "${engagement.sectorSlug}"`);
+    }
+  });
+  where.file = 'content/navigation.json';
+  const navigation = data.navigation || {};
+  if (!((navigation.primary || []).some((item) => !item.hidden))) err('primary', 'at least one primary navigation item must be visible');
   const hero = data.home_hero;
   if (hero && !hero.slides.some((s) => !s.hidden)) { where.file = 'content/home/hero.json'; err('slides', 'at least one slide must be visible'); }
 

@@ -1,0 +1,98 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "lead": "How we handle the information you share with us.",
+    "updated": "2026-10-10",
+    "sections": [
+      {
+        "heading": "Who we are",
+        "paragraphs": [
+          "{{company}} (“IP3”, “we”) operates this website. You can reach us at {{email}} or {{address}}."
+        ]
+      },
+      {
+        "heading": "What we collect",
+        "paragraphs": [
+          "When you use the contact form we receive the name, email address, organization and message you choose to share. This website does not require an account."
+        ]
+      },
+      {
+        "heading": "How we use it",
+        "paragraphs": [
+          "To respond to your enquiry.",
+          "To prepare a proposal or discuss a collaboration you have asked about.",
+          "To meet legal or contractual obligations."
+        ]
+      },
+      {
+        "heading": "Sharing",
+        "paragraphs": [
+          "We do not sell personal data. We share it only with service providers who help us run our email and website, and where the law requires."
+        ]
+      },
+      {
+        "heading": "Cookies and analytics",
+        "paragraphs": [
+          "This site sets no advertising cookies. Fonts are loaded from Google Fonts, which may receive your IP address as part of delivering them."
+        ]
+      },
+      {
+        "heading": "Your rights",
+        "paragraphs": [
+          "You may ask us to access, correct or delete the personal data we hold about you by writing to {{email}}."
+        ]
+      },
+      {
+        "heading": "Changes",
+        "paragraphs": [
+          "We may update this policy from time to time. The date below shows when it last changed.",
+          "This text is a plain-language summary and should be reviewed by IP3’s legal counsel before launch."
+        ]
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "lead": "The terms that apply when you use this website.",
+    "updated": "2026-10-10",
+    "sections": [
+      {
+        "heading": "Use of this website",
+        "paragraphs": [
+          "This website is provided for general information about {{company}}. By using it you agree to these terms."
+        ]
+      },
+      {
+        "heading": "Intellectual property",
+        "paragraphs": [
+          "Content, logos and design on this website belong to {{company}} or its licensors. You may share links and short quotations with attribution; other reproduction needs our written permission."
+        ]
+      },
+      {
+        "heading": "No professional advice",
+        "paragraphs": [
+          "Content is general and does not constitute legal, financial or investment advice. Engagements are governed by the terms agreed in writing with each client."
+        ]
+      },
+      {
+        "heading": "Third-party links",
+        "paragraphs": [
+          "We are not responsible for the content or practices of third-party sites linked from this website."
+        ]
+      },
+      {
+        "heading": "Liability",
+        "paragraphs": [
+          "We take care to keep information accurate and current but provide it without warranty to the fullest extent permitted by law."
+        ]
+      },
+      {
+        "heading": "Governing law",
+        "paragraphs": [
+          "These terms are governed by the laws of Bangladesh.",
+          "This text is a plain-language summary and should be reviewed by IP3’s legal counsel before launch."
+        ]
+      }
+    ]
+  }
+}

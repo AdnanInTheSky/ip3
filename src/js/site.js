@@ -68,7 +68,8 @@
         if (!ok) { var first = $('input[style*="e0705a"],textarea[style*="e0705a"]', f); if (first) first.focus(); return; }
         var body = 'Name: ' + v('name') + '\nEmail: ' + v('email') + '\nOrganization: ' + v('organization') + '\nEngagement type: ' + v('engagement') + '\nFocus area: ' + v('focus') + '\n\n' + v('message');
         f.classList.add('is-sent');
-        window.location.href = 'mailto:info@ip3-bd.org?subject=' + encodeURIComponent('Website enquiry — ' + v('engagement') + ' — ' + v('name')) + '&body=' + encodeURIComponent(body);
+        var email = __IP3_CONTACT_EMAIL__;
+        window.location.href = 'mailto:' + email + '?subject=' + encodeURIComponent('Website enquiry — ' + v('engagement') + ' — ' + v('name')) + '&body=' + encodeURIComponent(body);
       });
     });
   }

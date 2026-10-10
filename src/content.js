@@ -52,7 +52,9 @@ function leaves(v, p, acc) {
 function unread() {
   const all = new Set();
   Object.entries(raw).forEach(([n, v]) => leaves(v, n, all));
-  return [...all].filter((p) => !read.has(p)).sort();
+  // These values configure the editor UI or stable CMS records; they are not rendered content.
+  const editorMetadata = [/^page-text\/.*\.copy\[\]\.label$/, /^insights\.fieldStories\[\]\.slug$/];
+  return [...all].filter((p) => !read.has(p) && !editorMetadata.some((pattern) => pattern.test(p))).sort();
 }
 
 module.exports = { file, dir, unread, DIR };

@@ -35,7 +35,7 @@ function expectValidation(pattern) {
   assert.match(result.errors.join('\n'), pattern);
 }
 
-test('15 negative content/build safeguards', async (t) => {
+test('negative content/build safeguards', async (t) => {
   reset();
   try {
     await t.test('rejects a missing image', () => {
@@ -58,6 +58,10 @@ test('15 negative content/build safeguards', async (t) => {
       reset(); const data = json('pages.json'); data.about.h1 = 'Evidence <em>drives decisions'; save('pages.json', data);
       expectValidation(/<em> tags are not closed/);
     });
+    await t.test('rejects new emphasis on a heading that did not use it', () => {
+      reset(); const data = json('page-text/contact.json'); data.headings.find((item) => item.slug === 'contact-visit').title = '<em>Visit</em>, call or write.'; save('page-text/contact.json', data);
+      expectValidation(/contact-visit: does not use <em> emphasis/);
+    });
     await t.test('rejects an empty required value', () => {
       reset(); const data = json('sectors.json'); data.items[0].title = ''; save('sectors.json', data);
       expectValidation(/title: is required/);
@@ -77,6 +81,21 @@ test('15 negative content/build safeguards', async (t) => {
     await t.test('rejects hiding every hero slide', () => {
       reset(); const data = json('home/hero.json'); data.slides.forEach((slide) => { slide.hidden = true; }); save('home/hero.json', data);
       expectValidation(/at least one slide must be visible/);
+    });
+    await t.test('rejects a link to a hidden sector', () => {
+      reset(); const sectors = json('sectors.json'); sectors.items[0].hidden = true; save('sectors.json', sectors);
+      const reasons = json('home/why-ip3.json'); reasons.items[0].href = `/sectors/${sectors.items[0].slug}`; save('home/why-ip3.json', reasons);
+      expectValidation(/does not match any page/);
+    });
+    await t.test('rejects hiding every primary navigation link', () => {
+      reset(); const data = json('navigation.json'); data.primary.forEach((item) => { item.hidden = true; }); save('navigation.json', data);
+      expectValidation(/at least one primary navigation item must be visible/);
+    });
+    await t.test('warns when a visible engagement points to a hidden sector', () => {
+      reset(); const sectors = json('sectors.json'); const hiddenSlug = sectors.items[0].slug; sectors.items[0].hidden = true; save('sectors.json', sectors);
+      const engagements = json('engagements.json'); engagements.items[0].sectorSlug = hiddenSlug; save('engagements.json', engagements);
+      const result = validate.run({ quiet: true });
+      assert.match(result.warnings.join('\n'), /references hidden sector/);
     });
     await t.test('rejects a value of the wrong type', () => {
       reset(); const data = json('pages.json'); data.about.h1 = 17; save('pages.json', data);

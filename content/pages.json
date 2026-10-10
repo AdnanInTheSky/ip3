@@ -50,5 +50,13 @@
     "desc": "Contact IP3 Consulting Limited in Dhaka — discuss a consulting assignment, a partnership, a research collaboration, or request our capability statement.",
     "h1": "Tell us the mandate <em>you need to deliver.</em>",
     "lead": "Every submission is reviewed by our team. We aim to respond within one business day."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "desc": "Privacy Policy for IP3 Consulting Limited."
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "desc": "Terms of Use for IP3 Consulting Limited."
   }
 }

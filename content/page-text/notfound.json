@@ -1,0 +1,27 @@
+{
+  "headings": [
+    {
+      "slug": "not-found",
+      "eyebrow": "Page not found",
+      "title": "404",
+      "lead": "That page has moved, or never existed. Try the home page or one of our main sections."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "cta-back-home",
+      "label": "Back home button",
+      "text": "Back home"
+    },
+    {
+      "slug": "cta-capabilities",
+      "label": "Capabilities button",
+      "text": "Capabilities"
+    },
+    {
+      "slug": "cta-contact",
+      "label": "Contact button",
+      "text": "Contact"
+    }
+  ]
+}

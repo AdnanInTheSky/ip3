@@ -1,0 +1,70 @@
+{
+  "headings": [
+    {
+      "slug": "about-intro",
+      "eyebrow": "Who we are",
+      "title": "Built for complex systems. <em>Anchored in local realities.</em>"
+    },
+    {
+      "slug": "about-lifecycle",
+      "eyebrow": "From insight to implementation",
+      "title": "Our translational approach connects the <em>full lifecycle.</em>"
+    },
+    {
+      "slug": "about-pillars",
+      "eyebrow": "Three connected areas of transformation",
+      "title": "One ambition. <em>Three connected systems.</em>"
+    },
+    {
+      "slug": "about-values",
+      "eyebrow": "Our values",
+      "title": "Diverse minds, <em>shared vision.</em>",
+      "lead": "Regardless of cultural, educational or professional background, IP3 people share the same commitment to challenging conventional thinking and solving complex problems — and a passion for helping clients succeed."
+    },
+    {
+      "slug": "about-different",
+      "eyebrow": "We are different",
+      "title": "Beyond advice — expertise that drives <em>real transformation.</em>",
+      "lead": "We take a systemic perspective to policy research and develop new ideas and feasible solutions that put the needs of people and the health of the planet at the core of economic and development policy."
+    },
+    {
+      "slug": "about-network",
+      "eyebrow": "IP3 people — global and in-house",
+      "title": "A dynamic network of economists and thinkers.",
+      "lead": "A vibrant hub for networking, knowledge exchange and resource sharing — bringing together complementary skills and expertise from different geographies to drive economies towards a green, sustainable and prosperous future."
+    },
+    {
+      "slug": "cta-about",
+      "eyebrow": "Choose IP3 Consulting",
+      "title": "Where purpose meets transformation, <em>and innovation drives impact.</em>",
+      "lead": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "supporting-paragraph",
+      "label": "About introduction supporting paragraph",
+      "text": "Complex public challenges rarely fit within a single discipline. IP3 brings together economists, policy specialists, researchers, sector experts, data strategists and practitioners from diverse geographies — with a particular focus on the operational realities of the Global South."
+    },
+    {
+      "slug": "cta-meet-people",
+      "label": "Meet people button",
+      "text": "Meet IP3 people"
+    },
+    {
+      "slug": "cta-start-conversation",
+      "label": "Start conversation button",
+      "text": "Start a conversation"
+    },
+    {
+      "slug": "compare-label-polycrisis",
+      "label": "Comparison label — polycrisis",
+      "text": "Polycrisis"
+    },
+    {
+      "slug": "compare-label-polysolutions",
+      "label": "Comparison label — polysolutions",
+      "text": "Polysolutions"
+    }
+  ]
+}

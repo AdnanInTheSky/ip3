@@ -1,0 +1,52 @@
+{
+  "headings": [
+    {
+      "slug": "sector-add-value",
+      "eyebrow": "Clients hire IP3 for",
+      "title": "Where we <em>add value.</em>"
+    },
+    {
+      "slug": "sector-capabilities",
+      "eyebrow": "Capabilities applied",
+      "title": "The capabilities behind this <em>sector work.</em>"
+    },
+    {
+      "slug": "sector-related",
+      "eyebrow": "Related engagements",
+      "title": "Selected <em>work in this sector.</em>"
+    },
+    {
+      "slug": "cta-sectors",
+      "eyebrow": "Eight sectors. One integrated delivery model.",
+      "title": "Which sector is your <em>mandate in?</em>",
+      "lead": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required."
+    },
+    {
+      "slug": "cta-sector",
+      "title": "Tell us the mandate <em>you need to deliver.</em>",
+      "lead": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "eyebrow-challenge",
+      "label": "Challenge eyebrow",
+      "text": "The challenge"
+    },
+    {
+      "slug": "sector-introduction",
+      "label": "Sector introduction",
+      "text": "IP3 brings economics, finance, institutional analysis, technology and implementation expertise together around this sector — so that analysis arrives as a decision, and a decision as delivery."
+    },
+    {
+      "slug": "cta-discuss-assignment",
+      "label": "Discuss an assignment button",
+      "text": "Discuss an assignment"
+    },
+    {
+      "slug": "cta-all-sectors",
+      "label": "All sectors button",
+      "text": "All sectors"
+    }
+  ]
+}

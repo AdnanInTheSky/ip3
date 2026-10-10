@@ -1,0 +1,27 @@
+{
+  "headings": [
+    {
+      "slug": "people-network",
+      "eyebrow": "The IP3 network",
+      "title": "Advisors, directors, scholars <em>and support units.</em>"
+    },
+    {
+      "slug": "cta-people",
+      "eyebrow": "Work with IP3 people",
+      "title": "Let’s build systems <em>that can handle complexity.</em>",
+      "lead": "Partner with IP3 to design policies, platforms and institutions that are resilient, inclusive, data-driven and ready for the future."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "founder-eyebrow",
+      "label": "Founder profile eyebrow",
+      "text": "Executive leadership profile"
+    },
+    {
+      "slug": "cta-talk",
+      "label": "Talk button",
+      "text": "Let’s talk"
+    }
+  ]
+}

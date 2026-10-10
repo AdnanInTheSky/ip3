@@ -1,4 +1,5 @@
 # GENERATED from cms/schema.js — do not edit by hand. Change the schema, then run: npm run cms
+# Pages CMS configuration docs: https://pagescms.org/docs/configuration/
 media:
   - name: images
     label: "Photos"
@@ -19,6 +20,11 @@ content:
     path: content/site.json
     format: json
     fields:
+      - name: url
+        label: "Canonical website URL"
+        type: string
+        required: true
+        description: "Set this to the public production site origin. SITE_URL overrides it during a Vercel build."
       - name: email
         label: "Email address"
         type: string
@@ -34,10 +40,933 @@ content:
         list: true
         required: true
         description: "One line per entry."
+      - name: streetAddress
+        label: "Structured street address"
+        type: string
+        required: true
+      - name: addressLocality
+        label: "Address locality"
+        type: string
+        required: true
+      - name: postalCode
+        label: "Postal code"
+        type: string
+        required: true
+      - name: countryCode
+        label: "Country code"
+        type: string
+        required: true
       - name: hours
         label: "Office hours"
         type: string
         required: true
+      - name: mapUrl
+        label: "Map link"
+        type: string
+        required: true
+        description: "The link opened by the contact page map button."
+      - name: officeLabel
+        label: "Office label"
+        type: string
+        required: true
+      - name: emailLabel
+        label: "Email label"
+        type: string
+        required: true
+      - name: phoneLabel
+        label: "Phone label"
+        type: string
+        required: true
+      - name: hoursLabel
+        label: "Hours label"
+        type: string
+        required: true
+  - name: navigation
+    label: "00 · Navigation & footer links"
+    type: file
+    path: content/navigation.json
+    format: json
+    fields:
+      - name: primary
+        label: "Primary navigation links"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: href
+            label: "Link"
+            type: string
+            required: true
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+      - name: breadcrumbs
+        label: "Breadcrumb labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: href
+            label: "Page route"
+            type: string
+            required: true
+      - name: homeLabel
+        label: "Home link label"
+        type: string
+        required: true
+      - name: homeHref
+        label: "Home link destination"
+        type: string
+        required: true
+      - name: contactLabel
+        label: "Contact link label"
+        type: string
+        required: true
+      - name: contactHref
+        label: "Contact link destination"
+        type: string
+        required: true
+      - name: headerCta
+        label: "Header contact button"
+        type: string
+        required: true
+      - name: exploreTitle
+        label: "Footer explore heading"
+        type: string
+        required: true
+      - name: sectorsTitle
+        label: "Footer sectors heading"
+        type: string
+        required: true
+      - name: officeTitle
+        label: "Footer office heading"
+        type: string
+        required: true
+      - name: footerDescription
+        label: "Footer firm description"
+        type: text
+        required: true
+        options:
+          maxlength: 300
+      - name: exploreSectorLabel
+        label: "Engagement sector link label"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: previousSectorLabel
+        label: "Previous sector label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: nextSectorLabel
+        label: "Next sector label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: horizontalScrollLabel
+        label: "Horizontal scroller label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: explore
+        label: "Footer explore links"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: href
+            label: "Link"
+            type: string
+            required: true
+      - name: legal
+        label: "Footer legal links"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: href
+            label: "Link"
+            type: string
+            required: true
+      - name: legalNavLabel
+        label: "Footer legal navigation label"
+        type: string
+        required: true
+      - name: ctaPaths
+        label: "Contact pathways"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: description
+            label: "Description"
+            type: text
+            required: true
+          - name: href
+            label: "Link"
+            type: string
+            required: true
+      - name: contactPathways
+        label: "Contact page pathways"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: description
+            label: "Description"
+            type: text
+            required: true
+  - name: page_text_home
+    label: "00 · Page text — Home"
+    type: file
+    path: content/page-text/home.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_about
+    label: "00 · Page text — About"
+    type: file
+    path: content/page-text/about.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_approach
+    label: "00 · Page text — Approach"
+    type: file
+    path: content/page-text/approach.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_capabilities
+    label: "00 · Page text — Capabilities"
+    type: file
+    path: content/page-text/capabilities.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_sectors
+    label: "00 · Page text — Sectors"
+    type: file
+    path: content/page-text/sectors.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_engagements
+    label: "00 · Page text — Engagements"
+    type: file
+    path: content/page-text/engagements.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_insights
+    label: "00 · Page text — Insights"
+    type: file
+    path: content/page-text/insights.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_people
+    label: "00 · Page text — People"
+    type: file
+    path: content/page-text/people.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_contact
+    label: "00 · Page text — Contact"
+    type: file
+    path: content/page-text/contact.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: page_text_notfound
+    label: "00 · Page text — 404"
+    type: file
+    path: content/page-text/notfound.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
+  - name: legal
+    label: "00 · Privacy & terms"
+    type: file
+    path: content/legal.json
+    format: json
+    fields:
+      - name: privacy
+        label: "Privacy policy"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Page title"
+            type: string
+            required: true
+            description: "Needs legal review."
+          - name: lead
+            label: "Intro paragraph"
+            type: text
+            required: true
+            description: "Needs legal review."
+          - name: updated
+            label: "Last updated date"
+            type: string
+            description: "Needs legal review. Leave blank until counsel confirms a date."
+          - name: sections
+            label: "Policy sections"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{heading}"
+            required: true
+            fields:
+              - name: heading
+                label: "Section heading"
+                type: string
+                required: true
+                description: "Needs legal review."
+              - name: paragraphs
+                label: "Paragraphs"
+                type: string
+                list: true
+                required: true
+                description: "Needs legal review."
+      - name: terms
+        label: "Terms of use"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Page title"
+            type: string
+            required: true
+            description: "Needs legal review."
+          - name: lead
+            label: "Intro paragraph"
+            type: text
+            required: true
+            description: "Needs legal review."
+          - name: updated
+            label: "Last updated date"
+            type: string
+            description: "Needs legal review. Leave blank until counsel confirms a date."
+          - name: sections
+            label: "Terms sections"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{heading}"
+            required: true
+            fields:
+              - name: heading
+                label: "Section heading"
+                type: string
+                required: true
+                description: "Needs legal review."
+              - name: paragraphs
+                label: "Paragraphs"
+                type: string
+                list: true
+                required: true
+                description: "Needs legal review."
   - name: pages
     label: "00 · Page titles, descriptions & headlines"
     type: file
@@ -283,6 +1212,36 @@ content:
             required: true
             options:
               maxlength: 420
+      - name: privacy
+        label: "Privacy"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+      - name: terms
+        label: "Terms"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
   - name: home_hero
     label: "01 · Home — Hero slider"
     type: file
@@ -686,81 +1645,83 @@ content:
             list: true
             required: true
   - name: sectors
-    label: "11 · Sectors (one file each)"
-    type: collection
-    path: content/sectors
+    label: "11 · Sectors (drag to reorder)"
+    type: file
+    path: content/sectors.json
     format: json
-    filename: "{primary}.json"
-    view:
-      primary: title
-      fields: [n, title]
-      sort: n
-      order: asc
     fields:
-      - name: slug
-        label: "URL slug"
-        type: string
+      - name: items
+        label: "Sectors — drag to set display order"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
         required: true
-        description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
-      - name: n
-        label: "Order number"
-        type: string
-        required: true
-        description: "Two digits — 01, 02… Sectors are listed in this order."
-      - name: title
-        label: "Sector name"
-        type: string
-        required: true
-      - name: problem
-        label: "The problem we solve"
-        type: text
-        required: true
-      - name: areas
-        label: "Focus areas"
-        type: string
-        list: true
-        required: true
-      - name: caps
-        label: "Capabilities applied"
-        type: string
-        list: true
-        required: true
-        description: "Capability URL slugs, e.g. policy-economics-strategy."
-      - name: video
-        label: "Page header video"
-        type: file
-        description: "Leave empty to use the photo instead."
-        options:
-          media: videos
-          extensions: [mp4, webm]
-      - name: poster
-        label: "Poster for the video"
-        type: image
-        options:
-          media: images
-      - name: image
-        label: "Page header photo"
-        type: image
-        description: "Used when there is no video."
-        options:
-          media: images
-      - name: card
-        label: "Card image (home & sector list)"
-        type: image
-        required: true
-        options:
-          media: images
-      - name: photo
-        label: "Inline photo"
-        type: image
-        required: true
-        options:
-          media: images
-      - name: engagements
-        label: "Related engagements"
-        type: string
-        list: true
-        description: "Engagement slugs from the Engagements list."
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: title
+            label: "Sector name"
+            type: string
+            required: true
+          - name: problem
+            label: "The problem we solve"
+            type: text
+            required: true
+          - name: areas
+            label: "Focus areas"
+            type: string
+            list: true
+            required: true
+          - name: caps
+            label: "Capabilities applied"
+            type: string
+            list: true
+            required: true
+            description: "Capability URL slugs, e.g. policy-economics-strategy."
+          - name: video
+            label: "Page header video"
+            type: file
+            description: "Leave empty to use the photo instead."
+            options:
+              media: videos
+              extensions: [mp4, webm]
+          - name: poster
+            label: "Poster for the video"
+            type: image
+            options:
+              media: images
+          - name: image
+            label: "Page header photo"
+            type: image
+            description: "Used when there is no video."
+            options:
+              media: images
+          - name: card
+            label: "Card image (home & sector list)"
+            type: image
+            required: true
+            options:
+              media: images
+          - name: photo
+            label: "Inline photo"
+            type: image
+            required: true
+            options:
+              media: images
+          - name: engagements
+            label: "Related engagements"
+            type: string
+            list: true
+            description: "Engagement slugs from the Engagements list."
   - name: engagements
     label: "12 · Engagements"
     type: file
@@ -859,6 +1820,41 @@ content:
             required: true
           - name: image
             label: "Image"
+            type: image
+            required: true
+            options:
+              media: images
+      - name: fieldStories
+        label: "Field video stories"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: type
+            label: "Category"
+            type: string
+            required: true
+          - name: title
+            label: "Story headline"
+            type: string
+            required: true
+          - name: video
+            label: "Video"
+            type: file
+            required: true
+            options:
+              media: videos
+              extensions: [mp4, webm]
+          - name: poster
+            label: "Poster image"
             type: image
             required: true
             options:

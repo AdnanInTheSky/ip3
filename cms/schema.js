@@ -26,6 +26,19 @@ const pageMeta = (withHero = true) => [
   ...(withHero ? [str('h1', 'Page headline', { em: true, max: 140 }), text('lead', 'Intro paragraph under the headline', { max: 420 })] : []),
 ];
 const pg = (name, label, withHero) => obj(name, label, pageMeta(withHero));
+const pageText = (name, label, path) => file(name, `00 · Page text — ${label}`, path, [
+  list('headings', 'Headings, eyebrows & leads', [
+    slug('slug', 'Template key', { hint: 'Internal template key. Do not change unless a developer asks.' }),
+    str('eyebrow', 'Eyebrow', { optional: true, max: 80, soft: 50 }),
+    text('title', 'Heading', { max: 160, soft: 85, em: true, hint: 'Keep <em> only on headings where that emphasis already appears.' }),
+    text('lead', 'Lead paragraph', { optional: true, max: 420, soft: 260 }),
+  ], { summary: '{slug}' }),
+  list('copy', 'Other marketing copy & CTA labels', [
+    slug('slug', 'Template key', { hint: 'Internal template key. Do not change unless a developer asks.' }),
+    str('label', 'Editor label', { max: 100 }),
+    text('text', 'Copy', { max: 1000, soft: 450 }),
+  ], { summary: '{label}', optional: true }),
+]);
 
 module.exports = {
   media: [
@@ -34,15 +47,63 @@ module.exports = {
   ],
   content: [
     file('site', '00 · Contact details', 'content/site.json', [
+      str('url', 'Canonical website URL', { link: true, hint: 'Set this to the public production site origin. SITE_URL overrides it during a Vercel build.' }),
       str('email', 'Email address', { email: true }),
       str('phone', 'Phone number', { hint: 'Written as you want it shown, e.g. +880 1914 011 329.' }),
       strs('address', 'Address lines', { hint: 'One line per entry.' }),
+      str('streetAddress', 'Structured street address'),
+      str('addressLocality', 'Address locality'), str('postalCode', 'Postal code'), str('countryCode', 'Country code'),
       str('hours', 'Office hours'),
+      str('mapUrl', 'Map link', { link: true, hint: 'The link opened by the contact page map button.' }),
+      str('officeLabel', 'Office label'), str('emailLabel', 'Email label'), str('phoneLabel', 'Phone label'), str('hoursLabel', 'Hours label'),
+    ]),
+    file('navigation', '00 · Navigation & footer links', 'content/navigation.json', [
+      list('primary', 'Primary navigation links', [str('label', 'Label'), str('href', 'Link', { link: true }), hidden], { summary: '{label}' }),
+      list('breadcrumbs', 'Breadcrumb labels', [str('label', 'Label'), str('href', 'Page route', { link: true })], { summary: '{label}' }),
+      str('homeLabel', 'Home link label'), str('homeHref', 'Home link destination', { link: true }),
+      str('contactLabel', 'Contact link label'), str('contactHref', 'Contact link destination', { link: true }), str('headerCta', 'Header contact button'),
+      str('exploreTitle', 'Footer explore heading'), str('sectorsTitle', 'Footer sectors heading'), str('officeTitle', 'Footer office heading'),
+      text('footerDescription', 'Footer firm description', { max: 300, soft: 180 }),
+      str('exploreSectorLabel', 'Engagement sector link label', { max: 80 }),
+      str('previousSectorLabel', 'Previous sector label', { max: 40 }),
+      str('nextSectorLabel', 'Next sector label', { max: 40 }),
+      str('horizontalScrollLabel', 'Horizontal scroller label', { max: 40 }),
+      list('explore', 'Footer explore links', [str('label', 'Label'), str('href', 'Link', { link: true })], { summary: '{label}' }),
+      list('legal', 'Footer legal links', [str('label', 'Label'), str('href', 'Link', { link: true })], { summary: '{label}' }),
+      str('legalNavLabel', 'Footer legal navigation label'),
+      list('ctaPaths', 'Contact pathways', [str('label', 'Label'), text('description', 'Description'), str('href', 'Link', { link: true })], { summary: '{label}' }),
+      list('contactPathways', 'Contact page pathways', [str('label', 'Label'), text('description', 'Description')], { summary: '{label}' }),
+    ]),
+    pageText('page_text_home', 'Home', 'content/page-text/home.json'),
+    pageText('page_text_about', 'About', 'content/page-text/about.json'),
+    pageText('page_text_approach', 'Approach', 'content/page-text/approach.json'),
+    pageText('page_text_capabilities', 'Capabilities', 'content/page-text/capabilities.json'),
+    pageText('page_text_sectors', 'Sectors', 'content/page-text/sectors.json'),
+    pageText('page_text_engagements', 'Engagements', 'content/page-text/engagements.json'),
+    pageText('page_text_insights', 'Insights', 'content/page-text/insights.json'),
+    pageText('page_text_people', 'People', 'content/page-text/people.json'),
+    pageText('page_text_contact', 'Contact', 'content/page-text/contact.json'),
+    pageText('page_text_notfound', '404', 'content/page-text/notfound.json'),
+    file('legal', '00 · Privacy & terms', 'content/legal.json', [
+      obj('privacy', 'Privacy policy', [
+        str('title', 'Page title', { hint: 'Needs legal review.' }), text('lead', 'Intro paragraph', { hint: 'Needs legal review.' }),
+        str('updated', 'Last updated date', { optional: true, hint: 'Needs legal review. Leave blank until counsel confirms a date.' }),
+        list('sections', 'Policy sections', [
+          str('heading', 'Section heading', { hint: 'Needs legal review.' }), strs('paragraphs', 'Paragraphs', { hint: 'Needs legal review.' }),
+        ], { summary: '{heading}' }),
+      ]),
+      obj('terms', 'Terms of use', [
+        str('title', 'Page title', { hint: 'Needs legal review.' }), text('lead', 'Intro paragraph', { hint: 'Needs legal review.' }),
+        str('updated', 'Last updated date', { optional: true, hint: 'Needs legal review. Leave blank until counsel confirms a date.' }),
+        list('sections', 'Terms sections', [
+          str('heading', 'Section heading', { hint: 'Needs legal review.' }), strs('paragraphs', 'Paragraphs', { hint: 'Needs legal review.' }),
+        ], { summary: '{heading}' }),
+      ]),
     ]),
     file('pages', '00 · Page titles, descriptions & headlines', 'content/pages.json', [
       pg('home', 'Home', false), pg('about', 'About', true), pg('approach', 'Approach', true), pg('capabilities', 'Capabilities', true),
       pg('sectors', 'Sectors', true), pg('engagements', 'Engagements', true), pg('insights', 'Insights', true),
-      pg('people', 'People', true), pg('contact', 'Contact', true),
+      pg('people', 'People', true), pg('contact', 'Contact', true), pg('privacy', 'Privacy', false), pg('terms', 'Terms', false),
     ]),
 
     file('home_hero', '01 · Home — Hero slider', 'content/home/hero.json', [
@@ -92,8 +153,9 @@ module.exports = {
         slug(), str('title', 'Title'), str('short', 'Short name'), text('problem', 'The problem a client brings'), strs('deliverables', 'Typical deliverables'),
       ], { summary: '{title}' }),
     ]),
-    collection('sectors', '11 · Sectors (one file each)', 'content/sectors', [
-      slug(), str('n', 'Order number', { hint: 'Two digits — 01, 02… Sectors are listed in this order.' }),
+    file('sectors', '11 · Sectors (drag to reorder)', 'content/sectors.json', [
+      list('items', 'Sectors — drag to set display order', [
+      hidden, slug(),
       str('title', 'Sector name'), text('problem', 'The problem we solve'),
       strs('areas', 'Focus areas'),
       strs('caps', 'Capabilities applied', { hint: 'Capability URL slugs, e.g. policy-economics-strategy.', ref: 'capabilities' }),
@@ -103,7 +165,8 @@ module.exports = {
       image('card', 'Card image (home & sector list)'),
       image('photo', 'Inline photo'),
       strs('engagements', 'Related engagements', { optional: true, hint: 'Engagement slugs from the Engagements list.', ref: 'engagements' }),
-    ], { primary: 'title', sort: 'n', order: 'asc', fields: ['n', 'title'] }),
+      ], { summary: '{title}' }),
+    ]),
     file('engagements', '12 · Engagements', 'content/engagements.json', [
       list('items', 'Engagements', [
         hidden, slug(), str('client', 'Client'), str('year', 'Year'), str('sector', 'Sector name'),
@@ -113,6 +176,9 @@ module.exports = {
     ]),
     file('insights', '13 · Insights', 'content/insights.json', [
       list('items', 'Articles', [hidden, str('type', 'Type'), str('title', 'Title'), text('text', 'Summary'), strs('tags', 'Tags'), image('image', 'Image')], { summary: '{title}' }),
+      list('fieldStories', 'Field video stories', [
+        slug(), str('type', 'Category'), str('title', 'Story headline'), video('video', 'Video'), image('poster', 'Poster image'),
+      ], { summary: '{title}' }),
     ]),
     file('people', '14 · People', 'content/people.json', [
       list('groups', 'Groups', [

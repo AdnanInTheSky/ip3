@@ -8,7 +8,20 @@ const schema = require('../cms/schema');
 const OUT = path.join(__dirname, '..', '.pages.yml');
 const q = (s) => JSON.stringify(s); // JSON strings are valid YAML double-quoted scalars
 const lines = [];
-const put = (indent, s) => lines.push(' '.repeat(indent) + s);
+// Keep this allowlist aligned with keys documented at https://pagescms.org/docs/configuration/.
+const ALLOWED_KEYS = new Set([
+  'media', 'content', 'name', 'label', 'input', 'output', 'rename', 'extensions',
+  'type', 'path', 'format', 'filename', 'view', 'primary', 'fields', 'sort',
+  'list', 'collapsible', 'collapsed', 'summary', 'required', 'description',
+  'options', 'maxlength', 'values',
+]);
+const put = (indent, s) => {
+  if (!s.startsWith('#')) {
+    const match = s.trim().match(/^(?:-\s*)?([a-z][a-z0-9_-]*):/i);
+    if (!match || !ALLOWED_KEYS.has(match[1])) throw new Error(`Undocumented Pages CMS config key "${match ? match[1] : s}". Check the official docs before emitting it.`);
+  }
+  lines.push(' '.repeat(indent) + s);
+};
 
 function field(f, indent) {
   const type = { video: 'file', text: 'text' }[f.type] || f.type;
@@ -20,7 +33,7 @@ function field(f, indent) {
     if (f.summary) { put(i, 'list:'); put(i + 2, 'collapsible:'); put(i + 4, 'collapsed: true'); put(i + 4, `summary: ${q(f.summary)}`); } else put(i, 'list: true');
   }
   if (!f.optional) put(i, 'required: true');
-  const help = [f.hint, f.em && 'Wrap words in <em>…</em> to show them in the accent colour.'].filter(Boolean).join(' ');
+  const help = [f.hint, f.em && !f.hint && 'Wrap words in <em>…</em> to show them in the accent colour.'].filter(Boolean).join(' ');
   if (help) put(i, `description: ${q(help)}`);
   const opts = [];
   if ((f.type === 'string' || f.type === 'text') && f.max) opts.push(['maxlength', f.max]);
@@ -34,6 +47,7 @@ function field(f, indent) {
 function build() {
   lines.length = 0;
   put(0, '# GENERATED from cms/schema.js — do not edit by hand. Change the schema, then run: npm run cms');
+  put(0, '# Pages CMS configuration docs: https://pagescms.org/docs/configuration/');
   put(0, 'media:');
   for (const m of schema.media) {
     put(2, `- name: ${m.name}`);
@@ -56,7 +70,6 @@ function build() {
       put(6, `primary: ${c.view.primary}`);
       put(6, `fields: [${c.view.fields.join(', ')}]`);
       put(6, `sort: ${c.view.sort}`);
-      put(6, `order: ${c.view.order}`);
     }
     put(4, 'fields:');
     c.fields.forEach((f) => field(f, 6));
