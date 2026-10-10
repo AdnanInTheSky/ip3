@@ -7,6 +7,14 @@
 - Fix groups F1–F8 are separate commits. The preflight report remains untracked at `PREFLIGHT_REPORT.md`; scratch manifests are under the locally excluded `scratchpad/`.
 - Do not change GitHub/Vercel/DNS settings, add credentials, send a real email, or deploy without the owner's later instruction.
 
+## Prompt 4 follow-up
+
+- G1: moved contact endpoint tests to `build/contact.test.js`; `api/` contains only deployable `contact.js`, enforced by a selftest.
+- G2: Content check push triggers are limited to `main` and `content`; pull requests and manual dispatch remain enabled.
+- G3: admin setup now documents contact spam controls, scheduled-workflow re-enabling, and repository visibility confirmation.
+- G4: the preflight report remains untracked, starts with the internal-note warning, and uses plain-text scratchpad references.
+- `core.autocrlf=false` is set in this repository's local `.git/config` only; the global setting is unchanged.
+
 ## Implemented
 
 - `.gitattributes` forces text checkouts to LF and marks uploaded media/font formats binary. The build normalizes source and generated text line endings; `build/selftest.js` compares every `dist/` file from LF and CRLF source copies, excluding only `build.json.builtAt`.
