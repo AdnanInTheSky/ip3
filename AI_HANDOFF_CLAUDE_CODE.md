@@ -4,7 +4,7 @@
 
 - Repo: `mdsyfulhoque-afk/ip3-bd.org`
 - Local branch: `ops-hardening`; changes are local and have not been pushed or deployed.
-- Fix groups F1–F7 are separate commits. The preflight report remains untracked at `PREFLIGHT_REPORT.md`; scratch manifests are under the locally excluded `scratchpad/`.
+- Fix groups F1–F8 are separate commits. The preflight report remains untracked at `PREFLIGHT_REPORT.md`; scratch manifests are under the locally excluded `scratchpad/`.
 - Do not change GitHub/Vercel/DNS settings, add credentials, send a real email, or deploy without the owner's later instruction.
 
 ## Implemented
@@ -21,8 +21,20 @@
 
 ## Verification and owner gates
 
-Per Prompt 3, run `npm test`, `npm run check`, and `npm run verify` from a fresh `git -c core.autocrlf=false archive HEAD` extraction, not from the working tree. Repeat with a CRLF-converted `src/` copy and compare all output hashes except `build.json.builtAt`. No external rollout actions have been performed.
+Prompt 3 verification is complete in two fresh `git -c core.autocrlf=false archive HEAD` exports: `npm test`, `npm run check`, and `npm run verify` passed in both. Each run passed 42 tests; check emitted six existing SEO-length hints; verify built 20 pages and 19 sitemap URLs. After converting the 8 text files under `src/` to CRLF, all 86 `dist/` file hashes still matched the LF export after normalizing only `build.json.builtAt`. Export directories and manifests are under the locally excluded `scratchpad/`. No external rollout actions have been performed.
 
 The `ip-3` Vercel team was confirmed as Hobby, which is not permitted for this consulting-company use until the owner moves to a commercially eligible plan. Remaining human checks include GitHub branch protection and exact check context, Vercel project settings and preview access, DNS and mailbox verification, Resend/privacy approval, editor accounts and live CMS flow, production smoke, analytics privacy approval, Search Console access, and hosted CI/Lighthouse/media execution. The owner checklist is in [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md); record acceptance in [docs/UAT.md](docs/UAT.md).
+
+## F8 independent source recheck — 2026-10-10
+
+- Vercel's [Hobby plan](https://vercel.com/docs/plans/hobby) and [Terms](https://vercel.com/legal/terms) limit Hobby to personal, non-commercial use. The team's actual plan came from the owner; production use remains gated.
+- Vercel's [Automation Bypass documentation](https://vercel.com/docs/deployment-protection/methods-to-bypass-deployment-protection/protection-bypass-automation) says the feature is available on all plans. This does not confirm whether this project's previews are protected or which bypass mode is enabled.
+- GitHub's [required-check guidance](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks) and [workflow syntax](https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax) document job names and required checks. The workflow job is explicitly `check`; only a live successful check run can establish the exact context for this repository.
+- GitHub's [Actions settings documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository) documents the setting for Actions to create/approve PRs and read-only defaults for new personal-account repositories. Existing repository or organization values remain unverified. The [GITHUB_TOKEN documentation](https://docs.github.com/en/actions/concepts/security/github_token) confirms token-authored pushes generally do not trigger new workflow runs.
+- Resend's [pricing](https://resend.com/pricing) states Free includes 3,000 emails/month, 100/day, 3 domains and 30-day retention. [Domain documentation](https://resend.com/docs/dashboard/domains/introduction) requires a verified sending domain; [setup instructions](https://resend.com/docs/add-a-domain) specify provider DNS records including SPF/DKIM.
+- Pages CMS [configuration docs](https://pagescms.org/docs/configuration/) describe branch-specific repository configuration; [settings docs](https://pagescms.org/docs/configuration/settings/) document `settings.commit.templates`. The live editor's branch-selection UI remains unverified.
+- GitHub's current [Ubuntu 24.04 runner inventory](https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2404-Readme.md) does not list ffmpeg. On 2026-10-10, the `ubuntu-latest` label still maps to Ubuntu 24.04; GitHub announced it will move to 26.04 in November 2026. CI installs pinned `ffmpeg-static`, so it does not depend on the runner's system ffmpeg.
+
+The repository-specific CI check name, Actions settings, Pages CMS live editor behavior and Vercel project protection are not independently confirmed without owner access and a successful run. Source links and statuses are also recorded in the untracked `PREFLIGHT_REPORT.md`.
 
 No external credentials are stored in the repository. No production form submission was sent.
