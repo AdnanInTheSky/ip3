@@ -16,6 +16,6 @@
     "test": "node --test build/selftest.js build/check-links.test.js api/contact.test.js .github/scripts/publishing.test.js"
   },
   "engines": {
-    "node": ">=20.9"
+    "node": "24.x"
   }
 }

@@ -16,7 +16,7 @@ jobs:
           ref: ${{ github.event.deployment.sha }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Smoke-test production routes
         run: node scripts/smoke-deploy.js
         env:

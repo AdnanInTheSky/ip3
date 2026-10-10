@@ -3,46 +3,26 @@
 ## Repository state
 
 - Repo: `mdsyfulhoque-afk/ip3-bd.org`
-- Local branch: `ops-hardening`, based on the user's `cms-admin` branch.
-- The implementation is local and has not been pushed or deployed. The authorized workstreams are kept in separate commits; inspect `git log --oneline` for the current hashes.
-- Do not make GitHub/Vercel/DNS changes, add credentials, send a real email or deploy without the owner's later instruction. The preflight remains in untracked `PREFLIGHT_REPORT.md`; baseline manifests and scratch comparisons are in untracked `scratchpad/`.
+- Local branch: `ops-hardening`; changes are local and have not been pushed or deployed.
+- Fix groups F1–F7 are separate commits. The preflight report remains untracked at `PREFLIGHT_REPORT.md`; scratch manifests are under the locally excluded `scratchpad/`.
+- Do not change GitHub/Vercel/DNS settings, add credentials, send a real email, or deploy without the owner's later instruction.
 
 ## Implemented
 
-- `build/selftest.js` and `npm test` cover negative content/build checks. `build/check-links.test.js` covers link, anchor, target, metadata, image-alt and sitemap validation. `api/contact.test.js` mocks provider requests; it sends no email.
-- CMS sectors are a single ordered list. Navigation, footer links, legal drafts and page headings/copy are schema-backed. Sector order is derived from the list position; hidden sectors are omitted from routes/navigation/sitemap. The undocumented Pages CMS `view.order` key is gone.
-- The build writes generated pages, assets, sitemap, robots, manifest and `build.json` to ignored `dist/`. `vercel.json` publishes `dist`; `dev-server.js` serves it. The build stamp includes Git SHA when available, timestamp, content hash, page count and validation state.
-- The content publishing workflow checks a content-branch head, then opens/updates a PR only after that exact SHA passes. The default-branch workflow syncs `main` into `content` and dispatches the check explicitly. Branch-protection policy and exact `gh api` command are in `docs/BRANCH-PROTECTION.md`.
-- The Vercel function is `api/contact.js` (CommonJS, no runtime dependencies). It checks same-origin JSON, input bounds, honeypot and minimum fill time; optionally verifies Turnstile; sends escaped HTML and plain text using Resend; and does not log message PII. The browser falls back to a prefilled `mailto:` on failure. Environment variable names are `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`, `TURNSTILE_SECRET`, and build-time `PUBLIC_TURNSTILE_SITE_KEY`.
-- CI-only media optimization uses pinned Sharp and ffmpeg-static; it modifies only changed upload files on the content branch and dispatches a new check after a bot push. Images above 500 KiB are recompressed; MP4 videos above 8 MiB are encoded H.264. WebM is accepted only at or below 8 MiB because its container cannot be kept while changing to H.264. Hard limits are 2 MiB for images and 25 MiB for videos.
-- Quality workflows include static link/anchor validation, mobile Lighthouse CI reports, production route/build-stamp smoke checks, failure notification support and a 30-minute uptime check. Analytics snippets are present only when explicitly enabled for Production and supplied with both Vercel script paths; they are currently off.
+- `.gitattributes` forces text checkouts to LF and marks uploaded media/font formats binary. The build normalizes source and generated text line endings; `build/selftest.js` compares every `dist/` file from LF and CRLF source copies, excluding only `build.json.builtAt`.
+- CMS sectors are a single ordered list. Navigation, footer links, legal drafts and page headings/copy are schema-backed. Sector order follows list order; hidden sectors are omitted from routes/navigation/sitemap.
+- The build writes pages, assets, sitemap, robots, manifest and `build.json` to ignored `dist/`. Vercel publishes `dist`; the dev server serves it. The stamp carries local/Vercel `commit` and a separate `vercelGitCommitSha`; the latter is null outside a Vercel Git build.
+- The required Content check job is explicitly named `check` and contains only install, tests, content/CMS validation and build/link verification. Lighthouse runs in a separate non-gating workflow and saves reports as artifacts. The main branch policy requests PRs, zero approvals to prevent a single-owner deadlock, strict checks, no force-push and no deletion. An owner must verify the live check-run name before applying it; details are in `docs/BRANCH-PROTECTION.md`.
+- The publishing bot skips cleanly if `origin/content` is absent, resets content to main when it has no unique commits, and fails clearly on a real conflict. Content PRs must use **Create a merge commit** so branch histories remain connected. Tests use a temporary local Git repository and mocked GitHub fetch calls.
+- The contact form only posts to `/api/contact` when the build flag `CONTACT_API_ENABLED=1` is set. Otherwise it opens a prefilled `mailto:` without a network request. The endpoint requires Turnstile, checks the client timestamp only for more than five minutes of future skew or age above 24 hours, retains the honeypot, sends through Resend, and has no per-IP limit. A Vercel Firewall rate-limit rule is an available extra control. Provider calls are mocked in tests.
+- The uptime workflow is skipped until the GitHub repository variable `UPTIME_URL` is set. The smoke script retains its project-host allowlist. Production smoke requires both build stamp SHA fields and reports a missing `VERCEL_GIT_COMMIT_SHA` with the Vercel environment-variable setting to check.
+- CI and `package.json` target Node.js 24.x. Analytics remain opt-in through `ENABLE_ANALYTICS=1` and the Production environment gate; static snippets use Vercel's fixed Web Analytics and Speed Insights paths.
+- Media optimization remains CI-only, with pinned Sharp and ffmpeg-static. Images above 500 KiB are recompressed; MP4 files above 8 MiB are encoded H.264. WebM above 8 MiB is rejected; image/video hard limits are 2/25 MiB.
 
-## Required local commands
+## Verification and owner gates
 
-Run from the repository root:
+Per Prompt 3, run `npm test`, `npm run check`, and `npm run verify` from a fresh `git -c core.autocrlf=false archive HEAD` extraction, not from the working tree. Repeat with a CRLF-converted `src/` copy and compare all output hashes except `build.json.builtAt`. No external rollout actions have been performed.
 
-```bash
-npm ci
-npm test
-npm run check
-npm run audit
-npm run verify
-node scratchpad/compare-baseline.js
-```
-
-The preflight comparison expects only documented contact form markup and generated asset fingerprint differences. Do not commit `PREFLIGHT_REPORT.md`, `scratchpad/` or `dist/`.
-
-## Human gates
-
-The `ip-3` Vercel team was confirmed as Hobby, which blocks production rollout for this consulting company until the plan permits commercial use. The owner-side setup actions and exact dashboard paths are maintained in one place: [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md). Fill [docs/UAT.md](docs/UAT.md) during the first human rollout.
-
-## Limitations still requiring live access
-
-- Pages CMS UI branch selection and live save/PR flow.
-- GitHub repository Actions settings, branch protection and actual status context.
-- Vercel dashboard settings, protected preview access, post-deployment behavior and notifications.
-- Production form delivery, mailbox deliverability and DNS verification.
-- Lighthouse CI on the GitHub-hosted runner and actual `ffmpeg-static` video encoding; the local Windows package does not include a runnable ffmpeg binary.
-- Analytics privacy approval and assigned production script paths; Search Console property access.
+The `ip-3` Vercel team was confirmed as Hobby, which is not permitted for this consulting-company use until the owner moves to a commercially eligible plan. Remaining human checks include GitHub branch protection and exact check context, Vercel project settings and preview access, DNS and mailbox verification, Resend/privacy approval, editor accounts and live CMS flow, production smoke, analytics privacy approval, Search Console access, and hosted CI/Lighthouse/media execution. The owner checklist is in [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md); record acceptance in [docs/UAT.md](docs/UAT.md).
 
 No external credentials are stored in the repository. No production form submission was sent.

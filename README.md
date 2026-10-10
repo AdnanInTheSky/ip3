@@ -4,7 +4,7 @@ Static site for IP3 Consulting Limited (Institute for Public Policy & Practice).
 
 ## Run locally
 
-Requires Node.js 20.9 or newer and npm.
+Requires Node.js 24.x and npm.
 
 ```bash
 npm ci
@@ -44,7 +44,7 @@ Photos may be JPEG, PNG or WebP; videos may be MP4 or WebM. CI recompresses chan
 
 ## Vercel and contact form
 
-`vercel.json` selects the Other framework preset, runs `npm ci` and `npm run build`, and publishes `dist/`. The build generates a `dist/build.json` stamp containing the Git SHA when available. Production `SITE_URL` should be `https://ip3-bd.org`.
+`vercel.json` selects the Other framework preset, runs `npm ci` and `npm run build`, and publishes `dist/`. The build generates a `dist/build.json` stamp with `commit` from Vercel or local Git and `vercelGitCommitSha` from Vercel only. Both are null in a source archive without Vercel or Git metadata. Production `SITE_URL` should be `https://ip3-bd.org`.
 
 The public Vercel team was confirmed as Hobby during the preflight. That plan is a release blocker for this consulting-company website until the team uses a plan that permits commercial use. Contact delivery also stays gated on confirming the recipient mailbox, approving US processing by Resend, legal review, Resend domain verification and Turnstile setup. The contact function uses `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`, and `TURNSTILE_SECRET`; the public widget uses `PUBLIC_TURNSTILE_SITE_KEY`. Keep secrets in Vercel runtime variables, not source. The form retains a prefilled `mailto:` fallback. See the single owner checklist at [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md).
 

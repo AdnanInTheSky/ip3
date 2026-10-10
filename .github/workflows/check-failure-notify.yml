@@ -23,7 +23,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Send only commit, author and the first 20 error lines when a webhook is configured
         run: node .github/scripts/notify-failure.js
         env:

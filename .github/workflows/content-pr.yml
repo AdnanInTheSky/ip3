@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Merge main into content and dispatch its required check
         run: node .github/scripts/sync-content.js
         env:
@@ -48,7 +48,7 @@ jobs:
           ref: ${{ github.event.repository.default_branch }}
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
       - name: Open or update the content review PR for the checked commit
         run: node .github/scripts/open-content-pr.js
         env:

@@ -1,5 +1,5 @@
 // Static site generator: renders the site into dist/ for local and Vercel serving.
-// Run: npm run build   (Node 20.9+)
+// Run: npm run build   (Node.js 24.x)
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
@@ -20,10 +20,6 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
   const cfg = require('../src/config');
   if (cfg.contactApiEnabled && !cfg.turnstileSiteKey) {
     throw new Error('CONTACT_API_ENABLED=1 requires PUBLIC_TURNSTILE_SITE_KEY so the protected form can render.');
-  }
-  if (process.env.VERCEL_ENV === 'production' && process.env.ENABLE_ANALYTICS === '1' &&
-      (!cfg.analytics.webAnalyticsPath || !cfg.analytics.speedInsightsPath)) {
-    console.warn('Analytics were requested, but both Vercel project script paths must be configured; analytics remain disabled.');
   }
   const D = require('../src/data');
   const home = require('../src/pages-home').home;
@@ -88,9 +84,11 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
     contentDigest.update('\0');
   }
   const gitCommit = spawnSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' });
-  const commit = process.env.VERCEL_GIT_COMMIT_SHA || (gitCommit.status === 0 ? gitCommit.stdout.trim() : null);
+  const vercelGitCommitSha = process.env.VERCEL_GIT_COMMIT_SHA || null;
+  const commit = vercelGitCommitSha || (gitCommit.status === 0 ? gitCommit.stdout.trim() : null);
   write('build.json', JSON.stringify({
     commit,
+    vercelGitCommitSha,
     builtAt: new Date().toISOString(),
     contentHash: contentDigest.digest('hex'),
     pageCount: pages.length,
