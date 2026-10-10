@@ -387,6 +387,68 @@ content:
             required: true
             options:
               maxlength: 1000
+  - name: page_text_why
+    label: "00 · Page text — Why choose IP3"
+    type: file
+    path: content/page-text/why.json
+    format: json
+    fields:
+      - name: headings
+        label: "Headings, eyebrows & leads"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{slug}"
+        required: true
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            options:
+              maxlength: 80
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Keep <em> only on headings where that emphasis already appears."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Lead paragraph"
+            type: text
+            options:
+              maxlength: 420
+      - name: copy
+        label: "Other marketing copy & CTA labels"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        fields:
+          - name: slug
+            label: "Template key"
+            type: string
+            required: true
+            description: "Internal template key. Do not change unless a developer asks."
+          - name: label
+            label: "Editor label"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: text
+            label: "Copy"
+            type: text
+            required: true
+            options:
+              maxlength: 1000
   - name: page_text_approach
     label: "00 · Page text — Approach"
     type: file
@@ -990,6 +1052,34 @@ content:
             description: "Shown under the title in Google. Aim for 165 characters or fewer."
       - name: about
         label: "About"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: why
+        label: "Why choose IP3"
         type: object
         required: true
         fields:
@@ -1859,6 +1949,62 @@ content:
             required: true
             options:
               media: images
+      - name: publications
+        label: "Publications (newest first)"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{year} — {title}"
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: kind
+            label: "Type"
+            type: select
+            required: true
+            options:
+              values: ["Report", "Journal article", "Book chapter", "Policy brief", "Commentary"]
+          - name: year
+            label: "Year"
+            type: number
+            required: true
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+            options:
+              maxlength: 220
+          - name: authors
+            label: "Credit as published"
+            type: string
+            required: true
+            description: "Name the authors as the publication credits them. If IP3 contributed to a report written by others, say so here."
+            options:
+              maxlength: 300
+          - name: publisher
+            label: "Publisher"
+            type: string
+            required: true
+            options:
+              maxlength: 200
+          - name: href
+            label: "Link to the publisher’s copy"
+            type: string
+            description: "Leave empty to list the publication without a link."
+          - name: summary
+            label: "One-sentence summary"
+            type: text
+            required: true
+            options:
+              maxlength: 300
+          - name: people
+            label: "IP3 people credited"
+            type: string
+            list: true
+            description: "Person slugs from the People list, e.g. mohammad-syful-hoque."
   - name: people
     label: "14 · People"
     type: file
@@ -1891,6 +2037,11 @@ content:
                 label: "Hide this item"
                 type: boolean
                 description: "Tick to take it off the website without deleting it."
+              - name: slug
+                label: "Profile anchor"
+                type: string
+                required: true
+                description: "Lower-case words joined by hyphens. Used for /people#anchor links and publication credits — set once."
               - name: name
                 label: "Name"
                 type: string
@@ -1902,6 +2053,25 @@ content:
               - name: focus
                 label: "Focus areas"
                 type: text
+              - name: photo
+                label: "Portrait"
+                type: image
+                description: "Square or portrait crop, about 480 px wide. Leave empty to show initials."
+                options:
+                  media: images
+              - name: affiliation
+                label: "Current post outside IP3"
+                type: string
+                options:
+                  maxlength: 160
+              - name: bio
+                label: "Profile paragraphs"
+                type: string
+                list: true
+              - name: education
+                label: "Degrees, most recent first"
+                type: string
+                list: true
   - name: founder
     label: "15 · Founder profile"
     type: file
@@ -2076,6 +2246,425 @@ content:
             label: "Text"
             type: text
             required: true
+  - name: why
+    label: "17 · Why choose IP3 (3D journey page)"
+    type: file
+    path: content/why.json
+    format: json
+    fields:
+      - name: hero
+        label: "Opening screen (headline and intro are under Page titles → Why choose IP3)"
+        type: object
+        required: true
+        fields:
+          - name: audience
+            label: "Who we work for"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+          - name: primary
+            label: "Main button"
+            type: object
+            required: true
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: href
+                label: "Link"
+                type: string
+                required: true
+          - name: secondary
+            label: "Second button"
+            type: object
+            required: true
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: href
+                label: "Link"
+                type: string
+                required: true
+      - name: scenes
+        label: "Story scenes — keep all six, in this order"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{rail}"
+        required: true
+        fields:
+          - name: slug
+            label: "Scene key"
+            type: string
+            required: true
+            description: "Fixed: complexity, evidence, insight, policy, practice, impact. The 3D camera is set for this order."
+          - name: rail
+            label: "Short name in the scene rail"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+          - name: title
+            label: "Scene heading"
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: body
+            label: "Paragraphs"
+            type: string
+            list: true
+            required: true
+      - name: systems
+        label: "Complexity — systems drawn as 3D layers (up to six)"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        required: true
+        fields:
+          - name: slug
+            label: "System key"
+            type: string
+            required: true
+            description: "Used by \"Related systems\". Lower-case, set once."
+          - name: name
+            label: "Name"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+          - name: note
+            label: "What it is tied to and why"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+          - name: relates
+            label: "Related systems"
+            type: string
+            list: true
+            required: true
+            description: "System keys from this list, e.g. economy. Each one draws a link in the 3D scene."
+      - name: tiedTo
+        label: "Label before related systems"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: evidence
+        label: "Evidence — layers in the 3D stack (up to six)"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        required: true
+        fields:
+          - name: slug
+            label: "Layer key"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: name
+            label: "Name"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: text
+            label: "Description"
+            type: text
+            required: true
+            options:
+              maxlength: 200
+      - name: charts
+        label: "Insight — the two method diagrams"
+        type: object
+        required: true
+        fields:
+          - name: impactTitle
+            label: "First diagram title"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: impactCaption
+            label: "First diagram caption"
+            type: text
+            required: true
+            options:
+              maxlength: 320
+          - name: costTitle
+            label: "Second diagram title"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: costCaption
+            label: "Second diagram caption"
+            type: text
+            required: true
+            options:
+              maxlength: 320
+          - name: note
+            label: "Note under both diagrams"
+            type: string
+            required: true
+            options:
+              maxlength: 120
+      - name: policyExample
+        label: "Policy — worked example line"
+        type: text
+        required: true
+        options:
+          maxlength: 200
+      - name: policySteps
+        label: "Policy — steps from findings to a decision"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Step"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+          - name: choices
+            label: "Options shown as chips"
+            type: string
+            list: true
+      - name: practiceStages
+        label: "Practice — how a decision reaches people"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Stage"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+      - name: siteLabels
+        label: "Practice — labels on the 3D buildings"
+        type: string
+        list: true
+        required: true
+        description: "Four labels, in order: the large institution, then three services."
+      - name: impactOutcomes
+        label: "Impact — outcomes"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Outcome"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: change
+            label: "What changes"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+          - name: shown
+            label: "How it can be shown"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+      - name: shownLabel
+        label: "Impact — label before \"how it can be shown\""
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: impactCtas
+        label: "Impact — buttons"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: href
+            label: "Link"
+            type: string
+            required: true
+          - name: ghost
+            label: "Outline style"
+            type: boolean
+      - name: bridgeWord
+        label: "Giant word between the story and the film"
+        type: string
+        required: true
+        options:
+          maxlength: 24
+      - name: film
+        label: "Brand film"
+        type: object
+        required: true
+        fields:
+          - name: kicker
+            label: "Small label"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: heading
+            label: "Heading"
+            type: string
+            required: true
+            options:
+              maxlength: 90
+          - name: lead
+            label: "Introduction"
+            type: text
+            required: true
+            options:
+              maxlength: 300
+          - name: video
+            label: "Film (MP4)"
+            type: file
+            required: true
+            options:
+              media: videos
+              extensions: [mp4, webm]
+          - name: poster
+            label: "Poster image"
+            type: image
+            required: true
+            options:
+              media: images
+          - name: label
+            label: "Film description for screen readers"
+            type: text
+            required: true
+            options:
+              maxlength: 300
+      - name: terminal
+        label: "Policy Intelligence Terminal"
+        type: object
+        required: true
+        fields:
+          - name: kicker
+            label: "Small label"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: heading
+            label: "Heading"
+            type: string
+            required: true
+            options:
+              maxlength: 80
+          - name: lead
+            label: "Introduction"
+            type: text
+            required: true
+            options:
+              maxlength: 360
+          - name: beats
+            label: "Walkthrough steps"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: title
+                label: "Title"
+                type: string
+                required: true
+                options:
+                  maxlength: 80
+              - name: text
+                label: "Text"
+                type: text
+                required: true
+                options:
+                  maxlength: 500
+              - name: points
+                label: "Points"
+                type: string
+                list: true
+                required: true
+              - name: image
+                label: "Screenshot"
+                type: image
+                required: true
+                options:
+                  media: images
+              - name: caption
+                label: "Caption"
+                type: string
+                required: true
+                options:
+                  maxlength: 90
+          - name: pipeline
+            label: "Pipeline steps"
+            type: string
+            list: true
+            required: true
+          - name: cta
+            label: "Button"
+            type: object
+            required: true
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: href
+                label: "Link"
+                type: string
+                required: true
   - name: approach_problem
     label: "20 · Approach — Start with the problem"
     type: file

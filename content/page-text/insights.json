@@ -1,6 +1,12 @@
 {
   "headings": [
     {
+      "slug": "insights-publications",
+      "eyebrow": "Publications",
+      "title": "Reports, research and <em>commentary by our team.</em>",
+      "lead": "The evidence behind the advice: reports, journal articles, book chapters and commentary, linked to the publisher’s own copy."
+    },
+    {
       "slug": "insights-field",
       "eyebrow": "From the field and the data",
       "title": "Stories behind <em>the evidence.</em>"
@@ -12,5 +18,26 @@
       "lead": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required."
     }
   ],
-  "copy": []
+  "copy": [
+    {
+      "slug": "publications-all",
+      "label": "Publication filter: show all",
+      "text": "All"
+    },
+    {
+      "slug": "publications-filter",
+      "label": "Publication filter group label",
+      "text": "Show"
+    },
+    {
+      "slug": "publications-note",
+      "label": "Note under the publication list",
+      "text": "Where a report was written by a client’s own team, the credit says so and names IP3’s contribution. New policy briefs from current assignments will be added here as they are published."
+    },
+    {
+      "slug": "publications-new-tab",
+      "label": "Screen-reader note on outside links",
+      "text": "(opens in a new tab)"
+    }
+  ]
 }

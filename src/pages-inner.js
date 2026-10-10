@@ -36,13 +36,20 @@ function approach() {
   const case_ = (p) => (p ? `<div class="case">${esc(p)}</div>` : '');
   const move = (c, i) => `<article class="move" data-reveal><div><div class="move__n">0${i + 1}</div><h3>${esc(c.title)}</h3><p style="color:var(--ink-2)">${esc(c.text)}</p>${case_(c.paragraph)}</div><ul>${c.bullets.map((b) => { const [k, ...v] = b.split(' — '); return `<li><b>${esc(k)}</b>${esc(v.join(' — '))}</li>`; }).join('')}</ul></article>`;
   const nodes = s6.orbitItems.map((o, i) => `<div class="orbit__node" style="--a:${i * 60 - 90}deg"><div><b>${o.shortLabel}</b><span>${esc(o.label)}</span></div></div>`).join('');
+  // The six movements as a pinned CSS-3D film: 48 fragments move from scatter to an ordered grid, one arrangement per movement.
+  const frags = Array.from({ length: 48 }, (_, i) => `<i class="frag${i % 9 === 0 ? ' frag--k' : ''}"></i>`).join('');
+  const ffilm = `<div class="ffilm on-dark dark" data-ffilm aria-label="${esc(s4.title)}" role="group">
+      <div class="ffilm__stage" aria-hidden="true"><div class="ffilm__world" data-ffilm-world>${frags}<svg class="ffilm__svg" viewBox="-300 -220 600 440"><path data-ffilm-curve d="M-200 60 C-120 60 -90 -95 0 -95 S120 60 200 60"/><ellipse data-ffilm-ring cx="0" cy="0" rx="150" ry="123"/></svg></div></div>
+      <ol class="ffilm__caps">${s4.cards.map((c, i) => `<li data-ffilm-cap="${i}"><b>0${i + 1} / 0${s4.cards.length}</b><span>${esc(c.title)}</span></li>`).join('')}</ol>
+      <nav class="ffilm__rail" aria-label="${esc(s4.subtitle)}"><ol>${s4.cards.map((c, i) => `<li><button type="button" data-ffilm-jump="${i}"${i === 0 ? ' aria-current="step"' : ''}><i aria-hidden="true"></i><span>${esc(c.title)}</span></button></li>`).join('')}</ol></nav>
+    </div>`;
   const body = [
     phero({ crumbs: [breadcrumb('/approach')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'video', src: '/assets/video/hero-4.mp4', poster: '/assets/img/poster-hero-4.webp' } }),
     sec(`${head(esc(s3.subtitle.toLowerCase().replace(/^./, (c) => c.toUpperCase())), rich(D.headings['approach-problem'].title), esc(s3.paragraph))}
       <div class="state" data-reveal><div class="state__box"><h3>${s3.currentState.title}</h3><ul class="checks">${s3.currentState.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div><div class="state__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><div class="state__box state__box--b dark"><h3>${s3.desiredState.title}</h3><ul class="checks" style="--x:0">${s3.desiredState.items.map((x) => `<li style="border-color:rgba(255,255,255,.16);color:rgba(255,255,255,.85)">${esc(x)}</li>`).join('')}</ul></div></div>
       <div class="cards3" style="margin-top:22px" data-stagger>${s3.questionCards.map((q) => tile(esc(q.title.replace(/^\d+\s+/, '')), esc(q.text), q.title.slice(0, 2))).join('')}</div>`),
     `<section class="section section--sand"><div class="container two two--top"><div style="position:sticky;top:130px"><span class="eyebrow" data-reveal>${esc(D.pageText.approach['eyebrow-define-decision'])}</span><h2 class="split" style="margin:18px 0 22px">${esc(s3.bigCard.title)}</h2><div class="photo photo--wide clip" data-clip style="margin-top:30px"><img src="/assets/img/workshop-1.webp" width="960" height="720" alt="Stakeholders working through a problem at a policy workshop" loading="lazy" data-parallax></div></div><ul class="checks" data-stagger>${s3.bigCard.items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></div></section>`,
-    sec(`${head(esc(s4.subtitle), esc(s4.title).replace('Reform', '<em>Reform</em>'), esc(s4.paragraph))}<div class="movements">${s4.cards.map(move).join('')}</div>`),
+    sec(`${head(esc(s4.subtitle), esc(s4.title).replace('Reform', '<em>Reform</em>'), esc(s4.paragraph))}${ffilm}<div class="movements">${s4.cards.map(move).join('')}</div>`),
     `<section class="section section--dark on-dark dark"><div class="container">${head(esc(s5.subtitle.toLowerCase().replace(/^./, (c) => c.toUpperCase())), rich(D.headings['approach-standards'].title), esc(s5.paragraph))}<div class="cards3" data-stagger>${s5.cards.map((c, i) => `<div class="tile"><span class="n" style="color:#f0b9a3">0${i + 1}</span><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p></div>`).join('')}</div></div></section>`,
     sec(`<div class="two"><div><span class="eyebrow" data-reveal>${esc(s6.subtitle.toLowerCase().replace(/^./, (c) => c.toUpperCase()))}</span><h2 class="split" style="margin:18px 0 22px">${rich(D.headings['approach-orbit'].title)}</h2><p class="lead" data-reveal>${esc(s6.paragraph)} ${esc(s6.questionAnswer)}</p><div class="chips" style="margin-top:26px" data-reveal>${s6.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div><ul class="checks" style="margin-top:30px" data-stagger>${s6.orbitItems.map((o) => `<li><span><b style="color:var(--ink)">${esc(o.label)}.</b> ${esc(o.description)}</span></li>`).join('')}</ul></div><div class="orbit" data-orbit><div class="orbit__ring"></div><div class="orbit__core">${esc(s6.iterateText)}</div>${nodes}</div></div>`, 'section--paper'),
     sec(`${head(esc(s7.subtitle.toLowerCase().replace(/^./, (c) => c.toUpperCase())), rich(D.headings['approach-toolkit'].title), esc(s7.paragraph))}<div class="cards3" data-stagger>${s7.cards.map((c, i) => tile(esc(c.title), esc(c.text), '0' + (i + 1))).join('')}</div>
@@ -116,13 +123,30 @@ function engagements() {
 /* ---------------- Insights ---------------- */
 function insights() {
   const pg = D.pages.insights;
+  const t = D.pageText.insights;
+  const pubs = D.publications;
+  const order = ['Report', 'Journal article', 'Book chapter', 'Policy brief', 'Commentary'];
+  const kinds = order.filter((k) => pubs.some((p) => p.kind === k));
+  const plural = (k) => (k === 'Commentary' ? k : `${k}s`);
+  const personBySlug = Object.fromEntries(D.people.flatMap((g) => g.members).map((m) => [m.slug, m]));
+  const pubRow = (p) => `<li class="pub" data-kind="${esc(p.kind)}"><p class="pub__y">${p.year}<span>${esc(p.kind)}</span></p><div>
+      <h3>${p.href ? `<a href="${esc(p.href)}" target="_blank" rel="noopener noreferrer">${esc(p.title)}<span class="vh"> ${esc(t['publications-new-tab'])}</span></a>` : esc(p.title)}</h3>
+      <p class="pub__c">${esc(p.authors)}. ${esc(p.publisher)}.</p><p>${esc(p.summary)}</p>
+      ${(p.people || []).length ? `<p class="pub__p">${p.people.filter((s) => personBySlug[s]).map((s) => `<a href="/people#${s}">${esc(personBySlug[s].name)}</a>`).join('')}</p>` : ''}
+    </div></li>`;
+  const publications = pubs.length ? sec(`${sectionHead('insights-publications')}
+      ${kinds.length > 1 ? `<div class="pubf" role="group" aria-label="${esc(t['publications-filter'])}" data-pub-filter="#publications" hidden><button type="button" aria-pressed="true" data-kind="">${esc(t['publications-all'])}</button>${kinds.map((k) => `<button type="button" aria-pressed="false" data-kind="${esc(k)}">${esc(plural(k))}</button>`).join('')}</div>` : ''}
+      <ol class="pubs" id="publications" data-stagger>${pubs.map(pubRow).join('')}</ol>
+      <p class="small" style="margin-top:28px;max-width:70ch">${esc(t['publications-note'])}</p>`, 'section--paper', 'research') : '';
+  const jsonld = pubs.length ? [{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: pubs.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': p.kind === 'Commentary' ? 'Article' : 'ScholarlyArticle', name: p.title, datePublished: String(p.year), publisher: p.publisher, ...(p.href ? { url: p.href } : {}) } })) }] : [];
   const body = [
     phero({ crumbs: [breadcrumb('/insights')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'image', src: '/assets/img/co2.webp' } }),
     sec(`<div class="ins" data-stagger>${D.insights.map(insCard).join('')}</div>`),
+    publications,
     `<section class="section section--dark on-dark dark"><div class="container">${sectionHead('insights-field')}<div class="cards3" data-stagger>${D.fieldStories.map((story) => `<figure class="photo" style="aspect-ratio:4/5;border-radius:var(--r)"><video muted loop playsinline preload="none" poster="${story.poster}" data-lazyvideo><source data-src="${story.video}" type="${story.video.endsWith('.webm') ? 'video/webm' : 'video/mp4'}"></video><figcaption style="position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(0deg,rgba(14,12,11,.9),transparent)"><span class="eyebrow" style="font-size:.64rem">${esc(story.type)}</span><h3 style="margin-top:10px;color:#fff;font-size:1.3rem">${esc(story.title)}</h3></figcaption></figure>`).join('')}</div></div></section>`,
     cta('cta-insights'),
   ].join('\n');
-  return page({ title: pg.title, desc: pg.desc, path: '/insights', body });
+  return page({ title: pg.title, desc: pg.desc, path: '/insights', body, jsonld });
 }
 
 /* ---------------- People ---------------- */
@@ -131,11 +155,21 @@ function people() {
   const network = D.headings['people-network'];
   const ini = (n) => n.replace(/\b(Prof|Dr|Adj|Asst|Barr|Md|MD)\.?\s+/gi, '').split(/\s+/).filter(Boolean).map((w) => w[0]).slice(0, 2).join('').toUpperCase();
   const f = D.founder;
-  const groups = D.people.map((g) => `<div class="people-group"><h3 data-reveal>${g.group}</h3><div class="persons" data-stagger>${g.members.map((m) => `<article class="person"><div class="person__av" aria-hidden="true">${ini(m.name)}</div><h4>${esc(m.name)}</h4><span class="role">${esc(m.role)}</span><span class="focus">${esc(m.focus)}</span></article>`).join('')}</div></div>`).join('');
+  const t = D.pageText.people;
+  const avatar = (m) => (m.photo
+    ? `<div class="person__av person__av--img" aria-hidden="true"><img src="${m.photo}" width="480" height="480" alt="" loading="lazy" decoding="async"></div>`
+    : `<div class="person__av" aria-hidden="true">${ini(m.name)}</div>`);
+  const profile = (m) => ((m.bio || []).length || (m.education || []).length
+    ? `<details class="person__more"><summary>${esc(t['profile-open'])}</summary><div class="person__bio" data-profile-body>${(m.bio || []).map((b) => `<p>${esc(b)}</p>`).join('')}${m.focus ? `<h5>${esc(t['profile-practice'])}</h5><p>${esc(m.focus)}</p>` : ''}${(m.education || []).length ? `<h5>${esc(t['profile-education'])}</h5><ul>${m.education.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}</div></details>`
+    : '');
+  const card = (m) => `<article class="person" id="${m.slug}"${(m.bio || []).length || (m.education || []).length ? ' data-profile' : ''}>${avatar(m)}<h4>${esc(m.name)}</h4><span class="role">${esc(m.role)}</span>${m.affiliation ? `<span class="aff">${esc(m.affiliation)}</span>` : ''}${m.focus ? `<span class="focus">${esc(m.focus)}</span>` : ''}${profile(m)}</article>`;
+  const groups = D.people.map((g) => `<div class="people-group"><h3 data-reveal>${g.group}</h3><div class="persons" data-stagger>${g.members.map(card).join('')}</div></div>`).join('');
+  const net = `<canvas class="net" aria-hidden="true" data-net data-nodes="${esc(D.people.map((g) => g.group).join('|'))}"></canvas>`;
+  const dialog = `<dialog class="pdlg" data-profile-dialog aria-label="${esc(t['profile-open'])}"><button class="pdlg__x" type="button" data-profile-close aria-label="${esc(t['profile-close'])}"><span aria-hidden="true">×</span></button><div data-profile-content></div></dialog>`;
   const body = [
     phero({ crumbs: [breadcrumb('/people')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'image', src: '/assets/img/group-2.webp' } }),
-    `<section class="section section--paper"><div class="container founder"><div class="founder__img clip" data-clip><img src="${f.image}" width="900" height="969" alt="${esc(f.name)}" loading="lazy" data-parallax></div><div><span class="eyebrow" data-reveal>${esc(D.pageText.people['founder-eyebrow'])}</span><h2 class="split" style="margin-top:18px">${esc(f.name)}</h2><p class="founder__tag" data-reveal>${esc(f.role)} · ${plain(f.tag)}</p><div class="founder__bio" data-reveal>${f.bio.map((b) => `<p>${esc(b)}</p>`).join('')}</div><div class="chips" style="margin:24px 0" data-reveal>${f.expertise.map((x) => `<span class="chip">${plain(x)}</span>`).join('')}</div><blockquote data-reveal>${esc(f.quote)}</blockquote><div data-reveal>${btn(esc(D.pageText.people['cta-talk']), '/contact')}</div></div></div></section>`,
-    sec(`${sectionHead('people-network')}${groups}`),
+    `<section class="section section--paper"><div class="container founder"><div class="founder__img clip" data-clip data-drift><img src="${f.image}" width="900" height="969" alt="${esc(f.name)}" loading="lazy" data-parallax></div><div><span class="eyebrow" data-reveal>${esc(D.pageText.people['founder-eyebrow'])}</span><h2 class="split" style="margin-top:18px">${esc(f.name)}</h2><p class="founder__tag" data-reveal>${esc(f.role)} · ${plain(f.tag)}</p><div class="founder__bio" data-reveal>${f.bio.map((b) => `<p>${esc(b)}</p>`).join('')}</div><div class="chips" style="margin:24px 0" data-reveal>${f.expertise.map((x) => `<span class="chip">${plain(x)}</span>`).join('')}</div><blockquote data-reveal>${esc(f.quote)}</blockquote><div data-reveal>${btn(esc(D.pageText.people['cta-talk']), '/contact')}</div></div></div></section>`,
+    sec(`<div class="people-head">${sectionHead('people-network')}${net}</div>${groups}${dialog}`),
     cta('cta-people'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/people', body });

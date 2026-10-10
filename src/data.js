@@ -7,7 +7,7 @@ const live = (list) => list.filter((x) => !x.hidden);
 const hero = C.file('home/hero');
 const engagements = live(C.file('engagements').items);
 const insightContent = C.file('insights');
-const pageNames = ['home', 'about', 'approach', 'capabilities', 'sectors', 'engagements', 'insights', 'people', 'contact', 'notfound'];
+const pageNames = ['home', 'about', 'why', 'approach', 'capabilities', 'sectors', 'engagements', 'insights', 'people', 'contact', 'notfound'];
 const pageText = Object.fromEntries(pageNames.map((name) => [name, C.file(`page-text/${name}`)]));
 const headings = Object.fromEntries(Object.values(pageText).flatMap((page) => page.headings.map((item) => [item.slug, item])));
 const copy = Object.fromEntries(Object.entries(pageText).map(([name, page]) => [name, Object.fromEntries(page.copy.map((item) => [item.slug, item.text]))]));
@@ -29,12 +29,14 @@ module.exports = {
   engagements,
   insights: live(insightContent.items),
   fieldStories: insightContent.fieldStories,
+  publications: live(insightContent.publications || []),
   convening: C.file('home/convening'),
   partners: C.file('home/partners'),
   testimonials: live(C.file('home/testimonials').items),
   founder: C.file('founder'),
-  people: C.file('people').groups,
+  people: C.file('people').groups.map((group) => ({ ...group, members: live(group.members) })),
   about: C.file('about'),
+  why: C.file('why'),
   faq: live(C.file('home/faq').items),
   approach: {
     problem: C.file('approach/problem-first'),

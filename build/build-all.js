@@ -24,6 +24,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
   const D = require('../src/data');
   const home = require('../src/pages-home').home;
   const P = require('../src/pages-inner');
+  const { why } = require('../src/pages-why');
   const normalizeText = (value) => value.replace(/\r\n/g, '\n');
   const hash = (s) => crypto.createHash('md5').update(s).digest('hex').slice(0, 8);
   const read = (p) => normalizeText(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -37,14 +38,17 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
   // 1. assets: copy CSS + JS (strip comments/blank space for size)
   const css = read('src/css/site.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
   const js = read('src/js/site.js').replaceAll('__IP3_CONTACT_EMAIL__', JSON.stringify(cfg.email));
+  const whyJs = read('src/js/why.js');
   write('assets/css/site.css', css);
   write('assets/js/site.js', js);
-  const V = { __CSSV__: hash(css), __JSV__: hash(js) };
+  write('assets/js/why.js', whyJs);
+  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs) };
 
   // 2. pages
   const pages = [
     ['index.html', home()],
     ['about.html', P.about()],
+    ['why-ip3.html', why()],
     ['approach.html', P.approach()],
     ['capabilities.html', P.capabilities()],
     ['sectors.html', P.sectorsIndex()],
@@ -57,7 +61,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],
   ];
-  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__/g, (m) => V[m]));
+  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__/g, (m) => V[m]));
 
   // 3. sitemap, robots, manifest
   const urls = pages.map(([f]) => f).filter((f) => f !== '404.html').map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));

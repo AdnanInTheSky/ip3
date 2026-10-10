@@ -147,7 +147,7 @@ function breadcrumb(href) {
   return { label: item.label, href: item.href };
 }
 
-function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', jsonld = [], noindex = false, preload = '' }) {
+function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', jsonld = [], noindex = false, preload = '', scripts = '' }) {
   const url = cfg.url + (path === '/' ? '/' : path);
   const fullTitle = path === '/' ? title : `${title} | ${cfg.short}`;
   const analytics = cfg.analytics.enabled && cfg.analytics.webAnalyticsPath && cfg.analytics.speedInsightsPath
@@ -200,7 +200,7 @@ ${footer()}
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/lenis.min.js" defer></script>
 ${cfg.turnstileSiteKey ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>\n' : ''}${analytics}<script src="/assets/js/site.js?v=__JSV__" defer></script>
-</body>
+${scripts ? `${scripts}\n` : ''}</body>
 </html>
 `;
 }

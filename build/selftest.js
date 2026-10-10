@@ -55,6 +55,36 @@ test('negative content/build safeguards', async (t) => {
       reset(); const data = json('home/why-ip3.json'); data.items[0].href = '/capabilities#not-a-capability'; save('home/why-ip3.json', data);
       expectValidation(/no capability with slug "not-a-capability"/);
     });
+    await t.test('rejects a /why-ip3 system link to an unknown system', () => {
+      reset(); const data = json('why.json'); data.systems[0].relates.push('not-a-system'); save('why.json', data);
+      expectValidation(/"not-a-system" is not a system key in this list/);
+    });
+    await t.test('rejects a /why-ip3 system that relates to itself', () => {
+      reset(); const data = json('why.json'); data.systems[0].relates.push(data.systems[0].slug); save('why.json', data);
+      expectValidation(/cannot relate to itself/);
+    });
+    await t.test('rejects reordered /why-ip3 scenes', () => {
+      reset(); const data = json('why.json'); data.scenes.reverse(); save('why.json', data);
+      expectValidation(/scenes: must be exactly complexity, evidence, insight, policy, practice, impact, in that order/);
+    });
+    await t.test('rejects more systems than the 3D scene draws', () => {
+      reset(); const data = json('why.json');
+      for (let i = 0; i < 2; i++) data.systems.push({ ...data.systems[0], slug: `extra-${i}`, relates: [] });
+      save('why.json', data);
+      expectValidation(/the 3D scene draws at most six systems/);
+    });
+    await t.test('rejects a publication credit to an unknown person', () => {
+      reset(); const data = json('insights.json'); data.publications[0].people = ['not-a-person']; save('insights.json', data);
+      expectValidation(/"not-a-person" is not an existing person slug/);
+    });
+    await t.test('rejects a duplicate people profile anchor', () => {
+      reset(); const data = json('people.json'); data.groups[1].members[0].slug = data.groups[0].members[0].slug; save('people.json', data);
+      expectValidation(/is used by more than one person/);
+    });
+    await t.test('rejects an unknown publication type', () => {
+      reset(); const data = json('insights.json'); data.publications[0].kind = 'Blog'; save('insights.json', data);
+      expectValidation(/"Blog" is not one of Report, Journal article, Book chapter, Policy brief, Commentary/);
+    });
     await t.test('rejects script tags in editor copy', () => {
       reset(); const data = json('pages.json'); data.about.h1 = 'About <script>alert(1)<\/script>'; save('pages.json', data);
       expectValidation(/contains HTML other than <em>…<\/em>/);

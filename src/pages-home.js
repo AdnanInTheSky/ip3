@@ -84,6 +84,7 @@ function why() {
       <ul class="checks" data-stagger style="gap:0">
         ${D.whyIp3.map((w) => `<li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">${w.n}</b><h3 style="margin:8px 0 8px">${w.title}</h3><span style="font-weight:400;font-family:var(--f-body)">${w.text}</span><br><a class="link" style="margin-top:14px" href="${w.href}">${w.cta}${arrow}</a></li>`).join('')}
       </ul>
+      <div style="margin-top:34px" data-reveal>${btn(esc(D.pageText.home['cta-why-ip3']), '/why-ip3')}</div>
     </div>
   </div>
 </section>`;
@@ -221,7 +222,7 @@ function founder() {
   return `
 <section class="section section--paper" id="leadership">
   <div class="container founder">
-    <div class="founder__img clip" data-clip><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy" data-parallax></div>
+    <div class="founder__img clip" data-clip data-drift><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy" data-parallax></div>
     <div>
       <span class="eyebrow" data-reveal>${esc(D.pageText.home['leadership-eyebrow'])}</span>
       <h2 class="split" style="margin-top:18px">${f.name}</h2>

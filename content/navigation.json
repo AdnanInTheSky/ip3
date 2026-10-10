@@ -1,6 +1,7 @@
 {
   "primary": [
     { "label": "About", "href": "/about" },
+    { "label": "Why IP3", "href": "/why-ip3" },
     { "label": "Approach", "href": "/approach" },
     { "label": "Capabilities", "href": "/capabilities" },
     { "label": "Sectors", "href": "/sectors" },
@@ -11,6 +12,7 @@
   "breadcrumbs": [
     { "label": "Home", "href": "/" },
     { "label": "About", "href": "/about" },
+    { "label": "Why choose IP3", "href": "/why-ip3" },
     { "label": "Our approach", "href": "/approach" },
     { "label": "Capabilities", "href": "/capabilities" },
     { "label": "Sectors", "href": "/sectors" },
@@ -34,6 +36,7 @@
   "horizontalScrollLabel": "Scroll",
   "explore": [
     { "label": "About", "href": "/about" },
+    { "label": "Why choose IP3", "href": "/why-ip3" },
     { "label": "Our approach", "href": "/approach" },
     { "label": "Capabilities", "href": "/capabilities" },
     { "label": "Sectors", "href": "/sectors" },

@@ -1,0 +1,91 @@
+{
+  "headings": [
+    {
+      "slug": "why-capabilities",
+      "eyebrow": "Capabilities",
+      "title": "What clients hire IP3 <em>to deliver.</em>",
+      "lead": "Six kinds of help, each written as the problem a client brings to us."
+    },
+    {
+      "slug": "why-sectors",
+      "eyebrow": "Sectors",
+      "title": "Eight sectors that <em>depend on each other.</em>",
+      "lead": "A policy choice in one sector lands in several. Select a sector to see which others share the same capabilities and the questions we are asked about it."
+    },
+    {
+      "slug": "why-work",
+      "eyebrow": "Selected work",
+      "title": "Evidence for the World Bank, ADB, the EU and <em>government.</em>",
+      "lead": "Feasibility studies, policy analysis, surveys and evaluations. Each one is a short case story on the engagements page."
+    },
+    {
+      "slug": "why-method",
+      "eyebrow": "How an engagement runs",
+      "title": "Six movements, <em>one line.</em>",
+      "lead": "The full method, with case examples, lives on our approach page."
+    },
+    {
+      "slug": "cta-why",
+      "eyebrow": "Start a conversation",
+      "title": "Have a difficult policy or <em>development challenge?</em>",
+      "lead": "Let’s define the question, build the evidence, and identify a practical path forward."
+    }
+  ],
+  "copy": [
+    {
+      "slug": "hero-shortcut",
+      "label": "Hero shortcut line ({sectors} and {capabilities} become the live counts)",
+      "text": "Or go straight to our {sectors} sectors and {capabilities} capabilities."
+    },
+    {
+      "slug": "scroll-cue",
+      "label": "Scroll cue label",
+      "text": "Scroll"
+    },
+    {
+      "slug": "view-3d-on",
+      "label": "3D switch label while the 3D scene is on",
+      "text": "3D scene on"
+    },
+    {
+      "slug": "view-3d-off",
+      "label": "3D switch label while the 3D scene is off",
+      "text": "3D scene off"
+    },
+    {
+      "slug": "sector-shared",
+      "label": "Sector map: label before the linked sectors",
+      "text": "Shares capabilities with"
+    },
+    {
+      "slug": "sector-focus",
+      "label": "Sector map: label before the focus areas",
+      "text": "We are asked about"
+    },
+    {
+      "slug": "cta-sector-page",
+      "label": "Sector map: link to the sector page",
+      "text": "Open the sector"
+    },
+    {
+      "slug": "cta-all-capabilities",
+      "label": "Capabilities button",
+      "text": "All capabilities"
+    },
+    {
+      "slug": "cta-all-engagements",
+      "label": "Selected work button",
+      "text": "All engagements"
+    },
+    {
+      "slug": "cta-approach",
+      "label": "Method button",
+      "text": "Read our approach"
+    },
+    {
+      "slug": "terminal-live",
+      "label": "Terminal screen status label",
+      "text": "Live"
+    }
+  ]
+}

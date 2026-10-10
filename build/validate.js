@@ -11,21 +11,25 @@ const KB = 1024;
 const MB = 1024 * KB;
 const LIMITS = { image: { warn: 500 * KB, max: 2 * MB }, video: { warn: 8 * MB, max: 25 * MB } };
 const EXT = { image: ['.webp', '.jpg', '.jpeg', '.png'], video: ['.mp4', '.webm'] };
-const ROUTES = ['/', '/about', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/privacy', '/terms'];
+const ROUTES = ['/', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/privacy', '/terms'];
+// The 3D camera on /why-ip3 has one keyframe per scene, in this order.
+const WHY_SCENES = ['complexity', 'evidence', 'insight', 'policy', 'practice', 'impact'];
 const REQUIRED_HEADING_KEYS = [
   'home-why', 'home-sectors', 'home-engagements', 'home-insights', 'partners-clients', 'partners-funders',
   'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'about-network',
+  'why-capabilities', 'why-sectors', 'why-work', 'why-method', 'cta-why',
   'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes',
   'capabilities-start', 'capability-deliverables', 'capability-applied', 'sector-add-value', 'sector-capabilities',
-  'sector-related', 'insights-field', 'people-network', 'contact-visit', 'contact-ways', 'contact-faq', 'contact-form',
+  'sector-related', 'insights-field', 'insights-publications', 'people-network', 'contact-visit', 'contact-ways', 'contact-faq', 'contact-form',
   'cta-default', 'cta-about', 'cta-approach', 'cta-capabilities', 'cta-sectors', 'cta-sector',
   'cta-engagements', 'cta-insights', 'cta-people', 'not-found',
 ];
 const RICH_HEADING_KEYS = new Set([
   'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'cta-about',
+  'why-capabilities', 'why-sectors', 'why-work', 'why-method', 'cta-why',
   'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes', 'cta-approach',
   'capabilities-start', 'cta-capabilities', 'contact-ways', 'contact-faq', 'cta-engagements',
-  'home-why', 'home-sectors', 'home-engagements', 'home-insights', 'cta-default', 'insights-field',
+  'home-why', 'home-sectors', 'home-engagements', 'home-insights', 'cta-default', 'insights-field', 'insights-publications',
   'cta-insights', 'people-network', 'cta-people', 'sector-add-value', 'sector-capabilities',
   'sector-related', 'cta-sectors', 'cta-sector',
 ]);
@@ -164,7 +168,31 @@ function run({ quiet = false } = {}) {
   const engSlugs = slugsOf((data.engagements || {}).items);
   const sectorItems = ((data.sectors || {}).items || []);
   const secSlugs = slugsOf(sectorItems);
-  const sets = { capabilities: capSlugs, engagements: engSlugs, sectors: secSlugs };
+  const members = ((data.people || {}).groups || []).flatMap((group) => group.members || []);
+  const peopleSlugs = new Set();
+  where.file = 'content/people.json';
+  members.forEach((member) => {
+    if (peopleSlugs.has(member.slug)) err('groups', `profile anchor "${member.slug}" is used by more than one person`);
+    peopleSlugs.add(member.slug);
+  });
+  const sets = { capabilities: capSlugs, engagements: engSlugs, sectors: secSlugs, people: peopleSlugs };
+
+  // /why-ip3: the 3D scene has a camera keyframe per scene and draws a link per related system.
+  const why = data.why;
+  if (why) {
+    where.file = 'content/why.json';
+    const sceneSlugs = (why.scenes || []).map((scene) => scene.slug);
+    if (sceneSlugs.join() !== WHY_SCENES.join()) err('scenes', `must be exactly ${WHY_SCENES.join(', ')}, in that order (found ${sceneSlugs.join(', ') || 'none'})`);
+    const systems = why.systems || [];
+    if (systems.length > 6) err('systems', `the 3D scene draws at most six systems (found ${systems.length})`);
+    if ((why.evidence || []).length > 6) err('evidence', `the 3D stack draws at most six layers (found ${why.evidence.length})`);
+    const systemSlugs = new Set(systems.map((system) => system.slug));
+    systems.forEach((system, i) => (system.relates || []).forEach((rel, k) => {
+      if (rel === system.slug) err(`systems[${i + 1}].relates[${k + 1}]`, `"${rel}" cannot relate to itself`);
+      else if (!systemSlugs.has(rel)) err(`systems[${i + 1}].relates[${k + 1}]`, `"${rel}" is not a system key in this list`);
+    }));
+    if ((why.siteLabels || []).length > 4) err('siteLabels', `the 3D practice scene has four labelled buildings (found ${why.siteLabels.length})`);
+  }
   where.file = 'content/headings.json';
   const headingItems = schema.content.filter((entry) => entry.name.startsWith('page_text_')).flatMap((entry) => (data[entry.name] || {}).headings || []);
   const headingSlugs = new Set(headingItems.map((item) => item.slug));
@@ -182,7 +210,7 @@ function run({ quiet = false } = {}) {
       const ok = ROUTES.includes(route) || (route.startsWith('/sectors/') && secSlugs.has(route.slice(9)) && !sectorItems.find((sector) => sector.slug === route.slice(9)).hidden);
       if (!ok) err(r.p, `link ${r.value} does not match any page`);
       else if (hash && route === '/capabilities' && !capSlugs.has(hash)) err(r.p, `link ${r.value}: no capability with slug "${hash}"`);
-    } else if (!sets[r.kind].has(r.value)) err(r.p, `"${r.value}" is not an existing ${r.kind === 'capabilities' ? 'capability' : r.kind.replace(/s$/, '')} slug`);
+    } else if (!sets[r.kind].has(r.value)) err(r.p, `"${r.value}" is not an existing ${{ capabilities: 'capability', people: 'person' }[r.kind] || r.kind.replace(/s$/, '')} slug`);
   }
   sectorItems.forEach((s, i) => {
     where.file = `content/sectors.json → items[${i + 1}]`;

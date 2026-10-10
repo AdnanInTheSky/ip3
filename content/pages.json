@@ -9,6 +9,12 @@
     "h1": "A strategic policy & management solutions firm for a <em>sustainable future.</em>",
     "lead": "The Institute for Public Policy and Practice works at the intersection of policy research, strategic advisory, management solutions and implementation."
   },
+  "why": {
+    "title": "Why choose IP3",
+    "desc": "From polycrisis to polysolution: how IP3 connects systems, evidence, policy and practice, shown as a scroll-driven 3D journey with capabilities, sectors and work.",
+    "h1": "From polycrisis to <em>polysolution.</em>",
+    "lead": "IP3 turns complex development challenges into evidence, policy, and practical action."
+  },
   "approach": {
     "title": "Our Approach — From Policy to Implementation",
     "desc": "IP3’s pathway from evidence to delivery: sense and diagnose, build intelligence, co-design and test, mobilise, implement and transfer, learn and scale.",
