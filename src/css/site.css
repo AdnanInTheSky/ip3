@@ -271,12 +271,28 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .conv__item.is-active p,.conv__item:hover p{max-height:90px;opacity:1}
 
 /* ---------- partners ---------- */
-.partners{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px)}
-.partners h3{font:600 .72rem var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:22px}
-.names{display:flex;flex-wrap:wrap;gap:12px 26px}
-.names span{font-family:var(--f-display);font-size:clamp(1.3rem,2.2vw,1.9rem);line-height:1.1;letter-spacing:-.01em;color:var(--ink);padding-right:26px;position:relative}
-.names span::after{content:"";position:absolute;right:0;top:50%;width:5px;height:5px;border-radius:50%;background:var(--leaf);transform:translateY(-50%)}
-.names span:last-child::after{display:none}
+.partners{display:flex;flex-direction:column;gap:clamp(34px,5vw,64px)}
+.marq__h{display:flex;align-items:center;gap:18px;font:600 .72rem var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:clamp(14px,2vw,24px)}
+.marq__h::after{content:"";flex:1;height:1px;background:var(--line)}
+.marq__win{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.marq__track{display:flex;width:max-content;animation:marq var(--dur,40s) linear infinite}
+.marq--rev .marq__track{animation-direction:reverse}
+.marq__win:hover .marq__track{animation-play-state:paused}
+.marq__set{display:flex;align-items:center}
+.marq__set li{display:flex;align-items:center;gap:clamp(22px,3vw,44px);padding-right:clamp(22px,3vw,44px);font-family:var(--f-display);font-weight:300;font-size:clamp(2rem,4.6vw,4.4rem);line-height:1.15;letter-spacing:-.03em;white-space:nowrap;color:var(--ink);font-variation-settings:'opsz' 144,'SOFT' 0,'WONK' 1;transition:color .4s}
+.marq__set li.i{font-style:italic;color:var(--rust-600)}
+.marq__set li::after{content:"";width:9px;height:9px;border-radius:50%;background:var(--leaf);flex:none}
+.marq__set li:nth-child(3n+2)::after{background:var(--rust-500)}
+.marq__set li:nth-child(3n)::after{background:var(--green)}
+.marq__win:hover li{color:var(--muted)}
+.marq__win:hover li:hover{color:var(--ink)}
+@keyframes marq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .marq__win{-webkit-mask-image:none;mask-image:none}
+  .marq__track{animation:none;width:auto;padding-inline:var(--gutter)}
+  .marq__set{flex-wrap:wrap;row-gap:6px}
+  .marq__set[aria-hidden]{display:none}
+}
 
 /* ---------- testimonials ---------- */
 .quotes{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
@@ -342,7 +358,7 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .foot address{font-style:normal;line-height:1.75}
 .foot__bar{margin-top:clamp(40px,6vw,80px);padding-top:26px;border-top:1px solid rgba(255,255,255,.12);display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;font:500 .8rem var(--f-ui);color:rgba(255,255,255,.5)}
 .foot__bar nav{display:flex;gap:22px}
-.foot__big{font-family:var(--f-display);font-size:clamp(3rem,13vw,13rem);line-height:.9;letter-spacing:-.04em;color:rgba(255,255,255,.05);margin-top:40px;overflow:hidden;white-space:nowrap;font-weight:300;user-select:none}
+.foot__big{font-family:var(--f-display);font-size:clamp(3rem,13vw,13rem);line-height:1;padding-bottom:.06em;letter-spacing:-.04em;margin-top:40px;overflow:hidden;white-space:nowrap;font-weight:300;user-select:none;font-variation-settings:'opsz' 144,'SOFT' 0,'WONK' 1;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.13);background:linear-gradient(100deg,#f0a98f 0%,var(--rust-500) 42%,var(--leaf) 100%) 0 0/var(--fill,100%) 100% no-repeat;-webkit-background-clip:text;background-clip:text}
 
 /* ---------- inner page hero ---------- */
 .phero{position:relative;color:#fff;background:var(--night);overflow:hidden;isolation:isolate;padding:clamp(150px,20vw,240px) 0 clamp(70px,9vw,120px);min-height:min(78svh,720px);display:flex;align-items:flex-end}
@@ -932,3 +948,30 @@ html:not([data-view="3d"]) .wj-stack{display:block}
   .chart .fade-in{opacity:1!important}
   .wj-cue i::after,.term__bar b::before{animation:none}
 }
+
+/* ---------- art direction: finish, contour motif, page transitions ---------- */
+/* typographic finish */
+p,li,dd,figcaption,.lead{text-wrap:pretty}
+blockquote,.quote blockquote{hanging-punctuation:first allow-end}
+.stat b{font-variant-numeric:lining-nums tabular-nums}
+/* a fine film grain over the whole site, so flat fills read as paper and print rather than screen */
+body::after{content:"";position:fixed;inset:0;z-index:400;pointer-events:none;opacity:.055;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media print{body::after{display:none}}
+/* the /why-ip3 contour terrain, carried onto the home hero and the stats band as the brand's recurring motif */
+.hero__contours,.stats-band::before{position:absolute;pointer-events:none;background:url(/assets/img/why-contours.svg) center/cover no-repeat;mix-blend-mode:screen}
+.hero__contours{z-index:1;inset:-8%;opacity:.5;-webkit-mask-image:radial-gradient(85% 95% at 28% 42%,#000 25%,transparent 78%);mask-image:radial-gradient(85% 95% at 28% 42%,#000 25%,transparent 78%);animation:contour-drift 48s ease-in-out infinite alternate}
+@keyframes contour-drift{from{transform:translate3d(0,0,0) scale(1) rotate(0)}to{transform:translate3d(-3%,2%,0) scale(1.07) rotate(-1.5deg)}}
+.stats-band{position:relative;overflow:hidden;isolation:isolate}
+.stats-band::before{content:"";inset:0;z-index:-1;opacity:.14;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}
+@media (prefers-reduced-motion:reduce){.hero__contours{animation:none}}
+/* page-to-page: the old page lifts away and the new one rises behind a night curtain (native cross-document View Transitions; browsers without them keep the scripted fade) */
+@view-transition{navigation:auto}
+::view-transition{background:var(--night)}
+.head{view-transition-name:site-head}
+::view-transition-group(site-head){animation-duration:.5s}
+::view-transition-old(root){animation:vt-out .5s cubic-bezier(.7,0,.84,0) both}
+::view-transition-new(root){animation:vt-in .95s cubic-bezier(.16,1,.3,1) .12s both}
+@keyframes vt-out{to{opacity:.25;transform:translateY(-4%) scale(.97)}}
+@keyframes vt-in{from{clip-path:inset(100% 0 0 0);transform:translateY(8%)}to{clip-path:inset(0 0 0 0);transform:none}}
+@supports (view-transition-name:none){.js body{animation:none}}
+@media (prefers-reduced-motion:reduce){@view-transition{navigation:none}}

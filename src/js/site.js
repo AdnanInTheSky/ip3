@@ -231,7 +231,8 @@
 
   /* ---------- page transition ---------- */
   function initTransitions() {
-    if (reduce) return;
+    // browsers with cross-document View Transitions animate navigation in CSS (@view-transition)
+    if (reduce || 'onpagereveal' in window) return;
     d.addEventListener('click', function (e) {
       var a = e.target.closest('a'); if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || a.hasAttribute('download')) return;
       var u; try { u = new URL(a.href, location.href); } catch (x) { return; }
@@ -289,6 +290,11 @@
       ScrollTrigger.create({ trigger: el, start: 'top 92%', once: true, onEnter: function () {
         gsap.to(o, { v: end, duration: 2.2, ease: 'power2.out', onUpdate: function () { el.textContent = Math.round(o.v); } });
       } });
+    });
+
+    // footer wordmark: the outlined letters fill with the brand gradient as the page comes to rest
+    $$('.foot__big').forEach(function (el) {
+      gsap.fromTo(el, { '--fill': '0%' }, { '--fill': '100%', ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom bottom', scrub: 0.6 } });
     });
 
     var mm = gsap.matchMedia();

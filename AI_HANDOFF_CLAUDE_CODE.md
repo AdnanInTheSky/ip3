@@ -81,3 +81,19 @@ No external credentials are stored in the repository. No production form submiss
   3. Confirm that the Policy Intelligence Terminal claims, its screenshots and the brand film are approved for the public site.
   4. The ip3website summary gives the founder 20 years of experience; `founder.json` says 17 and was left unchanged.
   5. The eight-item header nav fits at 1440 px; check it on the owner's screens.
+
+## Art-direction pass (2026-10-10, Claude Code) — uncommitted on `motion-pages`
+
+- **Site-wide finish (`src/css/site.css`):** a fine film-grain layer (`body::after`, inline SVG noise, hidden in print); `text-wrap: pretty` on body copy; hanging punctuation on quotes; tabular figures on stats.
+- **Contour motif:** the `/why-ip3` contour terrain (`assets/img/why-contours.svg`, no new asset) now drifts behind the home hero headline (`.hero__contours`) and sits faintly behind the stats band (`.stats-band`). It is static under reduced motion.
+- **Partners (`src/pages-home.js` → `proof()`):** the two name lists are now full-width typographic marquees running in opposite directions, alternating roman and italic. They pause on hover, the duplicate copy is `aria-hidden`, and under reduced motion they become a static wrapped list. They use the same `partners` content, with no new facts.
+- **Footer wordmark:** the outlined "IP3 Consulting" fills with the rust-to-leaf gradient as the page reaches the end (GSAP scrub of `--fill` in `src/js/site.js`). Without JS it is fully filled.
+- **Page transitions:** native cross-document View Transitions (`@view-transition`). The old page lifts away and the new one rises behind a night curtain, and the header keeps its own transition group. `initTransitions()` skips the scripted fade where `onpagereveal` is supported, and reduced motion turns it off.
+- **Validation:**
+  - `npm test` passed 50/50.
+  - `npm run check` was OK, with the same 6 SEO hints.
+  - `npm run verify` checked 21 pages.
+  - `npm run audit` found every field used.
+  - Browser checks at 1440 and 375 px showed no horizontal overflow.
+- **Not verified:** the transition animation could not be seen in the hidden in-app pane. Chrome skipped it there and logged "Transition was skipped", so it needs a check in a visible Chrome or Safari 18.2+. Also not run: Firefox (keeps the scripted fade-out and loses the fade-in), Lighthouse, real devices.
+- **Merge note:** these edits do not touch `dev-server.js` or `src/layout.js`, so the PR #2 conflict resolution above is unchanged.
