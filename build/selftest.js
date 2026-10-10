@@ -1,6 +1,7 @@
 // Dependency-free negative regression tests. Every mutation is made to a temporary content copy.
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const crypto = require('node:crypto');
 const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
@@ -132,4 +133,58 @@ test('negative content/build safeguards', async (t) => {
   } finally {
     fs.rmSync(temp, { recursive: true, force: true });
   }
+});
+
+test('LF and CRLF source checkouts produce identical dist files apart from build time', (t) => {
+  const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-line-ending-selftest-'));
+  t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
+  const roots = { lf: path.join(tempRoot, 'lf'), crlf: path.join(tempRoot, 'crlf') };
+  for (const root of Object.values(roots)) {
+    fs.mkdirSync(root, { recursive: true });
+    for (const rel of ['build', 'cms', 'src', 'content', 'assets']) {
+      fs.cpSync(path.join(REPO, rel), path.join(root, rel), { recursive: true });
+    }
+  }
+
+  const sourceFiles = [];
+  (function scan(dir) {
+    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+      const file = path.join(dir, entry.name);
+      if (entry.isDirectory()) scan(file);
+      else sourceFiles.push(file);
+    }
+  })(path.join(roots.lf, 'src'));
+  for (const file of sourceFiles) {
+    const contents = fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n');
+    fs.writeFileSync(file, contents);
+    fs.writeFileSync(path.join(roots.crlf, path.relative(roots.lf, file)), contents.replace(/\n/g, '\r\n'));
+  }
+
+  for (const root of Object.values(roots)) {
+    const result = spawnSync(process.execPath, ['build/build-all.js'], { cwd: root, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr || result.stdout || 'build failed');
+  }
+
+  function distHashes(root) {
+    const result = {};
+    const out = path.join(root, 'dist');
+    (function scan(dir) {
+      for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+        const file = path.join(dir, entry.name);
+        if (entry.isDirectory()) scan(file);
+        else {
+          const rel = path.relative(out, file).split(path.sep).join('/');
+          const bytes = fs.readFileSync(file);
+          if (rel === 'build.json') {
+            const stamp = JSON.parse(bytes.toString('utf8'));
+            delete stamp.builtAt;
+            result[rel] = crypto.createHash('sha256').update(JSON.stringify(stamp)).digest('hex');
+          } else result[rel] = crypto.createHash('sha256').update(bytes).digest('hex');
+        }
+      }
+    })(out);
+    return result;
+  }
+
+  assert.deepEqual(distHashes(roots.crlf), distHashes(roots.lf));
 });

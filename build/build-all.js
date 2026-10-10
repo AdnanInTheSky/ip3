@@ -25,9 +25,10 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
   const D = require('../src/data');
   const home = require('../src/pages-home').home;
   const P = require('../src/pages-inner');
+  const normalizeText = (value) => value.replace(/\r\n/g, '\n');
   const hash = (s) => crypto.createHash('md5').update(s).digest('hex').slice(0, 8);
-  const read = (p) => fs.readFileSync(path.join(root, p), 'utf8');
-  const write = (p, c) => { const f = path.join(OUT, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, c); };
+  const read = (p) => normalizeText(fs.readFileSync(path.join(root, p), 'utf8'));
+  const write = (p, c) => { const f = path.join(OUT, p); fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, typeof c === 'string' ? normalizeText(c) : c); };
 
   // dist is generated output and can always be recreated from source.
   fs.rmSync(OUT, { recursive: true, force: true });
