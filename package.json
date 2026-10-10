@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "IP3 Consulting website with markdown content management and JSON build system",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js",
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js",
     "lint": "node -e \"console.log('Lint passed')\"",
     "build": "node build/build-all.js",
     "build:home": "node build/home/build-all.js",
@@ -36,7 +36,7 @@
     "build:approch:section7": "node build/approch/build-section7.js",
     "build:approch:section8": "node build/approch/build-section8.js"
   },
-  "dependencies": {
+  "devDependencies": {
     "express": "^5.3.0"
   }
 }
