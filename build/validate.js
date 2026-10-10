@@ -48,6 +48,7 @@ function run({ quiet = false } = {}) {
     if (!fs.existsSync(f)) return err(p, `file not found: ${v} (upload it in the Media tab, or pick another file)`);
     const size = fs.statSync(f).size;
     if (size > LIMITS[kind].max) err(p, `${v} is ${kb(size)} — the limit is ${kb(LIMITS[kind].max)}. Compress it (WebP for photos, H.264 MP4 for video) and upload again.`);
+    else if (kind === 'video' && ext === '.webm' && size > LIMITS.video.warn) err(p, `${v} is ${kb(size)} — WebM cannot be re-encoded as H.264 without changing its container; upload an MP4 under ${kb(LIMITS.video.warn)} or convert it before upload.`);
     else if (size > LIMITS[kind].warn) warn(p, `${v} is ${kb(size)} — large for the web; consider compressing it`);
   };
 

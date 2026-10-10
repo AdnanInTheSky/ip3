@@ -115,6 +115,12 @@ test('negative content/build safeguards', async (t) => {
       fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, Buffer.alloc(2 * 1024 * 1024 + 1));
       expectValidation(/selftest-oversized\.webp is .*limit is 2(?:\.0)? MB/);
     });
+    await t.test('rejects WebM videos above the optimizer target', () => {
+      reset(); const data = json('sectors.json'); data.items[0].video = '/assets/video/selftest-large.webm'; save('sectors.json', data);
+      const file = path.join(root, 'assets', 'video', 'selftest-large.webm');
+      fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, Buffer.alloc(8 * 1024 * 1024 + 1));
+      expectValidation(/WebM cannot be re-encoded as H\.264/);
+    });
     await t.test('leaves the previous HTML untouched when build validation fails', async () => {
       reset(); const output = path.join(root, 'dist'); const html = path.join(output, 'index.html');
       fs.mkdirSync(output, { recursive: true }); fs.writeFileSync(html, '<h1>last good build</h1>');
