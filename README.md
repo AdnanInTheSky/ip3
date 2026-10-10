@@ -1,6 +1,6 @@
 # IP3 Consulting website
 
-Static site for IP3 Consulting Limited (Institute for Public Policy & Practice). Node renders the CMS JSON content into HTML in `dist/`; Vercel serves that directory. The frontend uses vendored GSAP and Lenis browser libraries.
+Static site for IP3 Consulting Limited (Institute for Public Policy & Practice). Node renders the CMS JSON content into HTML in `dist/`; Vercel serves that directory. The frontend uses vendored GSAP and Lenis browser libraries; /why-ip3 also loads vendored three.js (`assets/vendor/three.module.min.js`, MIT, see `three.LICENSE.txt`).
 
 ## Run locally
 
@@ -25,8 +25,9 @@ npm run verify   # builds dist/ and checks links, anchors, metadata and sitemap
 | `.pages.yml` | Generated Pages CMS configuration; change `cms/schema.js` and run `npm run cms` instead |
 | `src/data.js`, `src/content.js` | Load CMS content for the templates |
 | `src/config.js` | Brand constants and build-time site settings |
-| `src/layout.js`, `src/pages-home.js`, `src/pages-inner.js` | Shared shell and page templates |
+| `src/layout.js`, `src/pages-home.js`, `src/pages-inner.js`, `src/pages-why.js` | Shared shell and page templates |
 | `src/css/site.css`, `src/js/site.js` | Site styling and browser interactions |
+| `src/js/why.js` | The /why-ip3 3D journey (vendored three.js r160, loaded only on that page; the page reads fully without WebGL) |
 | `assets/img`, `assets/video`, `assets/logo`, `assets/vendor` | Source media, logos and vendored browser libraries |
 | `api/contact.js` | Vercel contact function; email delivery stays unavailable until owner setup is complete |
 | `build/`, `.github/` | Site build, validation, publishing checks and CI-only media optimization |
