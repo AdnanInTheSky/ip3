@@ -6,7 +6,7 @@
 2. Open `mdsyfulhoque-afk/ip3-bd.org` and choose the `content` branch. The live branch selector must be verified by an owner before editors start; if you cannot select `content` or the forms do not load, stop and contact the owner.
 3. Edit content in the numbered CMS sections and save. Pages CMS records the save as a Git commit on `content`; that commit does not publish to the production site.
 4. Wait for the **Content check** run. A green check lets the trusted workflow open or update the review PR. A red X means the proposed edit failed validation or build; open the workflow run and fix the reported content problem before saving again.
-5. Review the Vercel Preview linked from the PR. Ask an authorized reviewer to merge the PR into `main` after reviewing the preview and green check. The production site updates from `main`.
+5. Review the Vercel Preview linked from the PR. Ask an authorized reviewer to merge the PR into `main` after reviewing the preview and green check. Choose **Create a merge commit**; do not squash or rebase. The automatic sync uses commit ancestry to keep `content` aligned with `main`, while squash/rebase creates replacement commits and leaves the branches diverged. The production site updates from `main`.
 
 ## Editing common content
 
