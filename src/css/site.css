@@ -68,7 +68,7 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .head.is-hidden{transform:translateY(-130%)}
 .head__bar{pointer-events:auto;margin-inline:auto;width:min(1280px,calc(100% - var(--gutter)*1.2));height:var(--head-h);padding:0 10px 0 16px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-radius:999px;background:rgba(255,255,255,.84);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.7);box-shadow:0 10px 40px -18px rgba(18,16,15,.45);transition:background .4s}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand img{width:42px;height:42px;object-fit:contain;flex:none}
+.brand__logo{display:block;height:48px;width:auto;flex:none}
 .brand__t{display:flex;flex-direction:column;line-height:1.1;min-width:0}
 .brand__n{font-family:var(--f-display);font-weight:500;font-size:1.22rem;letter-spacing:-.01em;white-space:nowrap}
 .brand__n b{font-weight:600;color:var(--rust)}
@@ -348,9 +348,8 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .foot{background:var(--night-2);color:rgba(255,255,255,.72);padding:clamp(60px,8vw,110px) 0 30px;font-size:.96rem}
 .foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:clamp(24px,4vw,64px)}
 .foot .brand__n{color:#fff}.foot .brand__d{color:rgba(255,255,255,.55)}
-.foot__logo{display:inline-flex;align-items:center;gap:14px;margin-bottom:20px}
-.foot__logo i{display:grid;place-items:center;width:58px;height:58px;border-radius:16px;background:var(--cream)}
-.foot__logo i img{width:44px;height:44px;object-fit:contain}
+.foot__logo{display:inline-block;margin-bottom:22px}
+.foot__logo .brand__logo{height:64px}
 .foot h4{font:600 .7rem var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:#f0b9a3;margin:0 0 20px}
 .foot li{margin-bottom:10px}
 .foot a{transition:color .2s}
@@ -569,7 +568,7 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
   .acc details p{padding-right:0}
   .head{top:10px}
   .head__bar{height:58px;padding-left:12px}
-  .brand img{width:36px;height:36px}
+  .brand__logo{height:40px}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}

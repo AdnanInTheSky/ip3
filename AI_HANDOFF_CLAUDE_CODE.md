@@ -97,3 +97,12 @@ No external credentials are stored in the repository. No production form submiss
   - Browser checks at 1440 and 375 px showed no horizontal overflow.
 - **Not verified:** the transition animation could not be seen in the hidden in-app pane. Chrome skipped it there and logged "Transition was skipped", so it needs a check in a visible Chrome or Safari 18.2+. Also not run: Firefox (keeps the scripted fade-out and loses the fade-in), Lighthouse, real devices.
 - **Merge note:** these edits do not touch `dev-server.js` or `src/layout.js`, so the PR #2 conflict resolution above is unchanged.
+
+## Logo replacement (2026-10-11, Claude Code, worktree ip3-bd.org-brand-claude, branch brand-identity-claude, from main 8591e42)
+Goal: the owner chose their original logo (black P/words, #054d3b CONSULTING bar) as the site logo, as crisp vector, lettering and layout unchanged. Not committed, not pushed.
+- New: `src/brand.js` (`brandLogo()`), `assets/logo/ip3-logo-primary.svg`, `ip3-logo-reverse.svg`, `ip3-favicon.svg`; replaced favicon-32/48, apple-touch-icon, icon-192/512 PNGs (same names).
+- Edited: `src/layout.js` (header + footer use `brandLogo()`, svg favicon link), `src/css/site.css` (`.brand__logo` 54px, 42px under 1040px; `.foot__logo` 72px).
+- Unused now but left in place: `assets/logo/ip3-mark.png|webp`, `ip3-lockup.png`; `.brand__t/.brand__n/.brand__d` CSS.
+- Sources, colourways, final sheets, guidelines: `docs/brand-claude/` (not deployed). Read `GUIDELINES.md` first.
+- Checked: `npm test` 50 pass; `npm run check` OK; `npm run verify` OK (21 pages); header/footer/mobile viewed in Chrome. Not checked: Safari, real devices, Vercel preview.
+- Tight nav logo (follow-up): `assets/logo/ip3-logo-nav(.svg|@1x/2x/3x.png)` + `-reverse` variants, viewBox `86.87 126.81 358.09 166.38` (zero padding, PNG margins 0 px). `brandLogo({png:true})` emits PNG with srcset. CSS heights: header 48px, ≤1040px 40px, footer 64px. Old padded `ip3-logo-primary/reverse.svg` removed from assets (kept in docs/brand-claude/final). Tests 50/50, verify OK.

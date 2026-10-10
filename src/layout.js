@@ -1,5 +1,6 @@
 const cfg = require('./config');
 const D = require('./data');
+const { brandLogo } = require('./brand');
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const plain = (s) => esc(s).replace(/&amp;/g, '&');
@@ -31,8 +32,7 @@ function header(path) {
 <header class="head" data-head>
   <div class="head__bar">
     <a class="brand" href="${esc(nav.homeHref)}" aria-label="${cfg.name} — home">
-      <img src="/assets/logo/ip3-mark.png" width="42" height="42" alt="" decoding="async">
-      <span class="brand__t"><span class="brand__n">IP3 <b>Consulting</b></span><span class="brand__d">${cfg.descriptor}</span></span>
+      ${brandLogo()}
     </a>
     <nav class="nav" aria-label="Primary">${links}</nav>
     <div class="head__cta">
@@ -56,8 +56,7 @@ function footer() {
     <div class="foot__grid">
       <div>
         <a class="foot__logo" href="${esc(nav.homeHref)}" aria-label="${cfg.name} — home">
-          <i><img src="/assets/logo/ip3-mark.png" width="44" height="44" alt="" loading="lazy"></i>
-          <span class="brand__t"><span class="brand__n">IP3 <b style="color:#f0a98f">Consulting</b></span><span class="brand__d">${cfg.descriptor}</span></span>
+          ${brandLogo({ reverse: true, lazy: true })}
         </a>
         <p style="max-width:34ch">${esc(nav.footerDescription)}</p>
       </div>
@@ -177,6 +176,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" cont
 <meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}"><meta property="og:image" content="${cfg.url}${ogImage}">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/assets/logo/ip3-favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/logo/favicon-48.png">
 <link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
