@@ -28,7 +28,7 @@ function validBody(overrides = {}) {
   return {
     name: 'Amina Rahman', email: 'amina@example.org', organization: 'Example Org',
     engagement: 'Diagnostic', focus: 'Public systems', message: 'Please contact me about a policy review.',
-    website: '', startedAt: Date.now() - 4000, turnstileToken: '', ...overrides,
+    website: '', startedAt: Date.now() - 4000, turnstileToken: 'test-turnstile-token', ...overrides,
   };
 }
 
@@ -36,8 +36,9 @@ function setEnv(t, values) {
   const prior = {};
   for (const key of ['RESEND_API_KEY', 'CONTACT_TO', 'CONTACT_FROM', 'TURNSTILE_SECRET']) {
     prior[key] = process.env[key];
-    if (values[key] === undefined) delete process.env[key];
-    else process.env[key] = values[key];
+    const value = values[key] === undefined && key === 'TURNSTILE_SECRET' ? 'test-turnstile-secret' : values[key];
+    if (value === undefined) delete process.env[key];
+    else process.env[key] = value;
   }
   t.after(() => {
     for (const [key, value] of Object.entries(prior)) value === undefined ? delete process.env[key] : process.env[key] = value;
@@ -67,10 +68,26 @@ test('silently accepts a filled honeypot without contacting providers', async (t
   assert.equal(calls, 0);
 });
 
-test('rejects a form submitted before the minimum fill time', async (t) => {
+test('accepts client clocks up to five minutes ahead and rejects larger future skew', async (t) => {
   setEnv(t, { RESEND_API_KEY: 'test-key', CONTACT_TO: 'info@example.org', CONTACT_FROM: 'web@example.org' });
-  const result = await call(request(validBody({ startedAt: Date.now() - 100 })));
-  assert.equal(result.statusCode, 400);
+  t.mock.method(global, 'fetch', async (url) => String(url).includes('siteverify')
+    ? new Response('{"success":true,"hostname":"ip3-bd.org"}', { status: 200 })
+    : new Response('{"id":"mock-id"}', { status: 200 }));
+  const withinSkew = await call(request(validBody({ startedAt: Date.now() + 4 * 60 * 1000 })));
+  assert.equal(withinSkew.statusCode, 200);
+  const beyondSkew = await call(request(validBody({ startedAt: Date.now() + 6 * 60 * 1000 })));
+  assert.equal(beyondSkew.statusCode, 400);
+});
+
+test('accepts recent forms and rejects forms older than 24 hours using server time', async (t) => {
+  setEnv(t, { RESEND_API_KEY: 'test-key', CONTACT_TO: 'info@example.org', CONTACT_FROM: 'web@example.org' });
+  t.mock.method(global, 'fetch', async (url) => String(url).includes('siteverify')
+    ? new Response('{"success":true,"hostname":"ip3-bd.org"}', { status: 200 })
+    : new Response('{"id":"mock-id"}', { status: 200 }));
+  const recent = await call(request(validBody({ startedAt: Date.now() - 23 * 60 * 60 * 1000 })));
+  assert.equal(recent.statusCode, 200);
+  const expired = await call(request(validBody({ startedAt: Date.now() - (24 * 60 * 60 * 1000 + 60 * 1000) })));
+  assert.equal(expired.statusCode, 400);
 });
 
 test('validates fields and enforces the request-size limit', async (t) => {
@@ -86,6 +103,7 @@ test('sends escaped HTML and plain text through Resend with a safe reply-to', as
   let requestBody;
   let requestHeaders;
   t.mock.method(global, 'fetch', async (url, options) => {
+    if (String(url).includes('siteverify')) return new Response('{"success":true,"hostname":"ip3-bd.org"}', { status: 200 });
     assert.equal(url, 'https://api.resend.com/emails');
     requestHeaders = options.headers;
     requestBody = JSON.parse(options.body);
@@ -116,6 +134,29 @@ test('verifies Turnstile server-side when a secret is configured', async (t) => 
   assert.match(String(calls[0].options.body), /response=mock-token/);
 });
 
+test('fails closed when Turnstile is not configured', async (t) => {
+  setEnv(t, { RESEND_API_KEY: 'test-key', CONTACT_TO: 'info@example.org', CONTACT_FROM: 'web@example.org', TURNSTILE_SECRET: '' });
+  let calls = 0;
+  t.mock.method(global, 'fetch', async () => { calls += 1; return new Response('{}', { status: 200 }); });
+  const result = await call(request(validBody()));
+  assert.equal(result.statusCode, 503);
+  assert.equal(calls, 0);
+});
+
+test('accepts a Turnstile token for the exact Vercel preview hostname', async (t) => {
+  const host = 'ip3-bd-org-git-content-mdsyfulhoque-afk.vercel.app';
+  setEnv(t, { RESEND_API_KEY: 'test-key', CONTACT_TO: 'info@example.org', CONTACT_FROM: 'web@example.org', TURNSTILE_SECRET: 'turnstile-secret' });
+  const calls = [];
+  t.mock.method(global, 'fetch', async (url) => {
+    calls.push(url);
+    if (String(url).includes('siteverify')) return new Response(JSON.stringify({ success: true, hostname: host }), { status: 200 });
+    return new Response('{"id":"mock-id"}', { status: 200 });
+  });
+  const result = await call(request(validBody({ turnstileToken: 'mock-token' }), { host, origin: `https://${host}` }));
+  assert.equal(result.statusCode, 200);
+  assert.equal(calls.length, 2);
+});
+
 test('rejects a Turnstile verdict for a different hostname before sending mail', async (t) => {
   setEnv(t, { RESEND_API_KEY: 'test-key', CONTACT_TO: 'info@example.org', CONTACT_FROM: 'web@example.org', TURNSTILE_SECRET: 'turnstile-secret' });
   let calls = 0;
@@ -130,7 +171,9 @@ test('rejects a Turnstile verdict for a different hostname before sending mail',
 
 test('returns only a generic error when Resend rejects the request', async (t) => {
   setEnv(t, { RESEND_API_KEY: 'test-key', CONTACT_TO: 'info@example.org', CONTACT_FROM: 'web@example.org' });
-  t.mock.method(global, 'fetch', async () => new Response('{"message":"sensitive provider details"}', { status: 500 }));
+  t.mock.method(global, 'fetch', async (url) => String(url).includes('siteverify')
+    ? new Response('{"success":true,"hostname":"ip3-bd.org"}', { status: 200 })
+    : new Response('{"message":"sensitive provider details"}', { status: 500 }));
   const result = await call(request(validBody()));
   assert.equal(result.statusCode, 502);
   assert.deepEqual(result.payload, { message: 'We could not send your message. Please use the email fallback.' });

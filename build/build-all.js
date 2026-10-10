@@ -18,6 +18,9 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
 
   const OUT = path.join(root, 'dist');
   const cfg = require('../src/config');
+  if (cfg.contactApiEnabled && !cfg.turnstileSiteKey) {
+    throw new Error('CONTACT_API_ENABLED=1 requires PUBLIC_TURNSTILE_SITE_KEY so the protected form can render.');
+  }
   if (process.env.VERCEL_ENV === 'production' && process.env.ENABLE_ANALYTICS === '1' &&
       (!cfg.analytics.webAnalyticsPath || !cfg.analytics.speedInsightsPath)) {
     console.warn('Analytics were requested, but both Vercel project script paths must be configured; analytics remain disabled.');

@@ -80,7 +80,7 @@ function footer() {
 function formBlock({ light = false, id = 'contact' } = {}) {
   const caps = D.capabilities.cards.map((c) => `<option>${esc(c.title)}</option>`).join('');
   return `
-<form class="form ${light ? 'form--light' : ''}" id="${id}" data-contact-form data-turnstile-sitekey="${esc(cfg.turnstileSiteKey)}" data-fallback-message="${esc(D.pageText.contact['form-success'])}" novalidate>
+<form class="form ${light ? 'form--light' : ''}" id="${id}" data-contact-form ${cfg.contactApiEnabled ? 'data-contact-api' : ''} data-turnstile-sitekey="${esc(cfg.turnstileSiteKey)}" data-fallback-message="${esc(D.pageText.contact['form-success'])}" novalidate>
   <h3>${rich(D.headings['contact-form'].title)}</h3>
   <input type="hidden" name="startedAt" value="">
   <div class="form__trap" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>

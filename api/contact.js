@@ -1,5 +1,5 @@
 const MAX_BODY_BYTES = 16 * 1024;
-const MIN_FILL_MS = 2500;
+const MAX_FUTURE_SKEW_MS = 5 * 60 * 1000;
 const MAX_FORM_AGE_MS = 24 * 60 * 60 * 1000;
 
 function reply(res, status, message) {
@@ -95,8 +95,8 @@ async function handler(req, res) {
   if (clean(body.website, 200)) return reply(res, 200, 'Message received.');
 
   const startedAt = Number(body.startedAt);
-  const elapsed = Date.now() - startedAt;
-  if (!Number.isSafeInteger(startedAt) || elapsed < MIN_FILL_MS || elapsed > MAX_FORM_AGE_MS) {
+  const now = Date.now();
+  if (!Number.isSafeInteger(startedAt) || startedAt > now + MAX_FUTURE_SKEW_MS || startedAt < now - MAX_FORM_AGE_MS) {
     return reply(res, 400, 'Please review the form and try again.');
   }
   if (!validField(body.name, 120) || !validField(body.email, 254) || !validField(body.organization || '', 160) ||
@@ -118,16 +118,13 @@ async function handler(req, res) {
 
   const { RESEND_API_KEY: apiKey, CONTACT_TO: to, CONTACT_FROM: from, TURNSTILE_SECRET: turnstileSecret } = process.env;
   if (!apiKey || !to || !from) return reply(res, 503, 'The contact service is not configured yet.');
+  if (!turnstileSecret) return reply(res, 503, 'The contact security check is not configured yet.');
   const requestHost = String(req.headers.host).split(',')[0].trim().split(':')[0].toLowerCase();
-  if (turnstileSecret) {
-    if (!token) return reply(res, 400, 'Complete the security check and try again.');
-    try {
-      if (!await verifyTurnstile(token, turnstileSecret, req, requestHost)) return reply(res, 400, 'The security check expired. Please try again.');
-    } catch {
-      return reply(res, 502, 'The security check could not be verified. Please try again.');
-    }
-  } else if (token) {
-    return reply(res, 503, 'The contact security check is not configured yet.');
+  if (!token) return reply(res, 400, 'Complete the security check and try again.');
+  try {
+    if (!await verifyTurnstile(token, turnstileSecret, req, requestHost)) return reply(res, 400, 'The security check expired. Please try again.');
+  } catch {
+    return reply(res, 502, 'The security check could not be verified. Please try again.');
   }
 
   try {

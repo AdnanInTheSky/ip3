@@ -161,7 +161,9 @@ test('LF and CRLF source checkouts produce identical dist files apart from build
   }
 
   for (const root of Object.values(roots)) {
-    const result = spawnSync(process.execPath, ['build/build-all.js'], { cwd: root, encoding: 'utf8' });
+    const result = spawnSync(process.execPath, ['build/build-all.js'], {
+      cwd: root, encoding: 'utf8', env: { ...process.env, CONTACT_API_ENABLED: '', PUBLIC_TURNSTILE_SITE_KEY: '' },
+    });
     assert.equal(result.status, 0, result.stderr || result.stdout || 'build failed');
   }
 
@@ -187,4 +189,16 @@ test('LF and CRLF source checkouts produce identical dist files apart from build
   }
 
   assert.deepEqual(distHashes(roots.crlf), distHashes(roots.lf));
+  for (const root of Object.values(roots)) {
+    assert.doesNotMatch(fs.readFileSync(path.join(root, 'dist', 'contact.html'), 'utf8'), /data-contact-api/);
+  }
+
+  const enabled = spawnSync(process.execPath, ['build/build-all.js'], {
+    cwd: roots.lf, encoding: 'utf8',
+    env: { ...process.env, CONTACT_API_ENABLED: '1', PUBLIC_TURNSTILE_SITE_KEY: 'public-test-key' },
+  });
+  assert.equal(enabled.status, 0, enabled.stderr || enabled.stdout || 'contact API enabled build failed');
+  const enabledContact = fs.readFileSync(path.join(roots.lf, 'dist', 'contact.html'), 'utf8');
+  assert.match(enabledContact, /data-contact-api/);
+  assert.match(enabledContact, /data-sitekey="public-test-key"/);
 });

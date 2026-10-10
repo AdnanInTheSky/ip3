@@ -82,6 +82,7 @@
           window.location.href = mailto;
         };
         if (error) error.hidden = true;
+        if (!f.hasAttribute('data-contact-api')) { showEmailFallback(); return; }
         var tokenField = f.elements['cf-turnstile-response'];
         var token = tokenField ? tokenField.value : '';
         if (f.dataset.turnstileSitekey && !token) {
