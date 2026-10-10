@@ -1,0 +1,31 @@
+{
+  "eyebrow": "BUILT FOR COMPLEX <span class=\"text-rust-700\">MANDATES</span>",
+  "h2": "From evidence to<br>decisions.<br><span class=\"italic\">From decisions to</span><br><span class=\"italic text-rust-700\">delivery.</span>",
+  "body": "Development challenges rarely fit within one ministry, one sector or one financing instrument. IP3 brings together economics, public policy, finance, institutional analysis, technology and implementation expertise to help clients move through the full decision cycle.",
+  "cards": [
+    {
+      "title": "Diagnose",
+      "description": "Economic, institutional, market and political-economy analysis that clarifies the problem and identifies realistic options."
+    },
+    {
+      "title": "Design",
+      "description": "Policies, programs, investment concepts, theories of change, financing strategies, implementation arrangements."
+    },
+    {
+      "title": "Finance",
+      "description": "Bankability analysis, blended finance, climate finance, private-capital mobilization, investment pipelines."
+    },
+    {
+      "title": "Deliver",
+      "description": "Institutional strengthening, implementation support, capacity development, adaptive problem-solving."
+    },
+    {
+      "title": "Measure",
+      "description": "MEL frameworks, evaluations, results systems, dashboards, learning processes."
+    },
+    {
+      "title": "Scale",
+      "description": "Evidence translation, replication strategies, policy uptake, institutionalization."
+    }
+  ]
+}

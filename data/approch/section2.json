@@ -1,0 +1,37 @@
+{
+  "subtitle": "Our Work in Action",
+  "title": "See How We Transform Organizations",
+  "paragraph": "Watch real stories of transformation from governments, institutions, and enterprises around the world.",
+  "items": [
+    {
+      "title": "Healthcare Reform",
+      "category": "Public Sector",
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
+    },
+    {
+      "title": "Education System",
+      "category": "Social Impact",
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop"
+    },
+    {
+      "title": "Digital Government",
+      "category": "Technology",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=400&fit=crop"
+    },
+    {
+      "title": "Public Service",
+      "category": "Governance",
+      "image": "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=600&h=400&fit=crop"
+    },
+    {
+      "title": "Urban Planning",
+      "category": "Infrastructure",
+      "image": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=600&h=400&fit=crop"
+    },
+    {
+      "title": "Social Impact",
+      "category": "Community",
+      "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=400&fit=crop"
+    }
+  ]
+}

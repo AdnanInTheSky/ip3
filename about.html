@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP3 Consulting | About Us</title>
+    <meta name="description" content="IP3 Consulting — Institute for Public Policy and Practice. Translational Policy & Systems Advisory.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rust: { 50:'#fdf6f3', 100:'#f9ebe4', 200:'#f2d3c6', 300:'#e8b39e', 400:'#d98a6e', 500:'#c96a4a', 600:'#b5523a', 700:'#963f2e', 800:'#7c3628', 900:'#6a3025' },
+                        cream: '#faf8f5',
+                        charcoal: '#1a1a1a',
+                    },
+                    fontFamily: { serif: ['Playfair Display', 'serif'], sans: ['Inter', 'sans-serif'] },
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] { display: none !important; }
+        html { scroll-behavior: smooth; }
+        * { -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #1a1a1a; overflow-x: hidden; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f5f5f4; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #963f2e; }
+
+        .progress-bar {
+            position: fixed; top: 0; left: 0; height: 3px; background: #963f2e;
+            z-index: 10001; transform-origin: left; transform: scaleX(0);
+        }
+
+        .section-label {
+            font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600;
+            letter-spacing: 0.25em; text-transform: uppercase; color: #963f2e;
+            display: flex; align-items: center; gap: 12px;
+        }
+        .section-label::before {
+            content: ''; width: 32px; height: 1.5px; background: #963f2e; flex-shrink: 0;
+        }
+
+        .highlight-rust { color: #963f2e; font-style: italic; }
+        .highlight-bold { font-weight: 700; border-bottom: 2px solid #963f2e; }
+
+        .card-diagram {
+            background: white; border-radius: 24px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05); border: 1px solid #f3f4f6;
+        }
+
+        .btn-rust {
+            background: #963f2e; color: white; font-family: 'Inter', sans-serif;
+            font-size: 0.875rem; font-weight: 500; padding: 12px 28px; border-radius: 9999px;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            transition: all 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .btn-rust:hover {
+            background: #7c3628; transform: translateY(-1px);
+            box-shadow: 0 10px 20px -5px rgba(150, 63, 46, 0.3);
+        }
+
+        .tag {
+            font-size: 0.75rem; font-family: 'Inter', sans-serif; font-weight: 500;
+            padding: 4px 14px; border: 1px solid #f2d3c6; background: #fdf6f3;
+            color: #963f2e; border-radius: 9999px; display: inline-block;
+            transition: all 0.2s ease;
+        }
+        .tag:hover {
+            background: #963f2e; color: white; border-color: #963f2e;
+        }
+
+        .purpose-split {
+            display: grid; grid-template-columns: 1fr 1fr; border-radius: 24px;
+            overflow: hidden; box-shadow: 0 4px 25px rgba(0,0,0,0.05); border: 1px solid #f3f4f6;
+        }
+        @media (max-width: 1024px) { .purpose-split { grid-template-columns: 1fr; } }
+        .purpose-left { background: #faf8f5; border-right: 1px solid #f3f4f6; }
+        .purpose-right { background: white; }
+
+        .arch-sidebar-item {
+            padding: 16px 20px; cursor: pointer; border-left: 3px solid transparent;
+            transition: all 0.3s ease; border-bottom: 1px solid #f3f4f6;
+        }
+        .arch-sidebar-item:last-child { border-bottom: none; }
+        .arch-sidebar-item.active { background: #fdf6f3; border-left-color: #963f2e; }
+        .arch-sidebar-item:hover { background: #faf8f5; }
+
+        .leader-card {
+            background: white; border-radius: 20px; border: 1px solid #f3f4f6;
+            overflow: hidden; transition: all 0.3s ease; box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+        }
+        .leader-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-color: #f2d3c6; }
+        .leader-expanded { max-height: 0; overflow: hidden; transition: max-height 0.6s cubic-bezier(0.76, 0, 0.24, 1); }
+        .leader-expanded.open { max-height: 500px; }
+
+        .plus-btn {
+            width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid #963f2e;
+            color: #963f2e; display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease; flex-shrink: 0;
+        }
+        .plus-btn.open { background: #963f2e; color: white; transform: rotate(45deg); }
+
+        .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        @media (max-width: 1024px) { .story-grid { grid-template-columns: 1fr; } }
+        .nn-sticky-wrap { position: sticky; top: 120px; }
+        .nn-card-fixed {
+            background: white; border-radius: 24px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05); border: 1px solid #f3f4f6;
+            padding: 2rem; width: 100%;
+        }
+        .chapters-scroll { display: flex; flex-direction: column; gap: 2rem; }
+        .story-chapter-card {
+            background: white; border-radius: 20px; border: 1px solid #f3f4f6;
+            padding: 2.25rem; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.3s ease;
+        }
+        .story-chapter-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-color: #f2d3c6; }
+
+        /* ===== 3D HERO STYLES ===== */
+        .hero-3d-scene {
+            perspective: 1200px;
+            perspective-origin: 50% 50%;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .hero-3d-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        .hero-doc {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+            overflow: hidden;
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .hero-doc img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-doc-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 60%, transparent 100%);
+            padding: 10px 12px;
+        }
+        .hero-doc-title {
+            color: white;
+            font-size: 10px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            line-height: 1.3;
+        }
+        .hero-doc-category {
+            color: rgba(255,255,255,0.75);
+            font-size: 8px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+        .hero-doc-badge {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: #963f2e;
+            color: white;
+            font-size: 7px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 9999px;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="font-sans text-charcoal bg-white antialiased" x-data="appData()" x-init="init()">
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav x-data="{ open: false }" class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="font-serif text-2xl font-bold tracking-tight">IP<span class="text-rust-700">3</span></a>
+                <div class="hidden md:flex items-center gap-5">
+                    <a href="index.html#mandates" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Mandates</a>
+                    <a href="index.html#capabilities" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Capabilities</a>
+                    <a href="approch.html" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Our Approach</a>
+                    <a href="about.html" class="text-sm font-semibold text-rust-700 transition">About Us</a>
+                    <a href="index.html#why-ip3" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Why IP3</a>
+                    <a href="index.html#sectors" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Sectors</a>
+                    <a href="index.html#translation" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Translation</a>
+                    <a href="index.html#engagements" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Engagements</a>
+                    <a href="index.html#convening" class="text-sm font-medium text-gray-600 hover:text-rust-700 transition">Convening</a>
+                    <a href="index.html#contact" class="bg-rust-700 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-rust-800 transition">Contact Us</a>
+                </div>
+                <button @click="open = !open" class="md:hidden p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div x-show="open" x-cloak class="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 max-h-[70vh] overflow-y-auto">
+            <a href="index.html#mandates" class="block text-sm font-medium text-gray-600">Mandates</a>
+            <a href="index.html#capabilities" class="block text-sm font-medium text-gray-600">Capabilities</a>
+            <a href="approch.html" class="block text-sm font-medium text-gray-600">Our Approach</a>
+            <a href="about.html" class="block text-sm font-semibold text-rust-700">About Us</a>
+            <a href="index.html#why-ip3" class="block text-sm font-medium text-gray-600">Why IP3</a>
+            <a href="index.html#sectors" class="block text-sm font-medium text-gray-600">Sectors</a>
+            <a href="index.html#translation" class="block text-sm font-medium text-gray-600">Translation</a>
+            <a href="index.html#engagements" class="block text-sm font-medium text-gray-600">Engagements</a>
+            <a href="index.html#convening" class="block text-sm font-medium text-gray-600">Convening</a>
+            <a href="index.html#contact" class="block text-sm font-medium text-rust-700">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ===== 3D HERO SECTION ===== -->
+    <section class="relative min-h-screen overflow-hidden pt-16" id="hero3d" x-data="hero3dJson()">
+        <!-- Rich dark background matching index charcoal palette -->
+        <div class="absolute inset-0 bg-gradient-to-b from-[#11161d] via-charcoal to-[#121418]"></div>
+        
+        <!-- Subtle radial glow -->
+        <div class="absolute inset-0 pointer-events-none">
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-rust-500/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <!-- 3D Scene Container -->
+        <div class="hero-3d-scene absolute inset-0" id="hero3dScene">
+            <div class="hero-3d-container" id="hero3dContainer">
+                <template x-for="(doc, i) in docs" :key="i">
+                    <div class="hero-doc" 
+                         :style="doc.style"
+                         :data-index="i">
+                        <img :src="doc.img" :alt="doc.title" loading="lazy">
+                        <div class="hero-doc-badge" x-show="doc.badge" x-text="doc.badge"></div>
+                        <div class="hero-doc-overlay">
+                            <div class="hero-doc-title" x-text="doc.title"></div>
+                            <div class="hero-doc-category" x-text="doc.category"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+        
+        <!-- Center Content Overlay -->
+        <div class="relative z-20 min-h-screen flex flex-col items-center justify-center px-6 lg:px-12 pointer-events-none">
+            <div class="text-center max-w-4xl mx-auto pointer-events-auto">
+                <div class="inline-flex items-center gap-2 mb-6 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-5 py-2">
+                    <div class="w-2 h-2 bg-rust-500 rounded-full animate-pulse"></div>
+                    <span class="text-xs font-semibold tracking-[0.25em] text-white/90 uppercase">About IP3 Consulting</span>
+                </div>
+                <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-medium leading-[1.05] tracking-tight text-white mb-6">
+                    <span class="block hero-line">About IP3 Consulting:</span>
+                    <span class="block hero-line italic text-rust-400">Translational Policy</span>
+                    <span class="block hero-line">& Systems Advisory</span>
+                </h1>
+                <p class="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mx-auto mb-10 hero-desc font-normal">
+                    We understand interconnected complexity, translate intelligence into actionable architecture, and work alongside institutions to carry solutions from policy vision through <span class="text-rust-400 font-semibold">implementation</span>, learning and scale.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 hero-cta">
+                    <a href="#throughline" class="bg-rust-700 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-rust-800 transition inline-flex items-center gap-2 shadow-lg shadow-rust-700/25">EXPLORE THE THROUGH-LINE →</a>
+                    <a href="#story" class="bg-white/10 text-white border border-white/20 hover:bg-white/20 px-8 py-3.5 rounded-full text-sm font-medium transition inline-flex items-center gap-2 backdrop-blur-sm">OUR STORY →</a>
+                </div>
+            </div>
+            
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 text-xs tracking-widest flex flex-col items-center gap-2 uppercase font-medium">
+                <span>Scroll</span>
+                <div class="w-px h-8 bg-white/20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BREADCRUMB -->
+    <div class="pt-8 pb-4 px-6 lg:px-8 max-w-7xl mx-auto border-b border-gray-100">
+        <div class="flex items-center gap-2 text-xs font-medium text-gray-400 uppercase tracking-wider">
+            <a href="index.html" class="hover:text-rust-700 transition">Home</a>
+            <span>/</span>
+            <span class="hover:text-rust-700 transition">About Us</span>
+            <span>/</span>
+            <span class="text-charcoal font-semibold">IP3 Consulting</span>
+        </div>
+    </div>
+
+    <!-- ABOUT IP3 -->
+    <section class="py-20 lg:py-28 px-6 lg:px-8 max-w-7xl mx-auto bg-white" id="about" x-data="aboutJson()">
+        <div class="max-w-4xl fade-up">
+            <div class="section-label mb-6" x-text="label"></div>
+            <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] tracking-tight text-charcoal mb-8">
+                <span class="block" x-text="title"></span>
+                <span class="block italic text-rust-700" x-text="subtitle"></span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-normal" x-text="description"></p>
+        </div>
+    </section>
+
+    <!-- THROUGH-LINE -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 bg-cream border-t border-gray-100" id="throughline" x-data="throughlineJson()">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-up mb-12">
+                <div class="section-label mb-6" x-text="label"></div>
+            </div>
+            <div class="relative fade-up mb-12">
+                <svg class="w-full h-24 mb-6" viewBox="0 0 1200 100" preserveAspectRatio="none">
+                    <path id="throughPath" d="M 50 50 C 200 20, 350 80, 500 50 C 650 20, 800 80, 950 50 C 1050 30, 1100 50, 1150 50" fill="none" stroke="#963f2e" stroke-width="2"/>
+                    <circle id="flowDot" cx="50" cy="50" r="8" fill="#963f2e">
+                        <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle id="flowDotGlow" cx="50" cy="50" r="14" fill="#963f2e" opacity="0.3">
+                        <animate attributeName="r" values="14;20;14" dur="2s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+                <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-6">
+                    <template x-for="(pillar, i) in pillars" :key="i">
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm text-center fade-up hover:shadow-lg transition-all duration-300">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-4 h-4 rounded-full border-2 border-rust-700 bg-white transition-all duration-500 through-dot" :class="i === 4 ? 'bg-rust-700' : ''"></div>
+                            </div>
+                            <h4 class="font-serif text-sm font-bold tracking-wider text-charcoal uppercase mb-2" x-text="pillar.name"></h4>
+                            <p class="text-xs text-gray-500 leading-relaxed" x-text="pillar.desc"></p>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="p-8 lg:p-10 bg-white rounded-2xl border border-gray-100 shadow-sm fade-up text-center max-w-4xl mx-auto">
+                <p class="text-base text-gray-600 leading-relaxed font-normal" x-text="description"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRANSLATING POLICY -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto bg-white border-t border-gray-100" id="translating" x-data="translatingJson()">
+        <div class="fade-up mb-12">
+            <div class="section-label mb-6" x-text="label"></div>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-charcoal max-w-4xl" x-text="title"></h2>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="space-y-6 fade-up">
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed" x-text="intro"></p>
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed" x-text="body1"></p>
+                <p class="text-base md:text-lg text-gray-600 leading-relaxed" x-text="body2"></p>
+                <div class="border-l-4 border-rust-700 pl-6 py-3 bg-rust-50 rounded-r-2xl mt-6">
+                    <p class="text-lg font-serif italic text-charcoal font-medium" x-text="highlight"></p>
+                </div>
+            </div>
+            <div class="space-y-4 fade-up">
+                <p class="text-xs font-semibold tracking-[0.3em] uppercase text-rust-700 mb-6" x-text="cardsTitle"></p>
+                <template x-for="(card, i) in cards" :key="i">
+                    <div class="bg-cream rounded-2xl p-7 border border-gray-100 hover:shadow-xl hover:border-rust-200 transition-all duration-300 group cursor-pointer">
+                        <div class="flex items-start gap-5">
+                            <div class="w-10 h-10 bg-rust-100 rounded-xl flex items-center justify-center font-serif text-sm font-bold text-rust-700 group-hover:bg-rust-700 group-hover:text-white transition-colors duration-300 flex-shrink-0" x-text="card.number"></div>
+                            <div>
+                                <h4 class="font-serif text-xl font-semibold text-charcoal group-hover:text-rust-700 transition-colors mb-2" x-text="card.title"></h4>
+                                <p class="text-sm text-gray-600 leading-relaxed" x-text="card.desc"></p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRATEGIC FIRM -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 bg-cream border-t border-gray-100" id="strategic" x-data="strategicJson()">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <h2 class="font-serif text-4xl md:text-5xl font-medium leading-[1.1] text-charcoal mb-8" x-text="title"></h2>
+                    <div class="space-y-6 text-base md:text-lg text-gray-600 leading-relaxed font-normal">
+                        <p x-text="body1"></p>
+                        <p>IP3 is built for these intersections. We combine global expertise with <span class="highlight-bold">Global South</span> intelligence — economists, policy specialists, systems thinkers, sector experts, data professionals, digital strategists and practitioners — to create solutions that are globally informed, locally workable and designed for <span class="highlight-rust font-normal not-italic font-semibold">implementation</span>.</p>
+                    </div>
+                    <a href="approch.html" class="btn-rust mt-10" x-text="cta"></a>
+                </div>
+                <div class="fade-up">
+                    <div class="card-diagram p-8 lg:p-12">
+                        <svg viewBox="0 0 400 320" class="w-full h-auto">
+                            <radialGradient id="coreGlow" cx="50%" cy="70%" r="40%">
+                                <stop offset="0%" stop-color="#963f2e" stop-opacity="0.18"/>
+                                <stop offset="100%" stop-color="#963f2e" stop-opacity="0"/>
+                            </radialGradient>
+                            <ellipse cx="200" cy="220" rx="120" ry="80" fill="url(#coreGlow)"/>
+                            <line x1="120" y1="100" x2="200" y2="220" stroke="#d6d3d1" stroke-width="1.5" class="diag-line" stroke-dasharray="200" stroke-dashoffset="200"/>
+                            <line x1="200" y1="80" x2="200" y2="220" stroke="#d6d3d1" stroke-width="1.5" class="diag-line" stroke-dasharray="200" stroke-dashoffset="200"/>
+                            <line x1="280" y1="100" x2="200" y2="220" stroke="#d6d3d1" stroke-width="1.5" class="diag-line" stroke-dasharray="200" stroke-dashoffset="200"/>
+                            <circle cx="120" cy="100" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="diag-node"/>
+                            <circle cx="200" cy="80" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="diag-node"/>
+                            <circle cx="280" cy="100" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="diag-node"/>
+                            <circle cx="200" cy="220" r="22" fill="#963f2e" class="diag-core"/>
+                            <text x="120" y="70" text-anchor="middle" fill="#1a1a1a" font-size="13" font-family="Inter" font-weight="500">Climate</text>
+                            <text x="200" y="55" text-anchor="middle" fill="#1a1a1a" font-size="13" font-family="Inter" font-weight="500">Education</text>
+                            <text x="280" y="70" text-anchor="middle" fill="#1a1a1a" font-size="13" font-family="Inter" font-weight="500">Institutions</text>
+                            <text x="200" y="275" text-anchor="middle" fill="#1a1a1a" font-size="13" font-family="Inter" font-weight="700" letter-spacing="2">IMPLEMENTATION CORE</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILT DIFFERENTIALLY / DNA -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto bg-white border-t border-gray-100" id="differentially" x-data="differentiallyJson()">
+        <div class="fade-up mb-16">
+            <div class="section-label mb-6" x-text="label"></div>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-charcoal mb-4" x-text="title"></h2>
+            <p class="text-lg text-gray-600 max-w-2xl leading-relaxed" x-text="subtitle"></p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div class="fade-up sticky top-28">
+                <div class="card-diagram p-8 lg:p-12">
+                    <svg viewBox="0 0 500 500" class="w-full h-auto" id="dna-svg">
+                        <polygon points="250,50 450,195 375,430 125,430 50,195" fill="none" stroke="#e5e7eb" stroke-width="1.5" class="dna-ring"/>
+                        <polygon points="250,100 400,210 345,390 155,390 100,210" fill="none" stroke="#e5e7eb" stroke-width="1.5" class="dna-ring"/>
+                        <polygon points="250,150 350,225 315,350 185,350 150,225" fill="#963f2e" opacity="0.08" class="dna-ring"/>
+                        <circle cx="250" cy="250" r="35" fill="#963f2e" class="dna-core"/>
+                        <text x="250" y="246" text-anchor="middle" fill="white" font-size="14" font-family="Inter" font-weight="bold">IP3</text>
+                        <text x="250" y="262" text-anchor="middle" fill="white" font-size="8" font-family="Inter" font-weight="600" letter-spacing="1">CORE DNA</text>
+                        <circle cx="250" cy="50" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="dna-vertex" data-v="0"/>
+                        <circle cx="450" cy="195" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="dna-vertex" data-v="1"/>
+                        <circle cx="375" cy="430" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="dna-vertex" data-v="2"/>
+                        <circle cx="125" cy="430" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="dna-vertex" data-v="3"/>
+                        <circle cx="50" cy="195" r="14" fill="#faf8f5" stroke="#963f2e" stroke-width="2" class="dna-vertex" data-v="4"/>
+                        <line x1="250" y1="250" x2="250" y2="64" stroke="#963f2e" stroke-width="1.5" opacity="0.3" class="dna-connector" data-c="0"/>
+                        <line x1="250" y1="250" x2="436" y2="195" stroke="#963f2e" stroke-width="1.5" opacity="0.3" class="dna-connector" data-c="1"/>
+                        <line x1="250" y1="250" x2="361" y2="416" stroke="#963f2e" stroke-width="1.5" opacity="0.3" class="dna-connector" data-c="2"/>
+                        <line x1="250" y1="250" x2="139" y2="416" stroke="#963f2e" stroke-width="1.5" opacity="0.3" class="dna-connector" data-c="3"/>
+                        <line x1="250" y1="250" x2="64" y2="195" stroke="#963f2e" stroke-width="1.5" opacity="0.3" class="dna-connector" data-c="4"/>
+                        <text x="250" y="32" text-anchor="middle" fill="#1a1a1a" font-size="10" font-family="Inter" font-weight="600" class="dna-vlabel" data-v="0">01 · POLY-SOLUTIONS</text>
+                        <text x="465" y="195" text-anchor="start" fill="#1a1a1a" font-size="10" font-family="Inter" font-weight="600" class="dna-vlabel" data-v="1">02 · TRANSLATION</text>
+                        <text x="375" y="460" text-anchor="middle" fill="#1a1a1a" font-size="10" font-family="Inter" font-weight="600" class="dna-vlabel" data-v="2">03 · THINKING THAT SHIPS</text>
+                        <text x="125" y="460" text-anchor="middle" fill="#1a1a1a" font-size="10" font-family="Inter" font-weight="600" class="dna-vlabel" data-v="3">04 · END-TO-END</text>
+                        <text x="35" y="195" text-anchor="end" fill="#1a1a1a" font-size="10" font-family="Inter" font-weight="600" class="dna-vlabel" data-v="4">05 · CONVENER</text>
+                    </svg>
+                </div>
+            </div>
+            <div class="space-y-8">
+                <template x-for="(p, i) in principles" :key="i">
+                    <div class="bg-cream rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 dna-principle fade-up" :data-principle="i">
+                        <div class="text-xs font-semibold tracking-[0.25em] text-rust-700 uppercase mb-3" x-text="p.label"></div>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-medium leading-tight text-charcoal mb-4" x-text="p.title"></h3>
+                        <p class="text-base text-gray-600 leading-relaxed mb-6 font-normal" x-text="p.desc"></p>
+                        <div class="flex flex-wrap gap-2" x-show="p.tags && p.tags.length">
+                            <template x-for="tag in p.tags" :key="tag">
+                                <span class="tag" x-text="tag"></span>
+                            </template>
+                        </div>
+                        <div class="mt-6 w-12 h-[2px] bg-rust-700"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR PURPOSE -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 bg-cream border-t border-gray-100" id="purpose" x-data="purposeJson()">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-up mb-12">
+                <div class="section-label mb-6" x-text="label"></div>
+                <p class="text-lg text-gray-600 max-w-2xl leading-relaxed" x-text="intro"></p>
+            </div>
+            <div class="purpose-split fade-up mb-8">
+                <div class="purpose-left p-10 lg:p-14">
+                    <div class="section-label mb-6" x-text="vision.label"></div>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-medium text-charcoal leading-tight mb-3" x-text="vision.title"></h3>
+                    <p class="text-sm text-rust-700 italic mb-8" x-text="vision.tagline"></p>
+                    <div class="space-y-4 text-base text-gray-600 leading-relaxed font-normal">
+                        <p x-text="vision.body1"></p>
+                        <p x-text="vision.body2"></p>
+                    </div>
+                </div>
+                <div class="purpose-right p-10 lg:p-14">
+                    <div class="section-label mb-6" x-text="mission.label"></div>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-medium text-charcoal leading-tight mb-3">
+                        <span x-text="mission.titlePart1"></span>
+                        <span class="text-rust-700 italic" x-text="mission.titleHighlight"></span>
+                        <span x-text="mission.titlePart2"></span>
+                    </h3>
+                    <p class="text-sm text-rust-700 italic mb-8" x-text="mission.tagline"></p>
+                    <div class="space-y-4 text-base text-gray-600 leading-relaxed font-normal">
+                        <p x-text="mission.body1"></p>
+                        <p x-text="mission.body2"></p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-8">
+                        <template x-for="tag in mission.tags" :key="tag">
+                            <span class="tag" x-text="tag"></span>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="p-8 lg:p-10 bg-white rounded-2xl border border-gray-100 shadow-sm text-center max-w-4xl mx-auto fade-up">
+                <p class="text-base text-gray-600 leading-relaxed" x-text="footer"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR STORY -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto bg-white border-t border-gray-100" id="story" x-data="storyJson()">
+        <div class="fade-up mb-16">
+            <div class="section-label mb-6" x-text="label"></div>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-charcoal mb-4" x-text="title"></h2>
+            <p class="text-lg text-gray-600 max-w-2xl leading-relaxed" x-text="subtitle"></p>
+        </div>
+        <div class="story-grid">
+            <div class="nn-sticky-wrap fade-up">
+                <div class="nn-card-fixed">
+                    <svg viewBox="0 0 400 500" class="w-full h-auto" id="neural-svg">
+                        <g id="nn-lines"></g>
+                        <g id="nn-nodes"></g>
+                        <g id="nn-tags" opacity="0"></g>
+                    </svg>
+                    <div class="text-center mt-6 pt-4 border-t border-gray-100">
+                        <span class="text-xs font-semibold tracking-[0.2em] uppercase text-rust-700" id="nn-caption">SCROLL TO REVEAL CONNECTIONS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chapters-scroll">
+                <template x-for="(chapter, i) in chapters" :key="i">
+                    <div class="story-chapter-card fade-up" :data-chapter="i">
+                        <div class="text-xs font-semibold tracking-[0.25em] text-rust-700 uppercase mb-4" x-text="chapter.label"></div>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-medium leading-tight text-charcoal mb-6" x-html="chapter.title"></h3>
+                        <div class="space-y-4">
+                            <template x-for="para in chapter.paragraphs" :key="para">
+                                <p class="text-base text-gray-600 leading-relaxed" x-text="para"></p>
+                            </template>
+                        </div>
+                        <div class="mt-6 w-12 h-[2px] bg-rust-700"></div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE DELIVER -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 bg-cream border-t border-gray-100" id="architecture" x-data="architectureJson()">
+        <div class="max-w-7xl mx-auto">
+            <div class="fade-up mb-12">
+                <div class="section-label mb-6" x-text="label"></div>
+                <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-charcoal mb-4" x-text="title"></h2>
+                <p class="font-serif text-xl italic text-rust-700 mb-3" x-text="quote"></p>
+                <p class="text-base text-gray-600 max-w-2xl leading-relaxed" x-text="subtitle"></p>
+            </div>
+            <div class="grid lg:grid-cols-12 gap-8 fade-up items-start">
+                <div class="lg:col-span-4">
+                    <div class="bg-white rounded-2xl border border-gray-100 shadow-md overflow-hidden sticky top-28">
+                        <template x-for="(item, i) in sections" :key="i">
+                            <div class="arch-sidebar-item" 
+                                 :class="activeArch === i ? 'active' : ''"
+                                 @click="activeArch = i"
+                                 @mouseenter="activeArch = i">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center font-serif text-xs font-bold flex-shrink-0 transition-colors" 
+                                         :class="activeArch === i ? 'bg-rust-700 text-white' : 'bg-gray-100 text-gray-500'"
+                                         x-text="item.number"></div>
+                                    <div class="min-w-0">
+                                        <div class="text-[0.65rem] font-semibold tracking-wider text-rust-700 uppercase truncate" x-text="item.label"></div>
+                                        <div class="font-serif text-sm font-semibold text-charcoal leading-tight" x-text="item.title"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+                <div class="lg:col-span-8">
+                    <template x-for="(section, i) in sections" :key="i">
+                        <div class="arch-content-box bg-white p-8 lg:p-10 rounded-2xl border mb-6 transition-all duration-500"
+                             :class="activeArch === i ? 'opacity-100 border-rust-200 shadow-xl' : 'opacity-35 border-gray-100'">
+                            <div class="flex items-start gap-4 mb-4">
+                                <div class="w-12 h-12 bg-rust-100 text-rust-700 rounded-xl flex items-center justify-center font-serif text-lg font-bold flex-shrink-0" x-text="section.number"></div>
+                                <div>
+                                    <div class="text-xs font-semibold tracking-[0.2em] text-rust-700 uppercase mb-1" x-text="section.label"></div>
+                                    <h3 class="font-serif text-2xl font-semibold text-charcoal" x-text="section.title"></h3>
+                                </div>
+                            </div>
+                            <p class="text-base text-gray-600 leading-relaxed mb-6 font-normal" x-text="section.desc"></p>
+                            <div class="flex flex-wrap gap-2">
+                                <template x-for="(tag, ti) in section.tags" :key="ti">
+                                    <span class="tag" :class="ti === 0 ? 'bg-rust-700 text-white border-rust-700' : ''" x-text="tag"></span>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="mt-12 text-center fade-up">
+                <a href="approch.html" class="btn-rust" x-text="cta"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEADERSHIP -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 max-w-7xl mx-auto bg-white border-t border-gray-100" id="leadership" x-data="leadershipJson()">
+        <div class="fade-up mb-12">
+            <div class="section-label mb-6" x-text="label"></div>
+            <h2 class="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] text-charcoal mb-4" x-text="title"></h2>
+            <p class="text-base text-gray-600 max-w-2xl leading-relaxed" x-text="subtitle"></p>
+        </div>
+        <div class="bg-cream rounded-3xl p-8 lg:p-14 border border-gray-100 shadow-md mb-16 fade-up">
+            <div class="grid md:grid-cols-3 gap-10 items-center">
+                <div class="flex justify-center md:justify-start">
+                    <div class="w-36 h-44 bg-rust-100 rounded-2xl flex items-center justify-center border border-rust-200 shadow-inner">
+                        <span class="font-serif text-4xl font-bold text-rust-700" x-text="msh.initials"></span>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="text-xs font-semibold tracking-[0.25em] text-rust-700 uppercase mb-2" x-text="msh.label"></div>
+                    <h3 class="font-serif text-3xl lg:text-4xl font-medium text-charcoal mb-1" x-text="msh.name"></h3>
+                    <p class="text-sm font-medium text-gray-500 mb-1" x-text="msh.role"></p>
+                    <p class="text-sm text-rust-700 italic mb-6 font-serif" x-text="msh.tagline"></p>
+                    <p class="text-base text-gray-600 leading-relaxed font-normal" x-text="msh.bio"></p>
+                </div>
+            </div>
+        </div>
+        <div class="fade-up mb-8">
+            <h3 class="font-serif text-2xl font-semibold text-charcoal mb-4" x-text="teamTitle"></h3>
+            <div class="flex flex-wrap gap-2 mb-10">
+                <template x-for="cat in categories" :key="cat">
+                    <span class="tag" x-text="cat"></span>
+                </template>
+            </div>
+        </div>
+        <div class="space-y-4">
+            <template x-for="(member, i) in team" :key="i">
+                <div class="leader-card fade-up">
+                    <div class="p-6 lg:p-8 flex items-center gap-6 cursor-pointer" @click="toggleLeader(i)">
+                        <div class="w-16 h-20 bg-rust-100 rounded-xl flex items-center justify-center flex-shrink-0 text-rust-700 font-serif text-xl font-bold border border-rust-200">
+                            <span x-text="member.initials"></span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-serif text-xl font-semibold text-charcoal mb-1" x-text="member.name"></h4>
+                            <p class="text-xs font-semibold tracking-wider text-rust-700 uppercase mb-2" x-text="member.role"></p>
+                            <p class="text-sm text-gray-600" x-text="member.summary"></p>
+                        </div>
+                        <div class="plus-btn" :class="openLeader === i ? 'open' : ''">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                        </div>
+                    </div>
+                    <div class="leader-expanded px-6 lg:px-8" :class="openLeader === i ? 'open' : ''">
+                        <div class="pb-8 pt-4 border-t border-gray-100">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <div class="text-xs font-semibold tracking-[0.2em] text-rust-700 uppercase mb-2">BACKGROUND</div>
+                                    <p class="text-sm text-gray-600 leading-relaxed font-normal" x-text="member.bio"></p>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold tracking-[0.2em] text-rust-700 uppercase mb-2">FOCUS AREAS</div>
+                                    <div class="flex flex-wrap gap-2">
+                                        <template x-for="area in member.areas" :key="area">
+                                            <span class="tag" x-text="area"></span>
+                                        </template>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="text-xs font-semibold tracking-[0.2em] text-rust-700 uppercase mb-2">CONTRIBUTION</div>
+                                        <p class="text-sm text-gray-600 leading-relaxed font-normal" x-text="member.contribution"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+        <div class="mt-12 text-center fade-up">
+            <p class="text-xs font-semibold tracking-[0.2em] uppercase text-gray-400 mb-4" x-text="teamFooter"></p>
+            <a href="approch.html" class="btn-rust" x-text="teamCta"></a>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 lg:py-32 px-6 lg:px-8 bg-cream border-t border-gray-100" id="cta" x-data="ctaJson()">
+        <div class="max-w-4xl mx-auto text-center fade-up">
+            <div class="w-16 h-16 mx-auto mb-8 bg-rust-100 rounded-2xl flex items-center justify-center border border-rust-200">
+                <span class="font-serif text-2xl font-bold text-rust-700">IP<span class="text-charcoal">3</span></span>
+            </div>
+            <p class="font-serif text-2xl md:text-3xl text-charcoal leading-relaxed mb-10 font-medium" x-text="text"></p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="approch.html" class="bg-rust-700 text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-rust-800 transition inline-flex items-center gap-2 shadow-sm hover:shadow-lg hover:shadow-rust-700/20">Explore What We Do <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+                <a href="index.html#contact" class="bg-charcoal text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-gray-800 transition inline-flex items-center gap-2 shadow-sm">Start A Conversation <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-charcoal border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4"><span class="font-serif text-2xl font-bold text-white">IP<span class="text-rust-500">3</span></span></div>
+                    <p class="text-gray-400 text-sm mb-4 max-w-md">IP3 Consulting Limited helps multilateral institutions, development partners, governments, businesses and research organizations design better policies, mobilize investment, strengthen institutions and deliver measurable results.</p>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> hello@ip3consulting.com</p>
+                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +880 2 1234 5678</p>
+                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> House 12, Road 7, Dhanmondi, Dhaka 1205, Bangladesh</p>
+                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Sun–Thu: 9:00 AM – 6:00 PM (BST)</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="index.html#mandates" class="hover:text-white transition">Mandates</a></li>
+                        <li><a href="index.html#capabilities" class="hover:text-white transition">Capabilities</a></li>
+                        <li><a href="approch.html" class="hover:text-white transition">Our Approach</a></li>
+                        <li><a href="about.html" class="hover:text-white transition text-rust-400 font-medium">About Us</a></li>
+                        <li><a href="index.html#sectors" class="hover:text-white transition">Sectors</a></li>
+                        <li><a href="index.html#engagements" class="hover:text-white transition">Engagements</a></li>
+                        <li><a href="index.html#evidence" class="hover:text-white transition">Evidence & Insights</a></li>
+                        <li><a href="index.html#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">© 2026 IP3 Consulting Limited. All rights reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-rust-700 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
+                    <a href="#" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-rust-700 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+                    <a href="#" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-rust-700 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // ===== HERO 3D JSON DATA =====
+    function hero3dJson() {
+      return {
+        docs: [
+          // LEFT SIDE - from large (edge) to small (center)
+          { side: 'left', index: 0, img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=280&h=380&fit=crop', title: 'Policy Vision 2026', category: 'Strategic Framework', badge: 'FEATURED', style: 'left: 2%; top: 15%; width: 180px; height: 260px; transform: rotateY(25deg) rotateZ(-3deg); z-index: 10; opacity: 0.95;' },
+          { side: 'left', index: 1, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=260&h=350&fit=crop', title: 'Research Report', category: 'Economic Analysis', badge: '', style: 'left: 12%; top: 25%; width: 160px; height: 230px; transform: rotateY(22deg) rotateZ(-2deg); z-index: 9; opacity: 0.9;' },
+          { side: 'left', index: 2, img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=240&h=320&fit=crop', title: 'Case Study', category: 'Institutional Reform', badge: '', style: 'left: 20%; top: 35%; width: 140px; height: 200px; transform: rotateY(20deg) rotateZ(-2deg); z-index: 8; opacity: 0.85;' },
+          { side: 'left', index: 3, img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=220&h=300&fit=crop', title: 'Framework', category: 'Governance', badge: '', style: 'left: 27%; top: 20%; width: 120px; height: 180px; transform: rotateY(18deg) rotateZ(-1deg); z-index: 7; opacity: 0.8;' },
+          { side: 'left', index: 4, img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200&h=280&fit=crop', title: 'Analysis Brief', category: 'Climate Policy', badge: '', style: 'left: 33%; top: 40%; width: 100px; height: 160px; transform: rotateY(15deg) rotateZ(-1deg); z-index: 6; opacity: 0.75;' },
+          { side: 'left', index: 5, img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=180&h=250&fit=crop', title: 'Insight Paper', category: 'Digital Strategy', badge: '', style: 'left: 38%; top: 25%; width: 85px; height: 140px; transform: rotateY(12deg) rotateZ(0deg); z-index: 5; opacity: 0.7;' },
+          { side: 'left', index: 6, img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&h=220&fit=crop', title: 'Data Report', category: 'Systems Design', badge: '', style: 'left: 42%; top: 45%; width: 70px; height: 120px; transform: rotateY(8deg) rotateZ(0deg); z-index: 4; opacity: 0.65;' },
+          { side: 'left', index: 7, img: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=140&h=200&fit=crop', title: 'Study', category: 'Implementation', badge: '', style: 'left: 45%; top: 30%; width: 55px; height: 100px; transform: rotateY(5deg) rotateZ(0deg); z-index: 3; opacity: 0.6;' },
+          
+          // RIGHT SIDE - from large (edge) to small (center)
+          { side: 'right', index: 8, img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=280&h=380&fit=crop', title: 'AI Research', category: 'Technology Policy', badge: 'NEW', style: 'right: 2%; top: 15%; width: 180px; height: 260px; transform: rotateY(-25deg) rotateZ(3deg); z-index: 10; opacity: 0.95;' },
+          { side: 'right', index: 9, img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=260&h=350&fit=crop', title: 'NLP Journal', category: 'Language Processing', badge: '', style: 'right: 12%; top: 25%; width: 160px; height: 230px; transform: rotateY(-22deg) rotateZ(2deg); z-index: 9; opacity: 0.9;' },
+          { side: 'right', index: 10, img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=240&h=320&fit=crop', title: 'NeuroBotics', category: 'Emerging Tech', badge: '', style: 'right: 20%; top: 35%; width: 140px; height: 200px; transform: rotateY(-20deg) rotateZ(2deg); z-index: 8; opacity: 0.85;' },
+          { side: 'right', index: 11, img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=220&h=300&fit=crop', title: 'Tech Brief', category: 'Innovation', badge: '', style: 'right: 27%; top: 20%; width: 120px; height: 180px; transform: rotateY(-18deg) rotateZ(1deg); z-index: 7; opacity: 0.8;' },
+          { side: 'right', index: 12, img: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=200&h=280&fit=crop', title: 'Strategy Doc', category: 'Policy Design', badge: '', style: 'right: 33%; top: 40%; width: 100px; height: 160px; transform: rotateY(-15deg) rotateZ(1deg); z-index: 6; opacity: 0.75;' },
+          { side: 'right', index: 13, img: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=180&h=250&fit=crop', title: 'Governance', category: 'Institutional', badge: '', style: 'right: 38%; top: 25%; width: 85px; height: 140px; transform: rotateY(-12deg) rotateZ(0deg); z-index: 5; opacity: 0.7;' },
+          { side: 'right', index: 14, img: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=160&h=220&fit=crop', title: 'Policy Paper', category: 'Regulation', badge: '', style: 'right: 42%; top: 45%; width: 70px; height: 120px; transform: rotateY(-8deg) rotateZ(0deg); z-index: 4; opacity: 0.65;' },
+          { side: 'right', index: 15, img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=140&h=200&fit=crop', title: 'Systems', category: 'Architecture', badge: '', style: 'right: 45%; top: 30%; width: 55px; height: 100px; transform: rotateY(-5deg) rotateZ(0deg); z-index: 3; opacity: 0.6;' },
+        ]
+      };
+    }
+
+    // ===== OTHER SECTION JSONS =====
+    function aboutJson() {
+      return {
+        label: "ABOUT IP3 CONSULTING",
+        title: "About IP3 Consulting:",
+        subtitle: "Translational Policy & Systems Advisory",
+        description: "We understand interconnected complexity, translate intelligence into actionable architecture, and work alongside institutions to carry solutions from policy vision through implementation, learning and scale."
+      };
+    }
+
+    function throughlineJson() {
+      return {
+        label: "THE IP3 THROUGH-LINE",
+        pillars: [
+          { name: "COMPLEXITY", desc: "interconnected systems" },
+          { name: "INTELLIGENCE", desc: "research & policy insight" },
+          { name: "ARCHITECTURE", desc: "systems & digital design" },
+          { name: "IMPLEMENTATION", desc: "delivery with institutions" },
+          { name: "IMPACT", desc: "lasting capability" }
+        ],
+        description: "Every service we offer is a stage on this path — complexity to intelligence, intelligence to architecture, architecture to implementation, and impact."
+      };
+    }
+
+    function translatingJson() {
+      return {
+        label: "WHAT WE DO",
+        title: "Translating policy intelligence into systems that work",
+        intro: "IP3 Consulting — the Institute for Public Policy and Practice — is a translational policy studio and systems integrator. We bring governments, development partners, businesses, and institutions from complexity to action.",
+        body1: "We work where policy, economics, climate, institutions, data, technology, education, and implementation intersect. By combining rigorous research and policy intelligence with systems thinking, digital architecture, and grounded execution, we help our clients move from understanding a problem to designing, building, and sustaining the solution.",
+        body2: "What distinguishes IP3 is the distance we are prepared to travel with a problem. We do not stop at diagnosis, recommendation, or the delivery of a report. We work across the policy and implementation value chain.",
+        highlight: "We translate intelligence into architecture — and architecture into impact.",
+        cardsTitle: "— OUR CORE PRACTICE AREAS",
+        cards: [
+          { number: "01", title: "Climate Action, ESG & Circular Economy", desc: "Climate transition, ESG strategy, and circular economy policy and practice." },
+          { number: "02", title: "Education & Human Capacity Development", desc: "Learning systems, human capability, and future-ready skills." },
+          { number: "03", title: "Institutional Effectiveness, Data & Digital Governance", desc: "Institutions, regulation, data ecosystems, and digital public infrastructure." }
+        ]
+      };
+    }
+
+    function strategicJson() {
+      return {
+        title: "A strategic policy & management solutions firm built for the complexity of now",
+        body1: "Today's institutional challenges rarely arrive independently. Climate exposure interacts with financing constraints. Digital transformation reshapes service delivery. Education outcomes depend on institutional capability. Regulation intersects with markets, technology, behaviour and political economy.",
+        cta: "EXPLORE WHAT WE DO →"
+      };
+    }
+
+    function differentiallyJson() {
+      return {
+        label: "OUR ORGANIZATIONAL DNA",
+        title: "Built differentially for complex change",
+        subtitle: "Five principles. One system. The DNA that defines how IP3 operates across complexity.",
+        principles: [
+          { label: "PRINCIPLE 01", title: "From Poly-Crisis to Poly-Solutions", desc: "Policy problems, climate exposure, financing gaps, digital disruption, service delivery constraints, and institutional uncertainty increasingly overlap and compound one another. IP3 works at these intersections — mapping the relationships between systems before designing where interventions create the greatest leverage.", tags: ["Climate", "Policy", "Institutions", "Finance", "Data"] },
+          { label: "PRINCIPLE 02", title: "Translation, Not Theory", desc: "Evidence matters when it changes what institutions can do. IP3 treats research as the beginning of the engagement, not its final product. Evidence becomes policy intelligence, policy intelligence becomes systems and delivery architecture, architecture becomes implementation, and implementation experience feeds back into learning and adaptation.", tags: ["Research", "Policy Intelligence", "Systems Design", "Implementation", "Adaptive Learning"] },
+          { label: "PRINCIPLE 03", title: "Thinking That Ships", desc: "IP3 avoids thinking designed to leave the page. Policy architecture, institutional theory, data models, research reports, case studies, implementation frameworks, diagnostics, and digital solutions are built to help decision-makers act, not simply understand.", tags: [] },
+          { label: "PRINCIPLE 04", title: "End-to-End Expertise", desc: "Full-stack advisory across the entire value chain. Complex transformations become vulnerable when strategy, research, implementation, data, and evaluation are managed across disconnected advisory teams. IP3 integrates these capabilities.", tags: [] },
+          { label: "PRINCIPLE 05", title: "A Convener Between Worlds", desc: "Global knowledge. Global South intelligence. IP3 operates between communities that too often work separately: policy and practice, government and markets, research and implementation, technology and institutions.", tags: [] }
+        ]
+      };
+    }
+
+    function purposeJson() {
+      return {
+        label: "OUR PURPOSE",
+        intro: "What makes the future IP3 wants to help create. Mission is what IP3 does to move institutions toward it — two complementary halves of one statement.",
+        vision: {
+          label: "OUR VISION",
+          title: "Policy innovation for transformative, sustainable growth",
+          tagline: "The future we work toward.",
+          body1: "We envision a future in which governments, institutions, businesses and communities possess the policies, capabilities, data, partnerships and institutional resilience needed to navigate complexity and create sustainable, equitable prosperity.",
+          body2: "Our vision is for public policy to become more adaptive, more connected to implementation, and more capable of translating economic opportunity, technological change, social inclusion and environmental responsibility into durable improvements in institutions and people's lives."
+        },
+        mission: {
+          label: "OUR MISSION",
+          titlePart1: "Turning evidence, innovation and ",
+          titleHighlight: "implementation ",
+          titlePart2: "into lasting impact",
+          tagline: "What we do to get there.",
+          body1: "Our mission is to help governments, development partners, businesses, institutions and communities solve complex policy and management challenges by connecting rigorous evidence with practical implementation.",
+          body2: "We develop solutions that are contextually grounded and capable of enduring beyond the life of an assignment, combining:",
+          tags: ["Policy Intelligence", "Action Research", "Systems Thinking", "Strategic Advisory", "Data & Digital Innovation", "Institutional Design", "Collaborative Problem-Solving", "Adaptive Learning"]
+        },
+        footer: "Across climate action and ESG, education and human capacity development, and institutional effectiveness and digital governance, our purpose is consistent: to strengthen the systems through which better policy becomes better outcomes."
+      };
+    }
+
+    function storyJson() {
+      return {
+        label: "OUR STORY",
+        title: "Why IP3 exists",
+        subtitle: "IP3 emerged from a conviction that development and policy practice generally do not automatically produce good implementation.",
+        chapters: [
+          { label: "CHAPTER 01 — THE GAP", title: "Analysis on one side,<br><span class='highlight-rust'>implementation</span> on the other", paragraphs: ["Institutions are increasingly asked to respond to challenges that cross conventional policy boundaries. Climate, finance, technology, education, governance, inequality, service delivery, markets and institutional capacity interact in ways that traditional siloed advisory models struggle to address.", "The gap between analysis and action has become the defining challenge of our time. Reports sit on shelves. Strategies gather dust. The distance between knowing what to do and actually doing it keeps growing."] },
+          { label: "CHAPTER 02 — THE RESPONSE", title: "The advisory relationship<br>should go <span class='highlight-rust'>further</span>", paragraphs: ["We built IP3 around the belief that advice should not stop at explaining what should happen. It should help determine what can work, how it can work, who must be involved, what institutional architecture is required, how it can be tested, and how learning strengthens it over time.", "That is why IP3 combines the rigour of a policy research institution, the agility of an implementation partner and the integrative capability of a systems studio — bringing rigor and imagination together."] },
+          { label: "CHAPTER 03 — THE NETWORK", title: "The Dynamic<br><span class='highlight-rust'>Network Model</span>", paragraphs: ["IP3 is more than a conventional consulting organisation. It is a networking, knowledge-exchange and resource-sharing platform that brings complementary expertise across disciplines and geographies around complex public and institutional problems.", "Different disciplines. Shared problems. One purpose: solutions that can move."] }
+        ]
+      };
+    }
+
+    function architectureJson() {
+      return {
+        label: "HOW WE DELIVER LASTING IMPACT",
+        title: "From complexity to actionable architecture",
+        quote: "\"Do not simplify the problem until you understand the system.\"",
+        subtitle: "Our advisory delivery architecture. IP3 does not stop at strategy or policy recommendation — each stage builds on the last, from understanding the system to implementing what works.",
+        cta: "EXPLORE OUR APPROACH →",
+        sections: [
+          { number: "01", label: "— SENSE THE SYSTEM", title: "Holistic diagnostics & systems mapping", desc: "Understand the system before you try to improve it. We map institutions, regulations, stakeholders, markets, policies, behaviors, data, risks, capabilities, and implementation constraints.", tags: ["Holistic Diagnostics", "System Mapping", "Stakeholder Analysis", "Institutional Analysis", "Risk & Policy Assessment"] },
+          { number: "02", label: "— DESIGN FOR REALITY", title: "Action research, policy co-design & systems architecture", desc: "Translate diagnosis into actionable architecture. Evidence is combined with stakeholder intelligence, behavioral insight, local knowledge, and interdisciplinary expertise to co-create policies, programs, institutional frameworks, digital systems, and delivery strategies.", tags: ["Action Research", "Policy Co-Design", "Systems Architecture", "Program Design", "Institutional & Digital Systems"] },
+          { number: "03", label: "— TEST BEFORE SCALE", title: "Policy experimentation, prototyping & pilot execution", desc: "Learn before committing institutions to scale. Where appropriate, assumptions are tested through pilots, policy experimentation, operational prototyping, and iterative approaches to program implementation.", tags: ["Pilots", "Experimentation", "Prototyping", "Iterative Design", "Adaptive Testing"] },
+          { number: "04", label: "— DELIVER WITH INSTITUTIONS", title: "Delivery architecture & implementation support", desc: "Implementation is not an add-on to advice — it is the purpose of it. We work alongside teams and stakeholders to translate design into operating reality — connecting people, processes, data, governance, change management, technology, financing, and institutional capability.", tags: ["Delivery Architecture", "Implementation Support", "Change Management", "Operations", "Technology", "Financing", "Governance"] },
+          { number: "05", label: "— LEARN, ADAPT & SCALE", title: "MERLA, capability development & continuous learning", desc: "So change becomes institutional, not dependent on the capacity of individuals, projects, or politics. We embed monitoring, evaluation, research, learning, and adaptation (MERLA) into program design.", tags: ["Monitoring & Evaluation", "Research", "Learning & Adaptation", "Capability Development", "Institutional Strengthening"] }
+        ]
+      };
+    }
+
+    function leadershipJson() {
+      return {
+        label: "IP3 LEADERSHIP",
+        title: "Leadership for the space between ideas and execution",
+        subtitle: "IP3's leadership model reflects the firm itself: interdisciplinary, implementation-oriented, globally connected, and grounded in the realities of policy and institutional transformation.",
+        msh: { initials: "MSH", label: "EXECUTIVE CHAIRMAN", name: "Mohammad Syful Hoque", role: "Chief Executive, IP3 ABRISCIENCE", tagline: "Driving transformative impact beyond policy.", bio: "IP3's leadership philosophy is built around moving beyond policy recommendation toward policy capability — bringing analytical rigor, systems thinking, technology, institutional intelligence, implementation discipline, and cross-sector collaboration into a single integrated approach." },
+        teamTitle: "Advisory & Practice Leadership",
+        categories: ["Economics", "Education", "Public Policy", "Regulation", "Institutional Development", "Climate Strategy"],
+        team: [
+          { initials: "MN", name: "Prof. Dr. M A Mannan", role: "Chief Scientific Advisor", summary: "Economics, policy, governance, and institutional reform.", bio: "Prof. Dr. M A Mannan brings decades of experience in economic policy, governance reform, and institutional development.", areas: ["Macroeconomics", "Public Finance", "Governance Reform"], contribution: "Leads IP3's economic policy intelligence practice." },
+          { initials: "NL", name: "Prof. Dr. Niaz Mofakkhar", role: "Chief Academic Advisor", summary: "Education, institutional capacity, climate resilience, and equity.", bio: "Prof. Dr. Niaz Mofakkhar is a leading academic voice in education policy and institutional capacity building.", areas: ["Education Policy", "Climate Resilience", "Equity"], contribution: "Guides IP3's research direction and academic collaboration." },
+          { initials: "ZR", name: "Zara Zaman Rahman", role: "Founding Director", summary: "Climate finance, ESG, institutional design, and implementation.", bio: "Zara Zaman Rahman is a founding director specializing in climate finance, ESG strategy, and institutional design.", areas: ["Climate Finance", "ESG Strategy", "Institutional Design"], contribution: "Drives IP3's strategic vision and climate practice." },
+          { initials: "SK", name: "Prof. Dr. Shafiqul Islam", role: "Policy Advisor", summary: "Public health policy, climate adaptation, and sustainable development.", bio: "Prof. Dr. Shafiqul Islam brings expertise in public health policy and climate adaptation.", areas: ["Public Health", "Climate Adaptation", "Sustainable Development"], contribution: "Advises on health-policy intersections." },
+          { initials: "HR", name: "Adj. Prof. Harun Rashid", role: "Regulatory Advisor", summary: "Regulatory policy, digital governance, and institutional reform.", bio: "Adj. Prof. Harun Rashid specializes in regulatory policy and digital governance frameworks.", areas: ["Regulatory Policy", "Digital Governance", "Institutional Reform"], contribution: "Leads IP3's regulatory advisory work." },
+          { initials: "AZ", name: "Dr. Md. Abu Zafar Habib", role: "Research Director", summary: "Data systems, digital public infrastructure, and institutional analytics.", bio: "Dr. Md. Abu Zafar Habib leads IP3's research division, focusing on data systems and digital infrastructure.", areas: ["Data Systems", "Digital Infrastructure", "Institutional Analytics"], contribution: "Heads IP3's research and data analytics practice." }
+        ],
+        teamFooter: "MORE SENIOR MEMBERS WILL BE ADDED. IP3 IS A DYNAMIC NETWORK, NOT A FIXED ROSTER.",
+        teamCta: "MEET IP3 SENIOR LEADERSHIP TEAM →"
+      };
+    }
+
+    function ctaJson() {
+      return { text: "IP3 understands interconnected complexity, translates intelligence into actionable architecture, and works alongside institutions to create solutions from policy ideas through implementation, learning, and scale." };
+    }
+
+    function footerJson() {
+      return {
+        description: "Institute for Public Policy and Practice — a translational policy studio and systems integrator working across climate, ESG, education, human capacity development, and institutional effectiveness.",
+        navLinks: ["Our Approach", "Focus Areas", "Our Services", "About Us", "Insights"],
+        connectLinks: ["Talk to Us", "Careers", "Contact", "Newsletter"],
+        copyright: "© 2026 IP3 ABRISCIENCE. INSTITUTE FOR PUBLIC POLICY AND PRACTICE.",
+        bottomLinks: ["Privacy Policy", "Terms of Use", "Accessibility"]
+      };
+    }
+
+    // ===== APP DATA & ANIMATIONS =====
+    function appData() {
+      return {
+        activeArch: 0,
+        openLeader: -1,
+        toggleLeader(i) { this.openLeader = this.openLeader === i ? -1 : i; },
+        init() {
+          this.$nextTick(() => {
+            try {
+              this.initProgress();
+              this.initAnimations();
+              this.initThroughLine();
+              this.initDNA();
+              this.initNeuralNetwork();
+              this.initHero3D();
+            } catch(e) { console.log('Init error:', e); }
+          });
+        },
+        initProgress() {
+          const bar = document.getElementById('progressBar');
+          window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            const pct = h.scrollTop / (h.scrollHeight - h.clientHeight);
+            bar.style.transform = `scaleX(${pct})`;
+          });
+        },
+        initHero3D() {
+          const docs = document.querySelectorAll('.hero-doc');
+          docs.forEach((doc, i) => {
+            const isLeft = doc.dataset.side === 'left' || doc.style.left !== undefined;
+            const startX = isLeft ? -300 : 300;
+            const startRotateY = isLeft ? 60 : -60;
+            
+            gsap.fromTo(doc,
+              { x: startX, opacity: 0, rotateY: startRotateY, scale: 0.5 },
+              {
+                x: 0, opacity: parseFloat(doc.style.opacity) || 0.7,
+                rotateY: isLeft ? 25 : -25, scale: 1,
+                duration: 1.5, delay: 0.3 + i * 0.08,
+                ease: 'power3.out'
+              }
+            );
+          });
+          
+          gsap.fromTo('.hero-line', { y: '110%' }, { y: 0, duration: 1.2, stagger: 0.12, ease: 'power4.out', delay: 0.6 });
+          gsap.fromTo('.hero-desc', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 1, delay: 1.5 });
+          gsap.fromTo('.hero-cta', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, delay: 1.8 });
+          
+          ScrollTrigger.create({
+            trigger: '#hero3d',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+            onUpdate: (self) => {
+              const container = document.getElementById('hero3dContainer');
+              if (container) {
+                container.style.transform = `translateY(${self.progress * 100}px)`;
+              }
+            }
+          });
+        },
+        initAnimations() {
+          gsap.registerPlugin(ScrollTrigger);
+          gsap.utils.toArray('.fade-up').forEach((el) => {
+            gsap.fromTo(el, { opacity: 0, y: 30 }, {
+              opacity: 1, y: 0, duration: 0.9, ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+            });
+          });
+          gsap.utils.toArray('.section-label').forEach(el => {
+            gsap.fromTo(el, { opacity: 0, x: -20 }, {
+              opacity: 1, x: 0, duration: 0.8,
+              scrollTrigger: { trigger: el, start: 'top 90%' }
+            });
+          });
+          gsap.utils.toArray('.story-chapter-card').forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, y: 40 }, {
+              opacity: 1, y: 0, duration: 0.9, delay: i * 0.15, ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 85%' }
+            });
+          });
+          gsap.utils.toArray('.dna-principle').forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, x: 40 }, {
+              opacity: 1, x: 0, duration: 0.8, delay: i * 0.1, ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 85%' }
+            });
+          });
+          gsap.utils.toArray('.leader-card').forEach((el, i) => {
+            gsap.fromTo(el, { opacity: 0, y: 20 }, {
+              opacity: 1, y: 0, duration: 0.6, delay: i * 0.08, ease: 'power3.out',
+              scrollTrigger: { trigger: el, start: 'top 90%' }
+            });
+          });
+          document.querySelectorAll('.diag-line').forEach((line, i) => {
+            try {
+              const len = line.getTotalLength();
+              line.style.strokeDasharray = len;
+              line.style.strokeDashoffset = len;
+              gsap.to(line, { strokeDashoffset: 0, duration: 1.2, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: line, start: 'top 85%' } });
+            } catch(e) {}
+          });
+          gsap.utils.toArray('.diag-node').forEach((node, i) => {
+            gsap.fromTo(node, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, delay: i * 0.15 + 0.3, ease: 'back.out(1.7)', scrollTrigger: { trigger: node, start: 'top 85%' } });
+          });
+          gsap.fromTo('.diag-core', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, delay: 0.8, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.diag-core', start: 'top 85%' } });
+          ScrollTrigger.refresh();
+        },
+        initThroughLine() {
+          const path = document.getElementById('throughPath');
+          const dot = document.getElementById('flowDot');
+          const glow = document.getElementById('flowDotGlow');
+          if (!path || !dot) return;
+          try {
+            const len = path.getTotalLength();
+            ScrollTrigger.create({
+              trigger: '#throughline', start: 'top 60%', end: 'bottom 40%', scrub: 1,
+              onUpdate: (self) => {
+                const p = self.progress;
+                const point = path.getPointAtLength(p * len);
+                dot.setAttribute('cx', point.x); dot.setAttribute('cy', point.y);
+                glow.setAttribute('cx', point.x); glow.setAttribute('cy', point.y);
+                const dots = document.querySelectorAll('.through-dot');
+                const positions = [0, 0.25, 0.5, 0.75, 1];
+                dots.forEach((d, i) => { if (p >= positions[i] - 0.05) d.classList.add('bg-rust-700'); else d.classList.remove('bg-rust-700'); });
+              }
+            });
+          } catch(e) {}
+        },
+        initDNA() {
+          document.querySelectorAll('.dna-ring').forEach((ring, i) => {
+            try {
+              const len = ring.getTotalLength();
+              ring.style.strokeDasharray = len; ring.style.strokeDashoffset = len;
+              gsap.to(ring, { strokeDashoffset: 0, duration: 1.5, delay: i * 0.2, ease: 'power2.out', scrollTrigger: { trigger: '#differentially', start: 'top 60%' } });
+            } catch(e) {}
+          });
+          gsap.to('.dna-core', { scale: 1.1, duration: 2, repeat: -1, yoyo: true, ease: 'sine.inOut', transformOrigin: 'center' });
+          document.querySelectorAll('.dna-principle').forEach((panel, i) => {
+            ScrollTrigger.create({
+              trigger: panel, start: 'top center', end: 'bottom center',
+              onEnter: () => this.highlightDNAVertex(i), onEnterBack: () => this.highlightDNAVertex(i),
+              onLeave: () => this.resetDNAVertex(i), onLeaveBack: () => this.resetDNAVertex(i)
+            });
+          });
+        },
+        highlightDNAVertex(index) {
+          const v = document.querySelector(`.dna-vertex[data-v="${index}"]`);
+          const c = document.querySelector(`.dna-connector[data-c="${index}"]`);
+          const l = document.querySelector(`.dna-vlabel[data-v="${index}"]`);
+          if (v) gsap.to(v, { scale: 1.5, duration: 0.5, attr: { r: 20 }, fill: '#963f2e' });
+          if (c) gsap.to(c, { opacity: 1, attr: { 'stroke-width': 2.5 } });
+          if (l) gsap.to(l, { opacity: 1, fontWeight: 700 });
+        },
+        resetDNAVertex(index) {
+          const v = document.querySelector(`.dna-vertex[data-v="${index}"]`);
+          const c = document.querySelector(`.dna-connector[data-c="${index}"]`);
+          const l = document.querySelector(`.dna-vlabel[data-v="${index}"]`);
+          if (v) gsap.to(v, { scale: 1, attr: { r: 14 }, fill: '#faf8f5' });
+          if (c) gsap.to(c, { opacity: 0.3, attr: { 'stroke-width': 1.5 } });
+          if (l) gsap.to(l, { opacity: 1, fontWeight: 600 });
+        },
+        initNeuralNetwork() {
+          const linesGroup = document.getElementById('nn-lines');
+          const nodesGroup = document.getElementById('nn-nodes');
+          const tagsGroup = document.getElementById('nn-tags');
+          if (!linesGroup) return;
+          
+          const nodes = [
+            { x: 200, y: 50, label: 'Economics', r: 7 },
+            { x: 310, y: 80, label: 'Policy', r: 6 },
+            { x: 360, y: 160, label: 'Climate', r: 7 },
+            { x: 360, y: 260, label: 'Data', r: 6 },
+            { x: 310, y: 350, label: 'Education', r: 7 },
+            { x: 200, y: 400, label: 'Governance', r: 7 },
+            { x: 90, y: 350, label: 'Markets', r: 6 },
+            { x: 40, y: 260, label: 'Tech', r: 6 },
+            { x: 40, y: 160, label: 'Communities', r: 7 },
+            { x: 90, y: 80, label: 'Implementation', r: 7 },
+            { x: 200, y: 180, label: 'Delivery', r: 8 },
+            { x: 280, y: 220, label: 'Research', r: 7 },
+            { x: 140, y: 240, label: 'Health', r: 6 },
+            { x: 250, y: 290, label: 'Finance', r: 6 },
+            { x: 160, y: 140, label: 'Regulation', r: 6 },
+          ];
+          
+          const connections = [
+            [0,1],[0,2],[0,10],[1,2],[1,10],[2,3],[2,11],
+            [3,4],[3,11],[4,5],[4,13],[5,6],[5,13],
+            [6,7],[6,12],[7,8],[7,12],[8,9],[8,14],
+            [9,0],[9,14],[10,11],[10,12],[10,13],[10,14],
+            [11,13],[12,14],[1,10],[9,10],[0,9]
+          ];
+          
+          connections.forEach(([a, b]) => {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', nodes[a].x); line.setAttribute('y1', nodes[a].y);
+            line.setAttribute('x2', nodes[b].x); line.setAttribute('y2', nodes[b].y);
+            line.setAttribute('stroke', '#d6d3d1'); line.setAttribute('stroke-width', '1');
+            line.setAttribute('opacity', '0'); line.classList.add('nn-line');
+            linesGroup.appendChild(line);
+          });
+          
+          nodes.forEach((node, i) => {
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', node.x); circle.setAttribute('cy', node.y);
+            circle.setAttribute('r', node.r);
+            circle.setAttribute('fill', i === 10 ? '#963f2e' : '#faf8f5');
+            circle.setAttribute('stroke', '#963f2e'); circle.setAttribute('stroke-width', '1.5');
+            circle.setAttribute('opacity', '0'); circle.classList.add('nn-node');
+            nodesGroup.appendChild(circle);
+            
+            const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            text.setAttribute('x', node.x); text.setAttribute('y', node.y - node.r - 5);
+            text.setAttribute('text-anchor', 'middle');
+            text.setAttribute('fill', '#4b5563'); text.setAttribute('font-size', '8');
+            text.setAttribute('font-family', 'Inter, sans-serif');
+            text.setAttribute('opacity', '0'); text.textContent = node.label;
+            text.classList.add('nn-tag');
+            tagsGroup.appendChild(text);
+          });
+          
+          const allLines = linesGroup.querySelectorAll('.nn-line');
+          const allNodes = nodesGroup.querySelectorAll('.nn-node');
+          const allTags = tagsGroup.querySelectorAll('.nn-tag');
+          
+          ScrollTrigger.create({
+            trigger: '#story', start: 'top 60%', end: 'bottom 20%', scrub: 1,
+            onUpdate: (self) => {
+              const p = self.progress;
+              const linesToShow = Math.floor(p * allLines.length * 1.4);
+              allLines.forEach((line, i) => { line.setAttribute('opacity', i < linesToShow ? '0.5' : '0'); });
+              const nodesToShow = Math.floor(p * allNodes.length * 1.3);
+              allNodes.forEach((node, i) => { node.setAttribute('opacity', i < nodesToShow ? '1' : '0'); });
+              if (p > 0.75) {
+                const tagOpacity = (p - 0.75) / 0.25;
+                tagsGroup.setAttribute('opacity', tagOpacity);
+                document.getElementById('nn-caption').textContent = 'ONE CONNECTED SYSTEM';
+              } else {
+                tagsGroup.setAttribute('opacity', '0');
+                document.getElementById('nn-caption').textContent = 'SCROLL TO REVEAL CONNECTIONS';
+              }
+            }
+          });
+        }
+      }
+    }
+    </script>
+</body>
+</html>

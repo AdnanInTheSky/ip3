@@ -1,0 +1,120 @@
+{
+  "subtitle": "FROM CONSULTING OUTPUT TO CLIENT CAPABILITY",
+  "title": "The objective is not a better report. It is a system better able to act.",
+  "paragraph": "This is the difference between producing analysis and building actionable architecture.",
+  "backgroundImage": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&h=1080&fit=crop",
+  "cards": [
+    {
+      "text": "From fragmented understanding of the problem → Decision-grade view of the system and its root causes"
+    },
+    {
+      "text": "From recommendations without institutional ownership → Solution architecture with clear accountabilities"
+    },
+    {
+      "text": "From technology-led digitisation → Digitally-enabled, governed and inclusive digital transformation"
+    },
+    {
+      "text": "From a project plan → Sequenced implementation roadmap with resources, risks and decision gates"
+    },
+    {
+      "text": "From external expertise carrying the reform → Client capability able to operate and adapt it"
+    },
+    {
+      "text": "From monitoring for reporting → Evidence for management, learning and course correction"
+    },
+    {
+      "text": "From a successful pilot → Evidence-based decision about whether and how to scale"
+    },
+    {
+      "text": "From producing analysis → Building actionable architecture"
+    }
+  ],
+  "subsection1": {
+    "title": "Why the IP3 approach is different",
+    "paragraph": "The principles that distinguish our methodology from conventional consulting.",
+    "cards": [
+      {
+        "title": "Delivery Pathway",
+        "text": "No strategy without a pathway to delivery."
+      },
+      {
+        "title": "Institutional Ownership",
+        "text": "No digital tool without institutional ownership."
+      },
+      {
+        "title": "Implementation Question",
+        "text": "No policy recommendation without an implementation question."
+      },
+      {
+        "title": "Cost, Benefit & Risk",
+        "text": "No major investment without understanding cost, benefits and risk."
+      },
+      {
+        "title": "People-Centered",
+        "text": "No transformation without the people who must deliver it."
+      },
+      {
+        "title": "Evidence Before Scale",
+        "text": "No scale before evidence."
+      },
+      {
+        "title": "Timely Evaluation",
+        "text": "No evaluation that arrives too late to improve the programme."
+      },
+      {
+        "title": "Actionable Architecture",
+        "text": "This is the difference between producing analysis and building actionable architecture."
+      },
+      {
+        "title": "Built Different",
+        "text": "Research that changes decisions. Architecture that can be implemented. Technology designed around people. Institutions equipped to sustain change."
+      }
+    ]
+  },
+  "subsection2": {
+    "title": "From advice to practical reality",
+    "paragraph": "A recommendation is only one possible output across our transformation delivery.",
+    "cards": [
+      {
+        "title": "A decision-grade diagnostic",
+        "text": "Clear evidence of the root problem, risks, constraints and leverage points."
+      },
+      {
+        "title": "A target-state blueprint",
+        "text": "A shared vision of what the future policy, system or programme should look like."
+      },
+      {
+        "title": "A tested solution",
+        "text": "A prototype, pilot, policy or model that has been validated with users and institutions."
+      },
+      {
+        "title": "An implementation roadmap",
+        "text": "Sequenced actions, responsibilities, resources and dependencies with decision gates."
+      },
+      {
+        "title": "A business & governance case",
+        "text": "Costs, benefits, financing options, risks, institutional and governance arrangements."
+      },
+      {
+        "title": "A policy or regulation",
+        "text": "Drafted, costed, consulted and ready for adoption or amendment."
+      },
+      {
+        "title": "A data & digital architecture",
+        "text": "A system design, data model, governance framework, platform, standards, digital services and monitoring."
+      },
+      {
+        "title": "A change & capability plan",
+        "text": "The people, skills and institutional change required to sustain implementation."
+      },
+      {
+        "title": "A M&E/L&A",
+        "text": "A monitoring, evaluation and learning framework with decision triggers."
+      },
+      {
+        "title": "A pathway to scale",
+        "text": "A decision framework for scaling, adaptation or stopping, informed by evidence."
+      }
+    ]
+  }
+}

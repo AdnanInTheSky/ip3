@@ -1,0 +1,51 @@
+{
+  "subtitle": "DESIGN WITH THE PEOPLE WHO LIVE THE SYSTEM",
+  "title": "Policy becomes real through people's experience",
+  "paragraph": "We combine what the data measures with what people experience.",
+  "orbitItems": [
+    {
+      "label": "Listen",
+      "shortLabel": "01",
+      "description": "Lived experience, needs, behaviours, frustrations, incentives and barriers."
+    },
+    {
+      "label": "Map",
+      "shortLabel": "02",
+      "description": "Value chain analysis, service interactions, processes and friction points."
+    },
+    {
+      "label": "Co-Design",
+      "shortLabel": "03",
+      "description": "Design ideas with users, client teams and technical stakeholders."
+    },
+    {
+      "label": "Prototype",
+      "shortLabel": "04",
+      "description": "Build the smallest useful representation of the policy, service or model."
+    },
+    {
+      "label": "Test",
+      "shortLabel": "05",
+      "description": "Gather evidence, feedback and evidence."
+    },
+    {
+      "label": "Iterate",
+      "shortLabel": "06",
+      "description": "Keep what works. Change what doesn't."
+    }
+  ],
+  "iterateText": "Keep what works. Change what doesn't.",
+  "tags": [
+    "People",
+    "Process",
+    "Data",
+    "Tech",
+    "Finance",
+    "Users",
+    "Citizens",
+    "Institutions"
+  ],
+  "questionText": "Why technically correct reforms still fail",
+  "questionAnswer": "Even the most well-designed policies fail when they don't account for the lived experience of the people who must implement and use them. Technical correctness alone is insufficient without human-centered service design connecting people, process, data, tech, and finance.",
+  "showQuestion": false
+}

@@ -1,0 +1,132 @@
+{
+  "tagline": "Institutional Deck",
+  "title": "Our Institutional Capabilities",
+  "description": "Explore our comprehensive capability decks showcasing how IP3 partners with institutions to deliver transformative outcomes at scale.",
+  "tags": [
+    "All",
+    "Governance",
+    "Finance",
+    "Energy",
+    "Health",
+    "Digital"
+  ],
+  "cards": [
+    {
+      "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&h=400&fit=crop",
+      "title": "Public Financial Management Deck",
+      "description": "Comprehensive capability overview for PFM reform, budget transparency, and fiscal governance programs.",
+      "tag": "Finance",
+      "overview": "Our PFM practice combines diagnostic rigor with hands-on implementation support, having delivered reforms across 35 countries.",
+      "highlights": [
+        "IFMIS design and deployment",
+        "Budget credibility improvement",
+        "Revenue administration modernization",
+        "Fiscal risk management frameworks"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+      "title": "Sovereign Debt Advisory Deck",
+      "description": "End-to-end sovereign debt management, restructuring advisory, and debt sustainability analysis capabilities.",
+      "tag": "Finance",
+      "overview": "We provide strategic advisory on debt portfolio management, liability management operations, and creditor negotiations.",
+      "highlights": [
+        "Debt sustainability analysis",
+        "Liability management operations",
+        "Creditor negotiation support",
+        "Domestic debt market development"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=400&fit=crop",
+      "title": "Judicial Reform Deck",
+      "description": "Institutional strengthening for justice systems including case management, access to justice, and judicial training.",
+      "tag": "Governance",
+      "overview": "We partner with judiciaries and ministries of justice to modernize case management, improve access, and strengthen independence.",
+      "highlights": [
+        "Case management digitization",
+        "Judicial training programs",
+        "Access to justice initiatives",
+        "Court performance metrics"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop",
+      "title": "Renewable Energy Transition Deck",
+      "description": "Policy advisory, investment mobilization, and regulatory framework design for clean energy transitions.",
+      "tag": "Energy",
+      "overview": "We support governments and utilities through the full energy transition lifecycle from policy design to project implementation.",
+      "highlights": [
+        "Renewable energy policy design",
+        "Investment mobilization",
+        "Grid integration planning",
+        "Just transition frameworks"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
+      "title": "Universal Health Coverage Deck",
+      "description": "Health financing, system strengthening, and UHC roadmap development for low and middle-income countries.",
+      "tag": "Health",
+      "overview": "Our UHC practice integrates financing, service delivery, and governance to expand equitable access to quality healthcare.",
+      "highlights": [
+        "Health financing strategy",
+        "Benefit package design",
+        "Primary care strengthening",
+        "Health workforce planning"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600&h=400&fit=crop",
+      "title": "Digital Public Infrastructure Deck",
+      "description": "DPI strategy, implementation support, and governance frameworks for national digital transformation.",
+      "tag": "Digital",
+      "overview": "We help governments design and deploy interoperable digital ID, payments, and data exchange systems at national scale.",
+      "highlights": [
+        "Digital ID system design",
+        "Interoperability frameworks",
+        "Data governance policies",
+        "DPI implementation roadmaps"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop",
+      "title": "Anti-Corruption & Integrity Deck",
+      "description": "Institutional integrity frameworks, procurement reform, and transparency system design.",
+      "tag": "Governance",
+      "overview": "We design and implement comprehensive integrity systems that reduce corruption risks and rebuild public trust.",
+      "highlights": [
+        "Procurement transparency systems",
+        "Asset declaration frameworks",
+        "Whistleblower protection",
+        "Integrity risk assessments"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop",
+      "title": "Climate Finance Mobilization Deck",
+      "description": "Blended finance structuring, green bond advisory, and climate investment pipeline development.",
+      "tag": "Energy",
+      "overview": "We structure innovative finance mechanisms that mobilize private capital for climate adaptation and mitigation projects.",
+      "highlights": [
+        "Blended finance structuring",
+        "Green bond advisory",
+        "Climate fund design",
+        "Investment pipeline development"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop",
+      "title": "Education System Reform Deck",
+      "description": "Curriculum modernization, teacher development, and education financing for 21st-century learning.",
+      "tag": "Governance",
+      "overview": "We partner with education ministries to transform systems for equity, quality, and relevance in rapidly changing economies.",
+      "highlights": [
+        "Curriculum reform design",
+        "Teacher professional development",
+        "Education financing models",
+        "Digital learning integration"
+      ]
+    }
+  ]
+}

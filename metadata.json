@@ -1,0 +1,7 @@
+{
+  "name": "IP3 Consulting",
+  "description": "Policy, Economics & International Development Advisory website",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

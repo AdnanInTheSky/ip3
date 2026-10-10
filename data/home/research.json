@@ -1,0 +1,91 @@
+{
+  "tagline": "Proven Action Research Portfolio",
+  "title": "Research That Drives Policy",
+  "description": "Rigorous, field-tested research that bridges the gap between academic insight and real-world policy implementation across diverse contexts.",
+  "cards": [
+    {
+      "image": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=600&h=400&fit=crop",
+      "title": "Fiscal Decentralization in Fragile States",
+      "description": "Multi-country study on revenue mobilization and service delivery in post-conflict governance structures.",
+      "researchType": "Comparative Policy Research",
+      "region": "Sub-Saharan Africa",
+      "year": "2024",
+      "findings": [
+        "Identified 3 viable revenue models",
+        "Mapped fiscal capacity gaps across 12 provinces",
+        "Informed World Bank $400M program design",
+        "Published in 4 peer-reviewed journals"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop",
+      "title": "Green Hydrogen Market Readiness",
+      "description": "Assessment of policy, infrastructure, and investment conditions for green hydrogen adoption.",
+      "researchType": "Sector Readiness Assessment",
+      "region": "Middle East & North Africa",
+      "year": "2025",
+      "findings": [
+        "Benchmarked 8 countries on readiness",
+        "Identified $12B investment pipeline",
+        "Designed regulatory sandbox framework",
+        "Adopted by 3 national energy ministries"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=400&fit=crop",
+      "title": "Digital Public Infrastructure Scaling",
+      "description": "Action research on interoperable digital ID, payments, and data exchange systems.",
+      "researchType": "Action Research",
+      "region": "South Asia",
+      "year": "2024",
+      "findings": [
+        "Documented 5 scaling pathways",
+        "Reduced onboarding costs by 70%",
+        "Informed national DPI strategy",
+        "Partnered with 6 implementation agencies"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=400&fit=crop",
+      "title": "Climate-Resilient Agriculture Finance",
+      "description": "Research on blended finance mechanisms to de-risk smallholder agricultural lending.",
+      "researchType": "Financial Innovation Research",
+      "region": "Latin America",
+      "year": "2025",
+      "findings": [
+        "Designed 3 blended finance structures",
+        "Mobilized $85M in pilot capital",
+        "Reduced default rates by 23%",
+        "Scaled to 40,000 smallholders"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=400&fit=crop",
+      "title": "Urban Informality & Service Delivery",
+      "description": "Participatory action research on integrating informal settlements into municipal planning.",
+      "researchType": "Participatory Action Research",
+      "region": "Southeast Asia",
+      "year": "2024",
+      "findings": [
+        "Mapped 15 informal settlements",
+        "Co-designed service delivery model",
+        "Piloted in 3 cities with 500K residents",
+        "Adopted by national urban policy"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
+      "title": "Sovereign Debt Restructuring Playbook",
+      "description": "Evidence-based framework for orderly sovereign debt restructuring in emerging markets.",
+      "researchType": "Policy Framework Research",
+      "region": "Global",
+      "year": "2025",
+      "findings": [
+        "Analyzed 25 historical restructurings",
+        "Developed decision-tree framework",
+        "Advised 2 sovereign debt operations",
+        "Cited by IMF working papers"
+      ]
+    }
+  ]
+}

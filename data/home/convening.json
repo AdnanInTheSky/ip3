@@ -1,0 +1,40 @@
+{
+  "sectionTagline": "CONNECTING POLICY, CAPITAL AND IMPLEMENTATION",
+  "cards": [
+    {
+      "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=800&fit=crop",
+      "label": "Policy Dialogue",
+      "description": "Structured conversations that move from diagnosis to decision, bringing ministries, donors and implementers around a shared evidence base."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=600&h=800&fit=crop",
+      "label": "Executive Roundtables",
+      "description": "High-level gatherings for strategic alignment among decision-makers, designed to produce concrete commitments and next steps."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=800&fit=crop",
+      "label": "Investment Forums",
+      "description": "Curated events connecting capital to pipelines, matching institutional investors with investment-ready projects across sectors."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=800&fit=crop",
+      "label": "Technical Working Groups",
+      "description": "Deep-dive sessions on specific challenges, producing technical outputs that inform policy and implementation decisions."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop",
+      "label": "Research–Policy Translation",
+      "description": "Bridging evidence and decision-making through structured processes that convert research findings into actionable policy options."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=800&fit=crop",
+      "label": "Stakeholder Consultations",
+      "description": "Inclusive processes for legitimacy and uptake, ensuring reforms reflect the needs and perspectives of affected communities."
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=800&fit=crop",
+      "label": "Consensus-Building Processes",
+      "description": "Facilitating agreement across diverse interests, from multi-stakeholder negotiations to inter-ministerial coordination."
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "eyebrow": "FROM ANALYSIS TO IMPLEMENTATION",
+  "h2": "Translation, Not Theory.",
+  "sub": "Our work is designed around the decisions institutions actually have to make: what to reform, what to finance, how to structure implementation, where risks sit, how results will be measured, and what evidence is needed to scale.",
+  "nodes": [
+    {
+      "title": "Diagnostics & Research",
+      "description": "Understanding the problem, the system, and the realistic options."
+    },
+    {
+      "title": "Policy & Strategy Design",
+      "description": "Choosing the course of action and designing the intervention."
+    },
+    {
+      "title": "Financing & Bankability",
+      "description": "Making it investable and structuring the capital."
+    },
+    {
+      "title": "Delivery Architecture",
+      "description": "Designing how it will actually be implemented."
+    },
+    {
+      "title": "Implementation Support",
+      "description": "Staying engaged through execution and adaptation."
+    },
+    {
+      "title": "Learning & Scale",
+      "description": "Measuring what works and translating evidence into uptake."
+    }
+  ],
+  "dropdowns": [
+    {
+      "question": "Strategies & Policy Frameworks",
+      "items": [
+        "Sector strategies",
+        "Reform road maps",
+        "Policy briefs",
+        "Regulatory frameworks",
+        "Theories of change"
+      ]
+    },
+    {
+      "question": "Project Preparation",
+      "items": [
+        "Feasibility studies",
+        "Investment concepts",
+        "Results frameworks",
+        "Risk registers",
+        "Implementation plans"
+      ]
+    },
+    {
+      "question": "Institutional Reform",
+      "items": [
+        "Institutional diagnostics",
+        "PFM reform",
+        "Governance frameworks",
+        "Capacity development",
+        "Change management"
+      ]
+    },
+    {
+      "question": "Investment & Finance",
+      "items": [
+        "Bankability assessments",
+        "Blended finance structures",
+        "PPP advisory",
+        "Financial models",
+        "Climate finance strategy"
+      ]
+    },
+    {
+      "question": "Evidence & Evaluation",
+      "items": [
+        "MEL frameworks",
+        "Baselines",
+        "Impact evaluations",
+        "Learning agendas",
+        "Dashboards"
+      ]
+    },
+    {
+      "question": "Digital & AI Transformation",
+      "items": [
+        "DPI diagnostics",
+        "Digital strategy",
+        "Data governance",
+        "AI readiness",
+        "Service design"
+      ]
+    },
+    {
+      "question": "What is IP3's primary function?",
+      "answer": "IP3 serves as a bridge between evidence and action. We transform complex policy research into implementable solutions, working with governments, multilateral institutions, and private sector partners."
+    },
+    {
+      "question": "How does IP3 improve team collaboration?",
+      "answer": "Our structured policy dialogue frameworks, investment forums, and technical working groups align governments, capital providers, and implementers."
+    },
+    {
+      "question": "Can I access IP3 services offline?",
+      "answer": "While our digital platforms require connectivity, our field teams operate extensively in low-connectivity environments."
+    },
+    {
+      "question": "Is IP3 available on mobile devices?",
+      "answer": "Our research portals and stakeholder engagement platforms are fully responsive and accessible on mobile devices."
+    },
+    {
+      "question": "What security features does IP3 offer?",
+      "answer": "We employ enterprise-grade encryption, secure data rooms for sensitive policy documents, and comply with international data protection standards."
+    },
+    {
+      "question": "How can I customize my workflow in IP3?",
+      "answer": "Each engagement is tailored to client needs. We begin with a diagnostic phase to understand your specific context."
+    },
+    {
+      "question": "What integrations does IP3 support?",
+      "answer": "We integrate with major data platforms, GIS systems, financial modeling tools, and stakeholder management software."
+    },
+    {
+      "question": "Are there any user support options?",
+      "answer": "Clients receive dedicated project leads, 24/7 access to our knowledge base, quarterly progress reviews, and ongoing technical assistance."
+    }
+  ]
+}

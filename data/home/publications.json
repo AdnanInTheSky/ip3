@@ -1,0 +1,104 @@
+{
+  "tagline": "Publications",
+  "title": "Knowledge That Informs",
+  "description": "Peer-reviewed research, policy briefs, and thought leadership publications that shape global discourse on development and governance.",
+  "tags": [
+    "All",
+    "Policy Briefs",
+    "Research Papers",
+    "Case Studies",
+    "Working Papers"
+  ],
+  "cards": [
+    {
+      "image": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=600&h=400&fit=crop",
+      "title": "The Future of Sovereign Debt",
+      "description": "A comprehensive policy brief on restructuring mechanisms and debt sustainability in the post-pandemic era.",
+      "tag": "Policy Briefs",
+      "authors": "Dr. Amara Singh, James Okafor",
+      "published": "October 2026",
+      "abstract": "This brief examines emerging sovereign debt challenges and proposes a framework for orderly restructuring that balances creditor rights with debtor development needs.",
+      "takeaways": [
+        "Proposes 5-pillar restructuring framework",
+        "Analyzes 12 recent debt operations",
+        "Recommends enhanced transparency standards",
+        "Outlines role for multilateral coordination"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=600&h=400&fit=crop",
+      "title": "Digital ID and Financial Inclusion",
+      "description": "Research paper on how national digital identity systems accelerate financial inclusion outcomes.",
+      "tag": "Research Papers",
+      "authors": "Dr. Priya Nair, Michael Chen",
+      "published": "September 2026",
+      "abstract": "Using panel data from 45 countries, this paper quantifies the causal impact of digital ID deployment on financial account ownership and credit access.",
+      "takeaways": [
+        "Digital ID increases account ownership by 23%",
+        "Effects strongest for women and rural populations",
+        "Interoperability with payments critical",
+        "Privacy safeguards essential for trust"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop",
+      "title": "Rwanda PFM Reform Journey",
+      "description": "Case study documenting Rwanda's two-decade public financial management transformation and lessons for others.",
+      "tag": "Case Studies",
+      "authors": "IP3 Research Team",
+      "published": "August 2026",
+      "abstract": "This case study traces Rwanda's PFM reform from post-conflict reconstruction to becoming a regional leader in budget credibility and audit quality.",
+      "takeaways": [
+        "Political commitment was the critical success factor",
+        "Phased approach reduced implementation risk",
+        "Donor coordination mechanism essential",
+        "Local capacity building sustained reforms"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=600&h=400&fit=crop",
+      "title": "Green Bonds in Emerging Markets",
+      "description": "Working paper analyzing the growth, pricing, and impact of sovereign and corporate green bonds in developing economies.",
+      "tag": "Working Papers",
+      "authors": "Dr. Elena Rodriguez, Kwame Asante",
+      "published": "July 2026",
+      "abstract": "We analyze 340 green bond issuances from emerging markets, examining pricing dynamics, use of proceeds, and verified environmental outcomes.",
+      "takeaways": [
+        "Greenium averages 15-25 basis points",
+        "Verification standards vary widely",
+        "Proceeds tracking remains a challenge",
+        "Sovereign issuers lead market growth"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=400&fit=crop",
+      "title": "Adapting to Climate Reality",
+      "description": "Policy brief on scaling adaptation finance through innovative instruments and public-private partnerships.",
+      "tag": "Policy Briefs",
+      "authors": "Dr. Fatima Al-Rashid",
+      "published": "June 2026",
+      "abstract": "With adaptation finance falling far short of needs, this brief identifies scalable instruments and partnership models to close the gap.",
+      "takeaways": [
+        "Blended finance can unlock 4x private capital",
+        "Local currency instruments reduce FX risk",
+        "Insurance mechanisms need scaling",
+        "Community-led adaptation most effective"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?w=600&h=400&fit=crop",
+      "title": "AI in Public Service Delivery",
+      "description": "Research paper examining the opportunities, risks, and governance requirements for AI adoption in government services.",
+      "tag": "Research Papers",
+      "authors": "Dr. Yuki Tanaka, Sarah O'Brien",
+      "published": "May 2026",
+      "abstract": "Based on interviews with 80 government CIOs and analysis of 200 AI deployments, this paper maps the state of AI in public services.",
+      "takeaways": [
+        "Chatbots reduced service wait times by 60%",
+        "Bias auditing frameworks still immature",
+        "Procurement rules need AI-specific updates",
+        "Citizen trust depends on transparency"
+      ]
+    }
+  ]
+}

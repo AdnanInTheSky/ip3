@@ -1,0 +1,73 @@
+{
+  "subtitle": "THE STANDARD INSIDE EVERY PHASE",
+  "title": "Six commitments that make the pathway IP3",
+  "paragraph": "The pathway describes the sequence. These describe the standard we hold ourselves to inside it.",
+  "cards": [
+    {
+      "title": "Evidence Before Assumption",
+      "text": "Decisions are only as good as the evidence they rest on. We do not start with solutions. We start with the problem as it exists, and let the evidence determine the pathway.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "bullets": [
+        "Decisions grounded in evidence, not assumptions",
+        "Starting with problems as they exist",
+        "Evidence-determined pathways"
+      ],
+      "paragraph": "Decisions are only as good as the evidence they rest on. We do not start with solutions. We start with the problem as it exists, and let the evidence determine the pathway."
+    },
+    {
+      "title": "System Before Symptoms",
+      "text": "Every policy problem is part of a larger system. We address root causes, not symptoms. Connected problems require connected solutions. We map the full system — institutions, markets, technology, users and behaviours — before defining the intervention.",
+      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop",
+      "bullets": [
+        "Address root causes, not symptoms",
+        "Connected solutions for connected problems",
+        "Map institutions, markets, tech, users and behaviours"
+      ],
+      "paragraph": "Every policy problem is part of a larger system. We address root causes, not symptoms. Connected problems require connected solutions. We map the full system — institutions, markets, technology, users and behaviours — before defining the intervention."
+    },
+    {
+      "title": "Co-Creation, Not Prescription",
+      "text": "A solution imposed is a solution resisted. We design with government, markets, communities and users. The best solutions emerge from the people who must own and sustain them.",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop",
+      "bullets": [
+        "Design with government, markets, communities and users",
+        "Avoid imposed solutions",
+        "Ownership and sustainability from within"
+      ],
+      "paragraph": "A solution imposed is a solution resisted. We design with government, markets, communities and users. The best solutions emerge from the people who must own and sustain them."
+    },
+    {
+      "title": "Test Before Scale",
+      "text": "Designing at scale is designing blind. We prototype, test, and iterate. The pathway is built on evidence, not assumption. What works in pilot informs what works at scale.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+      "bullets": [
+        "Avoid designing at scale blindly",
+        "Prototype, test, and iterate",
+        "Pilot evidence informs scaled execution"
+      ],
+      "paragraph": "Designing at scale is designing blind. We prototype, test, and iterate. The pathway is built on evidence, not assumption. What works in pilot informs what works at scale."
+    },
+    {
+      "title": "Implementation Alongside Strategy",
+      "text": "Policy, research, finance, digital design, and delivery are not separate phases. They are one continuous process. We design with the end in mind, and stay with the client through implementation and adaptation.",
+      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
+      "bullets": [
+        "Continuous process across policy, finance, digital, and delivery",
+        "Design with the end in mind",
+        "Stay with clients through implementation and adaptation"
+      ],
+      "paragraph": "Policy, research, finance, digital design, and delivery are not separate phases. They are one continuous process. We design with the end in mind, and stay with the client through implementation and adaptation."
+    },
+    {
+      "title": "Capability Beyond the Engagement",
+      "text": "Our job is to make ourselves unnecessary. The ultimate measure of success is not the report we deliver, but the capability we leave behind. We build institutional capacity so clients can sustain change after the engagement.",
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
+      "bullets": [
+        "Make ourselves unnecessary",
+        "Measure success by capability left behind, not reports",
+        "Build durable institutional capacity for lasting change"
+      ],
+      "paragraph": "Our job is to make ourselves unnecessary. The ultimate measure of success is not the report we deliver, but the capability we leave behind. We build institutional capacity so clients can sustain change after the engagement."
+    }
+  ]
+}

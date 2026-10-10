@@ -1,0 +1,97 @@
+{
+  "eyebrow": "EVIDENCE & INSIGHTS",
+  "h2": "Research that changes decisions.",
+  "sub": "Thinking that ships how institutions diagnose, finance and deliver.",
+  "cards": [
+    {
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "title": "How to Build a Bankable Climate Adaptation Project Pipeline in Emerging Markets",
+      "description": "A practical framework for moving climate commitments from policy to investment-ready projects.",
+      "type": "Policy Brief",
+      "date": "October 2026",
+      "author": "Dr. Amara Singh",
+      "related": "Climate Finance · Project Preparation",
+      "insights": [
+        "Identifies 5-stage pipeline methodology",
+        "Maps 12 de-risking instruments",
+        "Includes 3 worked country examples",
+        "Provides investor-readiness checklist"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      "title": "From Policy Reform to Implementation: Why Institutional Capacity Determines Development Results",
+      "description": "Evidence from 30+ engagements on what separates adopted reforms from implemented ones.",
+      "type": "Research Paper",
+      "date": "September 2026",
+      "author": "IP3 Research Team",
+      "related": "Institutional Reform · MEL",
+      "insights": [
+        "Institutional capacity explains 68% of variance in outcomes",
+        "Identifies 4 capacity bottlenecks",
+        "Proposes staged capacity-building model",
+        "Validated across 12 countries"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop",
+      "title": "Private Capital Mobilization in Low-Income Economies: What Makes Projects Investable?",
+      "description": "Analysis of 85 transactions identifying the factors that attract private capital to development projects.",
+      "type": "Working Paper",
+      "date": "August 2026",
+      "author": "James Okafor",
+      "related": "Development Finance · Private Sector",
+      "insights": [
+        "7 factors distinguish bankable from non-bankable",
+        "Blended finance reduces cost of capital by 340 bps",
+        "Local currency instruments critical",
+        "PPA structure most important signal"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&h=400&fit=crop",
+      "title": "Responsible AI for Government: A Readiness Framework for Developing Economies",
+      "description": "A practical tool for assessing AI readiness, governance gaps, and accountability requirements.",
+      "type": "Framework",
+      "date": "July 2026",
+      "author": "Dr. Yuki Tanaka",
+      "related": "Digital Government · AI",
+      "insights": [
+        "5-dimension readiness assessment",
+        "12 governance guardrails",
+        "3-tier accountability model",
+        "Piloted in 4 government agencies"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=600&h=400&fit=crop",
+      "title": "Scaling Social Protection in Fragile Contexts",
+      "description": "Comparative analysis of social protection delivery mechanisms across 8 fragile states.",
+      "type": "Policy Brief",
+      "date": "June 2026",
+      "author": "Dr. Fatima Al-Rashid",
+      "related": "Social Protection · Governance",
+      "insights": [
+        "Digital delivery reduces leakage by 40%",
+        "Community targeting outperforms means-testing",
+        "Mobile money critical for last-mile",
+        "Gender-responsive design increases uptake 2x"
+      ]
+    },
+    {
+      "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=400&fit=crop",
+      "title": "The Future of Work in Emerging Economies",
+      "description": "Analysis of automation impacts, skills transitions, and social protection needs across 30 developing labor markets.",
+      "type": "Research Paper",
+      "date": "May 2026",
+      "author": "Dr. Elena Rodriguez",
+      "related": "Labor · Skills · Social Protection",
+      "insights": [
+        "45% of jobs face automation risk by 2035",
+        "TVET enrollment grew 28% in target countries",
+        "Gig economy workers reached 180M globally",
+        "Skills mismatch costs economies $6.2T annually"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "eyebrow": "READY TO WORK WITH IP3?",
+  "h2": "Tell us the mandate you need to deliver.",
+  "sub": "Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required.",
+  "paths": [
+    {
+      "title": "Discuss a Consulting Assignment",
+      "description": "Engage IP3 for diagnostic, design, implementation or evaluation work."
+    },
+    {
+      "title": "Partner With IP3",
+      "description": "Explore consortium or subcontracting opportunities."
+    },
+    {
+      "title": "Discuss a Research Partnership",
+      "description": "Collaborate on research, evidence generation or thought leadership."
+    },
+    {
+      "title": "Request Our Capability Statement",
+      "description": "Download our full capabilities document."
+    }
+  ],
+  "focusAreas": [
+    "Policy, Economics & Strategy",
+    "Program & Project Design",
+    "Development Finance",
+    "Institutions & Governance",
+    "MEL & Impact",
+    "Data, Digital & AI"
+  ]
+}

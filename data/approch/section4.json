@@ -1,0 +1,73 @@
+{
+  "subtitle": "THE PATHWAY",
+  "title": "Six Movements of Reform",
+  "paragraph": "From diagnosis to durable institutional capability. The movements are shown in order because a roadmap must be understandable — but evidence can change the design, a plan can invalidate an assumption, and implementation can expose an institutional constraint. Feedback and adaptation are built in from the start.",
+  "cards": [
+    {
+      "title": "Sense & Diagnose",
+      "text": "Understand the system before moving to improve. A credible problem is rarely the whole problem. We run a current-state diagnostic that identifies how policies, institutions, investments, markets, people, technology, finance, infrastructure, data and behaviours interact — separating what drives the problem from what is merely a symptom, and locating where intervention creates the greatest leverage.",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "bullets": [
+        "Client Question — What is really preventing the organisation, programme, market or citizen from reaching the intended outcome?",
+        "What We Deliver — Current-State Diagnostic & Transformation Readiness",
+        "Deliverable Map & Matrix — Institutional evidence, process and digital maturity diagnostic."
+      ],
+      "paragraph": "Case Study Example — Ghana Subsoil Fertiliser: Ghana's soil health crisis wasn't about fertiliser availability — it was about the entire system: subsidy design, distribution channels, farmer trust, soil testing, data flows, and last-mile logistics. IP3 mapped the full value chain to identify where intervention would create the greatest leverage."
+    },
+    {
+      "title": "Build Intelligence",
+      "text": "Turn evidence into decisions, not just reports. Not every evidence gap requires another large study. We identify what must be known to change a decision, combine existing evidence with new primary research where it is needed, and connect quantitative analysis to institutional, behavioural and user insight. Evidence is then translated into a practical target state.",
+      "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+      "bullets": [
+        "Client Question — What do we need to know to act, and differently?",
+        "What We Deliver — Evidence & Target State Blueprint",
+        "Deliverable Map & Matrix — Decision-grade data and service analytics linked to a practical target state."
+      ],
+      "paragraph": "Case Study Example — Technology Adoption in Low-Land Holdings: For a multi-country initiative, research on farm design and tool improvements, agronomics and financing, market, user and gender dynamics, extension models, and behaviour change was woven into a single, actionable strategy."
+    },
+    {
+      "title": "Co-Design & Test",
+      "text": "Turn insight into a credible, testable system. This is where analysis becomes actionable architecture. Policies, programmes, operating models, digital systems, regulations, financial mechanisms and services are designed together with the institutions and people who must use them — then prototyped and tested before anyone commits institutional resources.",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop",
+      "bullets": [
+        "Client Question — What solution can we validate with real institutions, users, finance and political constraints?",
+        "What We Deliver — Target Solution Architecture",
+        "Deliverable Map & Matrix — Target operating model, service blueprint and data architecture, prototyped."
+      ],
+      "paragraph": "Case Study Example — Malawi Farmer Transformation & Digital Lending: IP3 worked with Malawi's government, financial sector, and NGOs to co-design a farmer transformation and digital lending system. The design integrated land tenure, credit scoring, extension services, market access, and mobile money — tested with real farmers and financial institutions before national rollout."
+    },
+    {
+      "title": "Mobilise",
+      "text": "A good design means nothing if it isn't resourced. Mobilisation is broader than financing. It means aligning the mandate, leadership, stakeholders, people, capabilities, technology, data, financing and implementation resources needed to move from design into operating reality — and getting early, client-facing proof of programme and leadership teams rather than handed to a downstream consultant.",
+      "image": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop",
+      "bullets": [
+        "Client Question — What must be aligned, funded, and resourced to move from design to implementation in practice?",
+        "What We Deliver — Mobilisation & Implementation Readiness Plan",
+        "Deliverable Map & Matrix — Mandate alignment, stakeholder mapping and financing plan."
+      ],
+      "paragraph": "Case Study Example — Ghana Subsoil Early Warning System: IP3 designed a decision-support tool for the Ministry of Agriculture. We mapped stakeholder roles, financing pathways, data governance, and change management — ensuring the system could be owned and sustained by Ghanaian institutions, not just delivered as a technical product."
+    },
+    {
+      "title": "Implement & Transfer",
+      "text": "Implementation is part of consulting — not what happens after consulting. We work alongside clients as strategy becomes operating reality, tracking change management and stakeholder engagement as implementation disciplines rather than communication exercises. The objective is not consultant dependency — it is institutional capability, transferred deliberately as the work proceeds.",
+      "image": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop",
+      "bullets": [
+        "Client Question — How do we build our own policy programme, service or system and sustain it ourselves?",
+        "What We Deliver — Operational Delivery System & Capability Transfer Plan",
+        "Deliverable Map & Matrix — Process redesign, partner rollout and skills transfer capability tracking."
+      ],
+      "paragraph": "Case Study Example — Municipal Finance & Institutional Transformation: IP3 supported a municipal finance transformation, embedding change management, stakeholder engagement, and capacity transfer into every phase. The result was a system owned and operated by local institutions, not dependent on external consultants."
+    },
+    {
+      "title": "Learn & Scale",
+      "text": "Measure to drive change, not justify it. Transformation evaluation asks what happened after an intervention ends. Our M&E & Approach asks what the decision-makers need to know while implementation is still underway — so course corrections can be made and lessons applied before implementation closes, so evidence can change the programme rather than merely report on it.",
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=400&fit=crop",
+      "bullets": [
+        "Client Question — What evidence would tell us whether to adapt, stop, institutionalise or scale?",
+        "What We Deliver — M&E & Adaptation & Scale Architecture",
+        "Deliverable Map & Matrix — Live dashboards and performance triggers linking feedback and scale."
+      ],
+      "paragraph": "Case Study Example — Policy Reform, Trade & LDC Graduation: IP3 supported a country's transition from LDC status, designing M&E frameworks that tracked trade, investment, and institutional capacity in real time — enabling course corrections before graduation deadlines."
+    }
+  ]
+}

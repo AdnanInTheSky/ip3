@@ -1,0 +1,35 @@
+{
+  "data": {
+    "eyebrow": "POLICY • ECONOMICS • DEVELOPMENT FINANCE • IMPLEMENTATION",
+    "h1": "Turning complex policy challenges into implementable, investable solutions.",
+    "sub": "IP3 Consulting Limited is a policy and development advisory firm helping multilateral institutions, development partners, governments, businesses and research organizations design better policies, mobilize investment, strengthen institutions and deliver measurable results.",
+    "reassurance": [
+      "Policy & Economic Advisory",
+      "Project Preparation",
+      "Development Finance",
+      "Institutional Reform",
+      "MEL & Impact",
+      "Digital & Responsible AI"
+    ]
+  },
+  "slides": [
+    {
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&h=1080&fit=crop",
+      "alt": "Team collaboration"
+    },
+    {
+      "type": "video",
+      "src": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    {
+      "type": "youtube",
+      "src": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ"
+    },
+    {
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1920&h=1080&fit=crop",
+      "alt": "Conference meeting"
+    }
+  ]
+}

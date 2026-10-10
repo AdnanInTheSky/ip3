@@ -1,0 +1,86 @@
+{
+  "eyebrow": "WHAT WE DO",
+  "h2": "What clients hire IP3 to deliver.",
+  "cards": [
+    {
+      "title": "Policy, Economics & Strategy Advisory",
+      "problem": "\"We need to understand the problem and choose a defensible course of action.\"",
+      "deliverables": [
+        "Diagnostics",
+        "Modeling",
+        "Political-economy analysis",
+        "Regulatory reviews",
+        "Sector strategies",
+        "Fiscal and cost-benefit analysis",
+        "Reform road maps"
+      ]
+    },
+    {
+      "title": "Program & Project Design",
+      "problem": "\"We have a mandate or funding window but need an implementable program.\"",
+      "deliverables": [
+        "Feasibility studies",
+        "Theories of change",
+        "Concepts",
+        "Results frameworks",
+        "Implementation and financing plans",
+        "Risk registers",
+        "Project-preparation support"
+      ]
+    },
+    {
+      "title": "Development Finance & Private Capital Mobilization",
+      "problem": "\"Public funding is insufficient; how do we make this investable?\"",
+      "deliverables": [
+        "Investment cases",
+        "Blended-finance strategy",
+        "PPP advisory",
+        "Financial models",
+        "Bankability assessments",
+        "Climate-finance strategy",
+        "Pipelines",
+        "Market sounding",
+        "De-risking"
+      ]
+    },
+    {
+      "title": "Institutions, Governance & Delivery",
+      "problem": "\"A policy exists, but institutions cannot implement it consistently.\"",
+      "deliverables": [
+        "Institutional diagnostics",
+        "Governance frameworks",
+        "PFM reform",
+        "Delivery models",
+        "Process redesign",
+        "Capacity development",
+        "Change management"
+      ]
+    },
+    {
+      "title": "Monitoring, Evaluation, Learning & Impact",
+      "problem": "\"We need to know what is working, why, for whom, and whether it can scale.\"",
+      "deliverables": [
+        "MEL frameworks",
+        "Baselines",
+        "Process/impact evaluations",
+        "Learning agendas",
+        "Outcome harvesting",
+        "Dashboards",
+        "Adaptive management"
+      ]
+    },
+    {
+      "title": "Data, Digital & Responsible AI",
+      "problem": "\"We need to modernize systems without creating new governance, exclusion or accountability risks.\"",
+      "deliverables": [
+        "DPI diagnostics",
+        "Digital-government strategy",
+        "Data governance",
+        "Interoperability",
+        "AI readiness and governance",
+        "Service design",
+        "Digital inclusion"
+      ]
+    }
+  ]
+}

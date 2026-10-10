@@ -1,0 +1,118 @@
+{
+  "data": {
+    "eyebrow": "SELECTED ENGAGEMENTS",
+    "h2": "The challenge. Our mandate. What we delivered. What changed.",
+    "cards": [
+      {
+        "image": "https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=600&h=400&fit=crop",
+        "title": "National Digital ID Framework",
+        "description": "Designed and supported implementation of a unified digital identity system serving 40M+ citizens.",
+        "client": "Ministry of Interior, East Africa",
+        "duration": "18 months",
+        "outcomes": [
+          "Unified digital ID issued to 40M+ citizens",
+          "Reduced service delivery time by 60%",
+          "Integrated with 12 government agencies",
+          "Enabled financial inclusion for 8M unbanked adults"
+        ]
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=600&h=400&fit=crop",
+        "title": "Renewable Energy Transition Roadmap",
+        "description": "Developed a 10-year renewable energy strategy attracting $2.3B in private investment.",
+        "client": "Ministry of Energy, Southeast Asia",
+        "duration": "24 months",
+        "outcomes": [
+          "$2.3B private investment mobilized",
+          "3.5 GW renewable capacity pipeline",
+          "Policy framework adopted by parliament",
+          "15,000 green jobs projected by 2030"
+        ]
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop",
+        "title": "Public Financial Management Reform",
+        "description": "Restructured fiscal governance systems improving transparency and reducing leakages by 35%.",
+        "client": "Finance Ministry, Sub-Saharan Africa",
+        "duration": "30 months",
+        "outcomes": [
+          "35% reduction in fiscal leakages",
+          "IFMIS system deployed across 47 counties",
+          "Sovereign credit rating upgraded",
+          "Annual savings of $180M identified"
+        ]
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&h=400&fit=crop",
+        "title": "Universal Health Coverage Strategy",
+        "description": "Designed financing and delivery model extending primary care to 12M rural residents.",
+        "client": "Ministry of Health, South Asia",
+        "duration": "20 months",
+        "outcomes": [
+          "12M rural residents gained coverage",
+          "Maternal mortality reduced by 28%",
+          "Community health worker network scaled 4x",
+          "Digital health records deployed nationwide"
+        ]
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop",
+        "title": "Education System Modernization",
+        "description": "Led curriculum reform and teacher training program impacting 2.5M students across 8 provinces.",
+        "client": "Ministry of Education, Latin America",
+        "duration": "36 months",
+        "outcomes": [
+          "2.5M students reached with new curriculum",
+          "45,000 teachers trained and certified",
+          "Learning outcomes improved by 22%",
+          "Digital literacy integrated K-12"
+        ]
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+        "title": "Climate Resilience Investment Plan",
+        "description": "Structured a $800M climate adaptation fund with blended finance from MDBs and private capital.",
+        "client": "National Development Bank, Pacific Islands",
+        "duration": "14 months",
+        "outcomes": [
+          "$800M climate fund capitalized",
+          "25 resilience projects funded",
+          "500K coastal residents protected",
+          "First sovereign green bond issued"
+        ]
+      }
+    ]
+  },
+  "adviseData": {
+    "tagline": "Institutional Advisory & Reform Pipeline",
+    "title": "Shaping Institutions, Driving Reform",
+    "description": "Long-term advisory partnerships that transform institutional capacity, governance frameworks, and policy delivery systems at national scale.",
+    "cards": [
+      {
+        "image": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1000&h=700&fit=crop",
+        "title": "Central Bank Governance Overhaul",
+        "quote": "Restructured monetary policy frameworks and board governance, restoring credibility and attracting $1.2B in foreign reserves within two years."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1000&h=700&fit=crop",
+        "title": "Civil Service Modernization Program",
+        "quote": "Redesigned recruitment, performance, and promotion systems for 120,000 civil servants, reducing vacancy rates by 45%."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1000&h=700&fit=crop",
+        "title": "Anti-Corruption Institutional Framework",
+        "quote": "Established independent oversight bodies and digital procurement systems that recovered $340M in misallocated public funds."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1000&h=700&fit=crop",
+        "title": "Sub-National Governance Reform",
+        "quote": "Devolved fiscal authority and built capacity across 47 county governments, improving local revenue collection by 68%."
+      },
+      {
+        "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=1000&h=700&fit=crop",
+        "title": "Judicial Efficiency & Access Initiative",
+        "quote": "Digitized case management and trained 800 judicial officers, reducing case backlog by 52%."
+      }
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "subtitle": "DISCIPLINED RIGOUR · FLEXIBLE APPLICATION",
+  "title": "The pathway is consistent. The toolkit changes.",
+  "paragraph": "We do not force every problem into one template. Methods are selected and combined according to the decision, the sector, the evidence available and the capacity to implement.",
+  "backgroundImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=1080&fit=crop",
+  "cards": [
+    {
+      "title": "Actionable Architecture",
+      "text": "Turn complexity and evidence into clarity that can be implemented."
+    },
+    {
+      "title": "Policy Solution Architecture",
+      "text": "Design a coherent blueprint for connected problems."
+    },
+    {
+      "title": "Translational Policy Model",
+      "text": "Bridge the gap between research, evidence and implementation — from academic insight to operational reality."
+    },
+    {
+      "title": "IP3 Impact Logic",
+      "text": "Link inputs, activities, outputs, outcomes and impact in a clear, testable chain."
+    },
+    {
+      "title": "Dynamic Network Model",
+      "text": "Assemble interdisciplinary teams around specific challenges, scaling capacity to the work and contracting it back when the work is done."
+    },
+    {
+      "title": "Technology as Enabler",
+      "text": "Technology is an enabler. Governance and inclusion determine whether it creates value. Our approach asks not only whether something can be digitised, but whether it should be — and for whom."
+    }
+  ],
+  "subsection": {
+    "subtitle": "BRINGING BOTH SIDES, NOT JUST ONE",
+    "title": "Transformation cannot be outsourced.",
+    "description": "True transformation happens when external expertise meets internal knowledge in genuine partnership.",
+    "leftTitle": "IP3 provides",
+    "leftItems": [
+      "Institutional diagnostics",
+      "Independent analysis",
+      "Technical and financial",
+      "Research and modelling",
+      "Facilitation",
+      "Technical design",
+      "Implementation support",
+      "Change management",
+      "Quality assurance"
+    ],
+    "rightTitle": "Client teams provide",
+    "rightItems": [
+      "Institutional intelligence",
+      "Decision authority",
+      "Operational knowledge",
+      "User and citizen insight",
+      "Political will",
+      "Budget and resources",
+      "Implementation ownership",
+      "Organisational learning"
+    ],
+    "togetherTitle": "Together we",
+    "togetherDescription": "Leaders and practitioners partnering to design, test, implement, monitor, learn, build capability, and achieve long-term sustainability.",
+    "togetherTags": [
+      "Leaders",
+      "Practitioners",
+      "Design",
+      "Test",
+      "Implement",
+      "Monitor",
+      "Learn",
+      "Build Capability",
+      "Sustainability"
+    ]
+  }
+}
