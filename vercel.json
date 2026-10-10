@@ -5,5 +5,32 @@
   "installCommand": "echo skip",
   "outputDirectory": ".",
   "cleanUrls": true,
-  "rewrites": [{ "source": "/approach", "destination": "/approch.html" }]
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/approch", "destination": "/approach", "permanent": true },
+    { "source": "/approch.html", "destination": "/approach", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/about-us", "destination": "/about", "permanent": true },
+    { "source": "/our-focus", "destination": "/sectors", "permanent": true },
+    { "source": "/services", "destination": "/capabilities", "permanent": true },
+    { "source": "/climate-action-esg-strategy-sustainability-solutions", "destination": "/sectors/climate-energy-resilience", "permanent": true },
+    { "source": "/climate-action-sustainability-analysis-and-solutions", "destination": "/sectors/sustainable-finance-esg-circular-economy", "permanent": true },
+    { "source": "/educational-innovation", "destination": "/sectors/education-skills-human-capital", "permanent": true },
+    { "source": "/data-and-digitalgovernance", "destination": "/sectors/digital-government-data-dpi", "permanent": true },
+    { "source": "/public-policy-innovation-and-action-research", "destination": "/capabilities#policy-economics-strategy", "permanent": true },
+    { "source": "/economic-financial-and-environmental-assessment-and-feasibility-studies", "destination": "/capabilities#program-project-design", "permanent": true },
+    { "source": "/program-and-survey-design-and-management", "destination": "/capabilities#program-project-design", "permanent": true },
+    { "source": "/monitoring-evaluation-research-learning-and-adaptation-merla", "destination": "/capabilities#monitoring-evaluation-learning", "permanent": true }
+  ],
+  "headers": [
+    { "source": "/assets/vendor/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/assets/(css|js)/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }] },
+    { "source": "/assets/(img|video|logo)/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }] },
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+      { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+    ] }
+  ]
 }

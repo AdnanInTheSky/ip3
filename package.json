@@ -1,42 +1,14 @@
 {
-  "name": "ip3-consulting",
-  "version": "1.0.0",
-  "description": "IP3 Consulting website with markdown content management and JSON build system",
+  "name": "ip3-consulting-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "IP3 Consulting Limited \u2014 static website (generated HTML, GSAP + Lenis motion).",
   "scripts": {
-    "dev": "node dev-server.js",
-    "start": "node dev-server.js",
-    "lint": "node -e \"console.log('Lint passed')\"",
     "build": "node build/build-all.js",
-    "build:home": "node build/home/build-all.js",
-    "build:hero": "node build/home/build-hero.js",
-    "build:mandates": "node build/home/build-mandates.js",
-    "build:capabilities": "node build/home/build-capabilities.js",
-    "build:why-ip3": "node build/home/build-why-ip3.js",
-    "build:sectors": "node build/home/build-sectors.js",
-    "build:translation": "node build/home/build-translation.js",
-    "build:engagements": "node build/home/build-engagements.js",
-    "build:research": "node build/home/build-research.js",
-    "build:evidence": "node build/home/build-evidence.js",
-    "build:convening": "node build/home/build-convening.js",
-    "build:clients": "node build/home/build-clients.js",
-    "build:endorsements": "node build/home/build-endorsements.js",
-    "build:deck": "node build/home/build-deck.js",
-    "build:publications": "node build/home/build-publications.js",
-    "build:leadership": "node build/home/build-leadership.js",
-    "build:contact": "node build/home/build-contact.js",
-    "build:faq": "node build/home/build-faq.js",
-    "build:organization": "node build/home/build-organization.js",
-    "build:approch": "node build/approch/build-all.js",
-    "build:approch:section1": "node build/approch/build-section1.js",
-    "build:approch:section2": "node build/approch/build-section2.js",
-    "build:approch:section3": "node build/approch/build-section3.js",
-    "build:approch:section4": "node build/approch/build-section4.js",
-    "build:approch:section5": "node build/approch/build-section5.js",
-    "build:approch:section6": "node build/approch/build-section6.js",
-    "build:approch:section7": "node build/approch/build-section7.js",
-    "build:approch:section8": "node build/approch/build-section8.js"
+    "dev": "node build/build-all.js && node dev-server.js",
+    "start": "node dev-server.js"
   },
-  "devDependencies": {
-    "express": "^5.3.0"
+  "engines": {
+    "node": ">=18"
   }
 }

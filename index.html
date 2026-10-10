@@ -1,1409 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP3 Consulting | Policy, Economics & International Development Advisory</title>
-    <meta name="description" content="IP3 Consulting helps MDBs, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact.">
-    <meta property="og:title" content="IP3 Consulting | Policy, Economics & International Development Advisory">
-    <meta property="og:description" content="IP3 Consulting helps MDBs, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Cormorant+Garamond:ital,wght@1,400;1,500;1,600&family=Instrument+Serif:ital,wght@0,400;1,400&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        rust: { 50:'#fdf6f3', 100:'#f9ebe4', 200:'#f2d3c6', 300:'#e8b39e', 400:'#d98a6e', 500:'#c96a4a', 600:'#b5523a', 700:'#963f2e', 800:'#7c3628', 900:'#6a3025' },
-                        cream: '#faf8f5',
-                        charcoal: '#1a1a1a',
-                    },
-                    fontFamily: { 
-                        display: ['Fraunces', 'serif'],
-                        'display-italic': ['Fraunces', 'Cormorant Garamond', 'serif'],
-                        'card-title': ['Montserrat', 'sans-serif'],
-                        'card-body': ['Lato', 'sans-serif'],
-                        button: ['Montserrat', 'sans-serif'],
-                        sans: ['Lato', 'sans-serif']
-                    },
-                }
-            }
-        }
-    </script>
-    <style>
-        [x-cloak] { display: none !important; }
-        html { scroll-behavior: smooth; }
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .logo-track { animation: scroll 30s linear infinite; }
-        .logo-track:hover { animation-play-state: paused; }
-
-        /* 3D Carousel */
-        .carousel-scene {
-            perspective: var(--perspective, 1200px);
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
-        }
-        .carousel-ring {
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
-            touch-action: none;
-        }
-        .carousel-card {
-            transform-style: preserve-3d;
-            -webkit-transform-style: preserve-3d;
-            position: absolute;
-            inset: 0;
-            user-select: none;
-            -webkit-user-select: none;
-        }
-        .card-face {
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            transform: translateZ(1px);
-        }
-        .card-back {
-            transform: rotateY(180deg) translateZ(1px);
-        }
-        .grab-cursor { cursor: grab; }
-        .grab-cursor:active { cursor: grabbing; }
-        
-        /* Uniform Button Class */
-        .btn-uniform {
-            @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-button font-semibold tracking-wide transition-all duration-300 bg-rust-700 text-white hover:bg-rust-800 hover:shadow-lg;
-        }
-        .btn-uniform-outline {
-            @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full text-sm font-button font-semibold tracking-wide transition-all duration-300 border-2 border-rust-700 text-rust-700 hover:bg-rust-700 hover:text-white;
-        }
-
-        .font-fraunces {
-            font-family: 'Fraunces', Georgia, serif;
-            font-optical-sizing: auto;
-            font-weight: 400;
-            font-variation-settings: 'opsz' 144, 'WONK' 1, 'SOFT' 0;
-            letter-spacing: -0.015em;
-        }
-        .font-fraunces em,
-        .font-fraunces .italic {
-            font-style: italic;
-            font-variation-settings: 'opsz' 144, 'WONK' 1, 'SOFT' 0;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>IP3 Consulting | Policy, Economics &amp; International Development Advisory</title>
+<meta name="description" content="IP3 Consulting helps multilateral institutions, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact.">
+<link rel="canonical" href="https://ip3-bd.org/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#12100f">
+<meta property="og:type" content="website"><meta property="og:site_name" content="IP3 Consulting Limited">
+<meta property="og:title" content="IP3 Consulting | Policy, Economics &amp; International Development Advisory"><meta property="og:description" content="IP3 Consulting helps multilateral institutions, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact.">
+<meta property="og:url" content="https://ip3-bd.org/"><meta property="og:image" content="https://ip3-bd.org/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/logo/favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/logo/favicon-48.png">
+<link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css?v=89c56849">
+<link rel="preload" as="image" href="/assets/img/poster-hero-1.webp" fetchpriority="high">
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js')</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","legalName":"IP3 Consulting Limited","name":"IP3 Consulting","alternateName":"Institute for Public Policy and Practice","url":"https://ip3-bd.org","logo":"https://ip3-bd.org/assets/logo/icon-512.png","foundingDate":"2018","email":"info@ip3-bd.org","telephone":"+880 1914 011 329","address":{"@type":"PostalAddress","streetAddress":"Zenith Prime, House-39, Road-35/A, Gulshan-2","addressLocality":"Dhaka","postalCode":"1212","addressCountry":"BD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"IP3 Consulting Limited","url":"https://ip3-bd.org"}</script>
 </head>
-<body class="font-sans text-charcoal bg-white antialiased">
+<body class="home" data-path="/">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><i data-progress></i></div>
 
-    <!-- Navigation -->
-    <nav x-data="{ open: false }" class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <a href="#" class="font-display text-3xl font-normal tracking-tight">IP<span class="text-rust-700 font-semibold">3</span></a>
-                <div class="hidden md:flex items-center gap-6">
-                    <a href="#mandates" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Mandates</a>
-                    <a href="#capabilities" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Capabilities</a>
-                    <a href="approch.html" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Our Approach</a>
-                    <a href="about.html" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">About Us</a>
-                    <a href="#why-ip3" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Why IP3</a>
-                    <a href="#sectors" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Sectors</a>
-                    <a href="#translation" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Implementation</a>
-                    <a href="#engagements" class="text-sm font-button font-medium text-gray-600 hover:text-rust-700 transition">Engagements</a>
-                    <a href="#contact" class="btn-uniform px-6 py-2.5 text-xs">Contact Us</a>
-                </div>
-                <button @click="open = !open" class="md:hidden p-2 text-rust-700">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
-            </div>
-        </div>
-        <div x-show="open" x-cloak class="md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 max-h-[70vh] overflow-y-auto">
-            <a href="#mandates" class="block text-sm font-button font-medium text-gray-600">Mandates</a>
-            <a href="#capabilities" class="block text-sm font-button font-medium text-gray-600">Capabilities</a>
-            <a href="approch.html" class="block text-sm font-button font-medium text-gray-600">Our Approach</a>
-            <a href="about.html" class="block text-sm font-button font-medium text-gray-600">About Us</a>
-            <a href="#why-ip3" class="block text-sm font-button font-medium text-gray-600">Why IP3</a>
-            <a href="#sectors" class="block text-sm font-button font-medium text-gray-600">Sectors</a>
-            <a href="#translation" class="block text-sm font-button font-medium text-gray-600">Implementation</a>
-            <a href="#engagements" class="block text-sm font-button font-medium text-gray-600">Engagements</a>
-            <a href="#contact" class="btn-uniform w-full text-center px-6 py-3 text-sm">Contact Us</a>
-        </div>
-    </nav>
- 
-<!-- ==================== SECTION 1: HERO SLIDER ==================== -->
-<section x-data="heroSlider()" class="relative min-h-screen overflow-hidden pt-20">
-    <template x-for="(slide, index) in slides" :key="index">
-        <div x-show="currentSlide === index"
-             x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-             x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-             class="absolute inset-0">
-            <template x-if="slide.type === 'video'"><div class="absolute inset-0"><video autoplay muted loop playsinline class="w-full h-full object-cover"><source :src="slide.src" type="video/mp4"></video><div class="absolute inset-0 bg-black/20"></div></div></template>
-            <template x-if="slide.type === 'youtube'"><div class="absolute inset-0"><iframe :src="slide.src" class="w-full h-full object-cover" frameborder="0" allowfullscreen></iframe><div class="absolute inset-0 bg-black/20"></div></div></template>
-            <template x-if="slide.type === 'image'"><div class="absolute inset-0"><img :src="slide.src" :alt="slide.alt" class="w-full h-full object-cover"><div class="absolute inset-0 bg-black/10"></div></div></template>
-        </div>
-    </template>
+<header class="head" data-head>
+  <div class="head__bar">
+    <a class="brand" href="/" aria-label="IP3 Consulting Limited — home">
+      <img src="/assets/logo/ip3-mark.png" width="42" height="42" alt="" decoding="async">
+      <span class="brand__t"><span class="brand__n">IP3 <b>Consulting</b></span><span class="brand__d">Institute for Public Policy & Practice</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary"><a href="/about">About</a><a href="/approach">Approach</a><a href="/capabilities">Capabilities</a><a href="/sectors">Sectors</a><a href="/engagements">Engagements</a><a href="/insights">Insights</a><a href="/people">People</a></nav>
+    <div class="head__cta">
+      <a class="btn btn--sm" href="/contact">Contact Us<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <button class="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="drawer" data-burger><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+  <a class="d-link" style="transition-delay:0.25s" href="/">Home</a><a class="d-link" style="transition-delay:0.3s" href="/about">About</a><a class="d-link" style="transition-delay:0.35s" href="/approach">Approach</a><a class="d-link" style="transition-delay:0.4s" href="/capabilities">Capabilities</a><a class="d-link" style="transition-delay:0.45s" href="/sectors">Sectors</a><a class="d-link" style="transition-delay:0.5s" href="/engagements">Engagements</a><a class="d-link" style="transition-delay:0.55s" href="/insights">Insights</a><a class="d-link" style="transition-delay:0.6000000000000001s" href="/people">People</a><a class="d-link" style="transition-delay:0.65s" href="/contact">Contact</a>
+  <div class="drawer__foot">Zenith Prime, House-39, Road-35/A, Gulshan-2, Dhaka-1212, Bangladesh<br><a href="mailto:info@ip3-bd.org">info@ip3-bd.org</a> · <a href="tel:+8801914011329">+880 1914 011 329</a></div>
+</div>
+<main id="main">
 
-    <div class="absolute bottom-8 left-6 lg:left-8 z-20 flex items-center gap-4">
-        <button @click="prevSlide()" class="w-12 h-12 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white/10 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
-        <button @click="nextSlide()" class="w-12 h-12 rounded-full border border-white/40 text-white flex items-center justify-center hover:bg-white/10 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
-        <div class="flex gap-2 ml-4">
-            <template x-for="(slide, index) in slides" :key="index">
-                <button @click="currentSlide = index" class="h-1 rounded-full transition-all duration-300" :class="currentSlide === index ? 'w-8 bg-rust-500' : 'w-4 bg-white/40'"></button>
-            </template>
-        </div>
+<section class="hero on-dark dark" data-hero aria-roledescription="carousel" aria-label="Featured work">
+  <div class="hero__slides">
+    <article class="hero__slide is-active" data-slide="0" aria-hidden="false">
+      <video muted loop playsinline autoplay preload="auto" poster="/assets/img/poster-hero-1.webp" aria-hidden="true" tabindex="-1"><source src="/assets/video/hero-1.mp4" type="video/mp4"></video>
+    </article>
+    <article class="hero__slide" data-slide="1" aria-hidden="true">
+      <video muted loop playsinline preload="none" poster="/assets/img/poster-hero-2.webp" aria-hidden="true" tabindex="-1"><source src="/assets/video/hero-2.mp4" type="video/mp4"></video>
+    </article>
+    <article class="hero__slide" data-slide="2" aria-hidden="true">
+      <video muted loop playsinline preload="none" poster="/assets/img/poster-hero-3.webp" aria-hidden="true" tabindex="-1"><source src="/assets/video/hero-3.mp4" type="video/mp4"></video>
+    </article>
+    <article class="hero__slide" data-slide="3" aria-hidden="true">
+      <video muted loop playsinline preload="none" poster="/assets/img/poster-hero-4.webp" aria-hidden="true" tabindex="-1"><source src="/assets/video/hero-4.mp4" type="video/mp4"></video>
+    </article></div>
+  <div class="hero__shade"></div>
+  <div class="container hero__inner"><div class="hero__copy" aria-live="polite">
+    <div class="hero__text is-active" data-text="0">
+      <span class="eyebrow">Policy • Economics • Development Finance • Implementation</span>
+      <h1>Turning complex policy challenges into <em>implementable,</em> investable solutions.</h1>
+      <p class="lead">IP3 Consulting Limited is a policy and development advisory firm helping multilateral institutions, development partners, governments, businesses and research organizations design better policies, mobilize investment, strengthen institutions and deliver measurable results.</p>
+      <div class="hero__cta"><a class="btn btn--light" href="/contact">Discuss an Assignment<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--outline-light" href="/capabilities">Explore Our Capabilities<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
-    <div class="absolute bottom-8 right-6 lg:right-8 z-20 text-white font-display text-xl">
-        <span x-text="String(currentSlide + 1).padStart(2, '0')"></span><span class="text-white/40 mx-1">/</span><span x-text="String(slides.length).padStart(2, '0')" class="text-white/40"></span>
+    <div class="hero__text" data-text="1">
+      <span class="eyebrow">Sustainable Finance • ESG • Circular Economy</span>
+      <h2 class="display" style="font-size:clamp(2.4rem,5.6vw,5.4rem);margin:22px 0 26px">Designing the <em>sustainable future</em> into policy and investment.</h2>
+      <p class="lead">We integrate sustainability into policy-making and corporate governance — from ESG strategy and green finance to the circular-economy investment cases that turn commitments into credible, bankable pipelines.</p>
+      <div class="hero__cta"><a class="btn btn--light" href="/sectors/sustainable-finance-esg-circular-economy">Sustainable finance &amp; ESG<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--outline-light" href="/approach">See our approach<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
     </div>
+    <div class="hero__text" data-text="2">
+      <span class="eyebrow">Climate • Energy • Resilience • Livelihoods</span>
+      <h2 class="display" style="font-size:clamp(2.4rem,5.6vw,5.4rem);margin:22px 0 26px">Resilience, built with the <em>people</em> it is meant to serve.</h2>
+      <p class="lead">From climate economics and adaptation investment planning to evidence gathered in the field, we help institutions turn climate ambition into projects that communities can own and capital can fund.</p>
+      <div class="hero__cta"><a class="btn btn--light" href="/sectors/climate-energy-resilience">Climate, energy &amp; resilience<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--outline-light" href="/engagements">Selected engagements<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+    <div class="hero__text" data-text="3">
+      <span class="eyebrow">Institutions • Data • Digital Governance</span>
+      <h2 class="display" style="font-size:clamp(2.4rem,5.6vw,5.4rem);margin:22px 0 26px">Institutions that can <em>deliver</em> — powered by data and inclusive digital systems.</h2>
+      <p class="lead">Empowering institutions with data-driven governance and inclusive digital ecosystems for resilient, future-ready public services.</p>
+      <div class="hero__cta"><a class="btn btn--light" href="/sectors/digital-government-data-dpi">Digital government &amp; data<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--outline-light" href="/people">Meet our people<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div></div></div>
+  <div class="hero__ctrl">
+    <button type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
+    <button type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+  </div>
+  <div class="hero__ui"><div class="container"><div class="hero__tabs"><button class="hero__tab is-active" type="button" data-tab="0" aria-label="Show slide 1: Policy to delivery"><i></i><b>01</b><span>Policy to delivery</span></button><button class="hero__tab" type="button" data-tab="1" aria-label="Show slide 2: Sustainable finance"><i></i><b>02</b><span>Sustainable finance</span></button><button class="hero__tab" type="button" data-tab="2" aria-label="Show slide 3: Climate &amp; resilience"><i></i><b>03</b><span>Climate &amp; resilience</span></button><button class="hero__tab" type="button" data-tab="3" aria-label="Show slide 4: Institutions &amp; data"><i></i><b>04</b><span>Institutions &amp; data</span></button></div></div></div>
+</section>
+<div class="ticker" aria-label="Areas of work"><div class="ticker__track"><div style="display:flex"><span>Policy &amp; Economic Advisory</span><span>Project Preparation</span><span>Development Finance</span><span>Institutional Reform</span><span>MEL &amp; Impact</span><span>Digital &amp; Responsible AI</span><span>Policy &amp; Economic Advisory</span><span>Project Preparation</span><span>Development Finance</span><span>Institutional Reform</span><span>MEL &amp; Impact</span><span>Digital &amp; Responsible AI</span></div><div style="display:flex"><span>Policy &amp; Economic Advisory</span><span>Project Preparation</span><span>Development Finance</span><span>Institutional Reform</span><span>MEL &amp; Impact</span><span>Digital &amp; Responsible AI</span><span>Policy &amp; Economic Advisory</span><span>Project Preparation</span><span>Development Finance</span><span>Institutional Reform</span><span>MEL &amp; Impact</span><span>Digital &amp; Responsible AI</span></div></div></div>
+
+<section class="section" id="mandates">
+  <div class="container deck">
+    <div class="deck__intro">
+      <span class="eyebrow" data-reveal>Built for complex mandates</span>
+      <h2 class="split" style="margin-top:20px">From evidence to decisions. <em>From decisions to delivery.</em></h2>
+      <p class="lead" data-reveal>Development challenges rarely fit within one ministry, one sector or one financing instrument. IP3 brings together economics, public policy, finance, institutional analysis, technology and implementation expertise to help clients move through the full decision cycle.</p>
+      <a class="btn " href="/capabilities">Explore Our Capabilities<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="deck__cards">
+      <article class="card-s" style="--i:0" data-deck><span class="card-s__n">01</span><h3>Diagnose</h3><p>Economic, institutional, market and political-economy analysis that clarifies the problem and identifies realistic options.</p><div class="card-s__bar"><i></i></div></article><article class="card-s" style="--i:1" data-deck><span class="card-s__n">02</span><h3>Design</h3><p>Policies, programs, investment concepts, theories of change, financing strategies and implementation arrangements.</p><div class="card-s__bar"><i></i></div></article><article class="card-s" style="--i:2" data-deck><span class="card-s__n">03</span><h3>Finance</h3><p>Bankability analysis, blended finance, climate finance, private-capital mobilization and investment pipelines.</p><div class="card-s__bar"><i></i></div></article><article class="card-s" style="--i:3" data-deck><span class="card-s__n">04</span><h3>Deliver</h3><p>Institutional strengthening, implementation support, capacity development and adaptive problem-solving.</p><div class="card-s__bar"><i></i></div></article><article class="card-s" style="--i:4" data-deck><span class="card-s__n">05</span><h3>Measure</h3><p>MEL frameworks, evaluations, results systems, dashboards and learning processes.</p><div class="card-s__bar"><i></i></div></article><article class="card-s" style="--i:5" data-deck><span class="card-s__n">06</span><h3>Scale</h3><p>Evidence translation, replication strategies, policy uptake and institutionalization.</p><div class="card-s__bar"><i></i></div></article>
+    </div>
+  </div>
 </section>
 
-    <!-- ==================== SECTION 2: BUILT FOR COMPLEX MANDATES ==================== -->
-    <section id="mandates" x-data="mandatesData()" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-20">
-                <div class="order-2 lg:order-1">
-                    <p class="text-xs font-button font-medium tracking-[0.28em] uppercase text-charcoal mb-10" x-html="data.eyebrow">BUILT FOR COMPLEX <span class="text-rust-700">MANDATES</span></p>
-                    <h2 class="font-fraunces text-[75px] font-normal leading-[1.04] mb-8 text-charcoal" style="font-size: 75px; font-weight: normal;" x-html="data.h2">From evidence to<br>decisions.<br><span class="italic">From decisions to</span><br><span class="italic text-rust-700">delivery.</span></h2>
-                    <p class="text-lg font-card-body text-gray-600 leading-relaxed max-w-lg mb-10" x-text="data.body"></p>
-                    <a href="#capabilities" class="btn-uniform">Explore Our Capabilities <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-                </div>
-                <div class="order-1 lg:order-2">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=1000&fit=crop" alt="Conference room" class="w-full h-[500px] lg:h-[600px] object-cover"></div>
-                </div>
-            </div>
-    <!--
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <template x-for="(card, index) in data.cards" :key="index">
-                    <div class="bg-cream rounded-2xl p-8 border border-gray-100 hover:shadow-lg transition-shadow duration-300 group">
-                        <div class="w-12 h-12 bg-rust-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-rust-700 transition-colors duration-300">
-                            <span class="text-rust-700 font-card-title text-lg font-bold group-hover:text-white transition-colors duration-300" x-text="String(index + 1).padStart(2, '0')"></span>
-                        </div>
-                        <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                        <p class="font-card-body text-gray-600 text-sm leading-relaxed" x-text="card.description"></p>
-                    </div>
-                </template>
-            </div>
--->
-        </div>
-    </section>
+<section class="section--dark on-dark dark" style="padding:clamp(60px,8vw,110px) 0">
+  <div class="container">
+    <div class="stats" data-stats>
+      <div class="stat"><b><span data-count="17">17</span><i>+</i></b><span>Years of founder experience in economic policy &amp; sustainability</span></div><div class="stat"><b><span data-count="75">75</span><i>+</i></b><span>High-impact projects underpinned</span></div><div class="stat"><b><span data-count="30">30</span><i>+</i></b><span>International development partners</span></div><div class="stat"><b><span data-count="8">8</span><i></i></b><span>Connected sectors, one delivery model</span></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 3: CAPABILITIES ==================== -->
-    <section id="capabilities" x-data="capabilitiesData()" class="py-24 lg:py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.eyebrow"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.h2"></h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="(card, index) in data.cards" :key="index">
-                    <div class="bg-white rounded-2xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="w-12 h-12 bg-rust-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-rust-700 transition-colors duration-300">
-                            <span class="text-rust-700 font-card-title text-lg font-bold group-hover:text-white transition-colors duration-300" x-text="String(index + 1).padStart(2, '0')"></span>
-                        </div>
-                        <h3 class="font-card-title text-xl font-semibold mb-4" x-text="card.title"></h3>
-                        <p class="font-card-body text-rust-700 italic text-sm mb-4" x-text="card.problem"></p>
-                        <div class="border-t border-gray-200 pt-4">
-                            <p class="text-xs font-button font-bold uppercase tracking-wider text-gray-500 mb-2">Deliverables</p>
-                            <ul class="space-y-1.5">
-                                <template x-for="(item, i) in card.deliverables" :key="i">
-                                    <li class="flex items-start gap-2 font-card-body text-gray-600 text-sm"><svg class="w-4 h-4 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li>
-                                </template>
-                            </ul>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
+<section class="section section--sand" id="capabilities">
+  <div class="container">
+    <div class="section__head section__head--split">
+      <div><span class="eyebrow" data-reveal>What we do</span><h2 class="split" style="margin-top:18px">What clients hire <em>IP3</em> to deliver.</h2></div>
+      <div><p class="lead" data-reveal>Six capabilities, each one built around a decision clients actually have to make — and the deliverables that carry it into delivery.</p><div style="margin-top:26px" data-reveal><a class="btn btn--ghost" href="/capabilities">All capabilities<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+    <div class="caps" data-stagger>
+      <a class="cap" href="/capabilities#policy-economics-strategy"><span class="cap__n">01</span><h3>Policy, Economics & Strategy Advisory</h3><q>“We need to understand the problem and choose a defensible course of action.”</q><div class="chips"><span class="chip">Diagnostics</span><span class="chip">Modeling</span><span class="chip">Political-economy analysis</span><span class="chip">Regulatory reviews</span></div></a><a class="cap" href="/capabilities#program-project-design"><span class="cap__n">02</span><h3>Program & Project Design</h3><q>“We have a mandate or funding window but need an implementable program.”</q><div class="chips"><span class="chip">Feasibility studies</span><span class="chip">Theories of change</span><span class="chip">Concepts</span><span class="chip">Results frameworks</span></div></a><a class="cap" href="/capabilities#development-finance"><span class="cap__n">03</span><h3>Development Finance & Private Capital Mobilization</h3><q>“Public funding is insufficient; how do we make this investable?”</q><div class="chips"><span class="chip">Investment cases</span><span class="chip">Blended-finance strategy</span><span class="chip">PPP advisory</span><span class="chip">Financial models</span></div></a><a class="cap" href="/capabilities#institutions-governance-delivery"><span class="cap__n">04</span><h3>Institutions, Governance & Delivery</h3><q>“A policy exists, but institutions cannot implement it consistently.”</q><div class="chips"><span class="chip">Institutional diagnostics</span><span class="chip">Governance frameworks</span><span class="chip">PFM reform</span><span class="chip">Delivery models</span></div></a><a class="cap" href="/capabilities#monitoring-evaluation-learning"><span class="cap__n">05</span><h3>Monitoring, Evaluation, Learning & Impact</h3><q>“We need to know what is working, why, for whom, and whether it can scale.”</q><div class="chips"><span class="chip">MEL frameworks</span><span class="chip">Baselines</span><span class="chip">Process and impact evaluations</span><span class="chip">Learning agendas</span></div></a><a class="cap" href="/capabilities#data-digital-responsible-ai"><span class="cap__n">06</span><h3>Data, Digital & Responsible AI</h3><q>“We need to modernize systems without creating new governance, exclusion or accountability risks.”</q><div class="chips"><span class="chip">DPI diagnostics</span><span class="chip">Digital-government strategy</span><span class="chip">Data governance</span><span class="chip">Interoperability</span></div></a>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 4: WHY IP3 ==================== -->
-    <section id="why-ip3" x-data="whyIp3Data()" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-                <div class="lg:sticky lg:top-24">
-                    <div class="rounded-2xl overflow-hidden shadow-xl">
-                        <img :src="data.image" alt="IP3 Team" class="w-full h-[500px] lg:h-[600px] object-cover">
-                    </div>
-                </div>
-                <div>
-                    <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.eyebrow"></p>
-                    <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-16" x-html="data.h2"></h2>
-                    <div class="space-y-10">
-                        <template x-for="(item, index) in data.reasons" :key="index">
-                            <div class="flex gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-rust-700 rounded-lg flex items-center justify-center">
-                                    <span class="text-white font-button text-sm font-bold" x-text="item.number"></span>
-                                </div>
-                                <div>
-                                    <h3 class="font-card-title text-lg font-semibold mb-2" x-text="item.title"></h3>
-                                    <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-3" x-text="item.description"></p>
-                                    <a :href="item.link" class="btn-uniform-outline px-5 py-2 text-xs">
-                                        <span x-text="item.linkText"></span>
-                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                                    </a>
-                                </div>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="section" id="why-ip3">
+  <div class="container two two--top">
+    <div class="photo photo--tall clip" data-clip><img src="/assets/img/group-2.webp" width="1600" height="900" alt="IP3 colleagues and partners gathered after a policy workshop" loading="lazy" data-parallax></div>
+    <div>
+      <span class="eyebrow" data-reveal>Why IP3</span>
+      <h2 class="split" style="margin:18px 0 38px">Four reasons clients <em>choose us.</em></h2>
+      <ul class="checks" data-stagger style="gap:0">
+        <li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">01</b><h3 style="margin:8px 0 8px">From polycrisis to polysolutions</h3><span style="font-weight:400;font-family:var(--f-body)">Eight connected sectors. One integrated delivery model.</span><br><a class="link" style="margin-top:14px" href="/sectors">Explore sectors<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">02</b><h3 style="margin:8px 0 8px">Translation, not theory</h3><span style="font-weight:400;font-family:var(--f-body)">Evidence converted into delivery architecture: strategies, project preparation, institutional reform, results systems.</span><br><a class="link" style="margin-top:14px" href="/capabilities">See deliverables<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">03</b><h3 style="margin:8px 0 8px">Research that changes decisions</h3><span style="font-weight:400;font-family:var(--f-body)">Decision-ready diagnostics, business cases and evaluations — not publications for their own sake.</span><br><a class="link" style="margin-top:14px" href="/insights">Read insights<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li><li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">04</b><h3 style="margin:8px 0 8px">A convenor between worlds</h3><span style="font-weight:400;font-family:var(--f-body)">Structured policy dialogue, investment forums and technical working groups that align governments, capital and implementers.</span><br><a class="link" style="margin-top:14px" href="/contact">Commission a dialogue<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 5: SECTOR EXPERTISE ==================== -->
-    <section id="sectors" x-data="sectorsData()" class="py-24 lg:py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.eyebrow"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.h2"></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.sub"></p>
-                <p class="font-display-italic italic text-rust-700 text-2xl mt-4" x-text="data.tagline"></p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="(card, index) in data.cards" :key="index">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="overflow-hidden h-56"><img :src="card.image" :alt="card.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="p-8">
-                            <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                            <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-6" x-text="card.description"></p>
-                            <button @click="openModal(card)" class="btn-uniform w-full text-xs py-3">Explore Sector</button>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-        <div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="closeModal()">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeModal()"></div>
-            <div x-show="modalOpen" x-transition class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-                <button @click="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition z-10"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-                <template x-if="selectedCard">
-                    <div>
-                        <img :src="selectedCard.image" :alt="selectedCard.title" class="w-full h-64 object-cover rounded-t-2xl">
-                        <div class="p-8 lg:p-10">
-                            <h3 class="font-card-title text-3xl font-semibold mb-4" x-text="selectedCard.title"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed mb-6" x-text="selectedCard.description"></p>
-                            <div class="border-t border-gray-200 pt-6">
-                                <h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Key Focus Areas</h4>
-                                <ul class="space-y-2">
-                                    <template x-for="(item, i) in selectedCard.focusAreas" :key="i">
-                                        <li class="flex items-start gap-3 font-card-body text-gray-600 text-sm"><svg class="w-5 h-5 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li>
-                                    </template>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
+<section class="hs on-dark dark" id="sectors" data-hs>
+  <div class="hs__pin" data-hs-pin>
+    <div class="container hs__head">
+      <div><span class="eyebrow">IP3 sector expertise</span><h2 class="split" style="margin-top:18px">From polycrisis to <em>polysolutions.</em></h2></div>
+      <p>IP3 works across eight interconnected sectors where economic, institutional, environmental and technological risks overlap. Eight sectors. One integrated delivery model.</p>
+    </div>
+    <div class="hs__track" data-hs-track>
+      <a class="hs__card" href="/sectors/climate-energy-resilience"><img src="/assets/img/poster-energy.webp" width="800" height="600" alt="" loading="lazy"><div><b>01</b><h3>Climate, Energy & Resilience</h3><p>Climate commitments must become investment-ready adaptation and resilient infrastructure.</p></div></a><a class="hs__card" href="/sectors/education-skills-human-capital"><img src="/assets/img/education.webp" width="800" height="600" alt="" loading="lazy"><div><b>02</b><h3>Education, Skills & Human Capital</h3><p>Learning systems must produce skills for changing economies.</p></div></a><a class="hs__card" href="/sectors/health-systems-social-protection"><img src="/assets/img/survey-4.webp" width="800" height="600" alt="" loading="lazy"><div><b>03</b><h3>Health Systems & Social Protection</h3><p>Coverage and protection must be fiscally sustainable and well targeted.</p></div></a><a class="hs__card" href="/sectors/digital-government-data-dpi"><img src="/assets/img/poster-city.webp" width="800" height="600" alt="" loading="lazy"><div><b>04</b><h3>Digital Government, Data & DPI</h3><p>Digital transformation must improve services without creating governance or exclusion risks.</p></div></a><a class="hs__card" href="/sectors/governance-institutions-public-finance"><img src="/assets/img/workshop-adb.webp" width="800" height="600" alt="" loading="lazy"><div><b>05</b><h3>Governance, Institutions & Public Finance</h3><p>Policies fail when institutions cannot implement them consistently.</p></div></a><a class="hs__card" href="/sectors/economic-transformation-trade-private-sector"><img src="/assets/img/factory.webp" width="800" height="600" alt="" loading="lazy"><div><b>06</b><h3>Economic Transformation, Trade & Private-Sector Development</h3><p>Growth must create jobs through productive investment and diversification.</p></div></a><a class="hs__card" href="/sectors/sustainable-finance-esg-circular-economy"><img src="/assets/img/poster-textile.webp" width="800" height="600" alt="" loading="lazy"><div><b>07</b><h3>Sustainable Finance, ESG & Circular Economy</h3><p>Sustainability commitments must become investable pipelines and credible disclosure.</p></div></a><a class="hs__card" href="/sectors/ai-emerging-technology-public-systems"><img src="/assets/img/poster-data.webp" width="800" height="600" alt="" loading="lazy"><div><b>08</b><h3>AI & Emerging Technology for Public Systems</h3><p>Public AI needs readiness, governance and accountability, not software hype.</p></div></a>
+    </div>
+    <div class="hs__bar"><span>Scroll</span><div class="hs__line"><i data-hs-fill></i></div><a class="link" href="/sectors">All sectors<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 6: FROM ANALYSIS TO IMPLEMENTATION (Linked with Arrows) ==================== -->
-    <section id="translation" x-data="translationData()" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.eyebrow"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6">From Analysis to <span class="font-display-italic italic text-rust-700">Implementation</span></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.sub"></p>
-            </div>
+<section class="section" id="translation">
+  <div class="container">
+    <div class="trans">
+      <div class="trans__left">
+        <span class="eyebrow" data-reveal>From analysis to implementation</span>
+        <h2 class="split" style="margin-top:20px">Translation, <em>not theory.</em></h2>
+        <p class="lead" data-reveal>Our work is designed around the decisions institutions actually have to make: what to reform, what to finance, how to structure implementation, where risks sit, how results will be measured, and what evidence is needed to scale.</p>
+        <ol class="trans__rail" data-rail><li class="is-active">Diagnostics & Research</li><li>Policy & Strategy Design</li><li>Financing & Bankability</li><li>Delivery Architecture</li><li>Implementation Support</li><li>Learning & Scale</li></ol>
+      </div>
+      <div class="trans__steps">
+        <article class="step is-active" data-step="0"><span class="step__n">01</span><h3>Diagnostics & Research</h3><p>Understanding the problem, the system, and the realistic options.</p></article><article class="step" data-step="1"><span class="step__n">02</span><h3>Policy & Strategy Design</h3><p>Choosing the course of action and designing the intervention.</p></article><article class="step" data-step="2"><span class="step__n">03</span><h3>Financing & Bankability</h3><p>Making it investable and structuring the capital.</p></article><article class="step" data-step="3"><span class="step__n">04</span><h3>Delivery Architecture</h3><p>Designing how it will actually be implemented.</p></article><article class="step" data-step="4"><span class="step__n">05</span><h3>Implementation Support</h3><p>Staying engaged through execution and adaptation.</p></article><article class="step" data-step="5"><span class="step__n">06</span><h3>Learning & Scale</h3><p>Measuring what works and translating evidence into uptake.</p></article>
+      </div>
+    </div>
+    <div class="outputs" data-stagger>
+      <div class="out"><h3>Strategies & Policy Frameworks</h3><ul><li>Sector strategies</li><li>Reform road maps</li><li>Policy briefs</li><li>Regulatory frameworks</li><li>Theories of change</li></ul></div><div class="out"><h3>Project Preparation</h3><ul><li>Feasibility studies</li><li>Investment concepts</li><li>Results frameworks</li><li>Risk registers</li><li>Implementation plans</li></ul></div><div class="out"><h3>Institutional Reform</h3><ul><li>Institutional diagnostics</li><li>PFM reform</li><li>Governance frameworks</li><li>Capacity development</li><li>Change management</li></ul></div><div class="out"><h3>Investment & Finance</h3><ul><li>Bankability assessments</li><li>Blended finance structures</li><li>PPP advisory</li><li>Financial models</li><li>Climate finance strategy</li></ul></div><div class="out"><h3>Evidence & Evaluation</h3><ul><li>MEL frameworks</li><li>Baselines</li><li>Impact evaluations</li><li>Learning agendas</li><li>Dashboards</li></ul></div><div class="out"><h3>Digital & AI Transformation</h3><ul><li>DPI diagnostics</li><li>Digital strategy</li><li>Data governance</li><li>AI readiness</li><li>Service design</li></ul></div>
+    </div>
+  </div>
+</section>
 
-            <!-- 6 Interactive Nodes Linked with Arrows -->
-            <div class="flex flex-col md:flex-row flex-wrap items-center justify-center gap-4 md:gap-0">
-                <template x-for="(node, index) in data.nodes" :key="index">
-                    <div class="flex items-center w-full md:w-auto">
-                        <!-- Card -->
-                        <div class="w-full md:w-64 text-left p-6 rounded-2xl border-2 border-gray-200 bg-white hover:border-rust-300 transition-all duration-300">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-8 h-8 rounded-full bg-rust-100 text-rust-700 flex items-center justify-center"><span class="font-button text-sm font-bold" x-text="String(index + 1).padStart(2, '0')"></span></div>
-                                <h3 class="font-card-title text-base font-semibold" x-text="node.title"></h3>
-                            </div>
-                            <p class="font-card-body text-gray-600 text-sm" x-text="node.description"></p>
-                        </div>
-                        
-                        <!-- Arrow Connector (Right on desktop, Down on mobile, hidden on last item) -->
-                        <template x-if="index < data.nodes.length - 1">
-                            <div class="flex items-center justify-center flex-shrink-0">
-                                <svg class="hidden md:block w-8 h-8 text-rust-700 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                                <svg class="md:hidden w-8 h-8 text-rust-700 my-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-                            </div>
-                        </template>
-                    </div>
-                </template>
-            </div>
+<section class="section section--paper" id="engagements">
+  <div class="container">
+    <div class="section__head section__head--split">
+      <div><span class="eyebrow" data-reveal>Selected engagements</span><h2 class="split" style="margin-top:18px">The challenge. Our mandate. <em>What we delivered.</em></h2></div>
+      <div><p class="lead" data-reveal>Recent work with global development partners and national ministries, from feasibility studies to institutional transformation.</p><div style="margin-top:26px" data-reveal><a class="btn btn--ghost" href="/engagements">All engagements<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+    <div class="eng">
+      
+<article class="eng-row">
+  <div class="eng-row__media clip" data-clip><img src="/assets/img/training-3.webp" width="1200" height="900" alt="" loading="lazy" data-parallax></div>
+  <div data-reveal>
+    <div class="eng-row__meta"><b>Asian Development Bank</b><span>2024–2025</span><span>Education &amp; Human Capital</span></div>
+    <h3>Feasibility Study of New Secondary &amp; Madrasah Education Projects (NSEP)</h3>
+    <p>Comprehensive economic, institutional and financial feasibility study for modernizing secondary and madrasah education infrastructure.</p>
+    <div class="chips" style="margin-bottom:22px"><span class="chip">Project Preparation</span><span class="chip">Feasibility</span><span class="chip">Institutional</span></div>
+    <a class="link" href="/sectors/education-skills-human-capital">Explore the sector<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</article>
+<article class="eng-row">
+  <div class="eng-row__media clip" data-clip><img src="/assets/img/factory.webp" width="1200" height="900" alt="" loading="lazy" data-parallax></div>
+  <div data-reveal>
+    <div class="eng-row__meta"><b>SIDA / CPD</b><span>2024</span><span>Climate Action &amp; ESG</span></div>
+    <h3>Securing the Green Transition of the Textile and Ready-Made Garments Sector</h3>
+    <p>Empirical investigation into firm-level green technology adoption and circular water management in the textile and RMG sector.</p>
+    <div class="chips" style="margin-bottom:22px"><span class="chip">Climate &amp; ESG</span><span class="chip">Research</span><span class="chip">Green Technology</span></div>
+    <a class="link" href="/sectors/sustainable-finance-esg-circular-economy">Explore the sector<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</article>
+<article class="eng-row">
+  <div class="eng-row__media clip" data-clip><img src="/assets/img/survey-4.webp" width="1200" height="900" alt="" loading="lazy" data-parallax></div>
+  <div data-reveal>
+    <div class="eng-row__meta"><b>World Bank</b><span>2023–2024</span><span>Economic &amp; Survey Design</span></div>
+    <h3>Firm-Level Adoption of Technology (FAT) Survey for Manufacturing</h3>
+    <p>Nationwide empirical survey measuring technology intensity and digital management practices across manufacturing firms.</p>
+    <div class="chips" style="margin-bottom:22px"><span class="chip">Survey Design</span><span class="chip">Technology Adoption</span><span class="chip">Evidence</span></div>
+    <a class="link" href="/sectors/economic-transformation-trade-private-sector">Explore the sector<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+</article>
+    </div>
+  </div>
+</section>
 
-            <!-- Dropdowns -->
-            <div class="max-w-4xl mx-auto space-y-3 mt-20">
-                <h3 class="font-display text-3xl font-normal text-center mb-8">Deliverables & Process</h3>
-                <template x-for="(item, index) in data.dropdowns" :key="index">
-                    <div class="border border-gray-200 rounded-xl overflow-hidden">
-                        <button @click="activeDropdown === index ? activeDropdown = null : activeDropdown = index" class="w-full flex items-center justify-between px-6 lg:px-8 py-5 text-left hover:bg-gray-50 transition">
-                            <span class="font-card-title text-lg font-medium" x-text="item.question"></span>
-                            <div class="w-8 h-8 rounded-full bg-rust-100 flex items-center justify-center flex-shrink-0 ml-4 transition-transform duration-300" :class="activeDropdown === index ? 'rotate-45 bg-rust-700' : ''">
-                                <svg class="w-4 h-4 transition-colors" :class="activeDropdown === index ? 'text-white' : 'text-rust-700'" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
-                            </div>
-                        </button>
-                        <div x-show="activeDropdown === index" x-collapse class="px-6 lg:px-8 pb-6">
-                            <div class="border-t border-gray-100 pt-5">
-                                <template x-if="item.items">
-                                    <ul class="space-y-2">
-                                        <template x-for="(li, i) in item.items" :key="i">
-                                            <li class="flex items-start gap-2 font-card-body text-gray-600 text-sm"><svg class="w-4 h-4 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="li"></span></li>
-                                        </template>
-                                    </ul>
-                                </template>
-                                <template x-if="item.answer">
-                                    <p class="font-card-body text-gray-600 leading-relaxed" x-text="item.answer"></p>
-                                </template>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
+<section class="section section--sand" id="insights">
+  <div class="container">
+    <div class="section__head section__head--split">
+      <div><span class="eyebrow" data-reveal>Evidence &amp; insights</span><h2 class="split" style="margin-top:18px">Research that <em>changes decisions.</em></h2></div>
+      <div><p class="lead" data-reveal>Thinking that ships — how institutions diagnose, finance and deliver.</p><div style="margin-top:26px" data-reveal><a class="btn btn--ghost" href="/insights">All insights<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>
+    </div>
+    <div class="ins" data-stagger><article class="ins-card"><div class="ins-card__img"><img src="/assets/img/co2.webp" width="900" height="506" alt="" loading="lazy"></div><div class="ins-card__b"><span class="ins-card__t">Research</span><h3>A Multi-Criteria Innovation Framework for Green Financial Product Design</h3><p>A blueprint for sustainable finance to speed the green transition in emerging markets. Centred on Bangladesh, it designs context-specific green financial products — rather than copying Western…</p><div class="chips"><span class="chip">Sustainable Finance</span><span class="chip">Bangladesh</span></div></div></article><article class="ins-card"><div class="ins-card__img"><img src="/assets/img/training-5.webp" width="900" height="506" alt="" loading="lazy"></div><div class="ins-card__b"><span class="ins-card__t">Research</span><h3>Deploying Data-Driven Tools to Monitor and Enhance Learning Outcomes in Schools</h3><p>Advanced monitoring and analytics are used to assess how climate and disaster risks affect student performance. Findings show that real-time data integration enables targeted interventions.</p><div class="chips"><span class="chip">Education</span><span class="chip">Data</span></div></div></article></div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 7: SELECTED ENGAGEMENTS ==================== -->
-    <section id="engagements" x-data="engagementsData()" class="py-24 lg:py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.eyebrow"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.h2"></h2>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
-                <template x-for="(card, index) in data.cards" :key="index">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="overflow-hidden h-56"><img :src="card.image" :alt="card.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="p-8">
-                            <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                            <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-6" x-text="card.description"></p>
-                            <button @click="openModal(card)" class="btn-uniform w-full text-xs py-3">Explore Engagement</button>
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div class="border-t border-gray-200 pt-20">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="adviseData.tagline"></p>
-                    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-6" x-text="adviseData.title"></h2>
-                    <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="adviseData.description"></p>
-                </div>
-                <div class="space-y-12">
-                    <template x-for="(card, index) in adviseData.cards" :key="index">
-                        <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100">
-                            <div class="grid md:grid-cols-2">
-                                <div class="overflow-hidden h-72 md:h-auto" :class="index % 2 === 0 ? 'md:order-1' : 'md:order-2'">
-                                    <img :src="card.image" :alt="card.title" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
-                                </div>
-                                <div class="p-10 lg:p-14 flex flex-col justify-center" :class="index % 2 === 0 ? 'md:order-2' : 'md:order-1'">
-                                    <div class="flex items-center gap-3 mb-5">
-                                        <div class="w-10 h-10 bg-rust-100 rounded-lg flex items-center justify-center flex-shrink-0"><span class="text-rust-700 font-card-title text-sm font-bold" x-text="String(index + 1).padStart(2, '0')"></span></div>
-                                        <div class="h-px flex-1 bg-gray-200"></div>
-                                    </div>
-                                    <h3 class="font-card-title text-2xl lg:text-3xl font-semibold mb-5" x-text="card.title"></h3>
-                                    <p class="font-card-body text-gray-600 leading-relaxed italic text-base lg:text-lg" x-text="card.quote"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-                </div>
-            </div>
-        </div>
-        <div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="closeModal()">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeModal()"></div>
-            <div x-show="modalOpen" x-transition class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-                <button @click="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition z-10"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-                <template x-if="selectedCard">
-                    <div>
-                        <img :src="selectedCard.image" :alt="selectedCard.title" class="w-full h-64 object-cover rounded-t-2xl">
-                        <div class="p-8 lg:p-10">
-                            <h3 class="font-card-title text-3xl font-semibold mb-4" x-text="selectedCard.title"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed mb-6" x-text="selectedCard.description"></p>
-                            <div class="border-t border-gray-200 pt-6 space-y-5">
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Client</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.client"></p></div>
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Duration</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.duration"></p></div>
-                                <div><h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Key Outcomes</h4><ul class="space-y-2"><template x-for="(item, i) in selectedCard.outcomes" :key="i"><li class="flex items-start gap-3 font-card-body text-gray-600 text-sm"><svg class="w-5 h-5 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li></template></ul></div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
+<section class="conv section on-dark dark" id="convening">
+  <div class="conv__bg"><video muted loop playsinline autoplay preload="none" poster="/assets/img/poster-city.webp" data-lazyvideo><source data-src="/assets/video/city.mp4" type="video/mp4"></video></div>
+  <div class="container conv__grid">
+    <div style="position:sticky;top:130px;align-self:start">
+      <span class="eyebrow" data-reveal>Connecting policy, capital and implementation</span>
+      <h2 class="split" style="margin:20px 0 26px">A convenor <em>between worlds.</em></h2>
+      <p class="lead" data-reveal>Complex reforms fail when ministries, development institutions, researchers, investors and implementers are solving different versions of the same problem. IP3 designs evidence-led dialogue and decision processes that bring those perspectives together around practical pathways to action.</p>
+      <div style="margin-top:30px" data-reveal><a class="btn btn--light" href="/contact">Commission a dialogue<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+    <div class="conv__list" data-conv>
+      <div class="conv__item is-active"><b>01</b><h3>Policy dialogue</h3><p>Structured conversations that move from diagnosis to decision, around a shared evidence base.</p></div><div class="conv__item"><b>02</b><h3>Executive roundtables</h3><p>High-level gatherings for strategic alignment, designed to produce concrete commitments.</p></div><div class="conv__item"><b>03</b><h3>Investment forums</h3><p>Curated events connecting capital to investment-ready pipelines.</p></div><div class="conv__item"><b>04</b><h3>Technical working groups</h3><p>Deep-dive sessions that produce technical outputs for policy and implementation.</p></div><div class="conv__item"><b>05</b><h3>Research–policy translation</h3><p>Processes that convert research findings into actionable policy options.</p></div><div class="conv__item"><b>06</b><h3>Stakeholder consultations</h3><p>Inclusive processes for legitimacy and uptake.</p></div><div class="conv__item"><b>07</b><h3>Consensus-building processes</h3><p>Facilitating agreement across diverse interests and ministries.</p></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== PROVEN ACTION RESEARCH PORTFOLIO ==================== -->
-    <section id="research" x-data="researchPortfolioData()" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.tagline"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.title"></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.description"></p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="(card, index) in data.cards" :key="index">
-                    <div class="bg-cream rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="overflow-hidden h-56"><img :src="card.image" :alt="card.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="p-8">
-                            <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                            <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-6" x-text="card.description"></p>
-                            <button @click="openModal(card)" class="btn-uniform w-full text-xs py-3">Explore Research</button>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-        <div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="closeModal()">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeModal()"></div>
-            <div x-show="modalOpen" x-transition class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-                <button @click="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition z-10"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-                <template x-if="selectedCard">
-                    <div>
-                        <img :src="selectedCard.image" :alt="selectedCard.title" class="w-full h-64 object-cover rounded-t-2xl">
-                        <div class="p-8 lg:p-10">
-                            <h3 class="font-card-title text-3xl font-semibold mb-4" x-text="selectedCard.title"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed mb-6" x-text="selectedCard.description"></p>
-                            <div class="border-t border-gray-200 pt-6 space-y-5">
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Research Type</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.researchType"></p></div>
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Region</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.region"></p></div>
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Year</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.year"></p></div>
-                                <div><h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Key Findings</h4><ul class="space-y-2"><template x-for="(item, i) in selectedCard.findings" :key="i"><li class="flex items-start gap-3 font-card-body text-gray-600 text-sm"><svg class="w-5 h-5 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li></template></ul></div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
+<section class="section">
+  <div class="container">
+    <div class="partners" data-reveal>
+      <div><h3>Clients &amp; partners</h3><div class="names"><span>Asian Development Bank</span><span>PwC</span><span>Payra Port Authority</span><span>Bangladesh Municipal Development Fund</span><span>ICF International</span><span>SODEV</span><span>BUILD</span><span>Prokaushali Sangsad Ltd</span></div></div>
+      <div><h3>Development partners our team has worked with</h3><div class="names"><span>World Bank</span><span>IFC</span><span>ADB</span><span>SIDA</span><span>WTO</span><span>European Commission</span></div></div>
+    </div>
+    <div class="quotes" style="margin-top:clamp(50px,7vw,100px)" data-stagger>
+      <figure class="quote"><blockquote>Our partnership with IP3 Consulting exceeded every expectation. From research design and data collection to statistical modeling, stakeholder coordination, and impact-driven implementation, IP3 delivers the full spectrum of expertise — and real results.</blockquote><footer><b>Omar Faruk</b><span>PwC · Government Reform &amp; Infrastructure Development (GRID)</span></footer></figure><figure class="quote"><blockquote>IP3’s expert brought a depth of expertise and agility that fundamentally transformed how we approach a next-gen institutional transformation… This wasn’t just a consultancy — it was a true partnership in building a resilient public institution for the future.</blockquote><footer><b>Ahmmad Zaman Tariq, PMP</b><span>Urban Development Specialist, Bangladesh Municipal Development Fund (BMDF)</span></footer></figure>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 8: EVIDENCE & INSIGHTS ==================== -->
-    <section id="evidence" x-data="evidenceData()" class="py-24 lg:py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.eyebrow"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.h2"></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.sub"></p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="(card, index) in data.cards" :key="index">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="overflow-hidden h-56"><img :src="card.image" :alt="card.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="p-8">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full" x-text="card.type"></span>
-                                <span class="text-gray-500 text-xs font-card-body" x-text="card.date"></span>
-                            </div>
-                            <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                            <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-6" x-text="card.description"></p>
-                            <button @click="openModal(card)" class="btn-uniform w-full text-xs py-3">Explore Insight</button>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-        <div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="closeModal()">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeModal()"></div>
-            <div x-show="modalOpen" x-transition class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-                <button @click="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition z-10"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-                <template x-if="selectedCard">
-                    <div>
-                        <img :src="selectedCard.image" :alt="selectedCard.title" class="w-full h-64 object-cover rounded-t-2xl">
-                        <div class="p-8 lg:p-10">
-                            <div class="flex items-center gap-3 mb-4">
-                                <span class="px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full" x-text="selectedCard.type"></span>
-                                <span class="text-gray-500 text-sm font-card-body" x-text="selectedCard.date"></span>
-                            </div>
-                            <h3 class="font-card-title text-3xl font-semibold mb-4" x-text="selectedCard.title"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed mb-6" x-text="selectedCard.description"></p>
-                            <div class="border-t border-gray-200 pt-6 space-y-5">
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Author</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.author"></p></div>
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Related</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.related"></p></div>
-                                <div><h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Key Insights</h4><ul class="space-y-2"><template x-for="(item, i) in selectedCard.insights" :key="i"><li class="flex items-start gap-3 font-card-body text-gray-600 text-sm"><svg class="w-5 h-5 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li></template></ul></div>
-                                <button @click="downloadPDF(selectedCard)" class="btn-uniform w-full">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                                    Download Full Report (PDF)
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
+<section class="section section--paper" id="leadership">
+  <div class="container founder">
+    <div class="founder__img clip" data-clip><img src="/assets/img/syful-hoque.webp" width="900" height="969" alt="Mohammad Syful Hoque, Executive Chairman of IP3 Consulting" loading="lazy" data-parallax></div>
+    <div>
+      <span class="eyebrow" data-reveal>Leadership</span>
+      <h2 class="split" style="margin-top:18px">Mohammad Syful Hoque</h2>
+      <p class="founder__tag" data-reveal>Executive Chairman · Economic policy & sustainability transformation expert</p>
+      <div class="founder__bio" data-reveal><p>Syful has 17 years of experience in economic policy and sustainability transformation, solving sustainability challenges in policy and practice. His work is characterized by deep knowledge of economic and development policy and sustainability consulting — championing the forefront of climate solutions, ESG excellence and the principles of a circular economy for long-term value creation.</p><p>He has underpinned 75+ high-impact projects for global entities such as the World Bank, IFC, ADB, SIDA, W.T.O. and the European Commission, and has collaborated with over 30 international development organizations.</p></div>
+      <blockquote data-reveal>IP3 Consulting isn’t just another policy or research institute — it’s a mission-driven impact accelerator. We turn intelligence into implementation, partnering with stakeholders at every level to build solutions that are not only visionary but viable.</blockquote>
+      <div style="display:flex;flex-wrap:wrap;gap:14px" data-reveal><a class="btn " href="/people">Meet IP3 people<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--ghost" href="/contact">Start a conversation<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </div>
+</section>
 
-    <!-- ==================== SECTION 9: CONVENING (3D CAROUSEL) ==================== -->
-    <section id="convening" x-data="conveningCarousel()" class="py-24 lg:py-32 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="sectionTagline"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-4">A Convenor Between <span class="font-display-italic italic text-rust-700">Worlds</span></h2>
-                <p class="text-gray-500 text-sm tracking-wide font-card-body">Drag to rotate • Click a card • Use arrows to spin</p>
-            </div>
+<section class="cta section on-dark dark" id="start">
+  <div class="container cta__grid">
+    <div>
+      <span class="eyebrow" data-reveal>Ready to work with IP3?</span>
+      <h2 class="split" style="margin-top:20px">Tell us the mandate <em>you need to deliver.</em></h2>
+      <p class="lead" data-reveal style="margin-top:26px">Whether you are preparing a new program, assessing an investment, designing a reform, commissioning an evaluation or assembling a consortium, IP3 can help define the analytical and implementation support required.</p>
+      <div class="paths" data-stagger><a class="path" href="/contact"><div><b>Discuss a Consulting Assignment</b><span>Diagnostic, design, implementation or evaluation work.</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="path" href="/contact"><div><b>Partner With IP3</b><span>Consortium or subcontracting opportunities.</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="path" href="/contact"><div><b>Discuss a Research Partnership</b><span>Research, evidence generation or thought leadership.</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="path" href="/contact"><div><b>Request Our Capability Statement</b><span>Ask for our full capabilities document.</span></div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+    <div data-reveal>
+<form class="form " id="contact" data-contact-form novalidate>
+  <h3>Start the conversation</h3>
+  <div class="field--row field">
+    <div class="field"><label for="contact-name">Name</label><input id="contact-name" name="name" autocomplete="name" required></div>
+    <div class="field"><label for="contact-email">Email</label><input id="contact-email" name="email" type="email" autocomplete="email" required></div>
+  </div>
+  <div class="field"><label for="contact-org">Organization</label><input id="contact-org" name="organization" autocomplete="organization"></div>
+  <div class="field--row field">
+    <div class="field"><label for="contact-type">Engagement type</label><select id="contact-type" name="engagement"><option>Diagnostic</option><option>Design</option><option>Implementation support</option><option>Evaluation</option><option>Convening</option><option>Partnership / consortium</option></select></div>
+    <div class="field"><label for="contact-focus">Focus area</label><select id="contact-focus" name="focus"><option>Policy, Economics &amp; Strategy Advisory</option><option>Program &amp; Project Design</option><option>Development Finance &amp; Private Capital Mobilization</option><option>Institutions, Governance &amp; Delivery</option><option>Monitoring, Evaluation, Learning &amp; Impact</option><option>Data, Digital &amp; Responsible AI</option></select></div>
+  </div>
+  <div class="field"><label for="contact-msg">Tell us what you are trying to change</label><textarea id="contact-msg" name="message" required></textarea></div>
+  <button class="btn" type="submit">Send message<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  <p class="form__ok" role="status">Thank you — your message is ready. If your email app did not open, write to info@ip3-bd.org.</p>
+  <p class="form__note">We aim to respond within one business day. Your details are used only to reply to this enquiry.</p>
+</form></div>
+  </div>
+</section>
+</main>
 
-            <div class="relative flex items-center justify-center" style="height: 480px;">
-                <button @click="spinPrev()" class="absolute left-0 lg:left-4 z-30 w-12 h-12 rounded-full border border-gray-300 bg-white/80 backdrop-blur-sm flex items-center justify-center text-charcoal hover:bg-rust-700 hover:text-white hover:border-rust-700 transition-all duration-300 shadow-sm" aria-label="Rotate previous">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-                </button>
-
-                <div class="carousel-scene flex-1 flex items-center justify-center" :style="`--perspective: ${config.perspective}px; perspective: ${config.perspective}px;`">
-                    <div class="relative" :style="`width: ${config.cardWidth}px; height: ${config.cardHeight}px; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; transform: rotateX(${config.tiltX}deg);`">
-                        <div class="carousel-ring absolute inset-0 grab-cursor"
-                             :style="`transform: rotateY(${rotation}deg); transform-style: preserve-3d; -webkit-transform-style: preserve-3d; touch-action: none;`"
-                             @pointerdown.stop="onPointerDown($event)"
-                             @pointermove.stop="onPointerMove($event)"
-                             @pointerup.stop="onPointerUp($event)"
-                             @pointercancel.stop="onPointerUp($event)"
-                             @pointerleave.stop="onPointerLeave($event)">
-
-                            <template x-for="(card, index) in cards" :key="index">
-                                <div class="carousel-card"
-                                     :style="`transform: rotateY(${anglePerCard * index}deg) translateZ(${config.radius}px);`"
-                                     @click="if (totalDragDistance < config.dragThreshold) { if (getActiveCardIndex() === index) { activeCard = index; } else { snapToCard(index); } }">
-                                    <div class="card-face rounded-2xl border border-gray-200 shadow-lg" :style="`border-radius: ${config.cornerRadius}px; background-image: url('${card.image}'); background-size: cover; background-position: center;`">
-                                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
-                                        <div class="absolute inset-0 bg-black/60 pointer-events-none transition-opacity duration-300" :style="`opacity: ${Math.max(0, (1 - getCardOpacity(index)) * 0.75)};`"></div>
-                                        <div class="absolute top-4 left-4 right-4 flex justify-between items-start z-10">
-                                            <span class="inline-block px-3 py-1.5 bg-white/95 backdrop-blur-sm text-xs font-button font-medium rounded-full text-charcoal shadow-sm" x-text="card.label"></span>
-                                            <span class="text-white/80 text-xs font-mono" x-text="String(index + 1).padStart(2, '0')"></span>
-                                        </div>
-                                        <div class="absolute inset-0 bg-black/0 hover:bg-black/40 transition-all duration-300 flex items-center justify-center group z-10">
-                                            <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-2 group-hover:translate-y-0">
-                                                <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/95 backdrop-blur-sm rounded-full text-xs font-button font-medium text-charcoal">View details<svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-face card-back rounded-2xl border border-gray-200 shadow-lg" :style="`border-radius: ${config.cornerRadius}px; background-image: url('${card.image}'); background-size: cover; background-position: center; filter: brightness(${1 - config.imageDarkness});`">
-                                        <div class="absolute inset-0 bg-black/60 pointer-events-none transition-opacity duration-300" :style="`opacity: ${Math.max(0, (1 - getCardOpacity(index)) * 0.75)};`"></div>
-                                        <div class="absolute inset-0 flex items-center justify-center z-10">
-                                            <div class="text-center px-6">
-                                                <div class="w-10 h-10 mx-auto mb-3 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                                                </div>
-                                                <p class="text-white/90 text-xs font-button font-medium" x-text="card.label"></p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </template>
-                        </div>
-                    </div>
-                </div>
-
-                <button @click="spinNext()" class="absolute right-0 lg:right-4 z-30 w-12 h-12 rounded-full border border-gray-300 bg-white/80 backdrop-blur-sm flex items-center justify-center text-charcoal hover:bg-rust-700 hover:text-white hover:border-rust-700 transition-all duration-300 shadow-sm" aria-label="Rotate next">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                </button>
-            </div>
-
-            <div class="flex justify-center gap-2 mt-10">
-                <template x-for="(card, index) in cards" :key="index">
-                    <button @click="snapToCard(index)" class="h-1.5 rounded-full transition-all duration-300" :class="getActiveCardIndex() === index ? 'w-8 bg-rust-700' : 'w-1.5 bg-gray-300 hover:bg-gray-400'"></button>
-                </template>
-            </div>
-        </div>
-
-        <div x-show="activeCard !== null" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="activeCard = null">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="activeCard = null"></div>
-            <div x-show="activeCard !== null" x-transition class="relative bg-white rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden">
-                <button @click="activeCard = null" class="absolute top-4 right-4 w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-100 transition z-10 shadow-sm">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                </button>
-                <template x-if="activeCard !== null && cards[activeCard]">
-                    <div>
-                        <img :src="cards[activeCard].image" class="w-full h-64 object-cover">
-                        <div class="p-8">
-                            <span class="inline-block px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full mb-4" x-text="cards[activeCard].label"></span>
-                            <h3 class="font-card-title text-2xl font-semibold mb-3" x-text="cards[activeCard].label"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed" x-text="cards[activeCard].description"></p>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CLIENTS & PARTNERS ==================== -->
-    <section id="partners" x-data="clientsData()" class="py-20 lg:py-24 bg-cream border-y border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
-            <div class="text-center max-w-3xl mx-auto">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.tagline"></p>
-                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-normal leading-[1.1] mb-4" x-text="data.title"></h2>
-                <p class="font-card-body text-gray-600" x-text="data.description"></p>
-            </div>
-        </div>
-        <div class="relative overflow-hidden">
-            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-cream to-transparent z-10 pointer-events-none"></div>
-            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-cream to-transparent z-10 pointer-events-none"></div>
-            <div class="logo-track flex gap-12 items-center" style="width: max-content;">
-                <template x-for="(client, index) in [...data.logos, ...data.logos]" :key="index">
-                    <div class="flex-shrink-0 flex items-center justify-center h-20 px-8 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                        <img :src="client.logo" :alt="client.name" class="h-10 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity" :title="client.name">
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== INSTITUTIONAL ENDORSEMENTS ==================== -->
-    <section id="endorsements" x-data="endorsementsData()" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.tagline"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.title"></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.description"></p>
-            </div>
-            <div class="relative">
-                <div class="overflow-hidden rounded-2xl">
-                    <template x-for="(item, index) in data.endorsements" :key="index">
-                        <div x-show="currentSlide === index"
-                             x-transition:enter="transition ease-out duration-700" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-                             x-transition:leave="transition ease-in duration-500" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0"
-                             class="grid lg:grid-cols-2 gap-0 bg-cream border border-gray-100">
-                            <div class="overflow-hidden h-72 lg:h-[500px]"><img :src="item.image" :alt="item.endorser" class="w-full h-full object-cover"></div>
-                            <div class="p-10 lg:p-16 flex flex-col justify-center">
-                                <svg class="w-10 h-10 text-rust-300 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                                <blockquote class="font-display-italic italic text-2xl lg:text-3xl text-charcoal leading-relaxed mb-8" x-text="item.quote"></blockquote>
-                                <div class="border-t border-gray-200 pt-6">
-                                    <p class="font-card-title text-lg font-semibold text-charcoal" x-text="item.endorser"></p>
-                                    <p class="text-sm text-rust-700 font-button font-medium" x-text="item.title"></p>
-                                    <p class="text-sm text-gray-500 mt-1 font-card-body" x-text="item.organization"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </template>
-                </div>
-                <div class="flex items-center justify-center gap-4 mt-10">
-                    <button @click="prevSlide()" class="w-12 h-12 rounded-full border border-gray-300 text-charcoal flex items-center justify-center hover:bg-rust-700 hover:text-white hover:border-rust-700 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
-                    <div class="flex gap-2">
-                        <template x-for="(item, index) in data.endorsements" :key="index">
-                            <button @click="currentSlide = index" class="h-2 rounded-full transition-all duration-300" :class="currentSlide === index ? 'w-8 bg-rust-700' : 'w-2 bg-gray-300 hover:bg-gray-400'"></button>
-                        </template>
-                    </div>
-                    <button @click="nextSlide()" class="w-12 h-12 rounded-full border border-gray-300 text-charcoal flex items-center justify-center hover:bg-rust-700 hover:text-white hover:border-rust-700 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== INSTITUTIONAL DECK ==================== -->
-    <section id="deck" x-data="institutionalDeckData()" class="py-24 lg:py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.tagline"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.title"></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.description"></p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-3 mb-14">
-                <template x-for="tag in data.tags" :key="tag">
-                    <button @click="activeTag = tag" class="px-6 py-2.5 rounded-full text-sm font-button font-semibold transition-all duration-300 border" :class="activeTag === tag ? 'bg-rust-700 text-white border-rust-700' : 'bg-white text-gray-600 border-gray-300 hover:border-rust-700 hover:text-rust-700'"><span x-text="tag"></span></button>
-                </template>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="(card, index) in getFilteredCards()" :key="index">
-                    <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="overflow-hidden h-56"><img :src="card.image" :alt="card.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="p-8">
-                            <div class="inline-block px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full mb-3" x-text="card.tag"></div>
-                            <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                            <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-6" x-text="card.description"></p>
-                            <button @click="openModal(card)" class="btn-uniform w-full text-xs py-3">Explore Deck</button>
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div x-show="getFilteredCards().length === 0" class="text-center py-16 text-gray-500"><p class="font-display text-2xl">No decks found for this category.</p></div>
-        </div>
-        <div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="closeModal()">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeModal()"></div>
-            <div x-show="modalOpen" x-transition class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-                <button @click="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition z-10"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-                <template x-if="selectedCard">
-                    <div>
-                        <img :src="selectedCard.image" :alt="selectedCard.title" class="w-full h-64 object-cover rounded-t-2xl">
-                        <div class="p-8 lg:p-10">
-                            <div class="inline-block px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full mb-4" x-text="selectedCard.tag"></div>
-                            <h3 class="font-card-title text-3xl font-semibold mb-4" x-text="selectedCard.title"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed mb-6" x-text="selectedCard.description"></p>
-                            <div class="border-t border-gray-200 pt-6 space-y-4">
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Overview</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.overview"></p></div>
-                                <div><h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Highlights</h4><ul class="space-y-2"><template x-for="(item, i) in selectedCard.highlights" :key="i"><li class="flex items-start gap-3 font-card-body text-gray-600 text-sm"><svg class="w-5 h-5 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li></template></ul></div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== PUBLICATIONS ==================== -->
-    <section id="publications" x-data="publicationsData()" class="py-24 lg:py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-4" x-text="data.tagline"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.title"></h2>
-                <p class="text-lg font-card-body text-gray-600 leading-relaxed" x-text="data.description"></p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-3 mb-14">
-                <template x-for="tag in data.tags" :key="tag">
-                    <button @click="activeTag = tag" class="px-6 py-2.5 rounded-full text-sm font-button font-semibold transition-all duration-300 border" :class="activeTag === tag ? 'bg-rust-700 text-white border-rust-700' : 'bg-white text-gray-600 border-gray-300 hover:border-rust-700 hover:text-rust-700'"><span x-text="tag"></span></button>
-                </template>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <template x-for="(card, index) in getFilteredCards()" :key="index">
-                    <div class="bg-cream rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100">
-                        <div class="overflow-hidden h-56"><img :src="card.image" :alt="card.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"></div>
-                        <div class="p-8">
-                            <div class="inline-block px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full mb-3" x-text="card.tag"></div>
-                            <h3 class="font-card-title text-xl font-semibold mb-3" x-text="card.title"></h3>
-                            <p class="font-card-body text-gray-600 text-sm leading-relaxed mb-6" x-text="card.description"></p>
-                            <button @click="openModal(card)" class="btn-uniform w-full text-xs py-3">Explore Publication</button>
-                        </div>
-                    </div>
-                </template>
-            </div>
-            <div x-show="getFilteredCards().length === 0" class="text-center py-16 text-gray-500"><p class="font-display text-2xl">No publications found for this category.</p></div>
-        </div>
-        <div x-show="modalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4" @keydown.escape.window="closeModal()">
-            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" @click="closeModal()"></div>
-            <div x-show="modalOpen" x-transition class="relative bg-white rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
-                <button @click="closeModal()" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition z-10"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
-                <template x-if="selectedCard">
-                    <div>
-                        <img :src="selectedCard.image" :alt="selectedCard.title" class="w-full h-64 object-cover rounded-t-2xl">
-                        <div class="p-8 lg:p-10">
-                            <div class="inline-block px-3 py-1 bg-rust-100 text-rust-700 text-xs font-button font-medium rounded-full mb-4" x-text="selectedCard.tag"></div>
-                            <h3 class="font-card-title text-3xl font-semibold mb-4" x-text="selectedCard.title"></h3>
-                            <p class="font-card-body text-gray-600 leading-relaxed mb-6" x-text="selectedCard.description"></p>
-                            <div class="border-t border-gray-200 pt-6 space-y-4">
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Authors</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.authors"></p></div>
-                                <div><h4 class="font-button font-bold mb-2 text-sm uppercase tracking-wider text-rust-700">Published</h4><p class="font-card-body text-gray-700 text-sm" x-text="selectedCard.published"></p></div>
-                                <div><h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Abstract</h4><p class="font-card-body text-gray-700 text-sm leading-relaxed" x-text="selectedCard.abstract"></p></div>
-                                <div><h4 class="font-button font-bold mb-3 text-sm uppercase tracking-wider text-rust-700">Key Takeaways</h4><ul class="space-y-2"><template x-for="(item, i) in selectedCard.takeaways" :key="i"><li class="flex items-start gap-3 font-card-body text-gray-600 text-sm"><svg class="w-5 h-5 text-rust-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span x-text="item"></span></li></template></ul></div>
-                            </div>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== LEADERSHIP ==================== -->
-    <section id="leadership" x-data="leadershipData()" class="py-24 lg:py-32 bg-cream">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <div class="order-2 lg:order-1">
-                    <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-700 mb-6" x-text="data.eyebrow"></p>
-                    <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-4" x-text="data.name"></h2>
-                    <p class="font-display-italic italic text-rust-700 text-2xl mb-8" x-text="data.position"></p>
-                    <p class="text-lg font-card-body text-gray-600 leading-relaxed max-w-lg mb-10" x-text="data.bio"></p>
-                    <a href="#" class="btn-uniform">View profile & selected work <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-                </div>
-                <div class="order-1 lg:order-2">
-                    <div class="rounded-2xl overflow-hidden shadow-2xl"><img :src="data.image" :alt="data.name" class="w-full h-[500px] lg:h-[600px] object-cover"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== CONTACT FORM ==================== -->
-    <section id="contact" x-data="contactForm()" class="py-24 lg:py-32 bg-charcoal text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-rust-700 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-rust-700 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-xs font-button font-bold tracking-[0.3em] uppercase text-rust-300 mb-4" x-text="data.eyebrow"></p>
-                <h2 class="font-display text-5xl md:text-6xl lg:text-7xl font-normal leading-[1.1] mb-6" x-text="data.h2"></h2>
-                <p class="text-lg font-card-body text-gray-400 leading-relaxed" x-text="data.sub"></p>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
-                <template x-for="(path, index) in data.paths" :key="index">
-                    <a href="#" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition text-center group">
-                        <div class="w-12 h-12 bg-rust-700 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform"><span class="text-white font-card-title font-bold" x-text="String(index + 1).padStart(2, '0')"></span></div>
-                        <h3 class="font-card-title text-lg font-semibold mb-2" x-text="path.title"></h3>
-                        <p class="font-card-body text-gray-400 text-sm" x-text="path.description"></p>
-                    </a>
-                </template>
-            </div>
-            <div class="max-w-2xl mx-auto bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 lg:p-12">
-                <h3 class="font-display text-3xl font-normal mb-6 text-center">Start the conversation</h3>
-                <form @submit.prevent="submitForm" class="space-y-6">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div><label class="block text-sm font-button font-medium mb-2">Name</label><input type="text" x-model="form.name" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-rust-500 transition font-card-body" placeholder="Your name"></div>
-                        <div><label class="block text-sm font-button font-medium mb-2">Email</label><input type="email" x-model="form.email" required class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-rust-500 transition font-card-body" placeholder="your@email.com"></div>
-                    </div>
-                    <div><label class="block text-sm font-button font-medium mb-2">Organization</label><input type="text" x-model="form.organization" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-rust-500 transition font-card-body" placeholder="Your organization"></div>
-                    <div><label class="block text-sm font-button font-medium mb-2">Engagement type</label>
-                        <select x-model="form.engagementType" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-rust-500 transition font-card-body">
-                            <option value="" class="bg-charcoal">Select engagement type</option>
-                            <option value="diagnostic" class="bg-charcoal">Diagnostic</option>
-                            <option value="design" class="bg-charcoal">Design</option>
-                            <option value="implementation" class="bg-charcoal">Implementation support</option>
-                            <option value="evaluation" class="bg-charcoal">Evaluation</option>
-                            <option value="convening" class="bg-charcoal">Convening</option>
-                            <option value="partnership" class="bg-charcoal">Partnership</option>
-                        </select>
-                    </div>
-                    <div><label class="block text-sm font-button font-medium mb-2">Focus area</label>
-                        <select x-model="form.focusArea" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:border-rust-500 transition font-card-body">
-                            <option value="" class="bg-charcoal">Select focus area</option>
-                            <template x-for="area in data.focusAreas" :key="area"><option :value="area" class="bg-charcoal" x-text="area"></option></template>
-                        </select>
-                    </div>
-                    <div><label class="block text-sm font-button font-medium mb-2">Tell us about your mandate</label><textarea x-model="form.message" rows="4" class="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-rust-500 transition font-card-body" placeholder="Describe the challenge, timeline, and what success looks like..."></textarea></div>
-                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-card-body">
-                        <span class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Reference number assigned</span>
-                        <span class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Response within one business day</span>
-                    </div>
-                    <button type="submit" class="btn-uniform w-full text-base py-4">Submit inquiry <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></button>
-                </form>
-                <div x-show="submitted" x-cloak class="mt-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg text-center"><p class="text-green-400 font-button font-medium">Thank you. Your inquiry has been received. We will respond within one business day.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="bg-charcoal border-t border-gray-800 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-2 mb-4"><span class="font-display text-3xl font-normal text-white">IP<span class="text-rust-500 font-semibold">3</span></span></div>
-                    <p class="text-gray-400 text-sm mb-4 max-w-md font-card-body">IP3 Consulting Limited helps multilateral institutions, development partners, governments, businesses and research organizations design better policies, mobilize investment, strengthen institutions and deliver measurable results.</p>
-                    <div class="space-y-2 text-sm text-gray-400 font-card-body">
-                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> hello@ip3consulting.com</p>
-                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +880 2 1234 5678</p>
-                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg> House 12, Road 7, Dhanmondi, Dhaka 1205, Bangladesh</p>
-                        <p class="inline-flex items-center gap-2"><svg class="w-4 h-4 text-rust-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> Sun–Thu: 9:00 AM – 6:00 PM (BST)</p>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="text-white font-button font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-sm text-gray-400 font-card-body">
-                        <li><a href="#mandates" class="hover:text-white transition">Mandates</a></li>
-                        <li><a href="#capabilities" class="hover:text-white transition">Capabilities</a></li>
-                        <li><a href="#sectors" class="hover:text-white transition">Sectors</a></li>
-                        <li><a href="#engagements" class="hover:text-white transition">Engagements</a></li>
-                        <li><a href="#evidence" class="hover:text-white transition">Evidence & Insights</a></li>
-                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-button font-semibold mb-4">Legal</h4>
-                    <ul class="space-y-2 text-sm text-gray-400 font-card-body">
-                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
-                        <li><a href="#" class="hover:text-white transition">Cookie Policy</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-gray-500 text-sm font-card-body">© 2026 IP3 Consulting Limited. All rights reserved.</p>
-                <div class="flex items-center gap-4">
-                    <a href="#" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-rust-700 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></a>
-                    <a href="#" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-rust-700 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
-                    <a href="#" class="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-rust-700 transition"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script type="application/ld+json" id="org-schema">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "legalName": "IP3 Consulting Limited",
-        "alternateName": "Institute for Public Policy and Practice",
-        "url": "https://ip3consulting.com",
-        "email": "hello@ip3consulting.com",
-        "telephone": "+880-2-1234-5678",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "House 12, Road 7, Dhanmondi",
-            "addressLocality": "Dhaka",
-            "postalCode": "1205",
-            "addressCountry": "BD"
-        }
-    }
-    </script>
-
-    <!-- ==================== ALPINE.JS DATA ==================== -->
-    <script>
-        async function loadData(filename) {
-            try {
-                const res = await fetch(`data/home/${filename}`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                return await res.json();
-            } catch (err) {
-                console.error(`Failed to load data/home/${filename}:`, err);
-                return null;
-            }
-        }
-
-        loadData('organization.json').then(org => {
-            if (org) {
-                const schemaEl = document.getElementById('org-schema');
-                if (schemaEl) schemaEl.textContent = JSON.stringify(org, null, 2);
-            }
-        });
-
-        function heroSlider() {
-            return {
-                currentSlide: 0,
-                data: { eyebrow: '', h1: '', sub: '', reassurance: [] },
-                slides: [],
-                interval: null,
-                async init() {
-                    const data = await loadData('hero.json');
-                    if (data) {
-                        if (data.data) this.data = data.data;
-                        if (data.slides) this.slides = data.slides;
-                    }
-                    this.interval = setInterval(() => this.nextSlide(), 6000);
-                },
-                nextSlide() {
-                    if (!this.slides || !this.slides.length) return;
-                    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-                },
-                prevSlide() {
-                    if (!this.slides || !this.slides.length) return;
-                    this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-                }
-            };
-        }
-
-        function mandatesData() {
-            return {
-                data: {
-                    eyebrow: 'BUILT FOR COMPLEX <span class="text-rust-700">MANDATES</span>',
-                    h2: 'From evidence to<br>decisions.<br><span class="italic">From decisions to</span><br><span class="italic text-rust-700">delivery.</span>',
-                    body: '',
-                    cards: []
-                },
-                async init() {
-                    const data = await loadData('mandates.json');
-                    if (data) this.data = data;
-                }
-            };
-        }
-
-        function capabilitiesData() {
-            return {
-                data: { eyebrow: '', h2: '', cards: [] },
-                async init() {
-                    const data = await loadData('capabilities.json');
-                    if (data) this.data = data;
-                }
-            };
-        }
-
-        function whyIp3Data() {
-            return {
-                data: { eyebrow: '', h2: '', image: '', reasons: [] },
-                async init() {
-                    const data = await loadData('why-ip3.json');
-                    if (data) this.data = data;
-                }
-            };
-        }
-
-        function sectorsData() {
-            return {
-                modalOpen: false,
-                selectedCard: null,
-                data: { eyebrow: '', h2: '', sub: '', tagline: '', cards: [] },
-                async init() {
-                    const data = await loadData('sectors.json');
-                    if (data) this.data = data;
-                },
-                openModal(card) {
-                    this.selectedCard = card;
-                    this.modalOpen = true;
-                    document.body.style.overflow = 'hidden';
-                },
-                closeModal() {
-                    this.modalOpen = false;
-                    this.selectedCard = null;
-                    document.body.style.overflow = '';
-                }
-            };
-        }
-
-        function translationData() {
-            return {
-                activeDropdown: null,
-                data: { eyebrow: '', h2: '', sub: '', nodes: [], dropdowns: [] },
-                async init() {
-                    const data = await loadData('translation.json');
-                    if (data) this.data = data;
-                }
-            };
-        }
-
-        function engagementsData() {
-            return {
-                modalOpen: false,
-                selectedCard: null,
-                data: { eyebrow: '', h2: '', cards: [] },
-                adviseData: { tagline: '', title: '', description: '', cards: [] },
-                async init() {
-                    const data = await loadData('engagements.json');
-                    if (data) {
-                        if (data.data) this.data = data.data;
-                        if (data.adviseData) this.adviseData = data.adviseData;
-                    }
-                },
-                openModal(card) {
-                    this.selectedCard = card;
-                    this.modalOpen = true;
-                    document.body.style.overflow = 'hidden';
-                },
-                closeModal() {
-                    this.modalOpen = false;
-                    this.selectedCard = null;
-                    document.body.style.overflow = '';
-                }
-            };
-        }
-
-        function researchPortfolioData() {
-            return {
-                modalOpen: false,
-                selectedCard: null,
-                data: { tagline: '', title: '', description: '', cards: [] },
-                async init() {
-                    const data = await loadData('research.json');
-                    if (data) this.data = data;
-                },
-                openModal(card) {
-                    this.selectedCard = card;
-                    this.modalOpen = true;
-                    document.body.style.overflow = 'hidden';
-                },
-                closeModal() {
-                    this.modalOpen = false;
-                    this.selectedCard = null;
-                    document.body.style.overflow = '';
-                }
-            };
-        }
-
-        function evidenceData() {
-            return {
-                modalOpen: false,
-                selectedCard: null,
-                data: { eyebrow: '', h2: '', sub: '', cards: [] },
-                async init() {
-                    const data = await loadData('evidence.json');
-                    if (data) this.data = data;
-                },
-                openModal(card) {
-                    this.selectedCard = card;
-                    this.modalOpen = true;
-                    document.body.style.overflow = 'hidden';
-                },
-                closeModal() {
-                    this.modalOpen = false;
-                    this.selectedCard = null;
-                    document.body.style.overflow = '';
-                },
-                downloadPDF(card) {
-                    const insights = card.insights || [];
-                    const content = `IP3 Consulting — ${card.title}\n\nType: ${card.type}\nDate: ${card.date}\nAuthor: ${card.author}\nRelated: ${card.related}\n\n${card.description}\n\nKEY INSIGHTS\n${insights.map((i, idx) => `${idx + 1}. ${i}`).join('\n')}\n\n---\n© 2026 IP3 Consulting Limited. All rights reserved.\nFor the full paper, contact hello@ip3consulting.com`.trim();
-                    const blob = new Blob([content], { type: 'application/pdf' });
-                    const url = URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.href = url;
-                    a.download = `${(card.title || 'document').replace(/\s+/g, '_')}_IP3.pdf`;
-                    document.body.appendChild(a);
-                    a.click();
-                    document.body.removeChild(a);
-                    URL.revokeObjectURL(url);
-                }
-            };
-        }
-
-        function conveningCarousel() {
-            return {
-                sectionTagline: 'CONNECTING POLICY, CAPITAL AND IMPLEMENTATION',
-                config: {
-                    perspective: 1200,
-                    radius: 340,
-                    tiltX: -8,
-                    cardWidth: 220,
-                    cardHeight: 300,
-                    cornerRadius: 20,
-                    imageDarkness: 0.45,
-                    dragSensitivity: 0.35,
-                    autoSpeed: 0.10,
-                    direction: 1,
-                    friction: 0.94,
-                    dragThreshold: 6,
-                    autoResumeDelay: 2500
-                },
-                cards: [],
-                rotation: 0,
-                velocity: 0,
-                isDragging: false,
-                dragStartX: 0,
-                lastMoveX: 0,
-                lastMoveTime: 0,
-                totalDragDistance: 0,
-                autoRotate: true,
-                autoPauseTimer: null,
-                rafId: null,
-                activeCard: null,
-
-                get anglePerCard() { return this.cards && this.cards.length ? 360 / this.cards.length : 0; },
-
-                getCardOpacity(index) {
-                    const worldAngle = Math.abs(this.getCardWorldAngle(index));
-                    return Math.max(0.25, 1 - (worldAngle / 180) * 0.75);
-                },
-
-                getCardWorldAngle(index) {
-                    const baseAngle = this.anglePerCard * index;
-                    let worldAngle = (baseAngle + this.rotation) % 360;
-                    if (worldAngle > 180) worldAngle -= 360;
-                    if (worldAngle < -180) worldAngle += 360;
-                    return worldAngle;
-                },
-
-                getActiveCardIndex() {
-                    if (!this.cards || !this.cards.length) return 0;
-                    let minAngle = Infinity, frontIndex = 0;
-                    for (let i = 0; i < this.cards.length; i++) {
-                        const angle = Math.abs(this.getCardWorldAngle(i));
-                        if (angle < minAngle) { minAngle = angle; frontIndex = i; }
-                    }
-                    return frontIndex;
-                },
-
-                async init() {
-                    const data = await loadData('convening.json');
-                    if (data) {
-                        if (data.sectionTagline) this.sectionTagline = data.sectionTagline;
-                        if (data.cards) this.cards = data.cards;
-                    }
-                    this.startLoop();
-                },
-
-                startLoop() {
-                    const loop = () => {
-                        if (!this.isDragging) {
-                            if (Math.abs(this.velocity) > 0.02) {
-                                this.rotation += this.velocity;
-                                this.velocity *= this.config.friction;
-                            } else {
-                                this.velocity = 0;
-                                if (this.autoRotate) this.rotation += this.config.autoSpeed * this.config.direction;
-                            }
-                        }
-                        this.rafId = requestAnimationFrame(loop);
-                    };
-                    this.rafId = requestAnimationFrame(loop);
-                },
-
-                onPointerDown(e) {
-                    this.isDragging = true;
-                    this.dragStartX = e.clientX;
-                    this.lastMoveX = e.clientX;
-                    this.lastMoveTime = performance.now();
-                    this.totalDragDistance = 0;
-                    this.velocity = 0;
-                    this.autoRotate = false;
-                    clearTimeout(this.autoPauseTimer);
-                    try { e.target.setPointerCapture(e.pointerId); } catch (err) {}
-                },
-
-                onPointerMove(e) {
-                    if (!this.isDragging) return;
-                    const deltaX = e.clientX - this.lastMoveX;
-                    const now = performance.now();
-                    const dt = Math.max(now - this.lastMoveTime, 1);
-                    this.rotation += deltaX * this.config.dragSensitivity;
-                    this.totalDragDistance += Math.abs(deltaX);
-                    if (dt > 0) this.velocity = (deltaX * this.config.dragSensitivity) / dt * 16;
-                    this.lastMoveX = e.clientX;
-                    this.lastMoveTime = now;
-                },
-
-                onPointerUp(e) {
-                    if (!this.isDragging) return;
-                    this.isDragging = false;
-                    try { e.target.releasePointerCapture(e.pointerId); } catch (err) {}
-                    if (this.totalDragDistance < this.config.dragThreshold) {
-                        this.activeCard = this.getActiveCardIndex();
-                    }
-                    this.autoPauseTimer = setTimeout(() => { this.autoRotate = true; }, this.config.autoResumeDelay);
-                },
-
-                onPointerLeave(e) { if (this.isDragging) this.onPointerUp(e); },
-
-                spinNext() {
-                    if (!this.anglePerCard) return;
-                    this.velocity = 0;
-                    this.autoRotate = false;
-                    clearTimeout(this.autoPauseTimer);
-                    const target = Math.round(this.rotation / this.anglePerCard) * this.anglePerCard - this.anglePerCard;
-                    this.animateTo(target);
-                    this.autoPauseTimer = setTimeout(() => { this.autoRotate = true; }, this.config.autoResumeDelay);
-                },
-
-                spinPrev() {
-                    if (!this.anglePerCard) return;
-                    this.velocity = 0;
-                    this.autoRotate = false;
-                    clearTimeout(this.autoPauseTimer);
-                    const target = Math.round(this.rotation / this.anglePerCard) * this.anglePerCard + this.anglePerCard;
-                    this.animateTo(target);
-                    this.autoPauseTimer = setTimeout(() => { this.autoRotate = true; }, this.config.autoResumeDelay);
-                },
-
-                snapToCard(index) {
-                    if (!this.anglePerCard) return;
-                    this.velocity = 0;
-                    this.autoRotate = false;
-                    clearTimeout(this.autoPauseTimer);
-                    const baseAngle = this.anglePerCard * index;
-                    const currentMod = ((this.rotation % 360) + 360) % 360;
-                    const targetMod = ((-baseAngle % 360) + 360) % 360;
-                    let diff = targetMod - currentMod;
-                    if (diff > 180) diff -= 360;
-                    if (diff < -180) diff += 360;
-                    this.animateTo(this.rotation + diff);
-                    this.autoPauseTimer = setTimeout(() => { this.autoRotate = true; }, this.config.autoResumeDelay);
-                },
-
-                animateTo(target) {
-                    const start = this.rotation;
-                    const diff = target - start;
-                    const duration = 600;
-                    const startTime = performance.now();
-                    const animate = (now) => {
-                        const elapsed = now - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        this.rotation = start + diff * eased;
-                        if (progress < 1) requestAnimationFrame(animate);
-                    };
-                    requestAnimationFrame(animate);
-                }
-            };
-        }
-
-        function clientsData() {
-            return {
-                data: { tagline: '', title: '', description: '', logos: [] },
-                async init() {
-                    const data = await loadData('clients.json');
-                    if (data) this.data = data;
-                }
-            };
-        }
-
-        function endorsementsData() {
-            return {
-                currentSlide: 0,
-                data: { tagline: '', title: '', description: '', endorsements: [] },
-                interval: null,
-                async init() {
-                    const data = await loadData('endorsements.json');
-                    if (data) this.data = data;
-                    this.interval = setInterval(() => this.nextSlide(), 7000);
-                },
-                nextSlide() {
-                    if (!this.data?.endorsements?.length) return;
-                    this.currentSlide = (this.currentSlide + 1) % this.data.endorsements.length;
-                },
-                prevSlide() {
-                    if (!this.data?.endorsements?.length) return;
-                    this.currentSlide = (this.currentSlide - 1 + this.data.endorsements.length) % this.data.endorsements.length;
-                }
-            };
-        }
-
-        function institutionalDeckData() {
-            return {
-                modalOpen: false,
-                selectedCard: null,
-                activeTag: 'All',
-                data: { tagline: '', title: '', description: '', tags: [], cards: [] },
-                async init() {
-                    const data = await loadData('deck.json');
-                    if (data) this.data = data;
-                },
-                getFilteredCards() {
-                    if (!this.data || !this.data.cards) return [];
-                    if (this.activeTag === 'All') return this.data.cards;
-                    return this.data.cards.filter(c => c.tag === this.activeTag);
-                },
-                openModal(card) {
-                    this.selectedCard = card;
-                    this.modalOpen = true;
-                    document.body.style.overflow = 'hidden';
-                },
-                closeModal() {
-                    this.modalOpen = false;
-                    this.selectedCard = null;
-                    document.body.style.overflow = '';
-                }
-            };
-        }
-
-        function publicationsData() {
-            return {
-                modalOpen: false,
-                selectedCard: null,
-                activeTag: 'All',
-                data: { tagline: '', title: '', description: '', tags: [], cards: [] },
-                async init() {
-                    const data = await loadData('publications.json');
-                    if (data) this.data = data;
-                },
-                getFilteredCards() {
-                    if (!this.data || !this.data.cards) return [];
-                    if (this.activeTag === 'All') return this.data.cards;
-                    return this.data.cards.filter(c => c.tag === this.activeTag);
-                },
-                openModal(card) {
-                    this.selectedCard = card;
-                    this.modalOpen = true;
-                    document.body.style.overflow = 'hidden';
-                },
-                closeModal() {
-                    this.modalOpen = false;
-                    this.selectedCard = null;
-                    document.body.style.overflow = '';
-                }
-            };
-        }
-
-        function leadershipData() {
-            return {
-                data: { eyebrow: '', name: '', position: '', bio: '', image: '' },
-                async init() {
-                    const data = await loadData('leadership.json');
-                    if (data) this.data = data;
-                }
-            };
-        }
-
-        function contactForm() {
-            return {
-                submitted: false,
-                form: { name: '', email: '', organization: '', engagementType: '', focusArea: '', message: '' },
-                data: { eyebrow: '', h2: '', sub: '', paths: [], focusAreas: [] },
-                async init() {
-                    const data = await loadData('contact.json');
-                    if (data) this.data = data;
-                },
-                submitForm() {
-                    this.submitted = true;
-                    setTimeout(() => {
-                        this.submitted = false;
-                        this.form = { name: '', email: '', organization: '', engagementType: '', focusArea: '', message: '' };
-                    }, 5000);
-                }
-            };
-        }
-    </script>
+<footer class="foot">
+  <div class="container">
+    <div class="foot__grid">
+      <div>
+        <a class="foot__logo" href="/" aria-label="IP3 Consulting Limited — home">
+          <i><img src="/assets/logo/ip3-mark.png" width="44" height="44" alt="" loading="lazy"></i>
+          <span class="brand__t"><span class="brand__n">IP3 <b style="color:#f0a98f">Consulting</b></span><span class="brand__d">Institute for Public Policy & Practice</span></span>
+        </a>
+        <p style="max-width:34ch">A policy and development advisory firm turning evidence into decisions, and decisions into delivery. Founded 2018, based in Dhaka.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="/about">About</a></li><li><a href="/approach">Our approach</a></li><li><a href="/capabilities">Capabilities</a></li><li><a href="/sectors">Sectors</a></li><li><a href="/engagements">Selected engagements</a></li><li><a href="/insights">Insights</a></li><li><a href="/people">People</a></li></ul></div>
+      <div><h4>Sectors</h4><ul><li><a href="/sectors/climate-energy-resilience">Climate, Energy & Resilience</a></li><li><a href="/sectors/education-skills-human-capital">Education, Skills & Human Capital</a></li><li><a href="/sectors/health-systems-social-protection">Health Systems & Social Protection</a></li><li><a href="/sectors/digital-government-data-dpi">Digital Government, Data & DPI</a></li><li><a href="/sectors/governance-institutions-public-finance">Governance, Institutions & Public Finance</a></li><li><a href="/sectors/economic-transformation-trade-private-sector">Economic Transformation & Trade</a></li><li><a href="/sectors/sustainable-finance-esg-circular-economy">Sustainable Finance, ESG & Circular Economy</a></li><li><a href="/sectors/ai-emerging-technology-public-systems">AI & Emerging Technology for Public Systems</a></li></ul></div>
+      <div>
+        <h4>Dhaka office</h4>
+        <address>Zenith Prime, House-39, Road-35/A<br>Gulshan-2, Dhaka-1212<br>Bangladesh<br><br><a href="mailto:info@ip3-bd.org">info@ip3-bd.org</a><br><a href="tel:+8801914011329">+880 1914 011 329</a><br><span style="opacity:.7">Sunday – Thursday, 09:00–18:00 (GMT+6)</span></address>
+      </div>
+    </div>
+    <div class="foot__big" aria-hidden="true">IP3 Consulting</div>
+    <div class="foot__bar">
+      <span>© 2026 IP3 Consulting Limited — Institute for Public Policy and Practice. All rights reserved.</span>
+      <nav aria-label="Legal"><a href="/privacy">Privacy Policy</a><a href="/terms">Terms</a><a href="/contact">Contact</a></nav>
+    </div>
+  </div>
+</footer>
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/js/site.js?v=b707f3ae" defer></script>
 </body>
 </html>
