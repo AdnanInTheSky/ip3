@@ -29,7 +29,15 @@ jobs:
         run: npm test
       - name: Validate content and Pages CMS config
         run: npm run check
-      - name: Build the site
-        run: npm run build
-      - name: Check internal links and page anchors
-        run: npm run links
+      - name: Build and check internal links
+        run: npm run verify
+      - name: Collect Lighthouse CI reports from dist/
+        run: npx --yes @lhci/cli@0.15.1 autorun --config=./lighthouserc.json
+      - name: Preserve Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-ci-${{ github.run_id }}
+          path: .lighthouseci/
+          if-no-files-found: ignore
+          retention-days: 7

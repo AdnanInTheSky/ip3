@@ -150,6 +150,9 @@ function breadcrumb(href) {
 function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', jsonld = [], noindex = false, preload = '' }) {
   const url = cfg.url + (path === '/' ? '/' : path);
   const fullTitle = path === '/' ? title : `${title} | ${cfg.short}`;
+  const analytics = cfg.analytics.enabled && cfg.analytics.webAnalyticsPath && cfg.analytics.speedInsightsPath
+    ? `<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script><script defer src="${cfg.analytics.webAnalyticsPath}"></script><script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script><script defer src="${cfg.analytics.speedInsightsPath}"></script>\n`
+    : '';
   const org = {
     '@context': 'https://schema.org', '@type': 'Organization', legalName: cfg.name, name: cfg.short, alternateName: cfg.alt, url: cfg.url,
     logo: cfg.url + '/assets/logo/icon-512.png', foundingDate: String(cfg.founded), email: cfg.email, telephone: cfg.phone,
@@ -196,7 +199,7 @@ ${footer()}
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/lenis.min.js" defer></script>
-${cfg.turnstileSiteKey ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>\n' : ''}<script src="/assets/js/site.js?v=__JSV__" defer></script>
+${cfg.turnstileSiteKey ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>\n' : ''}${analytics}<script src="/assets/js/site.js?v=__JSV__" defer></script>
 </body>
 </html>
 `;

@@ -18,6 +18,10 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
 
   const OUT = path.join(root, 'dist');
   const cfg = require('../src/config');
+  if (process.env.VERCEL_ENV === 'production' && process.env.ENABLE_ANALYTICS === '1' &&
+      (!cfg.analytics.webAnalyticsPath || !cfg.analytics.speedInsightsPath)) {
+    console.warn('Analytics were requested, but both Vercel project script paths must be configured; analytics remain disabled.');
+  }
   const D = require('../src/data');
   const home = require('../src/pages-home').home;
   const P = require('../src/pages-inner');
