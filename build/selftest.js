@@ -1,0 +1,110 @@
+// Dependency-free negative regression tests. Every mutation is made to a temporary content copy.
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const os = require('node:os');
+const path = require('node:path');
+const { spawnSync } = require('node:child_process');
+
+const REPO = path.join(__dirname, '..');
+const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-selftest-'));
+const root = path.join(temp, 'site');
+const contentSource = path.join(REPO, 'content');
+const contentTarget = path.join(root, 'content');
+fs.mkdirSync(root, { recursive: true });
+for (const rel of ['build/validate.js', 'build/build-all.js', 'cms/schema.js']) {
+  const target = path.join(root, rel); fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(path.join(REPO, rel), target);
+}
+const validate = require(path.join(root, 'build', 'validate.js'));
+
+function reset() {
+  fs.rmSync(contentTarget, { recursive: true, force: true });
+  fs.cpSync(contentSource, contentTarget, { recursive: true });
+}
+
+function json(rel) {
+  return JSON.parse(fs.readFileSync(path.join(contentTarget, rel), 'utf8'));
+}
+
+function save(rel, value) {
+  fs.writeFileSync(path.join(contentTarget, rel), JSON.stringify(value, null, 2) + '\n');
+}
+
+function expectValidation(pattern) {
+  const result = validate.run({ quiet: true });
+  assert.match(result.errors.join('\n'), pattern);
+}
+
+test('15 negative content/build safeguards', async (t) => {
+  reset();
+  try {
+    await t.test('rejects a missing image', () => {
+      reset(); const data = json('sectors.json'); data.items[0].card = '/assets/img/missing-selftest.webp'; save('sectors.json', data);
+      expectValidation(/file not found: \/assets\/img\/missing-selftest\.webp/);
+    });
+    await t.test('rejects a bad internal route', () => {
+      reset(); const data = json('home/why-ip3.json'); data.items[0].href = '/not-a-route'; save('home/why-ip3.json', data);
+      expectValidation(/link \/not-a-route does not match any page/);
+    });
+    await t.test('rejects a bad page anchor', () => {
+      reset(); const data = json('home/why-ip3.json'); data.items[0].href = '/capabilities#not-a-capability'; save('home/why-ip3.json', data);
+      expectValidation(/no capability with slug "not-a-capability"/);
+    });
+    await t.test('rejects script tags in editor copy', () => {
+      reset(); const data = json('pages.json'); data.about.h1 = 'About <script>alert(1)<\/script>'; save('pages.json', data);
+      expectValidation(/contains HTML other than <em>…<\/em>/);
+    });
+    await t.test('rejects an unclosed emphasis tag', () => {
+      reset(); const data = json('pages.json'); data.about.h1 = 'Evidence <em>drives decisions'; save('pages.json', data);
+      expectValidation(/<em> tags are not closed/);
+    });
+    await t.test('rejects an empty required value', () => {
+      reset(); const data = json('sectors.json'); data.items[0].title = ''; save('sectors.json', data);
+      expectValidation(/title: is required/);
+    });
+    await t.test('rejects an invalid email address', () => {
+      reset(); const data = json('site.json'); data.email = 'not-an-email'; save('site.json', data);
+      expectValidation(/not-an-email.*not a valid email address/);
+    });
+    await t.test('rejects a key absent from the CMS schema', () => {
+      reset(); const data = json('pages.json'); data.about.unexpected = 'no'; save('pages.json', data);
+      expectValidation(/unexpected: is not a field the editor knows/);
+    });
+    await t.test('rejects a broken content reference', () => {
+      reset(); const data = json('sectors.json'); data.items[0].caps = ['missing-capability']; save('sectors.json', data);
+      expectValidation(/missing-capability.*not an existing capability slug/);
+    });
+    await t.test('rejects hiding every hero slide', () => {
+      reset(); const data = json('home/hero.json'); data.slides.forEach((slide) => { slide.hidden = true; }); save('home/hero.json', data);
+      expectValidation(/at least one slide must be visible/);
+    });
+    await t.test('rejects a value of the wrong type', () => {
+      reset(); const data = json('pages.json'); data.about.h1 = 17; save('pages.json', data);
+      expectValidation(/h1: must be text/);
+    });
+    await t.test('rejects duplicate sector slugs', () => {
+      reset(); const data = json('sectors.json'); data.items[1].slug = data.items[0].slug; save('sectors.json', data);
+      expectValidation(/is used twice/);
+    });
+    await t.test('rejects malformed JSON', () => {
+      reset(); fs.writeFileSync(path.join(contentTarget, 'site.json'), '{broken');
+      expectValidation(/not valid JSON/);
+    });
+    await t.test('rejects an image over the hard size limit', () => {
+      reset(); const data = json('sectors.json'); data.items[0].card = '/assets/img/selftest-oversized.webp'; save('sectors.json', data);
+      const file = path.join(root, 'assets', 'img', 'selftest-oversized.webp');
+      fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, Buffer.alloc(2 * 1024 * 1024 + 1));
+      expectValidation(/selftest-oversized\.webp is .*limit is 2(?:\.0)? MB/);
+    });
+    await t.test('leaves the previous HTML untouched when build validation fails', async () => {
+      reset(); const output = path.join(root, 'dist'); const html = path.join(output, 'index.html');
+      fs.mkdirSync(output, { recursive: true }); fs.writeFileSync(html, '<h1>last good build</h1>');
+      const data = json('site.json'); data.email = ''; save('site.json', data);
+      const result = spawnSync(process.execPath, ['build/build-all.js'], { cwd: root, encoding: 'utf8' });
+      assert.notEqual(result.status, 0, 'invalid content should fail the build');
+      assert.equal(fs.readFileSync(html, 'utf8'), '<h1>last good build</h1>');
+    });
+  } finally {
+    fs.rmSync(temp, { recursive: true, force: true });
+  }
+});
