@@ -1,6 +1,6 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const handler = require('./contact');
+const handler = require('../api/contact');
 
 function responseMock() {
   return {

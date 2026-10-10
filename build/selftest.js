@@ -8,6 +8,10 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const REPO = path.join(__dirname, '..');
+test('api contains only deployable contact.js', () => {
+  assert.deepEqual(fs.readdirSync(path.join(REPO, 'api')).sort(), ['contact.js']);
+});
+
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-selftest-'));
 const root = path.join(temp, 'site');
 const contentSource = path.join(REPO, 'content');
