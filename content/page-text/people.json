@@ -22,6 +22,26 @@
       "slug": "cta-talk",
       "label": "Talk button",
       "text": "Let’s talk"
+    },
+    {
+      "slug": "profile-open",
+      "label": "Person card: open profile",
+      "text": "View profile"
+    },
+    {
+      "slug": "profile-education",
+      "label": "Person profile: education heading",
+      "text": "Education"
+    },
+    {
+      "slug": "profile-practice",
+      "label": "Person profile: practice heading",
+      "text": "Practice areas"
+    },
+    {
+      "slug": "profile-close",
+      "label": "Person profile: close button",
+      "text": "Close profile"
     }
   ]
 }

@@ -17,6 +17,7 @@ function hero() {
 <section class="hero on-dark dark" data-hero aria-roledescription="carousel" aria-label="Featured work">
   <div class="hero__slides">${slides}</div>
   <div class="hero__shade"></div>
+  <div class="hero__contours" aria-hidden="true"></div>
   <div class="container hero__inner"><div class="hero__copy" aria-live="polite">${texts}</div></div>
   <div class="hero__ctrl">
     <button type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
@@ -47,7 +48,7 @@ function mandates() {
 
 function stats() {
   return `
-<section class="section--dark on-dark dark" style="padding:clamp(60px,8vw,110px) 0">
+<section class="section--dark stats-band on-dark dark" style="padding:clamp(60px,8vw,110px) 0">
   <div class="container">
     <div class="stats" data-stats>
       ${D.stats.map((s) => `<div class="stat"><b><span data-count="${s.n}">${s.n}</span><i>${s.suffix}</i></b><span>${esc(s.label)}</span></div>`).join('')}
@@ -84,6 +85,7 @@ function why() {
       <ul class="checks" data-stagger style="gap:0">
         ${D.whyIp3.map((w) => `<li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">${w.n}</b><h3 style="margin:8px 0 8px">${w.title}</h3><span style="font-weight:400;font-family:var(--f-body)">${w.text}</span><br><a class="link" style="margin-top:14px" href="${w.href}">${w.cta}${arrow}</a></li>`).join('')}
       </ul>
+      <div style="margin-top:34px" data-reveal>${btn(esc(D.pageText.home['cta-why-ip3']), '/why-ip3')}</div>
     </div>
   </div>
 </section>`;
@@ -202,13 +204,17 @@ function proof() {
   const p = D.partners;
   const clients = D.headings['partners-clients'];
   const funders = D.headings['partners-funders'];
+  // each group runs as a typographic marquee; the second copy only closes the loop, so it is hidden from assistive tech
+  const set = (names, hidden) => `<ul class="marq__set"${hidden ? ' aria-hidden="true"' : ''}>${names.map((n, i) => `<li${i % 2 ? ' class="i"' : ''}>${esc(n)}</li>`).join('')}</ul>`;
+  const row = (title, names, rev) => `
+    <div class="marq${rev ? ' marq--rev' : ''}">
+      <div class="container"><h3 class="marq__h">${esc(title)}</h3></div>
+      <div class="marq__win"><div class="marq__track" style="--dur:${Math.max(28, names.length * 5)}s">${set(names)}${set(names, true)}</div></div>
+    </div>`;
   return `
 <section class="section">
+  <div class="partners" data-reveal>${row(clients.title, p.clients)}${row(funders.title, p.funders, true)}</div>
   <div class="container">
-    <div class="partners" data-reveal>
-      <div><h3>${esc(clients.title)}</h3><div class="names">${p.clients.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div>
-      <div><h3>${esc(funders.title)}</h3><div class="names">${p.funders.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div>
-    </div>
     <div class="quotes" style="margin-top:clamp(50px,7vw,100px)" data-stagger>
       ${D.testimonials.map((t) => `<figure class="quote"><blockquote>${esc(t.quote)}</blockquote><footer><b>${esc(t.name)}</b><span>${esc(t.role)}</span></footer></figure>`).join('')}
     </div>
@@ -221,7 +227,7 @@ function founder() {
   return `
 <section class="section section--paper" id="leadership">
   <div class="container founder">
-    <div class="founder__img clip" data-clip><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy" data-parallax></div>
+    <div class="founder__img clip" data-clip data-drift><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy" data-parallax></div>
     <div>
       <span class="eyebrow" data-reveal>${esc(D.pageText.home['leadership-eyebrow'])}</span>
       <h2 class="split" style="margin-top:18px">${f.name}</h2>

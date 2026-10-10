@@ -92,6 +92,11 @@
       "slug": "cta-start-conversation",
       "label": "Start conversation button",
       "text": "Start a conversation"
+    },
+    {
+      "slug": "cta-why-ip3",
+      "label": "Why IP3 section: button to the full Why IP3 page",
+      "text": "See why clients choose IP3"
     }
   ]
 }

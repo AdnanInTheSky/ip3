@@ -42,8 +42,147 @@
     }
   ],
   "fieldStories": [
-    { "slug": "waste", "type": "Circular economy", "title": "Waste becomes a resource", "video": "/assets/video/waste.mp4", "poster": "/assets/img/poster-waste.webp" },
-    { "slug": "textile", "type": "Textile transition", "title": "Reclaiming value from garment waste", "video": "/assets/video/textile.mp4", "poster": "/assets/img/poster-textile.webp" },
-    { "slug": "coast", "type": "Coastal Bangladesh", "title": "Where land, water and livelihoods meet", "video": "/assets/video/coast.mp4", "poster": "/assets/img/poster-coast.webp" }
+    {
+      "slug": "waste",
+      "type": "Circular economy",
+      "title": "Waste becomes a resource",
+      "video": "/assets/video/waste.mp4",
+      "poster": "/assets/img/poster-waste.webp"
+    },
+    {
+      "slug": "textile",
+      "type": "Textile transition",
+      "title": "Reclaiming value from garment waste",
+      "video": "/assets/video/textile.mp4",
+      "poster": "/assets/img/poster-textile.webp"
+    },
+    {
+      "slug": "coast",
+      "type": "Coastal Bangladesh",
+      "title": "Where land, water and livelihoods meet",
+      "video": "/assets/video/coast.mp4",
+      "poster": "/assets/img/poster-coast.webp"
+    }
+  ],
+  "publications": [
+    {
+      "kind": "Book chapter",
+      "year": 2024,
+      "title": "Building resilience in Bangladesh's education system: Evidence and policy lessons",
+      "authors": "Kazi Iqbal and Siban Shahana",
+      "publisher": "Asian Development Bank Institute, in Building Resilience in Education Systems (eds. E. M. King and D. Suryadarma)",
+      "href": "https://www.adb.org/publications/building-resilience-in-education-systems",
+      "summary": "What Bangladesh learned about keeping children learning through shocks, and the policy lessons for a more resilient education system.",
+      "people": [
+        "siban-shahana"
+      ]
+    },
+    {
+      "kind": "Journal article",
+      "year": 2023,
+      "title": "Input subsidies and crop diversity on family farms in Burkina Faso",
+      "authors": "Sibbir Ahmad, Melinda Smale, Veronique Theriault and Eugenie Maiga",
+      "publisher": "Journal of Agricultural Economics",
+      "summary": "Whether fertiliser and seed subsidies change the mix of crops that family farms grow.",
+      "people": [
+        "dr-sibbir-ahmad"
+      ]
+    },
+    {
+      "kind": "Report",
+      "year": 2022,
+      "title": "Bridging the Technological Divide: Technology Adoption by Firms in Developing Countries",
+      "authors": "Xavier Cirera, Diego Comin and Marcio Cruz; IP3 contributed the Bangladesh survey work",
+      "publisher": "World Bank",
+      "href": "https://openknowledge.worldbank.org/entities/publication/ee3abd08-33db-41b9-86f7-9b3176632083",
+      "summary": "A World Bank flagship on why firms in developing countries lag in adopting technology, built on the Firm-level Adoption of Technology survey.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    },
+    {
+      "kind": "Report",
+      "year": 2021,
+      "title": "Gearing Up for the Future of Manufacturing in Bangladesh",
+      "authors": "Yunfan Gu, Gaurav Nayyar and Siddharth Sharma; IP3 contributed the Bangladesh survey work",
+      "publisher": "World Bank",
+      "href": "http://hdl.handle.net/10986/35879",
+      "summary": "How far Bangladeshi manufacturers have adopted new technology, what holds them back, and the reforms that would help, drawing on a survey of 1,200 firms.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    },
+    {
+      "kind": "Report",
+      "year": 2019,
+      "title": "Taking Collective Action to Improve Adolescent Nutrition in Bangladesh: Investing in Cost-Effective Interventions",
+      "authors": "World Bank; cost-benefit analysis by Shafiun Nahin Shimul with the James P Grant School of Public Health, BRAC University",
+      "publisher": "World Bank",
+      "href": "http://documents.worldbank.org/curated/en/777311566457641589/Taking-Collective-Action-to-Improve-Adolescent-Nutrition-in-Bangladesh-Investing-in-Cost-Effective-Interventions",
+      "summary": "Which adolescent nutrition interventions give the most return for the money in Bangladesh, based on an economic evaluation of each.",
+      "people": [
+        "prof-dr-shafiun-shimul"
+      ]
+    },
+    {
+      "kind": "Journal article",
+      "year": 2019,
+      "title": "Applying a spatially based, weighted parametric valuation model to address property taxation challenges for developing countries",
+      "authors": "Mohammad Syful Hoque",
+      "publisher": "Journal of Property Tax Assessment & Administration, 16(2)",
+      "href": "https://researchexchange.iaao.org/jptaa/vol16/iss2/2",
+      "summary": "A GIS-based method for valuing property fairly where market data are thin, so that cities in developing countries can raise property tax.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    },
+    {
+      "kind": "Commentary",
+      "year": 2019,
+      "title": "The gender gap in employment: women have a low share in quality, gainful jobs",
+      "authors": "Mohammad Syful Hoque",
+      "publisher": "The Financial Express",
+      "href": "https://today.thefinancialexpress.com.bd/26th-anniversary-issue-1/women-have-low-share-in-quality-gainful-jobs-1573546939",
+      "summary": "Why women in Bangladesh remain under-represented in quality jobs despite rising participation.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    },
+    {
+      "kind": "Commentary",
+      "year": 2019,
+      "title": "Wealth inequality: property tax can close the gap",
+      "authors": "Mohammad Syful Hoque",
+      "publisher": "The Financial Express",
+      "href": "https://thefinancialexpress.com.bd/views/reviews/wealth-inequality-property-tax-can-close-the-gap-1553960303",
+      "summary": "The case for a fairer, better-administered property tax as a tool against wealth inequality in Bangladesh.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    },
+    {
+      "kind": "Book chapter",
+      "year": 2016,
+      "title": "Can cereal-based cropping technologies only improve the food and livelihood security of the poor smallholders in marginal areas of Bangladesh?",
+      "authors": "M. A. Malek, M. S. Hoque, J. Yesmin and M. L. Haque",
+      "publisher": "Springer (book chapter)",
+      "href": "https://link.springer.com/chapter/10.1007/978-3-319-25718-1_16",
+      "summary": "Evidence on whether new cereal-cropping technologies alone can lift food and livelihood security for poor smallholders in marginal areas.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    },
+    {
+      "kind": "Report",
+      "year": 2015,
+      "title": "Financial Soundness Indicators for Financial Sector Stability: A Tale of Three Asian Countries",
+      "authors": "Asian Development Bank; Bangladesh study by Mohammad Syful Hoque",
+      "publisher": "Asian Development Bank",
+      "href": "https://www.adb.org/sites/default/files/publication/173687/fsi-3-asian-countries.pdf",
+      "summary": "How Bangladesh and two other Asian economies compile and use financial soundness indicators to watch over financial stability.",
+      "people": [
+        "mohammad-syful-hoque"
+      ]
+    }
   ]
 }

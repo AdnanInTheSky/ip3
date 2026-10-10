@@ -6,12 +6,25 @@
         {
           "name": "Mohammad Syful Hoque",
           "role": "Executive Chairman",
-          "focus": "Climate finance, climate adaptation & mitigation, sustainability, ESG strategy, circular economy & biodiversity conservation, trade, industrial growth, technology adoption, impact evaluation, economic, social & environmental feasibility"
+          "focus": "Climate finance, climate adaptation & mitigation, sustainability, ESG strategy, circular economy & biodiversity conservation, trade, industrial growth, technology adoption, impact evaluation, economic, social & environmental feasibility",
+          "slug": "mohammad-syful-hoque",
+          "photo": "/assets/img/people/mohammad-syful-hoque.webp",
+          "affiliation": "Executive Chairman, IP3 Consulting Limited",
+          "bio": [
+            "Has led or contributed to feasibility studies for ADB's NextGen education programmes in Bangladesh, the green transition of the garment sector for the Embassy of Sweden and the Centre for Policy Dialogue, the World Bank's firm-level technology adoption survey, and the European Commission's analysis of Bangladesh's LDC graduation. Currently works on ADB's regional facility for early warning systems in ten countries.",
+            "Designs and manages nationwide and multi-country household and enterprise surveys, and works in Python, R, Stata and ArcGIS. Publications cover property-tax valuation, financial soundness indicators (ADB) and technology adoption by firms (World Bank)."
+          ],
+          "education": [
+            "MSc in Economics, University of Surrey, UK (2012)",
+            "MSS in Economics, University of Dhaka (2006)",
+            "BSS in Economics, University of Dhaka (2005)"
+          ]
         },
         {
           "name": "Md. Mazadul Hoque",
           "role": "Director (Policy & Advisory)",
-          "focus": "Macroeconomic policy, fiscal & monetary policy, trade & FDI, regional connectivity, governance & transparency, migration, employment and development policy"
+          "focus": "Macroeconomic policy, fiscal & monetary policy, trade & FDI, regional connectivity, governance & transparency, migration, employment and development policy",
+          "slug": "md-mazadul-hoque"
         }
       ]
     },
@@ -21,17 +34,51 @@
         {
           "name": "Prof. Dr. Niaz Asadullah",
           "role": "Chief Economic Advisor",
-          "focus": "Education, institutions, poverty, labor & gender"
+          "focus": "Education, institutions, poverty, labor & gender",
+          "slug": "prof-dr-niaz-asadullah",
+          "affiliation": "Professor of Economics, Monash University (Malaysia)",
+          "bio": [
+            "Previously professor at the University of Malaya (2013–2022) and deputy director of its Poverty Studies Centre; earlier, assistant professor at the University of Reading, UK, and lecturer in economics at the University of Dhaka.",
+            "More than 75 peer-reviewed journal papers and over 4,400 Google Scholar citations. Heads the Southeast Asia cluster of the Global Labor Organization and has held senior advisory appointments with the Government of Malaysia."
+          ],
+          "education": [
+            "DPhil in Economics, University of Oxford (2005)",
+            "MSc in Development Economics, University of Oxford (2000)",
+            "BA in Economics, Aligarh Muslim University, India (1996)"
+          ]
         },
         {
           "name": "Prof. Dr. Shafiun Shimul",
           "role": "Policy Advisor (Lead Economist)",
-          "focus": "Public health, policy & practice"
+          "focus": "Public health, policy & practice",
+          "slug": "prof-dr-shafiun-shimul",
+          "photo": "/assets/img/people/prof-dr-shafiun-nahin-shimul.webp",
+          "affiliation": "Professor, Institute of Health Economics, University of Dhaka",
+          "bio": [
+            "Principal investigator on tobacco taxation research funded through Johns Hopkins University, the University of Illinois Chicago and the CDC Foundation, and health economist for ADB on a policy-based loan for social security, financial inclusion and health. CDC Foundation Fellow at Georgia State University (2022–2024).",
+            "Other work includes a World Bank randomised trial on motivating social service workers, the outpatient benefit package for Bangladesh's social health protection scheme (SSK), and a cost-benefit analysis of adolescent nutrition interventions for the World Bank."
+          ],
+          "education": [
+            "Postdoctoral fellowship, Georgia State University, USA (2022–2024)",
+            "PhD in Economics, University of Nebraska-Lincoln, USA (2017)",
+            "MSS in Health Economics, University of Dhaka (2004)",
+            "MSS and BSS in Economics, University of Dhaka (2003, 2002)"
+          ]
         },
         {
           "name": "Prof. Dr. M A Mannan",
           "role": "Senior Consulting Advisor",
-          "focus": "Education, health, demography & social protection"
+          "focus": "Education, health, demography & social protection",
+          "slug": "prof-dr-m-a-mannan",
+          "affiliation": "Former Senior Research Fellow, Bangladesh Institute of Development Studies",
+          "bio": [
+            "Has led research and evaluations for UNFPA, UNICEF, UNDP, the World Bank, USAID, CARE, Save the Children, The Asia Foundation and government ministries, including impact analyses of Bangladesh's food-for-work, VGD, VGF and maternity allowance programmes and household surveys under the South Asia WASH Results Programme."
+          ],
+          "education": [
+            "PhD in Economics",
+            "MSc in Demography",
+            "MA in Economics"
+          ]
         }
       ]
     },
@@ -41,27 +88,80 @@
         {
           "name": "Barr. Zareen Rahman",
           "role": "Founding Director",
-          "focus": "Regulation, PPP formation & legal compliance"
+          "focus": "Regulation, PPP formation & legal compliance",
+          "slug": "barr-zareen-rahman",
+          "photo": "/assets/img/people/barr-zareen-rahman.webp",
+          "affiliation": "Advocate, Supreme Court of Bangladesh",
+          "bio": [
+            "Called to the Bar of England and Wales at Lincoln's Inn (2010) and practising before the High Court Division since 2015. Panel lawyer for RAJUK, AB Bank and Biman Bangladesh Airlines, and retainer counsel to United Group on power, energy, real estate and commercial matters.",
+            "As a JICA consultant, advised on the Dhaka rapid pass project with the Dhaka Transport Coordination Authority, and supported the Bangladesh Economic Zones Authority and BIFFL on economic zones and special purpose companies under JICA's Foreign Direct Investment Promotion Programme."
+          ],
+          "education": [
+            "Bar Vocational Course, City University London (2010)",
+            "LLB (Hons), University of London (2009)"
+          ]
         },
         {
           "name": "Adj. Prof. Harun Rashid",
           "role": "Founding Director",
-          "focus": "Comparative politics, public policy & conflict management"
+          "focus": "Comparative politics, public policy & conflict management",
+          "slug": "adj-prof-harun-rashid",
+          "photo": "/assets/img/people/adj-prof-harun-rashid.webp",
+          "affiliation": "Adjunct Professor, Department of Political Science, Kent State University, USA",
+          "bio": [
+            "Senior Lecturer at BRAC University (2010–2016) in the MA in Governance and Development, a programme for mid-level civil servants from across South Asia. Has also taught at the Asian University for Women and the Pontifical Catholic University of Paraná, Brazil.",
+            "Trained in negotiation and conflict management at the Kroc School, University of San Diego, and in environmental management and governance at the University of Manitoba."
+          ],
+          "education": [
+            "PhD candidate (ABD) in Political Science, Kent State University",
+            "MS in Political Science, Kent State University (2020)",
+            "MS and BS in Political Science, University of Dhaka (2008, 2007)"
+          ]
         },
         {
           "name": "Prof. Dr. Imran Mahmud",
           "role": "Founding Director",
-          "focus": "Technology management, digital governance & system training, MIS & database management"
+          "focus": "Technology management, digital governance & system training, MIS & database management",
+          "slug": "prof-dr-imran-mahmud",
+          "photo": "/assets/img/people/prof-dr-imran-mahmud.webp",
+          "affiliation": "Professor and Head, Department of Software Engineering, Daffodil International University",
+          "bio": [
+            "Author of more than 90 publications, with over 2,300 Google Scholar citations, on technology adoption, enterprise systems, e-waste and machine learning. Visiting researcher at Thuongmai University, Vietnam, and adviser to BRAC Business School."
+          ],
+          "education": [
+            "PhD in Technology Management, Universiti Sains Malaysia (2017)",
+            "MSc in Software Engineering, University of Hertfordshire, UK (2009)",
+            "BSc in Computer Science, BRAC University (2006)"
+          ]
         },
         {
           "name": "Nizam Uddin Ahmed",
           "role": "Founding Director",
-          "focus": "Data, financial and digital governance & system implementation"
+          "focus": "Data, financial and digital governance & system implementation",
+          "slug": "nizam-uddin-ahmed",
+          "photo": "/assets/img/people/nizam-uddin-ahmed.webp",
+          "affiliation": "Short-term consultant, World Bank Group Joint Capital Market Program (J-CAP)",
+          "bio": [
+            "National consultant on the World Bank's capital market systems interoperability standards for Bangladesh's securities regulator, stock exchanges and central depository. Formerly head of market development at the Dhaka Stock Exchange and senior project manager at FlexTrade Systems."
+          ],
+          "education": [
+            "MBA, Lahore University of Management Sciences (2007)",
+            "MA in Physics, Indiana University of Pennsylvania, USA (2002)"
+          ]
         },
         {
           "name": "MD Shefatul Islam",
           "role": "Founding Director, Education & EdTech Policy & Innovation",
-          "focus": "EdTech & blended-learning innovation, curriculum development & textbook authorship, digital capacity building & instructional design"
+          "focus": "EdTech & blended-learning innovation, curriculum development & textbook authorship, digital capacity building & instructional design",
+          "slug": "md-shefatul-islam",
+          "photo": "/assets/img/people/md-shefatul-islam.webp",
+          "affiliation": "Capacity Development Expert, Aspire to Innovate (a2i), ICT Division",
+          "bio": [
+            "A member of the Bangladesh Civil Service (General Education) since 2017. Has worked on the Blended Education Master Plan technical committee, the National AI Policy and AI guidelines, and the national curriculum reform committee, and has written textbooks for the National Curriculum and Textbook Board."
+          ],
+          "education": [
+            "MSS and BSS (Hons) in Economics, University of Dhaka"
+          ]
         }
       ]
     },
@@ -71,12 +171,32 @@
         {
           "name": "Dr. Tat Thanh Tran",
           "role": "Deputy Director (Practice Area Lead)",
-          "focus": "Corporate finance & strategic investment, financial markets, institutions & R&D network policy"
+          "focus": "Corporate finance & strategic investment, financial markets, institutions & R&D network policy",
+          "slug": "prof-dr-tat-thanh-tran",
+          "photo": "/assets/img/people/prof-dr-tat-thanh-tran.webp",
+          "affiliation": "School of Banking and Finance, National Economics University, Vietnam",
+          "bio": [
+            "Research covers project discount rates, university financing and R&D networks, with project work for Vietnam's Ministry of Agriculture and Rural Development and Ministry of Education and Training, and the ADB-financed Agriculture Sector Development Project."
+          ],
+          "education": [
+            "PhD in Economics and Finance, University of Surrey, UK (2014)",
+            "BSc in Economics and Finance (first class), National Economics University, Vietnam (2002)"
+          ]
         },
         {
           "name": "Dr. Md. Abu Zafor Sadek",
           "role": "Deputy Director (Practice Area Lead)",
-          "focus": "Pharmaceutical industry dynamics, strategic market, product & biosimilars development"
+          "focus": "Pharmaceutical industry dynamics, strategic market, product & biosimilars development",
+          "slug": "dr-md-abu-zafor-sadek",
+          "affiliation": "Deputy General Manager, Marketing, UniMed UniHealth Pharmaceuticals Ltd.",
+          "bio": [
+            "Previously in product management at Renata Limited and Orion Pharmaceuticals, short-term consultant to the World Bank (2019), and adjunct faculty at the Canadian University of Bangladesh. Doctoral research examined the growth potential of biosimilar products in Bangladesh."
+          ],
+          "education": [
+            "Doctor of Business Administration, Institute of Business Administration, University of Dhaka (2020)",
+            "MBA in International Business, University of Dhaka (2014)",
+            "MSc in Pharmacy, University of Asia Pacific (2008)"
+          ]
         }
       ]
     },
@@ -86,22 +206,79 @@
         {
           "name": "Dr. Sibbir Ahmad",
           "role": "Affiliated Research Scholar",
-          "focus": "Applied microeconomics (development, agriculture, labor, health & experimental economics)"
+          "focus": "Applied microeconomics (development, agriculture, labor, health & experimental economics)",
+          "slug": "dr-sibbir-ahmad",
+          "photo": "/assets/img/people/dr-sibbir-ahmad.webp",
+          "affiliation": "Postdoctoral Research Associate, Department of Economics, University of Virginia",
+          "bio": [
+            "Research includes labour-market discrimination and elite colleges as signals in Bangladesh, input subsidies and crop diversity on family farms in Burkina Faso (Journal of Agricultural Economics, 2023), and vaccine hesitancy."
+          ],
+          "education": [
+            "PhD in Applied Economics, Michigan State University (2024)",
+            "MA in Economics and MA in Mathematics, Central Michigan University (2019)",
+            "MSS and BSS in Economics, University of Dhaka (2012, 2011)"
+          ]
         },
         {
           "name": "Dr. Md. Latiful Haque",
           "role": "Affiliated Research Scholar",
-          "focus": "Environmental, food systems & agricultural policy & practice"
+          "focus": "Environmental, food systems & agricultural policy & practice",
+          "slug": "dr-md-latiful-haque",
+          "photo": "/assets/img/people/dr-md-latiful-haque.webp",
+          "affiliation": "Wageningen University & Research, the Netherlands",
+          "bio": [
+            "Doctoral research studied the food-safety concerns and coping strategies of the urban poor in Bangladesh's retail food environments. Previously a research analyst at the International Food Policy Research Institute (IFPRI) in Bangladesh (2016–2018)."
+          ],
+          "education": [
+            "PhD in Environmental Policy, Wageningen University & Research (2025)",
+            "MSc in Economics (2011)",
+            "BSc in Economics, University of Dhaka (2009)"
+          ]
         },
         {
           "name": "Asst. Prof. Siban Shahana",
           "role": "Affiliated Research Scholar",
-          "focus": "Public policy economics, education & human resource development"
+          "focus": "Public policy economics, education & human resource development",
+          "slug": "siban-shahana",
+          "photo": "/assets/img/people/siban-shahana.webp",
+          "affiliation": "Research Fellow, Bangladesh Institute of Development Studies",
+          "bio": [
+            "Uses large-scale surveys and randomised controlled trials to evaluate education programmes and labour-market outcomes. Publications include new evidence on Bangladesh's primary education stipend programme and a chapter on building resilience in education systems (ADB Institute, 2024)."
+          ],
+          "education": [
+            "MA in Policy Economics, Williams College, USA (2016)",
+            "MSS and BSS in Economics, University of Dhaka (2010, 2009)"
+          ]
         },
         {
           "name": "Asst. Prof. Sazia Ahmed",
           "role": "Affiliated Research Scholar",
-          "focus": "Agricultural, environmental & health economics"
+          "focus": "Agricultural, environmental & health economics",
+          "slug": "sazia-ahmed",
+          "photo": "/assets/img/people/sazia-ahmed.webp",
+          "affiliation": "Assistant Professor, Economics Discipline, Khulna University",
+          "bio": [
+            "Specialises in econometric modelling, time series and panel data. Doctoral research examines the effect of weather shocks on horticulture and agribusiness, including the kiwifruit, grape and livestock industries."
+          ],
+          "education": [
+            "PhD in Economics (in progress), University of Waikato, New Zealand",
+            "MSS in Economics, Khulna University (2017)",
+            "BSS (Hons) in Economics, Khulna University (2016)"
+          ]
+        },
+        {
+          "name": "Dr. Md. Esraz-Ul-Zannat",
+          "role": "Affiliated Research Scholar",
+          "focus": "Disaster risk reduction, Water and climate policy, Urban planning",
+          "slug": "dr-md-esraz-ul-zannat",
+          "affiliation": "Department of Urban and Regional Planning, Khulna University of Engineering & Technology",
+          "bio": [
+            "Works on GIS and remote sensing for disaster management, water, climate change and land-use planning, including urban flood-resilience research and land-use policy for the Khulna Structure Plan under climate-induced flood scenarios."
+          ],
+          "education": [
+            "Master of Urban and Regional Planning, BUET",
+            "Bachelor of Urban and Regional Planning, BUET"
+          ]
         }
       ]
     },
@@ -111,12 +288,19 @@
         {
           "name": "Zahidur Rahman",
           "role": "Practice Area Manager, IP3 Visual Lab",
-          "focus": "Digital communication, data visualization & presentation design"
+          "focus": "Digital communication, data visualization & presentation design",
+          "slug": "zahidur-rahman",
+          "photo": "/assets/img/people/zahidur-rahman.webp",
+          "education": [
+            "MBA in Human Resource Management, University of Dhaka",
+            "BSS, University of Dhaka"
+          ]
         },
         {
           "name": "Md. Sadid Uddin",
           "role": "Manager, Administration & Finance",
-          "focus": "Administration & finance"
+          "focus": "Administration & finance",
+          "slug": "md-sadid-uddin"
         }
       ]
     }

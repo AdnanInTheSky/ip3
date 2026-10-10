@@ -76,6 +76,7 @@ module.exports = {
     ]),
     pageText('page_text_home', 'Home', 'content/page-text/home.json'),
     pageText('page_text_about', 'About', 'content/page-text/about.json'),
+    pageText('page_text_why', 'Why choose IP3', 'content/page-text/why.json'),
     pageText('page_text_approach', 'Approach', 'content/page-text/approach.json'),
     pageText('page_text_capabilities', 'Capabilities', 'content/page-text/capabilities.json'),
     pageText('page_text_sectors', 'Sectors', 'content/page-text/sectors.json'),
@@ -101,7 +102,7 @@ module.exports = {
       ]),
     ]),
     file('pages', '00 · Page titles, descriptions & headlines', 'content/pages.json', [
-      pg('home', 'Home', false), pg('about', 'About', true), pg('approach', 'Approach', true), pg('capabilities', 'Capabilities', true),
+      pg('home', 'Home', false), pg('about', 'About', true), pg('why', 'Why choose IP3', true), pg('approach', 'Approach', true), pg('capabilities', 'Capabilities', true),
       pg('sectors', 'Sectors', true), pg('engagements', 'Engagements', true), pg('insights', 'Insights', true),
       pg('people', 'People', true), pg('contact', 'Contact', true), pg('privacy', 'Privacy', false), pg('terms', 'Terms', false),
     ]),
@@ -179,11 +180,29 @@ module.exports = {
       list('fieldStories', 'Field video stories', [
         slug(), str('type', 'Category'), str('title', 'Story headline'), video('video', 'Video'), image('poster', 'Poster image'),
       ], { summary: '{title}' }),
+      list('publications', 'Publications (newest first)', [
+        hidden,
+        select('kind', 'Type', ['Report', 'Journal article', 'Book chapter', 'Policy brief', 'Commentary']),
+        num('year', 'Year'),
+        str('title', 'Title', { max: 220 }),
+        str('authors', 'Credit as published', { max: 300, hint: 'Name the authors as the publication credits them. If IP3 contributed to a report written by others, say so here.' }),
+        str('publisher', 'Publisher', { max: 200 }),
+        str('href', 'Link to the publisher’s copy', { optional: true, link: true, hint: 'Leave empty to list the publication without a link.' }),
+        text('summary', 'One-sentence summary', { max: 300 }),
+        strs('people', 'IP3 people credited', { optional: true, ref: 'people', hint: 'Person slugs from the People list, e.g. mohammad-syful-hoque.' }),
+      ], { summary: '{year} — {title}', optional: true }),
     ]),
     file('people', '14 · People', 'content/people.json', [
       list('groups', 'Groups', [
         str('group', 'Group name'),
-        list('members', 'People', [hidden, str('name', 'Name'), str('role', 'Role'), text('focus', 'Focus areas', { optional: true })], { summary: '{name}' }),
+        list('members', 'People', [
+          hidden, slug('slug', 'Profile anchor', { hint: 'Lower-case words joined by hyphens. Used for /people#anchor links and publication credits — set once.' }),
+          str('name', 'Name'), str('role', 'Role'), text('focus', 'Focus areas', { optional: true }),
+          image('photo', 'Portrait', { optional: true, hint: 'Square or portrait crop, about 480 px wide. Leave empty to show initials.' }),
+          str('affiliation', 'Current post outside IP3', { optional: true, max: 160 }),
+          strs('bio', 'Profile paragraphs', { optional: true }),
+          strs('education', 'Degrees, most recent first', { optional: true }),
+        ], { summary: '{name}' }),
       ], { summary: '{group}' }),
     ]),
     file('founder', '15 · Founder profile', 'content/founder.json', [
@@ -197,6 +216,58 @@ module.exports = {
       strs('aims', 'Aims'),
       obj('principles', 'Founding principles', [str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('text', 'Text')]),
       pair('lifecycle', 'Lifecycle steps'), pair('pillars', 'Three areas'), pair('values', 'Values'), pair('different', 'What makes us different'),
+    ]),
+    file('why', '17 · Why choose IP3 (3D journey page)', 'content/why.json', [
+      obj('hero', 'Opening screen (headline and intro are under Page titles → Why choose IP3)', [
+        text('audience', 'Who we work for', { max: 420 }),
+        obj('primary', 'Main button', [str('label', 'Label', { max: 40 }), str('href', 'Link', { link: true })]),
+        obj('secondary', 'Second button', [str('label', 'Label', { max: 40 }), str('href', 'Link', { link: true })]),
+      ]),
+      list('scenes', 'Story scenes — keep all six, in this order', [
+        slug('slug', 'Scene key', { hint: 'Fixed: complexity, evidence, insight, policy, practice, impact. The 3D camera is set for this order.' }),
+        str('rail', 'Short name in the scene rail', { max: 24 }), str('title', 'Scene heading', { max: 120 }),
+        strs('body', 'Paragraphs'),
+      ], { summary: '{rail}' }),
+      list('systems', 'Complexity — systems drawn as 3D layers (up to six)', [
+        slug('slug', 'System key', { hint: 'Used by "Related systems". Lower-case, set once.' }),
+        str('name', 'Name', { max: 24 }), text('note', 'What it is tied to and why', { max: 220 }),
+        strs('relates', 'Related systems', { hint: 'System keys from this list, e.g. economy. Each one draws a link in the 3D scene.' }),
+      ], { summary: '{name}' }),
+      str('tiedTo', 'Label before related systems', { max: 30 }),
+      list('evidence', 'Evidence — layers in the 3D stack (up to six)', [
+        slug('slug', 'Layer key'), str('name', 'Name', { max: 40 }), text('text', 'Description', { max: 200 }),
+      ], { summary: '{name}' }),
+      obj('charts', 'Insight — the two method diagrams', [
+        str('impactTitle', 'First diagram title', { max: 40 }), text('impactCaption', 'First diagram caption', { max: 320 }),
+        str('costTitle', 'Second diagram title', { max: 40 }), text('costCaption', 'Second diagram caption', { max: 320 }),
+        str('note', 'Note under both diagrams', { max: 120 }),
+      ]),
+      text('policyExample', 'Policy — worked example line', { max: 200 }),
+      list('policySteps', 'Policy — steps from findings to a decision', [
+        str('title', 'Step', { max: 40 }), text('text', 'Text', { max: 220 }), strs('choices', 'Options shown as chips', { optional: true }),
+      ], { summary: '{title}' }),
+      list('practiceStages', 'Practice — how a decision reaches people', [str('title', 'Stage', { max: 40 }), text('text', 'Text', { max: 220 })], { summary: '{title}' }),
+      strs('siteLabels', 'Practice — labels on the 3D buildings', { hint: 'Four labels, in order: the large institution, then three services.' }),
+      list('impactOutcomes', 'Impact — outcomes', [
+        str('title', 'Outcome', { max: 60 }), text('change', 'What changes', { max: 220 }), text('shown', 'How it can be shown', { max: 220 }),
+      ], { summary: '{title}' }),
+      str('shownLabel', 'Impact — label before "how it can be shown"', { max: 40 }),
+      list('impactCtas', 'Impact — buttons', [str('label', 'Label', { max: 40 }), str('href', 'Link', { link: true }), bool('ghost', 'Outline style', { optional: true })], { summary: '{label}' }),
+      str('bridgeWord', 'Giant word between the story and the film', { max: 24 }),
+      obj('film', 'Brand film', [
+        str('kicker', 'Small label', { max: 40 }), str('heading', 'Heading', { max: 90 }), text('lead', 'Introduction', { max: 300 }),
+        video('video', 'Film (MP4)'), image('poster', 'Poster image'),
+        text('label', 'Film description for screen readers', { max: 300 }),
+      ]),
+      obj('terminal', 'Policy Intelligence Terminal', [
+        str('kicker', 'Small label', { max: 40 }), str('heading', 'Heading', { max: 80 }), text('lead', 'Introduction', { max: 360 }),
+        list('beats', 'Walkthrough steps', [
+          str('title', 'Title', { max: 80 }), text('text', 'Text', { max: 500 }), strs('points', 'Points'),
+          image('image', 'Screenshot'), str('caption', 'Caption', { max: 90 }),
+        ], { summary: '{title}' }),
+        strs('pipeline', 'Pipeline steps'),
+        obj('cta', 'Button', [str('label', 'Label', { max: 40 }), str('href', 'Link', { link: true })]),
+      ]),
     ]),
 
     file('approach_problem', '20 · Approach — Start with the problem', 'content/approach/problem-first.json', [

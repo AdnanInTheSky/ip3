@@ -46,3 +46,54 @@ The `ip-3` Vercel team was confirmed as Hobby, which is not permitted for this c
 The repository-specific CI check name, Actions settings, Pages CMS live editor behavior and Vercel project protection are not independently confirmed without owner access and a successful run. Source links and statuses are also recorded in the untracked `PREFLIGHT_REPORT.md`.
 
 No external credentials are stored in the repository. No production form submission was sent.
+
+## Motion pages — /why-ip3, Insights and People merge (2026-10-10, Claude Code)
+
+- Worktree `D:\CONTENT IP3 WEBSITE\NEW WEBSITE DESIGN\ip3-bd.org-motion`, branch `motion-pages` from `origin/main` e165bf6, kept apart from Codex's `admin-landing` checkout. Committed and pushed; opened as a PR against `main` (not merged).
+- **Merging with `admin-landing` (PR #2):** a trial merge conflicts only in `dev-server.js` and `src/layout.js`. To resolve, take `admin-landing`'s version of both, then (1) add `'.webm': 'video/webm'` to `TYPES` and (2) add `scripts = ''` after `minimal = false` in `page()` and insert `${scripts ? `${scripts}\n` : ''}` just before `</body>`, outside the `minimal` block. With that resolution: `npm test` passed 65/65, `npm run check` was OK, and `npm run verify` built 22 pages.
+- **/why-ip3 (new page, in header nav after About):** the ip3website home page rebuilt for this static site. A seven-part scroll journey (opening, complexity, evidence, insight, policy, practice, impact) runs over a three.js world ported from React-Three-Fiber to plain three.js in `src/js/why.js`. It has contour terrain that turns from rough to terraced, system layers with links, evidence strata, about 1,900 GPU signals, travelling policy documents, rising institutions, projected DOM labels, a scene rail, a 3D on/off switch, a DPR governor and a context-loss fallback. The page then continues with a giant-word bridge, a brand film that grows to full width, a capabilities list, a sector network (ties are sectors sharing three or more capabilities), selected work, a pinned Policy Intelligence Terminal walkthrough, the six-movement line and a CTA. Colours follow the IP3 palette. All words live in `content/why.json` and `content/page-text/why.json`, with schema and validation added. Without WebGL, or with reduced motion, the static contour poster stays and CSS draws the layers.
+- **Insights:** the 10 published ip3website publications are in `insights.json → publications`, with a type filter, outside links and ItemList JSON-LD. Credits link to `/people#anchor`.
+- **People:** the 17 published ip3website profiles were merged by name into the existing groups. They add portraits (13), affiliation, bio paragraphs, degrees and profile anchors; a profile opens in a dialog, with a `<details>` fallback. Dr. Md. Esraz-Ul-Zannat was added to Affiliated Research Scholars. This site's roles and group names were kept. A drifting labelled network canvas from the IP3 Motion engine sits beside the network heading.
+- **Site-wide motion (portfolio site and the project GSAP kits):**
+  - page heroes dolly in 3D;
+  - the founder portrait drifts in 3D;
+  - cards tilt toward the pointer;
+  - the Approach page shows the six movements as a pinned CSS-3D film of 48 fragments (portfolio technique);
+  - charts draw in.
+- **Assets:**
+  - three.js r160, copied from the portfolio starter kit: `assets/vendor/three.module.min.js` (sha256 3e690ac7d180b0aa…, 656 KB), with its MIT licence alongside;
+  - the ip3-reel mp4/webm and poster;
+  - four terminal screenshots;
+  - 13 portraits;
+  - a recoloured contour SVG.
+
+  `dev-server.js` now serves `.webm` as `video/webm`.
+- **Validation:**
+  - `npm test` passed 50/50, including 7 new negative tests.
+  - `npm run check` was OK, with the same 6 SEO hints.
+  - `npm run verify` built 21 pages and 20 sitemap URLs.
+  - `npm run audit` confirmed every content field is read.
+  - Browser checks at 1440, 800 and 375 px and with `?view=simple` showed no console errors.
+  - Not run: a clean `git archive` export (nothing is committed yet), Lighthouse, real devices, Safari.
+- **Owner review needed:**
+  1. Roles differ between this site and the ip3website team pack. Examples: Shafiun Shimul (Advisor here, Founding Director & Lead Economist there), Tat Thanh Tran (Dr. or Prof. Dr.), Siban Shahana (Asst. Prof. or Research Fellow, BIDS).
+  2. Esraz-Ul-Zannat's doctorate is not listed in the 2015 CV.
+  3. Confirm that the Policy Intelligence Terminal claims, its screenshots and the brand film are approved for the public site.
+  4. The ip3website summary gives the founder 20 years of experience; `founder.json` says 17 and was left unchanged.
+  5. The eight-item header nav fits at 1440 px; check it on the owner's screens.
+
+## Art-direction pass (2026-10-10, Claude Code) — uncommitted on `motion-pages`
+
+- **Site-wide finish (`src/css/site.css`):** a fine film-grain layer (`body::after`, inline SVG noise, hidden in print); `text-wrap: pretty` on body copy; hanging punctuation on quotes; tabular figures on stats.
+- **Contour motif:** the `/why-ip3` contour terrain (`assets/img/why-contours.svg`, no new asset) now drifts behind the home hero headline (`.hero__contours`) and sits faintly behind the stats band (`.stats-band`). It is static under reduced motion.
+- **Partners (`src/pages-home.js` → `proof()`):** the two name lists are now full-width typographic marquees running in opposite directions, alternating roman and italic. They pause on hover, the duplicate copy is `aria-hidden`, and under reduced motion they become a static wrapped list. They use the same `partners` content, with no new facts.
+- **Footer wordmark:** the outlined "IP3 Consulting" fills with the rust-to-leaf gradient as the page reaches the end (GSAP scrub of `--fill` in `src/js/site.js`). Without JS it is fully filled.
+- **Page transitions:** native cross-document View Transitions (`@view-transition`). The old page lifts away and the new one rises behind a night curtain, and the header keeps its own transition group. `initTransitions()` skips the scripted fade where `onpagereveal` is supported, and reduced motion turns it off.
+- **Validation:**
+  - `npm test` passed 50/50.
+  - `npm run check` was OK, with the same 6 SEO hints.
+  - `npm run verify` checked 21 pages.
+  - `npm run audit` found every field used.
+  - Browser checks at 1440 and 375 px showed no horizontal overflow.
+- **Not verified:** the transition animation could not be seen in the hidden in-app pane. Chrome skipped it there and logged "Transition was skipped", so it needs a check in a visible Chrome or Safari 18.2+. Also not run: Firefox (keeps the scripted fade-out and loses the fade-in), Lighthouse, real devices.
+- **Merge note:** these edits do not touch `dev-server.js` or `src/layout.js`, so the PR #2 conflict resolution above is unchanged.
