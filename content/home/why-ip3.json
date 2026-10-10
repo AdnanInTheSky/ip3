@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "n": "01",
+      "title": "From polycrisis to polysolutions",
+      "text": "Eight connected sectors. One integrated delivery model.",
+      "href": "/sectors",
+      "cta": "Explore sectors"
+    },
+    {
+      "n": "02",
+      "title": "Translation, not theory",
+      "text": "Evidence converted into delivery architecture: strategies, project preparation, institutional reform, results systems.",
+      "href": "/capabilities",
+      "cta": "See deliverables"
+    },
+    {
+      "n": "03",
+      "title": "Research that changes decisions",
+      "text": "Decision-ready diagnostics, business cases and evaluations — not publications for their own sake.",
+      "href": "/insights",
+      "cta": "Read insights"
+    },
+    {
+      "n": "04",
+      "title": "A convenor between worlds",
+      "text": "Structured policy dialogue, investment forums and technical working groups that align governments, capital and implementers.",
+      "href": "/contact",
+      "cta": "Commission a dialogue"
+    }
+  ]
+}

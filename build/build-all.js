@@ -5,6 +5,10 @@ const path = require('path');
 const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
+
+// 0. content check — a bad edit stops here, so the previous deploy stays live
+if (require('./validate').run().errors.length) process.exit(1);
+
 const cfg = require('../src/config');
 const D = require('../src/data');
 const home = require('../src/pages-home').home;
@@ -46,4 +50,9 @@ write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="htt
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${cfg.url}/sitemap.xml\n`);
 write('site.webmanifest', JSON.stringify({ name: cfg.name, short_name: 'IP3', start_url: '/', display: 'standalone', background_color: '#faf8f5', theme_color: '#12100f', icons: [{ src: '/assets/logo/icon-192.png', sizes: '192x192', type: 'image/png' }, { src: '/assets/logo/icon-512.png', sizes: '512x512', type: 'image/png' }] }, null, 2));
 
+// npm run audit  → lists content fields that no page reads (editing them would change nothing)
+if (process.argv.includes('--audit')) {
+  const dead = require('../src/content').unread();
+  console.log(dead.length ? `\n${dead.length} content field(s) never read by any page:\n  ${dead.join('\n  ')}` : '\nEvery content field is used by a page.');
+}
 console.log(`Built ${pages.length} pages, sitemap with ${urls.length} URLs.`);

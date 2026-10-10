@@ -188,7 +188,7 @@ function convening() {
       <div style="margin-top:30px" data-reveal>${btn('Commission a dialogue', '/contact', 'btn--light')}</div>
     </div>
     <div class="conv__list" data-conv>
-      ${c.items.map((it, i) => `<div class="conv__item${i === 0 ? ' is-active' : ''}"><b>0${i + 1}</b><h3>${it[0]}</h3><p>${it[1]}</p></div>`).join('')}
+      ${c.items.map((it, i) => `<div class="conv__item${i === 0 ? ' is-active' : ''}"><b>0${i + 1}</b><h3>${it.title}</h3><p>${it.text}</p></div>`).join('')}
     </div>
   </div>
 </section>`;
@@ -232,8 +232,8 @@ function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
   const body = [hero(), mandates(), stats(), capabilities(), why(), sectors(), translation(), engagements(), insights(), convening(), proof(), founder(), cta()].join('\n');
   return page({
-    title: 'IP3 Consulting | Policy, Economics & International Development Advisory',
-    desc: 'IP3 Consulting helps multilateral institutions, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact.',
+    title: D.pages.home.title,
+    desc: D.pages.home.desc,
     path: '/', body, bodyClass: 'home', jsonld,
     preload: '<link rel="preload" as="image" href="/assets/img/poster-hero-1.webp" fetchpriority="high">',
   });

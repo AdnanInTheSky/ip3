@@ -1,0 +1,101 @@
+{
+  "intro": [
+    "The Institute for Public Policy and Practice (IP3) is a next-generation think tank and policy advisory firm founded in 2018 to transform how governments, multilaterals and communities in the Global South tackle today’s most urgent challenges. Unlike legacy consultancies bound by siloed expertise and static methods, IP3 combines systems thinking, data and digital ecosystems, and translational research to deliver adaptive, resilient solutions across the entire policy advisory value chain.",
+    "As a translational policy studio, IP3 bridges visionary ideas and grounded execution. We accelerate policy design, co-implementation and continuous learning through cross-sectoral innovation and locally anchored practice — turning evidence and insight into measurable impact."
+  ],
+  "vision": {
+    "label": "Our vision",
+    "title": "Policy innovation for transformative, sustainable growth",
+    "text": "We envision a future where governments, development partners, businesses and communities have the policies, institutions, data and capabilities to navigate complexity and create inclusive, resilient and sustainable growth. Policy innovation is more than designing better policies: it is building the systems that turn ambition into action — connecting evidence, institutional capacity, digital innovation, stakeholder intelligence and implementation."
+  },
+  "mission": {
+    "label": "Our mission",
+    "title": "Turning evidence, innovation and implementation into lasting impact",
+    "text": "We help governments, multilaterals and development partners, private enterprises and communities solve overlapping, cascading and compounding policy and management challenges through translational research, strategic policy advisory, systems thinking, data-driven decision-making, action research and implementation support."
+  },
+  "aims": [
+    "Strengthen resilient and effective institutions",
+    "Accelerate sustainable and circular economic transitions",
+    "Improve education systems and human capabilities",
+    "Enable data-driven and digitally empowered governance",
+    "Advance inclusive and equitable service delivery",
+    "Translate policy ambition into scalable, locally relevant solutions"
+  ],
+  "principles": {
+    "eyebrow": "Founding principles",
+    "h2": "Poly-crises demand <em>poly-solutions.</em>",
+    "text": "In an era where AI intersects with climate, ESG overlaps biodiversity, and informal economies mesh with digital governance, single-axis approaches fail. IP3 was born to fill that gap: a practice-driven, cross-disciplinary platform built for the complexity of now — and the transformation of what’s next."
+  },
+  "lifecycle": [
+    {
+      "title": "Diagnose",
+      "text": "Map systems, institutions, incentives, data ecosystems, risks and underlying policy constraints."
+    },
+    {
+      "title": "Co-design",
+      "text": "Combine evidence, stakeholder knowledge and action research to develop practical policies, programs, regulatory frameworks and institutional solutions."
+    },
+    {
+      "title": "Test & learn",
+      "text": "Pilot interventions, experiment with delivery models, generate implementation evidence and adapt solutions to what works in practice."
+    },
+    {
+      "title": "Implement & scale",
+      "text": "Support institutional adoption, capacity development, digital and data systems, implementation and adaptive MERLA to strengthen performance over time."
+    }
+  ],
+  "pillars": [
+    {
+      "title": "Climate Action, ESG & Circular Economy",
+      "text": "Translating sustainability ambition into practical strategies for climate action, ESG integration, circular-economy transition, climate finance, resilience and responsible growth."
+    },
+    {
+      "title": "Education & Human Capacity Development",
+      "text": "Action research, policy innovation, data, technology and systems thinking to support education reform, stronger learning systems, skills development and inclusive human development."
+    },
+    {
+      "title": "Institutional Effectiveness, Data & Digital Governance",
+      "text": "Strengthening governance, regulatory systems, organizational effectiveness, data ecosystems, digital transformation and service delivery."
+    }
+  ],
+  "values": [
+    {
+      "title": "People-centered collaboration",
+      "text": "We foster trust, respect and empathy, building partnerships that are people-centered and truly collaborative — working side-by-side with our clients, from executives to technical experts."
+    },
+    {
+      "title": "Bold innovation",
+      "text": "We don’t just offer advice — we help reimagine possibilities, combining data-driven insights with social-science research to create systemic solutions that lead to transformative change."
+    },
+    {
+      "title": "Genuine integrity",
+      "text": "Our clients trust us because we are committed to delivering ethical, transparent and principled solutions."
+    },
+    {
+      "title": "Flourish together",
+      "text": "We don’t just work for clients — we work with them, investing time, empathy and expertise to create lasting value and ensure everyone benefits from the change we create."
+    },
+    {
+      "title": "Championing diversity",
+      "text": "Diverse voices at every level strengthen our ability to deliver creative, systemic solutions that resonate with all stakeholders."
+    }
+  ],
+  "different": [
+    {
+      "title": "Evidence that moves",
+      "text": "Research is designed to inform decisions and implementation — not simply to produce another report."
+    },
+    {
+      "title": "Systems, not silos",
+      "text": "We connect policy, economics, institutions, technology, sustainability, data and implementation around the problem that needs to be solved."
+    },
+    {
+      "title": "Global knowledge. Local intelligence.",
+      "text": "International standards and emerging practices are translated into solutions suited to local institutional, political, economic and operational realities."
+    },
+    {
+      "title": "Continuous learning",
+      "text": "Implementation generates evidence. Evidence informs adaptation. Adaptation strengthens the path from pilot intervention to sustainable scale."
+    }
+  ]
+}

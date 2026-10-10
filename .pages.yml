@@ -1,0 +1,1443 @@
+# GENERATED from cms/schema.js — do not edit by hand. Change the schema, then run: npm run cms
+media:
+  - name: images
+    label: "Photos"
+    input: assets/img
+    output: /assets/img
+    rename: safe
+    extensions: [webp, jpg, jpeg, png]
+  - name: videos
+    label: "Videos"
+    input: assets/video
+    output: /assets/video
+    rename: safe
+    extensions: [mp4, webm]
+content:
+  - name: site
+    label: "00 · Contact details"
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: email
+        label: "Email address"
+        type: string
+        required: true
+      - name: phone
+        label: "Phone number"
+        type: string
+        required: true
+        description: "Written as you want it shown, e.g. +880 1914 011 329."
+      - name: address
+        label: "Address lines"
+        type: string
+        list: true
+        required: true
+        description: "One line per entry."
+      - name: hours
+        label: "Office hours"
+        type: string
+        required: true
+  - name: pages
+    label: "00 · Page titles, descriptions & headlines"
+    type: file
+    path: content/pages.json
+    format: json
+    fields:
+      - name: home
+        label: "Home"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+      - name: about
+        label: "About"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: approach
+        label: "Approach"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: capabilities
+        label: "Capabilities"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: sectors
+        label: "Sectors"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: engagements
+        label: "Engagements"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: insights
+        label: "Insights"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: people
+        label: "People"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+      - name: contact
+        label: "Contact"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Search-result title"
+            type: string
+            required: true
+            description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+          - name: desc
+            label: "Search-result description"
+            type: text
+            required: true
+            description: "Shown under the title in Google. Aim for 165 characters or fewer."
+          - name: h1
+            label: "Page headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: lead
+            label: "Intro paragraph under the headline"
+            type: text
+            required: true
+            options:
+              maxlength: 420
+  - name: home_hero
+    label: "01 · Home — Hero slider"
+    type: file
+    path: content/home/hero.json
+    format: json
+    fields:
+      - name: reassurance
+        label: "Scrolling ticker words"
+        type: string
+        list: true
+        required: true
+      - name: slides
+        label: "Hero slides"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{tab}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: tab
+            label: "Tab label"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: video
+            label: "Background video"
+            type: object
+            required: true
+            fields:
+              - name: src
+                label: "Video file"
+                type: file
+                required: true
+                options:
+                  media: videos
+                  extensions: [mp4, webm]
+              - name: poster
+                label: "Poster image"
+                type: image
+                required: true
+                description: "Shown while the video loads and if it cannot play."
+                options:
+                  media: images
+          - name: eyebrow
+            label: "Small line above the headline"
+            type: string
+            required: true
+            options:
+              maxlength: 90
+          - name: h1
+            label: "Headline"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 120
+          - name: sub
+            label: "Sub-headline"
+            type: text
+            required: true
+            options:
+              maxlength: 300
+          - name: cta
+            label: "Buttons"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            required: true
+            fields:
+              - name: label
+                label: "Label"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: href
+                label: "Link"
+                type: string
+                required: true
+              - name: ghost
+                label: "Outline style"
+                type: boolean
+  - name: home_mandates
+    label: "02 · Home — Built for complex mandates"
+    type: file
+    path: content/home/mandates.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Small label"
+        type: string
+        required: true
+      - name: h2
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+      - name: body
+        label: "Introduction"
+        type: text
+        required: true
+      - name: cards
+        label: "Cards"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+  - name: home_stats
+    label: "03 · Home — Numbers"
+    type: file
+    path: content/home/stats.json
+    format: json
+    fields:
+      - name: items
+        label: "Numbers"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{n}{suffix} {label}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: n
+            label: "Number"
+            type: number
+            required: true
+          - name: suffix
+            label: "Suffix"
+            type: string
+            description: "e.g. + or %"
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+  - name: home_why
+    label: "04 · Home — Why IP3"
+    type: file
+    path: content/home/why-ip3.json
+    format: json
+    fields:
+      - name: items
+        label: "Reasons"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: n
+            label: "Number"
+            type: string
+            required: true
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+          - name: href
+            label: "Link"
+            type: string
+            required: true
+          - name: cta
+            label: "Link label"
+            type: string
+            required: true
+  - name: home_translation
+    label: "05 · Home — Translation, not theory"
+    type: file
+    path: content/home/translation.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Small label"
+        type: string
+        required: true
+      - name: h2
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+      - name: sub
+        label: "Introduction"
+        type: text
+        required: true
+      - name: nodes
+        label: "Steps"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: outputs
+        label: "What clients receive"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Group"
+            type: string
+            required: true
+          - name: items
+            label: "Items"
+            type: string
+            list: true
+            required: true
+  - name: home_convening
+    label: "06 · Home — Convening"
+    type: file
+    path: content/home/convening.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Small label"
+        type: string
+        required: true
+      - name: h2
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+      - name: body
+        label: "Introduction"
+        type: text
+        required: true
+      - name: items
+        label: "Items"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+  - name: home_testimonials
+    label: "07 · Home — Testimonials"
+    type: file
+    path: content/home/testimonials.json
+    format: json
+    fields:
+      - name: items
+        label: "Testimonials"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{name}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: quote
+            label: "Quote"
+            type: text
+            required: true
+          - name: name
+            label: "Name"
+            type: string
+            required: true
+          - name: role
+            label: "Role & organisation"
+            type: string
+            required: true
+  - name: home_partners
+    label: "08 · Clients & funders"
+    type: file
+    path: content/home/partners.json
+    format: json
+    fields:
+      - name: clients
+        label: "Clients & partners"
+        type: string
+        list: true
+        required: true
+      - name: funders
+        label: "Funders & development partners"
+        type: string
+        list: true
+        required: true
+  - name: home_faq
+    label: "09 · Contact — FAQ"
+    type: file
+    path: content/home/faq.json
+    format: json
+    fields:
+      - name: items
+        label: "Questions"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{q}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: q
+            label: "Question"
+            type: string
+            required: true
+          - name: a
+            label: "Answer"
+            type: text
+            required: true
+  - name: capabilities
+    label: "10 · Capabilities"
+    type: file
+    path: content/capabilities.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Small label"
+        type: string
+        required: true
+      - name: h2
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+      - name: cards
+        label: "Capabilities"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: short
+            label: "Short name"
+            type: string
+            required: true
+          - name: problem
+            label: "The problem a client brings"
+            type: text
+            required: true
+          - name: deliverables
+            label: "Typical deliverables"
+            type: string
+            list: true
+            required: true
+  - name: sectors
+    label: "11 · Sectors (one file each)"
+    type: collection
+    path: content/sectors
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: title
+      fields: [n, title]
+      sort: n
+      order: asc
+    fields:
+      - name: slug
+        label: "URL slug"
+        type: string
+        required: true
+        description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+      - name: n
+        label: "Order number"
+        type: string
+        required: true
+        description: "Two digits — 01, 02… Sectors are listed in this order."
+      - name: title
+        label: "Sector name"
+        type: string
+        required: true
+      - name: problem
+        label: "The problem we solve"
+        type: text
+        required: true
+      - name: areas
+        label: "Focus areas"
+        type: string
+        list: true
+        required: true
+      - name: caps
+        label: "Capabilities applied"
+        type: string
+        list: true
+        required: true
+        description: "Capability URL slugs, e.g. policy-economics-strategy."
+      - name: video
+        label: "Page header video"
+        type: file
+        description: "Leave empty to use the photo instead."
+        options:
+          media: videos
+          extensions: [mp4, webm]
+      - name: poster
+        label: "Poster for the video"
+        type: image
+        options:
+          media: images
+      - name: image
+        label: "Page header photo"
+        type: image
+        description: "Used when there is no video."
+        options:
+          media: images
+      - name: card
+        label: "Card image (home & sector list)"
+        type: image
+        required: true
+        options:
+          media: images
+      - name: photo
+        label: "Inline photo"
+        type: image
+        required: true
+        options:
+          media: images
+      - name: engagements
+        label: "Related engagements"
+        type: string
+        list: true
+        description: "Engagement slugs from the Engagements list."
+  - name: engagements
+    label: "12 · Engagements"
+    type: file
+    path: content/engagements.json
+    format: json
+    fields:
+      - name: items
+        label: "Engagements"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{client} — {title}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: client
+            label: "Client"
+            type: string
+            required: true
+          - name: year
+            label: "Year"
+            type: string
+            required: true
+          - name: sector
+            label: "Sector name"
+            type: string
+            required: true
+          - name: sectorSlug
+            label: "Sector slug"
+            type: string
+            required: true
+            description: "Must match a sector slug."
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: summary
+            label: "Summary"
+            type: text
+            required: true
+          - name: tags
+            label: "Tags"
+            type: string
+            list: true
+            required: true
+          - name: image
+            label: "Image"
+            type: image
+            required: true
+            options:
+              media: images
+  - name: insights
+    label: "13 · Insights"
+    type: file
+    path: content/insights.json
+    format: json
+    fields:
+      - name: items
+        label: "Articles"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: type
+            label: "Type"
+            type: string
+            required: true
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Summary"
+            type: text
+            required: true
+          - name: tags
+            label: "Tags"
+            type: string
+            list: true
+            required: true
+          - name: image
+            label: "Image"
+            type: image
+            required: true
+            options:
+              media: images
+  - name: people
+    label: "14 · People"
+    type: file
+    path: content/people.json
+    format: json
+    fields:
+      - name: groups
+        label: "Groups"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{group}"
+        required: true
+        fields:
+          - name: group
+            label: "Group name"
+            type: string
+            required: true
+          - name: members
+            label: "People"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            required: true
+            fields:
+              - name: hidden
+                label: "Hide this item"
+                type: boolean
+                description: "Tick to take it off the website without deleting it."
+              - name: name
+                label: "Name"
+                type: string
+                required: true
+              - name: role
+                label: "Role"
+                type: string
+                required: true
+              - name: focus
+                label: "Focus areas"
+                type: text
+  - name: founder
+    label: "15 · Founder profile"
+    type: file
+    path: content/founder.json
+    format: json
+    fields:
+      - name: name
+        label: "Name"
+        type: string
+        required: true
+      - name: role
+        label: "Role"
+        type: string
+        required: true
+      - name: tag
+        label: "Tagline"
+        type: string
+        required: true
+      - name: image
+        label: "Portrait"
+        type: image
+        required: true
+        options:
+          media: images
+      - name: bio
+        label: "Biography paragraphs"
+        type: string
+        list: true
+        required: true
+      - name: quote
+        label: "Quote"
+        type: text
+        required: true
+      - name: expertise
+        label: "Areas of expertise"
+        type: string
+        list: true
+        required: true
+  - name: about
+    label: "16 · About"
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - name: intro
+        label: "Introduction paragraphs"
+        type: string
+        list: true
+        required: true
+      - name: vision
+        label: "Vision"
+        type: object
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: title
+            label: "Headline"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: mission
+        label: "Mission"
+        type: object
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: title
+            label: "Headline"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: aims
+        label: "Aims"
+        type: string
+        list: true
+        required: true
+      - name: principles
+        label: "Founding principles"
+        type: object
+        required: true
+        fields:
+          - name: eyebrow
+            label: "Small label"
+            type: string
+            required: true
+          - name: h2
+            label: "Heading"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: lifecycle
+        label: "Lifecycle steps"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: pillars
+        label: "Three areas"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: values
+        label: "Values"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: different
+        label: "What makes us different"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+  - name: approach_problem
+    label: "20 · Approach — Start with the problem"
+    type: file
+    path: content/approach/problem-first.json
+    format: json
+    fields:
+      - name: subtitle
+        label: "Small label"
+        type: string
+        required: true
+      - name: paragraph
+        label: "Introduction"
+        type: text
+        required: true
+      - name: currentState
+        label: "Where clients are"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: items
+            label: "Points"
+            type: string
+            list: true
+            required: true
+      - name: desiredState
+        label: "Where they want to be"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: items
+            label: "Points"
+            type: string
+            list: true
+            required: true
+      - name: questionCards
+        label: "Question cards"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+            description: "Begin with the two-digit number, e.g. \"01 What is the decision?\""
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: bigCard
+        label: "Define the decision first"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Heading"
+            type: string
+            required: true
+          - name: items
+            label: "Points"
+            type: string
+            list: true
+            required: true
+  - name: approach_pathway
+    label: "21 · Approach — Six movements"
+    type: file
+    path: content/approach/pathway.json
+    format: json
+    fields:
+      - name: subtitle
+        label: "Small label"
+        type: string
+        required: true
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+      - name: paragraph
+        label: "Introduction"
+        type: text
+        required: true
+      - name: cards
+        label: "Movements"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+          - name: bullets
+            label: "Bullets"
+            type: string
+            list: true
+            required: true
+            description: "Format: \"Label — text\". The part before the dash is shown in bold."
+          - name: paragraph
+            label: "Case-study example"
+            type: text
+  - name: approach_standards
+    label: "22 · Approach — Six commitments"
+    type: file
+    path: content/approach/standards.json
+    format: json
+    fields:
+      - name: subtitle
+        label: "Small label"
+        type: string
+        required: true
+      - name: paragraph
+        label: "Introduction"
+        type: text
+        required: true
+      - name: cards
+        label: "Commitments"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+  - name: approach_orbit
+    label: "23 · Approach — Learning orbit"
+    type: file
+    path: content/approach/orbit.json
+    format: json
+    fields:
+      - name: subtitle
+        label: "Small label"
+        type: string
+        required: true
+      - name: paragraph
+        label: "Introduction"
+        type: text
+        required: true
+      - name: orbitItems
+        label: "Orbit items"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+          - name: shortLabel
+            label: "Short label"
+            type: string
+            required: true
+            options:
+              maxlength: 6
+          - name: description
+            label: "Description"
+            type: text
+            required: true
+      - name: iterateText
+        label: "Centre text"
+        type: string
+        required: true
+      - name: tags
+        label: "Tags"
+        type: string
+        list: true
+        required: true
+      - name: questionAnswer
+        label: "Closing sentence"
+        type: text
+        required: true
+  - name: approach_toolkit
+    label: "24 · Approach — Toolkit"
+    type: file
+    path: content/approach/toolkit.json
+    format: json
+    fields:
+      - name: subtitle
+        label: "Small label"
+        type: string
+        required: true
+      - name: paragraph
+        label: "Introduction"
+        type: text
+        required: true
+      - name: cards
+        label: "Cards"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+      - name: subsection
+        label: "Combination section"
+        type: object
+        required: true
+        fields:
+          - name: subtitle
+            label: "Small label"
+            type: string
+            required: true
+          - name: title
+            label: "Heading"
+            type: string
+            required: true
+          - name: description
+            label: "Introduction"
+            type: text
+            required: true
+          - name: leftTitle
+            label: "Left column title"
+            type: string
+            required: true
+          - name: leftItems
+            label: "Left column points"
+            type: string
+            list: true
+            required: true
+          - name: rightTitle
+            label: "Right column title"
+            type: string
+            required: true
+          - name: rightItems
+            label: "Right column points"
+            type: string
+            list: true
+            required: true
+          - name: togetherTitle
+            label: "Together — title"
+            type: string
+            required: true
+          - name: togetherDescription
+            label: "Together — text"
+            type: text
+            required: true
+  - name: approach_outcomes
+    label: "25 · Approach — Outcomes"
+    type: file
+    path: content/approach/outcomes.json
+    format: json
+    fields:
+      - name: subtitle
+        label: "Small label"
+        type: string
+        required: true
+      - name: paragraph
+        label: "Introduction"
+        type: text
+        required: true
+      - name: cards
+        label: "From → to"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{text}"
+        required: true
+        fields:
+          - name: text
+            label: "From → to"
+            type: string
+            required: true
+            description: "Format: \"Before → after\"."
+      - name: subsection1
+        label: "Why the approach is different"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Heading"
+            type: string
+            required: true
+          - name: paragraph
+            label: "Introduction"
+            type: text
+            required: true
+          - name: cards
+            label: "Cards"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: title
+                label: "Title"
+                type: string
+                required: true
+              - name: text
+                label: "Text"
+                type: text
+                required: true
+      - name: subsection2
+        label: "Beyond the recommendation"
+        type: object
+        required: true
+        fields:
+          - name: title
+            label: "Heading"
+            type: string
+            required: true
+          - name: paragraph
+            label: "Introduction"
+            type: text
+            required: true
+          - name: cards
+            label: "Cards"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: title
+                label: "Title"
+                type: string
+                required: true
+              - name: text
+                label: "Text"
+                type: text
+                required: true

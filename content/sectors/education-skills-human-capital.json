@@ -1,0 +1,25 @@
+{
+  "slug": "education-skills-human-capital",
+  "n": "02",
+  "title": "Education, Skills & Human Capital",
+  "problem": "Learning systems must produce skills for changing economies.",
+  "areas": [
+    "Education policy & financing",
+    "TVET & skills systems",
+    "Learning outcomes",
+    "Institutional reform",
+    "Human-capital analytics"
+  ],
+  "caps": [
+    "policy-economics-strategy",
+    "program-project-design",
+    "monitoring-evaluation-learning",
+    "data-digital-responsible-ai"
+  ],
+  "image": "/assets/img/education.webp",
+  "card": "/assets/img/education.webp",
+  "photo": "/assets/img/training-3.webp",
+  "engagements": [
+    "adb-nsep"
+  ]
+}

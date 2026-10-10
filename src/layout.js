@@ -2,6 +2,8 @@ const cfg = require('./config');
 const D = require('./data');
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+// plain text from the CMS; only <em>…</em> is allowed to survive as markup
+const rich = (s) => esc(s).replace(/&lt;(\/?)em&gt;/g, '<$1em>');
 const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const arrowL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
@@ -180,4 +182,4 @@ ${footer()}
 `;
 }
 
-module.exports = { esc, strip, arrow, arrowL, btn, header, footer, formBlock, cta, phero, page, cfg, D };
+module.exports = { esc, rich, strip, arrow, arrowL, btn, header, footer, formBlock, cta, phero, page, cfg, D };

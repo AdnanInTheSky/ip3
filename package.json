@@ -1,12 +1,16 @@
 {
   "name": "ip3-consulting-site",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
-  "description": "IP3 Consulting Limited \u2014 static website (generated HTML, GSAP + Lenis motion).",
+  "description": "IP3 Consulting Limited — static website (generated HTML, GSAP + Lenis motion).",
   "scripts": {
     "build": "node build/build-all.js",
     "dev": "node build/build-all.js && node dev-server.js",
-    "start": "node dev-server.js"
+    "start": "node dev-server.js",
+    "validate": "node build/validate.js",
+    "cms": "node build/cms.js",
+    "audit": "node build/build-all.js --audit",
+    "check": "node build/validate.js && node build/cms.js --check"
   },
   "engines": {
     "node": ">=18"

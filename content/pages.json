@@ -1,0 +1,54 @@
+{
+  "home": {
+    "title": "IP3 Consulting | Policy, Economics & International Development Advisory",
+    "desc": "IP3 Consulting helps multilateral institutions, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact."
+  },
+  "about": {
+    "title": "About IP3 — Institute for Public Policy & Practice",
+    "desc": "IP3 is a next-generation think tank and policy advisory firm founded in 2018, combining systems thinking, data and digital ecosystems, and translational research to turn evidence into measurable impact.",
+    "h1": "A strategic policy & management solutions firm for a <em>sustainable future.</em>",
+    "lead": "The Institute for Public Policy and Practice works at the intersection of policy research, strategic advisory, management solutions and implementation."
+  },
+  "approach": {
+    "title": "Our Approach — From Policy to Implementation",
+    "desc": "IP3’s pathway from evidence to delivery: sense and diagnose, build intelligence, co-design and test, mobilise, implement and transfer, learn and scale.",
+    "h1": "Reform is a movement, <em>not a moment.</em>",
+    "lead": "Complex challenges rarely fail for want of another recommendation. They fail when evidence is disconnected from decisions, strategy from financing, technology from users, and reform from the institutions that must own it."
+  },
+  "capabilities": {
+    "title": "Capabilities",
+    "desc": "Policy, economics and strategy advisory; program and project design; development finance; institutions and governance; MEL and impact; data, digital and responsible AI.",
+    "h1": "What clients hire <em>IP3</em> to deliver.",
+    "lead": "Six capabilities, each defined by the problem a client brings and the deliverables that move it toward implementation."
+  },
+  "sectors": {
+    "title": "Sectors",
+    "desc": "Eight connected sectors: climate and energy, education and skills, health and social protection, digital government, governance and public finance, economic transformation, sustainable finance and ESG, and AI for public systems.",
+    "h1": "From polycrisis to <em>polysolutions.</em>",
+    "lead": "IP3 works across eight interconnected sectors where economic, institutional, environmental and technological risks overlap. We combine specialist sector knowledge with cross-cutting capabilities in economics, finance, governance, data and implementation."
+  },
+  "engagements": {
+    "title": "Selected Engagements",
+    "desc": "Selected IP3 engagements with ADB, the World Bank, SIDA/CPD, the Ministry of Finance and BMDF: feasibility studies, surveys, institutional transformation and climate-resilience finance.",
+    "h1": "The challenge. Our mandate. <em>What we delivered.</em>",
+    "lead": "Recent engagements and impact projects with global development partners and national ministries. Results are shared with client permission; references are available on request."
+  },
+  "insights": {
+    "title": "Evidence & Insights",
+    "desc": "Research and analysis from IP3: green financial product design, data-driven learning outcomes, Bangladesh’s ESG transition and municipal finance transformation.",
+    "h1": "Research that <em>changes decisions.</em>",
+    "lead": "Thinking that ships — how institutions diagnose, finance and deliver. Decision-ready diagnostics, business cases and evaluations, not publications for their own sake."
+  },
+  "people": {
+    "title": "IP3 People",
+    "desc": "Meet IP3’s leadership, advisors, founding directors, deputy directors, affiliated research scholars and support units.",
+    "h1": "Global and in-house. <em>Economists and thinkers.</em>",
+    "lead": "A dynamic network of economists and thinkers from a range of disciplines who understand the intricate balance between prosperity and the planet."
+  },
+  "contact": {
+    "title": "Contact",
+    "desc": "Contact IP3 Consulting Limited in Dhaka — discuss a consulting assignment, a partnership, a research collaboration, or request our capability statement.",
+    "h1": "Tell us the mandate <em>you need to deliver.</em>",
+    "lead": "Every submission is reviewed by our team. We aim to respond within one business day."
+  }
+}

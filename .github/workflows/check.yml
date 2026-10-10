@@ -1,0 +1,20 @@
+name: Content check
+
+# Runs on every commit, including the ones Pages CMS makes when an editor saves.
+# A red ✗ on the commit means the edit would not build — Vercel keeps serving the previous version.
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate content against the editor schema
+        run: npm run check
+      - name: Build the site
+        run: npm run build

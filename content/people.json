@@ -1,0 +1,124 @@
+{
+  "groups": [
+    {
+      "group": "Board & Executive Leadership",
+      "members": [
+        {
+          "name": "Mohammad Syful Hoque",
+          "role": "Executive Chairman",
+          "focus": "Climate finance, climate adaptation & mitigation, sustainability, ESG strategy, circular economy & biodiversity conservation, trade, industrial growth, technology adoption, impact evaluation, economic, social & environmental feasibility"
+        },
+        {
+          "name": "Md. Mazadul Hoque",
+          "role": "Director (Policy & Advisory)",
+          "focus": "Macroeconomic policy, fiscal & monetary policy, trade & FDI, regional connectivity, governance & transparency, migration, employment and development policy"
+        }
+      ]
+    },
+    {
+      "group": "Advisors",
+      "members": [
+        {
+          "name": "Prof. Dr. Niaz Asadullah",
+          "role": "Chief Economic Advisor",
+          "focus": "Education, institutions, poverty, labor & gender"
+        },
+        {
+          "name": "Prof. Dr. Shafiun Shimul",
+          "role": "Policy Advisor (Lead Economist)",
+          "focus": "Public health, policy & practice"
+        },
+        {
+          "name": "Prof. Dr. M A Mannan",
+          "role": "Senior Consulting Advisor",
+          "focus": "Education, health, demography & social protection"
+        }
+      ]
+    },
+    {
+      "group": "Founding Directors",
+      "members": [
+        {
+          "name": "Barr. Zareen Rahman",
+          "role": "Founding Director",
+          "focus": "Regulation, PPP formation & legal compliance"
+        },
+        {
+          "name": "Adj. Prof. Harun Rashid",
+          "role": "Founding Director",
+          "focus": "Comparative politics, public policy & conflict management"
+        },
+        {
+          "name": "Prof. Dr. Imran Mahmud",
+          "role": "Founding Director",
+          "focus": "Technology management, digital governance & system training, MIS & database management"
+        },
+        {
+          "name": "Nizam Uddin Ahmed",
+          "role": "Founding Director",
+          "focus": "Data, financial and digital governance & system implementation"
+        },
+        {
+          "name": "MD Shefatul Islam",
+          "role": "Founding Director, Education & EdTech Policy & Innovation",
+          "focus": "EdTech & blended-learning innovation, curriculum development & textbook authorship, digital capacity building & instructional design"
+        }
+      ]
+    },
+    {
+      "group": "Deputy Directors",
+      "members": [
+        {
+          "name": "Dr. Tat Thanh Tran",
+          "role": "Deputy Director (Practice Area Lead)",
+          "focus": "Corporate finance & strategic investment, financial markets, institutions & R&D network policy"
+        },
+        {
+          "name": "Dr. Md. Abu Zafor Sadek",
+          "role": "Deputy Director (Practice Area Lead)",
+          "focus": "Pharmaceutical industry dynamics, strategic market, product & biosimilars development"
+        }
+      ]
+    },
+    {
+      "group": "Affiliated Research Scholars",
+      "members": [
+        {
+          "name": "Dr. Sibbir Ahmad",
+          "role": "Affiliated Research Scholar",
+          "focus": "Applied microeconomics (development, agriculture, labor, health & experimental economics)"
+        },
+        {
+          "name": "Dr. Md. Latiful Haque",
+          "role": "Affiliated Research Scholar",
+          "focus": "Environmental, food systems & agricultural policy & practice"
+        },
+        {
+          "name": "Asst. Prof. Siban Shahana",
+          "role": "Affiliated Research Scholar",
+          "focus": "Public policy economics, education & human resource development"
+        },
+        {
+          "name": "Asst. Prof. Sazia Ahmed",
+          "role": "Affiliated Research Scholar",
+          "focus": "Agricultural, environmental & health economics"
+        }
+      ]
+    },
+    {
+      "group": "Support Units",
+      "members": [
+        {
+          "name": "Zahidur Rahman",
+          "role": "Practice Area Manager, IP3 Visual Lab",
+          "focus": "Digital communication, data visualization & presentation design"
+        },
+        {
+          "name": "Md. Sadid Uddin",
+          "role": "Manager, Administration & Finance",
+          "focus": "Administration & finance"
+        }
+      ]
+    }
+  ]
+}
