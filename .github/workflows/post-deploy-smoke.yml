@@ -1,0 +1,25 @@
+name: Production smoke check
+
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    if: github.event.deployment_status.state == 'success' && github.event.deployment_status.environment == 'Production'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Smoke-test production routes
+        run: node scripts/smoke-deploy.js
+        env:
+          DEPLOYMENT_URL: ${{ github.event.deployment_status.target_url }}
+          EXPECTED_COMMIT_SHA: ${{ github.event.deployment.sha }}
+          VERCEL_AUTOMATION_BYPASS_SECRET: ${{ secrets.VERCEL_AUTOMATION_BYPASS_SECRET }}
