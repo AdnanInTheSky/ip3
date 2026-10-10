@@ -1,39 +1,48 @@
-# Handoff — CMS admin panel (2026-10-10)
+# IP3 site implementation handoff — 2026-10-10
 
-- Dir: `D:\CONTENT IP3 WEBSITE\NEW WEBSITE DESIGN\ip3-bd.org` · branch `cms-admin` (from `main`) · not pushed
-- Goal: keep the old Pages CMS / Git-based admin design, fix the limitations found in the adnanv1 version.
+## Repository state
 
-## Limitations found → fix
-| Old system | Now |
-| --- | --- |
-| md→JSON build scripts missing; client-side `fetch` of `data/*.json` | `content/*.json` written by the CMS, read at build time → pre-rendered HTML |
-| No validation; a bad edit could ship | `build/validate.js` runs first in `npm run build`; failure keeps previous deploy |
-| `.pages.yml` hand-written, drifted from the site (~fields that rendered nothing) | `cms/schema.js` generates `.pages.yml`; `npm run audit` lists unread fields (last run: none) |
-| Items ordered by numeric `order` fields | List fields (drag to reorder); `hidden` switch per item |
-| Fabricated placeholder content, Rickroll hero, `approch` typo | real client content only; `/approach` |
-| Page titles/SEO/headlines hard-coded | `content/pages.json`; contact details in `content/site.json` |
-| Media: wrong folders, no limits | `images`/`videos` media sources; size/extension limits enforced at build |
-| No visible failure signal | `.github/workflows/check.yml` → red ✗ on the commit |
+- Repo: `mdsyfulhoque-afk/ip3-bd.org`
+- Local branch: `ops-hardening`, based on the user's `cms-admin` branch.
+- The implementation is local and has not been pushed or deployed. The authorized workstreams are kept in separate commits; inspect `git log --oneline` for the current hashes.
+- Do not make GitHub/Vercel/DNS changes, add credentials, send a real email or deploy without the owner's later instruction. The preflight remains in untracked `PREFLIGHT_REPORT.md`; baseline manifests and scratch comparisons are in untracked `scratchpad/`.
 
-## Files
-New: `content/**`, `cms/schema.js`, `build/validate.js`, `build/cms.js`, `src/content.js`, `.pages.yml`, `.github/workflows/check.yml`
-Changed: `src/data.js` (now a loader), `src/config.js`, `src/layout.js` (`rich`), `src/pages-inner.js`, `src/pages-home.js`, `build/build-all.js`, `package.json`, `README.md`
-Removed: `src/data/approach/*.json` (→ `content/approach/*`; unused s1/s2 dropped)
+## Implemented
 
-## Verified
-- Regenerated HTML byte-identical to pre-migration output (git shows no `.html` changes) · 20 pages build
-- `npm run check` passes; `.pages.yml` parses as YAML (PyYAML) and is in sync
-- 15 negative tests (missing image, bad link/anchor, script tag, unclosed em, empty required, bad email, unknown key, broken ref, all slides hidden, wrong type, duplicate slug, broken JSON, oversized image, build aborts with HTML untouched) all fail correctly
-- Simulated editor edits (headline, SEO title, hidden testimonial/slide, phone) appear in built HTML, then restored
+- `build/selftest.js` and `npm test` cover negative content/build checks. `build/check-links.test.js` covers link, anchor, target, metadata, image-alt and sitemap validation. `api/contact.test.js` mocks provider requests; it sends no email.
+- CMS sectors are a single ordered list. Navigation, footer links, legal drafts and page headings/copy are schema-backed. Sector order is derived from the list position; hidden sectors are omitted from routes/navigation/sitemap. The undocumented Pages CMS `view.order` key is gone.
+- The build writes generated pages, assets, sitemap, robots, manifest and `build.json` to ignored `dist/`. `vercel.json` publishes `dist`; `dev-server.js` serves it. The build stamp includes Git SHA when available, timestamp, content hash, page count and validation state.
+- The content publishing workflow checks a content-branch head, then opens/updates a PR only after that exact SHA passes. The default-branch workflow syncs `main` into `content` and dispatches the check explicitly. Branch-protection policy and exact `gh api` command are in `docs/BRANCH-PROTECTION.md`.
+- The Vercel function is `api/contact.js` (CommonJS, no runtime dependencies). It checks same-origin JSON, input bounds, honeypot and minimum fill time; optionally verifies Turnstile; sends escaped HTML and plain text using Resend; and does not log message PII. The browser falls back to a prefilled `mailto:` on failure. Environment variable names are `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`, `TURNSTILE_SECRET`, and build-time `PUBLIC_TURNSTILE_SITE_KEY`.
+- CI-only media optimization uses pinned Sharp and ffmpeg-static; it modifies only changed upload files on the content branch and dispatches a new check after a bot push. Images above 500 KiB are recompressed; MP4 videos above 8 MiB are encoded H.264. WebM is accepted only at or below 8 MiB because its container cannot be kept while changing to H.264. Hard limits are 2 MiB for images and 25 MiB for videos.
+- Quality workflows include static link/anchor validation, mobile Lighthouse CI reports, production route/build-stamp smoke checks, failure notification support and a 30-minute uptime check. Analytics snippets are present only when explicitly enabled for Production and supplied with both Vercel script paths; they are currently off.
 
-## Not verified / risks
-- Real Pages CMS login, form rendering and commit flow (needs GitHub auth; field syntax taken from pagescms.org docs, `required`/`list.collapsible` not individually confirmed)
-- Vercel actually running `npm run build` on a CMS commit (check the Build Command in the Vercel dashboard is not overridden)
-- Committed root `*.html` goes stale after a CMS edit until the next local build; Vercel rebuilds so the live site is right
-- Contact form is still mailto-only (no enquiry inbox)
-- 6 SEO description/title length warnings from client copy
+## Required local commands
 
-## Next
-1. `git push -u origin cms-admin` → Vercel preview URL → try an edit in Pages CMS against that branch
-2. Merge to `main` when happy; give editors Write access
-3. Optional: sharp-based image optimisation on upload; move Privacy/Terms and in-page headings into the CMS
+Run from the repository root:
+
+```bash
+npm ci
+npm test
+npm run check
+npm run audit
+npm run verify
+node scratchpad/compare-baseline.js
+```
+
+The preflight comparison expects only documented contact form markup and generated asset fingerprint differences. Do not commit `PREFLIGHT_REPORT.md`, `scratchpad/` or `dist/`.
+
+## Human gates
+
+The `ip-3` Vercel team was confirmed as Hobby, which blocks production rollout for this consulting company until the plan permits commercial use. The owner-side setup actions and exact dashboard paths are maintained in one place: [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md). Fill [docs/UAT.md](docs/UAT.md) during the first human rollout.
+
+## Limitations still requiring live access
+
+- Pages CMS UI branch selection and live save/PR flow.
+- GitHub repository Actions settings, branch protection and actual status context.
+- Vercel dashboard settings, protected preview access, post-deployment behavior and notifications.
+- Production form delivery, mailbox deliverability and DNS verification.
+- Lighthouse CI on the GitHub-hosted runner and actual `ffmpeg-static` video encoding; the local Windows package does not include a runnable ffmpeg binary.
+- Analytics privacy approval and assigned production script paths; Search Console property access.
+
+No external credentials are stored in the repository. No production form submission was sent.

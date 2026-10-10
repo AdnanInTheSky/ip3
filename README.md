@@ -1,91 +1,59 @@
-# IP3 Consulting — website
+# IP3 Consulting website
 
-Static website for **IP3 Consulting Limited (Institute for Public Policy & Practice)**.
-Plain HTML generated from a small Node build script, with GSAP + Lenis scroll motion. No framework, no runtime dependencies.
+Static site for IP3 Consulting Limited (Institute for Public Policy & Practice). Node renders the CMS JSON content into HTML in `dist/`; Vercel serves that directory. The frontend uses vendored GSAP and Lenis browser libraries.
 
 ## Run locally
 
+Requires Node.js 20.9 or newer and npm.
+
 ```bash
-npm run dev      # builds, then serves http://localhost:3000
-npm run build    # regenerates every .html file, sitemap.xml, robots.txt
+npm ci
+npm run dev      # builds dist/ and serves http://localhost:3000
+npm run check    # validates CMS content and generated Pages CMS config
+npm test         # content, link-checker and contact API regression tests
+npm run verify   # builds dist/ and checks links, anchors, metadata and sitemap
 ```
 
-## Where things live
+`dist/` is generated and ignored by Git. Do not edit generated output. `npm run build` regenerates the deployment directory; `npm run audit` finds CMS fields that are not read by templates.
 
-| Path | What |
+## Source map
+
+| Path | Purpose |
 | --- | --- |
-| `content/**/*.json` | **All editable content** — hero slides, page headlines & SEO titles, capabilities, sectors, engagements, people, FAQ, Approach page, contact details. Written by the admin panel. |
-| `cms/schema.js` | The editor forms **and** the validation rules for `content/` (one definition, two uses) |
-| `.pages.yml` | Pages CMS config — **generated** from `cms/schema.js` by `npm run cms`; don't edit by hand |
-| `src/data.js`, `src/content.js` | Loads `content/` for the templates (hidden items filtered out) |
-| `src/config.js` | Brand name, navigation, `SITE_URL` (contact details come from `content/site.json`) |
-| `build/validate.js` | Checks `content/` before every build; a failed check stops the build |
-| `src/layout.js` | Header, footer, contact form, shared page shell + SEO tags |
-| `src/pages-home.js`, `src/pages-inner.js` | Page templates |
-| `src/css/site.css` | Design system (Fraunces / Montserrat / Lato, rust · cream · charcoal, green accent from the logo) |
-| `src/js/site.js` | Motion: hero slider, word reveals, pinned horizontal sectors, sticky steps, parallax, counters |
-| `assets/` | Optimised video (`video/`), photos (`img/`), logo set (`logo/`), vendored GSAP/Lenis (`vendor/`) |
-| `*.html`, `sectors/*.html` | **Generated** — edit `src/`, then `npm run build` and commit the output |
+| `content/**/*.json` | CMS-managed page copy, navigation, legal drafts, sectors, contact details and media references |
+| `cms/schema.js` | Pages CMS editor fields and content validation rules |
+| `.pages.yml` | Generated Pages CMS configuration; change `cms/schema.js` and run `npm run cms` instead |
+| `src/data.js`, `src/content.js` | Load CMS content for the templates |
+| `src/config.js` | Brand constants and build-time site settings |
+| `src/layout.js`, `src/pages-home.js`, `src/pages-inner.js` | Shared shell and page templates |
+| `src/css/site.css`, `src/js/site.js` | Site styling and browser interactions |
+| `assets/img`, `assets/video`, `assets/logo`, `assets/vendor` | Source media, logos and vendored browser libraries |
+| `api/contact.js` | Vercel contact function; email delivery stays unavailable until owner setup is complete |
+| `build/`, `.github/` | Site build, validation, publishing checks and CI-only media optimization |
+| `dist/` | Generated deployment output, including `build.json`, sitemap and robots file |
 
-The generated HTML is committed so Vercel can serve it directly; `vercel.json` also runs `npm run build`.
+Sectors are ordered by position in `content/sectors.json`. Changing the order updates the home carousel, sector index and footer sector links. A hidden sector is omitted from generated routes, navigation and sitemap.
 
-## Admin panel — editing the content
+## Pages CMS publishing
 
-The admin is **Pages CMS** (https://app.pagescms.org), a Git-based editor: it has no server or database of its own.
-Editors sign in with GitHub, pick this repository and fill in forms; every save is a commit to `content/*.json`,
-Vercel rebuilds, and the live site updates in about a minute.
+The intended Pages CMS flow, after the owner setup is complete, stores editor commits on a `content` branch. The check workflow validates and builds that commit; after a successful check for the exact current branch head, a trusted workflow opens or updates a review PR. Vercel creates a PR preview, and an authorized reviewer merges to `main`. The workflow synchronizes later `main` changes into `content` and explicitly dispatches a check because token-authored pushes do not start ordinary push workflows.
 
-```
-Editor ──► Pages CMS (GitHub login) ──► commit content/*.json ──► GitHub check + Vercel build ──► live site
-                                                   │                          │
-                                                   └─ invalid? ✗ red check ◄──┘  build stops, previous version stays live
-```
+The live Pages CMS branch selector and commit attribution still require a human test. See [docs/EDITOR-GUIDE.md](docs/EDITOR-GUIDE.md) for content workflow details and [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md) for the remaining owner setup.
 
-**One-time setup:** (1) give each editor *Write* access to the GitHub repo; (2) they open app.pagescms.org, sign in
-with GitHub and choose `mdsyfulhoque-afk/ip3-bd.org`; (3) in Vercel, keep the project's Build Command empty so
-`vercel.json` (`npm run build`) is used.
+Photos may be JPEG, PNG or WebP; videos may be MP4 or WebM. CI recompresses changed images above 500 KiB (maximum 2400 px wide) and changed MP4 videos above 8 MiB (H.264 up to 1080p). WebM uploads must stay at or below 8 MiB because changing their container to H.264 would break the extension; images above 2 MiB and videos above 25 MiB fail validation. Pages CMS itself has no verified upload-byte limit, so follow these sizes before upload. See the [editor guide](docs/EDITOR-GUIDE.md).
 
-**What editors can change:** every section is a numbered form in the sidebar (`01 · Home — Hero slider` … `25 · Approach`).
-Lists (slides, engagements, FAQ…) can be reordered by dragging and have a **Hide this item** switch, so something can
-come off the site without being deleted. Photos and videos are uploaded from the same screen (WebP photos ≤ 500 KB,
-MP4 videos ≤ 8 MB are the targets; the build refuses files over 2 MB / 25 MB).
+## Vercel and contact form
 
-**Safe publishing:** `npm run build` first runs `build/validate.js`. It rejects missing images, broken links and slugs,
-empty required fields, stray HTML (only `<em>` is allowed), unknown fields and oversized media — with the file and field
-named. A rejected edit shows as a red ✗ on the commit in GitHub (and a failed Vercel deployment) and the previous
-version stays live. To review before publishing, editors can save to a branch (Pages CMS has a branch selector);
-Vercel gives every branch its own preview URL, and merging the branch publishes it.
+`vercel.json` selects the Other framework preset, runs `npm ci` and `npm run build`, and publishes `dist/`. The build generates a `dist/build.json` stamp containing the Git SHA when available. Production `SITE_URL` should be `https://ip3-bd.org`.
 
-**Changing what is editable (developers):**
+The public Vercel team was confirmed as Hobby during the preflight. That plan is a release blocker for this consulting-company website until the team uses a plan that permits commercial use. Contact delivery also stays gated on confirming the recipient mailbox, approving US processing by Resend, legal review, Resend domain verification and Turnstile setup. The contact function uses `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM`, and `TURNSTILE_SECRET`; the public widget uses `PUBLIC_TURNSTILE_SITE_KEY`. Keep secrets in Vercel runtime variables, not source. The form retains a prefilled `mailto:` fallback. See the single owner checklist at [docs/ADMIN-SETUP.md](docs/ADMIN-SETUP.md).
 
-| Task | Do |
-| --- | --- |
-| Add / rename a field or section | edit `cms/schema.js`, run `npm run cms` (rewrites `.pages.yml`), commit both |
-| Check content & `.pages.yml` | `npm run check` (CI runs this on every commit) |
-| Find fields that do nothing | `npm run audit` — lists content no page reads |
-| Run only the content check | `npm run validate` |
+## Quality and monitoring
 
-Still in the templates, not in the CMS: section headings inside pages (e.g. the About and Approach sub-headings),
-the Privacy/Terms text, and the navigation.
+GitHub Actions runs regression tests, content/CMS validation, a build and link checks, plus mobile Lighthouse CI reports for five representative pages. A successful production deployment triggers route and build-stamp smoke checks. A scheduled workflow checks production every 30 minutes; GitHub and Vercel notifications must be configured by the owner. Vercel Web Analytics and Speed Insights remain disabled until privacy review. Search Console ownership still needs confirmation.
 
-## Deploy (Vercel)
+## Remaining review
 
-Framework preset **Other**, output directory `.`, build command `npm run build` (already set in `vercel.json`).
-Set the environment variable `SITE_URL` to the production origin (e.g. `https://ip3-bd.org`) so canonical URLs,
-the sitemap and social tags are correct. `vercel.json` also redirects the old WordPress URLs to their new pages.
-
-## Contact form
-
-The form validates in the browser and opens the visitor's email app addressed to `info@ip3-bd.org` with the message
-pre-filled (no server needed). To post to a form service instead, change the submit handler in `src/js/site.js`.
-
-## Content to verify before launch
-
-Everything on the site comes from IP3's own documents. These items should be confirmed by IP3:
-
-- Approach page "Case Study Example" paragraphs (Ghana, Malawi, LDC graduation) — copied from the approach document.
-- Engagement summaries — taken from the "Recent Engagements & Impact Projects" list; no outcome figures are published.
-- Counts: 17+ years, 75+ projects, 30+ partners (founder profile) — the older copy deck said "verify counts".
-- Client names in "Clients & partners" and the two testimonials (Omar Faruk, PwC · Ahmmad Zaman Tariq, BMDF).
-- Privacy Policy and Terms are plain-language drafts and need legal review.
-- Search-result descriptions on Home, About, Capabilities, Sectors and Engagements are longer than Google shows (the build lists them as warnings) — shorten them in *00 · Page titles, descriptions & headlines*.
+- Confirm the Approach case-study paragraphs, engagement summaries, counts, client names and testimonials against IP3 source documents.
+- Review Privacy Policy and Terms with counsel; approve any Resend/Turnstile and analytics disclosures before enabling those services.
+- Review the six SEO copy proposals in [docs/SEO-COPY-PROPOSALS.md](docs/SEO-COPY-PROPOSALS.md); no client copy has been changed.
