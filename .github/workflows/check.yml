@@ -4,6 +4,7 @@ name: Content check
 # A red ✗ on the commit means the edit would not build — Vercel keeps serving the previous version.
 on:
   push:
+    branches: [main, content]
   pull_request:
   workflow_dispatch:
 
