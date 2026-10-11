@@ -175,7 +175,21 @@ function run({ quiet = false } = {}) {
     if (peopleSlugs.has(member.slug)) err('groups', `profile anchor "${member.slug}" is used by more than one person`);
     peopleSlugs.add(member.slug);
   });
-  const sets = { capabilities: capSlugs, engagements: engSlugs, sectors: secSlugs, people: peopleSlugs };
+  const proofSlugs = slugsOf((data.proof || {}).items);
+  const photoSlugs = slugsOf((data.field_media || {}).photos);
+  const sets = { capabilities: capSlugs, engagements: engSlugs, sectors: secSlugs, people: peopleSlugs, proof: proofSlugs, fieldphotos: photoSlugs };
+
+  // /capabilities proof records: pillar codes are four letters of f/h/n; the capability list is non-empty; ids on the page are unique
+  where.file = 'content/proof.json';
+  ((data.proof || {}).items || []).forEach((item, i) => {
+    if (!/^[fhn]{4}$/.test(item.pillars || '')) err(`items[${i + 1}].pillars`, `"${item.pillars}" must be four letters, each f, h or n`);
+    if (item.status === 'delivered' && /current/i.test(item.period || '')) warn(`items[${i + 1}].status`, 'period says current but status is delivered');
+  });
+  const refLabels = new Set();
+  ((data.proof || {}).items || []).forEach((item, i) => {
+    if (refLabels.has(item.ref)) err(`items[${i + 1}].ref`, `reference label "${item.ref}" is used twice`);
+    refLabels.add(item.ref);
+  });
 
   // /why-ip3: the 3D scene has a camera keyframe per scene and draws a link per related system.
   const why = data.why;
@@ -210,7 +224,7 @@ function run({ quiet = false } = {}) {
       const ok = ROUTES.includes(route) || (route.startsWith('/sectors/') && secSlugs.has(route.slice(9)) && !sectorItems.find((sector) => sector.slug === route.slice(9)).hidden);
       if (!ok) err(r.p, `link ${r.value} does not match any page`);
       else if (hash && route === '/capabilities' && !capSlugs.has(hash)) err(r.p, `link ${r.value}: no capability with slug "${hash}"`);
-    } else if (!sets[r.kind].has(r.value)) err(r.p, `"${r.value}" is not an existing ${{ capabilities: 'capability', people: 'person' }[r.kind] || r.kind.replace(/s$/, '')} slug`);
+    } else if (!sets[r.kind].has(r.value)) err(r.p, `"${r.value}" is not an existing ${{ capabilities: 'capability', people: 'person', fieldphotos: 'meeting photo', proof: 'assignment' }[r.kind] || r.kind.replace(/s$/, '')} slug`);
   }
   sectorItems.forEach((s, i) => {
     where.file = `content/sectors.json → items[${i + 1}]`;

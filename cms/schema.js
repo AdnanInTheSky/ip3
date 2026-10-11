@@ -2,23 +2,7 @@
 //   • `node build/cms.js`   turns this into .pages.yml (the editor forms in Pages CMS)
 //   • `node build/validate.js` checks every content/*.json file against it before each build
 // Field options: optional · max (hard limit) · soft (warning limit) · em (allow <em>) · link · slug · email · hint · summary
-const T = (type) => (name, label, o = {}) => ({ name, label, type, ...o });
-const str = T('string');
-const text = T('text');
-const num = T('number');
-const bool = T('boolean');
-const image = T('image');
-const video = T('video');
-const select = (name, label, values, o = {}) => ({ name, label, type: 'select', values, ...o });
-const obj = (name, label, fields, o = {}) => ({ name, label, type: 'object', fields, ...o });
-const list = (name, label, fields, o = {}) => ({ name, label, type: 'object', list: true, fields, ...o });
-const strs = (name, label, o = {}) => ({ name, label, type: 'string', list: true, ...o });
-const hidden = bool('hidden', 'Hide this item', { optional: true, hint: 'Tick to take it off the website without deleting it.' });
-const slug = (name = 'slug', label = 'URL slug', o = {}) => str(name, label, { slug: true, hint: 'Lower-case words joined by hyphens. Changing it changes the page address — set once.', ...o });
-const pair = (name, label, o = {}) => list(name, label, [str('title', 'Title'), text('text', 'Text')], { summary: '{title}', ...o });
-
-const file = (name, label, path, fields) => ({ name, label, type: 'file', path, fields });
-const collection = (name, label, path, fields, view) => ({ name, label, type: 'collection', path, fields, view });
+const { str, text, num, bool, image, video, select, obj, list, strs, hidden, slug, pair, file, collection } = require('./helpers');
 
 const pageMeta = (withHero = true) => [
   str('title', 'Search-result title', { soft: 70, hint: 'Shown in the browser tab and Google. Aim for 70 characters or fewer.' }),
@@ -152,6 +136,9 @@ module.exports = {
       str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }),
       list('cards', 'Capabilities', [
         slug(), str('title', 'Title'), str('short', 'Short name'), text('problem', 'The problem a client brings'), strs('deliverables', 'Typical deliverables'),
+        str('descriptor', 'Plain-language line under the title', { max: 140, hint: 'The words a buyer would search for, e.g. Policy studies, economic appraisal, regulatory reform and sector strategies.' }),
+        str('task', 'Often commissioned to', { max: 120 }),
+        str('ctaLabel', 'Button under the row', { max: 60 }),
         text('intro', 'What this capability covers', { max: 600, soft: 420 }),
         list('groups', 'What it includes (opens under the row)', [
           str('title', 'Area title', { max: 80 }), text('text', 'Short description', { optional: true, max: 300 }), strs('points', 'Points'),
@@ -159,6 +146,7 @@ module.exports = {
         strs('engagements', 'Related engagements', { optional: true, hint: 'Engagement slugs from the Engagements list.', ref: 'engagements' }),
       ], { summary: '{title}' }),
     ]),
+    ...require('./capability-proof'),
     file('sectors', '11 · Sectors (drag to reorder)', 'content/sectors.json', [
       list('items', 'Sectors — drag to set display order', [
       hidden, slug(),

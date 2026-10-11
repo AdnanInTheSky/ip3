@@ -1,5 +1,6 @@
 const { esc, plain, rich, arrow, arrowL, btn, cta, sectionHead, phero, breadcrumb, page, formBlock, cfg, D } = require('./layout');
 const { engRow, insCard } = require('./pages-home');
+const { capabilities } = require('./cap'); // /capabilities lives in src/cap/ (one module per section)
 
 const capBySlug = Object.fromEntries(D.capabilities.cards.map((c, i) => [c.slug, { ...c, i }]));
 const engBySlug = Object.fromEntries(D.engagements.map((e) => [e.slug, e]));
@@ -62,27 +63,6 @@ function approach() {
     cta('cta-approach'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/approach', body });
-}
-
-/* ---------------- Capabilities ---------------- */
-function capabilities() {
-  const pg = D.pages.capabilities;
-  const rows = D.capabilities.cards.map((c, i) => `
-  <article class="caprow" id="${c.slug}"><div class="n">0${i + 1}</div><div data-reveal><h3>${plain(c.title)}</h3><q>“${esc(c.problem)}”</q><p class="caprow__intro">${esc(c.intro)}</p></div><div data-reveal><h4>${esc(D.headings['capability-deliverables'].title)}</h4><div class="chips">${c.deliverables.map((d) => `<span class="chip">${esc(d)}</span>`).join('')}</div><div style="margin-top:26px"><h4>${esc(D.headings['capability-applied'].title)}</h4><div class="chips">${D.sectors.filter((s) => s.caps.includes(c.slug)).slice(0, 4).map((s) => `<a class="chip" href="/sectors/${s.slug}">${esc(s.title.split(',')[0].split(' & ')[0])}</a>`).join('')}</div></div></div>${capMore(c)}</article>`).join('');
-  const body = [
-    phero({ crumbs: [breadcrumb('/capabilities')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'video', src: '/assets/video/data.mp4', poster: '/assets/img/poster-data.webp' } }),
-    sec(rows),
-    sec(`${sectionHead('capabilities-start')}<div class="cards4" data-stagger>${D.about.lifecycle.map((l, i) => tile(l.title, l.text, '0' + (i + 1))).join('')}</div>`, 'section--sand'),
-    cta('cta-capabilities'),
-  ].join('\n');
-  return page({ title: pg.title, desc: pg.desc, path: '/capabilities', body });
-}
-
-/* The expandable detail under each capability row: what the capability includes, plus related engagements */
-function capMore(c) {
-  const items = c.groups.map((g) => `<section class="capmore__item"><h5>${esc(g.title)}</h5>${g.text ? `<p>${esc(g.text)}</p>` : ''}<ul class="checks">${g.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></section>`).join('');
-  const engs = (c.engagements || []).map((k) => engBySlug[k]).filter(Boolean).map((e) => `<li><a class="link" href="/engagements#${e.slug}">${esc(e.title)}${arrow}</a></li>`).join('');
-  return `<details class="capmore"><summary><span>${esc(D.headings['capability-includes'].title)}</span><i>${c.groups.length}</i></summary><div class="capmore__grid">${items}</div>${engs ? `<div class="capmore__engs"><h4>${esc(D.headings['capability-related'].title)}</h4><ul>${engs}</ul></div>` : ''}</details>`;
 }
 
 /* ---------------- Sectors ---------------- */

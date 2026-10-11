@@ -16,6 +16,9 @@
         "Fiscal and cost-benefit analysis",
         "Reform road maps"
       ],
+      "descriptor": "Policy studies, economic appraisal, regulatory reform and sector strategies.",
+      "task": "Choose an implementable reform",
+      "ctaLabel": "Commission a policy or economic study",
       "intro": "Policymakers often struggle to turn ambitious visions into results. We bridge that gap by building people-centric and planet-conscious thinking into economic and development policy, and by turning rigorous evidence into policies that governments, donors and organizations can act on.",
       "groups": [
         {
@@ -80,6 +83,9 @@
         "Risk registers",
         "Project-preparation support"
       ],
+      "descriptor": "Feasibility, project preparation, theories of change and implementation planning.",
+      "task": "Screen an investment or turn a concept into a financeable proposal",
+      "ctaLabel": "Discuss a feasibility study",
       "intro": "We design programs and projects around specific goals across the public, private and development sectors, and test whether a concept is viable before funding is committed. Program frameworks sit alongside economic, financial and environmental feasibility, so the design that goes forward can be implemented, financed and defended.",
       "groups": [
         {
@@ -133,6 +139,9 @@
         "Market sounding",
         "De-risking"
       ],
+      "descriptor": "Climate finance, PPP advisory, bankability assessment and investment pipelines.",
+      "task": "Prepare an investable climate and green-finance pipeline",
+      "ctaLabel": "Discuss climate-finance readiness",
       "intro": "We integrate climate strategy, ESG frameworks, biodiversity and circular-economy principles into economic and development policy, so clients can manage climate risk, capture growth opportunities and make the case for investment in resilience.",
       "groups": [
         {
@@ -195,6 +204,9 @@
         "Capacity development",
         "Change management"
       ],
+      "descriptor": "Institutional diagnostics, public financial management reform and change-management support.",
+      "task": "Make a policy operational",
+      "ctaLabel": "Discuss institutional strengthening",
       "intro": "A sound policy still fails when the institutions that must deliver it lack clear mandates, workable processes or the capacity to follow through. We work with governments, regulators and public bodies to find where delivery breaks down, then build the arrangements, skills and incentives that make implementation consistent.",
       "groups": [
         {
@@ -253,6 +265,9 @@
         "Dashboards",
         "Adaptive management"
       ],
+      "descriptor": "Baseline and endline studies, process and impact evaluations, and MEL systems.",
+      "task": "Measure a baseline or attribute impact",
+      "ctaLabel": "Commission a baseline or evaluation",
       "intro": "Combining social-science expertise, digital innovation and adaptive learning, our MERLA work goes beyond evaluation. It gives organizations the tools, knowledge and strategies to create sustainable, measurable change across sectors.",
       "groups": [
         {
@@ -310,6 +325,9 @@
         "Service design",
         "Digital inclusion"
       ],
+      "descriptor": "Digital government strategy, data governance, digital public infrastructure and AI readiness.",
+      "task": "Modernize systems responsibly",
+      "ctaLabel": "Discuss a digital readiness assessment",
       "intro": "Reliable decisions need reliable data. We design and manage surveys and data systems, and apply analytics and digital tools so evidence reaches decision-makers quickly, without compromising data quality, inclusion or accountability.",
       "groups": [
         {

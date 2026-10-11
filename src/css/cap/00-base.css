@@ -1,0 +1,5 @@
+/* /capabilities — page-wide styles shared by every section module. Loaded after site.css, only on this page.
+   Conventions: classes start with cp-; colours and radii come from the :root tokens in site.css; one file per module (10-hero.css, 20-led.css ...). */
+.cp{--cp-night:#0c0a09;--cp-night-2:#16120f;--cp-line-dark:rgba(255,255,255,.14);--cp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+.cp [id^="cp-"]{scroll-margin-top:96px}
+.cp-mono{font-family:var(--cp-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}

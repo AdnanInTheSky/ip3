@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "slug": "adb-ews-facility",
+      "ref": "B1",
+      "title": "Increasing Investments in Early Warning Systems to Strengthen Climate and Disaster Resilience",
+      "short": "What should early warning cost?",
+      "client": "Asian Development Bank",
+      "clientType": "multilateral",
+      "market": "international",
+      "role": "Economic and Financial Analysis Specialist (International), Intermittent",
+      "roleLevel": "specialist",
+      "period": "Sep 2025 – Dec 2026",
+      "status": "current",
+      "reference": "ADB TA 10103-REG (sovereign regional TA 57055-001)",
+      "location": "Regional — Bangladesh, Cambodia, Kazakhstan, Kyrgyz Republic, Lao PDR, Maldives, Mongolia, Nepal, Tajikistan, Uzbekistan",
+      "summary": "Economic and financial analysis for a regional ADB technical assistance on early-warning systems, with ten countries in scope. Costing toolkits and cost-benefit models developed; economic and financial chapters and financing structures in preparation.",
+      "activities": [
+        "Build costing toolkits and CBA models; support budget notes and procurement plans.",
+        "Design an M&E logframe aligned to Sendai and SDG 13; plan integration with national systems."
+      ],
+      "methods": ["Cost-benefit analysis", "Costing toolkits", "WACC benchmarking"],
+      "scope": { "value": "10", "label": "countries in the technical assistance’s scope" },
+      "pillars": "fhff",
+      "caps": ["program-project-design", "development-finance"],
+      "source": "=SOURCE(Founder CV, signed 09/09/2026 · ADB TA 10103-REG)"
+    }
+  ]
+}

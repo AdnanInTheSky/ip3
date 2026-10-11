@@ -1,0 +1,42 @@
+{
+  "photos": [
+    {
+      "slug": "adb-workshop-panel",
+      "image": "/assets/img/workshop-adb.webp",
+      "w": 800,
+      "h": 520,
+      "kind": "panel",
+      "alt": "Panel at an ADB-supported policy workshop",
+      "event": "ADB-supported policy workshop",
+      "place": "Dhaka",
+      "fx": 50,
+      "fy": 50,
+      "confidence": "generic",
+      "caps": ["policy-economics-strategy", "institutions-governance-delivery"]
+    },
+    {
+      "slug": "adb-conference-westin",
+      "image": "/assets/img/adb-conference.webp",
+      "w": 960,
+      "h": 644,
+      "kind": "conference",
+      "alt": "Head table and podium at an ADB conference in Dhaka",
+      "event": "ADB conference",
+      "place": "Dhaka",
+      "fx": 50,
+      "fy": 50,
+      "confidence": "generic",
+      "caps": ["development-finance", "policy-economics-strategy"]
+    }
+  ],
+  "videos": [
+    {
+      "slug": "data-reel",
+      "src": "/assets/video/data.mp4",
+      "poster": "/assets/img/poster-data.webp",
+      "title": "Data and evidence",
+      "caption": "Placeholder entry for the film layout; replace with the selected films.",
+      "caps": ["data-digital-responsible-ai"]
+    }
+  ]
+}

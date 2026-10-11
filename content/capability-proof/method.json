@@ -1,0 +1,48 @@
+{
+  "eyebrow": "How the work is done",
+  "title": "From the field to the decision, <em>and a system that can act on it.</em>",
+  "lead": "Different assignments use different methods. The discipline underneath is consistent: understand the real system, structure the evidence, test the alternatives and design for implementation.",
+  "hint": "Scroll to move through the five stages",
+  "formulaLabel": "Illustrative structure — not client data",
+  "statement": "Understand the real system, structure the evidence, test alternatives, and design for implementation.",
+  "stages": [
+    {
+      "slug": "reality",
+      "label": "Reality",
+      "line": "Complex problems rarely arrive structured.",
+      "detail": "Field observation, consultation, document review, institutional context.",
+      "caps": ["policy-economics-strategy", "institutions-governance-delivery"]
+    },
+    {
+      "slug": "evidence",
+      "label": "Evidence",
+      "line": "Find the signal, then structure it.",
+      "detail": "Survey design, data collection, cost estimation, gap assessment.",
+      "figureValue": "528",
+      "figureLabel": "units of primary evidence in one green-transition study: 400 firms, 120 key informant interviews, 8 focus groups",
+      "caps": ["data-digital-responsible-ai", "monitoring-evaluation-learning"]
+    },
+    {
+      "slug": "model",
+      "label": "Model",
+      "line": "Build the analysis the decision actually needs.",
+      "detail": "ENPV/FNPV, EIRR/FIRR, benefit-cost ratios, scenario and sensitivity analysis.",
+      "formula": "ENPV = Σ (Bₜ − Cₜ) / (1 + r)ᵗ",
+      "caps": ["development-finance", "program-project-design", "policy-economics-strategy"]
+    },
+    {
+      "slug": "decision",
+      "label": "Decision",
+      "line": "Frame alternatives against real constraints.",
+      "detail": "Options analysis, affordability, institutional capacity, risk.",
+      "caps": ["policy-economics-strategy", "institutions-governance-delivery"]
+    },
+    {
+      "slug": "system",
+      "label": "System",
+      "line": "Design something that can act on it.",
+      "detail": "Costed phasing, financing structure, M&E framework, delivery arrangements.",
+      "caps": ["program-project-design", "development-finance", "monitoring-evaluation-learning"]
+    }
+  ]
+}

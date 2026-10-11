@@ -1,0 +1,20 @@
+{
+  "jumpLabel": "On this page",
+  "jump": [
+    { "label": "Capabilities", "id": "cp-capabilities" },
+    { "label": "How we work", "id": "cp-method" },
+    { "label": "Assignments", "id": "cp-proof" },
+    { "label": "In the room", "id": "cp-room" },
+    { "label": "On film", "id": "cp-reel" }
+  ],
+  "scrollCue": "Scroll",
+  "statsEyebrow": "The record behind the work",
+  "stats": [
+    { "n": 37, "suffix": "", "label": "Documented assignments, 2008 onward" },
+    { "n": 12, "suffix": "", "label": "World Bank Group assignments (10 World Bank, 2 IFC)" },
+    { "n": 7, "suffix": "", "label": "Asian Development Bank assignments" },
+    { "n": 10, "suffix": "", "label": "Countries in the scope of the current ADB technical assistance" }
+  ],
+  "statsNote": "Assignments led or supported by IP3’s founder, taken from a signed CV and listed below. Contracting routes vary and are named on each record. Country count is scope, not presence.",
+  "partnersLabel": "Development partners our team has worked with"
+}

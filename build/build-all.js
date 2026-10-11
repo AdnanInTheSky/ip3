@@ -39,10 +39,16 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
   const css = read('src/css/site.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
   const js = read('src/js/site.js').replaceAll('__IP3_CONTACT_EMAIL__', JSON.stringify(cfg.email));
   const whyJs = read('src/js/why.js');
+  // /capabilities loads its own stylesheet and script: every file in src/css/cap and src/js/cap, joined in name order
+  const bundle = (dir, ext) => fs.readdirSync(path.join(root, dir)).filter((f) => f.endsWith(ext)).sort().map((f) => read(`${dir}/${f}`)).join('\n');
+  const capCss = bundle('src/css/cap', '.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
+  const capJs = bundle('src/js/cap', '.js');
   write('assets/css/site.css', css);
   write('assets/js/site.js', js);
   write('assets/js/why.js', whyJs);
-  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs) };
+  write('assets/css/capabilities.css', capCss);
+  write('assets/js/capabilities.js', capJs);
+  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs), __CAPCSSV__: hash(capCss), __CAPJSV__: hash(capJs) };
 
   // 2. pages
   const pages = [
@@ -61,7 +67,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],
   ];
-  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__/g, (m) => V[m]));
+  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__/g, (m) => V[m]));
 
   // 3. sitemap, robots, manifest
   const urls = pages.map(([f]) => f).filter((f) => f !== '404.html').map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));

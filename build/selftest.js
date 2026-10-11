@@ -20,6 +20,7 @@ fs.mkdirSync(root, { recursive: true });
 for (const rel of ['build/validate.js', 'build/build-all.js', 'cms/schema.js']) {
   const target = path.join(root, rel); fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(path.join(REPO, rel), target);
 }
+fs.cpSync(path.join(REPO, 'cms'), path.join(root, 'cms'), { recursive: true }); // schema.js requires cms/helpers.js and cms/capability-proof/
 const validate = require(path.join(root, 'build', 'validate.js'));
 
 function reset() {
