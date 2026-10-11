@@ -2706,7 +2706,7 @@ content:
             type: select
             required: true
             options:
-              values: ["meeting", "panel", "workshop", "conference", "training", "fieldwork", "briefing"]
+              values: ["meeting", "panel", "workshop", "conference", "training", "fieldwork", "briefing", "group"]
           - name: alt
             label: "Description for screen readers"
             type: text
