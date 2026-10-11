@@ -150,7 +150,7 @@ function engagements() {
 
 function engRow(e) {
   return `
-<article class="eng-row">
+<article class="eng-row" id="${e.slug}">
   <div class="eng-row__media clip" data-clip><img src="${e.image}" width="1200" height="900" alt="" loading="lazy" data-parallax></div>
   <div data-reveal>
     <div class="eng-row__meta"><b>${esc(e.client)}</b><span>${esc(e.year)}</span><span>${esc(e.sector)}</span></div>

@@ -1,5 +1,6 @@
 const { esc, plain, rich, arrow, arrowL, btn, cta, sectionHead, phero, breadcrumb, page, formBlock, cfg, D } = require('./layout');
 const { engRow, insCard } = require('./pages-home');
+const { capabilities } = require('./cap'); // /capabilities lives in src/cap/ (one module per section)
 
 const capBySlug = Object.fromEntries(D.capabilities.cards.map((c, i) => [c.slug, { ...c, i }]));
 const engBySlug = Object.fromEntries(D.engagements.map((e) => [e.slug, e]));
@@ -62,20 +63,6 @@ function approach() {
     cta('cta-approach'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/approach', body });
-}
-
-/* ---------------- Capabilities ---------------- */
-function capabilities() {
-  const pg = D.pages.capabilities;
-  const rows = D.capabilities.cards.map((c, i) => `
-  <article class="caprow" id="${c.slug}"><div class="n">0${i + 1}</div><div data-reveal><h3>${plain(c.title)}</h3><q>“${esc(c.problem)}”</q></div><div data-reveal><h4>${esc(D.headings['capability-deliverables'].title)}</h4><div class="chips">${c.deliverables.map((d) => `<span class="chip">${esc(d)}</span>`).join('')}</div><div style="margin-top:26px"><h4>${esc(D.headings['capability-applied'].title)}</h4><div class="chips">${D.sectors.filter((s) => s.caps.includes(c.slug)).slice(0, 4).map((s) => `<a class="chip" href="/sectors/${s.slug}">${esc(s.title.split(',')[0].split(' & ')[0])}</a>`).join('')}</div></div></div></article>`).join('');
-  const body = [
-    phero({ crumbs: [breadcrumb('/capabilities')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'video', src: '/assets/video/data.mp4', poster: '/assets/img/poster-data.webp' } }),
-    sec(rows),
-    sec(`${sectionHead('capabilities-start')}<div class="cards4" data-stagger>${D.about.lifecycle.map((l, i) => tile(l.title, l.text, '0' + (i + 1))).join('')}</div>`, 'section--sand'),
-    cta('cta-capabilities'),
-  ].join('\n');
-  return page({ title: pg.title, desc: pg.desc, path: '/capabilities', body });
 }
 
 /* ---------------- Sectors ---------------- */

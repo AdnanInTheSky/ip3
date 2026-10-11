@@ -28,12 +28,14 @@ npm run verify   # builds dist/ and checks links, anchors, metadata and sitemap
 | `src/layout.js`, `src/pages-home.js`, `src/pages-inner.js`, `src/pages-why.js` | Shared shell and page templates |
 | `src/css/site.css`, `src/js/site.js` | Site styling and browser interactions |
 | `src/js/why.js` | The /why-ip3 3D journey (vendored three.js r160, loaded only on that page; the page reads fully without WebGL) |
+| `src/cap/`, `src/css/cap/`, `src/js/cap/` | The /capabilities page: one module per section (hero and figures, founder and experts, capability rows, the 3D method scroll, the assignment browser, the meeting-photo coverflow, the films). The build bundles the CSS and JS into `assets/css/capabilities.css` and `assets/js/capabilities.js`, loaded only on that page |
+| `content/capability-proof/`, `content/proof.json`, `content/field-media.json` | Copy for those sections, the 37 documented assignment records (from the founder's signed CV and the portfolio) and the meeting photos and films |
 | `assets/img`, `assets/video`, `assets/logo`, `assets/vendor` | Source media, logos and vendored browser libraries |
 | `api/contact.js` | Vercel contact function; email delivery stays unavailable until owner setup is complete |
 | `build/`, `.github/` | Site build, validation, publishing checks and CI-only media optimization |
 | `dist/` | Generated deployment output, including `build.json`, sitemap and robots file |
 
-Sectors are ordered by position in `content/sectors.json`. Changing the order updates the home carousel, sector index and footer sector links. A hidden sector is omitted from generated routes, navigation and sitemap.
+Sectors are ordered by position in `content/sectors.json`. Changing the order updates the home carousel, sector index and footer sector links. A hidden sector is omitted from generated routes, navigation and sitemap. Each capability in `content/capabilities.json` renders as a row on /capabilities with a `#slug` anchor; its `groups` open under the row as "What this includes".
 
 ## Pages CMS publishing
 
@@ -57,4 +59,9 @@ GitHub Actions runs regression tests, content/CMS validation, a build and link c
 
 - Confirm the Approach case-study paragraphs, engagement summaries, counts, client names and testimonials against IP3 source documents.
 - Review Privacy Policy and Terms with counsel; approve any Resend/Turnstile and analytics disclosures before enabling those services.
+- Confirm the expanded detail under each of the six capabilities on /capabilities (`content/capabilities.json`). Five of the six are carried over and lightly edited from the earlier WordPress service pages; the copy for 04 Institutions, Governance & Delivery is new, written from its existing deliverables and generic delivery practice, and needs IP3 review. Before publishing, IP3 must also confirm the old site's claims that were held back: "over a decade with the World Bank, ADB and European Commission"; "Bangladesh's first feasibility study for secondary and madrasah education"; and the case studies not yet in `content/engagements.json` (Payra Seaport 2017, Jolshiri Aqua Green City 2019, BIFFL/BEZA equity investment 2017, Global LEAP results-based financing, World Bank ESMAP/ASTAE evaluation, HALOW+ 2019, Dhaka Sewerage Improvement Project M&E 2020). These now appear on /capabilities as assignment records taken from the founder's signed CV, with the CV's own dates; confirm they may be published.
 - Review the six SEO copy proposals in [docs/SEO-COPY-PROPOSALS.md](docs/SEO-COPY-PROPOSALS.md); no client copy has been changed.
+- /capabilities proof layer (`content/proof.json`, `content/field-media.json`, `content/capability-proof/`). Settled by IP3 on 2026-10-11: 20 years of experience (signed CV); all 37 records listed; dates and engagement years taken from the CV (Costing & Financing Expert CV, Sep 2026); client names may be shown; photo consent obtained; the SANEM-era ADB events are shown as the founder's experience, not IP3's work; all films are by the Institute for Public Policy & Practice (IP3), the research entity of IP3 Consulting Limited. Still open:
+  - 100+ projects in total (home page and founder bio); /capabilities shows the 37 documented in the CV. Three engagement summaries keep their page wording and add the CV record (sida-cpd-textile, worldbank-fat, bmdf-transformation).
+  - Wording edits made for accuracy: the portfolio's published rewording for four activities, "evaluated" (not "implemented") for the 20 IFC simplification projects, the early-warning outputs described as in preparation, and the CV's geography caveat on three records.
+  - The method section's chart and options test are illustrative and labelled so; the 528 figure comes from the green-transition record (400 firms, 120 KIIs, 8 FGDs).

@@ -15,7 +15,59 @@
         "Sector strategies",
         "Fiscal and cost-benefit analysis",
         "Reform road maps"
-      ]
+      ],
+      "descriptor": "Policy studies, economic appraisal, regulatory reform and sector strategies.",
+      "task": "Choose an implementable reform",
+      "ctaLabel": "Commission a policy or economic study",
+      "intro": "Policymakers often struggle to turn ambitious visions into results. We bridge that gap by building people-centric and planet-conscious thinking into economic and development policy, and by turning rigorous evidence into policies that governments, donors and organizations can act on.",
+      "groups": [
+        {
+          "title": "Policy Development",
+          "text": "Forward-looking policy built on diagnosis, not symptoms.",
+          "points": [
+            "Root-cause analysis of public challenges, using data-driven methods and systems thinking.",
+            "Stakeholder-inclusive frameworks co-created with government, the private sector and civil society for greater legitimacy and impact.",
+            "Adaptable policy models that align global good practice with local realities and long-term economic, social and environmental sustainability."
+          ]
+        },
+        {
+          "title": "Regulation",
+          "text": "We help governments and regulators develop, reform and implement rules that protect citizens, keep business efficient and reduce bureaucratic burden.",
+          "points": [
+            "Evidence-based regulatory design and strategic reform that improve compliance, streamline processes and support competitiveness.",
+            "Frameworks for transparent, accountable governance that minimize inefficiency and build public trust.",
+            "Balanced regulation that supports business growth while safeguarding the environment, social equity and consumers."
+          ]
+        },
+        {
+          "title": "Economic Analysis",
+          "text": "Tailored economic methods that give leaders the evidence to decide with confidence under uncertainty.",
+          "points": [
+            "Cost-benefit analysis and outcome quantification to allocate resources efficiently.",
+            "Economic modeling, predictive analytics and scenario planning to simulate policy outcomes and anticipate risks.",
+            "Big-data and real-time market insight to support inclusive growth, sustainability and resilience."
+          ]
+        },
+        {
+          "title": "Policy Influence & Experimentation",
+          "text": "Bridging research and real-world impact.",
+          "points": [
+            "Evidence-based policymaking: research that identifies root causes and policy gaps, and frameworks aligned with global sustainability goals.",
+            "Stakeholder collaboration: inclusive platforms for dialogue and knowledge exchange among policymakers, industry and communities.",
+            "Policy experimentation and adaptation: pilots that test new approaches, adaptive management based on real-time feedback, and scaling of what works."
+          ]
+        },
+        {
+          "title": "Green Transition Policy & Governance",
+          "text": "Inclusive policy and governance for equitable, nature-positive and resilient climate transitions.",
+          "points": [
+            "Equity-focused transition strategies so that no community is left behind.",
+            "Natural capital valuation and ecosystem planning built into climate policy and land-use planning.",
+            "Collaborative climate governance that brings in stakeholder voices and strengthens transparency and accountability."
+          ]
+        }
+      ],
+      "engagements": []
     },
     {
       "slug": "program-project-design",
@@ -30,6 +82,45 @@
         "Implementation and financing plans",
         "Risk registers",
         "Project-preparation support"
+      ],
+      "descriptor": "Feasibility, project preparation, theories of change and implementation planning.",
+      "task": "Screen an investment or turn a concept into a financeable proposal",
+      "ctaLabel": "Discuss a feasibility study",
+      "intro": "We design programs and projects around specific goals across the public, private and development sectors, and test whether a concept is viable before funding is committed. Program frameworks sit alongside economic, financial and environmental feasibility, so the design that goes forward can be implemented, financed and defended.",
+      "groups": [
+        {
+          "title": "Program Design & Scaling",
+          "points": [
+            "Program frameworks aligned with policy and development goals, guided by Theory of Change and logical frameworks.",
+            "Scalable programs tailored to the needs of communities and industries, with sustainability and impact measurement built in.",
+            "Support for pilot programs and their transition to full-scale implementation."
+          ]
+        },
+        {
+          "title": "Economic & Financial Feasibility",
+          "points": [
+            "Economic and financial modeling to evaluate project viability and potential returns.",
+            "Cost-benefit analysis and financial forecasting for public and private investment.",
+            "Strategic financial planning, including long-term investment roadmaps and funding strategies."
+          ]
+        },
+        {
+          "title": "Environmental Impact Assessment (EIA)",
+          "points": [
+            "Analysis of environmental and social impacts for compliance with sustainability and regulatory standards.",
+            "Integration of climate resilience and green-finance principles into project planning."
+          ]
+        },
+        {
+          "title": "Integrated Feasibility Frameworks",
+          "points": [
+            "Frameworks that combine institutional, economic and environmental dimensions for large-scale projects.",
+            "Solutions that balance economic growth with environmental stewardship."
+          ]
+        }
+      ],
+      "engagements": [
+        "adb-nsep"
       ]
     },
     {
@@ -47,6 +138,56 @@
         "Pipelines",
         "Market sounding",
         "De-risking"
+      ],
+      "descriptor": "Climate finance, PPP advisory, bankability assessment and investment pipelines.",
+      "task": "Prepare an investable climate and green-finance pipeline",
+      "ctaLabel": "Discuss climate-finance readiness",
+      "intro": "We integrate climate strategy, ESG frameworks, biodiversity and circular-economy principles into economic and development policy, so clients can manage climate risk, capture growth opportunities and make the case for investment in resilience.",
+      "groups": [
+        {
+          "title": "Sustainable Markets & Green Investment",
+          "text": "Data-driven strategies that align sustainability with global standards and open the way to green investment.",
+          "points": [
+            "Climate-resilient market transformation that decouples growth from environmental degradation.",
+            "Sustainable finance and education platforms, including green bonds, impact investing and leadership learning.",
+            "Strategies for climate-resilient infrastructure and renewable-energy transitions.",
+            "International sustainability alignment: regulatory compliance, cross-border partnerships and alignment with ESG frameworks and climate commitments."
+          ]
+        },
+        {
+          "title": "Circular & Regenerative Economy",
+          "text": "Pathways to resilient, resource-efficient systems.",
+          "points": [
+            "Circular-economy business models that prioritize resource efficiency, material recovery and sustainable production.",
+            "Sustainable management of energy, water and materials that supports a just transition to a low-carbon economy.",
+            "Regenerative models that restore ecosystems, improve social equity and build long-term economic resilience."
+          ]
+        },
+        {
+          "title": "ESG: Environmental & Social",
+          "text": "Helping businesses reduce their ecological footprint, strengthen labor standards and improve community relations.",
+          "points": [
+            "Climate strategies that reduce emissions and build resilience to environmental risk.",
+            "Resource optimization for water, energy and raw materials, with waste reduction and pollution control.",
+            "Sustainable, socially responsible sourcing, and biodiversity programs that protect and restore natural habitats.",
+            "Fair labor practices, community engagement, CSR initiatives and gender diversity and inclusion."
+          ]
+        },
+        {
+          "title": "ESG: Governance, Strategy & Reporting",
+          "text": "Transparency, accountability and ESG strategies aligned with company goals and stakeholder expectations.",
+          "points": [
+            "ESG reporting frameworks aligned with global standards, including mandatory ESG disclosures.",
+            "Advice on board diversity, independence, governance structures, anti-corruption policies and ethical guidelines.",
+            "ESG impact assessments that measure the effect of sustainability initiatives.",
+            "Digital tools for ESG data collection and reporting, with training for staff and management."
+          ]
+        }
+      ],
+      "engagements": [
+        "sida-cpd-textile",
+        "agro-board-biodiversity",
+        "gggf-urban-climate"
       ]
     },
     {
@@ -62,6 +203,52 @@
         "Process redesign",
         "Capacity development",
         "Change management"
+      ],
+      "descriptor": "Institutional diagnostics, public financial management reform and change-management support.",
+      "task": "Make a policy operational",
+      "ctaLabel": "Discuss institutional strengthening",
+      "intro": "A sound policy still fails when the institutions that must deliver it lack clear mandates, workable processes or the capacity to follow through. We work with governments, regulators and public bodies to find where delivery breaks down, then build the arrangements, skills and incentives that make implementation consistent.",
+      "groups": [
+        {
+          "title": "Institutional Diagnostics",
+          "text": "Understanding why implementation stalls before anything is redesigned.",
+          "points": [
+            "Reviews of mandates, structures, roles and coordination between agencies.",
+            "Process and bottleneck mapping from decision to delivery on the ground.",
+            "Political-economy reading of who must act, what moves them and where reform is feasible."
+          ]
+        },
+        {
+          "title": "Governance & Accountability Frameworks",
+          "text": "Rules and oversight that are transparent, proportionate and workable.",
+          "points": [
+            "Frameworks for transparent, accountable governance that minimize inefficiency and build public trust.",
+            "Clear decision rights, reporting lines and performance standards.",
+            "Institutional arrangements that reduce bureaucratic burden while protecting citizens."
+          ]
+        },
+        {
+          "title": "Public Financial Management & Delivery Models",
+          "text": "Linking budgets, procurement and service delivery.",
+          "points": [
+            "PFM reform options sequenced to the institution’s capacity to absorb them.",
+            "Delivery models and process redesign that cut delay and duplication.",
+            "Implementation road maps with milestones, responsibilities and risks."
+          ]
+        },
+        {
+          "title": "Capacity Development & Change Management",
+          "text": "Making change last after the advisers leave.",
+          "points": [
+            "Capacity building for officials and institutional leaders in policy formulation and implementation.",
+            "Change-management plans, communication and coaching for the teams that carry reform.",
+            "Learning loops that feed delivery data back into management decisions."
+          ]
+        }
+      ],
+      "engagements": [
+        "bmdf-oscb",
+        "bmdf-transformation"
       ]
     },
     {
@@ -77,7 +264,52 @@
         "Outcome harvesting",
         "Dashboards",
         "Adaptive management"
-      ]
+      ],
+      "descriptor": "Baseline and endline studies, process and impact evaluations, and MEL systems.",
+      "task": "Measure a baseline or attribute impact",
+      "ctaLabel": "Commission a baseline or evaluation",
+      "intro": "Combining social-science expertise, digital innovation and adaptive learning, our MERLA work goes beyond evaluation. It gives organizations the tools, knowledge and strategies to create sustainable, measurable change across sectors.",
+      "groups": [
+        {
+          "title": "Impact Evaluation",
+          "text": "Globally benchmarked methods for informed decisions.",
+          "points": [
+            "Outcome and impact evaluations using quasi-experimental and counterfactual methods to measure effectiveness and attribution.",
+            "Mixed-method frameworks that integrate qualitative insight with quantitative techniques.",
+            "Data collection benchmarked to World Bank and OECD-DAC criteria, randomized designs and established donor good practice.",
+            "Gender-transformative evaluation that identifies structural barriers and drives equity-focused improvement."
+          ]
+        },
+        {
+          "title": "Monitoring & Results Measurement",
+          "text": "Real-time insight for adaptive program management.",
+          "points": [
+            "Secure, scalable, context-specific data systems that strengthen decisions, transparency and accountability.",
+            "Real-time monitoring with interactive dashboards, analytics and geospatial tools such as GIS and remote sensing.",
+            "Capacity building for governments, donors and development organizations, aligned with the SDGs, the Paris Agreement and ESG requirements.",
+            "Design and implementation of M&E systems that track progress and inform continuous improvement."
+          ]
+        },
+        {
+          "title": "Fit-for-Purpose Evaluation",
+          "text": "Tailored, adaptive evaluation for complex challenges.",
+          "points": [
+            "Bespoke mixed-method designs combining econometric and statistical analysis with qualitative methods such as Most Significant Change and participatory research.",
+            "Sector-specific evaluation for climate resilience, global health, education and sustainable development, aligned with national priorities.",
+            "Operational and adaptive research that identifies bottlenecks and improves resource efficiency during implementation."
+          ]
+        },
+        {
+          "title": "Action Research & Collaboration",
+          "text": "Participatory learning for complex challenges.",
+          "points": [
+            "Participatory action research that engages communities, policymakers and institutions in co-creating local solutions.",
+            "Pause-and-reflect workshops and continuous learning cycles for real-time program adaptation.",
+            "Knowledge exchange that links local insight to global frameworks such as the SDGs, the UNFCCC and the Paris Agreement."
+          ]
+        }
+      ],
+      "engagements": []
     },
     {
       "slug": "data-digital-responsible-ai",
@@ -92,6 +324,56 @@
         "AI readiness and governance",
         "Service design",
         "Digital inclusion"
+      ],
+      "descriptor": "Digital government strategy, data governance, digital public infrastructure and AI readiness.",
+      "task": "Modernize systems responsibly",
+      "ctaLabel": "Discuss a digital readiness assessment",
+      "intro": "Reliable decisions need reliable data. We design and manage surveys and data systems, and apply analytics and digital tools so evidence reaches decision-makers quickly, without compromising data quality, inclusion or accountability.",
+      "groups": [
+        {
+          "title": "Survey Design & Management",
+          "points": [
+            "Tailor-made survey tools, protocols and sampling designs that ensure accuracy and inclusivity.",
+            "Digital data collection on platforms such as ODK and SurveyCTO.",
+            "Management of large-scale baseline, midline and endline surveys, from field-staff training to quality assurance."
+          ]
+        },
+        {
+          "title": "Data Collection & Analysis",
+          "points": [
+            "Data collection protocols aligned with international standards.",
+            "Econometric and statistical analysis, with clear visualization for decision-makers.",
+            "Rigorous validation for transparent, high-quality and reproducible datasets."
+          ]
+        },
+        {
+          "title": "Data Science & Digital Engineering",
+          "points": [
+            "Machine learning, AI and data-visualization tools.",
+            "Automated data pipelines for efficiency and scale.",
+            "User-friendly dashboards for real-time decision-making."
+          ]
+        },
+        {
+          "title": "Digital Monitoring Solutions",
+          "text": "Automation and digital tools for smarter, cost-effective decisions.",
+          "points": [
+            "Machine-learning and AI-assisted analytics for data accuracy, trend forecasting and timely decisions.",
+            "Cost-effective digital platforms and dashboards for real-time performance tracking.",
+            "IoT devices and digital reporting tools that improve data integrity and reduce reporting delays."
+          ]
+        },
+        {
+          "title": "Policy-Relevant Insights & Adaptation",
+          "points": [
+            "Synthesis of data into actionable insights for stakeholders.",
+            "Program learning fed into policymaking for adaptive management.",
+            "Custom strategies that address root causes."
+          ]
+        }
+      ],
+      "engagements": [
+        "worldbank-fat"
       ]
     }
   ]

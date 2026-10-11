@@ -3,7 +3,7 @@
     {
       "slug": "adb-nsep",
       "client": "Asian Development Bank",
-      "year": "2024–2025",
+      "year": "2022–2023",
       "sector": "Education & Human Capital",
       "sectorSlug": "education-skills-human-capital",
       "title": "Feasibility Study of New Secondary & Madrasah Education Projects (NSEP)",
@@ -18,11 +18,11 @@
     {
       "slug": "sida-cpd-textile",
       "client": "SIDA / CPD",
-      "year": "2024",
+      "year": "2022–2023",
       "sector": "Climate Action & ESG",
       "sectorSlug": "sustainable-finance-esg-circular-economy",
       "title": "Securing the Green Transition of the Textile and Ready-Made Garments Sector",
-      "summary": "Empirical investigation into firm-level green technology adoption and circular water management in the textile and RMG sector.",
+      "summary": "Empirical investigation into firm-level green technology adoption and circular water management in the textile and RMG sector. Research and advocacy program for the Embassy of Sweden and the Centre for Policy Dialogue (Jan 2022 – Jun 2023): a nationwide survey of 400 firms, 120 key informant interviews and 8 focus groups on the barriers and drivers of the green transition and the policy and green-finance landscape, carried from research design to policy briefs.",
       "tags": [
         "Climate & ESG",
         "Research",
@@ -33,11 +33,11 @@
     {
       "slug": "worldbank-fat",
       "client": "World Bank",
-      "year": "2023–2024",
+      "year": "2019–2020",
       "sector": "Economic & Survey Design",
       "sectorSlug": "economic-transformation-trade-private-sector",
       "title": "Firm-Level Adoption of Technology (FAT) Survey for Manufacturing",
-      "summary": "Nationwide empirical survey measuring technology intensity and digital management practices across manufacturing firms.",
+      "summary": "Nationwide empirical survey measuring technology intensity and digital management practices across manufacturing firms. For the World Bank’s Firm-Level Adoption of Technology (FAT) Survey 2019 (Feb 2019 – Dec 2020): questionnaire design, survey programming guidance, fieldwork training, data quality control and analysis for a policy report covering eight manufacturing sectors, with dissemination seminars.",
       "tags": [
         "Survey Design",
         "Technology Adoption",
@@ -48,7 +48,7 @@
     {
       "slug": "bmdf-oscb",
       "client": "Ministry of Finance / BMDF",
-      "year": "2023–2025",
+      "year": "2019–2020",
       "sector": "Data & Digital Governance",
       "sectorSlug": "governance-institutions-public-finance",
       "title": "Operation Support & Capacity Building (OSCB) for the Municipal Development Fund",
@@ -67,7 +67,7 @@
       "sector": "Institutions & Public Finance",
       "sectorSlug": "governance-institutions-public-finance",
       "title": "Transforming BMDF into a Next-Generation Municipal Financing Institution",
-      "summary": "IP3 led a transformation roadmap — redesigning governance, introducing innovative finance tools such as PPPs and bonds, building institutional capacity and embedding a 10-year business plan.",
+      "summary": "IP3 led a transformation roadmap — redesigning governance, introducing innovative finance tools such as PPPs and bonds, building institutional capacity and embedding a 10-year business plan. It builds on the founder’s earlier work on the World Bank-supported Municipal Governance & Services Project (Sep 2019 – Jun 2020): a 10-year financial roadmap, cost-benefit analyses and GIS-informed investment pipelines for BMDF’s green municipal infrastructure.",
       "tags": [
         "Development Finance",
         "Governance",
