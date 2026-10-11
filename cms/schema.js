@@ -152,18 +152,10 @@ module.exports = {
       str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }),
       list('cards', 'Capabilities', [
         slug(), str('title', 'Title'), str('short', 'Short name'), text('problem', 'The problem a client brings'), strs('deliverables', 'Typical deliverables'),
-      ], { summary: '{title}' }),
-    ]),
-    file('solutions', '10 · Solutions (on the Capabilities page)', 'content/solutions.json', [
-      str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('lead', 'Intro paragraph', { max: 600, soft: 420 }),
-      list('items', 'Solutions — drag to set display order', [
-        hidden, slug('slug', 'Anchor slug', { hint: 'Lower-case words joined by hyphens. Used for /capabilities#slug links — set once.' }),
-        str('title', 'Title', { max: 100 }), str('short', 'Short name', { max: 40 }),
-        text('tagline', 'One-line summary', { max: 220, soft: 160 }), text('intro', 'Intro paragraph', { max: 600, soft: 420 }),
-        list('groups', 'Offerings (shown as an accordion)', [
-          str('title', 'Offering title', { max: 80 }), text('text', 'Short description', { optional: true, max: 300 }), strs('points', 'Points'),
+        text('intro', 'What this capability covers', { max: 600, soft: 420 }),
+        list('groups', 'What it includes (opens under the row)', [
+          str('title', 'Area title', { max: 80 }), text('text', 'Short description', { optional: true, max: 300 }), strs('points', 'Points'),
         ], { summary: '{title}' }),
-        strs('caps', 'Draws on these capabilities', { hint: 'Capability URL slugs, e.g. policy-economics-strategy.', ref: 'capabilities' }),
         strs('engagements', 'Related engagements', { optional: true, hint: 'Engagement slugs from the Engagements list.', ref: 'engagements' }),
       ], { summary: '{title}' }),
     ]),

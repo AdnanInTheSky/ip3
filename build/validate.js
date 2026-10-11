@@ -19,7 +19,7 @@ const REQUIRED_HEADING_KEYS = [
   'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'about-network',
   'why-capabilities', 'why-sectors', 'why-work', 'why-method', 'cta-why',
   'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes',
-  'capabilities-start', 'capability-deliverables', 'capability-applied', 'solution-draws-on', 'solution-related', 'sector-add-value', 'sector-capabilities',
+  'capabilities-start', 'capability-deliverables', 'capability-applied', 'capability-includes', 'capability-related', 'sector-add-value', 'sector-capabilities',
   'sector-related', 'insights-field', 'insights-publications', 'people-network', 'contact-visit', 'contact-ways', 'contact-faq', 'contact-form',
   'cta-default', 'cta-about', 'cta-approach', 'cta-capabilities', 'cta-sectors', 'cta-sector',
   'cta-engagements', 'cta-insights', 'cta-people', 'not-found',
