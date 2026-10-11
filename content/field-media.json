@@ -31,12 +31,49 @@
   ],
   "videos": [
     {
-      "slug": "data-reel",
-      "src": "/assets/video/data.mp4",
-      "poster": "/assets/img/poster-data.webp",
-      "title": "Data and evidence",
-      "caption": "Placeholder entry for the film layout; replace with the selected films.",
-      "caps": ["data-digital-responsible-ai"]
+      "slug": "ip3-brand-film",
+      "src": "/assets/video/reel/ip3-brand-film.mp4",
+      "poster": "/assets/img/reel/ip3-brand-film.webp",
+      "title": "IP3 brand film",
+      "caption": "A 30-second film: a sewing machine in close-up, climate and energy data on a touchscreen, the circular economy projects title card, and a closing card with the line From polycrisis to polysolution.",
+      "runtime": "0:30",
+      "caps": ["policy-economics-strategy", "institutions-governance-delivery", "monitoring-evaluation-learning"]
+    },
+    {
+      "slug": "circular-economy-projects",
+      "src": "/assets/video/reel/circular-economy-projects.mp4",
+      "poster": "/assets/img/reel/circular-economy-projects.webp",
+      "title": "Circular economy projects",
+      "caption": "An animated IP3 Consulting title card reading Circular Economy Projects, with the labels Economic Model, Circular and Regenerative Approach.",
+      "runtime": "0:05",
+      "caps": ["development-finance", "program-project-design"]
+    },
+    {
+      "slug": "climate-action-esg",
+      "src": "/assets/video/reel/climate-action-esg.mp4",
+      "poster": "/assets/img/reel/climate-action-esg.webp",
+      "title": "Climate action, circular economy and ESG",
+      "caption": "Animated title cards reading Climate Action, Circular Economy, Environment, and Environment Social Governance (ESG).",
+      "runtime": "0:07",
+      "caps": ["development-finance", "policy-economics-strategy"]
+    },
+    {
+      "slug": "city-building",
+      "src": "/assets/video/reel/city-building.mp4",
+      "poster": "/assets/img/reel/city-building.webp",
+      "title": "High-rise towers and a city skyline",
+      "caption": "A slow shot from height past glass high-rise towers, with the city spread out below.",
+      "runtime": "0:10",
+      "caps": ["program-project-design", "institutions-governance-delivery"]
+    },
+    {
+      "slug": "climate-data-technology",
+      "src": "/assets/video/reel/climate-data-technology.mp4",
+      "poster": "/assets/img/reel/climate-data-technology.webp",
+      "title": "Climate and energy data on a touchscreen",
+      "caption": "A hand moves through charts, wind-turbine models and solar-panel diagrams on a large touchscreen.",
+      "runtime": "0:14",
+      "caps": ["data-digital-responsible-ai", "monitoring-evaluation-learning"]
     }
   ]
 }
