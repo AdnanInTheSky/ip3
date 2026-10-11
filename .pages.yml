@@ -1734,6 +1734,105 @@ content:
             type: string
             list: true
             required: true
+  - name: solutions
+    label: "10 · Solutions (on the Capabilities page)"
+    type: file
+    path: content/solutions.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Small label"
+        type: string
+        required: true
+      - name: h2
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+      - name: lead
+        label: "Intro paragraph"
+        type: text
+        required: true
+        options:
+          maxlength: 600
+      - name: items
+        label: "Solutions — drag to set display order"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: slug
+            label: "Anchor slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Used for /capabilities#slug links — set once."
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: short
+            label: "Short name"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: tagline
+            label: "One-line summary"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+          - name: intro
+            label: "Intro paragraph"
+            type: text
+            required: true
+            options:
+              maxlength: 600
+          - name: groups
+            label: "Offerings (shown as an accordion)"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: title
+                label: "Offering title"
+                type: string
+                required: true
+                options:
+                  maxlength: 80
+              - name: text
+                label: "Short description"
+                type: text
+                options:
+                  maxlength: 300
+              - name: points
+                label: "Points"
+                type: string
+                list: true
+                required: true
+          - name: caps
+            label: "Draws on these capabilities"
+            type: string
+            list: true
+            required: true
+            description: "Capability URL slugs, e.g. policy-economics-strategy."
+          - name: engagements
+            label: "Related engagements"
+            type: string
+            list: true
+            description: "Engagement slugs from the Engagements list."
   - name: sectors
     label: "11 · Sectors (drag to reorder)"
     type: file

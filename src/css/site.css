@@ -490,6 +490,26 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .caprow q{display:block;margin-top:16px;quotes:none;font-family:var(--f-display);font-style:italic;font-size:1.15rem;color:var(--ink-2);line-height:1.45}
 .caprow h4{font:600 .7rem var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
 
+/* capabilities page: five solutions */
+.sol-jump{gap:10px}
+.sol-jump .chip{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;font-size:.78rem;transition:background-color .3s,border-color .3s}
+.sol-jump .chip b{color:#f0b9a3;letter-spacing:.16em}
+.sol-jump .chip:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.3)}
+.sol__aside{display:grid;gap:22px;align-content:start}
+.sol__n{font-family:var(--f-display);font-weight:300;font-size:3.4rem;line-height:.9;color:transparent;-webkit-text-stroke:1px var(--rust-500)}
+.sol h2{font-size:clamp(1.9rem,3.2vw,2.9rem);line-height:1.1}
+.sol__intro{color:var(--ink-2);max-width:60ch}
+.sol__meta h4{font:600 .7rem var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:6px 0 14px}
+.sol a.chip{transition:background-color .3s,color .3s}
+.sol a.chip:hover{background:var(--rust-100);color:var(--ink)}
+.sol__engs{display:grid;gap:12px}
+.sol__engs .link{text-transform:none;letter-spacing:0;font-size:.92rem;line-height:1.4}
+.sol__engs .link svg{flex:none}
+.sol .acc details .sol__body{padding:0 0 26px}
+.sol .acc details .sol__body p{padding:0 0 10px;font-size:1.02rem}
+.sol .acc .checks li{padding:12px 0;font-size:.95rem}
+@media (min-width:1041px){.sol__aside{position:sticky;top:130px}}
+
 .legal h2{font-size:1.7rem;margin:44px 0 12px}
 .legal p,.legal li{color:var(--ink-2);margin-bottom:14px}
 .legal ul{list-style:disc;padding-left:22px}

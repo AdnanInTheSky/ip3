@@ -23,6 +23,7 @@ module.exports = {
   mandates: C.file('home/mandates'),
   stats: live(C.file('home/stats').items),
   capabilities: C.file('capabilities'),
+  solutions: { ...C.file('solutions'), items: live(C.file('solutions').items) },
   whyIp3: C.file('home/why-ip3').items,
   sectors: live(C.file('sectors').items),
   translation: C.file('home/translation'),

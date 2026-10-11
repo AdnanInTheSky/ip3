@@ -72,10 +72,27 @@ function capabilities() {
   const body = [
     phero({ crumbs: [breadcrumb('/capabilities')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'video', src: '/assets/video/data.mp4', poster: '/assets/img/poster-data.webp' } }),
     sec(rows),
+    solutionsIntro(),
+    ...D.solutions.items.map(solutionSection),
     sec(`${sectionHead('capabilities-start')}<div class="cards4" data-stagger>${D.about.lifecycle.map((l, i) => tile(l.title, l.text, '0' + (i + 1))).join('')}</div>`, 'section--sand'),
     cta('cta-capabilities'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/capabilities', body });
+}
+
+/* Solutions: the five service lines carried over from the earlier site, shown below the capability rows */
+function solutionsIntro() {
+  const s = D.solutions;
+  const jump = s.items.map((x, i) => `<a class="chip" href="#${x.slug}"><b>0${i + 1}</b>${esc(x.short)}</a>`).join('');
+  return `<section class="section section--dark on-dark dark" id="solutions"><div class="container">${head(esc(s.eyebrow), rich(s.h2), esc(s.lead))}<nav class="chips sol-jump" aria-label="${esc(s.eyebrow)}" data-stagger>${jump}</nav></div></section>`;
+}
+
+function solutionSection(s, i) {
+  const bg = ['', 'section--sand', 'section--paper', 'section--sand', ''][i % 5];
+  const caps = s.caps.map((k) => capBySlug[k]).filter(Boolean).map((c) => `<a class="chip" href="#${c.slug}">${esc(c.short)}</a>`).join('');
+  const engs = (s.engagements || []).map((k) => engBySlug[k]).filter(Boolean).map((e) => `<li><a class="link" href="/engagements#${e.slug}">${esc(e.title)}${arrow}</a></li>`).join('');
+  const groups = s.groups.map((g, j) => `<details${j === 0 ? ' open' : ''}><summary>${esc(g.title)}</summary><div class="sol__body">${g.text ? `<p>${esc(g.text)}</p>` : ''}<ul class="checks">${g.points.map((p) => `<li>${esc(p)}</li>`).join('')}</ul></div></details>`).join('');
+  return sec(`<div class="two two--top sol"><div class="sol__aside"><span class="sol__n">0${i + 1}</span><h2 class="split">${plain(s.title)}</h2><p class="lead" data-reveal>${esc(s.tagline)}</p><p class="sol__intro" data-reveal>${esc(s.intro)}</p><div class="sol__meta" data-reveal><h4>${esc(D.headings['solution-draws-on'].title)}</h4><div class="chips">${caps}</div></div>${engs ? `<div class="sol__meta" data-reveal><h4>${esc(D.headings['solution-related'].title)}</h4><ul class="sol__engs">${engs}</ul></div>` : ''}</div><div class="acc" data-stagger>${groups}</div></div>`, bg, s.slug);
 }
 
 /* ---------------- Sectors ---------------- */
