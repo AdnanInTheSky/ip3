@@ -1,3 +1,28 @@
+# Responsive refinement — 2026-10-12 (branch `responsive-refine`, from main 92e8786)
+
+- Goal: phone and tablet presentation only. No text, order, asset, link or route changes.
+- Files:
+  - `src/css/site.css`: new block at the end, "responsive art direction".
+  - `src/css/cap/90-responsive.css`: new; /capabilities micro labels.
+  - `src/css/cap/50-browser.css`: record-sheet arrows keep their names for screen readers.
+  - `src/layout.js`: drawer links get `aria-current`; the drawer gets `data-lenis-prevent` so it scrolls while Lenis is stopped.
+  - `src/js/site.js`: `initHsNative`, so the sector progress line follows a native swipe below 900px.
+- Fixed:
+  - Menu clipped in phone landscape and on short phones (it now scrolls, and the current page is marked).
+  - Hero slide labels hidden at 760px and below (restored; 2×2 at 420px and below).
+  - Hero copy clipped on short screens (the hero now grows with its copy).
+  - Sector card text shown only on hover on touch screens (now always shown).
+  - Sector thumbnails and the "Scroll / All sectors" bar hidden on mobile (both restored).
+  - Text under 10.8px at 1040px and below (lifted to 10.9 to 11.5px).
+  - Small tap targets (hit areas expanded with no layout change).
+  - Safe areas; the footer wordmark spans the full width.
+- Verified:
+  - The content inventory (text, headings, sections, links, media, alts, controls, meta) is identical on all 21 pages.
+  - Desktop layout is identical at 1280, 1440 and 1920 (positions of every h1–h3, p, img and .btn).
+  - No horizontal overflow at 320, 360, 375, 390, 430, 600, 768 or 1024px.
+  - `npm run check`, `npm test` (50/50) and `npm run verify` all pass.
+- Not verified: real iOS/Android devices, Safari/Firefox, Lighthouse field data (LCP/INP/CLS), screen readers.
+
 # IP3 site implementation handoff — 2026-10-10
 
 ## Repository state

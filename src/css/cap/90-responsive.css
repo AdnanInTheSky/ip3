@@ -1,0 +1,5 @@
+/* responsive finish — handheld screens: the smallest labels on this page are lifted to a readable size (same text, same layout) */
+@media (max-width:1040px){
+  .cp-filter i,.cp-view button,.cp-row__clients b,.cp-rail a,.cp-founder__src,.cp-g .cp-mono,.cp-rec__pillars .cp-pillars,.cp-rec__in h4{font-size:.72rem}
+  .cp-pillars,.cp-mini__meta,.cp-mini .cp-pillars,.cp-filmchip .cp-mono,.cp-card__badge,.cp-card__meta,.cp-rec__k,.cp-rec__dl dt,.cp-rec__scope .cp-mono,.cp-rec__pillars ul,.cp-rec__eng .cp-mono,.cp-rec__photo figcaption,.cp-reel__rt{font-size:.68rem}
+}

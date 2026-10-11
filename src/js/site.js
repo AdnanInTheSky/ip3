@@ -205,6 +205,16 @@
     if (d.fonts && d.fonts.ready) d.fonts.ready.then(start); else start();
   }
 
+  /* ---------- sector scroller, native mode ---------- */
+  // below 900px (and with reduced motion) the cards scroll natively; the progress line follows the swipe
+  function initHsNative() {
+    var track = $('[data-hs-track]'), fill = $('[data-hs-fill]'); if (!track || !fill) return;
+    track.addEventListener('scroll', function () {
+      var max = track.scrollWidth - track.clientWidth;
+      fill.style.transform = 'scaleX(' + (max > 0 ? track.scrollLeft / max : 0) + ')';
+    }, { passive: true });
+  }
+
   /* ---------- Lenis ---------- */
   function initLenis() {
     if (reduce || !window.Lenis) return;
@@ -594,7 +604,7 @@
   }
 
   /* ---------- boot ---------- */
-  initChrome(); initForms(); initLazyVideo(); initInteractive();
+  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative();
   if (!hasGsap) { root.classList.remove('js'); initHero(); return; }
   initLenis();
   initHero();
