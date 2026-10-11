@@ -1906,7 +1906,7 @@ content:
         label: "Founder summary (from the signed CV)"
         type: text
         required: true
-        description: "Do not add a years-of-experience figure here until IP3 confirms one number: the signed CV says 20, the IP3 profile and site say 17."
+        description: "Taken from the signed CV (20 years of professional experience, confirmed by IP3)."
         options:
           maxlength: 460
       - name: founderEducation

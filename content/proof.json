@@ -43,7 +43,7 @@
       "market": "bangladesh",
       "role": "Economist and Financial Analyst",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Jan 2025 – ongoing",
       "status": "current",
       "reference": "Feasibility Study, ADB TA-6950: BAN",
       "location": "Bangladesh",
@@ -62,7 +62,7 @@
       "pillars": "fnff",
       "caps": ["program-project-design", "institutions-governance-delivery"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Feasibility Study, ADB TA-6950: BAN)",
-      "note": "Current assignment; outputs are not confirmed. Dates withheld while the record is reconciled. The outcome of the studied project is not part of this record."
+      "note": "Current assignment; outputs are not confirmed. The outcome of the studied project is not part of this record."
     },
     {
       "slug": "nsep-tvet",
@@ -74,7 +74,7 @@
       "market": "bangladesh",
       "role": "Economist and Financial Analyst",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Jan 2024 – Dec 2024",
       "status": "delivered",
       "reference": "Feasibility Study, ADB TA-6950: BAN",
       "location": "Bangladesh",
@@ -93,7 +93,7 @@
       "pillars": "fnnf",
       "caps": ["program-project-design", "policy-economics-strategy"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Feasibility Study, ADB TA-6950: BAN)",
-      "note": "Dates withheld while the record is reconciled. USD 44.108M is the programme’s estimated budget, not money managed. The outcome of the studied project is not part of this record."
+      "note": "USD 44.108M is the programme’s estimated budget, not money managed. The outcome of the studied project is not part of this record."
     },
     {
       "slug": "nextgen-primary-gpe",
@@ -105,7 +105,7 @@
       "market": "bangladesh",
       "role": "Economist and Financial Analyst",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Jun 2022 – Oct 2023",
       "status": "delivered",
       "reference": "Feasibility Study under the Global Partnership for Education Program Development Grant, with MoPME and ADB",
       "location": "Bangladesh",
@@ -121,7 +121,7 @@
       "pillars": "fnff",
       "caps": ["program-project-design", "data-digital-responsible-ai"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Feasibility Study under the Global Partnership for Education Program Development Grant, with MoPME and ADB)",
-      "note": "Dates withheld while the record is reconciled. The record lists responsibilities only. The outcome of the studied project is not part of this record."
+      "note": "The record lists responsibilities only. The outcome of the studied project is not part of this record."
     },
     {
       "slug": "nsep-56088",
@@ -133,7 +133,7 @@
       "market": "bangladesh",
       "role": "Economist and Financial Analyst",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Jan 2022 – Dec 2023",
       "status": "delivered",
       "reference": "ADB TA-6950-BAN: Supporting Education Sector Projects (56088-001)",
       "location": "Bangladesh",
@@ -150,7 +150,7 @@
       "caps": ["program-project-design", "policy-economics-strategy"],
       "engagement": "adb-nsep",
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · ADB TA-6950-BAN: Supporting Education Sector Projects (56088-001))",
-      "note": "Dates withheld while the record is reconciled. The outcome of the studied project is not part of this record."
+      "note": "The outcome of the studied project is not part of this record."
     },
     {
       "slug": "green-transition-rmg",
@@ -195,7 +195,7 @@
       "market": "bangladesh",
       "role": "Economic Advisor",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Apr 2018 – Dec 2018",
       "status": "delivered",
       "reference": "Under Detailed Techno-Economic Feasibility Study and Conceptual Port Master Planning",
       "location": "Bangladesh",
@@ -211,7 +211,7 @@
       "pillars": "fnnn",
       "caps": ["development-finance", "program-project-design"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Under Detailed Techno-Economic Feasibility Study and Conceptual Port Master Planning)",
-      "note": "Dates withheld while the record is reconciled. The record covers technical advice and a 15-year financial model; the feasibility study itself was produced by third-party consultants."
+      "note": "The record covers technical advice and a 15-year financial model; the feasibility study itself was produced by third-party consultants."
     },
     {
       "slug": "jolshiri",
@@ -378,7 +378,8 @@
       "pillars": "fffn",
       "caps": ["development-finance", "institutions-governance-delivery", "data-digital-responsible-ai"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Municipal Governance & Services Project (MGSP))",
-      "note": "The record covers planning and analytical inputs; financing outcomes are not claimed."
+      "note": "The record covers planning and analytical inputs; financing outcomes are not claimed.",
+      "engagement": "bmdf-oscb"
     },
     {
       "slug": "cem-bangladesh-india",
@@ -512,7 +513,7 @@
       "market": "bangladesh",
       "role": "M&E Adviser and Impact Evaluation Expert for the entire program partnership",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Apr 2018 – Apr 2020",
       "status": "delivered",
       "location": "Bangladesh",
       "summary": "M&E adviser and impact evaluation expert for the HALOW+ partnership: a randomised trial, health and productivity databases, cost-benefit and business value analysis.",
@@ -526,8 +527,7 @@
       "methods": ["RCT", "Cost-benefit analysis", "Health and productivity databases", "Quantitative business models", "Business value analysis"],
       "pillars": "ffnf",
       "caps": ["monitoring-evaluation-learning", "data-digital-responsible-ai"],
-      "source": "=SOURCE(Founder CV, signed 09/09/2026 · DFID-funded Business Innovation Facility, PwC UK, Tufts University, GSK, Marks & Spencer, CARE International)",
-      "note": "Dates withheld while the record is reconciled."
+      "source": "=SOURCE(Founder CV, signed 09/09/2026 · DFID-funded Business Innovation Facility, PwC UK, Tufts University, GSK, Marks & Spencer, CARE International)"
     },
     {
       "slug": "dsip-dwasa",
@@ -629,7 +629,8 @@
       "pillars": "ffnf",
       "caps": ["data-digital-responsible-ai", "institutions-governance-delivery"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Regional Technical Assistance Project RETA 7743, Phases I–III)",
-      "photo": "adb-conference-head-table-westin"
+      "photo": "adb-conference-head-table-westin",
+      "note": "The founder led this work at SANEM (South Asian Network on Economic Modeling), before IP3. It is shown as the founder’s experience, not as IP3’s work."
     },
     {
       "slug": "global-leap",
@@ -719,7 +720,7 @@
       "market": "international",
       "role": "Research Associate",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Jan 2008 – Aug 2010",
       "status": "delivered",
       "reference": "Pilot project on electricity reforms in Bangladesh, India (West Bengal, Rajasthan) and Nepal",
       "location": "Bangladesh, India, Nepal",
@@ -733,8 +734,7 @@
       "methods": ["Tariff and cost-recovery analysis", "Subsidy and affordability analysis", "Financial modelling", "Comparative cost-benefit analysis"],
       "pillars": "fnnf",
       "caps": ["policy-economics-strategy", "development-finance"],
-      "source": "=SOURCE(Founder CV, signed 09/09/2026 · Pilot project on electricity reforms in Bangladesh, India (West Bengal, Rajasthan) and Nepal)",
-      "note": "Dates withheld while the record is reconciled."
+      "source": "=SOURCE(Founder CV, signed 09/09/2026 · Pilot project on electricity reforms in Bangladesh, India (West Bengal, Rajasthan) and Nepal)"
     },
     {
       "slug": "tobacco-taxation",
@@ -746,7 +746,7 @@
       "market": "bangladesh",
       "role": "Researcher",
       "roleLevel": "specialist",
-      "period": "",
+      "period": "Jan 2008 – Dec 2008",
       "status": "delivered",
       "location": "Bangladesh",
       "summary": "Price-elasticity estimation, a tax-administration review and advocacy — roundtables, direct lobbying and media — for effective tobacco taxation.",
@@ -760,7 +760,7 @@
       "pillars": "fnnf",
       "caps": ["policy-economics-strategy"],
       "source": "=SOURCE(Founder CV, signed 09/09/2026 · Tobacco-Free Kids, USA)",
-      "note": "Dates withheld while the record is reconciled. The record describes advocacy activities; policy outcomes are not claimed."
+      "note": "The record describes advocacy activities; policy outcomes are not claimed."
     },
     {
       "slug": "sesip-seip-management",

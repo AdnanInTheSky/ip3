@@ -26,6 +26,11 @@
   "statsEyebrow": "The record behind the work",
   "stats": [
     {
+      "n": 20,
+      "suffix": "",
+      "label": "Years of the founder’s professional experience"
+    },
+    {
       "n": 37,
       "suffix": "",
       "label": "Documented assignments, each listed below"
