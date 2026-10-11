@@ -1,5 +1,36 @@
 /* /capabilities — page-wide styles shared by every section module. Loaded after site.css, only on this page.
-   Conventions: classes start with cp-; colours and radii come from the :root tokens in site.css; one file per module (10-hero.css, 20-led.css ...). */
-.cp{--cp-night:#0c0a09;--cp-night-2:#16120f;--cp-line-dark:rgba(255,255,255,.14);--cp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+   Conventions: classes start with cp-; colours and radii come from the :root tokens in site.css; one file per module (10-hero.css, 20-led.css ...).
+   The page reads fully with no JavaScript: hidden-until-revealed states must be gated on html.js and undone under prefers-reduced-motion. */
+.cp{
+  --cp-night:#0c0a09;--cp-night-2:#16120f;--cp-ink-on-dark:rgba(255,255,255,.86);--cp-muted-on-dark:rgba(255,255,255,.62);--cp-line-dark:rgba(255,255,255,.14);
+  --cp-mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  /* one tone per capability, as space-separated rgb so rgb(var(--tone) / .4) works; capability 01..06 */
+  --cp-t1:224 138 106;--cp-t2:217 164 65;--cp-t3:124 193 82;--cp-t4:143 179 201;--cp-t5:230 201 168;--cp-t6:95 183 168;
+  --cp-ease:cubic-bezier(.22,.8,.2,1);
+}
 .cp [id^="cp-"]{scroll-margin-top:96px}
 .cp-mono{font-family:var(--cp-mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase}
+
+/* tone hooks: any element with data-tone="1..6" gets --tone */
+.cp [data-tone="1"]{--tone:var(--cp-t1)}.cp [data-tone="2"]{--tone:var(--cp-t2)}.cp [data-tone="3"]{--tone:var(--cp-t3)}
+.cp [data-tone="4"]{--tone:var(--cp-t4)}.cp [data-tone="5"]{--tone:var(--cp-t5)}.cp [data-tone="6"]{--tone:var(--cp-t6)}
+
+/* E·D·T·R dots (util.pillarDots): f full (filled), h partial (half filled), n not recorded (faint outline). Colour follows --pc, default the text colour */
+.cp-pillars{--pc:currentColor;--pc-on:var(--cp-night);display:inline-flex;gap:5px;align-items:center;font-family:var(--cp-mono);font-size:.6rem;line-height:1;letter-spacing:.04em}
+.cp-pillars i{display:inline-grid;place-items:center;width:17px;height:17px;border-radius:50%;font-style:normal;border:1px solid var(--pc)}
+.cp-pillars i[data-l="f"]{background:var(--pc);color:var(--pc-on);font-weight:700}
+.cp-pillars i[data-l="h"]{background:linear-gradient(90deg,color-mix(in srgb,var(--pc) 45%,transparent) 50%,transparent 50%)}
+.cp-pillars i[data-l="n"]{opacity:.4}
+/* assignment thumbnail (util.thumb): a verified photo, or a generated contour pattern with the client monogram */
+.cp-thumb{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--cp-night-2);border-radius:var(--r-sm)}
+.cp-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cp-motif{
+  --tone:var(--cp-t1);
+  background:
+    repeating-radial-gradient(circle at var(--x1) var(--y1),transparent 0 15px,rgb(var(--tone)/.34) 15px 16px),
+    repeating-radial-gradient(circle at var(--x2) var(--y2),transparent 0 24px,rgb(var(--tone)/.2) 24px 25px),
+    radial-gradient(120% 90% at var(--x1) var(--y1),rgb(var(--tone)/.16),transparent 62%),
+    linear-gradient(135deg,var(--cp-night-2),var(--cp-night));
+}
+.cp-thumb__abbr{position:absolute;left:16px;bottom:12px;font:600 clamp(1.6rem,3.2vw,2.4rem)/1 var(--f-ui);letter-spacing:.04em;color:rgb(var(--tone)/.9);mix-blend-mode:screen}
+@media (prefers-reduced-motion:reduce){.cp *{scroll-behavior:auto!important}}
