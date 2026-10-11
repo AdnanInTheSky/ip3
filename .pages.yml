@@ -1734,6 +1734,25 @@ content:
             type: string
             list: true
             required: true
+          - name: descriptor
+            label: "Plain-language line under the title"
+            type: string
+            required: true
+            description: "The words a buyer would search for, e.g. Policy studies, economic appraisal, regulatory reform and sector strategies."
+            options:
+              maxlength: 140
+          - name: task
+            label: "Often commissioned to"
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: ctaLabel
+            label: "Button under the row"
+            type: string
+            required: true
+            options:
+              maxlength: 60
           - name: intro
             label: "What this capability covers"
             type: text
@@ -1770,6 +1789,1119 @@ content:
             type: string
             list: true
             description: "Engagement slugs from the Engagements list."
+  - name: capproof_hero
+    label: "10 · Capabilities page — Top of page & figures"
+    type: file
+    path: content/capability-proof/hero.json
+    format: json
+    fields:
+      - name: jumpLabel
+        label: "Jump-links label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: jump
+        label: "Jump links"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: id
+            label: "Section id on the page"
+            type: string
+            required: true
+            description: "Developer-set. Do not change."
+            options:
+              maxlength: 40
+      - name: scrollCue
+        label: "Scroll cue"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: statsEyebrow
+        label: "Figures eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: stats
+        label: "Figures"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{n}{suffix} {label}"
+        required: true
+        fields:
+          - name: n
+            label: "Number"
+            type: number
+            required: true
+          - name: suffix
+            label: "Suffix"
+            type: string
+            options:
+              maxlength: 4
+          - name: label
+            label: "Label"
+            type: string
+            required: true
+            options:
+              maxlength: 120
+      - name: statsNote
+        label: "Note under the figures"
+        type: text
+        required: true
+        options:
+          maxlength: 320
+      - name: partnersLabel
+        label: "Development partners label"
+        type: string
+        required: true
+        options:
+          maxlength: 100
+  - name: capproof_led
+    label: "10 · Capabilities page — Founder-led, expert-backed"
+    type: file
+    path: content/capability-proof/led.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+        options:
+          maxlength: 120
+      - name: lead
+        label: "Intro"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: founderLabel
+        label: "Founder label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: founderSummary
+        label: "Founder summary (from the signed CV)"
+        type: text
+        required: true
+        description: "Do not add a years-of-experience figure here until IP3 confirms one number: the signed CV says 20, the IP3 profile and site say 17."
+        options:
+          maxlength: 460
+      - name: founderEducation
+        label: "Founder education line"
+        type: text
+        required: true
+        options:
+          maxlength: 200
+      - name: founderSource
+        label: "Source line"
+        type: string
+        required: true
+        options:
+          maxlength: 120
+      - name: founderCta
+        label: "Founder link label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: founderHref
+        label: "Founder link"
+        type: string
+        required: true
+      - name: expertsLabel
+        label: "Experts label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: experts
+        label: "Experts shown"
+        type: string
+        list: true
+        required: true
+        description: "Person slugs from the People list."
+      - name: expertsCta
+        label: "Team link label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: expertsHref
+        label: "Team link"
+        type: string
+        required: true
+  - name: capproof_method
+    label: "10 · Capabilities page — How the work is done (3D scroll)"
+    type: file
+    path: content/capability-proof/method.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+        options:
+          maxlength: 140
+      - name: lead
+        label: "Intro"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: hint
+        label: "Scroll hint"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: formulaLabel
+        label: "Label under the formula"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: statement
+        label: "Closing statement"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: railLabel
+        label: "Stage rail label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: recordLabel
+        label: "Link to the assignment record"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: stages
+        label: "The five stages"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{label}"
+        required: true
+        fields:
+          - name: slug
+            label: "Stage key"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: label
+            label: "Name"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+          - name: line
+            label: "One line"
+            type: string
+            required: true
+            options:
+              maxlength: 100
+          - name: detail
+            label: "What it covers"
+            type: text
+            required: true
+            options:
+              maxlength: 220
+          - name: formula
+            label: "Formula or method line"
+            type: string
+            options:
+              maxlength: 120
+          - name: figureValue
+            label: "Figure"
+            type: string
+            options:
+              maxlength: 12
+          - name: figureLabel
+            label: "What the figure counts"
+            type: string
+            options:
+              maxlength: 160
+          - name: photo
+            label: "Photo from the meeting-photo list"
+            type: string
+          - name: record
+            label: "Assignment record it comes from"
+            type: string
+          - name: parts
+            label: "Evidence breakdown (dot field)"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{n} {label}"
+            fields:
+              - name: n
+                label: "Number"
+                type: number
+                required: true
+              - name: label
+                label: "What it counts"
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+          - name: chartLabel
+            label: "Chart label (illustrative)"
+            type: string
+            options:
+              maxlength: 80
+          - name: options
+            label: "Options compared (illustrative)"
+            type: string
+            list: true
+          - name: constraintLabel
+            label: "Constraint marker label"
+            type: string
+            options:
+              maxlength: 40
+          - name: criteria
+            label: "Criteria the options are tested against"
+            type: string
+            list: true
+          - name: chain
+            label: "Results-chain steps"
+            type: string
+            list: true
+          - name: phases
+            label: "Delivery phases"
+            type: string
+            list: true
+          - name: caps
+            label: "Capabilities it feeds"
+            type: string
+            list: true
+            required: true
+  - name: capproof_rows
+    label: "10 · Capabilities page — The six rows: labels"
+    type: file
+    path: content/capability-proof/rows.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+        options:
+          maxlength: 140
+      - name: lead
+        label: "Intro"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: taskLabel
+        label: "Often-commissioned-to label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: clientsLabel
+        label: "Commissioned-by label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: proofLabel
+        label: "Assignments-that-prove-it label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: proofMore
+        label: "Open-browser link label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: roomLabel
+        label: "From-the-room label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: filmLabel
+        label: "Related-film label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: startLabel
+        label: "Start-a-conversation label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+  - name: capproof_browser
+    label: "10 · Capabilities page — Assignment browser"
+    type: file
+    path: content/capability-proof/browser.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+        options:
+          maxlength: 140
+      - name: lead
+        label: "Intro"
+        type: text
+        required: true
+        options:
+          maxlength: 520
+      - name: note
+        label: "Note under the browser"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: countLabel
+        label: "Count label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: filterLabel
+        label: "Filter group label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: allLabel
+        label: "All filter"
+        type: string
+        required: true
+        options:
+          maxlength: 20
+      - name: prevLabel
+        label: "Previous"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: nextLabel
+        label: "Next"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: viewLabel
+        label: "View switch label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: carouselLabel
+        label: "Carousel view"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: gridLabel
+        label: "Grid view"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: prevRecordLabel
+        label: "Previous record"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: nextRecordLabel
+        label: "Next record"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: openLabel
+        label: "Open a record"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: closeLabel
+        label: "Close a record"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: currentLabel
+        label: "Current status"
+        type: string
+        required: true
+        options:
+          maxlength: 20
+      - name: deliveredLabel
+        label: "Delivered status"
+        type: string
+        required: true
+        options:
+          maxlength: 20
+      - name: withheldLabel
+        label: "Dates withheld note"
+        type: string
+        required: true
+        options:
+          maxlength: 100
+      - name: clientLabel
+        label: "Client label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: roleLabel
+        label: "Role label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: periodLabel
+        label: "Period label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: referenceLabel
+        label: "Reference label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: locationLabel
+        label: "Geography label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: scopeLabel
+        label: "Scope-figure label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: activitiesLabel
+        label: "Activities label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: methodsLabel
+        label: "Methods label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: pillarsLabel
+        label: "Pillars label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: capsLabel
+        label: "Capabilities label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: engagementLabel
+        label: "IP3 engagement label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: sourceLabel
+        label: "Source label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: photoLabel
+        label: "Photo label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: pillarNames
+        label: "The four pillars"
+        type: object
+        required: true
+        fields:
+          - name: e
+            label: "E"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+          - name: d
+            label: "D"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+          - name: t
+            label: "T"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+          - name: r
+            label: "R"
+            type: string
+            required: true
+            options:
+              maxlength: 24
+      - name: pillarLevels
+        label: "Pillar levels"
+        type: object
+        required: true
+        fields:
+          - name: f
+            label: "Full"
+            type: string
+            required: true
+            options:
+              maxlength: 30
+          - name: h
+            label: "Partial"
+            type: string
+            required: true
+            options:
+              maxlength: 30
+          - name: n
+            label: "None"
+            type: string
+            required: true
+            options:
+              maxlength: 30
+      - name: clientTypes
+        label: "Client types"
+        type: object
+        required: true
+        fields:
+          - name: multilateral
+            label: "Multilateral"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: government
+            label: "Government"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: bilateral
+            label: "Bilateral"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: foundation
+            label: "Foundation"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: private
+            label: "Private"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+          - name: research
+            label: "Research"
+            type: string
+            required: true
+            options:
+              maxlength: 40
+      - name: indexTitle
+        label: "List-view heading"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: ctaLabel
+        label: "Closing button"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: ctaHref
+        label: "Closing button link"
+        type: string
+        required: true
+  - name: capproof_room
+    label: "10 · Capabilities page — In the room (meeting photos)"
+    type: file
+    path: content/capability-proof/room.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+        options:
+          maxlength: 140
+      - name: lead
+        label: "Intro"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: note
+        label: "Caption policy note"
+        type: text
+        required: true
+        options:
+          maxlength: 240
+      - name: prevLabel
+        label: "Previous"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: nextLabel
+        label: "Next"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: openLabel
+        label: "Open a photo"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: closeLabel
+        label: "Close"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: countLabel
+        label: "Count label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+  - name: capproof_reel
+    label: "10 · Capabilities page — On film (videos)"
+    type: file
+    path: content/capability-proof/reel.json
+    format: json
+    fields:
+      - name: eyebrow
+        label: "Eyebrow"
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: title
+        label: "Heading"
+        type: string
+        required: true
+        description: "Wrap words in <em>…</em> to show them in the accent colour."
+        options:
+          maxlength: 140
+      - name: lead
+        label: "Intro"
+        type: text
+        required: true
+        options:
+          maxlength: 420
+      - name: playLabel
+        label: "Play"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: pauseLabel
+        label: "Pause"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: closeLabel
+        label: "Close"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: nowPlayingLabel
+        label: "Now playing"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: relatedLabel
+        label: "Related capability label"
+        type: string
+        required: true
+        options:
+          maxlength: 60
+  - name: proof
+    label: "11 · Proof — documented assignments"
+    type: file
+    path: content/proof.json
+    format: json
+    fields:
+      - name: items
+        label: "Assignments"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{ref} — {short}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: ref
+            label: "Reference label"
+            type: string
+            required: true
+            description: "Short label shown on the card, e.g. B1."
+            options:
+              maxlength: 8
+          - name: title
+            label: "Assignment title (as recorded)"
+            type: string
+            required: true
+            options:
+              maxlength: 260
+          - name: short
+            label: "Plain-language title"
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: client
+            label: "Client or funder (as recorded)"
+            type: string
+            required: true
+            options:
+              maxlength: 300
+          - name: clientType
+            label: "Client type"
+            type: select
+            required: true
+            options:
+              values: ["multilateral", "government", "bilateral", "foundation", "private", "research"]
+          - name: market
+            label: "Market"
+            type: select
+            required: true
+            options:
+              values: ["bangladesh", "international"]
+          - name: role
+            label: "Role (as recorded)"
+            type: string
+            required: true
+            options:
+              maxlength: 300
+          - name: roleLevel
+            label: "Role level"
+            type: select
+            required: true
+            options:
+              values: ["lead", "specialist"]
+          - name: period
+            label: "Period as shown"
+            type: string
+            description: "Leave blank where dates are withheld while the record is reconciled."
+            options:
+              maxlength: 60
+          - name: status
+            label: "Status"
+            type: select
+            required: true
+            options:
+              values: ["current", "delivered"]
+          - name: reference
+            label: "Programme reference"
+            type: string
+            options:
+              maxlength: 140
+          - name: location
+            label: "Geography"
+            type: string
+            options:
+              maxlength: 260
+          - name: summary
+            label: "Summary"
+            type: text
+            required: true
+            options:
+              maxlength: 460
+          - name: activities
+            label: "Recorded activities"
+            type: string
+            list: true
+          - name: methods
+            label: "Methods demonstrated"
+            type: string
+            list: true
+          - name: scope
+            label: "Scope figure (scope, not an outcome)"
+            type: object
+            fields:
+              - name: value
+                label: "Value"
+                type: string
+                required: true
+                options:
+                  maxlength: 24
+              - name: label
+                label: "What it counts"
+                type: string
+                required: true
+                options:
+                  maxlength: 160
+          - name: pillars
+            label: "Pillars E-D-T-R"
+            type: string
+            required: true
+            description: "Four letters, one each for Economics, Data stories, Technology, Research: f = full, h = partial, n = none, e.g. fhff."
+            options:
+              maxlength: 4
+          - name: caps
+            label: "Capabilities this assignment proves"
+            type: string
+            list: true
+            required: true
+            description: "First one is the primary capability."
+          - name: engagement
+            label: "Matching IP3 selected engagement"
+            type: string
+            description: "Only where the two records are the same assignment."
+          - name: photo
+            label: "Verified photo of this assignment"
+            type: string
+            description: "Only where a banner or slide in the photo proves the assignment."
+          - name: source
+            label: "Source line"
+            type: string
+            required: true
+            options:
+              maxlength: 320
+          - name: note
+            label: "Caveat shown on the record"
+            type: text
+            options:
+              maxlength: 320
+  - name: field_media
+    label: "11 · Proof — meeting photos & videos"
+    type: file
+    path: content/field-media.json
+    format: json
+    fields:
+      - name: photos
+        label: "Meeting photos"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{event}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: image
+            label: "Photo"
+            type: image
+            required: true
+            options:
+              media: images
+          - name: w
+            label: "Width in pixels"
+            type: number
+            required: true
+          - name: h
+            label: "Height in pixels"
+            type: number
+            required: true
+          - name: kind
+            label: "What it shows"
+            type: select
+            required: true
+            options:
+              values: ["meeting", "panel", "workshop", "conference", "training", "fieldwork", "briefing", "group"]
+          - name: alt
+            label: "Description for screen readers"
+            type: text
+            required: true
+            options:
+              maxlength: 300
+          - name: event
+            label: "Caption: event"
+            type: string
+            required: true
+            options:
+              maxlength: 160
+          - name: place
+            label: "Caption: place"
+            type: string
+            options:
+              maxlength: 80
+          - name: year
+            label: "Caption: year"
+            type: string
+            options:
+              maxlength: 12
+          - name: fx
+            label: "Focal point, left to right (0-100)"
+            type: number
+            required: true
+          - name: fy
+            label: "Focal point, top to bottom (0-100)"
+            type: number
+            required: true
+          - name: confidence
+            label: "Caption confidence"
+            type: select
+            required: true
+            description: "verified = a banner, slide or name plate in the photo proves the event; generic = the caption describes only what is visible."
+            options:
+              values: ["verified", "generic"]
+          - name: caps
+            label: "Capabilities it relates to"
+            type: string
+            list: true
+            required: true
+          - name: projects
+            label: "Assignments it documents"
+            type: string
+            list: true
+            description: "Only where a banner or slide proves the assignment."
+      - name: videos
+        label: "Videos"
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{title}"
+        required: true
+        fields:
+          - name: hidden
+            label: "Hide this item"
+            type: boolean
+            description: "Tick to take it off the website without deleting it."
+          - name: slug
+            label: "URL slug"
+            type: string
+            required: true
+            description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+          - name: src
+            label: "Video file"
+            type: file
+            required: true
+            options:
+              media: videos
+              extensions: [mp4, webm]
+          - name: poster
+            label: "Poster image"
+            type: image
+            required: true
+            options:
+              media: images
+          - name: title
+            label: "Title"
+            type: string
+            required: true
+            options:
+              maxlength: 120
+          - name: caption
+            label: "Caption"
+            type: text
+            required: true
+            options:
+              maxlength: 240
+          - name: runtime
+            label: "Running time"
+            type: string
+            options:
+              maxlength: 12
+          - name: caps
+            label: "Capabilities it relates to"
+            type: string
+            list: true
+            required: true
   - name: sectors
     label: "11 · Sectors (drag to reorder)"
     type: file

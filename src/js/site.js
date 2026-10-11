@@ -209,6 +209,7 @@
   function initLenis() {
     if (reduce || !window.Lenis) return;
     lenis = new Lenis({ duration: 1.15, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true, wheelMultiplier: 0.95 });
+    window.ip3Lenis = lenis; // page scripts (e.g. /capabilities) scroll and pause through the same instance
     if (hasGsap) {
       lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add(function (t) { lenis.raf(t * 1000); });

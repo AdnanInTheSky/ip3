@@ -146,7 +146,7 @@ function breadcrumb(href) {
   return { label: item.label, href: item.href };
 }
 
-function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', jsonld = [], noindex = false, preload = '', scripts = '' }) {
+function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', jsonld = [], noindex = false, preload = '', scripts = '', styles = '' }) {
   const url = cfg.url + (path === '/' ? '/' : path);
   const fullTitle = path === '/' ? title : `${title} | ${cfg.short}`;
   const analytics = cfg.analytics.enabled && cfg.analytics.webAnalyticsPath && cfg.analytics.speedInsightsPath
@@ -184,7 +184,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" cont
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${fontsHref}">
 <link rel="stylesheet" href="/assets/css/site.css?v=__CSSV__">
-${preload}
+${styles ? `${styles}\n` : ''}${preload}
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js')</script>
 ${ld}
 </head>
