@@ -27,7 +27,7 @@ function header(path) {
   const primary = nav.primary.filter((item) => !item.hidden);
   const links = primary.map((n) => `<a href="${esc(n.href)}"${cur(n.href)}>${esc(n.label)}</a>`).join('');
   const dlinks = [{ href: nav.homeHref, label: nav.homeLabel }, ...primary, { href: nav.contactHref, label: nav.contactLabel }]
-    .map((n, i) => `<a class="d-link" style="transition-delay:${0.25 + i * 0.05}s" href="${esc(n.href)}">${esc(n.label)}</a>`).join('');
+    .map((n, i) => `<a class="d-link" style="transition-delay:${0.25 + i * 0.05}s" href="${esc(n.href)}"${cur(n.href)}>${esc(n.label)}</a>`).join('');
   return `
 <header class="head" data-head>
   <div class="head__bar">
@@ -41,7 +41,7 @@ function header(path) {
     </div>
   </div>
 </header>
-<div class="drawer" id="drawer" data-drawer aria-hidden="true">
+<div class="drawer" id="drawer" data-drawer data-lenis-prevent aria-hidden="true">
   ${dlinks}
   <div class="drawer__foot">${cfg.address.join(', ')}<br><a href="mailto:${cfg.email}">${cfg.email}</a> · <a href="tel:${cfg.phoneHref}">${cfg.phone}</a></div>
 </div>`;
