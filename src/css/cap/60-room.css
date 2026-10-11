@@ -1,0 +1,47 @@
+/* room.js — the meeting-photo coverflow and its lightbox. Without .is-3d it is a plain scroll-snap strip. */
+.cp-room{overflow:hidden}
+.cp-room .section__head{margin-bottom:clamp(24px,3vw,40px)}
+.cp-flow{--w:min(560px,40vw);position:relative}
+.cp-flow__depth{transform-origin:50% 50%}
+.cp-flow__track{position:relative;display:flex;gap:clamp(14px,2vw,28px);overflow-x:auto;scroll-snap-type:x mandatory;padding:24px calc(50% - var(--w) / 2) 18px;scrollbar-width:none;overscroll-behavior-x:contain}
+.cp-flow__track::-webkit-scrollbar{display:none}
+.cp-flow__track.is-dragging{scroll-snap-type:none;cursor:grabbing}
+.cp-flow__item{flex:0 0 var(--w);scroll-snap-align:center;min-width:0}
+.cp-flow__item figure{display:grid;gap:12px}
+.cp-flow__open{display:block;position:relative;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--night-2);box-shadow:0 40px 70px -40px rgba(22,21,19,.55);transform-origin:50% 50%;will-change:transform}
+.cp-flow__open img{width:100%;height:100%;object-fit:cover;-webkit-user-drag:none}
+.cp-flow__open::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12);pointer-events:none}
+.cp-flow__item figcaption{display:grid;gap:10px;transition:opacity .4s}
+.cp-flow__item figcaption .cp-mono{color:var(--ink-2);line-height:1.5}
+.cp-flow__caps{display:flex;flex-wrap:wrap;gap:6px}
+.cp-flow__caps .chip{display:inline-flex;align-items:center;min-height:32px;background:var(--paper);border-color:rgb(var(--tone)/.9)}
+.cp-flow__caps .chip:hover{background:rgb(var(--tone)/.3)}
+.cp-flow.is-3d .cp-flow__item:not(.is-center) figcaption{opacity:0;visibility:hidden}
+.cp-flow.is-3d .cp-flow__item:not(.is-center) .cp-flow__open{cursor:pointer}
+.cp-flow__nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:10px}
+.cp-flow__btn{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--ink);transition:background .3s,color .3s,opacity .3s}
+.cp-flow__btn:hover:not(:disabled){background:var(--ink);color:#fff}
+.cp-flow__btn:disabled{opacity:.35;cursor:default}
+.cp-flow__btn svg{width:18px;height:18px}
+.cp-flow__count{min-width:12ch;text-align:center;color:var(--ink-2)}
+.cp-flow__count b{color:var(--ink)}
+html:not(.js) .cp-flow__nav{display:none}
+.cp-room__note{margin-top:18px;text-align:center;font-size:.86rem;color:var(--muted)}
+@media (max-width:720px){.cp-flow{--w:84vw}}
+
+.cp-lightbox{width:min(1200px,calc(100vw - 24px));max-width:none;max-height:calc(100svh - 24px);padding:clamp(14px,2vw,22px);border:0;border-radius:var(--r);background:var(--cp-night);color:#fff;overflow:auto}
+.cp-lightbox[open]{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px}
+.cp-lightbox::backdrop{background:rgba(8,6,5,.86)}
+.cp-lightbox__fig{grid-column:2;grid-row:1;display:grid;gap:12px;margin:0}
+.cp-lightbox__fig img{width:100%;max-height:calc(100svh - 190px);object-fit:contain;border-radius:var(--r-sm);background:#000}
+.cp-lightbox__fig figcaption{display:grid;gap:6px}
+.cp-lightbox__fig .cp-mono{color:#f0b9a3}
+.cp-lightbox__alt{font-size:.92rem;line-height:1.55;color:var(--cp-ink-on-dark);max-width:90ch}
+.cp-lightbox__nav{grid-row:1;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;border:1px solid var(--cp-line-dark);color:#fff}
+.cp-lightbox__nav[data-step="-1"]{grid-column:1}.cp-lightbox__nav[data-step="1"]{grid-column:3}
+.cp-lightbox__nav:hover{background:#fff;color:var(--ink)}
+.cp-lightbox__nav svg{width:18px;height:18px}
+.cp-lightbox__x{position:absolute;top:10px;right:10px;z-index:2;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(12,10,9,.7);font-size:1.7rem;line-height:1;color:#fff}
+.cp-lightbox__x:hover{background:#fff;color:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.cp-lightbox[open] .cp-lightbox__fig{animation:cp-rise .45s var(--cp-ease)}}
+@media (max-width:640px){.cp-lightbox[open]{grid-template-columns:1fr 1fr}.cp-lightbox__fig{grid-column:1/-1}.cp-lightbox__nav{grid-row:2}.cp-lightbox__nav[data-step="-1"]{grid-column:1;justify-self:start}.cp-lightbox__nav[data-step="1"]{grid-column:2;justify-self:end}}

@@ -58,16 +58,17 @@ const toneOf = (p) => (capBySlug[p.caps[0]] ? capBySlug[p.caps[0]].i + 1 : 1);
 const seed = (s, salt = 0) => { let h = 2166136261 ^ salt; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return ((h >>> 0) % 1000) / 1000; };
 
 // E·D·T·R dots: f = demonstrated, h = partial, n = not recorded. The text alternative names each pillar and level.
-function pillarDots(code) {
+function pillarDots(code, { decorative = false } = {}) {
   const b = T.browser;
   const names = [b.pillarNames.e, b.pillarNames.d, b.pillarNames.t, b.pillarNames.r];
   const letters = ['E', 'D', 'T', 'R'];
   const alt = names.map((n, i) => `${n}: ${b.pillarLevels[code[i]]}`).join('; ');
-  return `<span class="cp-pillars" role="img" aria-label="${esc(alt)}">${letters.map((l, i) => `<i data-l="${code[i]}" aria-hidden="true">${l}</i>`).join('')}</span>`;
+  const a11y = decorative ? 'aria-hidden="true"' : `role="img" aria-label="${esc(alt)}"`;
+  return `<span class="cp-pillars" ${a11y}>${letters.map((l, i) => `<i data-l="${code[i]}" aria-hidden="true">${l}</i>`).join('')}</span>`;
 }
 
 // thumbnail for an assignment: a verified photo, else the matching IP3 engagement's image, else a generated contour motif with the client monogram
-function thumb(p, { sizes = '(min-width:900px) 360px, 80vw' } = {}) {
+function thumb(p, { sizes = '(min-width:900px) 360px, 80vw', mono = true } = {}) {
   const ph = p.photo && photoBySlug[p.photo];
   const eng = p.engagement && engBySlug[p.engagement];
   const src = ph ? ph.image : eng ? eng.image : '';
@@ -77,7 +78,7 @@ function thumb(p, { sizes = '(min-width:900px) 360px, 80vw' } = {}) {
   }
   const x1 = Math.round(seed(p.slug, 1) * 100); const y1 = Math.round(seed(p.slug, 2) * 100);
   const x2 = Math.round(seed(p.slug, 3) * 100); const y2 = Math.round(seed(p.slug, 4) * 100);
-  return `<div class="cp-thumb cp-motif" data-tone="${toneOf(p)}" style="--x1:${x1}%;--y1:${y1}%;--x2:${x2}%;--y2:${y2}%" aria-hidden="true"><span class="cp-thumb__abbr">${esc(abbr(p.client))}</span></div>`;
+  return `<div class="cp-thumb cp-motif" data-tone="${toneOf(p)}" style="--x1:${x1}%;--y1:${y1}%;--x2:${x2}%;--y2:${y2}%" aria-hidden="true">${mono ? `<span class="cp-thumb__abbr">${esc(abbr(p.client))}</span>` : ''}</div>`;
 }
 
 // the period as a short label for badges and meta lines

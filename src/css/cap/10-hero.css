@@ -1,0 +1,41 @@
+/* hero.js — jump bar, figures band, names marquee */
+.cp-jump{position:sticky;top:34px;z-index:90;height:0;display:flex;justify-content:center;padding:0 16px;pointer-events:none}
+.cp-jump__in{pointer-events:auto;transform:translateY(-50%);transition:transform .55s var(--ease);display:flex;align-items:center;gap:12px;max-width:100%;padding:5px 5px 5px 20px;border-radius:999px;background:rgba(18,16,15,.84);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(255,255,255,.14);color:#fff;box-shadow:0 18px 40px -24px rgba(0,0,0,.7)}
+.cp-jump.is-low .cp-jump__in{transform:translateY(calc(-50% + var(--head-h) + 14px))}
+.cp-jump__label{color:var(--cp-muted-on-dark);white-space:nowrap}
+.cp-jump ul{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;overscroll-behavior-x:contain}
+.cp-jump ul::-webkit-scrollbar{display:none}
+.cp-jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;font:600 .74rem var(--f-ui);letter-spacing:.04em;white-space:nowrap;color:rgba(255,255,255,.8);transition:background .3s,color .3s}
+.cp-jump a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.cp-jump a[aria-current="true"]{background:#fff;color:var(--ink)}
+@media (max-width:720px){.cp-jump{padding:0 10px}.cp-jump__label{display:none}.cp-jump__in{padding:4px}.cp-jump a{padding:0 13px}}
+
+.cp-figs{background:var(--cp-night);color:#fff;padding:clamp(76px,9vw,124px) 0 clamp(56px,7vw,90px);perspective:1300px;overflow:hidden}
+.cp-figs .eyebrow{font-size:.72rem}
+.cp-figs__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:30px;border-top:1px solid var(--cp-line-dark);transform-origin:50% 100%}
+.cp-fig{position:relative;padding:30px 24px 6px 0;display:grid;gap:14px;align-content:start}
+.cp-fig+.cp-fig{padding-left:24px;border-left:1px solid var(--cp-line-dark)}
+.cp-fig::before{content:"+";position:absolute;top:0;left:0;transform:translate(-50%,-55%);font:300 1rem/1 var(--cp-mono);color:rgba(255,255,255,.45)}
+.cp-fig__n{font-family:var(--f-display);font-weight:300;font-size:clamp(3rem,6vw,5.4rem);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.cp-fig__l{font:500 .92rem/1.45 var(--f-ui);color:var(--cp-ink-on-dark);max-width:26ch}
+.cp-figs__note{margin-top:30px;max-width:76ch;font-size:.92rem;line-height:1.6;color:var(--cp-muted-on-dark)}
+@media (max-width:900px){.cp-figs__grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cp-fig:nth-child(3){border-left:0;padding-left:0}.cp-fig:nth-child(n+3){border-top:1px solid var(--cp-line-dark)}}
+
+.cp-marquee{margin-top:clamp(40px,6vw,72px);padding-top:22px;border-top:1px solid var(--cp-line-dark)}
+.cp-marquee__top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cp-marquee__label{color:var(--cp-muted-on-dark)}
+.cp-marquee__toggle{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid var(--cp-line-dark);color:var(--cp-ink-on-dark)}
+.cp-marquee__toggle:hover{background:rgba(255,255,255,.08)}
+.cp-marquee__view{margin-top:14px;overflow:hidden}
+.cp-marquee__track ul{display:flex;flex-wrap:wrap;row-gap:6px}
+.cp-marquee__track ul[aria-hidden]{display:none}
+.cp-marquee li{display:flex;align-items:center;font:300 clamp(1.35rem,2.6vw,2.2rem)/1.3 var(--f-display);color:rgba(255,255,255,.84);white-space:nowrap}
+.cp-marquee li::after{content:"";width:6px;height:6px;margin:0 clamp(22px,3.4vw,48px);border-radius:50%;background:rgb(var(--cp-t1)/.85)}
+@keyframes cp-marq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:no-preference){
+  .js .cp-marquee__view{-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+  .js .cp-marquee__track{display:flex;width:max-content;animation:cp-marq 70s linear infinite}
+  .js .cp-marquee__track ul{flex-wrap:nowrap;flex:none}
+  .js .cp-marquee__track ul[aria-hidden]{display:flex}
+  .cp-marquee__view:hover .cp-marquee__track,.cp-marquee.is-paused .cp-marquee__track{animation-play-state:paused}
+}

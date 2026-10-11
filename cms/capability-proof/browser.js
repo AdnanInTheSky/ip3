@@ -9,6 +9,8 @@ module.exports = file('capproof_browser', '10 · Capabilities page — Assignmen
   str('filterLabel', 'Filter group label', { max: 60 }),
   str('allLabel', 'All filter', { max: 20 }),
   str('prevLabel', 'Previous', { max: 30 }), str('nextLabel', 'Next', { max: 30 }),
+  str('viewLabel', 'View switch label', { max: 30 }), str('carouselLabel', 'Carousel view', { max: 30 }), str('gridLabel', 'Grid view', { max: 30 }),
+  str('prevRecordLabel', 'Previous record', { max: 40 }), str('nextRecordLabel', 'Next record', { max: 40 }),
   str('openLabel', 'Open a record', { max: 40 }), str('closeLabel', 'Close a record', { max: 30 }),
   str('currentLabel', 'Current status', { max: 20 }), str('deliveredLabel', 'Delivered status', { max: 20 }),
   str('withheldLabel', 'Dates withheld note', { max: 100 }),
@@ -17,7 +19,7 @@ module.exports = file('capproof_browser', '10 · Capabilities page — Assignmen
   str('scopeLabel', 'Scope-figure label', { max: 60 }), str('activitiesLabel', 'Activities label', { max: 40 }),
   str('methodsLabel', 'Methods label', { max: 40 }), str('pillarsLabel', 'Pillars label', { max: 60 }),
   str('capsLabel', 'Capabilities label', { max: 40 }), str('engagementLabel', 'IP3 engagement label', { max: 60 }),
-  str('sourceLabel', 'Source label', { max: 30 }),
+  str('sourceLabel', 'Source label', { max: 30 }), str('photoLabel', 'Photo label', { max: 40 }),
   obj('pillarNames', 'The four pillars', [str('e', 'E', { max: 24 }), str('d', 'D', { max: 24 }), str('t', 'T', { max: 24 }), str('r', 'R', { max: 24 })]),
   obj('pillarLevels', 'Pillar levels', [str('f', 'Full', { max: 30 }), str('h', 'Partial', { max: 30 }), str('n', 'None', { max: 30 })]),
   obj('clientTypes', 'Client types', [

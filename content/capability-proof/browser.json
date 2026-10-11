@@ -8,6 +8,11 @@
   "allLabel": "All",
   "prevLabel": "Previous",
   "nextLabel": "Next",
+  "viewLabel": "View",
+  "carouselLabel": "Carousel",
+  "gridLabel": "Grid",
+  "prevRecordLabel": "Previous record",
+  "nextRecordLabel": "Next record",
   "openLabel": "Open record",
   "closeLabel": "Close",
   "currentLabel": "Current",
@@ -25,8 +30,18 @@
   "capsLabel": "Capabilities shown",
   "engagementLabel": "Also in IP3 selected engagements",
   "sourceLabel": "Source",
-  "pillarNames": { "e": "Economics", "d": "Data stories", "t": "Technology", "r": "Research" },
-  "pillarLevels": { "f": "Demonstrated", "h": "Partial", "n": "Not recorded" },
+  "photoLabel": "In the room",
+  "pillarNames": {
+    "e": "Economics",
+    "d": "Data stories",
+    "t": "Technology",
+    "r": "Research"
+  },
+  "pillarLevels": {
+    "f": "Demonstrated",
+    "h": "Partial",
+    "n": "Not recorded"
+  },
   "clientTypes": {
     "multilateral": "Multilateral",
     "government": "Government of Bangladesh",

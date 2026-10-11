@@ -1996,6 +1996,18 @@ content:
         required: true
         options:
           maxlength: 420
+      - name: railLabel
+        label: "Stage rail label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: recordLabel
+        label: "Link to the assignment record"
+        type: string
+        required: true
+        options:
+          maxlength: 60
       - name: stages
         label: "The five stages"
         type: object
@@ -2046,6 +2058,53 @@ content:
           - name: photo
             label: "Photo from the meeting-photo list"
             type: string
+          - name: record
+            label: "Assignment record it comes from"
+            type: string
+          - name: parts
+            label: "Evidence breakdown (dot field)"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{n} {label}"
+            fields:
+              - name: n
+                label: "Number"
+                type: number
+                required: true
+              - name: label
+                label: "What it counts"
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+          - name: chartLabel
+            label: "Chart label (illustrative)"
+            type: string
+            options:
+              maxlength: 80
+          - name: options
+            label: "Options compared (illustrative)"
+            type: string
+            list: true
+          - name: constraintLabel
+            label: "Constraint marker label"
+            type: string
+            options:
+              maxlength: 40
+          - name: criteria
+            label: "Criteria the options are tested against"
+            type: string
+            list: true
+          - name: chain
+            label: "Results-chain steps"
+            type: string
+            list: true
+          - name: phases
+            label: "Delivery phases"
+            type: string
+            list: true
           - name: caps
             label: "Capabilities it feeds"
             type: string
@@ -2179,6 +2238,36 @@ content:
         required: true
         options:
           maxlength: 30
+      - name: viewLabel
+        label: "View switch label"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: carouselLabel
+        label: "Carousel view"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: gridLabel
+        label: "Grid view"
+        type: string
+        required: true
+        options:
+          maxlength: 30
+      - name: prevRecordLabel
+        label: "Previous record"
+        type: string
+        required: true
+        options:
+          maxlength: 40
+      - name: nextRecordLabel
+        label: "Next record"
+        type: string
+        required: true
+        options:
+          maxlength: 40
       - name: openLabel
         label: "Open a record"
         type: string
@@ -2281,6 +2370,12 @@ content:
         required: true
         options:
           maxlength: 30
+      - name: photoLabel
+        label: "Photo label"
+        type: string
+        required: true
+        options:
+          maxlength: 40
       - name: pillarNames
         label: "The four pillars"
         type: object

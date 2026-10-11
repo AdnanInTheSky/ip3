@@ -1,4 +1,4 @@
-const { str, text, list, strs, file, slug } = require('../helpers');
+const { str, text, num, list, strs, file, slug } = require('../helpers');
 
 module.exports = file('capproof_method', '10 · Capabilities page — How the work is done (3D scroll)', 'content/capability-proof/method.json', [
   str('eyebrow', 'Eyebrow', { max: 80 }),
@@ -7,6 +7,8 @@ module.exports = file('capproof_method', '10 · Capabilities page — How the wo
   str('hint', 'Scroll hint', { max: 80 }),
   str('formulaLabel', 'Label under the formula', { max: 80 }),
   text('statement', 'Closing statement', { max: 420 }),
+  str('railLabel', 'Stage rail label', { max: 40 }),
+  str('recordLabel', 'Link to the assignment record', { max: 60 }),
   list('stages', 'The five stages', [
     slug('slug', 'Stage key'),
     str('label', 'Name', { max: 24 }),
@@ -16,6 +18,14 @@ module.exports = file('capproof_method', '10 · Capabilities page — How the wo
     str('figureValue', 'Figure', { optional: true, max: 12 }),
     str('figureLabel', 'What the figure counts', { optional: true, max: 160 }),
     str('photo', 'Photo from the meeting-photo list', { optional: true, ref: 'fieldphotos' }),
+    str('record', 'Assignment record it comes from', { optional: true, ref: 'proof' }),
+    list('parts', 'Evidence breakdown (dot field)', [num('n', 'Number'), str('label', 'What it counts', { max: 60 })], { optional: true, summary: '{n} {label}' }),
+    str('chartLabel', 'Chart label (illustrative)', { optional: true, max: 80 }),
+    strs('options', 'Options compared (illustrative)', { optional: true }),
+    str('constraintLabel', 'Constraint marker label', { optional: true, max: 40 }),
+    strs('criteria', 'Criteria the options are tested against', { optional: true }),
+    strs('chain', 'Results-chain steps', { optional: true }),
+    strs('phases', 'Delivery phases', { optional: true }),
     strs('caps', 'Capabilities it feeds', { ref: 'capabilities' }),
   ], { summary: '{label}' }),
 ]);

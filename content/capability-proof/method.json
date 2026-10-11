@@ -11,7 +11,11 @@
       "label": "Reality",
       "line": "Complex problems rarely arrive structured.",
       "detail": "Field observation, consultation, document review, institutional context.",
-      "caps": ["policy-economics-strategy", "institutions-governance-delivery"]
+      "caps": [
+        "policy-economics-strategy",
+        "institutions-governance-delivery"
+      ],
+      "photo": "conference-table-consultation"
     },
     {
       "slug": "evidence",
@@ -20,7 +24,25 @@
       "detail": "Survey design, data collection, cost estimation, gap assessment.",
       "figureValue": "528",
       "figureLabel": "units of primary evidence in one green-transition study: 400 firms, 120 key informant interviews, 8 focus groups",
-      "caps": ["data-digital-responsible-ai", "monitoring-evaluation-learning"]
+      "caps": [
+        "data-digital-responsible-ai",
+        "monitoring-evaluation-learning"
+      ],
+      "parts": [
+        {
+          "n": 400,
+          "label": "firms surveyed"
+        },
+        {
+          "n": 120,
+          "label": "key informant interviews"
+        },
+        {
+          "n": 8,
+          "label": "focus groups"
+        }
+      ],
+      "record": "green-transition-rmg"
     },
     {
       "slug": "model",
@@ -28,21 +50,58 @@
       "line": "Build the analysis the decision actually needs.",
       "detail": "ENPV/FNPV, EIRR/FIRR, benefit-cost ratios, scenario and sensitivity analysis.",
       "formula": "ENPV = Σ (Bₜ − Cₜ) / (1 + r)ᵗ",
-      "caps": ["development-finance", "program-project-design", "policy-economics-strategy"]
+      "caps": [
+        "development-finance",
+        "program-project-design",
+        "policy-economics-strategy"
+      ],
+      "chartLabel": "Net cash flow by year, Y0–Y15",
+      "record": "nsep-56088"
     },
     {
       "slug": "decision",
       "label": "Decision",
       "line": "Frame alternatives against real constraints.",
       "detail": "Options analysis, affordability, institutional capacity, risk.",
-      "caps": ["policy-economics-strategy", "institutions-governance-delivery"]
+      "caps": [
+        "policy-economics-strategy",
+        "institutions-governance-delivery"
+      ],
+      "options": [
+        "Option A",
+        "Option B",
+        "Option C"
+      ],
+      "constraintLabel": "Budget ceiling",
+      "criteria": [
+        "Affordability",
+        "Institutional capacity",
+        "Risk"
+      ]
     },
     {
       "slug": "system",
       "label": "System",
       "line": "Design something that can act on it.",
       "detail": "Costed phasing, financing structure, M&E framework, delivery arrangements.",
-      "caps": ["program-project-design", "development-finance", "monitoring-evaluation-learning"]
+      "caps": [
+        "program-project-design",
+        "development-finance",
+        "monitoring-evaluation-learning"
+      ],
+      "chain": [
+        "Inputs",
+        "Activities",
+        "Outputs",
+        "Outcome"
+      ],
+      "phases": [
+        "Phase 1",
+        "Phase 2",
+        "Phase 3"
+      ]
     }
-  ]
+  ],
+  "railLabel": "The five stages",
+  "recordLabel": "See the assignment record"
 }
