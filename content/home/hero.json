@@ -5,10 +5,15 @@
     "Development Finance",
     "Institutional Reform",
     "MEL & Impact",
-    "Digital & Responsible AI"
+    "Digital & Responsible AI",
+    "Climate Action",
+    "Economic & Financial Feasibility",
+    "Program Design",
+    "Survey"
   ],
   "slides": [
     {
+      "hidden": false,
       "tab": "Policy to delivery",
       "video": {
         "src": "/assets/video/hero-1.mp4",
@@ -20,7 +25,8 @@
       "cta": [
         {
           "label": "Discuss an Assignment",
-          "href": "/contact"
+          "href": "/contact",
+          "ghost": false
         },
         {
           "label": "Explore Our Capabilities",
@@ -30,6 +36,7 @@
       ]
     },
     {
+      "hidden": false,
       "tab": "Sustainable finance",
       "video": {
         "src": "/assets/video/hero-2.mp4",
@@ -41,7 +48,8 @@
       "cta": [
         {
           "label": "Sustainable finance & ESG",
-          "href": "/sectors/sustainable-finance-esg-circular-economy"
+          "href": "/sectors/sustainable-finance-esg-circular-economy",
+          "ghost": false
         },
         {
           "label": "See our approach",
@@ -51,6 +59,7 @@
       ]
     },
     {
+      "hidden": false,
       "tab": "Climate & resilience",
       "video": {
         "src": "/assets/video/hero-3.mp4",
@@ -62,7 +71,8 @@
       "cta": [
         {
           "label": "Climate, energy & resilience",
-          "href": "/sectors/climate-energy-resilience"
+          "href": "/sectors/climate-energy-resilience",
+          "ghost": false
         },
         {
           "label": "Selected engagements",
@@ -72,6 +82,7 @@
       ]
     },
     {
+      "hidden": false,
       "tab": "Institutions & data",
       "video": {
         "src": "/assets/video/hero-4.mp4",
@@ -83,7 +94,8 @@
       "cta": [
         {
           "label": "Digital government & data",
-          "href": "/sectors/digital-government-data-dpi"
+          "href": "/sectors/digital-government-data-dpi",
+          "ghost": false
         },
         {
           "label": "Meet our people",
