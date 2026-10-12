@@ -2997,7 +2997,7 @@ content:
         required: true
         description: "The sector this story belongs to (its slug in Sectors). Set once."
       - name: statement
-        label: "Opening statement (text lights up as visitors scroll)"
+        label: "Opening statement (always readable)"
         type: object
         required: true
         fields:
@@ -3070,6 +3070,28 @@ content:
             type: text
             options:
               maxlength: 420
+          - name: system
+            label: "Policy, local systems and implementation layers"
+            type: object
+            fields:
+              - name: framework
+                label: "Policy frameworks"
+                type: string
+                required: true
+                options:
+                  maxlength: 100
+              - name: setting
+                label: "Local systems"
+                type: string
+                required: true
+                options:
+                  maxlength: 100
+              - name: outcome
+                label: "Implementation"
+                type: string
+                required: true
+                options:
+                  maxlength: 100
           - name: steps
             label: "Steps (five)"
             type: object
@@ -3240,7 +3262,7 @@ content:
                 options:
                   maxlength: 160
       - name: gallery
-        label: "Field gallery (photos and films flying past in depth)"
+        label: "Editorial field gallery (photos and films with captions)"
         type: object
         required: true
         fields:

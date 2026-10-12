@@ -1,63 +1,68 @@
-# Sector pages — motion architecture
+# Sector pages — institutional motion architecture
 
-## One page system, eight signature scenes
+Design revision for [PR #9](https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/9), branch `sectors-cinematic`, 12 October 2026. The sector pages connect policy frameworks, local systems and implementation through restrained spatial depth. All policy content remains readable independently of the animation.
 
-Every sector page follows the same chapter order, so the eight read as one family. Only the signature scene changes, and each one draws the sector's own argument.
+## Reading structure
 
-| # | Chapter | What moves | Why |
-| --- | --- | --- | --- |
-| 1 | Aperture hero | The header film opens from a narrow window to full bleed. Then, as the reader scrolls, the frame closes in and recedes, the giant sector number sinks and the headline lifts away. | A window into the sector, then the camera pulls back to the whole picture. |
-| 2 | Statement | One large sentence lights up word by word as it crosses the viewport. | Slows the reader down for the sector's thesis. |
-| 3 | Signature scene | A sticky drawing beside five text steps. Scroll position becomes a continuous step value that drives the drawing. A rail jumps between steps. | The sector's method, as a picture that changes with the argument. |
-| 4 | Practice index | Large expanding rows. The headline slides on hover and the body eases open. | Dense service lists stay scannable. |
-| 5 | Field gallery | Photos and films hang at different depths and sides; the camera flies forward through them. | Real rooms and real places, felt as space rather than as a grid. |
-| 6 | On the record | Assignment cards slide sideways in a pinned stage and turn towards the centre in 3D. Each card opens the full record on /capabilities. | The evidence reads as a ledger. |
-| 7 | Expertise | Focus areas and the capabilities applied (existing copy), with pointer-tilt cards. | Routes the reader to /capabilities. |
-| 8 | Next-sector portal | The next sector's photo opens from a small window to a wide frame. | A continuous journey through all eight sectors. |
-
-### The eight scenes
-
-| Sector | Scene | The five steps drive… |
+| Chapter | Behaviour | Purpose |
 | --- | --- | --- |
-| 01 Climate, Energy & Resilience | **Terrain** (CSS 3D): nine contour slices of a landscape with shadowed terrace walls, a water plane and a slowly orbiting camera | Risk: water rises and low ground floods rust → Plan: a planning grid settles over the land → Build: infrastructure extrudes from the terraces and the water recedes → Finance: flows run in from the edge → Govern: a canopy spreads |
-| 02 Education, Skills & Human Capital | **Ladder** (CSS 3D): five thick platforms climbing, with a trail of light | Each platform is a stage of the system (primary, secondary, madrasah, skills, systems), each tied to an assignment. The camera climbs and earlier stages turn green. |
-| 03 Health Systems & Social Protection | **Coverage** (canvas): a population of 336 dots, labelled illustrative | Measure: dots form a grid in a sweep → Compare: two groups separate → Include: a subgroup is ringed and some dots are left out → Adapt: those in the programme are reached → Cost: the dots stack into two columns |
-| 04 Digital Government, Data & DPI | **Stack** (CSS 3D): five plates of a digital state in an exploded view, with data packets rising through them | Data → Systems → Ecosystem → Services → People; the current plate lights up |
-| 05 Governance, Institutions & Public Finance | **Flow** (SVG): five nodes on an arc; dashed "hand-offs" become solid links as the reader moves on, with pulses travelling once a link is complete | Diagnose → Co-create → Regulate → Deliver → Account; on the last step a feedback loop draws back to the start |
-| 06 Economic Transformation, Trade & PSD | **Chain** (SVG): a value chain panning sideways at three parallax depths (far hills, the track and stations, the cargo) | Firms → Value chains → Trade → Investment → Policy |
-| 07 Sustainable Finance, ESG & Circular Economy | **Loop** (SVG morph): "Take · Make · Waste" on a straight line bends into a circle | The segments of the loop light in turn as an arrow travels round; E·S·G appears at the centre on the last step |
-| 08 AI & Emerging Technology | **Lattice** (canvas): about 50 nodes, labelled illustrative | Scattered signals → collected data → a layered model with links → guardrails go up and weak links fade → four service nodes → pulses reach people |
+| Hero | Full headline and challenge remain visible; desktop media has at most 24 px of scroll-linked drift | Establish the sector and its mandate without moving the text |
+| Statement | Static, readable thesis and supporting paragraphs | State IP3's position directly |
+| Method | Three labelled spatial layers accompany five fully readable steps | Connect policy context, local conditions and practical work |
+| Practice | Native disclosure rows for the detailed service lists | Keep the service offer scannable and keyboard accessible |
+| Field gallery | Editorial grid with captions and native video controls | Let readers inspect media at their own pace |
+| Assignment record | Responsive grid of linked assignment cards | Keep every record available to keyboard, touch and pointer users |
+| Expertise and next sector | Direct capability links and a static next-sector route | Support continued exploration without another scroll sequence |
 
-## Technology
+## Three layers, eight models
 
-- **Existing stack only.** The site's vendored GSAP and Lenis stay as they are; the sector scripts use Lenis for smooth jumps and their own single scroll loop. No new runtime library was added, three.js and WebGL included. Every scene is CSS 3D, SVG or canvas 2D, so the scenes cost about 9 KB of gzipped JavaScript and render on low-end GPUs.
-- **Files.** `src/sec/*.js` render the HTML at build time, one module per chapter. `src/css/sec/*.css` and `src/js/sec/*.js` are joined into `assets/css/sectors.css` (31 KB) and `assets/js/sectors.js` (30 KB), loaded only on the eight sector pages. The body class `sxp` scopes the styles; `.sx` was already the sector list on /sectors.
-- **Scroll engine.** `00-base.js` runs one `requestAnimationFrame` loop after each scroll or resize, and each module subscribes to it. The scene engine (`39-scene.js`) finds the fractional step whose centre sits at 55% of the viewport height, eases towards it, and calls the drawing's `set(sp)`. Drawings interpolate keyframes with smoothstep. Sticky positioning does the pinning, which avoids pin-spacer conflicts with Lenis.
-- **Content-driven.** Step labels and text come from `content/sector-pages/<slug>.json` (CMS: "11 · Sector pages"). The drawing type is a select field, and validation insists on five steps because the drawings are built for five.
+The optional CMS `scene.system` object contains `framework`, `setting` and `outcome`, each limited to 100 characters. These appear under the labels **Policy frameworks**, **Local systems** and **Implementation**. They summarize concepts already present in each page; they are conceptual framing, not new measurements or claims of delivered results.
 
-## Fallbacks
+The framework layer sits furthest back, the local system occupies the middle, and the implementation layer is nearest the reader. Small differences in translation and Z-axis placement make those relationships legible. The model is labelled conceptual; its explanatory text is available in the neighbouring ordered list.
 
-| Condition | Behaviour |
+| Sector | Drawing | Method represented |
+| --- | --- | --- |
+| Climate, Energy & Resilience | CSS 3D terrain | Risk → Plan → Build → Finance → Govern |
+| Education, Skills & Human Capital | CSS 3D platforms | Primary → Secondary → Madrasah → Skills → Systems |
+| Health Systems & Social Protection | Canvas coverage model | Measure → Compare → Include → Adapt → Cost |
+| Digital Government, Data & DPI | CSS 3D stack | Data → Systems → Ecosystem → Services → People |
+| Governance, Institutions & Public Finance | SVG policy flow | Diagnose → Co-create → Regulate → Deliver → Account |
+| Economic Transformation, Trade & PSD | SVG value chain | Firms → Value chains → Trade → Investment → Policy |
+| Sustainable Finance, ESG & Circular Economy | SVG circular model | Linear → Design → Recover → Regenerate → Finance |
+| AI & Emerging Technology | Canvas layered network | Data → Analytics → Governance → Applications → Adoption |
+
+There are no idle ambient diagram loops. Model changes follow reading progress. Canvas drawings have static SVG fallbacks, including grouped coverage dots and a connected layered network, so JavaScript or canvas failure does not leave an empty model.
+
+## Runtime and lifecycle
+
+- `src/sec/*.js` renders the chapters and drawings at build time. Sector CSS and JavaScript are bundled from `src/css/sec/` and `src/js/sec/` and loaded on the eight sector pages.
+- CSS 3D, SVG and canvas 2D provide the drawings. No Three.js or WebGL runtime is used for this redesign.
+- Existing GSAP ScrollTrigger supplies progress and refresh notifications. The sector pages use native browser scrolling. A sector-only early return in `src/js/site.js` bypasses global GSAP reveals and Lenis; other routes retain their existing initialization path.
+- The scene controller maps the centres of the five steps to the reading line at 52% of viewport height. A bounded requestAnimationFrame loop approaches that target with time-based exponential damping: `1 - exp(-dt / 240)`, using a 240 ms time constant and a capped elapsed-time step.
+- The loop stops after convergence, when the page is hidden, or when the scene leaves the viewport. Resize, font readiness, load and motion-preference changes recalculate the layout.
+- Desktop sticky motion requires at least 900 px width, at least 680 px height, an available drawer and ScrollTrigger, and no reduced-motion preference. The measured sticky stack must also fit the viewport, including the reserved offset. Wrapped navigation, longer labels or text zoom can therefore trigger the static layout.
+- Native in-page method links update the hash, transfer focus to the selected step and scroll to it. Reading the content never depends on using these controls.
+
+## Preferences and media
+
+The **Reduce motion** checkbox stores the reader's preference in local storage when available. OS `prefers-reduced-motion` changes apply immediately, and an OS reduction request takes precedence over the page control. No reload is required.
+
+The hero uses a poster before loading background video. Playback starts only while the hero is visible and motion is permitted; it pauses off screen, in a hidden document, with reduced motion, or when Save-Data is enabled. Gallery films use native video controls rather than background playback.
+
+| Condition | Result |
 | --- | --- |
-| No JavaScript | Every word is in the HTML. Drawings show their final state. The gallery and the ledger are swipeable rows. The hero is a static full-bleed header. |
-| `prefers-reduced-motion` | No hero pull-back, word lighting, gallery flight or ledger pinning; the drawings show their final state and every step is at full strength. The header film does not autoplay. Ambient canvas motion and SVG pulses are paused. |
-| Under 900 px wide | The drawing sticks above the steps, which scroll beneath it. The gallery and ledger fall back to native swipe rows; the step rail is hidden because the steps are numbered. |
-| Off screen | The header film pauses, canvas loops stop and the scene engine stops updating. |
-| Accessibility | Drawings are `aria-hidden` because the steps carry the same words. The rail is a labelled `nav` of in-page links. A "Skip the scroll scene" link appears on keyboard focus. Every section is labelled by its heading. Films have descriptive labels. |
+| Mobile or short viewport | Compact static overview in normal document flow; all five steps follow |
+| Reduced motion, including a saved preference or live OS change | Static model and hero, with all text available |
+| No JavaScript | Readable server-rendered content, static drawings and SVG canvas fallbacks |
+| Blocked or unavailable ScrollTrigger | Static method overview; no sticky scroll choreography |
+| Canvas unavailable | Static SVG remains visible; it is hidden only after a successful canvas draw |
+| Hidden tab or off-screen scene | Animation work stops; hero background playback pauses |
+| Keyboard navigation | Visible focus, labelled method links, focusable steps and ordinary assignment links |
 
-## References consulted
+The drawing is decorative and hidden from assistive technology; the ordered method text carries its meaning. Sector headings and supporting text remain visible without global reveal scripts. Gallery captions and assignment content remain in normal document flow.
 
-The listing pages were read on 12 Oct 2026. Behance returned 403 and Dribbble returned no readable results, so neither informed the work. The designs here are original, and no code or assets were copied.
+## Performance scope
 
-| Reference | Source | Technique taken as a cue | Verified from page text |
-| --- | --- | --- | --- |
-| Heron AI | Awwwards (Site of the Day, 12 Oct 2026), heronaiapp.com | A four-step "observe / advise / act / learn" scroll sequence built with GSAP and canvas, the same stack used here | Yes |
-| AskLex — journey | Awwwards, asklex.law/journey | Scene counter ("01 / 06"), a skip link and a reduced-motion setting on a long scroll journey | Yes |
-| Point Of View | Awwwards, readingstones.com | A long-read organised in dated chapters (scrollytelling cadence) | Yes |
-| New York's New Maestro | Awwwards, nyphil.org | Parallax and transitions with GSAP, Svelte and canvas, no WebGL | Tags only |
-| Singularity | Awwwards, singularity.engl.design | Camera flying through depth (the gallery flight) | From the description |
-| TIGRIS; Chladni · A Geometry of Sound | Awwwards | Particles moving from chaos to order (the AI lattice) | From the descriptions; both are WebGL, so only the idea was used |
-| Hitit | Awwwards, hitit.com | Tone: a corporate "digital journey" in CSS and GSAP | Tags and description |
-| 3D Tablet Scroll Animation; 3D Fold On Scroll; tc-playground | Webflow Made-in-Webflow | Objects turning in 3D on scroll (ledger cards, exploded stack) | From the descriptions |
+At the current verification checkpoint, the sector JavaScript is approximately 8.6 KB gzipped and CSS approximately 7.8 KB gzipped. These figures describe the sector bundles, not the entire page or its media, and should be refreshed if final layout refinements change the build.
 
-No reference matched the aperture hero, the word-lit statement or the next-sector portal. Those are standard editorial techniques, built here from scratch.
+The implementation reduces continuous animation work and avoids a WebGL dependency. Real-device frame pacing, field Core Web Vitals and corporate-network performance have not been measured. No zero-frame-drop guarantee is made. See [QA-REPORT.md](QA-REPORT.md) for the tested environments and remaining checks.

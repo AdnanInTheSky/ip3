@@ -23,3 +23,11 @@
 .sx-skip{position:absolute;left:var(--gutter);top:16px;z-index:30;background:#fff;color:var(--ink);padding:10px 16px;border-radius:999px;font:600 .78rem var(--f-ui);opacity:0;pointer-events:none}
 .sx-skip:focus{opacity:1;pointer-events:auto}
 #sx-after-scene{display:block;height:0;outline:0}
+/* Sector copy is readable before, during and without animation. */
+.js .sxp .split:not(.is-split){visibility:visible}
+.js .sxp [data-reveal],.js .sxp [data-stagger]>*{opacity:1;transform:none;will-change:auto}
+.js body.sxp{animation:none}
+.sxp :focus-visible{outline:2px solid var(--rust);outline-offset:6px}
+.sxp .dark :focus-visible{outline-color:#f0b9a3}
+.sxp[data-sx-reduced="true"] *, .sxp[data-sx-reduced="true"] *::before, .sxp[data-sx-reduced="true"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){.sxp *, .sxp *::before, .sxp *::after{animation:none!important;transition:none!important}}

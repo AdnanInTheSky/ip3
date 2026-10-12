@@ -12,7 +12,12 @@
     "type": "lattice",
     "eyebrow": "Readiness before software",
     "title": "From scattered signals to a system you can <em>govern and trust.</em>",
-    "lead": "Five layers of readiness, drawn as a network that finds its order as you scroll.",
+    "lead": "Five layers of readiness connect data, analytics and governance to public services and adoption.",
+    "system": {
+      "framework": "Governance models · policy learning",
+      "setting": "Data pipelines · public services",
+      "outcome": "Evidence for adoption"
+    },
     "steps": [
       {
         "label": "Data",

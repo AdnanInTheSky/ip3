@@ -7,7 +7,7 @@ function render({ s, idx, pg }) {
   const crumbs = [{ label: nav.homeLabel, href: nav.homeHref }, D.navigation.breadcrumbs.find((b) => b.href === '/sectors'), { label: s.title }];
   const bc = crumbs.map((c, i) => (i === 0 ? `<a href="${esc(c.href)}">${esc(c.label)}</a>` : i === crumbs.length - 1 ? `<span>${esc(c.label)}</span>` : `<span><a href="${esc(c.href)}">${esc(c.label)}</a></span>`)).join('');
   const bg = s.video
-    ? `<video muted loop playsinline autoplay preload="metadata" poster="${esc(s.poster)}" aria-hidden="true"><source src="${esc(s.video)}" type="video/mp4"></video>`
+    ? `<video muted loop playsinline preload="none" poster="${esc(s.poster)}" aria-hidden="true"><source data-src="${esc(s.video)}" type="video/mp4"></video>`
     : `<img src="${esc(s.image)}" alt="" fetchpriority="high" decoding="async">`;
   const meta = [
     [recordsFor(pg).length, T['sx-meta-records']],
@@ -26,6 +26,12 @@ function render({ s, idx, pg }) {
       <p class="sx-hero__lab">${esc(T['eyebrow-challenge'])}</p>
       <p class="lead sx-hero__lead">${esc(s.problem)}</p>
       ${meta ? `<ul class="sx-hero__meta">${meta}</ul>` : ''}
+      <nav class="sx-route" aria-label="${esc(T['sx-route-label'])}">
+        <a href="#sx-scene">${esc(T['sx-route-method'])}<span aria-hidden="true">↗</span></a>
+        ${pg && pg.practice ? `<a href="#sx-practice">${esc(T['sx-route-practice'])}<span aria-hidden="true">↗</span></a>` : ''}
+        ${recordsFor(pg).length ? `<a href="#sx-evidence">${esc(T['sx-route-evidence'])}<span aria-hidden="true">↗</span></a>` : ''}
+      </nav>
+      <label class="sx-motion" data-sx-motion-control hidden><input type="checkbox" data-sx-motion> ${esc(T['sx-motion-label'])}</label>
     </div>
     <div class="sx-hero__cue" aria-hidden="true"><i></i>${esc(T['sx-scroll-cue'])}</div>
   </div>

@@ -1,6 +1,5 @@
 /* Canvas drawings: coverage (health and social protection) and lattice (AI and emerging technology). Both are labelled on the page
-   as illustrative, not data. Each dot or node has a position per state; the scroll value blends neighbouring states. A light ambient
-   motion runs only while the drawing is on screen and motion is allowed. */
+   as illustrative, not data. Each dot or node has a position per state; the scroll value blends neighbouring states. All drawing updates are driven by scroll progress, with no ambient timer. */
 (function () {
   var sx = window.sx;
   var C = { peach: [240, 185, 163], rust: [201, 106, 74], leaf: [106, 180, 61], water: [143, 179, 201], white: [255, 255, 255] };
@@ -15,14 +14,11 @@
   function canvasFor(viz, kind) {
     var cv = sx.$('[data-sx-canvas="' + kind + '"]', viz); if (!cv || !cv.getContext) return null;
     var ctx = cv.getContext('2d'), dpr = Math.min(2, window.devicePixelRatio || 1);
+    if (!ctx) return null;
+    viz.classList.add('has-canvas');
     function size() { var r = cv.getBoundingClientRect(); cv.width = Math.max(300, Math.round(r.width * dpr)); cv.height = Math.max(220, Math.round(r.height * dpr)); }
     size(); window.addEventListener('resize', size);
     return { cv: cv, ctx: ctx, dpr: dpr };
-  }
-  function ambient(draw) {
-    var on = false, raf = 0;
-    function loop(t) { raf = 0; if (!on) return; draw(t); raf = requestAnimationFrame(loop); }
-    return function (v) { on = v && !sx.reduce; if (on && !raf) raf = requestAnimationFrame(loop); };
   }
 
   // 03 — a population of dots: scattered → measured on a grid → split into two comparison groups → a subgroup ringed and some
@@ -72,8 +68,7 @@
         if (ring > 0.02) { ctx.strokeStyle = rgba(C.leaf, ring); ctx.lineWidth = Math.max(1, base * 0.35); ctx.beginPath(); ctx.arc(x, y, base * 1.75, 0, Math.PI * 2); ctx.stroke(); }
       }
     }
-    var amb = ambient(function (time) { t = time; if (sp < 0.2) draw(); });
-    return { set: function (v) { sp = v; draw(); }, visible: amb };
+    return { set: function (v) { sp = v; t = v * 1800; draw(); } };
   };
 
   // 08 — a network: scattered signals → collected in a band (data) → arranged in layers with links (analytics) → framed by
@@ -136,7 +131,6 @@
         });
       }
     }
-    var amb = ambient(function (time) { t = time; if (sp < 0.5 || sp > 3.4) draw(); });
-    return { set: function (v) { sp = v; draw(); }, visible: amb };
+    return { set: function (v) { sp = v; t = v * 1800; draw(); } };
   };
 })();

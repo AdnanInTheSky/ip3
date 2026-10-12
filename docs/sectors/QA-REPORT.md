@@ -1,6 +1,6 @@
 # Sector pages — QA and change report
 
-Branch `sectors-cinematic`, worktree `ip3-bd.org-sectors`, from `main` at 0e452d0 (12 Oct 2026). **Committed locally. Not pushed and not deployed.**
+Pull request [#9](https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/9), branch `sectors-cinematic`. Design revision completed 13 Oct 2026. **Pushed for review; the pull request remains open, unmerged and undeployed.**
 
 ## Status of the eight pages
 
@@ -21,24 +21,17 @@ Titles, problem statements, routes, focus areas, capability links, page titles a
 
 | Check | Result |
 | --- | --- |
-| `npm run check` (content validation + generated CMS config) | OK. Five SEO-length warnings, all on other pages and all pre-existing |
-| `npm test` | **54/54 pass** (50 existing + 4 new: sector story must have five steps, cite existing assignments, belong to an existing sector, and use a known drawing) |
-| `npm run verify` (build + internal links, anchors including `/capabilities#proof-*`, metadata, image alt attributes, sitemap) | OK, 21 pages |
-| `npm run audit` (content fields never rendered) | Two new entries, both intended: the held Sustainable-finance figures (`context.figures[].value/label`), which stay off the page until a source is entered |
-| Regression: non-sector pages rebuilt from `main` and from this branch | **All 13 pages byte-identical**, as are `site.css`, `site.js`, `capabilities.css`, `capabilities.js` and the sitemap |
-| Accessibility lint on the eight generated pages | One `h1` each, no duplicate ids, no skipped heading levels, every `img` has `alt`, every `aria-labelledby` resolves, every `video` is labelled or hidden |
-| Browser (in-app preview, Chromium) at 1440×900 | All eight scenes drawn and stepping with the scroll; gallery flight and pinned ledger active; no console errors |
-| Browser at 390×844 | Sticky drawing above the steps; swipe rows for the gallery and ledger; no overflow |
-| Payload | `sectors.js` 30 KB (9.9 KB gzipped), `sectors.css` 31 KB (7.4 KB gzipped); new media 1.2 MB in total, all files under 220 KB except one 398 KB film |
+| `npm test` | **54/54 pass**, including the existing sector-content safeguards |
+| `npm run check` | Content and generated CMS configuration pass. Five existing SEO-length warnings refer to other pages. |
+| `npm run verify` | Built 21 pages and checked internal links, anchors, image alt text and sitemap. |
+| Chromium across eight pages and five modes | **40/40 pass:** 1440×1000 desktop, 390×844 phone, 844×390 landscape, 1440×900 reduced motion, and 390×844 with JavaScript disabled. No JS errors, hidden headings, unreadable steps, clipped page content or unintended horizontal overflow. |
+| Motion and control checks | Scene drawing advances with scroll; motion control persists across reload; live operating-system preference changes apply; the canvas redraws after resizing; scene links update focus and the hash; blocked ScrollTrigger leaves the static page usable. |
+| Tight viewport fit | **40/40 pass** for all eight diagrams at 900×680, 1024×768, 1440×1000, 320×640 and 390×844. Sticky layout activates only when its full control stack fits. Home page smoke test passes. |
+| Visual review | Reviewed each of the eight diagrams and desktop/phone Climate and Sustainable Finance pages. No graphics or media dependencies were added. |
+| Sector bundle | 25,415 bytes JavaScript (8,558 bytes gzip); 31,897 bytes CSS (7,793 bytes gzip). |
+| GitHub checks on the existing PR head | check, Lighthouse and media checks passed before this design revision; GitHub will run again for the pushed commit. |
 
-**Not verified**
-
-- Safari, Firefox and real phones.
-- Lighthouse and field Core Web Vitals.
-- Screen readers.
-- `prefers-reduced-motion` and no-JavaScript were checked by reading the code paths, not in an emulated browser.
-- The in-app preview pane was hidden, so the browser throttled animation frames. Screenshots showed scenes lagging behind the scroll, and smoothness at 60 fps was not judged visually. Frame rate measured with the pane hidden was 61 fps.
-- Long-term behaviour with Pages CMS editing (the new "11 · Sector pages" collection is generated into `.pages.yml` but has not been opened in the live editor).
+**Not verified:** Safari, Firefox, physical devices, screen readers, Lighthouse on the new commit, field Core Web Vitals, a live CMS edit, or real-world network and frame pacing. Browser checks used Chromium on a desktop. Bundle size is measured; end-user network and frame performance were not.
 
 ## Files changed
 
@@ -56,13 +49,13 @@ Titles, problem statements, routes, focus areas, capability links, page titles a
 
 | File | Change | Effect on other pages |
 | --- | --- | --- |
-| `src/pages-inner.js` | `sectorPage()` now comes from `src/sec/`; the old function was removed | None (byte-identical output) |
-| `src/data.js` | Loads `content/sector-pages/` as `D.sectorPages` | None |
+| `src/pages-inner.js` | `sectorPage()` now comes from `src/sec/`; the old function was removed | Existing route behavior preserved |
+| `src/data.js` | Loads `content/sector-pages/` as `D.sectorPages` | Sector pages only |
 | `build/build-all.js` | Bundles `src/css/sec` and `src/js/sec`, with cache-busting hashes `__SECCSSV__` and `__SECJSV__` | None |
 | `build/validate.js` | Sector stories need five steps and no repeated records; warns when a visible sector has no story | None |
 | `build/selftest.js` | Four negative tests | — |
 | `cms/schema.js`, `.pages.yml` | Registers the collection; the YAML is regenerated by `npm run cms` | Editor gains one section |
-| `content/page-text/sectors.json` | Sixteen new labels (`sx-*`) for the sector pages | None |
+| `content/page-text/sectors.json` | Motion controls, three system layers and route labels for the sector pages | None |
 | `content/sectors.json` | Seven `image`/`photo` paths changed (see the media manifest). `card` is unchanged, so the home page and /sectors are unaffected | None |
 
 Outside the repository, a launch configuration `sx-main` (port 3490) was added to `NEW WEBSITE DESIGN/.claude/launch.json` for local preview.
@@ -75,4 +68,4 @@ Outside the repository, a launch configuration `sx-main` (port 3490) was added t
 4. **Thin sectors**: social protection (Health) and responsible AI / algorithmic accountability (AI) have no source text or assignment record. Supply material, or consider narrowing those pages' focus-area lists.
 5. **Bridge sentences** (listed in CONTENT-MAPPING.md) are new framing and need IP3's sign-off.
 6. **Dates**: the pages use the CV's dates where they conflict with the old site (Global LEAP, HALOW+, DSIP, Payra, Jolshiri, NSEP, CPD focus-group count, FAT firm count).
-7. **Release**: review on a Vercel preview (push the branch and open a PR), then merge. Nothing has been pushed.
+7. **Release**: review the Vercel preview on [PR #9](https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/9). Merge only after the listed content and media questions are resolved; this design revision does not merge or deploy the pages.

@@ -16,7 +16,7 @@ function render({ s }) {
     </div>
     <div class="sx-exp__caps">
       ${L.sectionHead('sector-capabilities')}
-      <div class="sx-caps" data-stagger>${caps.map((c) => `<a class="sx-cap" href="/capabilities#${c.slug}" data-tilt><span class="sx-cap__n">${n2(c.i)}</span><h3>${plain(c.title)}</h3><p>${esc(c.problem)}</p><i aria-hidden="true">${L.arrow}</i></a>`).join('')}</div>
+      <div class="sx-caps" data-stagger>${caps.map((c) => `<a class="sx-cap" href="/capabilities#${c.slug}"><span class="sx-cap__n">${n2(c.i)}</span><h3>${plain(c.title)}</h3><p>${esc(c.problem)}</p><i aria-hidden="true">${L.arrow}</i></a>`).join('')}</div>
     </div>
   </div>
 </section>`;

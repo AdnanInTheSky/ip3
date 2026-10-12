@@ -12,7 +12,12 @@
     "type": "terrain",
     "eyebrow": "From exposure to investment",
     "title": "Five moves from climate risk to <em>resilient investment.</em>",
-    "lead": "Scroll the terrain: hazard and exposure first, then the plan, the infrastructure, the finance and the governance that keep a transition fair.",
+    "lead": "Hazard and exposure first, then the plan, the infrastructure, the finance and the governance that keep a transition fair.",
+    "system": {
+      "framework": "Paris Agreement · SDGs",
+      "setting": "Local climate risks · ecosystems",
+      "outcome": "Resilient investment"
+    },
     "steps": [
       {
         "label": "Risk",

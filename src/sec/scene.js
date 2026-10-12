@@ -51,7 +51,13 @@ function ladder(steps) {
 }
 
 /* ---- 03 coverage: a population of dots drawn on canvas (measure, compare, include, adapt, cost) ---- */
-const coverage = () => `<canvas class="sx-canvas" data-sx-canvas="coverage" width="900" height="680"></canvas>`;
+function coverage() {
+  const groups = ['rgb(var(--sx-rust))', 'rgb(var(--sx-leaf))'].map((fill, group) => {
+    const dots = Array.from({ length: 168 }, (_, i) => `<circle cx="${210 + group * 310 + (i % 12) * 16}" cy="${520 - Math.floor(i / 12) * 16}" r="5.5"/>`).join('');
+    return `<g fill="${fill}" opacity=".9">${dots}</g>`;
+  }).join('');
+  return `<svg class="sx-canvas-fallback" viewBox="0 0 900 680" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M180 552H726" fill="none" stroke="rgba(255,255,255,.22)" stroke-width="1.5"/><path d="M453 280V540" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1.5" stroke-dasharray="4 8"/>${groups}</svg><canvas class="sx-canvas" data-sx-canvas="coverage" width="900" height="680"></canvas>`;
+}
 
 /* ---- 04 stack: five plates of a digital state, exploding apart, with data packets rising through them ---- */
 function stack(steps) {
@@ -67,8 +73,8 @@ function flow(steps) {
   const ghost = steps.slice(1).map((_, i) => `<path class="sx-flow__ghost" d="M${f1(x(i))} ${f1(y(i))} C${f1(x(i) + 70)} ${f1(y(i) - 30)} ${f1(x(i + 1) - 70)} ${f1(y(i + 1) - 30)} ${f1(x(i + 1))} ${f1(y(i + 1))}"/>`).join('');
   const loopD = `M${f1(x(n - 1))} ${f1(y(n - 1) + 26)} C${f1(x(n - 1))} 590 ${f1(x(0))} 590 ${f1(x(0))} ${f1(y(0) + 26)}`;
   const nodes = steps.map((st, i) => `<g class="sx-flow__n" data-i="${i}" transform="translate(${f1(x(i))} ${f1(y(i))})"><circle class="sx-flow__halo" r="34"/><circle class="sx-flow__dot" r="15"/><text class="sx-flow__num" y="5">${n2(i)}</text><text class="sx-flow__lbl" y="-50">${esc(st.label)}</text></g>`).join('');
-  const pulses = steps.slice(1).map((_, i) => `<circle class="sx-flow__pulse" data-i="${i}" r="5"><animateMotion dur="${f1(2.4 + i * 0.3)}s" repeatCount="indefinite" path="M${f1(x(i))} ${f1(y(i))} C${f1(x(i) + 70)} ${f1(y(i) - 30)} ${f1(x(i + 1) - 70)} ${f1(y(i + 1) - 30)} ${f1(x(i + 1))} ${f1(y(i + 1))}"/></circle>`).join('');
-  return `<div class="sx-flow"><svg viewBox="0 40 ${W} 580" preserveAspectRatio="xMidYMid meet">${ghost}${links}<path class="sx-flow__loop" pathLength="1" d="${loopD}"/><circle class="sx-flow__pulse sx-flow__pulse--loop" r="5"><animateMotion dur="5s" repeatCount="indefinite" path="${loopD}"/></circle>${pulses}${nodes}</svg></div>`;
+  const pulses = steps.slice(1).map((_, i) => `<circle class="sx-flow__pulse" data-i="${i}" r="5"></circle>`).join('');
+  return `<div class="sx-flow"><svg viewBox="0 40 ${W} 580" preserveAspectRatio="xMidYMid meet">${ghost}${links}<path class="sx-flow__loop" pathLength="1" d="${loopD}"/><circle class="sx-flow__pulse sx-flow__pulse--loop" r="5"></circle>${pulses}${nodes}</svg></div>`;
 }
 
 /* ---- 06 chain: a value chain panning sideways with three parallax depths; five stations ---- */
@@ -101,17 +107,26 @@ function loop(steps) {
 }
 
 /* ---- 08 lattice: a network that moves from scattered signals to an ordered, guarded structure (canvas) ---- */
-const lattice = () => `<canvas class="sx-canvas" data-sx-canvas="lattice" width="900" height="680"></canvas>`;
+function lattice() {
+  const layers = [6, 8, 8, 6, 4].map((count, layer) => Array.from({ length: count }, (_, i) => ({ x: 140 + layer * 150, y: 340 + (i - (count - 1) / 2) * 38 })));
+  const links = layers.slice(0, -1).map((nodes, layer) => nodes.map((node, i) => {
+    const next = layers[layer + 1], target = Math.round(i * (next.length - 1) / Math.max(1, nodes.length - 1));
+    return [target, Math.min(next.length - 1, target + 1)].filter((index, k, list) => !k || index !== list[k - 1]).map((index) => `<path d="M${node.x} ${node.y}L${next[index].x} ${next[index].y}"/>`).join('');
+  }).join('')).join('');
+  const nodes = layers.map((layer, index) => `<g fill="rgb(var(--sx-${index === layers.length - 1 ? 'leaf' : 'peach'}))">${layer.map((node) => `<circle cx="${node.x}" cy="${node.y}" r="${index === layers.length - 1 ? 13 : 6}"/>`).join('')}</g>`).join('');
+  return `<svg class="sx-canvas-fallback" viewBox="0 0 900 680" preserveAspectRatio="xMidYMid meet" focusable="false"><rect x="90" y="170" width="710" height="340" rx="28" fill="none" stroke="rgb(var(--sx-leaf))" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="7 6"/><g fill="none" stroke="rgb(var(--sx-peach))" stroke-opacity=".3" stroke-width="1.5">${links}</g>${nodes}</svg><canvas class="sx-canvas" data-sx-canvas="lattice" width="900" height="680"></canvas>`;
+}
 
 const DRAW = { terrain, ladder, coverage, stack, flow, chain, loop, lattice };
 
 function render({ s, pg }) {
   const sc = pg.scene;
   const steps = sc.steps;
+  const system = sc.system;
   const draw = DRAW[sc.type](sc.type === 'terrain' ? s.slug : steps);
-  const rail = steps.map((st, i) => `<li><a href="#sx-step-${i + 1}" data-sx-jump="${i}"${i === 0 ? ' aria-current="step"' : ''}><i aria-hidden="true"></i><span>${esc(st.label)}</span></a></li>`).join('');
-  const list = steps.map((st, i) => `<li class="sx-step" id="sx-step-${i + 1}" data-sx-step="${i}"><p class="sx-step__n">${n2(i)} <span>/ ${n2(steps.length - 1)}</span> · ${esc(st.label)}</p><h3>${esc(st.title)}</h3><p>${esc(st.text)}</p>${points(st.points)}</li>`).join('');
-  const illustrative = ['coverage', 'lattice'].includes(sc.type) ? `<p class="sx-viz__note">${esc(T['sx-illustrative'])}</p>` : '';
+  const rail = steps.map((st, i) => `<li><a href="#sx-step-${i + 1}" data-sx-jump="${i}"><i aria-hidden="true"></i><span>${esc(st.label)}</span></a></li>`).join('');
+  const list = steps.map((st, i) => `<li class="sx-step" id="sx-step-${i + 1}" tabindex="-1" data-sx-step="${i}"><p class="sx-step__n">${n2(i)} <span>/ ${n2(steps.length - 1)}</span> · ${esc(st.label)}</p><h3>${esc(st.title)}</h3><p>${esc(st.text)}</p>${points(st.points)}</li>`).join('');
+  const plane = (key, index) => system ? `<div class="sx-system sx-system--${key}"><span>${index} / ${esc(T['sx-system-' + key])}</span><p>${esc(system[key])}</p></div>` : '';
   return `
 <section class="sx-scene sx-scene--${sc.type} on-dark dark" id="sx-scene" data-sx-scene="${sc.type}" aria-labelledby="sx-scene-h">
   <div class="container sx-scene__head">
@@ -121,8 +136,16 @@ function render({ s, pg }) {
   <a class="sx-skip" href="#sx-after-scene">${esc(T['sx-skip-scene'])}</a>
   <div class="container sx-scene__grid">
     <div class="sx-scene__sticky">
-      <div class="sx-viz" data-sx-viz aria-hidden="true">${draw}<div class="sx-viz__now"><b data-sx-now-n>01</b><span data-sx-now-l>${esc(steps[0].label)}</span></div>${illustrative}</div>
+      <div class="sx-viz${system ? ' has-system' : ''}" data-sx-viz>
+        ${plane('framework', '01')}
+        <div class="sx-viz__drawing" aria-hidden="true">${draw}</div>
+        ${plane('setting', '02')}
+        ${plane('outcome', '03')}
+      </div>
+      <p class="sx-model-note">${esc(T['sx-system-note'])}</p>
+      <div class="sx-viz__now" aria-hidden="true"><b data-sx-now-n>01</b><span data-sx-now-l>${esc(steps[0].label)}</span><i data-sx-progress></i></div>
       <nav class="sx-rail" aria-label="${esc(T['sx-steps-label'])}"><ol>${rail}</ol></nav>
+      <p class="sx-scene__help">${esc(T['sx-motion-help'])}</p>
     </div>
     <ol class="sx-steps">${list}</ol>
   </div>

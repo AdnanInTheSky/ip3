@@ -13,6 +13,11 @@
     "eyebrow": "Who is reached, and what changed",
     "title": "Every dot is a person. <em>Evidence decides</em> what happens next.",
     "lead": "Five moves of monitoring, evaluation, research, learning and adaptation (MERLA), drawn on one population.",
+    "system": {
+      "framework": "World Bank · OECD-DAC methods",
+      "setting": "Health programs · coverage",
+      "outcome": "Evidence for equitable services"
+    },
     "steps": [
       {
         "label": "Measure",

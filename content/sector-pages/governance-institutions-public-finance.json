@@ -13,6 +13,11 @@
     "eyebrow": "From policy to delivery",
     "title": "Policies fail at the hand-offs. <em>Follow the chain</em> from diagnosis to accountability.",
     "lead": "Five links between a public decision and the service people receive — and the feedback that should flow back.",
+    "system": {
+      "framework": "Policy · regulatory frameworks",
+      "setting": "Public institutions · stakeholder needs",
+      "outcome": "Accountable service delivery"
+    },
     "steps": [
       {
         "label": "Diagnose",

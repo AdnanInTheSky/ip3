@@ -38,7 +38,12 @@
     "type": "loop",
     "eyebrow": "From linear to circular",
     "title": "Take, make, waste — <em>bent into a loop.</em>",
-    "lead": "Scroll to close the circle: design, recovery, regeneration and the finance that pays for it.",
+    "lead": "Design, recovery, regeneration and the finance that supports a circular economy.",
+    "system": {
+      "framework": "ESG frameworks · SDGs",
+      "setting": "Industry · municipal resource systems",
+      "outcome": "Regenerative investment"
+    },
     "steps": [
       {
         "label": "Linear",

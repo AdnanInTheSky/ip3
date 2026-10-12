@@ -13,6 +13,11 @@
     "eyebrow": "Along the value chain",
     "title": "From the factory floor to the port to the policy table — <em>one chain, five stations.</em>",
     "lead": "Each station names the kind of question IP3 has answered there, with the assignments on the record.",
+    "system": {
+      "framework": "Trade rules · investment policy",
+      "setting": "Firms · value chains · ports",
+      "outcome": "Appraised investment decisions"
+    },
     "steps": [
       {
         "label": "Firms",

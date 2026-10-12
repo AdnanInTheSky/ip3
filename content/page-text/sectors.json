@@ -29,6 +29,56 @@
   ],
   "copy": [
     {
+      "slug": "sx-system-framework",
+      "label": "Sector page — policy layer label",
+      "text": "Policy frameworks"
+    },
+    {
+      "slug": "sx-system-setting",
+      "label": "Sector page — local systems layer label",
+      "text": "Local systems"
+    },
+    {
+      "slug": "sx-system-outcome",
+      "label": "Sector page — implementation layer label",
+      "text": "Implementation"
+    },
+    {
+      "slug": "sx-system-note",
+      "label": "Sector page — conceptual model note",
+      "text": "Conceptual model · read the method alongside"
+    },
+    {
+      "slug": "sx-motion-label",
+      "label": "Sector page — motion preference control",
+      "text": "Reduce motion"
+    },
+    {
+      "slug": "sx-motion-help",
+      "label": "Sector page — motion preference guidance",
+      "text": "Read at your own pace. All steps remain available."
+    },
+    {
+      "slug": "sx-route-label",
+      "label": "Sector page — section navigation label",
+      "text": "Explore this sector"
+    },
+    {
+      "slug": "sx-route-method",
+      "label": "Sector page — method navigation link",
+      "text": "Our method"
+    },
+    {
+      "slug": "sx-route-practice",
+      "label": "Sector page — practice navigation link",
+      "text": "In practice"
+    },
+    {
+      "slug": "sx-route-evidence",
+      "label": "Sector page — assignment navigation link",
+      "text": "Assignment record"
+    },
+    {
       "slug": "eyebrow-challenge",
       "label": "Challenge eyebrow",
       "text": "The challenge"

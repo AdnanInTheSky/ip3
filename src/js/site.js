@@ -605,6 +605,12 @@
 
   /* ---------- boot ---------- */
   initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative();
+  // Sector narratives own their motion lifecycle. Keep their policy text visible,
+  // use native scrolling, and avoid stacking global reveals/Lenis over the scene.
+  if (d.body.classList.contains('sxp')) {
+    window.addEventListener('load', jumpToHash);
+    return;
+  }
   if (!hasGsap) { root.classList.remove('js'); initHero(); return; }
   initLenis();
   initHero();

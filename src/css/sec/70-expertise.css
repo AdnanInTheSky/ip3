@@ -33,3 +33,6 @@
 .sx-next__foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:28px}
 .sx-next__foot .link{color:#f0b9a3}
 .sx-next__foot .link svg{width:16px;height:16px}
+/* Navigation remains legible at short viewport heights and enlarged text. */
+.sxp .sx-next__portal{height:auto;min-height:0}
+.sxp .sx-next__copy{position:relative;inset:auto;padding:clamp(28px,5vw,64px);opacity:1}

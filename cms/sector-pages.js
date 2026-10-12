@@ -7,7 +7,7 @@ const SCENES = ['terrain', 'ladder', 'coverage', 'stack', 'flow', 'chain', 'loop
 
 module.exports = collection('sector_pages', '11 · Sector pages — long-form story (one file per sector)', 'content/sector-pages', [
   str('slug', 'Sector', { ref: 'sectors', hint: 'The sector this story belongs to (its slug in Sectors). Set once.' }),
-  obj('statement', 'Opening statement (text lights up as visitors scroll)', [
+  obj('statement', 'Opening statement (always readable)', [
     str('eyebrow', 'Eyebrow', { max: 60 }),
     text('title', 'Statement', { em: true, max: 200 }),
     strs('paragraphs', 'Paragraphs', { hint: 'Two or three short paragraphs read best.' }),
@@ -18,6 +18,11 @@ module.exports = collection('sector_pages', '11 · Sector pages — long-form st
     str('eyebrow', 'Eyebrow', { max: 60 }),
     text('title', 'Heading', { em: true, max: 160 }),
     text('lead', 'Intro', { optional: true, max: 420 }),
+    obj('system', 'Policy, local systems and implementation layers', [
+      str('framework', 'Policy frameworks', { max: 100 }),
+      str('setting', 'Local systems', { max: 100 }),
+      str('outcome', 'Implementation', { max: 100 }),
+    ], { optional: true }),
     list('steps', 'Steps (five)', [
       str('label', 'Short label on the drawing and the step rail', { max: 18 }),
       str('title', 'Step heading', { max: 110 }),
@@ -50,7 +55,7 @@ module.exports = collection('sector_pages', '11 · Sector pages — long-form st
       str('source', 'Source (publisher, year)', { optional: true, max: 160, hint: 'Required before the figure is shown on the website.' }),
     ], { summary: '{value} {label}', optional: true }),
   ], { optional: true }),
-  obj('gallery', 'Field gallery (photos and films flying past in depth)', [
+  obj('gallery', 'Editorial field gallery (photos and films with captions)', [
     str('eyebrow', 'Eyebrow', { max: 60 }),
     text('title', 'Heading', { em: true, max: 160 }),
     text('lead', 'Intro', { optional: true, max: 420 }),

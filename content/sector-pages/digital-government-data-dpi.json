@@ -13,6 +13,11 @@
     "eyebrow": "Layers of a digital state",
     "title": "Digital public infrastructure is a stack. <em>Every layer has to hold.</em>",
     "lead": "From the first data point to the citizen at the counter: five layers, separated so you can see what each one carries.",
+    "system": {
+      "framework": "Data standards · governance models",
+      "setting": "Utilities · institutions · communities",
+      "outcome": "Inclusive public services"
+    },
     "steps": [
       {
         "label": "Data",

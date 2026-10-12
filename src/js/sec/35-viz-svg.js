@@ -12,7 +12,13 @@
     return {
       set: function (sp) {
         links.forEach(function (l, i) { var f = sx.clamp(sp - i, 0, 1); l.style.strokeDashoffset = (1 - f).toFixed(3); });
-        pulses.forEach(function (p) { if (p === loopPulse) return; var i = +p.getAttribute('data-i'); p.style.opacity = sp - i >= 1 ? 1 : 0; });
+        pulses.forEach(function (p) {
+          var i = +p.getAttribute('data-i') || 0, route = p === loopPulse ? loop : links[i];
+          var progress = sx.clamp((sp - i) / Math.max(1, n - 1 - i), 0, 1);
+          var point = route.getPointAtLength(route.getTotalLength() * progress);
+          p.setAttribute('cx', point.x.toFixed(2)); p.setAttribute('cy', point.y.toFixed(2));
+          p.style.opacity = sp > i ? 1 : 0;
+        });
         var lf = sx.clamp((sp - (n - 2)) * 1.2, 0, 1);
         loop.style.strokeDashoffset = (1 - lf).toFixed(3);
         loopPulse.style.opacity = lf >= 1 ? 1 : 0;

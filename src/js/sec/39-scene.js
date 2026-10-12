@@ -1,58 +1,77 @@
-/* scene (runs after the drawings 31-…38- have registered) — turns the scroll position into a continuous step value sp (−1 before the first step, 0…n−1 across the steps), eases
-   towards it, and hands it to the drawing registered in sx.viz[type] (31-…38-*.js). Marks the current step, rail link and
-   "now" label. Reduced motion or no drawing script: the drawing shows its final state and every step is shown. */
+/* ScrollTrigger supplies progress notifications; one bounded rAF interpolates
+   the model with time-based damping. Text never fades or changes position. */
 (function () {
   var sx = window.sx, sec = sx.$('[data-sx-scene]');
   if (!sec) return;
-  var type = sec.getAttribute('data-sx-scene'), viz = sx.$('[data-sx-viz]', sec);
-  var steps = sx.$$('[data-sx-step]', sec), rail = sx.$$('[data-sx-jump]', sec), n = steps.length;
-  var nowN = sx.$('[data-sx-now-n]', sec), nowL = sx.$('[data-sx-now-l]', sec);
-  var labels = rail.map(function (a) { return a.textContent.trim(); });
-  var make = sx.viz[type], drawer = null;
-  try { drawer = make ? make(viz, n) : null; } catch (e) { drawer = null; }
-  var active = -1;
+  var viz = sx.$('[data-sx-viz]', sec), steps = sx.$$('[data-sx-step]', sec), rail = sx.$$('[data-sx-jump]', sec), n = steps.length;
+  var nowN = sx.$('[data-sx-now-n]', sec), nowL = sx.$('[data-sx-now-l]', sec), bar = sx.$('[data-sx-progress]', sec);
+  var drawer, trigger, raf = 0, sp = 0, goal = 0, time = 0, active = -1, enabled = false;
+  try { drawer = sx.viz[sec.dataset.sxScene](viz, n); } catch (_) { drawer = null; }
   function setActive(i) {
     if (i === active) return;
     active = i;
-    steps.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
-    rail.forEach(function (a, k) { if (k === i) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
-    if (nowN) nowN.textContent = String(i + 1).padStart(2, '0');
-    if (nowL && labels[i]) nowL.textContent = labels[i];
-    viz.setAttribute('data-step', i);
+    steps.forEach(function (step, k) { step.classList.toggle('is-on', i === k); });
+    rail.forEach(function (a, k) { if (i === k) a.setAttribute('aria-current', 'step'); else a.removeAttribute('aria-current'); });
+    nowN.textContent = String(i + 1).padStart(2, '0');
+    nowL.textContent = rail[i].textContent.trim();
   }
-  if (sx.reduce || !drawer) { if (drawer) drawer.set(n - 1, true); setActive(n - 1); return; }
-  sec.classList.add('is-live');
-
-  // the fractional step whose centre sits at the viewport's reading line (55% down)
+  function draw(value) {
+    if (drawer) drawer.set(value, sx.reduce);
+    viz.style.setProperty('--phase', (value / Math.max(1, n - 1)).toFixed(4));
+    bar.style.transform = 'scaleX(' + ((value + 1) / n).toFixed(4) + ')';
+  }
   function target() {
-    var line = window.innerHeight * 0.55, c = steps.map(function (s) { var r = s.getBoundingClientRect(); return r.top + r.height / 2; });
-    if (line <= c[0]) return sx.clamp(-(c[0] - line) / Math.max(1, c[1] - c[0]), -1, 0);
-    for (var k = 0; k < n - 1; k++) if (line < c[k + 1]) return k + (line - c[k]) / (c[k + 1] - c[k]);
+    var line = window.innerHeight * 0.52;
+    var centres = steps.map(function (s) { var r = s.getBoundingClientRect(); return r.top + r.height / 2; });
+    if (line <= centres[0]) return 0;
+    for (var k = 0; k < n - 1; k++) if (line < centres[k + 1]) return k + (line - centres[k]) / Math.max(1, centres[k + 1] - centres[k]);
     return n - 1;
   }
-  var sp = -1, goal = -1, raf = 0;
-  function step() {
+  function stop() { cancelAnimationFrame(raf); raf = 0; time = 0; }
+  function step(stamp) {
     raf = 0;
-    sp += (goal - sp) * 0.16;
-    if (Math.abs(goal - sp) < 0.002) sp = goal;
-    drawer.set(sp, false);
-    if (sp !== goal) raf = requestAnimationFrame(step);
+    if (!enabled || document.hidden || !sx.near(sec)) { time = 0; return; }
+    var dt = time ? Math.min(64, stamp - time) : 16.67; time = stamp;
+    sp += (goal - sp) * (1 - Math.exp(-dt / 240));
+    if (Math.abs(goal - sp) < 0.001) sp = goal;
+    draw(sp);
+    if (sp !== goal) raf = requestAnimationFrame(step); else time = 0;
   }
-  sx.tick(function () {
-    if (!sx.near(sec, 300)) return;
-    goal = target();
-    setActive(Math.max(0, Math.min(n - 1, Math.round(goal))));
+  function update() {
+    if (!enabled || document.hidden || !sx.near(sec)) return;
+    goal = target(); setActive(Math.round(goal));
     if (!raf) raf = requestAnimationFrame(step);
-  });
-  drawer.set(-1, false);
-  // the rail jumps to a step: scroll so that the step's centre lands on the reading line
+  }
+  function setup() {
+    stop(); if (trigger) { trigger.kill(); trigger = null; }
+    enabled = !!drawer && !sx.reduce && window.innerWidth >= 900 && window.innerHeight >= 680 && !!window.ScrollTrigger;
+    sec.classList.toggle('is-live', enabled);
+    // Wrapped navigation, text zoom and longer CMS labels must never trap the
+    // bottom of the model below the viewport. Fall back to normal document flow.
+    if (enabled && sx.$('.sx-scene__sticky', sec).getBoundingClientRect().height + 98 > window.innerHeight) {
+      enabled = false; sec.classList.remove('is-live');
+    }
+    if (!enabled) {
+      draw(n - 1); active = -1;
+      steps.forEach(function (s) { s.classList.remove('is-on'); });
+      rail.forEach(function (a) { a.removeAttribute('aria-current'); });
+      return;
+    }
+    sp = goal = target(); draw(sp); setActive(Math.round(goal));
+    trigger = ScrollTrigger.create({ trigger: sec, start: 'top bottom', end: 'bottom top', onUpdate: update, onRefresh: update });
+  }
   rail.forEach(function (a, k) {
     a.addEventListener('click', function (e) {
       e.preventDefault(); e.stopPropagation();
       var r = steps[k].getBoundingClientRect();
-      sx.scrollTo(window.scrollY + r.top + r.height / 2 - window.innerHeight * 0.55);
+      var y = window.scrollY + r.top + (enabled ? r.height / 2 - window.innerHeight * 0.52 : -104);
+      history.replaceState(null, '', a.hash);
+      steps[k].focus({ preventScroll: true }); sx.scrollTo(y);
     });
   });
-  // pause ambient drawing loops while the scene is off screen
-  if (drawer.visible && 'IntersectionObserver' in window) new IntersectionObserver(function (es) { drawer.visible(es[0].isIntersecting); }).observe(viz);
+  sx.onMotion(setup);
+  window.addEventListener('resize', setup);
+  window.addEventListener('load', setup);
+  if (document.fonts) document.fonts.ready.then(setup);
+  document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else update(); });
 })();

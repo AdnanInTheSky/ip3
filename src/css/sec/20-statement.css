@@ -19,3 +19,5 @@
 }
 @media (max-width:520px){.sx-principles{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.js .sx-lit.is-lit .sx-w{opacity:1!important}}
+/* No delayed word illumination: the thesis stays at reading contrast. */
+.sx-lit,.sx-w{opacity:1!important}

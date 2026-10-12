@@ -1,20 +1,26 @@
-/* hero — as the page scrolls, the aperture closes in and the camera pulls back (writes --hp, 0→1, on the hero).
-   The header film pauses while the hero is off screen, and does not play at all under reduced motion. */
+/* A quiet opening: only the image moves, never the policy text. A saved or OS
+   motion preference also pauses background video before loading its source. */
 (function () {
   var sx = window.sx, hero = sx.$('[data-sx-hero]');
   if (!hero) return;
-  var video = sx.$('video', hero);
-  if (video && sx.reduce) { video.removeAttribute('autoplay'); video.pause(); }
-  else if (video && 'IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) {
-      if (es[0].isIntersecting) { var p = video.play(); if (p && p.catch) p.catch(function () {}); } else video.pause();
-    }).observe(hero);
+  var video = sx.$('video', hero), seen = false, trigger;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  function playback() {
+    if (!video) return;
+    if (sx.reduce || !seen || document.hidden || saveData) { video.pause(); return; }
+    var source = video.querySelector('source');
+    if (!source.hasAttribute('src')) { source.src = source.dataset.src; video.load(); }
+    var promise = video.play(); if (promise && promise.catch) promise.catch(function () {});
   }
-  if (sx.reduce) return;
-  var last = -1;
-  sx.tick(function () {
-    if (!sx.near(hero)) return;
-    var p = Math.round(sx.stickProgress(hero) * 1000) / 1000;
-    if (p !== last) { last = p; hero.style.setProperty('--hp', p); }
-  });
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (entries) { seen = entries[0].isIntersecting; playback(); }).observe(hero);
+  document.addEventListener('visibilitychange', playback);
+  function setup() {
+    if (trigger) { trigger.kill(); trigger = null; }
+    hero.style.setProperty('--hp', 0);
+    playback();
+    if (sx.reduce || window.innerWidth < 900 || window.innerHeight < 680 || !window.ScrollTrigger) return;
+    trigger = ScrollTrigger.create({ trigger: hero, start: 'top top', end: 'bottom top', onUpdate: function (self) { hero.style.setProperty('--hp', self.progress.toFixed(3)); } });
+  }
+  sx.onMotion(setup);
+  window.addEventListener('resize', setup);
 })();

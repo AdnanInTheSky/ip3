@@ -21,7 +21,7 @@ function audiences({ pg }) {
 <section class="section section--tight sx-aud" aria-labelledby="sx-aud-h">
   <div class="container">
     ${head(a, 'sx-aud-h')}
-    <ul class="sx-aud__grid" data-stagger>${a.items.map((it, i) => `<li class="sx-aud__item" data-tilt><span class="sx-aud__n">${n2(i)}</span><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p></li>`).join('')}</ul>
+    <ul class="sx-aud__grid" data-stagger>${a.items.map((it, i) => `<li class="sx-aud__item"><span class="sx-aud__n">${n2(i)}</span><h3>${esc(it.title)}</h3><p>${esc(it.text)}</p></li>`).join('')}</ul>
   </div>
 </section>`;
 }

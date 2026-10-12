@@ -46,7 +46,7 @@
   // 04 — digital government: the plates separate (an exploded view) as the scene starts; the current layer lights up
   sx.viz.stack = function (viz, n) {
     var root = sx.$('.sx-stack', viz); if (!root) return null;
-    var plates = sx.$$('.sx-stack__p', root), cur = -2, unit = function () { return Math.max(34, Math.min(70, window.innerWidth * 0.052)); };
+    var plates = sx.$$('.sx-stack__p', root), cur = -2, unit = function () { return Math.max(18, Math.min(44, root.clientHeight / 7)); };
     return {
       set: function (sp) {
         var open = sx.smooth(sx.clamp(sp + 1, 0, 1));

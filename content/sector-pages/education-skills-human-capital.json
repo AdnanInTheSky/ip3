@@ -13,6 +13,11 @@
     "eyebrow": "One system, every stage",
     "title": "Five stages of a learning system, <em>each one appraised.</em>",
     "lead": "Each step names an assignment on the record. Together they cover the ladder from the first classroom to the skills a changing economy needs.",
+    "system": {
+      "framework": "National priorities · ADB guidelines",
+      "setting": "Classrooms · skills institutions",
+      "outcome": "Appraised learning investments"
+    },
     "steps": [
       {
         "label": "Primary",
