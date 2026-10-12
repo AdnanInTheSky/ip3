@@ -12,7 +12,7 @@ const pageMeta = (withHero = true) => [
 const pg = (name, label, withHero) => obj(name, label, pageMeta(withHero));
 const pageText = (name, label, path) => file(name, `00 · Page text — ${label}`, path, [
   list('headings', 'Headings, eyebrows & leads', [
-    slug('slug', 'Template key', { hint: 'Internal template key. Do not change unless a developer asks.' }),
+    slug('slug', 'Template key', { readonly: true, hint: 'Fixed template key. Editors do not need to change this.' }),
     str('eyebrow', 'Eyebrow', { optional: true, max: 80, soft: 50 }),
     text('title', 'Heading', { max: 160, soft: 85, em: true, hint: 'Keep <em> only on headings where that emphasis already appears.' }),
     text('lead', 'Lead paragraph', { optional: true, max: 420, soft: 260 }),
@@ -24,7 +24,21 @@ const pageText = (name, label, path) => file(name, `00 · Page text — ${label}
   ], { summary: '{label}', optional: true }),
 ]);
 
+const groups = [
+  { name: 'start_here', label: 'Start here · page titles & copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
+  { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_mandates', 'home_stats', 'home_why', 'home_translation', 'home_convening', 'home_testimonials', 'home_partners'] },
+  { name: 'contact', label: 'Contact page', items: ['page_text_contact', 'home_faq'] },
+  { name: 'capabilities', label: 'Capabilities & proof of work', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
+  { name: 'sectors', label: 'Sectors', items: ['sectors', 'sector_pages'] },
+  { name: 'work_insights', label: 'Engagements & insights', items: ['engagements', 'insights'] },
+  { name: 'people', label: 'People', items: ['people', 'founder'] },
+  { name: 'about_approach', label: 'About IP3 & approach', items: ['about', 'why', 'approach_problem', 'approach_pathway', 'approach_standards', 'approach_orbit', 'approach_toolkit', 'approach_outcomes'] },
+  { name: 'site_settings', label: 'Website settings', items: ['site', 'navigation'] },
+  { name: 'legal', label: 'Privacy & terms', items: ['legal'] },
+];
+
 module.exports = {
+  groups,
   media: [
     { name: 'images', label: 'Photos', input: 'assets/img', output: '/assets/img', extensions: ['webp', 'jpg', 'jpeg', 'png'] },
     { name: 'videos', label: 'Videos', input: 'assets/video', output: '/assets/video', extensions: ['mp4', 'webm'] },
