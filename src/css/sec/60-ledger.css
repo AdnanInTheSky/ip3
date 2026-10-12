@@ -1,0 +1,35 @@
+/* On the record. Default: a swipeable row of cards. 60-ledger.js adds .is-pinned on wide screens with motion allowed:
+   the section grows tall, the stage sticks and the track slides sideways while the cards turn towards the centre. */
+.sx-led{position:relative;background:var(--paper);padding:clamp(90px,11vw,150px) 0 clamp(60px,7vw,100px)}
+.sx-led__head{position:relative}
+.sx-led__head h2{margin-top:18px}
+.sx-led__count{display:flex;align-items:baseline;gap:10px;margin-top:-20px;margin-bottom:28px;font:600 .72rem var(--f-ui);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.sx-led__count b{font:300 2.6rem/1 var(--f-display);color:var(--rust);letter-spacing:-.02em}
+.sx-led__track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px var(--gutter) 24px;scrollbar-width:thin}
+.sx-card{flex:0 0 min(84vw,400px);scroll-snap-align:start}
+.sx-card__a{position:relative;display:flex;flex-direction:column;gap:12px;height:100%;min-height:500px;padding:clamp(24px,2.4vw,32px);border-radius:var(--r);color:#fff;overflow:hidden;isolation:isolate;
+  background:repeating-radial-gradient(circle at var(--x1) var(--y1),transparent 0 18px,rgb(var(--sx-peach)/.16) 18px 19px),repeating-radial-gradient(circle at var(--x2) var(--y2),transparent 0 30px,rgb(var(--sx-leaf)/.12) 30px 31px),linear-gradient(150deg,#2a211b,#120f0d);
+  box-shadow:0 30px 60px -36px rgba(22,21,19,.55);transition:transform .5s var(--sx-ease),box-shadow .5s}
+.sx-card__a:hover{transform:translateY(-6px);box-shadow:0 44px 70px -36px rgba(22,21,19,.7)}
+.sx-card__top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:600 .68rem var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.62)}
+.sx-card__n{color:#f0b9a3}
+.sx-card__status{padding:4px 9px;border-radius:999px;background:rgb(var(--sx-leaf)/.22);color:#cfe9bd}
+.sx-card__client{font:600 .82rem/1.4 var(--f-ui);color:#f0b9a3}
+.sx-card__t{font-size:clamp(1.25rem,1.7vw,1.5rem);line-height:1.18;color:#fff}
+.sx-card__q{font:italic 400 1.05rem/1.35 var(--f-display);color:rgba(255,255,255,.88)}
+.sx-card__s{font-size:.92rem;line-height:1.55;color:rgba(255,255,255,.7)}
+.sx-card__scope{margin-top:auto;padding-top:14px;border-top:1px solid var(--sx-line-d);font:500 .82rem/1.4 var(--f-ui);color:rgba(255,255,255,.72)}
+.sx-card__scope b{display:block;font:300 2rem/1.1 var(--f-display);color:#fff}
+.sx-card__go{display:inline-flex;align-items:center;gap:8px;margin-top:auto;font:600 .74rem var(--f-ui);letter-spacing:.08em;text-transform:uppercase;color:#fff}
+.sx-card__scope+.sx-card__go{margin-top:6px}
+.sx-card__go svg{width:15px;height:15px;transition:transform .3s var(--sx-ease)}
+.sx-card__a:hover .sx-card__go svg{transform:translateX(4px)}
+.sx-led__bar{height:2px;margin:6px var(--gutter) 0;background:var(--line);position:relative;overflow:hidden}
+.sx-led__bar i{position:absolute;inset:0;transform-origin:0 50%;transform:scaleX(var(--lp,0));background:var(--rust)}
+
+.sx-led.is-pinned{padding-bottom:0}
+.sx-led.is-pinned .sx-led__stage{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden;perspective:1600px}
+.sx-led.is-pinned .sx-led__track{overflow:visible;scroll-snap-type:none;width:max-content;padding-block:20px;transform-style:preserve-3d;will-change:transform}
+.sx-led.is-pinned .sx-card{transform-style:preserve-3d;will-change:transform}
+
+.sx-related .eng{margin-top:10px}

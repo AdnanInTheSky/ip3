@@ -1,0 +1,25 @@
+/* /sectors/<slug> — page-wide styles for the eight sector pages. Loaded after site.css, only on those pages (body.sxp; plain .sx is the sector list on /sectors).
+   Conventions: classes start with sx-; colours, fonts and radii come from the :root tokens in site.css; one file per module.
+   The page reads fully without JavaScript. Hidden-until-revealed states are gated on html.js and undone under reduced motion.
+   Drawings default to their final state, so a visitor without scripts sees the finished picture. */
+.sxp{
+  --sx-night:#0c0a09;--sx-night-2:#17130f;--sx-line-d:rgba(255,255,255,.14);--sx-muted-d:rgba(255,255,255,.64);
+  --sx-rust:201 106 74;--sx-peach:240 185 163;--sx-leaf:106 180 61;--sx-water:143 179 201;--sx-sand:230 201 168;
+  --sx-ease:cubic-bezier(.22,.8,.2,1);
+}
+.sxp [id^="sx-"]{scroll-margin-top:96px}
+.sxp main{overflow-x:clip;min-width:0}
+
+/* bullet points shared by steps and practice rows: "Label — text" renders the label bold */
+.sx-pts{display:grid;gap:10px;margin-top:18px}
+.sx-pts li{position:relative;padding-left:22px;font:500 .95rem/1.55 var(--f-ui);color:var(--ink-2)}
+.sx-pts li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--green)}
+.sx-pts b{color:var(--ink);font-weight:700}
+.dark .sx-pts li{color:rgba(255,255,255,.78)}
+.dark .sx-pts li::before{background:var(--leaf)}
+.dark .sx-pts b{color:#fff}
+
+/* keyboard skip past the long scroll scene */
+.sx-skip{position:absolute;left:var(--gutter);top:16px;z-index:30;background:#fff;color:var(--ink);padding:10px 16px;border-radius:999px;font:600 .78rem var(--f-ui);opacity:0;pointer-events:none}
+.sx-skip:focus{opacity:1;pointer-events:auto}
+#sx-after-scene{display:block;height:0;outline:0}

@@ -2980,6 +2980,373 @@ content:
             type: string
             list: true
             description: "Engagement slugs from the Engagements list."
+  - name: sector_pages
+    label: "11 · Sector pages — long-form story (one file per sector)"
+    type: collection
+    path: content/sector-pages
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: slug
+      fields: [slug]
+      sort: slug
+    fields:
+      - name: slug
+        label: "Sector"
+        type: string
+        required: true
+        description: "The sector this story belongs to (its slug in Sectors). Set once."
+      - name: statement
+        label: "Opening statement (text lights up as visitors scroll)"
+        type: object
+        required: true
+        fields:
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Statement"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 200
+          - name: paragraphs
+            label: "Paragraphs"
+            type: string
+            list: true
+            required: true
+            description: "Two or three short paragraphs read best."
+          - name: principles
+            label: "Principles (small tiles under the statement)"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            fields:
+              - name: title
+                label: "Title"
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: text
+                label: "Text"
+                type: text
+                required: true
+                options:
+                  maxlength: 160
+      - name: scene
+        label: "Signature scroll scene (a drawing that changes step by step)"
+        type: object
+        required: true
+        fields:
+          - name: type
+            label: "Drawing"
+            type: select
+            required: true
+            description: "Each sector has its own drawing; the steps below drive it. Keep five steps."
+            options:
+              values: ["terrain", "ladder", "coverage", "stack", "flow", "chain", "loop", "lattice"]
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Intro"
+            type: text
+            options:
+              maxlength: 420
+          - name: steps
+            label: "Steps (five)"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label} — {title}"
+            required: true
+            fields:
+              - name: label
+                label: "Short label on the drawing and the step rail"
+                type: string
+                required: true
+                options:
+                  maxlength: 18
+              - name: title
+                label: "Step heading"
+                type: string
+                required: true
+                options:
+                  maxlength: 110
+              - name: text
+                label: "Text"
+                type: text
+                required: true
+                options:
+                  maxlength: 600
+              - name: points
+                label: "Points"
+                type: string
+                list: true
+      - name: practice
+        label: "Practice index (expanding rows)"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Intro"
+            type: text
+            options:
+              maxlength: 520
+          - name: rows
+            label: "Rows"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: title
+                label: "Title"
+                type: string
+                required: true
+                options:
+                  maxlength: 90
+              - name: text
+                label: "Text"
+                type: text
+                options:
+                  maxlength: 600
+              - name: points
+                label: "Points"
+                type: string
+                list: true
+                description: "Optional \"Label — text\" format: the part before the dash is shown in bold."
+      - name: audiences
+        label: "Who we serve"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: items
+            label: "Client types"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: title
+                label: "Client type"
+                type: string
+                required: true
+                options:
+                  maxlength: 90
+              - name: text
+                label: "What we do for them"
+                type: text
+                required: true
+                options:
+                  maxlength: 300
+      - name: context
+        label: "Context and figures"
+        type: object
+        fields:
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+            options:
+              maxlength: 600
+          - name: figures
+            label: "Figures — only shown when a source is filled in and the item is not hidden"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{value} {label}"
+            fields:
+              - name: hidden
+                label: "Hide this item"
+                type: boolean
+                description: "Tick to take it off the website without deleting it."
+              - name: value
+                label: "Figure"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: label
+                label: "What it measures"
+                type: string
+                required: true
+                options:
+                  maxlength: 120
+              - name: source
+                label: "Source (publisher, year)"
+                type: string
+                description: "Required before the figure is shown on the website."
+                options:
+                  maxlength: 160
+      - name: gallery
+        label: "Field gallery (photos and films flying past in depth)"
+        type: object
+        required: true
+        fields:
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Intro"
+            type: text
+            options:
+              maxlength: 420
+          - name: items
+            label: "Photos and films"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{caption}"
+            required: true
+            fields:
+              - name: hidden
+                label: "Hide this item"
+                type: boolean
+                description: "Tick to take it off the website without deleting it."
+              - name: image
+                label: "Photo, or poster frame for a film"
+                type: image
+                required: true
+                options:
+                  media: images
+              - name: video
+                label: "Film (MP4)"
+                type: file
+                description: "Leave empty for a photo."
+                options:
+                  media: videos
+                  extensions: [mp4, webm]
+              - name: alt
+                label: "Description for screen readers"
+                type: text
+                required: true
+                options:
+                  maxlength: 300
+              - name: caption
+                label: "Caption"
+                type: string
+                required: true
+                description: "Say only what the photo shows. Name a project, client or year only when the frame proves it or IP3 confirms it."
+                options:
+                  maxlength: 160
+      - name: evidence
+        label: "On the record (documented assignments)"
+        type: object
+        required: true
+        fields:
+          - name: eyebrow
+            label: "Eyebrow"
+            type: string
+            required: true
+            options:
+              maxlength: 60
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: lead
+            label: "Intro"
+            type: text
+            options:
+              maxlength: 420
+          - name: records
+            label: "Assignments, in display order"
+            type: string
+            list: true
+            required: true
+            description: "Assignment slugs from Capabilities page — assignment records."
+      - name: closing
+        label: "Closing note before the next sector"
+        type: object
+        fields:
+          - name: title
+            label: "Heading"
+            type: text
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 160
+          - name: text
+            label: "Text"
+            type: text
+            required: true
+            options:
+              maxlength: 600
   - name: engagements
     label: "12 · Engagements"
     type: file

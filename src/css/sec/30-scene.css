@@ -1,0 +1,43 @@
+/* Signature scroll scene: sticky drawing + scrolling steps. 30-scene.js adds .is-live and marks the current step .is-on.
+   Each drawing has its own file (31-…38-) and defaults to its final state. */
+.sx-scene{position:relative;color:#fff;background:radial-gradient(110% 70% at 75% 0%,#211a15 0%,var(--sx-night) 62%);padding:clamp(90px,11vw,160px) 0 clamp(50px,7vw,110px)}
+.sx-scene::before{content:"";position:absolute;inset:0;pointer-events:none;background:url(/assets/img/why-contours.svg) center/1400px auto no-repeat;opacity:.06}
+.sx-scene__head{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,80px);align-items:end;margin-bottom:clamp(30px,5vw,70px)}
+.sx-scene__head h2{margin-top:18px}
+.sx-scene__grid{position:relative;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4.5vw,72px);align-items:start}
+.sx-scene__sticky{position:sticky;top:0;height:100svh;min-height:560px;display:flex;flex-direction:column;justify-content:center;gap:16px;padding:88px 0 28px}
+.sx-viz{position:relative;width:100%;aspect-ratio:4/3;max-height:calc(100svh - 190px);border-radius:var(--r);overflow:hidden;
+  background:radial-gradient(80% 70% at 50% 45%,#2a221c,#120f0d 80%);box-shadow:inset 0 0 0 1px var(--sx-line-d),0 40px 80px -50px #000}
+.sx-viz__now{position:absolute;left:22px;top:18px;z-index:5;display:flex;gap:12px;align-items:baseline;font:600 .7rem var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.sx-viz__now b{font:300 2.3rem/1 var(--f-display);letter-spacing:-.02em;color:#fff;font-feature-settings:'tnum'}
+.sx-viz__note{position:absolute;right:18px;bottom:12px;z-index:5;font:500 .68rem var(--f-ui);letter-spacing:.06em;color:rgba(255,255,255,.45)}
+.sx-canvas{position:absolute;inset:0;width:100%;height:100%}
+.sx-rail ol{display:flex;flex-wrap:wrap;gap:6px}
+.sx-rail a{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:8px 13px;border:1px solid var(--sx-line-d);border-radius:999px;font:600 .68rem var(--f-ui);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.62);transition:background .3s,color .3s,border-color .3s}
+.sx-rail a:hover{color:#fff;border-color:rgba(255,255,255,.4)}
+.sx-rail a[aria-current]{background:#fff;color:var(--ink);border-color:#fff}
+.sx-rail i{width:6px;height:6px;border-radius:50%;background:currentColor}
+.sx-steps{display:grid;counter-reset:step}
+.sx-step{min-height:86svh;display:flex;flex-direction:column;justify-content:center;padding:48px 0;border-top:1px solid var(--sx-line-d)}
+.sx-step:last-child{min-height:70svh}
+.sx-step__n{font:600 .72rem var(--f-ui);letter-spacing:.2em;text-transform:uppercase;color:#f0b9a3;margin-bottom:16px}
+.sx-step__n span{opacity:.55}
+.sx-step h3{font-size:clamp(1.6rem,2.5vw,2.3rem);line-height:1.12;margin-bottom:16px;text-wrap:balance}
+.sx-step>p{color:rgba(255,255,255,.8);max-width:52ch}
+.sx-scene.is-live .sx-step{opacity:.28;transition:opacity .6s var(--sx-ease)}
+.sx-scene.is-live .sx-step.is-on{opacity:1}
+@media (max-width:899px){
+  .sx-scene__head{grid-template-columns:1fr}
+  .sx-scene__grid{grid-template-columns:1fr;gap:0}
+  .sx-scene__sticky{top:0;height:auto;min-height:0;padding:64px 0 14px;z-index:3;background:linear-gradient(var(--sx-night) 88%,transparent)}
+  .sx-viz{aspect-ratio:16/11;max-height:44svh}
+  .sx-viz__now{left:14px;top:10px}
+  .sx-viz__now b{font-size:1.7rem}
+  .sx-rail{display:none}
+  .sx-step{min-height:62svh;padding:36px 0}
+  .sx-step:last-child{min-height:40svh}
+}
+@media (prefers-reduced-motion:reduce){
+  .sx-scene.is-live .sx-step{opacity:1}
+  .sx-step{min-height:0}
+}

@@ -161,6 +161,7 @@ module.exports = {
       strs('engagements', 'Related engagements', { optional: true, hint: 'Engagement slugs from the Engagements list.', ref: 'engagements' }),
       ], { summary: '{title}' }),
     ]),
+    require('./sector-pages'),
     file('engagements', '12 · Engagements', 'content/engagements.json', [
       list('items', 'Engagements', [
         hidden, slug(), str('client', 'Client'), str('year', 'Year'), str('sector', 'Sector name'),

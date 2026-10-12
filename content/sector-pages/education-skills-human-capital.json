@@ -1,0 +1,123 @@
+{
+  "slug": "education-skills-human-capital",
+  "statement": {
+    "eyebrow": "Learning for the digital age",
+    "title": "Evidence and innovative strategies for policies that foster inclusive growth and <em>educational reform.</em>",
+    "paragraphs": [
+      "In many ways and at most institutional sites, education is still relatively untouched by technology. Changes sometimes seem insignificant and the results disappointing. We make the case for the transformative power of technology in learning — and test it, cost it and appraise it before money is committed.",
+      "Our education work runs from primary schools to madrasahs, technical and vocational training and the management of the programs that fund them."
+    ]
+  },
+  "scene": {
+    "type": "ladder",
+    "eyebrow": "One system, every stage",
+    "title": "Five stages of a learning system, <em>each one appraised.</em>",
+    "lead": "Each step names an assignment on the record. Together they cover the ladder from the first classroom to the skills a changing economy needs.",
+    "steps": [
+      {
+        "label": "Primary",
+        "title": "Appraising digital learning for primary schools",
+        "text": "Feasibility for NextGen primary education in Bangladesh for the Asian Development Bank, including the technical feasibility and cost-benefit models for digital and AI-powered learning and assessment."
+      },
+      {
+        "label": "Secondary",
+        "title": "Appraising secondary and madrasah education",
+        "text": "Economic and financial feasibility for new secondary and madrasah education projects, with market analysis, cost-benefit assessment, risk modeling and an evaluation of institutional capacity, aligned with national development priorities and ADB guidelines.",
+        "points": [
+          "ENPV and FNPV, EIRR and FIRR and benefit-cost ratios",
+          "Scenario-based sensitivity analysis",
+          "Excel models and narratives for Planning Commission-format feasibility reports"
+        ]
+      },
+      {
+        "label": "Madrasah",
+        "title": "Costing a modern madrasah education",
+        "text": "Technical, financial and institutional feasibility for secondary and higher-secondary madrasah education, including costed plans for ICT labs, science labs and solar learning environments."
+      },
+      {
+        "label": "Skills",
+        "title": "Building the investment case for skills",
+        "text": "Economic and financial appraisal, costing and financing analysis for technical and vocational education and training, including sections of a Planning Commission-compliant feasibility report."
+      },
+      {
+        "label": "Systems",
+        "title": "Management that can deliver the program",
+        "text": "An assessment of management capacity in ADB’s education and skills programs (SESIP, SEIP): consultation synthesis and an assessment of institutional capacity and government systems.",
+        "points": [
+          "Training government officials and institutional leaders in policy formulation and implementation",
+          "Tools and methodologies for continuous learning and improvement"
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "How we work on learning systems",
+    "title": "From a pilot to a program that <em>lasts.</em>",
+    "rows": [
+      {
+        "title": "Program design and scaling",
+        "points": [
+          "Program frameworks aligned with policy and development goals",
+          "Theory of Change and logical frameworks to guide design",
+          "Sustainability, scalability and impact measurement built into program planning",
+          "Support for pilot programs and their transition to full-scale implementation"
+        ]
+      },
+      {
+        "title": "Economic and financial feasibility",
+        "points": [
+          "Economic and financial modeling to evaluate project viability and potential returns",
+          "Cost-benefit analysis and financial forecasting for public and private investment",
+          "Strategic financial planning, including long-term investment roadmaps and funding strategies"
+        ]
+      },
+      {
+        "title": "Evaluation built for education",
+        "text": "Targeted evaluation approaches for key sectors, education among them, aligned with regional priorities and national policies — combining econometric and statistical analysis with qualitative methods such as Most Significant Change and participatory research."
+      },
+      {
+        "title": "Digital proficiency",
+        "text": "Training programs for public officials, policymakers and private-sector stakeholders on using digital tools effectively."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "In the room",
+    "title": "Training rooms, <em>workshops and cohorts.</em>",
+    "lead": "Photographs from IP3’s training and workshop sessions. Captions say only what each photo shows.",
+    "items": [
+      {
+        "image": "/assets/img/training-3.webp",
+        "alt": "Rows of seated participants in a training room face a projected slide.",
+        "caption": "A training class facing a projected slide"
+      },
+      {
+        "image": "/assets/img/sectors/training-cohort-2018.webp",
+        "alt": "About forty people pose for a group photograph in a modern training room with desks and a projector.",
+        "caption": "A training cohort, 2018"
+      },
+      {
+        "image": "/assets/img/field/training-room-presenter-flip-chart.webp",
+        "alt": "Participants at desks with papers in a training room, with a flip chart behind them. One man stands behind the seated group and another stands at the right using a phone.",
+        "caption": "A training session with a flip chart"
+      },
+      {
+        "image": "/assets/img/field/training-class-projected-slides.webp",
+        "alt": "Rows of seated participants face a front desk where trainers sit under a projected screen, in a small training room with a whiteboard.",
+        "caption": "Trainers at the front desk under a projected screen"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Education and skills assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. The outcome of the studied projects is not part of these records.",
+    "records": [
+      "nsep-56088",
+      "nsep-madrasah",
+      "nsep-tvet",
+      "nextgen-primary-gpe",
+      "sesip-seip-management"
+    ]
+  }
+}

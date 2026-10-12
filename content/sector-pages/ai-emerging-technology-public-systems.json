@@ -1,0 +1,96 @@
+{
+  "slug": "ai-emerging-technology-public-systems",
+  "statement": {
+    "eyebrow": "Innovation-driven policy",
+    "title": "Breakthrough tools such as AI-powered analytics and predictive modeling, <em>in the service of policy.</em>",
+    "paragraphs": [
+      "We use AI-powered data analytics and predictive modeling to inform policymaking, so that clients can anticipate trends, make better decisions and govern more effectively.",
+      "Technology only earns its place when the data, the institutions and the people around it are ready. That is where we start: with the data pipeline, the governance model and the evidence that a tool is worth adopting."
+    ]
+  },
+  "scene": {
+    "type": "lattice",
+    "eyebrow": "Readiness before software",
+    "title": "From scattered signals to a system you can <em>govern and trust.</em>",
+    "lead": "Five layers of readiness, drawn as a network that finds its order as you scroll.",
+    "steps": [
+      {
+        "label": "Data",
+        "title": "Data pipelines and connected collection",
+        "text": "Automated data pipelines for efficiency and scale, and Internet of Things devices and digital reporting tools that improve data integrity, reduce reporting delays and drive operational efficiency."
+      },
+      {
+        "label": "Analytics",
+        "title": "AI-powered analytics and predictive modeling",
+        "text": "Machine learning and AI-driven automation to improve data accuracy, sharpen trend forecasting and support timely decisions.",
+        "points": [
+          "AI-driven tools and econometric models that quantify the success of interventions",
+          "Machine learning, AI and data-visualization tools"
+        ]
+      },
+      {
+        "label": "Governance",
+        "title": "AI-driven governance models",
+        "text": "Artificial intelligence for predictive analysis, regulatory forecasting and operational efficiency, and automation of complex institutional workflows to improve responsiveness and reduce errors."
+      },
+      {
+        "label": "Applications",
+        "title": "Emerging technology in public services",
+        "text": "Applications where sensing, automation and transparent records change how a service performs.",
+        "points": [
+          "Smart utility platforms — IoT-enabled monitoring of utility service performance, energy efficiency and waste reduction",
+          "Blockchain-based platforms for transparent tracking of resource usage and payments",
+          "Precision agriculture — sensors, drones and AI that provide real-time data to optimize planting, watering and harvesting while conserving resources"
+        ]
+      },
+      {
+        "label": "Adoption",
+        "title": "Platforms people use, evidence policy uses",
+        "text": "Cost-effective, interactive data platforms with stakeholder dashboards and performance tracking — and the evidence they generate put to use through better programs and policies.",
+        "points": [
+          "User-friendly dashboards for real-time decision-making",
+          "Program learning integrated into policymaking for adaptive management"
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Films and briefings",
+    "title": "Technology on the screen and <em>in the briefing room.</em>",
+    "lead": "A film produced by IP3 and photographs from technology-adoption and data briefings. Captions say only what each item shows.",
+    "items": [
+      {
+        "image": "/assets/img/reel/climate-data-technology.webp",
+        "video": "/assets/video/reel/climate-data-technology.mp4",
+        "alt": "A hand moves through charts, wind-turbine models and solar-panel diagrams on a large touchscreen.",
+        "caption": "Climate and energy data on a touchscreen"
+      },
+      {
+        "image": "/assets/img/field/wbg-technology-adoption-survey-briefing.webp",
+        "alt": "A briefing room with a projected slide titled ‘Structure of the Technology Adoption Survey’ that carries a World Bank Group logo. Two men stand beside a desk and three men sit watching the slide.",
+        "caption": "Briefing on the structure of a technology adoption survey (World Bank Group slide)"
+      },
+      {
+        "image": "/assets/img/field/adb-gis-workshop-head-table.webp",
+        "alt": "Four people sit behind microphones at a head table beneath an ADB banner that reads ‘Training Workshop on Estimating Land and Real Estate Prices for Financial Soundness Indicators (Encouraged Indicators) Using GIS Technique’, 21–24 October 2013, BRAC Inn Centre, Dhaka.",
+        "caption": "GIS training workshop (ADB banner), Dhaka, 2013 — the founder’s work at SANEM, before IP3"
+      },
+      {
+        "image": "/assets/img/field/round-table-workshop-laptops.webp",
+        "alt": "Participants at round tables with laptops and a projector in a workshop room. A man in a hat stands to speak.",
+        "caption": "Workshop at round tables"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Technology adoption and digital learning, <em>as documented.</em>",
+    "lead": "IP3’s record on new technology is about adoption: what it costs, who takes it up and why. These assignments, from the founder’s signed CV, are drawn from several sectors.",
+    "records": [
+      "nextgen-primary-gpe",
+      "rct-stitching-motors",
+      "tiga-bmgf",
+      "fat-survey"
+    ]
+  }
+}

@@ -43,12 +43,17 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
   const bundle = (dir, ext) => fs.readdirSync(path.join(root, dir)).filter((f) => f.endsWith(ext)).sort().map((f) => read(`${dir}/${f}`)).join('\n');
   const capCss = bundle('src/css/cap', '.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
   const capJs = bundle('src/js/cap', '.js');
+  // the eight /sectors/<slug> pages share one stylesheet and script: src/css/sec and src/js/sec, joined in name order
+  const secCss = bundle('src/css/sec', '.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
+  const secJs = bundle('src/js/sec', '.js');
   write('assets/css/site.css', css);
   write('assets/js/site.js', js);
   write('assets/js/why.js', whyJs);
   write('assets/css/capabilities.css', capCss);
   write('assets/js/capabilities.js', capJs);
-  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs), __CAPCSSV__: hash(capCss), __CAPJSV__: hash(capJs) };
+  write('assets/css/sectors.css', secCss);
+  write('assets/js/sectors.js', secJs);
+  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs), __CAPCSSV__: hash(capCss), __CAPJSV__: hash(capJs), __SECCSSV__: hash(secCss), __SECJSV__: hash(secJs) };
 
   // 2. pages
   const pages = [
@@ -67,7 +72,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false } = {}) {
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],
   ];
-  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__/g, (m) => V[m]));
+  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]));
 
   // 3. sitemap, robots, manifest
   const urls = pages.map(([f]) => f).filter((f) => f !== '404.html').map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));

@@ -1,0 +1,35 @@
+/* Where we add value + capabilities applied, and the next-sector portal. */
+.sx-exp__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,6vw,100px);align-items:start}
+.sx-exp__areas h2{margin:18px 0 30px}
+.sx-areas{border-top:1px solid var(--line)}
+.sx-areas li{display:flex;gap:18px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line);font:400 clamp(1.15rem,1.7vw,1.45rem)/1.25 var(--f-display)}
+.sx-areas span{flex:none;width:30px;font:600 .7rem var(--f-ui);letter-spacing:.18em;color:var(--rust)}
+.sx-exp__intro{margin-top:30px;color:var(--ink-2)}
+.sx-exp__btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.sx-exp__caps .section__head{margin-bottom:30px}
+.sx-caps{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sx-cap{position:relative;display:grid;gap:10px;align-content:start;padding:26px 26px 60px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);transition:border-color .3s,box-shadow .5s}
+.sx-cap:hover{border-color:transparent;box-shadow:0 36px 64px -42px rgba(22,21,19,.5)}
+.sx-cap__n{font:600 .72rem var(--f-ui);letter-spacing:.22em;color:var(--rust)}
+.sx-cap h3{font-size:1.3rem}
+.sx-cap p{font-size:.95rem;color:var(--ink-2)}
+.sx-cap i{position:absolute;left:26px;bottom:22px;color:var(--rust)}
+.sx-cap i svg{width:18px;height:18px;transition:transform .3s var(--sx-ease)}
+.sx-cap:hover i svg{transform:translateX(5px)}
+@media (max-width:1040px){.sx-exp__grid{grid-template-columns:1fr}}
+@media (max-width:620px){.sx-caps{grid-template-columns:1fr}}
+
+.sx-next{background:var(--sx-night);color:#fff;padding:clamp(70px,9vw,130px) 0 clamp(40px,5vw,70px);--np:1}
+.sx-next__portal{position:relative;display:block;height:min(78svh,720px);min-height:420px;border-radius:calc(var(--r) + 6px);overflow:hidden;isolation:isolate}
+.sx-next__media{position:absolute;inset:0;z-index:-1;clip-path:inset(calc((1 - var(--np))*14%) calc((1 - var(--np))*20%) round calc(var(--r) + (1 - var(--np))*20px))}
+.sx-next__media img{width:100%;height:100%;object-fit:cover;transform:scale(calc(1.18 - var(--np)*.12));transition:filter .6s}
+.sx-next__media::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(12,10,9,.9),rgba(12,10,9,.25) 60%,rgba(12,10,9,.4))}
+.sx-next__copy{position:absolute;left:clamp(22px,4vw,56px);right:clamp(22px,4vw,56px);bottom:clamp(22px,4vw,52px);display:grid;gap:10px;opacity:calc(var(--np)*1.4 - .2)}
+.sx-next__copy small{font:600 .72rem var(--f-ui);letter-spacing:.22em;text-transform:uppercase;color:#f0b9a3}
+.sx-next__n{font:300 clamp(4rem,10vw,9rem)/.85 var(--f-display);color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.6)}
+.sx-next__copy strong{font:400 clamp(1.9rem,4.4vw,4rem)/1.04 var(--f-display);letter-spacing:-.02em;max-width:20ch}
+.sx-next__p{max-width:56ch;color:rgba(255,255,255,.78)}
+.sx-next__portal:hover .sx-next__media img{filter:brightness(1.1)}
+.sx-next__foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:28px}
+.sx-next__foot .link{color:#f0b9a3}
+.sx-next__foot .link svg{width:16px;height:16px}

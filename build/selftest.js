@@ -56,6 +56,22 @@ test('negative content/build safeguards', async (t) => {
       reset(); const data = json('home/why-ip3.json'); data.items[0].href = '/capabilities#not-a-capability'; save('home/why-ip3.json', data);
       expectValidation(/no capability with slug "not-a-capability"/);
     });
+    await t.test('rejects a sector story whose drawing does not have five steps', () => {
+      reset(); const data = json('sector-pages/climate-energy-resilience.json'); data.scene.steps.pop(); save('sector-pages/climate-energy-resilience.json', data);
+      expectValidation(/terrain drawing is built for five steps \(found 4\)/);
+    });
+    await t.test('rejects a sector story that cites an unknown assignment', () => {
+      reset(); const data = json('sector-pages/health-systems-social-protection.json'); data.evidence.records.push('not-an-assignment'); save('sector-pages/health-systems-social-protection.json', data);
+      expectValidation(/"not-an-assignment" is not an existing assignment slug/);
+    });
+    await t.test('rejects a sector story for a sector that does not exist', () => {
+      reset(); const data = json('sector-pages/education-skills-human-capital.json'); data.slug = 'not-a-sector'; save('sector-pages/education-skills-human-capital.json', data);
+      expectValidation(/"not-a-sector" is not an existing sector slug/);
+    });
+    await t.test('rejects an unknown sector drawing', () => {
+      reset(); const data = json('sector-pages/digital-government-data-dpi.json'); data.scene.type = 'globe'; save('sector-pages/digital-government-data-dpi.json', data);
+      expectValidation(/"globe" is not one of terrain, ladder, coverage, stack, flow, chain, loop, lattice/);
+    });
     await t.test('rejects a /why-ip3 system link to an unknown system', () => {
       reset(); const data = json('why.json'); data.systems[0].relates.push('not-a-system'); save('why.json', data);
       expectValidation(/"not-a-system" is not a system key in this list/);

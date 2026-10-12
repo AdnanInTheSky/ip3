@@ -1,0 +1,78 @@
+# Sector pages — QA and change report
+
+Branch `sectors-cinematic`, worktree `ip3-bd.org-sectors`, from `main` at 0e452d0 (12 Oct 2026). **Committed locally. Not pushed and not deployed.**
+
+## Status of the eight pages
+
+| Sector | Scene | Steps | Records on the ledger | Related engagements shown | Gallery items | JS errors | Horizontal overflow (1440 / 390 px) |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 01 Climate, Energy & Resilience | terrain | 5 | 6 | 2 | 3 films | none | none / none |
+| 02 Education, Skills & Human Capital | ladder | 5 | 5 | 0 (the NSEP engagement is shown through its record) | 4 | none | none / none |
+| 03 Health Systems & Social Protection | coverage | 5 | 3 | 0 | 4 | none | none / none |
+| 04 Digital Government, Data & DPI | stack | 5 | 4 | 2 | 4 | none | none / none |
+| 05 Governance, Institutions & Public Finance | flow | 5 | 4 | 1 | 4 | none | none / none |
+| 06 Economic Transformation, Trade & PSD | chain | 5 | 11 | 1 | 3 | none | none / none |
+| 07 Sustainable Finance, ESG & Circular Economy | loop | 5 | 3 | 0 | 5 | none | none / none |
+| 08 AI & Emerging Technology | lattice | 5 | 4 | 0 | 4 | none | none / none |
+
+Titles, problem statements, routes, focus areas, capability links, page titles and meta descriptions are unchanged. Each page keeps one `h1` (the sector name) and the shared header, footer, breadcrumb and CTA.
+
+## Checks run
+
+| Check | Result |
+| --- | --- |
+| `npm run check` (content validation + generated CMS config) | OK. Five SEO-length warnings, all on other pages and all pre-existing |
+| `npm test` | **54/54 pass** (50 existing + 4 new: sector story must have five steps, cite existing assignments, belong to an existing sector, and use a known drawing) |
+| `npm run verify` (build + internal links, anchors including `/capabilities#proof-*`, metadata, image alt attributes, sitemap) | OK, 21 pages |
+| `npm run audit` (content fields never rendered) | Two new entries, both intended: the held Sustainable-finance figures (`context.figures[].value/label`), which stay off the page until a source is entered |
+| Regression: non-sector pages rebuilt from `main` and from this branch | **All 13 pages byte-identical**, as are `site.css`, `site.js`, `capabilities.css`, `capabilities.js` and the sitemap |
+| Accessibility lint on the eight generated pages | One `h1` each, no duplicate ids, no skipped heading levels, every `img` has `alt`, every `aria-labelledby` resolves, every `video` is labelled or hidden |
+| Browser (in-app preview, Chromium) at 1440×900 | All eight scenes drawn and stepping with the scroll; gallery flight and pinned ledger active; no console errors |
+| Browser at 390×844 | Sticky drawing above the steps; swipe rows for the gallery and ledger; no overflow |
+| Payload | `sectors.js` 30 KB (9.9 KB gzipped), `sectors.css` 31 KB (7.4 KB gzipped); new media 1.2 MB in total, all files under 220 KB except one 398 KB film |
+
+**Not verified**
+
+- Safari, Firefox and real phones.
+- Lighthouse and field Core Web Vitals.
+- Screen readers.
+- `prefers-reduced-motion` and no-JavaScript were checked by reading the code paths, not in an emulated browser.
+- The in-app preview pane was hidden, so the browser throttled animation frames. Screenshots showed scenes lagging behind the scroll, and smoothness at 60 fps was not judged visually. Frame rate measured with the pane hidden was 61 fps.
+- Long-term behaviour with Pages CMS editing (the new "11 · Sector pages" collection is generated into `.pages.yml` but has not been opened in the live editor).
+
+## Files changed
+
+**New**
+
+- `src/sec/` — `index.js` (page assembly), `util.js`, `hero.js`, `statement.js`, `scene.js` (the eight drawings), `practice.js`, `gallery.js`, `evidence.js`, `expertise.js` and `next.js`.
+- `src/css/sec/` — ten stylesheets, bundled to `assets/css/sectors.css`.
+- `src/js/sec/` — ten scripts, bundled to `assets/js/sectors.js`.
+- `cms/sector-pages.js` — the CMS collection "11 · Sector pages".
+- `content/sector-pages/*.json` — eight story files.
+- `assets/img/sectors/` (nine WebP files) and `assets/video/sectors/linear-waste.mp4`.
+- `docs/sectors/` — this report, `CONTENT-MAPPING.md`, `MEDIA-MANIFEST.md` and `MOTION-ARCHITECTURE.md`.
+
+**Shared files edited, kept to the minimum**
+
+| File | Change | Effect on other pages |
+| --- | --- | --- |
+| `src/pages-inner.js` | `sectorPage()` now comes from `src/sec/`; the old function was removed | None (byte-identical output) |
+| `src/data.js` | Loads `content/sector-pages/` as `D.sectorPages` | None |
+| `build/build-all.js` | Bundles `src/css/sec` and `src/js/sec`, with cache-busting hashes `__SECCSSV__` and `__SECJSV__` | None |
+| `build/validate.js` | Sector stories need five steps and no repeated records; warns when a visible sector has no story | None |
+| `build/selftest.js` | Four negative tests | — |
+| `cms/schema.js`, `.pages.yml` | Registers the collection; the YAML is regenerated by `npm run cms` | Editor gains one section |
+| `content/page-text/sectors.json` | Sixteen new labels (`sx-*`) for the sector pages | None |
+| `content/sectors.json` | Seven `image`/`photo` paths changed (see the media manifest). `card` is unchanged, so the home page and /sectors are unaffected | None |
+
+Outside the repository, a launch configuration `sx-main` (port 3490) was added to `NEW WEBSITE DESIGN/.claude/launch.json` for local preview.
+
+## Waiting on IP3
+
+1. **Claims held back** (none are published): "over a decade with the World Bank, ADB and European Commission"; "all our experts have more than a decade-long experience…"; "Bangladesh's first feasibility study for secondary and madrasah education"; the HALOW+ outcome sentence; the RMG-owner testimonial; the "Circular Economist" group, magazine and contact details.
+2. **Three figures** on the Sustainable-finance page (RMG 84% of exports, Dhaka 6,500+ tons of waste a day, $12 billion circular opportunity). They are in the CMS but hidden. Add a source in "Context and figures" and untick "Hide" to publish each one.
+3. **Media to confirm**: that `IMG_20180430_123930` (doctor's and child-care rooms, cropped) is IP3's own photo; that `016.jpg` (planning notes) is IP3's own; that the Canva licence covers the "Destroying our Planet" film on the web; and whether to replace the stock `education.webp` card on the home carousel and /sectors.
+4. **Thin sectors**: social protection (Health) and responsible AI / algorithmic accountability (AI) have no source text or assignment record. Supply material, or consider narrowing those pages' focus-area lists.
+5. **Bridge sentences** (listed in CONTENT-MAPPING.md) are new framing and need IP3's sign-off.
+6. **Dates**: the pages use the CV's dates where they conflict with the old site (Global LEAP, HALOW+, DSIP, Payra, Jolshiri, NSEP, CPD focus-group count, FAT firm count).
+7. **Release**: review on a Vercel preview (push the branch and open a PR), then merge. Nothing has been pushed.
