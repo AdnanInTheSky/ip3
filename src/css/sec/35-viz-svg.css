@@ -1,0 +1,57 @@
+/* SVG drawings: the policy chain (flow), the value chain (chain) and the circular loop (loop). Defaults = final state. */
+
+/* 05 flow */
+.sx-flow{position:absolute;inset:0;display:grid;place-items:center;perspective:1200px}
+.sx-flow svg{width:94%;height:auto;overflow:visible;transform:rotateX(14deg) rotateY(var(--ry,0deg));transform-origin:50% 60%}
+.sx-flow__ghost{fill:none;stroke:rgba(255,255,255,.22);stroke-width:2;stroke-dasharray:3 9}
+.sx-flow__link{fill:none;stroke:#f0b9a3;stroke-width:3;stroke-linecap:round;stroke-dasharray:1 1}
+.sx-flow__loop{fill:none;stroke:rgb(var(--sx-leaf));stroke-width:2.5;stroke-dasharray:1 1;stroke-linecap:round}
+.sx-flow__halo{fill:rgb(var(--sx-peach)/.12);transform-box:fill-box;transform-origin:center}
+.sx-flow__dot{fill:#1d1814;stroke:#f0b9a3;stroke-width:2.5}
+.sx-flow__num{fill:#fff;font:600 13px var(--f-ui);text-anchor:middle}
+.sx-flow__lbl{fill:rgba(255,255,255,.75);font:600 15px var(--f-ui);letter-spacing:.12em;text-transform:uppercase;text-anchor:middle}
+.sx-flow__n.is-now .sx-flow__dot{fill:#f0b9a3;stroke:#fff}
+.sx-flow__n.is-now .sx-flow__num{fill:var(--ink)}
+.sx-flow__n.is-now .sx-flow__lbl{fill:#fff}
+.sx-flow__pulse{fill:#fff}
+.sx-flow__pulse--loop{fill:rgb(var(--sx-leaf))}
+@media (prefers-reduced-motion:no-preference){
+  .sx-scene.is-live .sx-flow__n.is-now .sx-flow__halo{animation:sxHalo 1.8s var(--sx-ease) infinite}
+}
+@keyframes sxHalo{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+
+/* 06 chain */
+.sx-chain{position:absolute;inset:0;display:flex;align-items:center}
+.sx-chain__svg{width:100%;height:100%;overflow:hidden}
+.sx-chain__far{fill:rgba(255,255,255,.05);stroke:rgba(255,255,255,.16);stroke-width:2}
+.sx-chain__track{stroke:rgba(255,255,255,.2);stroke-width:4;stroke-dasharray:2 14;stroke-linecap:round}
+.sx-chain__fill{stroke:#f0b9a3;stroke-width:4;stroke-dasharray:1 1;stroke-linecap:round;fill:none}
+.sx-chain__disc{fill:rgba(255,255,255,.04);stroke:rgba(255,255,255,.22);stroke-width:2}
+.sx-chain__icon{fill:none;stroke:rgba(255,255,255,.75);stroke-width:3;stroke-linejoin:round}
+.sx-chain__lbl{fill:rgba(255,255,255,.7);font:600 22px var(--f-ui);letter-spacing:.12em;text-transform:uppercase;text-anchor:middle}
+.sx-chain__s{transition:opacity .5s}
+.sx-chain__s.is-now .sx-chain__disc{fill:rgb(var(--sx-peach)/.16);stroke:#f0b9a3}
+.sx-chain__s.is-now .sx-chain__icon{stroke:#fff}
+.sx-chain__s.is-now .sx-chain__lbl{fill:#fff}
+.sx-chain__cargo{fill:#f0b9a3;opacity:.85}
+@media (prefers-reduced-motion:no-preference){
+  .sx-scene.is-live .sx-chain__cargo{animation:sxCargo 9s linear infinite;animation-delay:var(--dl)}
+}
+@keyframes sxCargo{from{transform:translateX(-400px)}to{transform:translateX(400px)}}
+
+/* 07 loop */
+.sx-loop{--t:1;--seg:1;--core:1;position:absolute;inset:0;display:grid;place-items:center}
+.sx-loop svg{width:min(92%,560px);height:auto;overflow:visible}
+.sx-loop__ghost{fill:none;stroke:rgba(255,255,255,.12);stroke-width:2;stroke-dasharray:4 8;opacity:calc(1 - var(--t))}
+.sx-loop__path{fill:none;stroke:#f0b9a3;stroke-width:5;stroke-linecap:round}
+.sx-loop__word{fill:#fff;font:400 30px var(--f-display);text-anchor:middle;opacity:calc(1 - var(--t)*2.2)}
+.sx-loop__orbit{opacity:var(--seg)}
+.sx-loop__seg path{fill:none;stroke:rgba(255,255,255,.28);stroke-width:14;stroke-linecap:round}
+.sx-loop__seg text{fill:rgba(255,255,255,.72);font:600 17px var(--f-ui);letter-spacing:.12em;text-transform:uppercase;text-anchor:middle}
+.sx-loop__seg.is-now path{stroke:rgb(var(--sx-leaf))}
+.sx-loop__seg.is-now text{fill:#fff}
+.sx-loop__arrow{fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transform:rotate(var(--rot,0deg));transform-origin:0 0}
+.sx-loop__core{opacity:var(--core)}
+.sx-loop__core circle{fill:rgb(var(--sx-leaf)/.12);stroke:rgb(var(--sx-leaf)/.6);stroke-width:1.5}
+.sx-loop__core text{fill:#fff;font:400 34px var(--f-display);text-anchor:middle;letter-spacing:.04em}
+.sx-loop__core .sx-loop__core-sub{font:600 13px var(--f-ui);letter-spacing:.2em;text-transform:uppercase;fill:rgba(255,255,255,.7)}

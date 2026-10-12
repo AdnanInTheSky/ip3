@@ -1,0 +1,235 @@
+{
+  "slug": "sustainable-finance-esg-circular-economy",
+  "statement": {
+    "eyebrow": "Responsible growth",
+    "title": "Fostering responsible economic growth within <em>environmental limits and social equity.</em>",
+    "paragraphs": [
+      "The endless pursuit of economic growth is destroying our planet. From public-sector institutions to private-sector organizations, we partner with clients who want to reimagine responsible growth and a sustainable future.",
+      "Our support is grounded in economic theory, insight into industry trends and an understanding of the political and regulatory environment. We design context-specific frameworks that integrate sustainability into economic policy, so that development goals align with environmental preservation and social equity — and we work with a network of data and digital innovators to deliver sustainability solutions that last."
+    ],
+    "principles": [
+      {
+        "title": "Market transformation",
+        "text": "Redefining economic value and resource efficiency."
+      },
+      {
+        "title": "Resource productivity",
+        "text": "Localizing solutions and fostering global cooperation."
+      },
+      {
+        "title": "Sustainability integration",
+        "text": "Implementing regenerative and systemic approaches."
+      },
+      {
+        "title": "ESG integration, just transition",
+        "text": "Championing ESG and equitable transitions."
+      },
+      {
+        "title": "Decoupling growth",
+        "text": "Integrating ecosystem services and inclusive governance."
+      },
+      {
+        "title": "Finance and education",
+        "text": "Advancing learning and impact investing."
+      }
+    ]
+  },
+  "scene": {
+    "type": "loop",
+    "eyebrow": "From linear to circular",
+    "title": "Take, make, waste — <em>bent into a loop.</em>",
+    "lead": "Design, recovery, regeneration and the finance that supports a circular economy.",
+    "system": {
+      "framework": "ESG frameworks · SDGs",
+      "setting": "Industry · municipal resource systems",
+      "outcome": "Regenerative investment"
+    },
+    "steps": [
+      {
+        "label": "Linear",
+        "title": "Decoupling growth from degradation",
+        "text": "We partner with organizations to decouple economic growth from environmental degradation by embedding sustainability into core operations — enhancing resource productivity, minimizing waste and aligning growth with the SDGs and the Paris Agreement."
+      },
+      {
+        "label": "Design",
+        "title": "Circular economy innovations",
+        "text": "Closed-loop, waste-free business models that prioritize resource efficiency, material recovery and sustainable production systems, to create long-term value and reduce ecological footprints.",
+        "points": [
+          "Textile-sector mentorship — circular design, water and energy efficiency audits, and ESG reporting"
+        ]
+      },
+      {
+        "label": "Recover",
+        "title": "Turning waste into resources, again and again",
+        "text": "Systems that bring materials and energy back into use, for cities, industry and agriculture.",
+        "points": [
+          "Municipal circular-economy frameworks — waste-to-resource systems, citizen-engagement models and PPP structuring",
+          "Food-waste valorization — biogas plants, circular agro-industrial partnerships and community composting programs",
+          "Waste-to-energy within a circular economy"
+        ]
+      },
+      {
+        "label": "Regenerate",
+        "title": "Regenerative economy pathways",
+        "text": "Regenerative strategies that restore ecosystems, enhance social equity and drive long-term economic resilience through nature-positive growth models.",
+        "points": [
+          "Sustainable resource and energy management — integrated solutions that optimize energy, water and material use and support a just transition to a low-carbon economy",
+          "Biodiversity conservation integrated into strategic planning, to preserve natural ecosystems and unlock sustainable development"
+        ]
+      },
+      {
+        "label": "Finance",
+        "title": "Sustainable finance and global integration",
+        "text": "Sustainable investment and financial innovation through green bonds, impact investing and educational initiatives that equip institutions and leaders for a sustainability-driven economy.",
+        "points": [
+          "Educational, financial and investment instruments — capacity building, sustainable financial instruments and impact-investment strategies",
+          "International sustainability alignment — regulatory compliance, cross-border partnerships and alignment with international ESG frameworks and climate commitments",
+          "Policy advocacy on circularity, aligning national strategies with SDG 11 (sustainable cities) and SDG 12 (responsible consumption)"
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "Our ESG services",
+    "title": "Environmental, social and governance — <em>and what ties them together.</em>",
+    "lead": "We combine ESG strategy and sustainability services to help organizations integrate sustainability into corporate strategy and business models: unlocking financial value, driving innovation and creating lasting societal impact. ESG roadmaps, materiality assessments and circular-economy strategies help businesses meet regulatory compliance while building long-term value.",
+    "rows": [
+      {
+        "title": "Environmental services",
+        "text": "Solutions that minimize ecological footprints while maximizing resource efficiency.",
+        "points": [
+          "Climate change policies — ESG strategies that reduce carbon emissions and build resilience to environmental risks",
+          "Resource optimization — more efficient use of water, energy and raw materials in production, for cost savings and sustainability",
+          "Waste management — waste reduction, recycling and responsible disposal towards a zero-waste model",
+          "Pollution control — measures to control air and water pollution, including emission-reduction technologies and water treatment",
+          "Sustainable sourcing — procurement practices that source materials in an eco-friendly and socially responsible way",
+          "Biodiversity conservation — programs to protect and restore natural habitats in Bangladesh"
+        ]
+      },
+      {
+        "title": "Social services",
+        "text": "Labour standards, community relations and overall social impact.",
+        "points": [
+          "Labour standards and employee engagement — fair labour practices, safe working conditions and employee well-being programs",
+          "Community relations — strategies for meaningful community engagement that support local development",
+          "Corporate social responsibility — CSR initiatives that contribute to the welfare of local communities",
+          "Customer satisfaction and data privacy — practices that protect customer data through transparent, ethical business",
+          "Diversity and inclusion — gender diversity, inclusion and equal opportunity in the workplace"
+        ]
+      },
+      {
+        "title": "Governance services",
+        "text": "Transparency, accountability and ethical business practice.",
+        "points": [
+          "Transparency and reporting — ESG reporting frameworks aligned with global standards",
+          "Board composition and leadership — advice on board diversity, independence and effective governance structures",
+          "Anti-corruption and ethics — anti-corruption policies and ethical guidelines that prevent fraud",
+          "Regulatory compliance — adherence to local and international regulation, including mandatory ESG disclosure",
+          "Stakeholder engagement — communication with shareholders, employees, customers and regulators"
+        ]
+      },
+      {
+        "title": "Additional services",
+        "points": [
+          "ESG strategy development — strategies aligned with company goals and stakeholder expectations",
+          "Impact assessment — ESG impact assessments that measure the effectiveness of sustainability initiatives",
+          "Training and capacity building — ESG knowledge and skills for employees and management",
+          "Technology integration — digital tools for ESG data collection, analysis and reporting"
+        ]
+      }
+    ]
+  },
+  "audiences": {
+    "eyebrow": "Specialized industry solutions",
+    "title": "Custom ESG strategies for <em>diverse sectors.</em>",
+    "items": [
+      {
+        "title": "Manufacturing industries and enterprises",
+        "text": "Integrating sustainable practices, decoupling growth from environmental impact and enhancing resource efficiency."
+      },
+      {
+        "title": "Banks, insurance and reinsurance companies",
+        "text": "Climate-risk impact analysis and sustainable underwriting practices."
+      },
+      {
+        "title": "Wealth and asset management companies",
+        "text": "ESG-integrated investment strategies, risk assessments and portfolio audits."
+      },
+      {
+        "title": "Private equity firms",
+        "text": "Pre-investment due diligence, ESG auditing and sustainability-focused portfolio management."
+      }
+    ]
+  },
+  "context": {
+    "eyebrow": "Why Bangladesh needs circularity",
+    "title": "Transform systems, <em>not just strategies.</em>",
+    "text": "Bangladesh’s rapid urbanization, industrial growth and climate vulnerability demand an urgent shift to circularity, guiding cities, corporations and communities toward regenerative futures. Yet gaps in policy alignment, waste infrastructure and sector-specific expertise slow progress.",
+    "figures": [
+      {
+        "hidden": true,
+        "value": "84%",
+        "label": "of exports come from ready-made garments"
+      },
+      {
+        "hidden": true,
+        "value": "6,500+",
+        "label": "tons of waste generated in Dhaka every day"
+      },
+      {
+        "hidden": true,
+        "value": "$12 billion",
+        "label": "in economic opportunities that circular strategies could unlock"
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Films and fieldwork",
+    "title": "From the waste heap to <em>the survey room.</em>",
+    "lead": "Films produced by IP3 and a photograph from the green-transition survey training. Captions say only what each item shows.",
+    "items": [
+      {
+        "image": "/assets/img/sectors/poster-linear-waste.webp",
+        "video": "/assets/video/sectors/linear-waste.mp4",
+        "alt": "Plastic waste piled in the foreground, with electricity pylons and power-station chimneys blurred in the haze behind.",
+        "caption": "Plastic waste in front of pylons and chimneys"
+      },
+      {
+        "image": "/assets/img/field/cpd-green-transition-enumerator-training.webp",
+        "alt": "A training room with a projected slide titled ‘Training program for the Enumerators & Supervisors’ for ‘Nation-wide Firm Level Primary Surveys for Securing Green Transition of the Textile and Readymade Garments Sector in Bangladesh for Centre for Policy Dialogue CPD’.",
+        "caption": "Training for enumerators and supervisors: firm-level surveys on the green transition of the textile and garments sector (CPD)"
+      },
+      {
+        "image": "/assets/img/poster-waste.webp",
+        "video": "/assets/video/waste.mp4",
+        "alt": "Plastic bottles and mixed waste move through a recycling plant.",
+        "caption": "Plastic waste in a recycling plant"
+      },
+      {
+        "image": "/assets/img/reel/circular-economy-projects.webp",
+        "video": "/assets/video/reel/circular-economy-projects.mp4",
+        "alt": "An animated IP3 Consulting title card reading Circular Economy Projects, with the labels Economic Model, Circular and Regenerative Approach.",
+        "caption": "IP3 title card: Circular Economy Projects"
+      },
+      {
+        "image": "/assets/img/sectors/factory-line-2018.webp",
+        "alt": "A production aisle in a garment factory: a white table and a red crate in the foreground, workers and hanging denim garments along the line behind.",
+        "caption": "A garment production line, 2018"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Green-transition and sustainable-finance assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. Policy uptake and financing outcomes are not claimed.",
+    "records": [
+      "green-transition-rmg",
+      "green-trade-reform",
+      "bmdf-green-municipal"
+    ]
+  },
+  "closing": {
+    "title": "Let’s build a greener, more resilient Bangladesh — <em>one step at a time.</em>",
+    "text": "Bangladesh stands at a critical juncture in its journey toward sustainable development. We bring the expertise, tools and strategies to integrate ESG principles into core operations — for long-term growth that benefits business, the environment and society as a whole."
+  }
+}

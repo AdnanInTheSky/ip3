@@ -1,0 +1,128 @@
+{
+  "slug": "governance-institutions-public-finance",
+  "statement": {
+    "eyebrow": "Regulation and accountable governance",
+    "title": "Regulation underpins thriving economies and societies. We make it <em>transparent and accountable.</em>",
+    "paragraphs": [
+      "We help governments and regulators develop, reform and implement policies that safeguard citizens, ensure business efficiency and reduce bureaucratic burdens.",
+      "From policy development to regulation, economic analysis to service design and delivery, our consultants work across the full suite of government functions — integrating research depth with the precision of analysis."
+    ]
+  },
+  "scene": {
+    "type": "flow",
+    "eyebrow": "From policy to delivery",
+    "title": "Policies fail at the hand-offs. <em>Follow the chain</em> from diagnosis to accountability.",
+    "lead": "Five links between a public decision and the service people receive — and the feedback that should flow back.",
+    "system": {
+      "framework": "Policy · regulatory frameworks",
+      "setting": "Public institutions · stakeholder needs",
+      "outcome": "Accountable service delivery"
+    },
+    "steps": [
+      {
+        "label": "Diagnose",
+        "title": "Root-cause analysis of public challenges",
+        "text": "We use data-driven methods and systems thinking to diagnose the underlying causes of policy challenges rather than just addressing symptoms.",
+        "points": [
+          "Policy reviews to identify gaps and inefficiencies in current regulatory frameworks",
+          "Advice on harmonizing local regulations with global governance standards such as ISO, TCFD and CSRD"
+        ]
+      },
+      {
+        "label": "Co-create",
+        "title": "Stakeholder-inclusive policy frameworks",
+        "text": "Policies co-created with government bodies, private-sector players and civil society carry greater legitimacy and impact.",
+        "points": [
+          "Inclusive platforms for dialogue among policymakers, industry leaders and communities",
+          "Participatory frameworks so that governance reforms reflect diverse stakeholder needs",
+          "Participatory governance for equitable and transparent decision-making"
+        ]
+      },
+      {
+        "label": "Regulate",
+        "title": "Regulation: transparent and efficient governance",
+        "text": "Evidence-based regulatory frameworks that enhance compliance, streamline processes and promote economic competitiveness.",
+        "points": [
+          "Frameworks that ensure accountability, minimize bureaucratic inefficiency and foster public trust",
+          "Regulations that promote business growth while safeguarding environmental sustainability, social equity and consumer protection"
+        ]
+      },
+      {
+        "label": "Deliver",
+        "title": "Program design, pilots and capacity",
+        "text": "Evidence-based programs tailored to client goals and contexts, executed with on-the-ground expertise and stakeholder engagement.",
+        "points": [
+          "Pilot programs to test innovative policy approaches, and scaling of the ones that work",
+          "Adaptive management that refines policy with real-time data and feedback",
+          "Training for government officials and institutional leaders in policy formulation and implementation"
+        ]
+      },
+      {
+        "label": "Account",
+        "title": "Integrity, service quality and evaluation",
+        "text": "Robust evaluation frameworks give governments the tools to assess performance and refine implementation — and integrity frameworks keep the system honest.",
+        "points": [
+          "Integrity-focused frameworks for tackling corruption and ensuring transparency, with whistleblower-management platforms and risk-assessment tools",
+          "Customized monitoring and evaluation systems that track progress and measure effectiveness",
+          "Analytics and econometric models that quantify the success of interventions"
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "Your benefits",
+    "title": "What decision-makers <em>get from the work.</em>",
+    "rows": [
+      {
+        "title": "Informed decisions",
+        "text": "We help clients explore the effects of existing policies and project the broader societal impact of proposed policy frameworks, using advanced data analytics, systems thinking and stakeholder engagement. Whether you are a government agency evaluating public-policy outcomes or a development partner assessing systemic change, the research is built to be relevant and to be used."
+      },
+      {
+        "title": "Policy impact",
+        "text": "For decision-makers who need immediate, evidence-based insight on pressing challenges, we systematically compare policy alternatives, conduct economic, financial and environmental cost-benefit analyses and project the impact of each option — whether you are designing regulatory frameworks or shaping a sectoral strategy."
+      },
+      {
+        "title": "Actionable insights",
+        "text": "We bridge policy research and policy analysis for governments, development organizations, private institutions and think tanks, from policy development and regulation to economic analysis and service design and delivery."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "In the room",
+    "title": "Panels, round tables and <em>the planning wall.</em>",
+    "lead": "Photographs from IP3’s meetings, consultations and workshops. Captions say only what each photo shows.",
+    "items": [
+      {
+        "image": "/assets/img/sectors/planning-notes.webp",
+        "alt": "A wall covered in handwritten yellow, pink and blue sticky notes from a planning session.",
+        "caption": "Sticky notes from a participatory planning session"
+      },
+      {
+        "image": "/assets/img/sectors/head-table-2021.webp",
+        "alt": "Four speakers, some wearing face masks, sit at a white-draped head table beside a projected slide in a seminar room.",
+        "caption": "Speakers at a head table, 2021"
+      },
+      {
+        "image": "/assets/img/field/meeting-room-wall-screens.webp",
+        "alt": "Wide view of a meeting room with a long conference table, desk microphones and two wall screens. Participants sit on both sides of the table.",
+        "caption": "Meeting in a conference room with wall screens"
+      },
+      {
+        "image": "/assets/img/field/findings-round-table-2024.webp",
+        "alt": "Four people sit at a round table in a meeting room. A presentation screen at the left shows a partly visible heading ending ‘INDINGS’. A man in a black shirt and glasses sits at the right.",
+        "caption": "Round-table session, 2024"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Governance and public-finance assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. Financing and policy outcomes are not claimed.",
+    "records": [
+      "dscc-vision-2050",
+      "bmdf-green-municipal",
+      "bicf-ifc",
+      "jica-beza-biffl"
+    ]
+  }
+}

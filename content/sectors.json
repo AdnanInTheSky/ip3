@@ -20,7 +20,7 @@
       "video": "/assets/video/energy.mp4",
       "poster": "/assets/img/poster-energy.webp",
       "card": "/assets/img/poster-energy.webp",
-      "photo": "/assets/img/solar.webp",
+      "photo": "/assets/img/poster-coast.webp",
       "engagements": [
         "gggf-urban-climate",
         "agro-board-biodiversity"
@@ -43,7 +43,7 @@
         "monitoring-evaluation-learning",
         "data-digital-responsible-ai"
       ],
-      "image": "/assets/img/education.webp",
+      "image": "/assets/img/training-5.webp",
       "card": "/assets/img/education.webp",
       "photo": "/assets/img/training-3.webp",
       "engagements": [
@@ -92,7 +92,7 @@
       "video": "/assets/video/city.mp4",
       "poster": "/assets/img/poster-city.webp",
       "card": "/assets/img/poster-city.webp",
-      "photo": "/assets/img/poster-city.webp",
+      "photo": "/assets/img/sectors/working-session-2013.webp",
       "engagements": [
         "bmdf-oscb",
         "worldbank-fat"
@@ -116,9 +116,9 @@
         "development-finance",
         "monitoring-evaluation-learning"
       ],
-      "image": "/assets/img/workshop-adb.webp",
+      "image": "/assets/img/field/financing-recommendations-panel.webp",
       "card": "/assets/img/workshop-adb.webp",
-      "photo": "/assets/img/dhaka.webp",
+      "photo": "/assets/img/sectors/planning-notes.webp",
       "engagements": [
         "bmdf-transformation",
         "bmdf-oscb"
@@ -144,7 +144,7 @@
       ],
       "image": "/assets/img/factory.webp",
       "card": "/assets/img/factory.webp",
-      "photo": "/assets/img/factory.webp",
+      "photo": "/assets/img/sectors/factory-line-2018.webp",
       "engagements": [
         "worldbank-fat",
         "sida-cpd-textile"
@@ -169,7 +169,7 @@
       "video": "/assets/video/textile.mp4",
       "poster": "/assets/img/poster-textile.webp",
       "card": "/assets/img/poster-textile.webp",
-      "photo": "/assets/img/recycle.webp",
+      "photo": "/assets/img/field/cpd-green-transition-enumerator-training.webp",
       "engagements": [
         "sida-cpd-textile"
       ]

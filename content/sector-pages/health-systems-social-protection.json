@@ -1,0 +1,128 @@
+{
+  "slug": "health-systems-social-protection",
+  "statement": {
+    "eyebrow": "Evidence for health and protection",
+    "title": "Globally benchmarked methods for <em>informed decisions</em> about health and welfare.",
+    "paragraphs": [
+      "We conduct rigorous outcome and impact evaluations, using quasi-experimental and counterfactual methods to measure effectiveness and causal attribution, and mixed-method frameworks that integrate qualitative insight with quantitative techniques.",
+      "Our gender-transformative evaluation approaches identify structural barriers and lead to equity-driven program improvements, so that coverage reaches the people a program was designed for."
+    ]
+  },
+  "scene": {
+    "type": "coverage",
+    "eyebrow": "Who is reached, and what changed",
+    "title": "Every dot is a person. <em>Evidence decides</em> what happens next.",
+    "lead": "Five moves of monitoring, evaluation, research, learning and adaptation (MERLA), drawn on one population.",
+    "system": {
+      "framework": "World Bank · OECD-DAC methods",
+      "setting": "Health programs · coverage",
+      "outcome": "Evidence for equitable services"
+    },
+    "steps": [
+      {
+        "label": "Measure",
+        "title": "Monitoring and results measurement",
+        "text": "We design and deploy secure, scalable data systems — context-specific, high-integrity data ecosystems that strengthen decisions, transparency and accountability.",
+        "points": [
+          "Real-time monitoring with interactive dashboards and geospatial tools",
+          "Capacity building for national governments, donors and development organizations in high-quality monitoring frameworks"
+        ]
+      },
+      {
+        "label": "Compare",
+        "title": "Impact evaluation with a counterfactual",
+        "text": "Outcome and impact evaluations using quasi-experimental and counterfactual methods, with data collection benchmarked to World Bank and OECD-DAC criteria, randomized methods and DFID practice.",
+        "points": [
+          "Randomized and quasi-experimental designs",
+          "Mixed-method frameworks for a holistic assessment"
+        ]
+      },
+      {
+        "label": "Include",
+        "title": "Gender-transformative evaluation",
+        "text": "We look for the structural barriers that keep some people out, so that program improvements are driven by equity."
+      },
+      {
+        "label": "Adapt",
+        "title": "Fit-for-purpose and operational research",
+        "text": "Evaluation designed for the sector and adapted to local priorities — including climate resilience, global health (for example, neglected tropical disease programming), education and sustainable development — with real-time operational research to find bottlenecks and improve resource efficiency.",
+        "points": [
+          "“Pause and Reflect” workshops and continuous learning cycles",
+          "Most Significant Change and participatory research alongside econometric analysis"
+        ]
+      },
+      {
+        "label": "Cost",
+        "title": "Comparing the options under time pressure",
+        "text": "For decision-makers who need evidence quickly, we systematically compare policy alternatives, run economic, financial and environmental cost-benefit analyses and project the impact of each option."
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "Our distinctive edge",
+    "title": "Three things our <em>evaluations carry.</em>",
+    "rows": [
+      {
+        "title": "Impact evaluation",
+        "points": [
+          "Data-driven impact assessment frameworks",
+          "Globally benchmarked evaluation methodologies",
+          "Gender-inclusive impact analysis"
+        ]
+      },
+      {
+        "title": "Monitoring and results measurement",
+        "points": [
+          "Real-time monitoring systems",
+          "Geospatial data integration",
+          "Adaptive management dashboards"
+        ]
+      },
+      {
+        "title": "Fit-for-purpose evaluation",
+        "points": [
+          "Mixed-method evaluation design",
+          "Context-specific MEL frameworks",
+          "Adaptive evaluation for specific programs"
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "In the field",
+    "title": "Workplaces, surveys and <em>the people in them.</em>",
+    "lead": "Photographs from IP3’s field and workshop sessions. Captions say only what each photo shows.",
+    "items": [
+      {
+        "image": "/assets/img/sectors/factory-floor-2018.webp",
+        "alt": "A garment factory floor with long rows of cutting and sewing tables under strip lights; workers stand at the tables and a man in a striped shirt is in the foreground.",
+        "caption": "A garment factory floor, 2018"
+      },
+      {
+        "image": "/assets/img/sectors/workplace-health-rooms-2018.webp",
+        "alt": "A single-storey building with a green roof and signs reading ‘Doctor’s room’ and ‘Child care room’, beside an open stairway.",
+        "caption": "Doctor’s room and child-care room signs at a workplace, 2018"
+      },
+      {
+        "image": "/assets/img/pilot-3.webp",
+        "alt": "Workers seated in rows in a factory room for a briefing.",
+        "caption": "Workers seated for a survey briefing"
+      },
+      {
+        "image": "/assets/img/sectors/wash-workshop-2019.webp",
+        "alt": "A workshop in a long meeting room; two women stand by a flip chart at the end of the table and posters about hygiene hang on the wall.",
+        "caption": "A workshop with hygiene posters on the wall, 2019"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Health and welfare assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. Open one to see the role, the methods and what the record does not claim.",
+    "records": [
+      "halow",
+      "dsip-dwasa",
+      "tobacco-taxation"
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "slug": "digital-government-data-dpi",
+  "statement": {
+    "eyebrow": "Institutional effectiveness, data and digital governance",
+    "title": "Data-driven governance and inclusive digital ecosystems for <em>resilient, future-ready services.</em>",
+    "paragraphs": [
+      "In an increasingly connected world, digital tools are no longer optional — they are integral to impactful, scalable solutions. We embed technology in our services so that clients are prepared for the challenges of today and tomorrow.",
+      "Our context-specific digital tools and platforms help governments, businesses and communities overcome systemic challenges: strengthening governance, improving service delivery and building digital ecosystems for sustainable transformation."
+    ]
+  },
+  "scene": {
+    "type": "stack",
+    "eyebrow": "Layers of a digital state",
+    "title": "Digital public infrastructure is a stack. <em>Every layer has to hold.</em>",
+    "lead": "From the first data point to the citizen at the counter: five layers, separated so you can see what each one carries.",
+    "system": {
+      "framework": "Data standards · governance models",
+      "setting": "Utilities · institutions · communities",
+      "outcome": "Inclusive public services"
+    },
+    "steps": [
+      {
+        "label": "Data",
+        "title": "Data that can be trusted",
+        "text": "Tailor-made survey tools and protocols, digital collection on platforms such as ODK and SurveyCTO, and large-scale baseline, midline and end-line surveys.",
+        "points": [
+          "Data collection protocols aligned with international standards",
+          "Transparency, quality and reproducibility in every dataset",
+          "Rigorous data validation"
+        ]
+      },
+      {
+        "label": "Systems",
+        "title": "Digitization: unlocking institutional efficiency",
+        "text": "Digital capability roadmaps and smart data systems that strengthen the effectiveness of institutions, regulations and policies.",
+        "points": [
+          "Digital capability roadmaps — long-term strategies tailored to institutional goals and local contexts, and digital infrastructure that streamlines operations and service delivery",
+          "Smart data systems — integrated platforms for real-time monitoring, analytics and decision-making, and tools for ESG compliance tracking, reporting and transparency"
+        ]
+      },
+      {
+        "label": "Ecosystem",
+        "title": "Data and governance ecosystems",
+        "text": "Data-ecosystem mapping and governance models for digital governance and equity, so that communities and utilities share infrastructure instead of duplicating it.",
+        "points": [
+          "Utility data-ecosystem mapping — gaps in water, energy and sanitation services, and maps of data flows and ecosystem interactions",
+          "Collaborative ecosystem design — shared digital infrastructure built with governments, private players and NGOs for maximum societal benefit"
+        ]
+      },
+      {
+        "label": "Services",
+        "title": "Service delivery and service quality",
+        "text": "Effective regulation and service-quality improvement, measured where citizens meet the state.",
+        "points": [
+          "Performance monitoring systems to evaluate the effectiveness of regulatory bodies",
+          "KPI-driven dashboards for continuous improvement in governance",
+          "Community-specific solutions for disaster resilience and service accessibility in marginalized areas"
+        ]
+      },
+      {
+        "label": "People",
+        "title": "Inclusion and digital proficiency",
+        "text": "Mobile-first tools that bring digital governance closer to underserved populations, and the skills to use them.",
+        "points": [
+          "Training for public officials, policymakers and private-sector stakeholders on using digital tools effectively",
+          "User-friendly dashboards for real-time decision-making",
+          "Data synthesized into actionable insights for stakeholders"
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "Survey and data management",
+    "title": "Evidence starts with <em>well-run data.</em>",
+    "lead": "We design and manage programs and surveys for public, private and development clients, and turn the data into decisions.",
+    "rows": [
+      {
+        "title": "Survey design and management",
+        "points": [
+          "Comprehensive surveys for large-scale data collection",
+          "Innovative sampling techniques for accuracy and inclusivity",
+          "Survey logistics managed from field-staff training to data quality assurance"
+        ]
+      },
+      {
+        "title": "Data collection and analysis",
+        "points": [
+          "Rigorous data collection protocols aligned with international standards",
+          "Advanced statistical tools for actionable insights",
+          "Transparency, quality and reproducibility in every dataset"
+        ]
+      },
+      {
+        "title": "Data analytics and reporting",
+        "points": [
+          "Advanced econometric analysis and visualization for decision-makers",
+          "Data synthesized into actionable insights for stakeholders",
+          "High-quality assurance through rigorous data validation"
+        ]
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "In the room",
+    "title": "Where data work is <em>briefed, trained and argued over.</em>",
+    "lead": "Photographs from IP3’s briefings and workshops. The GIS workshop and the financial-statistics presentation are from the founder’s work at SANEM, before IP3. Captions say only what each photo shows.",
+    "items": [
+      {
+        "image": "/assets/img/field/wbg-technology-adoption-survey-briefing.webp",
+        "alt": "A briefing room with a projected slide titled ‘Structure of the Technology Adoption Survey’ that carries a World Bank Group logo. Two men stand beside a desk and three men sit watching the slide.",
+        "caption": "Briefing on the structure of a technology adoption survey (World Bank Group slide)"
+      },
+      {
+        "image": "/assets/img/sectors/working-session-2013.webp",
+        "alt": "People work with laptops and papers around a meeting-room table, with a projection screen and a flip chart behind them.",
+        "caption": "A working session with laptops, 2013"
+      },
+      {
+        "image": "/assets/img/field/adb-gis-workshop-room.webp",
+        "alt": "Participants seated at round tables face the head table of the ADB training workshop on estimating land and real estate prices for financial soundness indicators using GIS. The ADB banner dated 21–24 October 2013 and a projected slide are visible.",
+        "caption": "GIS training workshop on financial soundness indicators (ADB banner), Dhaka, 2013"
+      },
+      {
+        "image": "/assets/img/field/fsi-presentation-training-workshop.webp",
+        "alt": "A presenter holding a microphone stands beside a projected slide titled ‘What are Financial Soundness Indicators?’ in a training room. Participants sit in the foreground and a flip chart stands to the left.",
+        "caption": "Presentation on financial soundness indicators"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Data and digital assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. The financial-soundness work was led at SANEM, before IP3, and is shown as the founder’s experience.",
+    "records": [
+      "digital-informality-survey",
+      "covid-business-pulse-survey",
+      "wto-services-trade",
+      "adb-fsi-reta"
+    ]
+  }
+}

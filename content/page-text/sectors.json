@@ -29,6 +29,56 @@
   ],
   "copy": [
     {
+      "slug": "sx-system-framework",
+      "label": "Sector page — policy layer label",
+      "text": "Policy frameworks"
+    },
+    {
+      "slug": "sx-system-setting",
+      "label": "Sector page — local systems layer label",
+      "text": "Local systems"
+    },
+    {
+      "slug": "sx-system-outcome",
+      "label": "Sector page — implementation layer label",
+      "text": "Implementation"
+    },
+    {
+      "slug": "sx-system-note",
+      "label": "Sector page — conceptual model note",
+      "text": "Conceptual model · read the method alongside"
+    },
+    {
+      "slug": "sx-motion-label",
+      "label": "Sector page — motion preference control",
+      "text": "Reduce motion"
+    },
+    {
+      "slug": "sx-motion-help",
+      "label": "Sector page — motion preference guidance",
+      "text": "Read at your own pace. All steps remain available."
+    },
+    {
+      "slug": "sx-route-label",
+      "label": "Sector page — section navigation label",
+      "text": "Explore this sector"
+    },
+    {
+      "slug": "sx-route-method",
+      "label": "Sector page — method navigation link",
+      "text": "Our method"
+    },
+    {
+      "slug": "sx-route-practice",
+      "label": "Sector page — practice navigation link",
+      "text": "In practice"
+    },
+    {
+      "slug": "sx-route-evidence",
+      "label": "Sector page — assignment navigation link",
+      "text": "Assignment record"
+    },
+    {
       "slug": "eyebrow-challenge",
       "label": "Challenge eyebrow",
       "text": "The challenge"
@@ -47,6 +97,86 @@
       "slug": "cta-all-sectors",
       "label": "All sectors button",
       "text": "All sectors"
+    },
+    {
+      "slug": "sx-sector-label",
+      "label": "Sector page — kicker before the sector number",
+      "text": "Sector"
+    },
+    {
+      "slug": "sx-meta-records",
+      "label": "Sector page — figure label: assignments",
+      "text": "documented assignments"
+    },
+    {
+      "slug": "sx-meta-capabilities",
+      "label": "Sector page — figure label: capabilities",
+      "text": "capabilities applied"
+    },
+    {
+      "slug": "sx-meta-areas",
+      "label": "Sector page — figure label: focus areas",
+      "text": "focus areas"
+    },
+    {
+      "slug": "sx-scroll-cue",
+      "label": "Sector page — scroll cue in the header",
+      "text": "Scroll"
+    },
+    {
+      "slug": "sx-skip-scene",
+      "label": "Sector page — link that skips the scroll scene",
+      "text": "Skip the scroll scene"
+    },
+    {
+      "slug": "sx-steps-label",
+      "label": "Sector page — screen-reader name of the step rail",
+      "text": "Scene steps"
+    },
+    {
+      "slug": "sx-illustrative",
+      "label": "Sector page — note under drawings that are not data",
+      "text": "Illustrative drawing, not data."
+    },
+    {
+      "slug": "sx-loop-linear",
+      "label": "Sustainable finance scene — words on the straight line (separate with |)",
+      "text": "Take | Make | Waste"
+    },
+    {
+      "slug": "sx-film-label",
+      "label": "Sector page — gallery label for a film",
+      "text": "Film"
+    },
+    {
+      "slug": "sx-photo-label",
+      "label": "Sector page — gallery label for a photo",
+      "text": "Photo"
+    },
+    {
+      "slug": "sx-gallery-hint",
+      "label": "Sector page — hint in the gallery",
+      "text": "Keep scrolling to move through the frames"
+    },
+    {
+      "slug": "sx-status-current",
+      "label": "Sector page — badge on a current assignment",
+      "text": "Current"
+    },
+    {
+      "slug": "sx-open-record",
+      "label": "Sector page — link on an assignment card",
+      "text": "Open the full record"
+    },
+    {
+      "slug": "sx-source-label",
+      "label": "Sector page — label before a figure’s source",
+      "text": "Source:"
+    },
+    {
+      "slug": "sx-next-aria",
+      "label": "Sector page — screen-reader name of the next-sector block",
+      "text": "Next sector"
     }
   ]
 }

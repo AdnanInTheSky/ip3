@@ -1,6 +1,7 @@
 const { esc, plain, rich, arrow, arrowL, btn, cta, sectionHead, phero, breadcrumb, page, formBlock, cfg, D } = require('./layout');
 const { engRow, insCard } = require('./pages-home');
 const { capabilities } = require('./cap'); // /capabilities lives in src/cap/ (one module per section)
+const { sectorPage } = require('./sec'); // /sectors/<slug> lives in src/sec/ (one module per section)
 
 const capBySlug = Object.fromEntries(D.capabilities.cards.map((c, i) => [c.slug, { ...c, i }]));
 const engBySlug = Object.fromEntries(D.engagements.map((e) => [e.slug, e]));
@@ -75,23 +76,6 @@ function sectorsIndex() {
     cta('cta-sectors'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/sectors', body });
-}
-
-function sectorPage(s, idx) {
-  const prev = D.sectors[(idx + D.sectors.length - 1) % D.sectors.length];
-  const next = D.sectors[(idx + 1) % D.sectors.length];
-  const engs = s.engagements.map((k) => engBySlug[k]).filter(Boolean);
-  const bg = s.video ? { type: 'video', src: s.video, poster: s.poster } : { type: 'image', src: s.image };
-  const body = [
-    phero({ crumbs: [breadcrumb('/sectors'), { label: s.title }], h1: esc(s.title), lead: s.problem, bg }),
-    sec(`<div class="two two--top"><div><span class="eyebrow" data-reveal>${esc(D.pageText.sectors['eyebrow-challenge'])}</span><h2 class="split" style="margin:18px 0 26px">${esc(s.problem)}</h2><p class="lead" data-reveal>${esc(D.pageText.sectors['sector-introduction'])}</p><div style="margin-top:30px;display:flex;gap:14px;flex-wrap:wrap" data-reveal>${btn(esc(D.pageText.sectors['cta-discuss-assignment']), '/contact')}${btn(esc(D.pageText.sectors['cta-all-sectors']), '/sectors', 'btn--ghost')}</div></div><div class="photo photo--wide clip" data-clip><img src="${s.photo}" width="1200" height="800" alt="" loading="lazy" data-parallax></div></div>`),
-    sec(`<div class="two two--top"><div style="position:sticky;top:130px"><span class="eyebrow" data-reveal>${esc(D.headings['sector-add-value'].eyebrow)}</span><h2 class="split" style="margin:18px 0 0">${rich(D.headings['sector-add-value'].title)}</h2></div><ul class="area-list" data-stagger>${s.areas.map((a) => `<li>${plain(a)}</li>`).join('')}</ul></div>`, 'section--sand'),
-    sec(`${sectionHead('sector-capabilities')}<div class="cards4" data-stagger>${s.caps.map((k) => { const c = capBySlug[k]; return `<a class="tile" href="/capabilities#${c.slug}"><span class="n">0${c.i + 1}</span><h3>${plain(c.title)}</h3><p>${esc(c.problem)}</p></a>`; }).join('')}</div>`),
-    engs.length ? sec(`${sectionHead('sector-related')}<div class="eng">${engs.map(engRow).join('')}</div>`, 'section--paper') : '',
-    sec(`<div class="sector-nav"><a href="/sectors/${prev.slug}"><small>← ${esc(D.navigation.previousSectorLabel)}</small><b>${prev.title}</b></a><a href="/sectors/${next.slug}"><small>${esc(D.navigation.nextSectorLabel)} →</small><b>${next.title}</b></a></div>`, 'section--tight'),
-    cta('cta-sector', { eyebrow: s.title }),
-  ].join('\n');
-  return page({ title: s.title, desc: `${s.problem} IP3 supports clients with ${s.areas.slice(0, 3).join(', ').toLowerCase()} and more.`, path: `/sectors/${s.slug}`, body });
 }
 
 /* ---------------- Engagements ---------------- */

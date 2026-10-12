@@ -28,6 +28,7 @@ module.exports = {
   capProof: Object.fromEntries(['hero', 'led', 'method', 'rows', 'browser', 'room', 'reel'].map((k) => [k, C.file(`capability-proof/${k}`)])),
   whyIp3: C.file('home/why-ip3').items,
   sectors: live(C.file('sectors').items),
+  sectorPages: Object.fromEntries(C.dir('sector-pages').map((p) => [p.slug, p])),
   translation: C.file('home/translation'),
   engagements,
   insights: live(insightContent.items),

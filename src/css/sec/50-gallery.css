@@ -1,0 +1,13 @@
+/* An editorial field gallery: stable frames, permanent captions and user-controlled films. */
+.sx-gal{position:relative;background:var(--sx-night);color:#fff;padding:clamp(72px,9vw,120px) 0}
+.sx-gal__head .section__head{margin-bottom:clamp(30px,4vw,56px)}
+.sx-gal__head h2{margin-top:18px}
+.sx-gal__world{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4vw,56px) clamp(20px,3vw,40px)}
+.sx-gal__item{min-width:0}
+.sx-gal__frame{position:relative;aspect-ratio:16/10;border-radius:var(--r-sm);overflow:hidden;background:#1e1915;border:1px solid var(--sx-line-d)}
+.sx-gal__m{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sx-gal video.sx-gal__m{object-fit:contain}
+.sx-gal video:focus-visible{outline:3px solid #f0b9a3;outline-offset:-5px}
+.sx-gal figcaption{display:grid;gap:8px;margin-top:18px;font:400 .95rem/1.6 var(--f-ui);color:rgba(255,255,255,.86);max-width:60ch}
+.sx-gal__k{font:600 .66rem/1.4 var(--f-ui);letter-spacing:.18em;text-transform:uppercase;color:#f0b9a3}
+@media (max-width:680px){.sx-gal__world{grid-template-columns:1fr}}

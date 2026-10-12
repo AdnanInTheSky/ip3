@@ -191,6 +191,21 @@ function run({ quiet = false } = {}) {
     refLabels.add(item.ref);
   });
 
+  // sector pages: one story per visible sector; each drawing is built for five steps
+  const sectorPages = data.sector_pages || [];
+  const pageSlugs = new Set(sectorPages.map((pg) => pg.slug));
+  sectorPages.forEach((pg) => {
+    where.file = `content/sector-pages/${pg.slug}.json`;
+    const steps = ((pg.scene || {}).steps || []).length;
+    if (steps !== 5) err('scene.steps', `the ${(pg.scene || {}).type || ''} drawing is built for five steps (found ${steps})`);
+    const recs = (pg.evidence || {}).records || [];
+    if (new Set(recs).size !== recs.length) err('evidence.records', 'an assignment is listed twice');
+  });
+  sectorItems.filter((s) => !s.hidden && !pageSlugs.has(s.slug)).forEach((s) => {
+    where.file = 'content/sector-pages';
+    warn(s.slug, 'this sector has no long-form story file, so its page shows only the header, focus areas and capabilities');
+  });
+
   // /why-ip3: the 3D scene has a camera keyframe per scene and draws a link per related system.
   const why = data.why;
   if (why) {

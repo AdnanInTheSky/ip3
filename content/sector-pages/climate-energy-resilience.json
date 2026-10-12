@@ -1,0 +1,142 @@
+{
+  "slug": "climate-energy-resilience",
+  "statement": {
+    "eyebrow": "Climate action and resilience",
+    "title": "An adviser to governments, corporates and financial institutions on <em>climate and sustainability.</em>",
+    "paragraphs": [
+      "Sustainability is our driving force. We craft economic and development policies that integrate climate action strategies, ESG frameworks, biodiversity conservation and circular-economy principles, and we deliver solutions that balance environmental stewardship with economic viability.",
+      "We help clients mitigate climate risks, seize growth opportunities and build resilience, with climate action, adaptation and resilience-building solutions tailored to the challenges developing countries face."
+    ]
+  },
+  "scene": {
+    "type": "terrain",
+    "eyebrow": "From exposure to investment",
+    "title": "Five moves from climate risk to <em>resilient investment.</em>",
+    "lead": "Hazard and exposure first, then the plan, the infrastructure, the finance and the governance that keep a transition fair.",
+    "system": {
+      "framework": "Paris Agreement · SDGs",
+      "setting": "Local climate risks · ecosystems",
+      "outcome": "Resilient investment"
+    },
+    "steps": [
+      {
+        "label": "Risk",
+        "title": "Climate risk assessment and vulnerability analysis",
+        "text": "Adaptation starts with knowing who and what is exposed. We assess climate risk and vulnerability so that adaptation spending goes where the exposure is.",
+        "points": [
+          "Climate risk assessment and vulnerability analysis",
+          "Geospatial tools such as GIS and remote sensing for tracking and impact assessment"
+        ]
+      },
+      {
+        "label": "Plan",
+        "title": "Adaptation planning and implementation",
+        "text": "We craft policy roadmaps that align national sustainability goals with global climate commitments, accelerating green transformation and economic resilience.",
+        "points": [
+          "Adaptation planning and implementation",
+          "Policy roadmaps aligned with global climate commitments",
+          "Market system modeling to forecast and optimize resource use"
+        ]
+      },
+      {
+        "label": "Build",
+        "title": "Resilient infrastructure and energy transitions",
+        "text": "We develop strategies for climate-resilient infrastructure and renewable energy transitions, and apply them where adaptation meets daily life.",
+        "points": [
+          "Resilient infrastructure design and urban planning for resilient infrastructure",
+          "Biogas production for renewable energy",
+          "Sustainable agriculture practices for food security",
+          "Biodiversity conservation and ecosystem management"
+        ]
+      },
+      {
+        "label": "Finance",
+        "title": "Climate finance mobilization",
+        "text": "We bridge the gap between policy ambition and practical implementation with feasibility studies, policy reviews and sectoral strategies, and with supportive regulatory frameworks that let businesses, governments and industries meet evolving sustainability standards.",
+        "points": [
+          "Climate finance mobilization",
+          "Feasibility studies, policy reviews and sectoral strategies",
+          "Integration of climate resilience and green-finance principles into project planning"
+        ]
+      },
+      {
+        "label": "Govern",
+        "title": "A just, nature-positive transition",
+        "text": "We design inclusive policies and governance frameworks that drive equitable, nature-positive and resilient climate transitions.",
+        "points": [
+          "Equity-focused transition strategies — frameworks for socially just transitions, so that no community is left behind",
+          "Natural capital valuation and ecosystem planning — biodiversity and ecosystem-service valuation in climate policy and land-use planning",
+          "Collaborative climate governance — stakeholder voices, transparency and accountability built into the framework",
+          "Capacity building and training"
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "Appraise, align, learn",
+    "title": "How climate work is appraised and <em>kept on track.</em>",
+    "lead": "Climate projects have to pass an economic test, an environmental test and the test of global commitments, and keep learning once they start.",
+    "rows": [
+      {
+        "title": "Environmental impact assessment",
+        "points": [
+          "In-depth analysis of environmental and social impacts to ensure compliance with sustainability and regulatory standards",
+          "Integration of climate resilience and green-finance principles into project planning"
+        ]
+      },
+      {
+        "title": "Integrated feasibility frameworks",
+        "points": [
+          "Holistic frameworks that combine institutional, economic and environmental dimensions for large-scale projects",
+          "Solutions that balance economic growth with environmental stewardship"
+        ]
+      },
+      {
+        "title": "Monitoring aligned with global commitments",
+        "text": "We support national governments, donors and development organizations in building resilient, high-quality monitoring frameworks aligned with global standards such as the Paris Agreement, the SDGs and ESG compliance."
+      },
+      {
+        "title": "Knowledge exchange that scales",
+        "text": "We align local insights with global development frameworks, such as the UNFCCC, the SDGs and the Paris Agreement, through cross-sectoral collaboration and institutional learning."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "IP3 films",
+    "title": "The landscapes the <em>work is for.</em>",
+    "lead": "Short films produced by IP3. They show the settings of climate and energy work, not specific projects.",
+    "items": [
+      {
+        "image": "/assets/img/poster-coast.webp",
+        "video": "/assets/video/coast.mp4",
+        "alt": "Aerial view along a coastline lined with rectangular ponds and fields running to the sea.",
+        "caption": "A coastline of ponds and fields, from the air"
+      },
+      {
+        "image": "/assets/img/reel/climate-data-technology.webp",
+        "video": "/assets/video/reel/climate-data-technology.mp4",
+        "alt": "A hand moves through charts, wind-turbine models and solar-panel diagrams on a large touchscreen.",
+        "caption": "Climate and energy data on a touchscreen"
+      },
+      {
+        "image": "/assets/img/poster-moss.webp",
+        "video": "/assets/video/moss.mp4",
+        "alt": "Close-up of green moss and small plants lit against a dark background.",
+        "caption": "Moss and young plants in close-up"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Climate and energy assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. Open one to see the role, the activities and what the record does not claim.",
+    "records": [
+      "adb-ews-facility",
+      "global-leap",
+      "esmap-astae",
+      "off-grid-appliance-market",
+      "resa-electricity",
+      "pace-beekeeping-endline"
+    ]
+  }
+}

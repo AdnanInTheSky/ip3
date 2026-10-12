@@ -1,0 +1,135 @@
+{
+  "slug": "economic-transformation-trade-private-sector",
+  "statement": {
+    "eyebrow": "Economic, financial and environmental viability",
+    "title": "Assessing project feasibility, <em>economic and environmental viability.</em>",
+    "paragraphs": [
+      "We develop and assess the integrated feasibility of project concepts, combining economic, financial and environmental assessment. With expertise in economic modeling, financial analysis and environmental impact evaluation, we give clients the insight to make data-driven decisions on investment, project design and implementation.",
+      "Our record in large-scale infrastructure and policy projects is about one thing: making sure initiatives are economically viable, environmentally sustainable and socially impactful."
+    ]
+  },
+  "scene": {
+    "type": "chain",
+    "eyebrow": "Along the value chain",
+    "title": "From the factory floor to the port to the policy table — <em>one chain, five stations.</em>",
+    "lead": "Each station names the kind of question IP3 has answered there, with the assignments on the record.",
+    "system": {
+      "framework": "Trade rules · investment policy",
+      "setting": "Firms · value chains · ports",
+      "outcome": "Appraised investment decisions"
+    },
+    "steps": [
+      {
+        "label": "Firms",
+        "title": "Productivity and technology in firms",
+        "text": "A firm-level technology adoption survey for the World Bank, covering eight manufacturing sectors, to identify productivity barriers and inform policy reform: questionnaire, programming guidance, fieldwork training, data quality control and analysis.",
+        "points": [
+          "Survey design, implementation and data quality control",
+          "High-level stakeholder engagement"
+        ]
+      },
+      {
+        "label": "Value chains",
+        "title": "Value chains and market structure",
+        "text": "Value-chain mapping for ten selected industries with a firm survey and competitiveness analysis; market demand and supply-chain mapping for steel; and case studies of base-of-pyramid business, analysed for economic profit and social value."
+      },
+      {
+        "label": "Trade",
+        "title": "Ports, logistics and trade",
+        "text": "Technical advice on economic and financial analysis for Payra Seaport, Bangladesh’s third seaport, including a 15-year financial model; a regional study of cargo loss and damage across Bangladesh, India and Nepal; and analysis for LDC graduation and the services-trade rules that shape it."
+      },
+      {
+        "label": "Investment",
+        "title": "Investment appraisal and special economic zones",
+        "text": "Economic and financial modeling to evaluate project viability and potential returns, with cost-benefit analysis and financial forecasting for public and private investment.",
+        "points": [
+          "Strategic financial planning, including long-term investment roadmaps and funding strategies",
+          "Equity investment policy, special-purpose company formulation and shareholder agreements for special economic zone financing",
+          "Market, financial and economic feasibility for large urban and industrial investments"
+        ]
+      },
+      {
+        "label": "Policy",
+        "title": "Economic analysis for growth that creates jobs",
+        "text": "Economic uncertainty demands rigorous analysis. We apply tailored economic methods to evaluate policies, investments and programs, giving leaders the evidence to move forward with confidence.",
+        "points": [
+          "Cost-benefit analysis and outcome quantification to allocate resources efficiently",
+          "Economic modeling, predictive analytics and scenario planning to simulate policy outcomes",
+          "Data-driven recommendations for inclusive economic growth, sustainability and resilience"
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "eyebrow": "Our expertise",
+    "title": "Feasibility that holds up <em>under scrutiny.</em>",
+    "rows": [
+      {
+        "title": "Economic and financial feasibility",
+        "points": [
+          "Advanced economic and financial modeling for evaluating project viability and potential returns",
+          "Cost-benefit analysis and financial forecasting for public and private sector investments",
+          "Strategic financial planning, including long-term investment roadmaps and funding strategies"
+        ]
+      },
+      {
+        "title": "Environmental and social impact",
+        "points": [
+          "In-depth analysis of environmental and social impacts for compliance with sustainability and regulatory standards",
+          "Climate resilience and green-finance principles integrated into project planning"
+        ]
+      },
+      {
+        "title": "Integrated feasibility frameworks",
+        "points": [
+          "Holistic frameworks that combine institutional, economic and environmental dimensions for large-scale projects",
+          "Transformative solutions that balance economic growth with environmental stewardship"
+        ]
+      },
+      {
+        "title": "Regulation that lets business grow",
+        "text": "Evidence-based regulatory frameworks that enhance compliance, streamline processes and promote economic competitiveness, while safeguarding environmental sustainability, social equity and consumer protection."
+      }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "In the field",
+    "title": "Factory floors and <em>consultation tables.</em>",
+    "lead": "Photographs from IP3’s fieldwork and consultations. Captions say only what each photo shows.",
+    "items": [
+      {
+        "image": "/assets/img/field/wbg-technology-adoption-survey-briefing.webp",
+        "alt": "A briefing room with a projected slide titled ‘Structure of the Technology Adoption Survey’ that carries a World Bank Group logo. Two men stand beside a desk and three men sit watching the slide.",
+        "caption": "Briefing on the structure of a technology adoption survey (World Bank Group slide)"
+      },
+      {
+        "image": "/assets/img/sectors/factory-line-2018.webp",
+        "alt": "A production aisle in a garment factory: a white table and a red crate in the foreground, workers and hanging denim garments along the line behind.",
+        "caption": "A garment production line, 2018"
+      },
+      {
+        "image": "/assets/img/field/conference-table-consultation.webp",
+        "alt": "Participants around a long conference table with desk microphones and laptops in a meeting room. A man on the left raises a hand as he speaks.",
+        "caption": "Meeting around a conference table"
+      }
+    ]
+  },
+  "evidence": {
+    "eyebrow": "On the record",
+    "title": "Trade, investment and industry assignments, <em>as documented.</em>",
+    "lead": "Each record comes from the founder’s signed CV and portfolio, with the CV’s dates. Investment figures are the capital in scope, not money raised.",
+    "records": [
+      "fat-survey",
+      "payra-port",
+      "jolshiri",
+      "ec-ldc-graduation",
+      "unctad-pcga",
+      "cem-bangladesh-india",
+      "sarti-cargo",
+      "kiet-value-chain-mapping",
+      "sumitomo-steel-market",
+      "jetro-bop-case-studies",
+      "omera-petrochemical-storage"
+    ]
+  }
+}
