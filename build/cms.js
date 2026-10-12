@@ -11,9 +11,11 @@ const lines = [];
 // Keep this allowlist aligned with keys documented at https://pagescms.org/docs/configuration/.
 const ALLOWED_KEYS = new Set([
   'media', 'content', 'name', 'label', 'input', 'output', 'rename', 'extensions',
-  'type', 'path', 'format', 'filename', 'view', 'primary', 'fields', 'sort',
+  'type', 'path', 'format', 'filename', 'view', 'primary', 'fields', 'sort', 'items',
   'list', 'collapsible', 'collapsed', 'summary', 'required', 'description',
-  'options', 'maxlength', 'values',
+  'options', 'maxlength', 'values', 'settings', 'content', 'merge', 'commit',
+  'identity', 'templates', 'create', 'update', 'delete', 'operations', 'pattern',
+  'regex', 'message', 'readonly',
 ]);
 const put = (indent, s) => {
   if (!s.startsWith('#')) {
@@ -33,8 +35,14 @@ function field(f, indent) {
     if (f.summary) { put(i, 'list:'); put(i + 2, 'collapsible:'); put(i + 4, 'collapsed: true'); put(i + 4, `summary: ${q(f.summary)}`); } else put(i, 'list: true');
   }
   if (!f.optional) put(i, 'required: true');
+  if (f.readonly) put(i, 'readonly: true');
   const help = [f.hint, f.em && !f.hint && 'Wrap words in <em>…</em> to show them in the accent colour.'].filter(Boolean).join(' ');
   if (help) put(i, `description: ${q(help)}`);
+  if (f.slug) {
+    put(i, 'pattern:');
+    put(i + 2, 'regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"');
+    put(i + 2, 'message: "Use lowercase letters and numbers separated by hyphens."');
+  }
   const opts = [];
   if ((f.type === 'string' || f.type === 'text') && f.max) opts.push(['maxlength', f.max]);
   if (f.type === 'select') opts.push(['values', `[${f.values.map(q).join(', ')}]`]);
@@ -57,23 +65,55 @@ function build() {
     put(4, 'rename: safe');
     put(4, `extensions: [${m.extensions.join(', ')}]`);
   }
+  put(0, 'settings:');
+  put(2, 'content:');
+  put(4, 'merge: true');
+  put(2, 'commit:');
+  put(4, 'identity: user');
+  put(4, 'templates:');
+  put(6, 'create: "IP3 content: add {path}"');
+  put(6, 'update: "IP3 content: update {path}"');
+  put(6, 'delete: "IP3 content: delete {path}"');
+  put(6, 'rename: "IP3 content: rename {oldPath} to {newPath}"');
   put(0, 'content:');
-  for (const c of schema.content) {
-    put(2, `- name: ${c.name}`);
-    put(4, `label: ${q(c.label)}`);
-    put(4, `type: ${c.type}`);
-    put(4, `path: ${c.path}`);
-    put(4, 'format: json');
+  const contentByName = new Map(schema.content.map((c) => [c.name, c]));
+  const assigned = new Set();
+  const labelFor = (label) => {
+    const plain = label.replace(/^\d+\s*·\s*/, '');
+    const marker = plain.lastIndexOf(' — ');
+    return marker >= 0 ? plain.slice(marker + 3) : plain;
+  };
+  function entry(c, indent) {
+    if (!c || assigned.has(c.name)) throw new Error(`CMS navigation has a missing or duplicate content entry: ${c ? c.name : '(unknown)'}`);
+    assigned.add(c.name);
+    put(indent, `- name: ${c.name}`);
+    put(indent + 2, `label: ${q(labelFor(c.label))}`);
+    put(indent + 2, `type: ${c.type}`);
+    put(indent + 2, `path: ${c.path}`);
+    put(indent + 2, 'format: json');
+    put(indent + 2, 'operations:');
+    put(indent + 4, 'create: false');
+    put(indent + 4, 'rename: false');
+    put(indent + 4, 'delete: false');
     if (c.type === 'collection') {
-      put(4, 'filename: "{primary}.json"');
-      put(4, 'view:');
-      put(6, `primary: ${c.view.primary}`);
-      put(6, `fields: [${c.view.fields.join(', ')}]`);
-      put(6, `sort: ${c.view.sort}`);
+      put(indent + 2, 'filename: "{primary}.json"');
+      put(indent + 2, 'view:');
+      put(indent + 4, `primary: ${c.view.primary}`);
+      put(indent + 4, `fields: [${c.view.fields.join(', ')}]`);
+      put(indent + 4, `sort: ${c.view.sort}`);
     }
-    put(4, 'fields:');
-    c.fields.forEach((f) => field(f, 6));
+    put(indent + 2, 'fields:');
+    c.fields.forEach((f) => field(f, indent + 4));
   }
+  for (const group of schema.groups) {
+    put(2, `- name: ${group.name}`);
+    put(4, `label: ${q(group.label)}`);
+    put(4, 'type: group');
+    put(4, 'items:');
+    for (const name of group.items) entry(contentByName.get(name), 6);
+  }
+  const unassigned = schema.content.filter((c) => !assigned.has(c.name)).map((c) => c.name);
+  if (unassigned.length) throw new Error(`CMS navigation is missing content entries: ${unassigned.join(', ')}`);
   return lines.join('\n') + '\n';
 }
 

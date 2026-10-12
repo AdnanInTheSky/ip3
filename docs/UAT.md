@@ -2,6 +2,8 @@
 
 Run this checklist after the owner steps in [ADMIN-SETUP.md](ADMIN-SETUP.md) are complete and the code is merged to `main`. Use a harmless draft change and restore it through the same reviewed publishing flow if needed. Do not send a live enquiry until the recipient and contact-provider setup are approved.
 
+Complete the detailed Pages CMS editor, permissions, media and draft-to-preview acceptance checks in [CMS-REQUIREMENTS-MATRIX.md](CMS-REQUIREMENTS-MATRIX.md) as part of the first onboarding. This file records the resulting CMS and production UAT evidence. No hosted CMS login or editor-side preview has been tested by the local configuration work.
+
 | # | Test | Expected result | Pass / fail | Evidence, date and tester |
 |---:|---|---|---|---|
 | 1 | Sign in to Pages CMS with a named editor account, open this repository and select `content`. | CMS forms and the content-branch files load. |  |  |
