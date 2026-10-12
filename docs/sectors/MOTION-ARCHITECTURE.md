@@ -1,6 +1,6 @@
 # Sector pages — institutional motion architecture
 
-Design revision for [PR #9](https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/9), branch `sectors-cinematic`, 12 October 2026. The sector pages connect policy frameworks, local systems and implementation through restrained spatial depth. All policy content remains readable independently of the animation.
+Design revision for [PR #9](https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/9), branch `sectors-cinematic`, 13 October 2026. The sector pages connect policy frameworks, local systems and implementation through restrained spatial depth. All policy content remains readable independently of the animation.
 
 ## Reading structure
 
@@ -63,6 +63,6 @@ The drawing is decorative and hidden from assistive technology; the ordered meth
 
 ## Performance scope
 
-At the current verification checkpoint, the sector JavaScript is approximately 8.6 KB gzipped and CSS approximately 7.8 KB gzipped. These figures describe the sector bundles, not the entire page or its media, and should be refreshed if final layout refinements change the build.
+At the current verification checkpoint, the sector JavaScript is approximately 8.6 KB gzipped and CSS approximately 7.9 KB gzipped. These figures describe the sector bundles, not the entire page or its media, and should be refreshed if final layout refinements change the build.
 
 The implementation reduces continuous animation work and avoids a WebGL dependency. Real-device frame pacing, field Core Web Vitals and corporate-network performance have not been measured. No zero-frame-drop guarantee is made. See [QA-REPORT.md](QA-REPORT.md) for the tested environments and remaining checks.

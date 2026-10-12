@@ -28,7 +28,7 @@ Titles, problem statements, routes, focus areas, capability links, page titles a
 | Motion and control checks | Scene drawing advances with scroll; motion control persists across reload; live operating-system preference changes apply; the canvas redraws after resizing; scene links update focus and the hash; blocked ScrollTrigger leaves the static page usable. |
 | Tight viewport fit | **40/40 pass** for all eight diagrams at 900×680, 1024×768, 1440×1000, 320×640 and 390×844. Sticky layout activates only when its full control stack fits. Home page smoke test passes. |
 | Visual review | Reviewed each of the eight diagrams and desktop/phone Climate and Sustainable Finance pages. No graphics or media dependencies were added. |
-| Sector bundle | 25,415 bytes JavaScript (8,558 bytes gzip); 31,897 bytes CSS (7,793 bytes gzip). |
+| Sector bundle | 25,406 bytes JavaScript (8,557 bytes gzip); 32,208 bytes CSS (7,878 bytes gzip). |
 | GitHub checks on the existing PR head | check, Lighthouse and media checks passed before this design revision; GitHub will run again for the pushed commit. |
 
 **Not verified:** Safari, Firefox, physical devices, screen readers, Lighthouse on the new commit, field Core Web Vitals, a live CMS edit, or real-world network and frame pacing. Browser checks used Chromium on a desktop. Bundle size is measured; end-user network and frame performance were not.
