@@ -1,6 +1,7 @@
 {
   "items": [
     {
+      "hidden": false,
       "slug": "climate-energy-resilience",
       "title": "Climate, Energy & Resilience",
       "problem": "Climate commitments must become investment-ready adaptation and resilient infrastructure.",
@@ -18,8 +19,8 @@
         "monitoring-evaluation-learning"
       ],
       "video": "/assets/video/energy.mp4",
-      "poster": "/assets/img/poster-energy.webp",
-      "card": "/assets/img/poster-energy.webp",
+      "poster": "/assets/img/031024climate-action-esg-strategy-sustainability.png",
+      "card": "/assets/img/031024climate-action-esg-strategy-sustainability-1.png",
       "photo": "/assets/img/poster-coast.webp",
       "engagements": [
         "gggf-urban-climate",
@@ -27,6 +28,7 @@
       ]
     },
     {
+      "hidden": false,
       "slug": "education-skills-human-capital",
       "title": "Education, Skills & Human Capital",
       "problem": "Learning systems must produce skills for changing economies.",
@@ -51,6 +53,7 @@
       ]
     },
     {
+      "hidden": false,
       "slug": "health-systems-social-protection",
       "title": "Health Systems & Social Protection",
       "problem": "Coverage and protection must be fiscally sustainable and well targeted.",
@@ -69,10 +72,10 @@
       ],
       "image": "/assets/img/survey-4.webp",
       "card": "/assets/img/survey-4.webp",
-      "photo": "/assets/img/pilot-3.webp",
-      "engagements": []
+      "photo": "/assets/img/pilot-3.webp"
     },
     {
+      "hidden": false,
       "slug": "digital-government-data-dpi",
       "title": "Digital Government, Data & DPI",
       "problem": "Digital transformation must improve services without creating governance or exclusion risks.",
@@ -99,6 +102,7 @@
       ]
     },
     {
+      "hidden": false,
       "slug": "governance-institutions-public-finance",
       "title": "Governance, Institutions & Public Finance",
       "problem": "Policies fail when institutions cannot implement them consistently.",
@@ -125,6 +129,7 @@
       ]
     },
     {
+      "hidden": false,
       "slug": "economic-transformation-trade-private-sector",
       "title": "Economic Transformation, Trade & Private-Sector Development",
       "problem": "Growth must create jobs through productive investment and diversification.",
@@ -151,6 +156,7 @@
       ]
     },
     {
+      "hidden": false,
       "slug": "sustainable-finance-esg-circular-economy",
       "title": "Sustainable Finance, ESG & Circular Economy",
       "problem": "Sustainability commitments must become investable pipelines and credible disclosure.",
@@ -175,6 +181,7 @@
       ]
     },
     {
+      "hidden": false,
       "slug": "ai-emerging-technology-public-systems",
       "title": "AI & Emerging Technology for Public Systems",
       "problem": "Public AI needs readiness, governance and accountability, not software hype.",
@@ -194,8 +201,7 @@
       "video": "/assets/video/data.mp4",
       "poster": "/assets/img/poster-data.webp",
       "card": "/assets/img/poster-data.webp",
-      "photo": "/assets/img/poster-data.webp",
-      "engagements": []
+      "photo": "/assets/img/poster-data.webp"
     }
   ]
 }
