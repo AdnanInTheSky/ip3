@@ -6,10 +6,17 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
+const { renderOrder } = require('../cms/section-order');
 
 const REPO = path.join(__dirname, '..');
 test('api contains only deployable contact.js', () => {
   assert.deepEqual(fs.readdirSync(path.join(REPO, 'api')).sort(), ['contact.js']);
+});
+
+test('section order renders supported sections in the saved order and rejects fixed-sequence pages', () => {
+  assert.equal(renderOrder('people', ['People directory', 'Founder profile'], ['founder-html', 'directory-html']), 'directory-html\nfounder-html');
+  assert.throws(() => renderOrder('people', ['People directory', 'People directory'], ['founder-html', 'directory-html']), /appears more than once/);
+  assert.throws(() => renderOrder('why', [], []), /not editable/);
 });
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-selftest-'));
@@ -83,6 +90,14 @@ test('negative content/build safeguards', async (t) => {
     await t.test('rejects reordered /why-ip3 scenes', () => {
       reset(); const data = json('why.json'); data.scenes.reverse(); save('why.json', data);
       expectValidation(/scenes: must be exactly complexity, evidence, insight, policy, practice, impact, in that order/);
+    });
+    await t.test('rejects an incomplete section order', () => {
+      reset(); const data = json('section-order.json'); data.home.pop(); save('section-order.json', data);
+      expectValidation(/Home section order must contain exactly 11 supported sections/);
+    });
+    await t.test('rejects duplicate or unsupported section order values', () => {
+      reset(); const data = json('section-order.json'); data.contact[0] = data.contact[1]; save('section-order.json', data);
+      expectValidation(/Contact section .* appears more than once/);
     });
     await t.test('rejects more systems than the 3D scene draws', () => {
       reset(); const data = json('why.json');
