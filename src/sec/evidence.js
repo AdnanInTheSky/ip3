@@ -23,7 +23,7 @@ function render({ s, pg }) {
   const ev = pg.evidence;
   const recs = recordsFor(pg);
   const shownEng = new Set(recs.map((p) => p.engagement).filter(Boolean));
-  const engs = s.engagements.map((k) => engBySlug[k]).filter((e) => e && !shownEng.has(e.slug));
+  const engs = (s.engagements || []).map((k) => engBySlug[k]).filter((e) => e && !shownEng.has(e.slug));
   const ledger = recs.length ? `
 <section class="sx-led section--paper" id="sx-evidence" data-sx-led aria-labelledby="sx-evidence-h">
   <div class="container sx-led__head">${head(ev, 'sx-evidence-h', { split: !!ev.lead })}<p class="sx-led__count"><b>${String(recs.length).padStart(2, '0')}</b> ${esc(T['sx-meta-records'])}</p></div>

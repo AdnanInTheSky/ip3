@@ -15,6 +15,7 @@ const copy = Object.fromEntries(Object.entries(pageText).map(([name, page]) => [
 module.exports = {
   pages: C.file('pages'),
   sectionOrder: C.file('section-order'),
+  sectionPlacement: C.file('section-placement'),
   navigation: C.file('navigation'),
   headings,
   pageText: copy,

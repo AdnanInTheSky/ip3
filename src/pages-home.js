@@ -1,5 +1,7 @@
 const { esc, plain, rich, arrow, btn, cta, page, cfg, D } = require('./layout');
-const { renderOrder } = require('../cms/section-order');
+const { editableSectionOrders, renderOrder } = require('../cms/section-order');
+const { validateHomeTestimonialsPlacement } = require('../cms/section-placement');
+const { testimonialCards, testimonialsSection } = require('./sections/testimonials');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
@@ -201,7 +203,7 @@ function convening() {
 </section>`;
 }
 
-function proof() {
+function proof(includeTestimonials = true) {
   const p = D.partners;
   const clients = D.headings['partners-clients'];
   const funders = D.headings['partners-funders'];
@@ -214,12 +216,12 @@ function proof() {
     </div>`;
   return `
 <section class="section">
-  <div class="partners" data-reveal>${row(clients.title, p.clients)}${row(funders.title, p.funders, true)}</div>
+  <div class="partners" data-reveal>${row(clients.title, p.clients)}${row(funders.title, p.funders, true)}</div>${includeTestimonials ? `
   <div class="container">
     <div class="quotes" style="margin-top:clamp(50px,7vw,100px)" data-stagger>
-      ${D.testimonials.map((t) => `<figure class="quote"><blockquote>${esc(t.quote)}</blockquote><footer><b>${esc(t.name)}</b><span>${esc(t.role)}</span></footer></figure>`).join('')}
+      ${testimonialCards(D.testimonials)}
     </div>
-  </div>
+  </div>` : ''}
 </section>`;
 }
 
@@ -243,7 +245,16 @@ function founder() {
 
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
-  const sections = [mandates(), stats(), capabilities(), why(), sectors(), translation(), engagements(), insights(), convening(), proof(), founder()];
+  const rule = validateHomeTestimonialsPlacement(D.sectionPlacement.homeTestimonials, D.sectionOrder.home, D.testimonials);
+  const renderers = [mandates, stats, capabilities, why, sectors, translation, engagements, insights, convening, () => proof(Boolean(rule.embedded)), founder];
+  const sections = Object.fromEntries(editableSectionOrders.home.default.map((key, i) => [key, renderers[i]]));
+  const anchor = rule.before || rule.after;
+  if (anchor) {
+    const original = sections[anchor];
+    sections[anchor] = () => rule.before
+      ? [testimonialsSection(D.testimonials), original()].join('\n')
+      : [original(), testimonialsSection(D.testimonials)].join('\n');
+  }
   const body = [hero(), renderOrder('home', D.sectionOrder.home, sections), cta('cta-default')].join('\n');
   return page({
     title: D.pages.home.title,

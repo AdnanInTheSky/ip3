@@ -45,6 +45,8 @@ The Pages CMS editor uses grouped, plain-language navigation and forms for exist
 
 The **Page layout · section order** form lets editors reorder supported middle sections on Home, About, People and Contact. The hero and closing calls to action remain fixed; validation requires each supported section exactly once. Why IP3, Approach, Capabilities, sector detail and legal pages retain fixed sequences. See [the editor guide](docs/EDITOR-GUIDE.md) for use and restrictions.
 
+The Home **Testimonials pilot** can move the shared testimonial cards after Engagements or before Founder, or keep them beside clients and funders in the default layout. It reuses the existing records rather than copying them. See [the section mapping and safeguards](docs/CMS-SECTION-MAPPING.md).
+
 The live Pages CMS branch selector, collaborator permissions, preview timing and commit attribution still require a human test. See the [editor guide](docs/EDITOR-GUIDE.md), [CMS requirements and onboarding checklist](docs/CMS-REQUIREMENTS-MATRIX.md), [UAT record](docs/UAT.md) and [owner setup](docs/ADMIN-SETUP.md).
 
 Photos may be JPEG, PNG or WebP; videos may be MP4 or WebM. CI recompresses changed images above 500 KiB (maximum 2400 px wide) and changed MP4 videos above 8 MiB (H.264 up to 1080p). WebM uploads must stay at or below 8 MiB because changing their container to H.264 would break the extension; images above 2 MiB and videos above 25 MiB fail validation. Pages CMS itself has no verified upload-byte limit, so follow these sizes before upload. See the [editor guide](docs/EDITOR-GUIDE.md).

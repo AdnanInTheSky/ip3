@@ -4,6 +4,8 @@ This checklist contains the remaining account, legal, DNS and deployment actions
 
 ## Ordered setup
 
+Recorded on 2026-10-13: the `content` draft branch exists, and **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** is enabled. Default workflow permissions remain read-only; `Content publishing` explicitly requests PR write access only for its PR-opening job. It does not approve or merge. Keep named editors on `content` and complete the remaining account and permissions UAT below.
+
 | # | Owner | Action and dashboard path | How to verify |
 |---:|---|---|---|
 | 1 | Vercel team owner | The `ip-3` team is on Hobby. In Vercel, switch to the `ip-3` team → **Settings** → **Billing** and move the project to a plan that permits commercial use for this consulting-company website. | Team billing shows a commercial-use eligible plan. This is a release gate for production changes. [Vercel terms](https://vercel.com/legal/terms) were read 2026-10-10. |
