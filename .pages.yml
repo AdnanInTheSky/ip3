@@ -1065,6 +1065,52 @@ content:
                 required: true
                 options:
                   maxlength: 1000
+  - name: page_sections
+    label: "Page layout · section order"
+    type: group
+    items:
+      - name: section_order
+        label: "Page section order"
+        type: file
+        path: content/section-order.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: home
+            label: "Home — middle sections"
+            type: select
+            list: true
+            required: true
+            description: "Drag sections to change their order. The hero stays first and the closing contact section stays last. Every section must appear once."
+            options:
+              values: ["Built for complex mandates", "IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements", "Insights", "Convening", "Selected proof", "Founder"]
+          - name: about
+            label: "About — middle sections"
+            type: select
+            list: true
+            required: true
+            description: "Drag sections to change their order. The page headline stays first and the contact section stays last. Every section must appear once."
+            options:
+              values: ["Introduction", "Vision, mission & aims", "Principles", "Policy lifecycle", "Strategic pillars", "Our values", "What makes IP3 different", "Our network"]
+          - name: people
+            label: "People — middle sections"
+            type: select
+            list: true
+            required: true
+            description: "Choose whether the founder profile or people directory appears first. The page headline and contact section stay in place."
+            options:
+              values: ["Founder profile", "People directory"]
+          - name: contact
+            label: "Contact — sections after the headline"
+            type: select
+            list: true
+            required: true
+            description: "Drag sections to change their order. The contact details and form, contact pathways, and FAQs must each appear once."
+            options:
+              values: ["Contact details & enquiry form", "Contact pathways", "Frequently asked questions"]
   - name: home_page
     label: "Home page"
     type: group

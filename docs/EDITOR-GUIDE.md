@@ -9,6 +9,7 @@ This guide is for staff who update the website in Pages CMS. You can edit text, 
 3. Choose the `content` branch before changing anything. It is the draft branch. The `main` branch is production and must only be changed through an approved pull request.
 4. Use the left menu to find the area:
    - **Start here · page titles & copy** for search titles, search descriptions and common page headings.
+   - **Page layout · section order** to set the order of eligible Home, About, People and Contact page sections.
    - **Home page** for the hero, statistics, cards, testimonials and partner names.
    - **Capabilities & proof of work** for capabilities, assignment examples, photos and videos.
    - **Sectors** for sector order and sector page content.
@@ -23,10 +24,13 @@ This guide is for staff who update the website in Pages CMS. You can edit text, 
 
 1. Open the item you want to change. Field descriptions explain what the field controls and show limits or formatting rules.
 2. Change only the content you intend to update. Use **Hide this item** where available to take a record off the website while keeping it available to restore. Reorder list items only when display order should change.
-3. Save. Pages CMS writes the draft to the `content` branch. Saving does not update the public website.
-4. The automatic **Content check** validates the content, builds the site and checks internal links. When it passes, GitHub opens or updates the review pull request.
-5. Open the Vercel Preview link in that pull request. Check the affected page at desktop and mobile widths. Ask an authorized reviewer to merge only after the preview and required check pass.
-6. Merge using **Create a merge commit**. The production site updates after Vercel successfully builds and deploys `main`.
+3. To reorder a page, open **Page layout · section order** and drag the middle sections into the order you want. The page headline stays first; Home, About and People keep their contact call to action at the end. Keep every listed section in the list exactly once. The build rejects missing, duplicated or unsupported sections, so an invalid order cannot reach production.
+4. Save. Pages CMS writes the draft to the `content` branch. Saving does not update the public website.
+5. The automatic **Content check** validates the content, builds the site and checks internal links. When it passes, GitHub opens or updates the review pull request.
+6. Open the Vercel Preview link in that pull request. Check the affected page at desktop and mobile widths. Ask an authorized reviewer to merge only after the preview and required check pass.
+7. Merge using **Create a merge commit**. The production site updates after Vercel successfully builds and deploys `main`.
+
+Section order is available on Home, About, People and Contact. The hero stays first. Home, About and People keep their closing contact section last. The Why IP3 journey, Approach film, Capabilities sequence, sector detail templates, and legal pages have fixed or connected sequences and do not expose this control.
 
 ### What “real time” means here
 

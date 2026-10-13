@@ -6,6 +6,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const schema = require('../cms/schema');
+const { editableSectionOrders, validateOrder } = require('../cms/section-order');
 
 const KB = 1024;
 const MB = 1024 * KB;
@@ -161,6 +162,15 @@ function run({ quiet = false } = {}) {
       else if (e.name.endsWith('.json') && !covered.has(rel)) { where.file = rel; err('', 'is not in cms/schema.js, so editors cannot reach it'); }
     }
   })('content');
+
+  // Section lists must contain every supported middle section exactly once.
+  // Hero, CTA, and scroll-journey sequences are deliberately outside these lists.
+  where.file = 'content/section-order.json';
+  const sectionOrder = data.section_order || {};
+  for (const [page, spec] of Object.entries(editableSectionOrders)) {
+    try { validateOrder(page, sectionOrder[page]); }
+    catch (e) { err(page, e.message); }
+  }
 
   // cross-references between files
   const slugsOf = (list) => new Set((list || []).map((x) => x.slug));

@@ -3,6 +3,7 @@
 //   • `node build/validate.js` checks every content/*.json file against it before each build
 // Field options: optional · max (hard limit) · soft (warning limit) · em (allow <em>) · link · slug · email · hint · summary
 const { str, text, num, bool, image, video, select, obj, list, strs, hidden, slug, pair, file, collection } = require('./helpers');
+const { editableSectionOrders } = require('./section-order');
 
 const pageMeta = (withHero = true) => [
   str('title', 'Search-result title', { soft: 70, hint: 'Shown in the browser tab and Google. Aim for 70 characters or fewer.' }),
@@ -26,6 +27,7 @@ const pageText = (name, label, path) => file(name, `00 · Page text — ${label}
 
 const groups = [
   { name: 'start_here', label: 'Start here · page titles & copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
+  { name: 'page_sections', label: 'Page layout · section order', items: ['section_order'] },
   { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_mandates', 'home_stats', 'home_why', 'home_translation', 'home_convening', 'home_testimonials', 'home_partners'] },
   { name: 'contact', label: 'Contact page', items: ['page_text_contact', 'home_faq'] },
   { name: 'capabilities', label: 'Capabilities & proof of work', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
@@ -44,6 +46,9 @@ module.exports = {
     { name: 'videos', label: 'Videos', input: 'assets/video', output: '/assets/video', extensions: ['mp4', 'webm'] },
   ],
   content: [
+    file('section_order', '00 · Page section order', 'content/section-order.json', Object.entries(editableSectionOrders).map(([key, spec]) =>
+      select(key, spec.fieldLabel, spec.default, { list: true, hint: spec.hint })
+    )),
     file('site', '00 · Contact details', 'content/site.json', [
       str('url', 'Canonical website URL', { link: true, hint: 'Set this to the public production site origin. SITE_URL overrides it during a Vercel build.' }),
       str('email', 'Email address', { email: true }),

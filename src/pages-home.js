@@ -1,4 +1,5 @@
 const { esc, plain, rich, arrow, btn, cta, page, cfg, D } = require('./layout');
+const { renderOrder } = require('../cms/section-order');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
@@ -242,7 +243,8 @@ function founder() {
 
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
-  const body = [hero(), mandates(), stats(), capabilities(), why(), sectors(), translation(), engagements(), insights(), convening(), proof(), founder(), cta('cta-default')].join('\n');
+  const sections = [mandates(), stats(), capabilities(), why(), sectors(), translation(), engagements(), insights(), convening(), proof(), founder()];
+  const body = [hero(), renderOrder('home', D.sectionOrder.home, sections), cta('cta-default')].join('\n');
   return page({
     title: D.pages.home.title,
     desc: D.pages.home.desc,

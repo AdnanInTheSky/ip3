@@ -1,5 +1,6 @@
 const { esc, plain, rich, arrow, arrowL, btn, cta, sectionHead, phero, breadcrumb, page, formBlock, cfg, D } = require('./layout');
 const { engRow, insCard } = require('./pages-home');
+const { renderOrder } = require('../cms/section-order');
 const { capabilities } = require('./cap'); // /capabilities lives in src/cap/ (one module per section)
 const { sectorPage } = require('./sec'); // /sectors/<slug> lives in src/sec/ (one module per section)
 
@@ -16,7 +17,7 @@ function about() {
   const intro = D.headings['about-intro'];
   const values = D.headings['about-values'];
   const network = D.headings['about-network'];
-  const body = [
+  const sections = [
     phero({ crumbs: [breadcrumb('/about')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'image', src: '/assets/img/group-2.webp' } }),
     sec(`<div class="two two--top"><div><span class="eyebrow" data-reveal>${esc(intro.eyebrow)}</span><h2 class="split" style="margin:18px 0 28px">${rich(intro.title)}</h2></div><div data-stagger style="display:grid;gap:18px" class="lead">${a.intro.map((p) => `<p>${esc(p)}</p>`).join('')}<p>${esc(D.pageText.about['supporting-paragraph'])}</p></div></div>`),
     `<section class="section--dark on-dark dark" style="padding:clamp(70px,9vw,130px) 0"><div class="container cards2" data-stagger>${[a.vision, a.mission].map((x) => `<div class="tile" style="padding:clamp(28px,4vw,52px);gap:20px"><span class="eyebrow">${x.label}</span><h3 style="font-size:clamp(1.7rem,3vw,2.6rem);line-height:1.12">${x.title}</h3><p style="font-size:1.05rem">${x.text}</p></div>`).join('')}</div><div class="container" style="margin-top:50px"><ul class="checks" data-stagger style="grid-template-columns:repeat(2,1fr);column-gap:50px">${a.aims.map((x) => `<li>${x}</li>`).join('')}</ul></div></section>`,
@@ -27,7 +28,8 @@ function about() {
     sec(`${sectionHead('about-different')}<div class="cards4" data-stagger>${a.different.map((l, i) => tile(l.title, l.text, '0' + (i + 1))).join('')}</div>`, 'section--paper'),
     sec(`<div class="two"><div class="photo photo--wide clip" data-clip><img src="/assets/img/workshop-adb.webp" width="800" height="520" alt="Panel at an ADB-supported policy workshop" loading="lazy" data-parallax></div><div><span class="eyebrow" data-reveal>${esc(network.eyebrow)}</span><h2 class="split" style="margin:18px 0 22px">${rich(network.title)}</h2><p class="lead" data-reveal>${esc(network.lead)}</p><div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap" data-reveal>${btn(esc(D.pageText.about['cta-meet-people']), '/people')}${btn(esc(D.pageText.about['cta-start-conversation']), '/contact', 'btn--ghost')}</div></div></div>`),
     cta('cta-about'),
-  ].join('\n');
+  ];
+  const body = [sections[0], renderOrder('about', D.sectionOrder.about, sections.slice(1, -1)), sections.at(-1)].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/about', body });
 }
 
@@ -137,12 +139,13 @@ function people() {
   const groups = D.people.map((g) => `<div class="people-group"><h3 data-reveal>${g.group}</h3><div class="persons" data-stagger>${g.members.map(card).join('')}</div></div>`).join('');
   const net = `<canvas class="net" aria-hidden="true" data-net data-nodes="${esc(D.people.map((g) => g.group).join('|'))}"></canvas>`;
   const dialog = `<dialog class="pdlg" data-profile-dialog aria-label="${esc(t['profile-open'])}"><button class="pdlg__x" type="button" data-profile-close aria-label="${esc(t['profile-close'])}"><span aria-hidden="true">×</span></button><div data-profile-content></div></dialog>`;
-  const body = [
+  const sections = [
     phero({ crumbs: [breadcrumb('/people')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'image', src: '/assets/img/group-2.webp' } }),
     `<section class="section section--paper"><div class="container founder"><div class="founder__img clip" data-clip data-drift><img src="${f.image}" width="900" height="969" alt="${esc(f.name)}" loading="lazy" data-parallax></div><div><span class="eyebrow" data-reveal>${esc(D.pageText.people['founder-eyebrow'])}</span><h2 class="split" style="margin-top:18px">${esc(f.name)}</h2><p class="founder__tag" data-reveal>${esc(f.role)} · ${plain(f.tag)}</p><div class="founder__bio" data-reveal>${f.bio.map((b) => `<p>${esc(b)}</p>`).join('')}</div><div class="chips" style="margin:24px 0" data-reveal>${f.expertise.map((x) => `<span class="chip">${plain(x)}</span>`).join('')}</div><blockquote data-reveal>${esc(f.quote)}</blockquote><div data-reveal>${btn(esc(D.pageText.people['cta-talk']), '/contact')}</div></div></div></section>`,
     sec(`<div class="people-head">${sectionHead('people-network')}${net}</div>${groups}${dialog}`),
     cta('cta-people'),
-  ].join('\n');
+  ];
+  const body = [sections[0], renderOrder('people', D.sectionOrder.people, sections.slice(1, -1)), sections.at(-1)].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/people', body });
 }
 
@@ -152,12 +155,13 @@ function contact() {
   const visit = D.headings['contact-visit'];
   const ways = D.headings['contact-ways'];
   const faqHead = D.headings['contact-faq'];
-  const body = [
+  const sections = [
     phero({ crumbs: [breadcrumb('/contact')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'image', src: '/assets/img/dhaka.webp' } }),
     sec(`<div class="two two--top"><div data-reveal><span class="eyebrow">${esc(visit.eyebrow)}</span><h2 class="split" style="margin:18px 0 30px">${rich(visit.title)}</h2><ul class="checks"><li><span><b style="color:var(--ink)">${esc(cfg.officeLabel)}</b> ${esc(cfg.address.join(', '))}</span></li><li><span><b style="color:var(--ink)">${esc(cfg.emailLabel)}</b> <a class="link" style="text-transform:none;letter-spacing:0" href="mailto:${esc(cfg.email)}">${esc(cfg.email)}</a></span></li><li><span><b style="color:var(--ink)">${esc(cfg.phoneLabel)}</b> <a href="tel:${esc(cfg.phoneHref)}">${esc(cfg.phone)}</a></span></li><li><span><b style="color:var(--ink)">${esc(cfg.hoursLabel)}</b> ${esc(cfg.hours)}</span></li></ul><div style="margin-top:28px">${btn(esc(D.pageText.contact['cta-open-maps']), plain(cfg.mapUrl), 'btn--ghost')}</div></div><div data-reveal>${formBlock({ light: true, id: 'contact-form' })}</div></div>`),
     sec(`${sectionHead('contact-ways')}<div class="cards4" data-stagger>${D.navigation.contactPathways.map((p, i) => tile(esc(p.label), esc(p.description), '0' + (i + 1))).join('')}</div>`, 'section--sand'),
     sec(`<div class="two two--top"><div style="position:sticky;top:130px"><span class="eyebrow" data-reveal>${esc(faqHead.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(faqHead.title)}</h2></div><div class="acc" data-stagger>${D.faq.map((q, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(q.q)}</summary><p>${esc(q.a)}</p></details>`).join('')}</div></div>`),
-  ].join('\n');
+  ];
+  const body = [sections[0], renderOrder('contact', D.sectionOrder.contact, sections.slice(1))].join('\n');
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: D.faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })) }];
   return page({ title: pg.title, desc: pg.desc, path: '/contact', body, jsonld });
 }
