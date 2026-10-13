@@ -20,4 +20,7 @@ Complete the detailed Pages CMS editor, permissions, media and draft-to-preview 
 | 12 | After setup, verify email routing with an approved non-production check failure and inspect a scheduled uptime result. | Owner email receives the configured GitHub/Vercel notifications; optional webhook receives only commit, author and up to 20 error lines for a failed content check. |  |  |
 | 13 | If analytics were approved, inspect a production page and a Preview page. | Approved Vercel Web Analytics and Speed Insights scripts appear only on Production; the privacy notice is already published. |  |  |
 
+| 14 | On `content`, choose Testimonials pilot → After selected engagements, save and open the review preview. Then try Before founder profile. | Home shows the same testimonial cards exactly once at the chosen anchor on desktop and mobile. Engagements is unchanged. Restore the default through the same review workflow. |  |  |
+| 15 | Hide all testimonials while a standalone placement is selected, and save the draft. | Content check fails with a visible-testimonial error. Unhide at least one and save again to recover. Production stays on the previous approved version. |  |  |
+
 **Acceptance:** all applicable rows pass; any skipped row has an owner and a reason recorded above. Keep this file as the manual record for the first editor onboarding and release.

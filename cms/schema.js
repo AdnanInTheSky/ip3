@@ -4,6 +4,7 @@
 // Field options: optional · max (hard limit) · soft (warning limit) · em (allow <em>) · link · slug · email · hint · summary
 const { str, text, num, bool, image, video, select, obj, list, strs, hidden, slug, pair, file, collection } = require('./helpers');
 const { editableSectionOrders } = require('./section-order');
+const { testimonialPlacements } = require('./section-placement');
 
 const pageMeta = (withHero = true) => [
   str('title', 'Search-result title', { soft: 70, hint: 'Shown in the browser tab and Google. Aim for 70 characters or fewer.' }),
@@ -27,7 +28,7 @@ const pageText = (name, label, path) => file(name, `00 · Page text — ${label}
 
 const groups = [
   { name: 'start_here', label: 'Start here · page titles & copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
-  { name: 'page_sections', label: 'Page layout · section order', items: ['section_order'] },
+  { name: 'page_sections', label: 'Page layout · section order', items: ['section_order', 'section_placement'] },
   { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_mandates', 'home_stats', 'home_why', 'home_translation', 'home_convening', 'home_testimonials', 'home_partners'] },
   { name: 'contact', label: 'Contact page', items: ['page_text_contact', 'home_faq'] },
   { name: 'capabilities', label: 'Capabilities & proof of work', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
@@ -46,6 +47,11 @@ module.exports = {
     { name: 'videos', label: 'Videos', input: 'assets/video', output: '/assets/video', extensions: ['mp4', 'webm'] },
   ],
   content: [
+    file('section_placement', '00 · Reusable sections — Testimonials pilot', 'content/section-placement.json', [
+      select('homeTestimonials', 'Home — Testimonials location', Object.keys(testimonialPlacements), {
+        hint: 'Choose one approved location. The same testimonial records move there once; edit their text in Home page → Testimonials. After engagements and before founder follow those sections wherever the Home section order places them. Save on the content branch and review the preview before publishing.',
+      }),
+    ]),
     file('section_order', '00 · Page section order', 'content/section-order.json', Object.entries(editableSectionOrders).map(([key, spec]) =>
       select(key, spec.fieldLabel, spec.default, { list: true, hint: spec.hint })
     )),

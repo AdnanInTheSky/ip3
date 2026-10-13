@@ -1,6 +1,7 @@
 const { esc, plain, rich, arrow, arrowL, btn, cta, sectionHead, phero, breadcrumb, page, formBlock, cfg, D } = require('./layout');
 const { engRow, insCard } = require('./pages-home');
 const { renderOrder } = require('../cms/section-order');
+const { testimonialCards } = require('./sections/testimonials');
 const { capabilities } = require('./cap'); // /capabilities lives in src/cap/ (one module per section)
 const { sectorPage } = require('./sec'); // /sectors/<slug> lives in src/sec/ (one module per section)
 
@@ -87,7 +88,7 @@ function engagements() {
     phero({ crumbs: [breadcrumb('/engagements')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'video', src: '/assets/video/energy.mp4', poster: '/assets/img/poster-energy.webp' } }),
     sec(`<div class="eng">${D.engagements.map(engRow).join('')}</div>`),
     sec(`<div class="partners" data-reveal><div><h3>${esc(D.headings['engagements-clients'].title)}</h3><div class="names">${D.partners.clients.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div><div><h3>${esc(D.headings['engagements-funders'].title)}</h3><div class="names">${D.partners.funders.map((n) => `<span>${esc(n)}</span>`).join('')}</div></div></div>`, 'section--sand'),
-    sec(`<div class="quotes" data-stagger>${D.testimonials.map((t) => `<figure class="quote"><blockquote>${esc(t.quote)}</blockquote><footer><b>${esc(t.name)}</b><span>${esc(t.role)}</span></footer></figure>`).join('')}</div>`),
+    sec(`<div class="quotes" data-stagger>${testimonialCards(D.testimonials)}</div>`),
     cta('cta-engagements'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/engagements', body });

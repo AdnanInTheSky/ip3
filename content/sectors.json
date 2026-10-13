@@ -126,7 +126,8 @@
       "engagements": [
         "bmdf-transformation",
         "bmdf-oscb"
-      ]
+      ],
+      "image": "/assets/img/139720611101581014575935906844014742848876883n.jpg"
     },
     {
       "hidden": false,
@@ -178,7 +179,8 @@
       "photo": "/assets/img/field/cpd-green-transition-enumerator-training.webp",
       "engagements": [
         "sida-cpd-textile"
-      ]
+      ],
+      "poster": "/assets/img/03102024home-pageip3-14.png"
     },
     {
       "hidden": false,
@@ -200,7 +202,8 @@
       ],
       "video": "/assets/video/data.mp4",
       "card": "/assets/img/poster-data.webp",
-      "photo": "/assets/img/poster-data.webp"
+      "photo": "/assets/img/poster-data.webp",
+      "poster": "/assets/img/poster-data.webp"
     }
   ]
 }

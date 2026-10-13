@@ -32,6 +32,8 @@ This guide is for staff who update the website in Pages CMS. You can edit text, 
 
 Section order is available on Home, About, People and Contact. The hero stays first. Home, About and People keep their closing contact section last. The Why IP3 journey, Approach film, Capabilities sequence, sector detail templates, and legal pages have fixed or connected sequences and do not expose this control.
 
+To move the existing Home testimonials, open **Page layout · section order → Testimonials pilot** and choose **Home — Testimonials location**. Choose **With clients and funders (default)**, **After selected engagements**, or **Before founder profile**. The testimonials follow the named section when the Home section order changes. Their text stays under **Home page → Testimonials**, and Engagements uses those same records. A move creates no new records. Keep at least one testimonial visible when choosing a standalone location. Save on `content`, open the preview, and check the position and spacing on desktop and mobile before review. Choose the default location to restore the original combined section.
+
 ### What “real time” means here
 
 The editor save and GitHub check start automatically, and the preview becomes available after the check opens a pull request and Vercel finishes its preview build. A saved draft is not public. The production site changes after human approval, merge to `main`, and a successful Vercel deployment. That is the quickest safe path this static site supports; it is not a keystroke-by-keystroke or direct-to-production update.
@@ -63,6 +65,10 @@ The editor save and GitHub check start automatically, and the preview becomes av
 ## If the check fails
 
 Open the failed **Content check** run linked from the commit or pull request. Read the first content error. Common causes are a missing required field, invalid slug/reference, broken internal link, unsupported media type, or file-size limit. Correct the CMS field and save again. If the error is unclear, send the site owner the workflow link and error text. Never send passwords, API keys or private enquiry contents in a public issue.
+
+If a save does not reach a preview, first confirm that the CMS branch selector says `content`. Saving to an old merged feature branch does not enter the content publishing workflow. If Content check passes but no review PR appears, the owner should inspect **Content publishing** and confirm that GitHub **Settings → Actions → General → Workflow permissions → Allow GitHub Actions to create and approve pull requests** is enabled. The publishing workflow only opens or updates review PRs; a reviewer still merges them.
+
+For sector headers, a selected video always needs a poster image. For a photo header, clear the video and choose the header photo. A card image by itself does not configure the header. Oversized uploads and missing posters stop the build, so production continues serving its previous successful deployment.
 
 ## Owner setup still required
 

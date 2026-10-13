@@ -7,6 +7,7 @@ const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const { renderOrder } = require('../cms/section-order');
+const { testimonialPlacements, defaultTestimonialPlacement } = require('../cms/section-placement');
 
 const REPO = path.join(__dirname, '..');
 test('api contains only deployable contact.js', () => {
@@ -17,6 +18,45 @@ test('section order renders supported sections in the saved order and rejects fi
   assert.equal(renderOrder('people', ['People directory', 'Founder profile'], ['founder-html', 'directory-html']), 'directory-html\nfounder-html');
   assert.throws(() => renderOrder('people', ['People directory', 'People directory'], ['founder-html', 'directory-html']), /appears more than once/);
   assert.throws(() => renderOrder('why', [], []), /not editable/);
+});
+
+test('Home testimonial placements move the shared records once and follow reordered anchors', () => {
+  const D = require('../src/data');
+  const { home } = require('../src/pages-home');
+  const { engagements } = require('../src/pages-inner');
+  const saved = D.sectionPlacement.homeTestimonials;
+  const savedOrder = D.sectionOrder.home;
+  const baselineEngagements = engagements();
+  try {
+    D.sectionPlacement.homeTestimonials = defaultTestimonialPlacement;
+    const baseline = home();
+    for (const placement of Object.keys(testimonialPlacements)) {
+      D.sectionPlacement.homeTestimonials = placement;
+      for (const order of [savedOrder, [...savedOrder].reverse()]) {
+        D.sectionOrder.home = order;
+        const html = home();
+        assert.equal((html.match(/<figure class="quote">/g) || []).length, D.testimonials.length);
+        const rule = testimonialPlacements[placement];
+        const standalone = html.indexOf('id="home-testimonials"');
+        assert.equal((html.match(/id="home-testimonials"/g) || []).length, rule.embedded ? 0 : 1);
+        if (rule.before) assert.ok(standalone < html.indexOf('id="leadership"'));
+        if (rule.after) {
+          const anchor = html.indexOf('id="engagements"');
+          const end = html.indexOf('</section>', anchor);
+          assert.equal(html.slice(end + '</section>'.length, standalone).replace(/\s+/g, ''), '<sectionclass="section"');
+        }
+        assert.equal(engagements(), baselineEngagements, 'Home placement must not change Engagements');
+      }
+    }
+    D.sectionOrder.home = savedOrder;
+    D.sectionPlacement.homeTestimonials = defaultTestimonialPlacement;
+    assert.equal(home(), baseline, 'restoring the default restores the original Home output');
+    D.sectionPlacement.homeTestimonials = 'Inside Why IP3 journey';
+    assert.throws(home, /supported Home testimonial location/);
+  } finally {
+    D.sectionOrder.home = savedOrder;
+    D.sectionPlacement.homeTestimonials = saved;
+  }
 });
 
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-selftest-'));
@@ -94,6 +134,17 @@ test('negative content/build safeguards', async (t) => {
     await t.test('rejects an incomplete section order', () => {
       reset(); const data = json('section-order.json'); data.home.pop(); save('section-order.json', data);
       expectValidation(/Home section order must contain exactly 11 supported sections/);
+    });
+    await t.test('rejects unsupported testimonial placements and missing visible content', () => {
+      reset(); const placements = json('section-placement.json'); placements.homeTestimonials = 'Inside Why IP3 journey'; save('section-placement.json', placements);
+      expectValidation(/supported Home testimonial location/);
+      placements.homeTestimonials = 'After selected engagements'; save('section-placement.json', placements);
+      const data = json('home/testimonials.json'); data.items.forEach((item) => { item.hidden = true; }); save('home/testimonials.json', data);
+      expectValidation(/at least one visible testimonial/);
+    });
+    await t.test('rejects a video header without its poster even when a photo exists', () => {
+      reset(); const data = json('sectors.json'); data.items[0].poster = ''; save('sectors.json', data);
+      expectValidation(/header video needs its poster image/);
     });
     await t.test('rejects duplicate or unsupported section order values', () => {
       reset(); const data = json('section-order.json'); data.contact[0] = data.contact[1]; save('section-order.json', data);

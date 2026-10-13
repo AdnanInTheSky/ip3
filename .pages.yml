@@ -1111,6 +1111,23 @@ content:
             description: "Drag sections to change their order. The contact details and form, contact pathways, and FAQs must each appear once."
             options:
               values: ["Contact details & enquiry form", "Contact pathways", "Frequently asked questions"]
+      - name: section_placement
+        label: "Testimonials pilot"
+        type: file
+        path: content/section-placement.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: homeTestimonials
+            label: "Home — Testimonials location"
+            type: select
+            required: true
+            description: "Choose one approved location. The same testimonial records move there once; edit their text in Home page → Testimonials. After engagements and before founder follow those sections wherever the Home section order places them. Save on the content branch and review the preview before publishing."
+            options:
+              values: ["With clients and funders (default)", "After selected engagements", "Before founder profile"]
   - name: home_page
     label: "Home page"
     type: group

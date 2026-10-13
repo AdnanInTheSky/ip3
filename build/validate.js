@@ -7,6 +7,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const schema = require('../cms/schema');
 const { editableSectionOrders, validateOrder } = require('../cms/section-order');
+const { validateHomeTestimonialsPlacement } = require('../cms/section-placement');
 
 const KB = 1024;
 const MB = 1024 * KB;
@@ -171,6 +172,10 @@ function run({ quiet = false } = {}) {
     try { validateOrder(page, sectionOrder[page]); }
     catch (e) { err(page, e.message); }
   }
+  where.file = 'content/section-placement.json';
+  try {
+    validateHomeTestimonialsPlacement(data.section_placement?.homeTestimonials, sectionOrder.home, data.home_testimonials?.items);
+  } catch (e) { err('homeTestimonials', e.message); }
 
   // cross-references between files
   const slugsOf = (list) => new Set((list || []).map((x) => x.slug));
@@ -253,7 +258,8 @@ function run({ quiet = false } = {}) {
   }
   sectorItems.forEach((s, i) => {
     where.file = `content/sectors.json → items[${i + 1}]`;
-    if (!((s.video && s.poster) || s.image)) err('', 'needs either a header video with its poster, or a header photo');
+    if (s.video && !s.poster) err('poster', 'a header video needs its poster image, even when a header photo is also set');
+    if (!s.video && !s.image) err('', 'needs either a header video with its poster, or a header photo');
   });
   if (!sectorItems.some((sector) => !sector.hidden)) {
     where.file = 'content/sectors.json'; err('items', 'at least one sector must remain visible');
