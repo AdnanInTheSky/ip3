@@ -1,6 +1,34 @@
 {
-  "home": ["Built for complex mandates", "IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements", "Insights", "Convening", "Selected proof", "Founder"],
-  "about": ["Introduction", "Vision, mission & aims", "Principles", "Policy lifecycle", "Strategic pillars", "Our values", "What makes IP3 different", "Our network"],
-  "people": ["Founder profile", "People directory"],
-  "contact": ["Contact details & enquiry form", "Contact pathways", "Frequently asked questions"]
+  "home": [
+    "Capabilities",
+    "IP3 in numbers",
+    "Why IP3",
+    "Sectors",
+    "Translation, not theory",
+    "Built for complex mandates",
+    "Insights",
+    "Engagements",
+    "Convening",
+    "Selected proof",
+    "Founder"
+  ],
+  "about": [
+    "Introduction",
+    "What makes IP3 different",
+    "Vision, mission & aims",
+    "Principles",
+    "Our values",
+    "Our network",
+    "Strategic pillars",
+    "Policy lifecycle"
+  ],
+  "people": [
+    "Founder profile",
+    "People directory"
+  ],
+  "contact": [
+    "Contact details & enquiry form",
+    "Contact pathways",
+    "Frequently asked questions"
+  ]
 }
