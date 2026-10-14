@@ -18,6 +18,7 @@ module.exports = file('proof', '11 · Proof — documented assignments', 'conten
     str('reference', 'Programme reference', { optional: true, max: 140 }),
     str('location', 'Geography', { optional: true, max: 260 }),
     text('summary', 'Summary', { max: 460 }),
+    text('impact', 'Impact', { optional: true, max: 260, hint: 'Shown on the Home delivery chain. Say what the work produced or informed, as the record supports it; never an outcome the record does not state. Start current assignments with “Under way:”.' }),
     strs('activities', 'Recorded activities', { optional: true }),
     strs('methods', 'Methods demonstrated', { optional: true }),
     obj('scope', 'Scope figure (scope, not an outcome)', [str('value', 'Value', { max: 24 }), str('label', 'What it counts', { max: 160 })], { optional: true }),

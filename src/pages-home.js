@@ -2,6 +2,7 @@ const { esc, plain, rich, arrow, btn, cta, page, cfg, D } = require('./layout');
 const { editableSectionOrders, renderOrder } = require('../cms/section-order');
 const { validateHomeTestimonialsPlacement } = require('../cms/section-placement');
 const { testimonialCards, testimonialsSection } = require('./sections/testimonials');
+const { chainSection } = require('./sections/chain');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
@@ -29,24 +30,6 @@ function hero() {
   <div class="hero__ui"><div class="container"><div class="hero__tabs">${tabs}</div></div></div>
 </section>
 <div class="ticker" aria-label="Areas of work"><div class="ticker__track">${[0, 1].map(() => `<div style="display:flex">${D.reassurance.map((r) => `<span>${esc(r)}</span>`).join('')}${D.reassurance.map((r) => `<span>${esc(r)}</span>`).join('')}</div>`).join('')}</div></div>`;
-}
-
-function mandates() {
-  const m = D.mandates;
-  return `
-<section class="section" id="mandates">
-  <div class="container deck">
-    <div class="deck__intro">
-      <span class="eyebrow" data-reveal>${m.eyebrow}</span>
-      <h2 class="split" style="margin-top:20px">${m.h2}</h2>
-      <p class="lead" data-reveal>${m.body}</p>
-      ${btn(esc(D.pageText.home['cta-explore-capabilities']), '/capabilities')}
-    </div>
-    <div class="deck__cards">
-      ${m.cards.map((c, i) => `<article class="card-s" style="--i:${i}" data-deck><span class="card-s__n">0${i + 1}</span><h3>${c.title}</h3><p>${c.text}</p><div class="card-s__bar"><i></i></div></article>`).join('')}
-    </div>
-  </div>
-</section>`;
 }
 
 function stats() {
@@ -107,29 +90,6 @@ function sectors() {
       ${D.sectors.map((s, i) => `<a class="hs__card" href="/sectors/${s.slug}"><img src="${s.card}" width="800" height="600" alt="" loading="lazy"><div><b>${String(i + 1).padStart(2, '0')}</b><h3>${s.title}</h3><p>${s.problem}</p></div></a>`).join('')}
     </div>
     <div class="hs__bar"><span>${esc(D.navigation.horizontalScrollLabel)}</span><div class="hs__line"><i data-hs-fill></i></div><a class="link" href="/sectors">${esc(D.pageText.home['cta-all-sectors'])}${arrow}</a></div>
-  </div>
-</section>`;
-}
-
-function translation() {
-  const t = D.translation;
-  return `
-<section class="section" id="translation">
-  <div class="container">
-    <div class="trans">
-      <div class="trans__left">
-        <span class="eyebrow" data-reveal>${t.eyebrow}</span>
-        <h2 class="split" style="margin-top:20px">${t.h2}</h2>
-        <p class="lead" data-reveal>${t.sub}</p>
-        <ol class="trans__rail" data-rail>${t.nodes.map((n, i) => `<li${i === 0 ? ' class="is-active"' : ''}>${n.title}</li>`).join('')}</ol>
-      </div>
-      <div class="trans__steps">
-        ${t.nodes.map((n, i) => `<article class="step${i === 0 ? ' is-active' : ''}" data-step="${i}"><span class="step__n">0${i + 1}</span><h3>${n.title}</h3><p>${n.text}</p></article>`).join('')}
-      </div>
-    </div>
-    <div class="outputs" data-stagger>
-      ${t.outputs.map((o) => `<div class="out"><h3>${o.title}</h3><ul>${o.items.map((i) => `<li>${i}</li>`).join('')}</ul></div>`).join('')}
-    </div>
   </div>
 </section>`;
 }
@@ -246,7 +206,7 @@ function founder() {
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
   const rule = validateHomeTestimonialsPlacement(D.sectionPlacement.homeTestimonials, D.sectionOrder.home, D.testimonials);
-  const renderers = [mandates, stats, capabilities, why, sectors, translation, engagements, insights, convening, () => proof(Boolean(rule.embedded)), founder];
+  const renderers = [stats, capabilities, why, sectors, chainSection, engagements, insights, convening, () => proof(Boolean(rule.embedded)), founder];
   const sections = Object.fromEntries(editableSectionOrders.home.default.map((key, i) => [key, renderers[i]]));
   const anchor = rule.before || rule.after;
   if (anchor) {

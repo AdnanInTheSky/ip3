@@ -29,7 +29,7 @@ const pageText = (name, label, path) => file(name, `00 · Page text — ${label}
 const groups = [
   { name: 'start_here', label: 'Start here · page titles & copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
   { name: 'page_sections', label: 'Page layout · section order', items: ['section_order', 'section_placement'] },
-  { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_mandates', 'home_stats', 'home_why', 'home_translation', 'home_convening', 'home_testimonials', 'home_partners'] },
+  { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_stats', 'home_why', 'home_translation', 'home_convening', 'home_testimonials', 'home_partners'] },
   { name: 'contact', label: 'Contact page', items: ['page_text_contact', 'home_faq'] },
   { name: 'capabilities', label: 'Capabilities & proof of work', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
   { name: 'sectors', label: 'Sectors', items: ['sectors', 'sector_pages'] },
@@ -128,20 +128,41 @@ module.exports = {
         list('cta', 'Buttons', [str('label', 'Label', { max: 40 }), str('href', 'Link', { link: true }), bool('ghost', 'Outline style', { optional: true })], { summary: '{label}' }),
       ], { summary: '{tab}' }),
     ]),
-    file('home_mandates', '02 · Home — Built for complex mandates', 'content/home/mandates.json', [
-      str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('body', 'Introduction'),
-      pair('cards', 'Cards'),
-    ]),
     file('home_stats', '03 · Home — Numbers', 'content/home/stats.json', [
       list('items', 'Numbers', [hidden, num('n', 'Number'), str('suffix', 'Suffix', { optional: true, hint: 'e.g. + or %' }), str('label', 'Label')], { summary: '{n}{suffix} {label}' }),
     ]),
     file('home_why', '04 · Home — Why IP3', 'content/home/why-ip3.json', [
       list('items', 'Reasons', [str('n', 'Number'), str('title', 'Title'), text('text', 'Text'), str('href', 'Link', { link: true }), str('cta', 'Link label')], { summary: '{title}' }),
     ]),
-    file('home_translation', '05 · Home — Translation, not theory', 'content/home/translation.json', [
-      str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('sub', 'Introduction'),
-      pair('nodes', 'Steps'),
-      list('outputs', 'What clients receive', [str('title', 'Group'), strs('items', 'Items')], { summary: '{title}' }),
+    file('home_translation', '05 · Home — Translation, not theory (delivery chain)', 'content/home/translation.json', [
+      str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('body', 'Introduction', { max: 420 }),
+      str('closing', 'Closing line', { em: true, max: 140 }),
+      text('bridge', 'Line linking the heading to the six stages', { max: 200 }),
+      text('attribution', 'Note above the assignment cards', { max: 220, hint: 'Where the founder is named: the assignments were led or supported by IP3’s founder and expert team.' }),
+      obj('labels', 'Labels', [
+        str('chain', 'Stage selector name (screen readers)', { max: 80 }),
+        str('stage', 'Stage counter', { max: 40, hint: 'Write {n} for the stage number.' }),
+        str('deliverables', 'Deliverables heading', { max: 40 }),
+        str('impact', 'Impact label', { max: 30 }), str('activity', 'Recorded activity label', { max: 40 }),
+        str('all', 'Link to every assignment', { max: 60 }), str('allAssignments', 'Label of the show-all choice', { max: 30 }),
+        str('count', 'Word after the number of assignments', { max: 30 }), str('filterLabel', 'Filter name (screen readers)', { max: 80 }),
+        str('viewLabel', 'View switch name (screen readers)', { max: 30 }), str('carouselLabel', 'Carousel', { max: 20 }), str('gridLabel', 'Grid', { max: 20 }),
+        str('role', 'Role label', { max: 20 }), str('period', 'Period label', { max: 20 }),
+      ]),
+      list('phases', 'Phases (in order)', [
+        str('title', 'Phase name', { max: 60 }),
+        str('tag', 'Small category on the tile', { optional: true, max: 30 }),
+        text('quote', 'One line shown on the stage tile', { max: 220 }),
+        text('body', 'Description shown when the stage is chosen', { max: 260 }),
+        list('deliverables', 'Tangible deliverables', [
+          str('group', 'Deliverable group', { optional: true, max: 60, hint: 'The service group these belong to; leave blank for none.' }),
+          strs('items', 'Deliverables'),
+        ], { summary: '{group}' }),
+        list('evidence', 'Evidence — documented assignments', [
+          str('record', 'Assignment slug', { ref: 'proof', hint: 'The slug of a record in “11 · Proof — documented assignments”.' }),
+          text('activity', 'Recorded activity (copied exactly)', { max: 400, hint: 'Paste one line from that record’s “Recorded activities”, unchanged. The build stops if it does not match.' }),
+        ], { summary: '{record}' }),
+      ], { summary: '{title}' }),
     ]),
     file('home_convening', '06 · Home — Convening', 'content/home/convening.json', [
       str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('body', 'Introduction'),

@@ -1086,7 +1086,7 @@ content:
             required: true
             description: "Drag sections to change their order. The hero stays first and the closing contact section stays last. Every section must appear once."
             options:
-              values: ["Built for complex mandates", "IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements", "Insights", "Convening", "Selected proof", "Founder"]
+              values: ["IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements", "Insights", "Convening", "Selected proof", "Founder"]
           - name: about
             label: "About — middle sections"
             type: select
@@ -1226,46 +1226,6 @@ content:
                   - name: ghost
                     label: "Outline style"
                     type: boolean
-      - name: home_mandates
-        label: "Built for complex mandates"
-        type: file
-        path: content/home/mandates.json
-        format: json
-        operations:
-          create: false
-          rename: false
-          delete: false
-        fields:
-          - name: eyebrow
-            label: "Small label"
-            type: string
-            required: true
-          - name: h2
-            label: "Heading"
-            type: string
-            required: true
-            description: "Wrap words in <em>…</em> to show them in the accent colour."
-          - name: body
-            label: "Introduction"
-            type: text
-            required: true
-          - name: cards
-            label: "Cards"
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title}"
-            required: true
-            fields:
-              - name: title
-                label: "Title"
-                type: string
-                required: true
-              - name: text
-                label: "Text"
-                type: text
-                required: true
       - name: home_stats
         label: "Numbers"
         type: file
@@ -1341,7 +1301,7 @@ content:
                 type: string
                 required: true
       - name: home_translation
-        label: "Translation, not theory"
+        label: "Translation, not theory (delivery chain)"
         type: file
         path: content/home/translation.json
         format: json
@@ -1359,12 +1319,124 @@ content:
             type: string
             required: true
             description: "Wrap words in <em>…</em> to show them in the accent colour."
-          - name: sub
+          - name: body
             label: "Introduction"
             type: text
             required: true
-          - name: nodes
-            label: "Steps"
+            options:
+              maxlength: 420
+          - name: closing
+            label: "Closing line"
+            type: string
+            required: true
+            description: "Wrap words in <em>…</em> to show them in the accent colour."
+            options:
+              maxlength: 140
+          - name: bridge
+            label: "Line linking the heading to the six stages"
+            type: text
+            required: true
+            options:
+              maxlength: 200
+          - name: attribution
+            label: "Note above the assignment cards"
+            type: text
+            required: true
+            description: "Where the founder is named: the assignments were led or supported by IP3’s founder and expert team."
+            options:
+              maxlength: 220
+          - name: labels
+            label: "Labels"
+            type: object
+            required: true
+            fields:
+              - name: chain
+                label: "Stage selector name (screen readers)"
+                type: string
+                required: true
+                options:
+                  maxlength: 80
+              - name: stage
+                label: "Stage counter"
+                type: string
+                required: true
+                description: "Write {n} for the stage number."
+                options:
+                  maxlength: 40
+              - name: deliverables
+                label: "Deliverables heading"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: impact
+                label: "Impact label"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: activity
+                label: "Recorded activity label"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: all
+                label: "Link to every assignment"
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: allAssignments
+                label: "Label of the show-all choice"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: count
+                label: "Word after the number of assignments"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: filterLabel
+                label: "Filter name (screen readers)"
+                type: string
+                required: true
+                options:
+                  maxlength: 80
+              - name: viewLabel
+                label: "View switch name (screen readers)"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: carouselLabel
+                label: "Carousel"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: gridLabel
+                label: "Grid"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: role
+                label: "Role label"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: period
+                label: "Period label"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+          - name: phases
+            label: "Phases (in order)"
             type: object
             list:
               collapsible:
@@ -1373,31 +1445,69 @@ content:
             required: true
             fields:
               - name: title
-                label: "Title"
+                label: "Phase name"
                 type: string
                 required: true
-              - name: text
-                label: "Text"
+                options:
+                  maxlength: 60
+              - name: tag
+                label: "Small category on the tile"
+                type: string
+                options:
+                  maxlength: 30
+              - name: quote
+                label: "One line shown on the stage tile"
                 type: text
                 required: true
-          - name: outputs
-            label: "What clients receive"
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title}"
-            required: true
-            fields:
-              - name: title
-                label: "Group"
-                type: string
+                options:
+                  maxlength: 220
+              - name: body
+                label: "Description shown when the stage is chosen"
+                type: text
                 required: true
-              - name: items
-                label: "Items"
-                type: string
-                list: true
+                options:
+                  maxlength: 260
+              - name: deliverables
+                label: "Tangible deliverables"
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{group}"
                 required: true
+                fields:
+                  - name: group
+                    label: "Deliverable group"
+                    type: string
+                    description: "The service group these belong to; leave blank for none."
+                    options:
+                      maxlength: 60
+                  - name: items
+                    label: "Deliverables"
+                    type: string
+                    list: true
+                    required: true
+              - name: evidence
+                label: "Evidence — documented assignments"
+                type: object
+                list:
+                  collapsible:
+                    collapsed: true
+                    summary: "{record}"
+                required: true
+                fields:
+                  - name: record
+                    label: "Assignment slug"
+                    type: string
+                    required: true
+                    description: "The slug of a record in “11 · Proof — documented assignments”."
+                  - name: activity
+                    label: "Recorded activity (copied exactly)"
+                    type: text
+                    required: true
+                    description: "Paste one line from that record’s “Recorded activities”, unchanged. The build stops if it does not match."
+                    options:
+                      maxlength: 400
       - name: home_convening
         label: "Convening"
         type: file
@@ -2664,6 +2774,12 @@ content:
                 required: true
                 options:
                   maxlength: 460
+              - name: impact
+                label: "Impact"
+                type: text
+                description: "Shown on the Home delivery chain. Say what the work produced or informed, as the record supports it; never an outcome the record does not state. Start current assignments with “Under way:”."
+                options:
+                  maxlength: 260
               - name: activities
                 label: "Recorded activities"
                 type: string

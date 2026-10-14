@@ -5,7 +5,7 @@ const editableSectionOrders = {
     label: 'Home',
     fieldLabel: 'Home — middle sections',
     hint: 'Drag sections to change their order. The hero stays first and the closing contact section stays last. Every section must appear once.',
-    default: ['Built for complex mandates', 'IP3 in numbers', 'Capabilities', 'Why IP3', 'Sectors', 'Translation, not theory', 'Engagements', 'Insights', 'Convening', 'Selected proof', 'Founder'],
+    default: ['IP3 in numbers', 'Capabilities', 'Why IP3', 'Sectors', 'Translation, not theory', 'Engagements', 'Insights', 'Convening', 'Selected proof', 'Founder'],
   },
   about: {
     label: 'About',

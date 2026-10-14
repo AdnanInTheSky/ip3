@@ -22,7 +22,6 @@ module.exports = {
   legal: C.file('legal'),
   hero: live(hero.slides),
   reassurance: hero.reassurance,
-  mandates: C.file('home/mandates'),
   stats: live(C.file('home/stats').items),
   capabilities: C.file('capabilities'),
   proof: live(C.file('proof').items),
