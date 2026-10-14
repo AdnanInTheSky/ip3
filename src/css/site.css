@@ -501,6 +501,46 @@ html:not(.js) .ev-view,html:not(.js) .ev-pills{display:none}
 .founder__bio{display:grid;gap:16px;color:var(--ink-2);max-width:58ch}
 .founder blockquote{margin:30px 0;padding-left:22px;border-left:3px solid var(--rust-500);font-family:var(--f-display);font-style:italic;font-size:1.18rem;line-height:1.5;color:var(--ink);font-variation-settings:'opsz' 36,'WONK' 1}
 
+/* ---------- capabilities (Home): an unseen hand moves through the six decisions ---------- */
+.ih__board{position:relative}
+.ih__thread{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3}
+.ih__path{fill:none;stroke:rgba(22,21,19,.22);stroke-width:1.4;stroke-dasharray:2 7;stroke-linecap:round}
+.ih__path--lit{stroke:var(--rust);stroke-width:2.2;stroke-dasharray:none;filter:drop-shadow(0 0 6px rgba(150,63,46,.35))}
+.ih__dot{fill:var(--rust)}
+.ih__halo{fill:rgba(150,63,46,.18);animation:ih-pulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes ih-pulse{0%,100%{transform:scale(.7);opacity:.9}50%{transform:scale(1.25);opacity:.25}}
+.ih .cap{--mx:50%;--my:30%;isolation:isolate}
+.ih .cap::after{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;background:radial-gradient(280px circle at var(--mx) var(--my),rgba(150,63,46,.11),transparent 62%);opacity:0;transition:opacity .4s}
+.ih .cap:hover::after,.ih .cap:focus-visible::after{opacity:1}
+.ih .cap:focus-visible{outline:3px solid var(--rust-500);outline-offset:4px}
+.cap__big{position:absolute;z-index:-1;right:18px;bottom:-10px;font:400 6.4rem/1 var(--f-display);font-style:normal;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1px rgba(22,21,19,.12);pointer-events:none;transition:-webkit-text-stroke-color .6s}
+.ih.is-ready .cap{transition:transform .5s var(--ease),border-color .5s,box-shadow .5s,background .5s}
+.ih.is-ready .cap:not(.is-lit) q{opacity:.5}
+.ih.is-ready .cap:not(.is-lit) .chip{opacity:.5}
+.ih.is-ready .cap:not(.is-lit) h3{color:var(--ink-2)}
+.ih.is-ready .cap q,.ih.is-ready .cap .chip,.ih.is-ready .cap h3{transition:opacity .6s,color .6s}
+.ih .cap.is-lit .cap__n{color:var(--rust)}
+.ih .cap.is-lit .cap__big{-webkit-text-stroke-color:rgba(150,63,46,.4)}
+.ih .cap.is-lit{border-color:rgba(150,63,46,.28)}
+.ih .cap.is-hand{transform:translateY(-6px);border-color:rgba(150,63,46,.55);box-shadow:0 40px 70px -44px rgba(150,63,46,.55)}
+.ih .cap.is-hand::before{transform:scaleX(1)}
+.ih .cap.is-hand .chip{background:#fff;border-color:rgba(150,63,46,.35);color:var(--ink)}
+/* photos: a window at the top of each card; the client's setting turns in from depth and the smaller photo (the service) travels in to meet it */
+.ih .cap--media .cap__big{display:none}
+.ih .cap--media>:not(.cap__media){position:relative;z-index:1}
+.cap__media{position:relative;display:block;flex:none;height:clamp(170px,15vw,220px);margin:-34px -30px 4px;overflow:hidden;perspective:900px;background:radial-gradient(120% 90% at 70% 20%,#fff,var(--sand) 70%);border-bottom:1px solid var(--line)}
+.cap__media::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(180deg,transparent,rgba(250,248,245,.55));pointer-events:none}
+.cap__m1{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(calc(var(--px,0) * -10px),calc(var(--py,0) * -6px),0) scale(1.06);transition:transform .7s var(--ease)}
+.cap__m1[src*="finance-partnership"],.cap__m1[src*="data-systems"],.cap__m1[src*="mel-field"],.cap__m1[src*="institutions-roundtable"]{object-fit:contain;padding:14px 18px}
+.cap__m2{position:absolute;z-index:1;right:18px;bottom:14px;width:30%;max-height:72%;object-fit:cover;border-radius:12px;border:3px solid #fff;box-shadow:0 22px 36px -20px rgba(22,21,19,.65);transform:rotate(-4deg)}
+.cap__m2[src*="program-roundtable"],.cap__m2[src*="institutions-transformation"],.cap__m2[src*="data-globe"]{border:0;box-shadow:none;border-radius:0;object-fit:contain;filter:drop-shadow(0 16px 20px rgba(22,21,19,.3))}
+.ih .cap--media .chip{background:rgba(255,255,255,.9)}
+@media (max-width:1040px){.cap__big{font-size:5rem}}
+@media (max-width:640px){.cap__media{height:200px}}
+@media (prefers-reduced-motion:reduce){.cap__m1{transition:none;transform:none}}
+@media (max-width:640px){.cap__big{font-size:4.4rem;right:14px}}
+@media (prefers-reduced-motion:reduce){.ih__halo{animation:none}.ih.is-ready .cap{transition:none}.ih .cap.is-hand{transform:none}}
+
 /* ---------- why IP3 (Home): a floating phone, and four reasons that take turns ---------- */
 .wy__grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(32px,6vw,100px);align-items:start}
 .wy__stage{--rx:0deg;--ry:0deg;position:sticky;top:110px;display:grid;place-items:center;min-height:clamp(420px,62vh,640px);transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .5s var(--ease);will-change:transform}

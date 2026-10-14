@@ -201,6 +201,8 @@ module.exports = {
         slug(), str('title', 'Title'), str('short', 'Short name'), text('problem', 'The problem a client brings'), strs('deliverables', 'Typical deliverables'),
         str('descriptor', 'Plain-language line under the title', { max: 140, hint: 'The words a buyer would search for, e.g. Policy studies, economic appraisal, regulatory reform and sector strategies.' }),
         str('task', 'Often commissioned to', { max: 120 }),
+        image('image', 'Home card photo', { optional: true, hint: 'Shown on the right of the Home capability card. A cut-out or framed photo works best.' }),
+        image('image2', 'Home card second photo', { optional: true, hint: 'A smaller photo that travels in to meet the first as the visitor scrolls.' }),
         str('ctaLabel', 'Button under the row', { max: 60 }),
         text('intro', 'What this capability covers', { max: 600, soft: 420 }),
         list('groups', 'What it includes (opens under the row)', [
