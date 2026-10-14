@@ -223,10 +223,12 @@
     var count = $('[data-dc-count]', sec), all = $('[data-stage-all]', sec), bar = nav && $('.dc-deck__bar i', nav);
     var prev = nav && $('[data-dir="-1"]', nav), next = nav && $('[data-dir="1"]', nav);
     var stage = 0;
-    function select(n, scroll) {
+    function select(n, lead) {
       stage = n;
+      // first view: Stage 01 is shown as the lead (highlighted, with its description) while all assignments are listed
+      tiles.forEach(function (t) { t.classList.toggle('is-lead', !!lead && t.getAttribute('data-stage') === '1'); });
       tiles.forEach(function (t) { t.setAttribute('aria-pressed', String(+t.getAttribute('data-stage') === n)); });
-      panels.forEach(function (p) { p.classList.toggle('is-on', +p.getAttribute('data-panel') === n); });
+      panels.forEach(function (p) { p.classList.toggle('is-on', +p.getAttribute('data-panel') === (lead ? 1 : n)); });
       var shown = 0;
       cards.forEach(function (c) {
         var on = !n || c.getAttribute('data-stages').split(' ').indexOf(String(n)) > -1;
@@ -272,7 +274,7 @@
       track.addEventListener('scroll', state, { passive: true });
       window.addEventListener('resize', state);
     }
-    select(0);
+    select(0, true);
     sec.classList.add('is-ready');
   }
 
