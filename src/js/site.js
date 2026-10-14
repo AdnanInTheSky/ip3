@@ -330,6 +330,80 @@
     d.state();
   }
 
+  /* ---------- capabilities (home): an unseen hand travels a thread through the six decisions as you scroll ---------- */
+  function initHand() {
+    var sec = $('[data-hand]'); if (!sec) return;
+    var board = $('[data-hand-board]', sec), svg = $('svg', board), path = $('[data-hand-path]', board), lit = $('[data-hand-lit]', board), dot = $('[data-hand-dot]', board);
+    var cards = $$('[data-hand-card]', sec), nums = $$('[data-hand-n]', sec);
+    var pts = [], cum = [], total = 0, plen = 1, ticking = false, hot = -1;
+    function build() {
+      var br = board.getBoundingClientRect(), w = br.width, h = br.height;
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      var c = cards.map(function (el, i) {
+        var r = el.getBoundingClientRect(), n = nums[i].getBoundingClientRect();
+        return { l: r.left - br.left, r: r.right - br.left, t: r.top - br.top, b: r.bottom - br.top, x: n.left - br.left + 6, y: n.top - br.top - 9 };
+      });
+      var cols = c.filter(function (k) { return Math.abs(k.t - c[0].t) < 4; }).length;
+      var d, x0 = -12, x1 = w + 12;
+      pts = c.map(function (k) { return [k.x, k.y]; });
+      if (cols === 1) {
+        // single column: the thread runs down the left margin, with a short stub to each number
+        d = 'M' + (-12) + ' ' + (c[0].y - 40) + ' L-12 ' + c[0].y;
+        c.forEach(function (k, i) { d += ' L-12 ' + k.y + ' L' + k.x + ' ' + k.y + ' L-12 ' + k.y; });
+        d += ' L-12 ' + (c[c.length - 1].y + 40);
+        pts = c.map(function (k) { return [-12, k.y]; });
+      } else {
+        var rows = [], cur = [];
+        c.forEach(function (k, i) { if (cur.length && Math.abs(k.t - cur[0].k.t) > 4) { rows.push(cur); cur = []; } cur.push({ k: k, i: i }); });
+        rows.push(cur);
+        d = 'M' + x0 + ' ' + rows[0][0].k.y;
+        pts = [];
+        rows.forEach(function (row, ri) {
+          row.forEach(function (it) { d += ' L' + it.k.x + ' ' + it.k.y; pts[it.i] = [it.k.x, it.k.y]; });
+          var last = row[row.length - 1].k, next = rows[ri + 1];
+          if (next) {
+            var gap = (last.b + next[0].k.t) / 2;
+            d += ' L' + x1 + ' ' + last.y + ' L' + x1 + ' ' + gap + ' L' + x0 + ' ' + gap + ' L' + x0 + ' ' + next[0].k.y;
+          } else d += ' L' + x1 + ' ' + last.y;
+        });
+      }
+      path.setAttribute('d', d); lit.setAttribute('d', d);
+      plen = path.getTotalLength();
+      lit.style.strokeDasharray = plen + ' ' + plen;
+      // cumulative polyline distance to each number, taken from the path itself
+      cum = pts.map(function (pt) {
+        var best = 0, bd = 1e9, step = Math.max(2, plen / 600);
+        for (var s = 0; s <= plen; s += step) { var q = path.getPointAtLength(s), dd = Math.abs(q.x - pt[0]) + Math.abs(q.y - pt[1]); if (dd < bd) { bd = dd; best = s; } }
+        return best;
+      });
+    }
+    function paint(p) {
+      var at = p * plen, cur = -1;
+      lit.style.strokeDashoffset = String(plen - at);
+      var q = path.getPointAtLength(at);
+      dot.setAttribute('transform', 'translate(' + q.x + ' ' + q.y + ')');
+      cards.forEach(function (el, i) { var on = at >= cum[i] - 6; el.classList.toggle('is-lit', on); if (on) cur = i; });
+      cards.forEach(function (el, i) { el.classList.toggle('is-hand', i === (hot > -1 ? hot : cur)); });
+    }
+    function progress() {
+      var r = board.getBoundingClientRect(), vh = window.innerHeight;
+      return Math.min(1, Math.max(0, (vh * 0.78 - r.top) / Math.max(1, r.height + vh * 0.12 - vh * 0.1)));
+    }
+    function update() { ticking = false; paint(reduce ? 1 : progress()); }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+    cards.forEach(function (el, i) {
+      el.addEventListener('pointermove', function (e) { var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+      el.addEventListener('pointerenter', function () { hot = i; update(); });
+      el.addEventListener('pointerleave', function () { hot = -1; update(); });
+      el.addEventListener('focus', function () { hot = i; update(); });
+      el.addEventListener('blur', function () { hot = -1; update(); });
+    });
+    var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { build(); update(); }, 120); });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', function () { build(); update(); });
+    build(); sec.classList.add('is-ready'); update();
+  }
+
   /* ---------- why IP3 (home): the four reasons take turns; the phone caption and big numeral follow ---------- */
   function initWhy() {
     var sec = $('[data-why]'); if (!sec) return;
@@ -744,7 +818,7 @@
   }
 
   /* ---------- boot ---------- */
-  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initWhy(); initTilt();
+  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initHand(); initWhy(); initTilt();
   // Sector narratives own their motion lifecycle. Keep their policy text visible,
   // use native scrolling, and avoid stacking global reveals/Lenis over the scene.
   if (d.body.classList.contains('sxp')) {

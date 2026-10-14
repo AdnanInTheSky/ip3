@@ -47,14 +47,17 @@ function stats() {
 function capabilities() {
   const c = D.capabilities;
   return `
-<section class="section section--sand" id="capabilities">
+<section class="section section--sand ih" id="capabilities" data-hand>
   <div class="container">
     <div class="section__head section__head--split">
       <div><span class="eyebrow" data-reveal>${c.eyebrow}</span><h2 class="split" style="margin-top:18px">${c.h2}</h2></div>
       <div><p class="lead" data-reveal>${esc(D.pageText.home['capabilities-lead'])}</p><div style="margin-top:26px" data-reveal>${btn(esc(D.pageText.home['cta-all-capabilities']), '/capabilities', 'btn--ghost')}</div></div>
     </div>
-    <div class="caps" data-stagger>
-      ${c.cards.map((x, i) => `<a class="cap" href="/capabilities#${x.slug}"><span class="cap__n">0${i + 1}</span><h3>${x.title}</h3><q>“${x.problem}”</q><div class="chips">${x.deliverables.slice(0, 4).map((d) => `<span class="chip">${d}</span>`).join('')}</div></a>`).join('')}
+    <div class="ih__board" data-hand-board>
+      <svg class="ih__thread" aria-hidden="true" focusable="false"><path class="ih__path" data-hand-path d="" /><path class="ih__path ih__path--lit" data-hand-lit d="" /><g data-hand-dot><circle class="ih__halo" r="16"/><circle class="ih__dot" r="6.5"/></g></svg>
+      <div class="caps">
+        ${c.cards.map((x, i) => `<a class="cap" href="/capabilities#${x.slug}" data-hand-card><i class="cap__big" aria-hidden="true">0${i + 1}</i><span class="cap__n" data-hand-n>0${i + 1}</span><h3>${x.title}</h3><q>“${x.problem}”</q><div class="chips">${x.deliverables.slice(0, 4).map((d) => `<span class="chip">${d}</span>`).join('')}</div></a>`).join('')}
+      </div>
     </div>
   </div>
 </section>`;
