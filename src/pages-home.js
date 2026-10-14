@@ -3,6 +3,7 @@ const { editableSectionOrders, renderOrder } = require('../cms/section-order');
 const { validateHomeTestimonialsPlacement } = require('../cms/section-placement');
 const { testimonialCards, testimonialsSection } = require('./sections/testimonials');
 const { chainSection } = require('./sections/chain');
+const { evidence } = require('./sections/evidence');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
@@ -83,30 +84,13 @@ function sectors() {
 <section class="hs on-dark dark" id="sectors" data-hs>
   <div class="hs__pin" data-hs-pin>
     <div class="container hs__head">
-      <div><span class="eyebrow">${esc(h.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(h.title)}</h2></div>
-      <p>${esc(D.pageText.home['sector-intro'])}</p>
+      <div class="hs__title"><span class="eyebrow">${esc(h.eyebrow)}</span><h2 class="split">${rich(h.title)}</h2></div>
+      <p class="hs__intro">${esc(D.pageText.home['sector-intro'])}</p>
     </div>
     <div class="hs__track" data-hs-track>
       ${D.sectors.map((s, i) => `<a class="hs__card" href="/sectors/${s.slug}"><img src="${s.card}" width="800" height="600" alt="" loading="lazy"><div><b>${String(i + 1).padStart(2, '0')}</b><h3>${s.title}</h3><p>${s.problem}</p></div></a>`).join('')}
     </div>
     <div class="hs__bar"><span>${esc(D.navigation.horizontalScrollLabel)}</span><div class="hs__line"><i data-hs-fill></i></div><a class="link" href="/sectors">${esc(D.pageText.home['cta-all-sectors'])}${arrow}</a></div>
-  </div>
-</section>`;
-}
-
-function engagements() {
-  const list = D.engagements.slice(0, 3);
-  const h = D.headings['home-engagements'];
-  return `
-<section class="section section--paper" id="engagements">
-  <div class="container">
-    <div class="section__head section__head--split">
-      <div><span class="eyebrow" data-reveal>${esc(h.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(h.title)}</h2></div>
-      <div><p class="lead" data-reveal>${esc(h.lead)}</p><div style="margin-top:26px" data-reveal>${btn(esc(D.pageText.home['cta-all-engagements']), '/engagements', 'btn--ghost')}</div></div>
-    </div>
-    <div class="eng">
-      ${list.map((e) => engRow(e)).join('')}
-    </div>
   </div>
 </section>`;
 }
@@ -125,41 +109,28 @@ function engRow(e) {
 </article>`;
 }
 
-function insights() {
-  const list = D.insights.slice(0, 2);
-  const h = D.headings['home-insights'];
-  return `
-<section class="section section--sand" id="insights">
-  <div class="container">
-    <div class="section__head section__head--split">
-      <div><span class="eyebrow" data-reveal>${esc(h.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(h.title)}</h2></div>
-      <div><p class="lead" data-reveal>${esc(h.lead)}</p><div style="margin-top:26px" data-reveal>${btn(esc(D.pageText.home['cta-all-insights']), '/insights', 'btn--ghost')}</div></div>
-    </div>
-    <div class="ins" data-stagger>${list.map(insCard).join('')}</div>
-  </div>
-</section>`;
-}
-
 function insCard(i) {
   return `<article class="ins-card"><div class="ins-card__img"><img src="${i.image}" width="900" height="506" alt="" loading="lazy"></div><div class="ins-card__b"><span class="ins-card__t">${esc(i.type)}</span><h3>${esc(i.title)}</h3><p>${esc(i.text.length > 200 ? i.text.slice(0, 197).replace(/\s+\S*$/, '') + '…' : i.text)}</p><div class="chips">${i.tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div></div></article>`;
 }
 
 function convening() {
   const c = D.convening;
+  const next = D.headings['partners-clients'];
   return `
 <section class="conv section on-dark dark" id="convening">
   <div class="conv__bg"><video muted loop playsinline autoplay preload="none" poster="/assets/img/poster-city.webp" data-lazyvideo><source data-src="/assets/video/city.mp4" type="video/mp4"></video></div>
   <div class="container conv__grid">
-    <div style="position:sticky;top:130px;align-self:start">
+    <div class="conv__lead">
       <span class="eyebrow" data-reveal>${c.eyebrow}</span>
-      <h2 class="split" style="margin:20px 0 26px">${c.h2}</h2>
+      <h2 class="split conv__h">${c.h2}</h2>
       <p class="lead" data-reveal>${c.body}</p>
-      <div style="margin-top:30px" data-reveal>${btn(esc(D.pageText.home['cta-commission-dialogue']), '/contact', 'btn--light')}</div>
+      <div class="conv__cta" data-reveal>${btn(esc(D.pageText.home['cta-commission-dialogue']), '/contact', 'btn--light')}</div>
     </div>
-    <div class="conv__list" data-conv>
-      ${c.items.map((it, i) => `<div class="conv__item${i === 0 ? ' is-active' : ''}"><b>0${i + 1}</b><h3>${it.title}</h3><p>${it.text}</p></div>`).join('')}
-    </div>
+    <ol class="conv__list" data-conv>
+      ${c.items.map((it, i) => `<li class="conv__item${i === 0 ? ' is-active' : ''}"><b>0${i + 1}</b><h3>${it.title}</h3><p>${it.text}</p></li>`).join('')}
+    </ol>
   </div>
+  <a class="conv__next" href="#clients"><span>${esc(next.title)}</span><i aria-hidden="true"></i></a>
 </section>`;
 }
 
@@ -175,7 +146,7 @@ function proof(includeTestimonials = true) {
       <div class="marq__win"><div class="marq__track" style="--dur:${Math.max(28, names.length * 5)}s">${set(names)}${set(names, true)}</div></div>
     </div>`;
   return `
-<section class="section">
+<section class="section" id="clients">
   <div class="partners" data-reveal>${row(clients.title, p.clients)}${row(funders.title, p.funders, true)}</div>${includeTestimonials ? `
   <div class="container">
     <div class="quotes" style="margin-top:clamp(50px,7vw,100px)" data-stagger>
@@ -188,16 +159,21 @@ function proof(includeTestimonials = true) {
 function founder() {
   const f = D.founder;
   return `
-<section class="section section--paper" id="leadership">
+<section class="section section--paper fd" id="leadership">
   <div class="container founder">
-    <div class="founder__img clip" data-clip data-drift><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy" data-parallax></div>
-    <div>
+    <figure class="founder__card" data-tilt>
+      <span class="founder__ring" aria-hidden="true"></span>
+      <span class="founder__ring founder__ring--2" aria-hidden="true"></span>
+      <div class="founder__img"><img src="${f.image}" width="900" height="969" alt="${f.name}, ${f.role} of IP3 Consulting" loading="lazy"></div>
+      <figcaption class="founder__chip"><b>${f.name}</b><span>${f.role}</span></figcaption>
+    </figure>
+    <div class="founder__txt">
       <span class="eyebrow" data-reveal>${esc(D.pageText.home['leadership-eyebrow'])}</span>
-      <h2 class="split" style="margin-top:18px">${f.name}</h2>
+      <h2 class="split founder__name">${f.name}</h2>
       <p class="founder__tag" data-reveal>${f.role} · ${f.tag}</p>
       <div class="founder__bio" data-reveal>${f.bio.map((b) => `<p>${esc(b)}</p>`).join('')}</div>
-      <blockquote data-reveal>${esc(f.quote)}</blockquote>
-      <div style="display:flex;flex-wrap:wrap;gap:14px" data-reveal>${btn(esc(D.pageText.home['cta-meet-people']), '/people')}${btn(esc(D.pageText.home['cta-start-conversation']), '/contact', 'btn--ghost')}</div>
+      <blockquote class="founder__quote" data-reveal>${esc(f.quote)}</blockquote>
+      <div class="founder__cta" data-reveal>${btn(esc(D.pageText.home['cta-meet-people']), '/people')}${btn(esc(D.pageText.home['cta-start-conversation']), '/contact', 'btn--ghost')}</div>
     </div>
   </div>
 </section>`;
@@ -206,7 +182,7 @@ function founder() {
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
   const rule = validateHomeTestimonialsPlacement(D.sectionPlacement.homeTestimonials, D.sectionOrder.home, D.testimonials);
-  const renderers = [stats, capabilities, why, sectors, chainSection, engagements, insights, convening, () => proof(Boolean(rule.embedded)), founder];
+  const renderers = [stats, capabilities, why, sectors, chainSection, evidence, convening, () => proof(Boolean(rule.embedded)), founder];
   const sections = Object.fromEntries(editableSectionOrders.home.default.map((key, i) => [key, renderers[i]]));
   const anchor = rule.before || rule.after;
   if (anchor) {

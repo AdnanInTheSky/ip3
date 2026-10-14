@@ -29,7 +29,7 @@ const pageText = (name, label, path) => file(name, `00 · Page text — ${label}
 const groups = [
   { name: 'start_here', label: 'Start here · page titles & copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
   { name: 'page_sections', label: 'Page layout · section order', items: ['section_order', 'section_placement'] },
-  { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_stats', 'home_why', 'home_translation', 'home_convening', 'home_testimonials', 'home_partners'] },
+  { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_stats', 'home_why', 'home_translation', 'home_evidence', 'home_convening', 'home_testimonials', 'home_partners'] },
   { name: 'contact', label: 'Contact page', items: ['page_text_contact', 'home_faq'] },
   { name: 'capabilities', label: 'Capabilities & proof of work', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
   { name: 'sectors', label: 'Sectors', items: ['sectors', 'sector_pages'] },
@@ -138,10 +138,11 @@ module.exports = {
       str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('body', 'Introduction', { max: 420 }),
       str('closing', 'Closing line', { em: true, max: 140 }),
       text('bridge', 'Line linking the heading to the six stages', { max: 200 }),
-      text('attribution', 'Note above the assignment cards', { max: 220, hint: 'Where the founder is named: the assignments were led or supported by IP3’s founder and expert team.' }),
+      text('attribution', 'Note above the assignment cards', { max: 320, hint: 'Where the founder is named: the assignments were led or supported by IP3’s founder and expert team.' }),
       obj('labels', 'Labels', [
         str('chain', 'Stage selector name (screen readers)', { max: 80 }),
-        str('stage', 'Stage counter', { max: 40, hint: 'Write {n} for the stage number.' }),
+        str('proven', 'Line linking a stage to its assignments', { max: 60, hint: 'Write {count} for the number of assignments.' }),
+        str('seeAll', 'Button that jumps to the assignments', { max: 40 }),
         str('deliverables', 'Deliverables heading', { max: 40 }),
         str('impact', 'Impact label', { max: 30 }), str('activity', 'Recorded activity label', { max: 40 }),
         str('all', 'Link to every assignment', { max: 60 }), str('allAssignments', 'Label of the show-all choice', { max: 30 }),
@@ -161,8 +162,22 @@ module.exports = {
         list('evidence', 'Evidence — documented assignments', [
           str('record', 'Assignment slug', { ref: 'proof', hint: 'The slug of a record in “11 · Proof — documented assignments”.' }),
           text('activity', 'Recorded activity (copied exactly)', { optional: true, max: 400, hint: 'Optional. Paste one line from that record’s “Recorded activities”, unchanged; the build stops if it does not match. Leave empty to show the record’s summary instead.' }),
+          image('image', 'Photo for the card', { optional: true, hint: 'Used only when the assignment has no photo of its own. Pick a library image that fits the sector; it is shown as an indicative image, not as documentation.' }),
         ], { summary: '{record}' }),
       ], { summary: '{title}' }),
+    ]),
+    file('home_evidence', '05b · Home — Engagements & insights (labels)', 'content/home/evidence.json', [
+      obj('labels', 'Labels', [
+        str('filter', 'Filter name (screen readers)', { max: 60 }), str('all', 'Show-all choice', { max: 20 }),
+        str('engagements', 'Engagements choice', { max: 30 }), str('insights', 'Insights choice', { max: 30 }), str('publications', 'Publications choice', { max: 30 }),
+        str('count', 'Word after the number of items', { max: 20 }), str('view', 'View switch name (screen readers)', { max: 20 }),
+        str('carousel', 'Carousel', { max: 20 }), str('grid', 'Grid', { max: 20 }),
+        str('openEngagement', 'Engagement link text', { max: 40 }), str('openInsight', 'Insight link text', { max: 40 }), str('openPublication', 'Publication link text', { max: 40 }),
+        str('by', 'Word before authors', { max: 20 }),
+      ]),
+      obj('links', 'Links', [
+        str('engagements', 'Where “All engagements” goes', { link: true }), str('insights', 'Where “All insights” goes', { link: true }),
+      ]),
     ]),
     file('home_convening', '06 · Home — Convening', 'content/home/convening.json', [
       str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('body', 'Introduction'),

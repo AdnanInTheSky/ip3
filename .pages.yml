@@ -1086,7 +1086,7 @@ content:
             required: true
             description: "Drag sections to change their order. The hero stays first and the closing contact section stays last. Every section must appear once."
             options:
-              values: ["IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements", "Insights", "Convening", "Selected proof", "Founder"]
+              values: ["IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements & insights", "Convening", "Selected proof", "Founder"]
           - name: about
             label: "About — middle sections"
             type: select
@@ -1344,7 +1344,7 @@ content:
             required: true
             description: "Where the founder is named: the assignments were led or supported by IP3’s founder and expert team."
             options:
-              maxlength: 220
+              maxlength: 320
           - name: labels
             label: "Labels"
             type: object
@@ -1356,11 +1356,17 @@ content:
                 required: true
                 options:
                   maxlength: 80
-              - name: stage
-                label: "Stage counter"
+              - name: proven
+                label: "Line linking a stage to its assignments"
                 type: string
                 required: true
-                description: "Write {n} for the stage number."
+                description: "Write {count} for the number of assignments."
+                options:
+                  maxlength: 60
+              - name: seeAll
+                label: "Button that jumps to the assignments"
+                type: string
+                required: true
                 options:
                   maxlength: 40
               - name: deliverables
@@ -1507,6 +1513,118 @@ content:
                     description: "Optional. Paste one line from that record’s “Recorded activities”, unchanged; the build stops if it does not match. Leave empty to show the record’s summary instead."
                     options:
                       maxlength: 400
+                  - name: image
+                    label: "Photo for the card"
+                    type: image
+                    description: "Used only when the assignment has no photo of its own. Pick a library image that fits the sector; it is shown as an indicative image, not as documentation."
+                    options:
+                      media: images
+      - name: home_evidence
+        label: "Engagements & insights (labels)"
+        type: file
+        path: content/home/evidence.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: labels
+            label: "Labels"
+            type: object
+            required: true
+            fields:
+              - name: filter
+                label: "Filter name (screen readers)"
+                type: string
+                required: true
+                options:
+                  maxlength: 60
+              - name: all
+                label: "Show-all choice"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: engagements
+                label: "Engagements choice"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: insights
+                label: "Insights choice"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: publications
+                label: "Publications choice"
+                type: string
+                required: true
+                options:
+                  maxlength: 30
+              - name: count
+                label: "Word after the number of items"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: view
+                label: "View switch name (screen readers)"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: carousel
+                label: "Carousel"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: grid
+                label: "Grid"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+              - name: openEngagement
+                label: "Engagement link text"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: openInsight
+                label: "Insight link text"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: openPublication
+                label: "Publication link text"
+                type: string
+                required: true
+                options:
+                  maxlength: 40
+              - name: by
+                label: "Word before authors"
+                type: string
+                required: true
+                options:
+                  maxlength: 20
+          - name: links
+            label: "Links"
+            type: object
+            required: true
+            fields:
+              - name: engagements
+                label: "Where “All engagements” goes"
+                type: string
+                required: true
+              - name: insights
+                label: "Where “All insights” goes"
+                type: string
+                required: true
       - name: home_convening
         label: "Convening"
         type: file

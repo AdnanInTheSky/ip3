@@ -141,7 +141,7 @@ test('negative content/build safeguards', async (t) => {
     });
     await t.test('rejects an incomplete section order', () => {
       reset(); const data = json('section-order.json'); data.home.pop(); save('section-order.json', data);
-      expectValidation(/Home section order must contain exactly 10 supported sections/);
+      expectValidation(/Home section order must contain exactly 9 supported sections/);
     });
     await t.test('rejects unsupported testimonial placements and missing visible content', () => {
       reset(); const placements = json('section-placement.json'); placements.homeTestimonials = 'Inside Why IP3 journey'; save('section-placement.json', placements);
