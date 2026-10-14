@@ -1271,6 +1271,19 @@ content:
           rename: false
           delete: false
         fields:
+          - name: photo
+            label: "Photo beside the reasons"
+            type: image
+            required: true
+            description: "Shown on a floating phone. A photo with a transparent background works best."
+            options:
+              media: images
+          - name: photoAlt
+            label: "Photo description (alt text)"
+            type: string
+            required: true
+            options:
+              maxlength: 200
           - name: items
             label: "Reasons"
             type: object

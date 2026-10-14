@@ -28,6 +28,7 @@ module.exports = {
   fieldMedia: (() => { const m = C.file('field-media'); return { photos: live(m.photos), videos: live(m.videos) }; })(),
   capProof: Object.fromEntries(['hero', 'led', 'method', 'rows', 'browser', 'room', 'reel'].map((k) => [k, C.file(`capability-proof/${k}`)])),
   whyIp3: C.file('home/why-ip3').items,
+  whyPhoto: (() => { const w = C.file('home/why-ip3'); return { image: w.photo, alt: w.photoAlt }; })(),
   sectors: live(C.file('sectors').items),
   sectorPages: Object.fromEntries(C.dir('sector-pages').map((p) => [p.slug, p])),
   translation: C.file('home/translation'),

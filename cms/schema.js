@@ -132,6 +132,8 @@ module.exports = {
       list('items', 'Numbers', [hidden, num('n', 'Number'), str('suffix', 'Suffix', { optional: true, hint: 'e.g. + or %' }), str('label', 'Label')], { summary: '{n}{suffix} {label}' }),
     ]),
     file('home_why', '04 · Home — Why IP3', 'content/home/why-ip3.json', [
+      image('photo', 'Photo beside the reasons', { hint: 'Shown on a floating phone. A photo with a transparent background works best.' }),
+      str('photoAlt', 'Photo description (alt text)', { max: 200 }),
       list('items', 'Reasons', [str('n', 'Number'), str('title', 'Title'), text('text', 'Text'), str('href', 'Link', { link: true }), str('cta', 'Link label')], { summary: '{title}' }),
     ]),
     file('home_translation', '05 · Home — Translation, not theory (delivery chain)', 'content/home/translation.json', [

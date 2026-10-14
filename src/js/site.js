@@ -330,6 +330,37 @@
     d.state();
   }
 
+  /* ---------- why IP3 (home): the four reasons take turns; the phone caption and big numeral follow ---------- */
+  function initWhy() {
+    var sec = $('[data-why]'); if (!sec) return;
+    var items = $$('[data-wy-item]', sec), num = $('[data-wy-num]', sec), cap = $('[data-wy-cap]', sec);
+    var cur = 0, ticking = false;
+    function set(i) {
+      if (i === cur) return; cur = i;
+      items.forEach(function (it, k) { it.classList.toggle('is-active', k === i); });
+      var it = items[i];
+      num.textContent = it.getAttribute('data-n');
+      $('span', cap).textContent = it.getAttribute('data-n');
+      $('b', cap).textContent = it.getAttribute('data-t');
+      [num, cap].forEach(function (el) { el.classList.remove('is-swap'); void el.offsetWidth; el.classList.add('is-swap'); });
+    }
+    function onScroll() {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        var mid = window.innerHeight * 0.55, best = 0, bd = 1e9;
+        items.forEach(function (it, k) { var r = it.getBoundingClientRect(), d = Math.abs(r.top + r.height / 2 - mid); if (d < bd) { bd = d; best = k; } });
+        set(best);
+      });
+    }
+    items.forEach(function (it, k) {
+      it.addEventListener('mouseenter', function () { set(k); });
+      it.addEventListener('focusin', function () { set(k); });
+    });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    sec.classList.add('is-ready');
+  }
+
   /* ---------- founder portrait: a gentle tilt that follows the pointer (fine pointers only) ---------- */
   function initTilt() {
     if (reduce || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
@@ -713,7 +744,7 @@
   }
 
   /* ---------- boot ---------- */
-  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initTilt();
+  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initWhy(); initTilt();
   // Sector narratives own their motion lifecycle. Keep their policy text visible,
   // use native scrolling, and avoid stacking global reveals/Lenis over the scene.
   if (d.body.classList.contains('sxp')) {

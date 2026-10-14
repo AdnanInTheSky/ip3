@@ -62,17 +62,24 @@ function capabilities() {
 
 function why() {
   const h = D.headings['home-why'];
+  const ph = D.whyPhoto;
+  const first = D.whyIp3[0];
   return `
-<section class="section" id="why-ip3">
-  <div class="container two two--top">
-    <div class="photo photo--tall clip" data-clip><img src="/assets/img/group-2.webp" width="1600" height="900" alt="IP3 colleagues and partners gathered after a policy workshop" loading="lazy" data-parallax></div>
-    <div>
+<section class="section wy" id="why-ip3" aria-labelledby="wy-title" data-why>
+  <div class="container wy__grid">
+    <div class="wy__stage" data-tilt>
+      <div class="wy__rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <b class="wy__num" aria-hidden="true" data-wy-num>${first.n}</b>
+      <figure class="wy__phone"><img src="${ph.image}" width="1007" height="1221" alt="${esc(ph.alt)}" loading="lazy" decoding="async"></figure>
+      <p class="wy__cap" aria-hidden="true" data-wy-cap><span>${first.n}</span><b>${esc(first.title)}</b></p>
+    </div>
+    <div class="wy__body">
       <span class="eyebrow" data-reveal>${esc(h.eyebrow)}</span>
-      <h2 class="split" style="margin:18px 0 38px">${rich(h.title)}</h2>
-      <ul class="checks" data-stagger style="gap:0">
-        ${D.whyIp3.map((w) => `<li style="display:block"><b class="ui" style="color:var(--rust);letter-spacing:.2em;font-size:.72rem">${w.n}</b><h3 style="margin:8px 0 8px">${w.title}</h3><span style="font-weight:400;font-family:var(--f-body)">${w.text}</span><br><a class="link" style="margin-top:14px" href="${w.href}">${w.cta}${arrow}</a></li>`).join('')}
-      </ul>
-      <div style="margin-top:34px" data-reveal>${btn(esc(D.pageText.home['cta-why-ip3']), '/why-ip3')}</div>
+      <h2 class="split wy__title" id="wy-title">${rich(h.title)}</h2>
+      <ol class="wy__list" data-wy-list>
+        ${D.whyIp3.map((w, i) => `<li class="wy__item${i === 0 ? ' is-active' : ''}" data-wy-item data-n="${esc(w.n)}" data-t="${esc(w.title)}"><b>${w.n}</b><div><h3>${w.title}</h3><p>${w.text}</p><a class="link" href="${w.href}">${w.cta}${arrow}</a></div></li>`).join('')}
+      </ol>
+      <div class="wy__cta" data-reveal>${btn(esc(D.pageText.home['cta-why-ip3']), '/why-ip3')}</div>
     </div>
   </div>
 </section>`;
