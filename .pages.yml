@@ -1504,8 +1504,7 @@ content:
                   - name: activity
                     label: "Recorded activity (copied exactly)"
                     type: text
-                    required: true
-                    description: "Paste one line from that record’s “Recorded activities”, unchanged. The build stops if it does not match."
+                    description: "Optional. Paste one line from that record’s “Recorded activities”, unchanged; the build stops if it does not match. Leave empty to show the record’s summary instead."
                     options:
                       maxlength: 400
       - name: home_convening

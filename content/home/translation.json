@@ -71,6 +71,16 @@
         {
           "record": "sarti-cargo",
           "activity": "Led research and implementation teams on ease of transaction and storage facilities for trading, to mitigate constraints in regional trade and investment."
+        },
+        {
+          "record": "adb-fsi-reta",
+          "activity": "Assessed national accounts activities with focus on financial intermediation sectors and financial balance sheet information for 400 non-financial corporations across major economic sectors in five divisions."
+        },
+        {
+          "record": "digital-informality-survey"
+        },
+        {
+          "record": "covid-business-pulse-survey"
         }
       ]
     },
@@ -116,6 +126,15 @@
         {
           "record": "tiga-bmgf",
           "activity": "Assessed (ex-ante) the likely impact of major agricultural crop innovations and productivity growth programs on workforce productivity and livelihoods across strata of the poor."
+        },
+        {
+          "record": "kiet-value-chain-mapping"
+        },
+        {
+          "record": "sumitomo-steel-market"
+        },
+        {
+          "record": "jetro-bop-case-studies"
         }
       ]
     },
@@ -204,6 +223,12 @@
         {
           "record": "payra-port",
           "activity": "Developed a 15-year model showing income, expenditure, capital expenditure, annual P&L including EBIT, EBITDA and pre-tax profit, annual balance sheet and project IRR."
+        },
+        {
+          "record": "omera-petrochemical-storage"
+        },
+        {
+          "record": "off-grid-appliance-market"
         }
       ]
     },
@@ -244,6 +269,9 @@
         {
           "record": "bicf-ifc",
           "activity": "Led the research and evaluation team and managed monitoring and implementation activities."
+        },
+        {
+          "record": "sesip-seip-management"
         }
       ]
     },
@@ -284,6 +312,9 @@
         {
           "record": "rct-stitching-motors",
           "activity": "Coordinated implementation, data collection, and field operations and conducted data analysis."
+        },
+        {
+          "record": "pace-beekeeping-endline"
         }
       ]
     }

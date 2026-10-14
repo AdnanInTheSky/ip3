@@ -37,7 +37,7 @@ function card(c, L, b) {
             <div><dt>${esc(L.period)}</dt><dd>${esc(r.period || b.withheldLabel)}</dd></div>
           </dl>
           ${r.impact ? `<p class="dc-card__imp"><b>${esc(L.impact)}</b>${esc(r.impact)}</p>` : ''}
-          <p class="dc-card__act"><b>${esc(L.activity)}</b>${esc(ev.activity)}</p>
+          <p class="dc-card__act"><b>${esc(L.activity)}</b>${esc(ev.activity || r.summary)}</p>
           <a class="link dc-card__open" href="/capabilities#proof-${esc(r.slug)}">${esc(b.openLabel)}<span class="vh">: ${esc(r.title)}</span>${arrow}</a>
         </article>
       </li>`;
