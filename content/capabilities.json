@@ -125,7 +125,7 @@
         "adb-nsep"
       ],
       "image": "/assets/img/caps/program-workshop.webp",
-      "image2": "/assets/img/caps/program-roundtable.webp"
+      "image2": "/assets/img/field/round-table-workshop-laptops.webp"
     },
     {
       "slug": "development-finance",
@@ -193,8 +193,8 @@
         "agro-board-biodiversity",
         "gggf-urban-climate"
       ],
-      "image": "/assets/img/caps/finance-partnership.webp",
-      "image2": "/assets/img/caps/finance-infrastructure.webp"
+      "image": "/assets/img/field/adb-conference-head-table-westin.webp",
+      "image2": "/assets/img/payra.webp"
     },
     {
       "slug": "institutions-governance-delivery",
@@ -256,8 +256,8 @@
         "bmdf-oscb",
         "bmdf-transformation"
       ],
-      "image": "/assets/img/caps/institutions-roundtable.webp",
-      "image2": "/assets/img/caps/institutions-transformation.webp"
+      "image": "/assets/img/field/conference-table-consultation.webp",
+      "image2": "/assets/img/field/participants-group-photo-pavilion.webp"
     },
     {
       "slug": "monitoring-evaluation-learning",
@@ -318,7 +318,7 @@
         }
       ],
       "engagements": [],
-      "image": "/assets/img/caps/mel-field.webp",
+      "image": "/assets/img/caps/mel-enumerators.webp",
       "image2": "/assets/img/caps/mel-report.webp"
     },
     {
@@ -385,8 +385,8 @@
       "engagements": [
         "worldbank-fat"
       ],
-      "image": "/assets/img/caps/data-systems.webp",
-      "image2": "/assets/img/caps/data-globe.webp"
+      "image": "/assets/img/field/adb-gis-workshop-head-table.webp",
+      "image2": "/assets/img/field/wbg-technology-adoption-survey-briefing.webp"
     }
   ]
 }
