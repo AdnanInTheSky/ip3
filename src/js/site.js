@@ -392,9 +392,9 @@
     function update() { ticking = false; paint(reduce ? 1 : progress()); }
     function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
     cards.forEach(function (el, i) {
-      el.addEventListener('pointermove', function (e) { var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); });
+      el.addEventListener('pointermove', function (e) { var r = el.getBoundingClientRect(); el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px'); el.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3)); el.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3)); });
       el.addEventListener('pointerenter', function () { hot = i; update(); });
-      el.addEventListener('pointerleave', function () { hot = -1; update(); });
+      el.addEventListener('pointerleave', function () { hot = -1; el.style.setProperty('--px', 0); el.style.setProperty('--py', 0); update(); });
       el.addEventListener('focus', function () { hot = i; update(); });
       el.addEventListener('blur', function () { hot = -1; update(); });
     });
@@ -551,6 +551,14 @@
         trigger: hs, start: 'top top', end: function () { return '+=' + dist(); }, pin: true, scrub: 0.7, anticipatePin: 1, invalidateOnRefresh: true,
         onUpdate: function (s) { if (fill) fill.style.transform = 'scaleX(' + s.progress + ')'; },
       } });
+    });
+
+    // capabilities: each card's setting turns in from depth, and the smaller photo (the service) travels in to meet it
+    $$('[data-cap-media]').forEach(function (m) {
+      var card = m.closest('.cap'), a = $('.cap__m1', m), b = $('.cap__m2', m);
+      var st = { trigger: card, start: 'top 98%', end: 'top 40%', scrub: 0.8 };
+      gsap.fromTo(a, { z: -320, rotationY: -26, rotationX: 8, xPercent: 16, opacity: 0, transformPerspective: 900 }, { z: 0, rotationY: 0, rotationX: 0, xPercent: 0, opacity: 1, ease: 'power2.out', scrollTrigger: st });
+      if (b) gsap.fromTo(b, { z: -620, x: -170, y: 80, rotation: -18, opacity: 0, transformPerspective: 900 }, { z: 0, x: 0, y: 0, rotation: -4, opacity: 1, ease: 'power3.out', scrollTrigger: { trigger: card, start: 'top 90%', end: 'top 30%', scrub: 0.9 } });
     });
 
     // convening list highlight

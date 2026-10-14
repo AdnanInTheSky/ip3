@@ -525,7 +525,19 @@ html:not(.js) .ev-view,html:not(.js) .ev-pills{display:none}
 .ih .cap.is-hand{transform:translateY(-6px);border-color:rgba(150,63,46,.55);box-shadow:0 40px 70px -44px rgba(150,63,46,.55)}
 .ih .cap.is-hand::before{transform:scaleX(1)}
 .ih .cap.is-hand .chip{background:#fff;border-color:rgba(150,63,46,.35);color:var(--ink)}
+/* photos: a window at the top of each card; the client's setting turns in from depth and the smaller photo (the service) travels in to meet it */
+.ih .cap--media .cap__big{display:none}
+.ih .cap--media>:not(.cap__media){position:relative;z-index:1}
+.cap__media{position:relative;display:block;flex:none;height:clamp(170px,15vw,220px);margin:-34px -30px 4px;overflow:hidden;perspective:900px;background:radial-gradient(120% 90% at 70% 20%,#fff,var(--sand) 70%);border-bottom:1px solid var(--line)}
+.cap__media::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(180deg,transparent,rgba(250,248,245,.55));pointer-events:none}
+.cap__m1{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(calc(var(--px,0) * -10px),calc(var(--py,0) * -6px),0) scale(1.06);transition:transform .7s var(--ease)}
+.cap__m1[src*="finance-partnership"],.cap__m1[src*="data-systems"],.cap__m1[src*="mel-field"],.cap__m1[src*="institutions-roundtable"]{object-fit:contain;padding:14px 18px}
+.cap__m2{position:absolute;z-index:1;right:18px;bottom:14px;width:30%;max-height:72%;object-fit:cover;border-radius:12px;border:3px solid #fff;box-shadow:0 22px 36px -20px rgba(22,21,19,.65);transform:rotate(-4deg)}
+.cap__m2[src*="program-roundtable"],.cap__m2[src*="institutions-transformation"],.cap__m2[src*="data-globe"]{border:0;box-shadow:none;border-radius:0;object-fit:contain;filter:drop-shadow(0 16px 20px rgba(22,21,19,.3))}
+.ih .cap--media .chip{background:rgba(255,255,255,.9)}
 @media (max-width:1040px){.cap__big{font-size:5rem}}
+@media (max-width:640px){.cap__media{height:200px}}
+@media (prefers-reduced-motion:reduce){.cap__m1{transition:none;transform:none}}
 @media (max-width:640px){.cap__big{font-size:4.4rem;right:14px}}
 @media (prefers-reduced-motion:reduce){.ih__halo{animation:none}.ih.is-ready .cap{transition:none}.ih .cap.is-hand{transform:none}}
 

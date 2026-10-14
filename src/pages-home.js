@@ -56,7 +56,7 @@ function capabilities() {
     <div class="ih__board" data-hand-board>
       <svg class="ih__thread" aria-hidden="true" focusable="false"><path class="ih__path" data-hand-path d="" /><path class="ih__path ih__path--lit" data-hand-lit d="" /><g data-hand-dot><circle class="ih__halo" r="16"/><circle class="ih__dot" r="6.5"/></g></svg>
       <div class="caps">
-        ${c.cards.map((x, i) => `<a class="cap" href="/capabilities#${x.slug}" data-hand-card><i class="cap__big" aria-hidden="true">0${i + 1}</i><span class="cap__n" data-hand-n>0${i + 1}</span><h3>${x.title}</h3><q>“${x.problem}”</q><div class="chips">${x.deliverables.slice(0, 4).map((d) => `<span class="chip">${d}</span>`).join('')}</div></a>`).join('')}
+        ${c.cards.map((x, i) => `<a class="cap${x.image ? ' cap--media' : ''}" href="/capabilities#${x.slug}" data-hand-card>${x.image ? `<span class="cap__media" aria-hidden="true" data-cap-media><img class="cap__m1" src="${x.image}" alt="" loading="lazy" decoding="async">${x.image2 ? `<img class="cap__m2" src="${x.image2}" alt="" loading="lazy" decoding="async">` : ''}</span>` : ''}<i class="cap__big" aria-hidden="true">0${i + 1}</i><span class="cap__n" data-hand-n>0${i + 1}</span><h3>${x.title}</h3><q>“${x.problem}”</q><div class="chips">${x.deliverables.slice(0, 4).map((d) => `<span class="chip">${d}</span>`).join('')}</div></a>`).join('')}
       </div>
     </div>
   </div>

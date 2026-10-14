@@ -1911,6 +1911,18 @@ content:
                 required: true
                 options:
                   maxlength: 120
+              - name: image
+                label: "Home card photo"
+                type: image
+                description: "Shown on the right of the Home capability card. A cut-out or framed photo works best."
+                options:
+                  media: images
+              - name: image2
+                label: "Home card second photo"
+                type: image
+                description: "A smaller photo that travels in to meet the first as the visitor scrolls."
+                options:
+                  media: images
               - name: ctaLabel
                 label: "Button under the row"
                 type: string

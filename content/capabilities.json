@@ -67,7 +67,9 @@
           ]
         }
       ],
-      "engagements": []
+      "engagements": [],
+      "image": "/assets/img/caps/policy-panel.webp",
+      "image2": "/assets/img/caps/policy-report.webp"
     },
     {
       "slug": "program-project-design",
@@ -121,7 +123,9 @@
       ],
       "engagements": [
         "adb-nsep"
-      ]
+      ],
+      "image": "/assets/img/caps/program-workshop.webp",
+      "image2": "/assets/img/caps/program-roundtable.webp"
     },
     {
       "slug": "development-finance",
@@ -188,7 +192,9 @@
         "sida-cpd-textile",
         "agro-board-biodiversity",
         "gggf-urban-climate"
-      ]
+      ],
+      "image": "/assets/img/caps/finance-partnership.webp",
+      "image2": "/assets/img/caps/finance-infrastructure.webp"
     },
     {
       "slug": "institutions-governance-delivery",
@@ -249,7 +255,9 @@
       "engagements": [
         "bmdf-oscb",
         "bmdf-transformation"
-      ]
+      ],
+      "image": "/assets/img/caps/institutions-roundtable.webp",
+      "image2": "/assets/img/caps/institutions-transformation.webp"
     },
     {
       "slug": "monitoring-evaluation-learning",
@@ -309,7 +317,9 @@
           ]
         }
       ],
-      "engagements": []
+      "engagements": [],
+      "image": "/assets/img/caps/mel-field.webp",
+      "image2": "/assets/img/caps/mel-report.webp"
     },
     {
       "slug": "data-digital-responsible-ai",
@@ -374,7 +384,9 @@
       ],
       "engagements": [
         "worldbank-fat"
-      ]
+      ],
+      "image": "/assets/img/caps/data-systems.webp",
+      "image2": "/assets/img/caps/data-globe.webp"
     }
   ]
 }
