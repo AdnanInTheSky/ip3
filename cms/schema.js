@@ -160,7 +160,7 @@ module.exports = {
         ], { summary: '{group}' }),
         list('evidence', 'Evidence — documented assignments', [
           str('record', 'Assignment slug', { ref: 'proof', hint: 'The slug of a record in “11 · Proof — documented assignments”.' }),
-          text('activity', 'Recorded activity (copied exactly)', { max: 400, hint: 'Paste one line from that record’s “Recorded activities”, unchanged. The build stops if it does not match.' }),
+          text('activity', 'Recorded activity (copied exactly)', { optional: true, max: 400, hint: 'Optional. Paste one line from that record’s “Recorded activities”, unchanged; the build stops if it does not match. Leave empty to show the record’s summary instead.' }),
         ], { summary: '{record}' }),
       ], { summary: '{title}' }),
     ]),

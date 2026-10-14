@@ -217,7 +217,7 @@ function run({ quiet = false } = {}) {
       const rec = bySlug[ev.record];
       if (!rec) return; // reported by the reference check below
       if (rec.hidden) err(`${p}.record`, `"${ev.record}" is hidden on the assignments list, so it cannot be shown as evidence`);
-      if (!(rec.activities || []).includes(ev.activity)) err(`${p}.activity`, `does not match any recorded activity of "${ev.record}" word for word — copy one line from that record unchanged`);
+      if (ev.activity && !(rec.activities || []).includes(ev.activity)) err(`${p}.activity`, `does not match any recorded activity of "${ev.record}" word for word — copy one line from that record unchanged`);
       if (used.has(ev.record)) warn(`${p}.record`, `"${ev.record}" is already evidence for ${used.get(ev.record)}`);
       else used.set(ev.record, `phase ${i + 1}`);
     }));
