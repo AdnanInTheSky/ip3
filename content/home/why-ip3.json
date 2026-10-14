@@ -28,5 +28,7 @@
       "href": "/contact",
       "cta": "Commission a dialogue"
     }
-  ]
+  ],
+  "photo": "/assets/img/why-mobile.webp",
+  "photoAlt": "A policy roundtable seen on a mobile phone: participants seated along a long conference table with microphones"
 }
