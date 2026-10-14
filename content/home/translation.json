@@ -5,7 +5,6 @@
   "closing": "From evidence to decisions. <em>From decisions to delivery.</em>",
   "labels": {
     "chain": "The six stages",
-    "stage": "Stage {n}",
     "deliverables": "What you receive",
     "impact": "Impact",
     "activity": "What IP3 did",
@@ -17,7 +16,9 @@
     "gridLabel": "Grid",
     "filterLabel": "Filter assignments by stage",
     "role": "Role",
-    "period": "Period"
+    "period": "Period",
+    "proven": "Proven in {count} assignments",
+    "seeAll": "See the assignments"
   },
   "phases": [
     {
@@ -58,7 +59,8 @@
         },
         {
           "record": "unctad-pcga",
-          "activity": "Analyzed productive capacities, PCI scores, performance, and critical binding constraints on fostering productive capacities and structural economic transformation, including institutional limitations and policy implementation gaps."
+          "activity": "Analyzed productive capacities, PCI scores, performance, and critical binding constraints on fostering productive capacities and structural economic transformation, including institutional limitations and policy implementation gaps.",
+          "image": "/assets/img/about-us-economics-photo.jpg"
         },
         {
           "record": "nsep-56088",
@@ -70,17 +72,20 @@
         },
         {
           "record": "sarti-cargo",
-          "activity": "Led research and implementation teams on ease of transaction and storage facilities for trading, to mitigate constraints in regional trade and investment."
+          "activity": "Led research and implementation teams on ease of transaction and storage facilities for trading, to mitigate constraints in regional trade and investment.",
+          "image": "/assets/img/reel/climate-data-technology.webp"
         },
         {
           "record": "adb-fsi-reta",
           "activity": "Assessed national accounts activities with focus on financial intermediation sectors and financial balance sheet information for 400 non-financial corporations across major economic sectors in five divisions."
         },
         {
-          "record": "digital-informality-survey"
+          "record": "digital-informality-survey",
+          "image": "/assets/img/poster-data.webp"
         },
         {
-          "record": "covid-business-pulse-survey"
+          "record": "covid-business-pulse-survey",
+          "image": "/assets/img/factory.webp"
         }
       ]
     },
@@ -109,32 +114,40 @@
       "evidence": [
         {
           "record": "ec-ldc-graduation",
-          "activity": "Identified possible key areas of intervention for the EU to address the impact of LDC graduation, potential loss of international support measures, and opportunities for investment and financing."
+          "activity": "Identified possible key areas of intervention for the EU to address the impact of LDC graduation, potential loss of international support measures, and opportunities for investment and financing.",
+          "image": "/assets/img/polycrisis.webp"
         },
         {
           "record": "green-trade-reform",
-          "activity": "Prepared \"Institutional Mapping of Trade, Investment and Financing in Environmental Goods and Services in Bangladesh.\""
+          "activity": "Prepared \"Institutional Mapping of Trade, Investment and Financing in Environmental Goods and Services in Bangladesh.\"",
+          "image": "/assets/img/smokestacks.webp"
         },
         {
           "record": "cem-bangladesh-india",
-          "activity": "Produced reports for the preparation of Country Economic Memorandums for Bangladesh and India."
+          "activity": "Produced reports for the preparation of Country Economic Memorandums for Bangladesh and India.",
+          "image": "/assets/img/polysolutions.webp"
         },
         {
           "record": "wto-services-trade",
-          "activity": "Coordinated and gathered information on applied policies and regulations across sectors and sub-sectors through desk research, interviews and analysis for the joint WTO–World Bank team."
+          "activity": "Coordinated and gathered information on applied policies and regulations across sectors and sub-sectors through desk research, interviews and analysis for the joint WTO–World Bank team.",
+          "image": "/assets/img/poster-data.webp"
         },
         {
           "record": "tiga-bmgf",
-          "activity": "Assessed (ex-ante) the likely impact of major agricultural crop innovations and productivity growth programs on workforce productivity and livelihoods across strata of the poor."
+          "activity": "Assessed (ex-ante) the likely impact of major agricultural crop innovations and productivity growth programs on workforce productivity and livelihoods across strata of the poor.",
+          "image": "/assets/img/polysolutions.webp"
         },
         {
-          "record": "kiet-value-chain-mapping"
+          "record": "kiet-value-chain-mapping",
+          "image": "/assets/img/poster-textile.webp"
         },
         {
-          "record": "sumitomo-steel-market"
+          "record": "sumitomo-steel-market",
+          "image": "/assets/img/smokestacks.webp"
         },
         {
-          "record": "jetro-bop-case-studies"
+          "record": "jetro-bop-case-studies",
+          "image": "/assets/img/waste-photo.webp"
         }
       ]
     },
@@ -156,23 +169,28 @@
       "evidence": [
         {
           "record": "adb-ews-facility",
-          "activity": "Draft the facility blueprint (governance, financing instruments, eligibility, safeguards interface)."
+          "activity": "Draft the facility blueprint (governance, financing instruments, eligibility, safeguards interface).",
+          "image": "/assets/img/poster-coast.webp"
         },
         {
           "record": "dscc-vision-2050",
-          "activity": "Prepared the city financing and investment plan, local institutions and city governance reform plan for effective service delivery."
+          "activity": "Prepared the city financing and investment plan, local institutions and city governance reform plan for effective service delivery.",
+          "image": "/assets/img/dhaka.webp"
         },
         {
           "record": "jica-beza-biffl",
-          "activity": "Prepared documentation, SPC formulation, shareholder agreement, equity investment policy and project agreement as special assistance activities for Special Economic Zone development."
+          "activity": "Prepared documentation, SPC formulation, shareholder agreement, equity investment policy and project agreement as special assistance activities for Special Economic Zone development.",
+          "image": "/assets/img/reel/city-building.webp"
         },
         {
           "record": "tobacco-taxation",
-          "activity": "Prepared advocacy materials and drafted taxation rules and guidelines."
+          "activity": "Prepared advocacy materials and drafted taxation rules and guidelines.",
+          "image": "/assets/img/about-us-economics-photo.jpg"
         },
         {
           "record": "resa-electricity",
-          "activity": "Conducted comparative cost-benefit analysis of regulatory frameworks across Bangladesh, India and Nepal."
+          "activity": "Conducted comparative cost-benefit analysis of regulatory frameworks across Bangladesh, India and Nepal.",
+          "image": "/assets/img/smokestacks.webp"
         }
       ]
     },
@@ -214,21 +232,26 @@
         },
         {
           "record": "jolshiri",
-          "activity": "Financial investment plan, funding opportunity, indebtedness and creditworthiness of borrowing company."
+          "activity": "Financial investment plan, funding opportunity, indebtedness and creditworthiness of borrowing company.",
+          "image": "/assets/img/poster-city.webp"
         },
         {
           "record": "nextgen-primary-gpe",
-          "activity": "Evaluated the technical feasibility of digital and AI-powered learning and assessment interventions."
+          "activity": "Evaluated the technical feasibility of digital and AI-powered learning and assessment interventions.",
+          "image": "/assets/img/training-5.webp"
         },
         {
           "record": "payra-port",
-          "activity": "Developed a 15-year model showing income, expenditure, capital expenditure, annual P&L including EBIT, EBITDA and pre-tax profit, annual balance sheet and project IRR."
+          "activity": "Developed a 15-year model showing income, expenditure, capital expenditure, annual P&L including EBIT, EBITDA and pre-tax profit, annual balance sheet and project IRR.",
+          "image": "/assets/img/payra.webp"
         },
         {
-          "record": "omera-petrochemical-storage"
+          "record": "omera-petrochemical-storage",
+          "image": "/assets/img/poster-energy.webp"
         },
         {
-          "record": "off-grid-appliance-market"
+          "record": "off-grid-appliance-market",
+          "image": "/assets/img/03102024home-pageip3-1-3.png"
         }
       ]
     },
@@ -256,22 +279,27 @@
       "evidence": [
         {
           "record": "nsep-madrasah",
-          "activity": "Capacity and Institutional Analysis: evaluated DME, BMTTI, and madrasah governance frameworks including HRMIS readiness, EMIS gaps, and leadership training needs."
+          "activity": "Capacity and Institutional Analysis: evaluated DME, BMTTI, and madrasah governance frameworks including HRMIS readiness, EMIS gaps, and leadership training needs.",
+          "image": "/assets/img/education.webp"
         },
         {
           "record": "nsep-tvet",
-          "activity": "Capacity Mapping: evaluated DTE’s and BTEB’s institutional and legal capacities for scalable implementation."
+          "activity": "Capacity Mapping: evaluated DTE’s and BTEB’s institutional and legal capacities for scalable implementation.",
+          "image": "/assets/img/factory.webp"
         },
         {
           "record": "halow",
-          "activity": "Managed the M&E team, monitored project activities and data quality control."
+          "activity": "Managed the M&E team, monitored project activities and data quality control.",
+          "image": "/assets/img/halow.webp"
         },
         {
           "record": "bicf-ifc",
-          "activity": "Led the research and evaluation team and managed monitoring and implementation activities."
+          "activity": "Led the research and evaluation team and managed monitoring and implementation activities.",
+          "image": "/assets/img/poster-energy.webp"
         },
         {
-          "record": "sesip-seip-management"
+          "record": "sesip-seip-management",
+          "image": "/assets/img/training-5.webp"
         }
       ]
     },
@@ -299,26 +327,31 @@
       "evidence": [
         {
           "record": "global-leap",
-          "activity": "Prepared the 4-year Global LEAP results-based financing M&E framework and implementation plan."
+          "activity": "Prepared the 4-year Global LEAP results-based financing M&E framework and implementation plan.",
+          "image": "/assets/img/solar.webp"
         },
         {
           "record": "dsip-dwasa",
-          "activity": "Designed the M&E and results framework for the 5-year operation of the DSIP project."
+          "activity": "Designed the M&E and results framework for the 5-year operation of the DSIP project.",
+          "image": "/assets/img/sewerage.webp"
         },
         {
           "record": "esmap-astae",
-          "activity": "Compared actual financial and economic outcomes with the initial feasibility studies to identify gaps and lessons learned."
+          "activity": "Compared actual financial and economic outcomes with the initial feasibility studies to identify gaps and lessons learned.",
+          "image": "/assets/img/co2.webp"
         },
         {
           "record": "rct-stitching-motors",
-          "activity": "Coordinated implementation, data collection, and field operations and conducted data analysis."
+          "activity": "Coordinated implementation, data collection, and field operations and conducted data analysis.",
+          "image": "/assets/img/poster-textile.webp"
         },
         {
-          "record": "pace-beekeeping-endline"
+          "record": "pace-beekeeping-endline",
+          "image": "/assets/img/poster-moss.webp"
         }
       ]
     }
   ],
   "bridge": "Every mandate moves through the same six stages. Choose a stage to see the assignments where IP3 has done it.",
-  "attribution": "Assignments led or supported by IP3’s founder and expert team. Each card shows the role held, the period and the recorded activity."
+  "attribution": "Assignments led or supported by IP3’s founder and expert team. Each card shows the role held, the period and the recorded activity. Photographs are the assignment’s own where one was recorded; otherwise they are library images of the sector."
 }

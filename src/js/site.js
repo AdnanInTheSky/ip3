@@ -215,31 +215,10 @@
     }, { passive: true });
   }
 
-  /* ---------- delivery chain (home): choose a stage to filter the assignments; carousel / grid; stepping buttons ---------- */
-  function initChain() {
-    var sec = $('[data-chain]'); if (!sec) return;
-    var tiles = $$('.dc-tile', sec), panels = $$('[data-panel]', sec), cards = $$('.dc-card', sec);
-    var deck = $('[data-deck]', sec), track = $('[data-cards]', sec), nav = $('[data-deck-nav]', sec);
-    var count = $('[data-dc-count]', sec), all = $('[data-stage-all]', sec), bar = nav && $('.dc-deck__bar i', nav);
+  /* ---------- card decks (home): a carousel / grid of cards with step buttons and a progress bar ---------- */
+  function makeDeck(deck, track, nav, cardSel) {
+    var bar = nav && $('[class$="__bar"] i', nav);
     var prev = nav && $('[data-dir="-1"]', nav), next = nav && $('[data-dir="1"]', nav);
-    var stage = 0;
-    function select(n, lead) {
-      stage = n;
-      // first view: Stage 01 is shown as the lead (highlighted, with its description) while all assignments are listed
-      tiles.forEach(function (t) { t.classList.toggle('is-lead', !!lead && t.getAttribute('data-stage') === '1'); });
-      tiles.forEach(function (t) { t.setAttribute('aria-pressed', String(+t.getAttribute('data-stage') === n)); });
-      panels.forEach(function (p) { p.classList.toggle('is-on', +p.getAttribute('data-panel') === (lead ? 1 : n)); });
-      var shown = 0;
-      cards.forEach(function (c) {
-        var on = !n || c.getAttribute('data-stages').split(' ').indexOf(String(n)) > -1;
-        c.hidden = !on; if (on) shown++;
-      });
-      if (count) count.textContent = shown;
-      if (all) all.hidden = !n;
-      track.scrollLeft = 0;
-      state();
-      if (window.ScrollTrigger) requestAnimationFrame(function () { ScrollTrigger.refresh(); });
-    }
     function state() {
       if (!nav) return;
       var max = track.scrollWidth - track.clientWidth;
@@ -248,6 +227,59 @@
       next.disabled = track.scrollLeft > max - 4;
       if (bar) bar.style.setProperty('--p', max > 0 ? (0.2 + 0.8 * track.scrollLeft / max).toFixed(3) : 1);
     }
+    function step(dir) {
+      var c = $$(cardSel, track).filter(function (x) { return !x.hidden; })[0];
+      track.scrollBy({ left: dir * (c ? c.offsetWidth + 26 : track.clientWidth * 0.8), behavior: reduce ? 'auto' : 'smooth' });
+    }
+    if (nav) {
+      prev.addEventListener('click', function () { step(-1); });
+      next.addEventListener('click', function () { step(1); });
+      track.addEventListener('scroll', state, { passive: true });
+      window.addEventListener('resize', state);
+    }
+    return {
+      state: state,
+      reset: function () { track.scrollLeft = 0; state(); if (window.ScrollTrigger) requestAnimationFrame(function () { ScrollTrigger.refresh(); }); },
+      view: function (v, buttons, active) {
+        deck.setAttribute('data-view', v);
+        buttons.forEach(function (x) { x.setAttribute('aria-pressed', String(x === active)); });
+        track.scrollLeft = 0; state();
+      },
+    };
+  }
+  function scrollToEl(el, offset) {
+    if (window.ip3Lenis) window.ip3Lenis.scrollTo(el, { offset: offset || -110, duration: reduce ? 0 : 1.1 });
+    else el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+
+  /* ---------- delivery chain (home): a stage opens its panel under its tile and filters the assignments ---------- */
+  function initChain() {
+    var sec = $('[data-chain]'); if (!sec) return;
+    var tiles = $$('.dc-tile', sec), slots = $$('.dc-slot', sec), cards = $$('.dc-card', sec);
+    var deck = $('[data-deck]', sec), track = $('[data-cards]', sec), nav = $('[data-deck-nav]', sec), bar = $('[data-bar]', sec);
+    var count = $('[data-dc-count]', sec), all = $('[data-stage-all]', sec), lbl = $('[data-dc-stage]', sec);
+    var d = makeDeck(deck, track, nav, '.dc-card');
+    var stage = 0;
+    function select(n, lead) {
+      stage = n;
+      // first view: Stage 01 is shown as the lead (highlighted, with its panel open) while all assignments are listed
+      tiles.forEach(function (t) {
+        var on = +t.getAttribute('data-stage') === n;
+        t.classList.toggle('is-lead', !!lead && t.getAttribute('data-stage') === '1');
+        t.setAttribute('aria-pressed', String(on));
+      });
+      var open = lead ? 1 : n;
+      slots.forEach(function (sl) { sl.classList.toggle('is-on', +$('[data-panel]', sl).getAttribute('data-panel') === open); });
+      var shown = 0;
+      cards.forEach(function (c) {
+        var on = !n || c.getAttribute('data-stages').split(' ').indexOf(String(n)) > -1;
+        c.hidden = !on; if (on) shown++;
+      });
+      if (count) count.textContent = shown;
+      if (all) all.hidden = !n;
+      if (lbl) lbl.textContent = n ? $('.dc-tile__t', tiles[n - 1]).textContent : '';
+      d.reset();
+    }
     tiles.forEach(function (t) {
       t.addEventListener('click', function () {
         var n = +t.getAttribute('data-stage');
@@ -255,27 +287,60 @@
       });
     });
     if (all) all.addEventListener('click', function () { select(0); });
-    $$('[data-view]', sec).forEach(function (b) {
-      if (b.parentNode.className.indexOf('dc-view') < 0) return;
-      b.addEventListener('click', function () {
-        var v = b.getAttribute('data-view');
-        deck.setAttribute('data-view', v);
-        $$('.dc-view button', sec).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
-        track.scrollLeft = 0; state();
+    $$('.dc-view button', sec).forEach(function (b) {
+      b.addEventListener('click', function () { d.view(b.getAttribute('data-view'), $$('.dc-view button', sec), b); });
+    });
+    // the panel's own links: see all of this stage's assignments, or jump to one of them
+    function stageOf(el) { return +el.closest('[data-panel]').getAttribute('data-panel'); }
+    $$('[data-go-cards]', sec).forEach(function (btn) {
+      btn.addEventListener('click', function () { var n = stageOf(btn); if (stage !== n) select(n); scrollToEl(bar, -100); });
+    });
+    $$('[data-jump]', sec).forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var n = stageOf(a); if (stage !== n) select(n);
+        var card = $('#dc-card-' + a.getAttribute('data-jump'), sec); if (!card) return;
+        scrollToEl(bar, -100);
+        if (deck.getAttribute('data-view') === 'carousel') track.scrollTo({ left: Math.max(0, card.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft - 2), behavior: reduce ? 'auto' : 'smooth' });
+        card.classList.add('is-flash'); setTimeout(function () { card.classList.remove('is-flash'); }, 1800);
       });
     });
-    if (nav) {
-      function step(dir) {
-        var c = cards.filter(function (x) { return !x.hidden; })[0];
-        track.scrollBy({ left: dir * (c ? c.offsetWidth + 22 : track.clientWidth * 0.8), behavior: reduce ? 'auto' : 'smooth' });
-      }
-      prev.addEventListener('click', function () { step(-1); });
-      next.addEventListener('click', function () { step(1); });
-      track.addEventListener('scroll', state, { passive: true });
-      window.addEventListener('resize', state);
-    }
     select(0, true);
     sec.classList.add('is-ready');
+  }
+
+  /* ---------- engagements & insights (home): filter by kind, carousel / grid ---------- */
+  function initEvidence() {
+    var sec = $('[data-ev]'); if (!sec) return;
+    var pills = $$('.ev-pill', sec), cards = $$('.ev-card', sec), count = $('[data-ev-count]', sec);
+    var deck = $('[data-ev-deck]', sec), track = $('[data-ev-cards]', sec), nav = $('[data-ev-nav]', sec);
+    var d = makeDeck(deck, track, nav, '.ev-card');
+    pills.forEach(function (p) {
+      p.addEventListener('click', function () {
+        var k = p.getAttribute('data-kind'), shown = 0;
+        pills.forEach(function (x) { x.setAttribute('aria-pressed', String(x === p)); });
+        cards.forEach(function (c) { var on = !k || c.getAttribute('data-kind') === k; c.hidden = !on; if (on) shown++; });
+        if (count) count.textContent = shown;
+        d.reset();
+      });
+    });
+    $$('.ev-view button', sec).forEach(function (b) {
+      b.addEventListener('click', function () { d.view(b.getAttribute('data-view'), $$('.ev-view button', sec), b); });
+    });
+    d.state();
+  }
+
+  /* ---------- founder portrait: a gentle tilt that follows the pointer (fine pointers only) ---------- */
+  function initTilt() {
+    if (reduce || !window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+    $$('[data-tilt]').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--ry', (((e.clientX - r.left) / r.width - 0.5) * 9).toFixed(2) + 'deg');
+        el.style.setProperty('--rx', ((0.5 - (e.clientY - r.top) / r.height) * 7).toFixed(2) + 'deg');
+      });
+      el.addEventListener('pointerleave', function () { el.style.setProperty('--ry', '0deg'); el.style.setProperty('--rx', '0deg'); });
+    });
   }
 
   /* ---------- Lenis ---------- */
@@ -648,7 +713,7 @@
   }
 
   /* ---------- boot ---------- */
-  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain();
+  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initTilt();
   // Sector narratives own their motion lifecycle. Keep their policy text visible,
   // use native scrolling, and avoid stacking global reveals/Lenis over the scene.
   if (d.body.classList.contains('sxp')) {

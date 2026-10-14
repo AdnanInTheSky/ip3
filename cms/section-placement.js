@@ -4,7 +4,7 @@ const { validateOrder } = require('./section-order');
 // existing testimonials file, shared with Engagements.
 const testimonialPlacements = {
   'With clients and funders (default)': { embedded: true },
-  'After selected engagements': { after: 'Engagements' },
+  'After selected engagements': { after: 'Engagements & insights' },
   'Before founder profile': { before: 'Founder' },
 };
 const defaultTestimonialPlacement = 'With clients and funders (default)';

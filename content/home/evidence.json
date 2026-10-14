@@ -1,0 +1,21 @@
+{
+  "labels": {
+    "filter": "Filter by type",
+    "all": "All",
+    "engagements": "Engagements",
+    "insights": "Insights",
+    "publications": "Publications",
+    "count": "items",
+    "view": "View",
+    "carousel": "Carousel",
+    "grid": "Grid",
+    "openEngagement": "Explore the sector",
+    "openInsight": "Read the insight",
+    "openPublication": "View the publication",
+    "by": "By"
+  },
+  "links": {
+    "engagements": "/engagements",
+    "insights": "/insights"
+  }
+}

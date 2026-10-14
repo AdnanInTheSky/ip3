@@ -35,6 +35,7 @@ module.exports = {
   insights: live(insightContent.items),
   fieldStories: insightContent.fieldStories,
   publications: live(insightContent.publications || []),
+  evidence: C.file('home/evidence'),
   convening: C.file('home/convening'),
   partners: C.file('home/partners'),
   testimonials: live(C.file('home/testimonials').items),
