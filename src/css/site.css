@@ -531,7 +531,6 @@ html:not(.js) .ev-view,html:not(.js) .ev-pills{display:none}
 .cap__media{position:relative;display:block;flex:none;height:clamp(170px,15vw,220px);margin:-34px -30px 4px;overflow:hidden;perspective:900px;background:radial-gradient(120% 90% at 70% 20%,#fff,var(--sand) 70%);border-bottom:1px solid var(--line)}
 .cap__media::after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(180deg,transparent,rgba(250,248,245,.55));pointer-events:none}
 .cap__m1{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(calc(var(--px,0) * -10px),calc(var(--py,0) * -6px),0) scale(1.06);transition:transform .7s var(--ease)}
-.cap__m2{position:absolute;z-index:1;right:18px;bottom:14px;width:30%;max-height:72%;object-fit:cover;border-radius:12px;border:3px solid #fff;box-shadow:0 22px 36px -20px rgba(22,21,19,.65);transform:rotate(-4deg)}
 .ih .cap--media .chip{background:rgba(255,255,255,.9)}
 @media (max-width:1040px){.cap__big{font-size:5rem}}
 @media (max-width:640px){.cap__media{height:200px}}

@@ -68,8 +68,7 @@
         }
       ],
       "engagements": [],
-      "image": "/assets/img/caps/policy-panel.webp",
-      "image2": "/assets/img/caps/policy-report.webp"
+      "image": "/assets/img/caps/policy-panel.webp"
     },
     {
       "slug": "program-project-design",
@@ -124,8 +123,7 @@
       "engagements": [
         "adb-nsep"
       ],
-      "image": "/assets/img/caps/program-fieldwork.webp",
-      "image2": "/assets/img/field/round-table-workshop-laptops.webp"
+      "image": "/assets/img/caps/program-fieldwork.webp"
     },
     {
       "slug": "development-finance",
@@ -193,8 +191,7 @@
         "agro-board-biodiversity",
         "gggf-urban-climate"
       ],
-      "image": "/assets/img/field/adb-conference-head-table-westin.webp",
-      "image2": "/assets/img/payra.webp"
+      "image": "/assets/img/field/adb-conference-head-table-westin.webp"
     },
     {
       "slug": "institutions-governance-delivery",
@@ -256,8 +253,7 @@
         "bmdf-oscb",
         "bmdf-transformation"
       ],
-      "image": "/assets/img/field/conference-table-consultation.webp",
-      "image2": "/assets/img/field/participants-group-photo-pavilion.webp"
+      "image": "/assets/img/field/conference-table-consultation.webp"
     },
     {
       "slug": "monitoring-evaluation-learning",
@@ -318,7 +314,7 @@
         }
       ],
       "engagements": [],
-      "image": "/assets/img/caps/mel-enumerators.webp"
+      "image": "/assets/img/caps/mel-tablet-survey.webp"
     },
     {
       "slug": "data-digital-responsible-ai",
@@ -384,8 +380,7 @@
       "engagements": [
         "worldbank-fat"
       ],
-      "image": "/assets/img/field/adb-gis-workshop-head-table.webp",
-      "image2": "/assets/img/field/wbg-technology-adoption-survey-briefing.webp"
+      "image": "/assets/img/field/adb-gis-workshop-head-table.webp"
     }
   ]
 }
