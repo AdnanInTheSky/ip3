@@ -124,7 +124,7 @@
       "engagements": [
         "adb-nsep"
       ],
-      "image": "/assets/img/caps/program-workshop.webp",
+      "image": "/assets/img/caps/program-fieldwork.webp",
       "image2": "/assets/img/field/round-table-workshop-laptops.webp"
     },
     {
@@ -318,8 +318,7 @@
         }
       ],
       "engagements": [],
-      "image": "/assets/img/caps/mel-enumerators.webp",
-      "image2": "/assets/img/caps/mel-report.webp"
+      "image": "/assets/img/caps/mel-enumerators.webp"
     },
     {
       "slug": "data-digital-responsible-ai",
