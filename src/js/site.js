@@ -215,6 +215,67 @@
     }, { passive: true });
   }
 
+  /* ---------- delivery chain (home): choose a stage to filter the assignments; carousel / grid; stepping buttons ---------- */
+  function initChain() {
+    var sec = $('[data-chain]'); if (!sec) return;
+    var tiles = $$('.dc-tile', sec), panels = $$('[data-panel]', sec), cards = $$('.dc-card', sec);
+    var deck = $('[data-deck]', sec), track = $('[data-cards]', sec), nav = $('[data-deck-nav]', sec);
+    var count = $('[data-dc-count]', sec), all = $('[data-stage-all]', sec), bar = nav && $('.dc-deck__bar i', nav);
+    var prev = nav && $('[data-dir="-1"]', nav), next = nav && $('[data-dir="1"]', nav);
+    var stage = 0;
+    function select(n, scroll) {
+      stage = n;
+      tiles.forEach(function (t) { t.setAttribute('aria-pressed', String(+t.getAttribute('data-stage') === n)); });
+      panels.forEach(function (p) { p.classList.toggle('is-on', +p.getAttribute('data-panel') === n); });
+      var shown = 0;
+      cards.forEach(function (c) {
+        var on = !n || c.getAttribute('data-stages').split(' ').indexOf(String(n)) > -1;
+        c.hidden = !on; if (on) shown++;
+      });
+      if (count) count.textContent = shown;
+      if (all) all.hidden = !n;
+      track.scrollLeft = 0;
+      state();
+      if (window.ScrollTrigger) requestAnimationFrame(function () { ScrollTrigger.refresh(); });
+    }
+    function state() {
+      if (!nav) return;
+      var max = track.scrollWidth - track.clientWidth;
+      nav.hidden = max < 4;
+      prev.disabled = track.scrollLeft < 4;
+      next.disabled = track.scrollLeft > max - 4;
+      if (bar) bar.style.setProperty('--p', max > 0 ? (0.2 + 0.8 * track.scrollLeft / max).toFixed(3) : 1);
+    }
+    tiles.forEach(function (t) {
+      t.addEventListener('click', function () {
+        var n = +t.getAttribute('data-stage');
+        select(stage === n ? 0 : n);
+      });
+    });
+    if (all) all.addEventListener('click', function () { select(0); });
+    $$('[data-view]', sec).forEach(function (b) {
+      if (b.parentNode.className.indexOf('dc-view') < 0) return;
+      b.addEventListener('click', function () {
+        var v = b.getAttribute('data-view');
+        deck.setAttribute('data-view', v);
+        $$('.dc-view button', sec).forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+        track.scrollLeft = 0; state();
+      });
+    });
+    if (nav) {
+      function step(dir) {
+        var c = cards.filter(function (x) { return !x.hidden; })[0];
+        track.scrollBy({ left: dir * (c ? c.offsetWidth + 22 : track.clientWidth * 0.8), behavior: reduce ? 'auto' : 'smooth' });
+      }
+      prev.addEventListener('click', function () { step(-1); });
+      next.addEventListener('click', function () { step(1); });
+      track.addEventListener('scroll', state, { passive: true });
+      window.addEventListener('resize', state);
+    }
+    select(0);
+    sec.classList.add('is-ready');
+  }
+
   /* ---------- Lenis ---------- */
   function initLenis() {
     if (reduce || !window.Lenis) return;
@@ -310,15 +371,6 @@
 
     var mm = gsap.matchMedia();
 
-    // stacking deck (mandates)
-    mm.add('(min-width: 1041px)', function () {
-      var cards = $$('[data-deck]');
-      cards.forEach(function (c, i) {
-        var next = cards[i + 1]; if (!next) return;
-        gsap.to(c, { scale: 0.94, ease: 'none', scrollTrigger: { trigger: next, start: 'top 72%', end: 'top 24%', scrub: true } });
-      });
-    });
-
     // horizontal sector scroller
     mm.add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', function () {
       var hs = $('[data-hs]'), track = $('[data-hs-track]'), fill = $('[data-hs-fill]'); if (!hs || !track) return;
@@ -326,16 +378,6 @@
       gsap.to(track, { x: function () { return -dist(); }, ease: 'none', scrollTrigger: {
         trigger: hs, start: 'top top', end: function () { return '+=' + dist(); }, pin: true, scrub: 0.7, anticipatePin: 1, invalidateOnRefresh: true,
         onUpdate: function (s) { if (fill) fill.style.transform = 'scaleX(' + s.progress + ')'; },
-      } });
-    });
-
-    // translation: sticky step highlight
-    var steps = $$('[data-step]'), rail = $$('[data-rail] li');
-    steps.forEach(function (s, i) {
-      ScrollTrigger.create({ trigger: s, start: 'top 58%', end: 'bottom 58%', onToggle: function (self) {
-        if (!self.isActive) return;
-        steps.forEach(function (x, k) { x.classList.toggle('is-active', k === i); });
-        rail.forEach(function (x, k) { x.classList.toggle('is-active', k === i); });
       } });
     });
 
@@ -604,7 +646,7 @@
   }
 
   /* ---------- boot ---------- */
-  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative();
+  initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain();
   // Sector narratives own their motion lifecycle. Keep their policy text visible,
   // use native scrolling, and avoid stacking global reveals/Lenis over the scene.
   if (d.body.classList.contains('sxp')) {

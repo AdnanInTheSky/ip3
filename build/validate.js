@@ -206,6 +206,26 @@ function run({ quiet = false } = {}) {
     refLabels.add(item.ref);
   });
 
+  // Home delivery chain: every evidence line is copied verbatim from its assignment record, and each assignment appears once
+  const chain = data.home_translation;
+  if (chain) {
+    where.file = 'content/home/translation.json';
+    const bySlug = Object.fromEntries(((data.proof || {}).items || []).map((item) => [item.slug, item]));
+    const used = new Map();
+    (chain.phases || []).forEach((phase, i) => (phase.evidence || []).forEach((ev, k) => {
+      const p = `phases[${i + 1}].evidence[${k + 1}]`;
+      const rec = bySlug[ev.record];
+      if (!rec) return; // reported by the reference check below
+      if (rec.hidden) err(`${p}.record`, `"${ev.record}" is hidden on the assignments list, so it cannot be shown as evidence`);
+      if (!(rec.activities || []).includes(ev.activity)) err(`${p}.activity`, `does not match any recorded activity of "${ev.record}" word for word — copy one line from that record unchanged`);
+      if (used.has(ev.record)) warn(`${p}.record`, `"${ev.record}" is already evidence for ${used.get(ev.record)}`);
+      else used.set(ev.record, `phase ${i + 1}`);
+    }));
+    const STAGES = ['Research & Diagnostics', 'Policy Intelligence', 'Systemic Design', 'Delivery Architecture', 'Implementation Management', 'Learning & Scale'];
+    const titles = (chain.phases || []).map((phase) => phase.title);
+    if (titles.join('|') !== STAGES.join('|')) err('phases', `the delivery section is designed for exactly six stages in this order: ${STAGES.join(', ')} (found ${titles.length ? titles.join(', ') : 'none'})`);
+  }
+
   // sector pages: one story per visible sector; each drawing is built for five steps
   const sectorPages = data.sector_pages || [];
   const pageSlugs = new Set(sectorPages.map((pg) => pg.slug));

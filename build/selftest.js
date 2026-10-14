@@ -131,9 +131,17 @@ test('negative content/build safeguards', async (t) => {
       reset(); const data = json('why.json'); data.scenes.reverse(); save('why.json', data);
       expectValidation(/scenes: must be exactly complexity, evidence, insight, policy, practice, impact, in that order/);
     });
+    await t.test('rejects a delivery section with a stage added, removed or reordered', () => {
+      reset(); const data = json('home/translation.json'); data.phases.pop(); save('home/translation.json', data);
+      expectValidation(/exactly six stages in this order/);
+      reset(); const moved = json('home/translation.json'); moved.phases.reverse(); save('home/translation.json', moved);
+      expectValidation(/exactly six stages in this order/);
+      reset(); const extra = json('home/translation.json'); extra.phases.push({ ...extra.phases[0], title: 'Extra stage' }); save('home/translation.json', extra);
+      expectValidation(/exactly six stages in this order/);
+    });
     await t.test('rejects an incomplete section order', () => {
       reset(); const data = json('section-order.json'); data.home.pop(); save('section-order.json', data);
-      expectValidation(/Home section order must contain exactly 11 supported sections/);
+      expectValidation(/Home section order must contain exactly 10 supported sections/);
     });
     await t.test('rejects unsupported testimonial placements and missing visible content', () => {
       reset(); const placements = json('section-placement.json'); placements.homeTestimonials = 'Inside Why IP3 journey'; save('section-placement.json', placements);

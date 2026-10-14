@@ -1,93 +1,293 @@
 {
-  "eyebrow": "From analysis to implementation",
+  "eyebrow": "Built for complex mandates",
   "h2": "Translation, <em>not theory.</em>",
-  "sub": "Our work is designed around the decisions institutions actually have to make: what to reform, what to finance, how to structure implementation, where risks sit, how results will be measured, and what evidence is needed to scale.",
-  "nodes": [
+  "body": "Development challenges rarely fit within one ministry, one sector or one financing instrument. IP3 brings together economics, public policy, finance, institutional analysis, technology and implementation expertise to help clients move through the full decision cycle.",
+  "closing": "From evidence to decisions. <em>From decisions to delivery.</em>",
+  "labels": {
+    "chain": "The six stages",
+    "stage": "Stage {n}",
+    "deliverables": "What you receive",
+    "impact": "Impact",
+    "activity": "What IP3 did",
+    "all": "View the full assignment record",
+    "allAssignments": "All stages",
+    "count": "assignments",
+    "viewLabel": "View",
+    "carouselLabel": "Carousel",
+    "gridLabel": "Grid",
+    "filterLabel": "Filter assignments by stage",
+    "role": "Role",
+    "period": "Period"
+  },
+  "phases": [
     {
-      "title": "Diagnostics & Research",
-      "text": "Understanding the problem, the system, and the realistic options."
+      "title": "Research & Diagnostics",
+      "quote": "We establish empirical evidence baselines where data is thin and stress-test institutional constraints.",
+      "body": "Field surveys, institutional reviews and sector diagnostics that give a reform or programme a factual baseline.",
+      "deliverables": [
+        {
+          "group": "Institutional Reform",
+          "items": [
+            "Institutional diagnostics"
+          ]
+        },
+        {
+          "group": "Digital & AI Transformation",
+          "items": [
+            "DPI diagnostics",
+            "AI readiness"
+          ]
+        },
+        {
+          "group": "Evidence & Evaluation",
+          "items": [
+            "Baselines"
+          ]
+        },
+        {
+          "group": "Project Preparation",
+          "items": [
+            "Feasibility studies"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record": "green-transition-rmg",
+          "activity": "Led the survey \"Barriers to Green Transition\" — 400 firms, 120 KIIs, 8 FGDs."
+        },
+        {
+          "record": "unctad-pcga",
+          "activity": "Analyzed productive capacities, PCI scores, performance, and critical binding constraints on fostering productive capacities and structural economic transformation, including institutional limitations and policy implementation gaps."
+        },
+        {
+          "record": "nsep-56088",
+          "activity": "Conducted risk (uncertainty) and sensitivity analysis by varying key assumptions across scenarios."
+        },
+        {
+          "record": "fat-survey",
+          "activity": "Provided training to firms for survey implementation and guided survey teams for questionnaire programming, administration, monitoring and data-quality control."
+        },
+        {
+          "record": "sarti-cargo",
+          "activity": "Led research and implementation teams on ease of transaction and storage facilities for trading, to mitigate constraints in regional trade and investment."
+        }
+      ]
     },
     {
-      "title": "Policy & Strategy Design",
-      "text": "Choosing the course of action and designing the intervention."
+      "title": "Policy Intelligence",
+      "quote": "We map political economy, institutional incentives, and counterfactual pathways that govern reform outcomes.",
+      "body": "Political-economy, trade, tax and regulatory analysis that shows which reforms are feasible and what they would change.",
+      "deliverables": [
+        {
+          "group": "Strategies & Policy Frameworks",
+          "items": [
+            "Sector strategies",
+            "Reform road maps",
+            "Policy briefs",
+            "Regulatory frameworks",
+            "Theories of change"
+          ]
+        },
+        {
+          "group": "Digital & AI Transformation",
+          "items": [
+            "Digital strategy"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record": "ec-ldc-graduation",
+          "activity": "Identified possible key areas of intervention for the EU to address the impact of LDC graduation, potential loss of international support measures, and opportunities for investment and financing."
+        },
+        {
+          "record": "green-trade-reform",
+          "activity": "Prepared \"Institutional Mapping of Trade, Investment and Financing in Environmental Goods and Services in Bangladesh.\""
+        },
+        {
+          "record": "cem-bangladesh-india",
+          "activity": "Produced reports for the preparation of Country Economic Memorandums for Bangladesh and India."
+        },
+        {
+          "record": "wto-services-trade",
+          "activity": "Coordinated and gathered information on applied policies and regulations across sectors and sub-sectors through desk research, interviews and analysis for the joint WTO–World Bank team."
+        },
+        {
+          "record": "tiga-bmgf",
+          "activity": "Assessed (ex-ante) the likely impact of major agricultural crop innovations and productivity growth programs on workforce productivity and livelihoods across strata of the poor."
+        }
+      ]
     },
     {
-      "title": "Financing & Bankability",
-      "text": "Making it investable and structuring the capital."
+      "title": "Systemic Design",
+      "quote": "We turn findings into statutory instruments, regulatory frameworks, and governance structures somebody owns.",
+      "body": "Policy instruments, strategies and institutional arrangements designed together, so a reform has an owner and a way to run.",
+      "deliverables": [
+        {
+          "group": "",
+          "items": [
+            "Draft Statutory & Regulatory Instruments",
+            "Institutional Operating Charter & KPIs",
+            "Inter-Agency Steering Protocol",
+            "Sovereign Risk Allocation Matrix"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record": "adb-ews-facility",
+          "activity": "Draft the facility blueprint (governance, financing instruments, eligibility, safeguards interface)."
+        },
+        {
+          "record": "dscc-vision-2050",
+          "activity": "Prepared the city financing and investment plan, local institutions and city governance reform plan for effective service delivery."
+        },
+        {
+          "record": "jica-beza-biffl",
+          "activity": "Prepared documentation, SPC formulation, shareholder agreement, equity investment policy and project agreement as special assistance activities for Special Economic Zone development."
+        },
+        {
+          "record": "tobacco-taxation",
+          "activity": "Prepared advocacy materials and drafted taxation rules and guidelines."
+        },
+        {
+          "record": "resa-electricity",
+          "activity": "Conducted comparative cost-benefit analysis of regulatory frameworks across Bangladesh, India and Nepal."
+        }
+      ]
     },
     {
       "title": "Delivery Architecture",
-      "text": "Designing how it will actually be implemented."
+      "tag": "Architecture",
+      "quote": "We structure the financing, digital public infrastructure, and blended capital vehicles in parallel with policy.",
+      "body": "Financing, programme and infrastructure design that makes a plan fundable and ready to implement.",
+      "deliverables": [
+        {
+          "group": "Investment & Finance",
+          "items": [
+            "Bankability assessments",
+            "Blended finance structures",
+            "PPP advisory",
+            "Financial models",
+            "Climate finance strategy"
+          ]
+        },
+        {
+          "group": "Project Preparation",
+          "items": [
+            "Investment concepts",
+            "Risk registers"
+          ]
+        },
+        {
+          "group": "Digital & AI Transformation",
+          "items": [
+            "Data governance",
+            "Service design"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record": "bmdf-green-municipal",
+          "activity": "Developed a 10-year financial roadmap interlinked with national development plans and SDG targets, outlining funding mechanisms, investment strategies and revenue-generation models."
+        },
+        {
+          "record": "jolshiri",
+          "activity": "Financial investment plan, funding opportunity, indebtedness and creditworthiness of borrowing company."
+        },
+        {
+          "record": "nextgen-primary-gpe",
+          "activity": "Evaluated the technical feasibility of digital and AI-powered learning and assessment interventions."
+        },
+        {
+          "record": "payra-port",
+          "activity": "Developed a 15-year model showing income, expenditure, capital expenditure, annual P&L including EBIT, EBITDA and pre-tax profit, annual balance sheet and project IRR."
+        }
+      ]
     },
     {
-      "title": "Implementation Support",
-      "text": "Staying engaged through execution and adaptation."
+      "title": "Implementation Management",
+      "quote": "We stand up delivery units, install real-time telemetry, and transfer execution capability to domestic civil servants.",
+      "body": "Hands-on programme and project delivery, with milestone tracking and capacity transfer to national teams.",
+      "deliverables": [
+        {
+          "group": "Project Preparation",
+          "items": [
+            "Implementation plans"
+          ]
+        },
+        {
+          "group": "Institutional Reform",
+          "items": [
+            "PFM reform",
+            "Governance frameworks",
+            "Capacity development",
+            "Change management"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record": "nsep-madrasah",
+          "activity": "Capacity and Institutional Analysis: evaluated DME, BMTTI, and madrasah governance frameworks including HRMIS readiness, EMIS gaps, and leadership training needs."
+        },
+        {
+          "record": "nsep-tvet",
+          "activity": "Capacity Mapping: evaluated DTE’s and BTEB’s institutional and legal capacities for scalable implementation."
+        },
+        {
+          "record": "halow",
+          "activity": "Managed the M&E team, monitored project activities and data quality control."
+        },
+        {
+          "record": "bicf-ifc",
+          "activity": "Led the research and evaluation team and managed monitoring and implementation activities."
+        }
+      ]
     },
     {
       "title": "Learning & Scale",
-      "text": "Measuring what works and translating evidence into uptake."
+      "quote": "We build real-time feedback loops that inform course correction before failures occur, then scale nationally.",
+      "body": "Monitoring, evaluation and learning that show what worked, and the basis for extending it.",
+      "deliverables": [
+        {
+          "group": "Evidence & Evaluation",
+          "items": [
+            "MEL frameworks",
+            "Impact evaluations",
+            "Learning agendas",
+            "Dashboards"
+          ]
+        },
+        {
+          "group": "Project Preparation",
+          "items": [
+            "Results frameworks"
+          ]
+        }
+      ],
+      "evidence": [
+        {
+          "record": "global-leap",
+          "activity": "Prepared the 4-year Global LEAP results-based financing M&E framework and implementation plan."
+        },
+        {
+          "record": "dsip-dwasa",
+          "activity": "Designed the M&E and results framework for the 5-year operation of the DSIP project."
+        },
+        {
+          "record": "esmap-astae",
+          "activity": "Compared actual financial and economic outcomes with the initial feasibility studies to identify gaps and lessons learned."
+        },
+        {
+          "record": "rct-stitching-motors",
+          "activity": "Coordinated implementation, data collection, and field operations and conducted data analysis."
+        }
+      ]
     }
   ],
-  "outputs": [
-    {
-      "title": "Strategies & Policy Frameworks",
-      "items": [
-        "Sector strategies",
-        "Reform road maps",
-        "Policy briefs",
-        "Regulatory frameworks",
-        "Theories of change"
-      ]
-    },
-    {
-      "title": "Project Preparation",
-      "items": [
-        "Feasibility studies",
-        "Investment concepts",
-        "Results frameworks",
-        "Risk registers",
-        "Implementation plans"
-      ]
-    },
-    {
-      "title": "Institutional Reform",
-      "items": [
-        "Institutional diagnostics",
-        "PFM reform",
-        "Governance frameworks",
-        "Capacity development",
-        "Change management"
-      ]
-    },
-    {
-      "title": "Investment & Finance",
-      "items": [
-        "Bankability assessments",
-        "Blended finance structures",
-        "PPP advisory",
-        "Financial models",
-        "Climate finance strategy"
-      ]
-    },
-    {
-      "title": "Evidence & Evaluation",
-      "items": [
-        "MEL frameworks",
-        "Baselines",
-        "Impact evaluations",
-        "Learning agendas",
-        "Dashboards"
-      ]
-    },
-    {
-      "title": "Digital & AI Transformation",
-      "items": [
-        "DPI diagnostics",
-        "Digital strategy",
-        "Data governance",
-        "AI readiness",
-        "Service design"
-      ]
-    }
-  ]
+  "bridge": "Every mandate moves through the same six stages. Choose a stage to see the assignments where IP3 has done it.",
+  "attribution": "Assignments led or supported by IP3’s founder and expert team. Each card shows the role held, the period and the recorded activity."
 }
