@@ -555,10 +555,9 @@
 
     // capabilities: each card's setting turns in from depth, and the smaller photo (the service) travels in to meet it
     $$('[data-cap-media]').forEach(function (m) {
-      var card = m.closest('.cap'), a = $('.cap__m1', m), b = $('.cap__m2', m);
+      var card = m.closest('.cap'), a = $('.cap__m1', m);
       var st = { trigger: card, start: 'top 98%', end: 'top 40%', scrub: 0.8 };
       gsap.fromTo(a, { z: -320, rotationY: -26, rotationX: 8, xPercent: 16, opacity: 0, transformPerspective: 900 }, { z: 0, rotationY: 0, rotationX: 0, xPercent: 0, opacity: 1, ease: 'power2.out', scrollTrigger: st });
-      if (b) gsap.fromTo(b, { z: -620, x: -170, y: 80, rotation: -18, opacity: 0, transformPerspective: 900 }, { z: 0, x: 0, y: 0, rotation: -4, opacity: 1, ease: 'power3.out', scrollTrigger: { trigger: card, start: 'top 90%', end: 'top 30%', scrub: 0.9 } });
     });
 
     // convening list highlight
