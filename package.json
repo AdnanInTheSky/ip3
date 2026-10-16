@@ -13,7 +13,7 @@
     "links": "node build/check-links.js",
     "verify": "npm run build && npm run links",
     "check": "node build/validate.js && node build/cms.js --check",
-    "test": "node --test build/selftest.js build/check-links.test.js build/contact.test.js .github/scripts/publishing.test.js"
+    "test": "node --test build/selftest.js build/check-links.test.js build/contact.test.js build/cms-editor-usability.test.js .github/scripts/publishing.test.js"
   },
   "engines": {
     "node": "24.x"

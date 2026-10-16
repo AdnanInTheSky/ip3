@@ -7,37 +7,37 @@ const { editableSectionOrders } = require('./section-order');
 const { testimonialPlacements } = require('./section-placement');
 
 const pageMeta = (withHero = true) => [
-  str('title', 'Search-result title', { soft: 70, hint: 'Shown in the browser tab and Google. Aim for 70 characters or fewer.' }),
-  text('desc', 'Search-result description', { soft: 165, hint: 'Shown under the title in Google. Aim for 165 characters or fewer.' }),
-  ...(withHero ? [str('h1', 'Page headline', { em: true, max: 140 }), text('lead', 'Intro paragraph under the headline', { max: 420 })] : []),
+  str('title', 'Search title (browser & results)', { soft: 70, hint: 'Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer.' }),
+  text('desc', 'Search description', { soft: 165, hint: 'Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer.' }),
+  ...(withHero ? [str('h1', 'On-page headline', { em: true, max: 140 }), text('lead', 'Opening paragraph under the headline', { max: 420 })] : []),
 ];
 const pg = (name, label, withHero) => obj(name, label, pageMeta(withHero));
 const pageText = (name, label, path) => file(name, `00 · Page text — ${label}`, path, [
   list('headings', 'Headings, eyebrows & leads', [
-    slug('slug', 'Template key', { readonly: true, hint: 'Fixed template key. Editors do not need to change this.' }),
+    slug('slug', 'Template key (leave unchanged)', { readonly: true, hint: 'Developer-managed link between this copy and the page design. You do not need to edit it.' }),
     str('eyebrow', 'Eyebrow', { optional: true, max: 80, soft: 50 }),
     text('title', 'Heading', { max: 160, soft: 85, em: true, hint: 'Keep <em> only on headings where that emphasis already appears.' }),
     text('lead', 'Lead paragraph', { optional: true, max: 420, soft: 260 }),
-  ], { summary: '{slug}' }),
+  ], { summary: '{title}' }),
   list('copy', 'Other marketing copy & CTA labels', [
-    slug('slug', 'Template key', { hint: 'Internal template key. Do not change unless a developer asks.' }),
+    slug('slug', 'Template key (leave unchanged)', { hint: 'Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it.' }),
     str('label', 'Editor label', { max: 100 }),
     text('text', 'Copy', { max: 1000, soft: 450 }),
   ], { summary: '{label}', optional: true }),
 ]);
 
 const groups = [
-  { name: 'start_here', label: 'Start here · page titles & copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
-  { name: 'page_sections', label: 'Page layout · section order', items: ['section_order', 'section_placement'] },
-  { name: 'home_page', label: 'Home page', items: ['home_hero', 'home_stats', 'home_why', 'home_translation', 'home_evidence', 'home_convening', 'home_testimonials', 'home_partners'] },
-  { name: 'contact', label: 'Contact page', items: ['page_text_contact', 'home_faq'] },
-  { name: 'capabilities', label: 'Capabilities & proof of work', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
-  { name: 'sectors', label: 'Sectors', items: ['sectors', 'sector_pages'] },
+  { name: 'start_here', label: 'Page titles, search & page copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound'] },
+  { name: 'page_sections', label: 'Page layout · approved section order', items: ['section_order', 'section_placement'] },
+  { name: 'home_page', label: 'Homepage content', items: ['home_hero', 'home_stats', 'home_why', 'home_translation', 'home_evidence', 'home_convening', 'home_testimonials', 'home_partners'] },
+  { name: 'contact', label: 'Contact page & FAQs', items: ['page_text_contact', 'home_faq'] },
+  { name: 'capabilities', label: 'Capabilities, assignments & proof', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
+  { name: 'sectors', label: 'Sectors & sector pages', items: ['sectors', 'sector_pages'] },
   { name: 'work_insights', label: 'Engagements & insights', items: ['engagements', 'insights'] },
-  { name: 'people', label: 'People', items: ['people', 'founder'] },
+  { name: 'people', label: 'People & founder profiles', items: ['people', 'founder'] },
   { name: 'about_approach', label: 'About IP3 & approach', items: ['about', 'why', 'approach_problem', 'approach_pathway', 'approach_standards', 'approach_orbit', 'approach_toolkit', 'approach_outcomes'] },
-  { name: 'site_settings', label: 'Website settings', items: ['site', 'navigation'] },
-  { name: 'legal', label: 'Privacy & terms', items: ['legal'] },
+  { name: 'site_settings', label: 'Website settings · contact & navigation', items: ['site', 'navigation'] },
+  { name: 'legal', label: 'Legal pages · review before edits', items: ['legal'] },
 ];
 
 module.exports = {
@@ -55,32 +55,32 @@ module.exports = {
     file('section_order', '00 · Page section order', 'content/section-order.json', Object.entries(editableSectionOrders).map(([key, spec]) =>
       select(key, spec.fieldLabel, spec.default, { list: true, hint: spec.hint })
     )),
-    file('site', '00 · Contact details', 'content/site.json', [
+    file('site', '00 · Website settings — contact & office details', 'content/site.json', [
       str('url', 'Canonical website URL', { link: true, hint: 'Set this to the public production site origin. SITE_URL overrides it during a Vercel build.' }),
       str('email', 'Email address', { email: true }),
-      str('phone', 'Phone number', { hint: 'Written as you want it shown, e.g. +880 1914 011 329.' }),
+      str('phone', 'Phone number shown on the site', { hint: 'Use the display format you want visitors to see, e.g. +880 1914 011 329.' }),
       strs('address', 'Address lines', { hint: 'One line per entry.' }),
       str('streetAddress', 'Structured street address'),
       str('addressLocality', 'Address locality'), str('postalCode', 'Postal code'), str('countryCode', 'Country code'),
       str('hours', 'Office hours'),
-      str('mapUrl', 'Map link', { link: true, hint: 'The link opened by the contact page map button.' }),
+      str('mapUrl', 'Office map link', { link: true, hint: 'The destination opened by the contact page map button. Use a complete HTTPS link.' }),
       str('officeLabel', 'Office label'), str('emailLabel', 'Email label'), str('phoneLabel', 'Phone label'), str('hoursLabel', 'Hours label'),
     ]),
-    file('navigation', '00 · Navigation & footer links', 'content/navigation.json', [
-      list('primary', 'Primary navigation links', [str('label', 'Label'), str('href', 'Link', { link: true }), hidden], { summary: '{label}' }),
-      list('breadcrumbs', 'Breadcrumb labels', [str('label', 'Label'), str('href', 'Page route', { link: true })], { summary: '{label}' }),
-      str('homeLabel', 'Home link label'), str('homeHref', 'Home link destination', { link: true }),
-      str('contactLabel', 'Contact link label'), str('contactHref', 'Contact link destination', { link: true }), str('headerCta', 'Header contact button'),
+    file('navigation', '00 · Website settings — header, navigation & footer', 'content/navigation.json', [
+      list('primary', 'Header navigation links', [str('label', 'Text visitors see'), str('href', 'Page destination', { link: true, hint: 'Use a site route such as /about/ or a full HTTPS URL.' }), hidden], { summary: '{label}' }),
+      list('breadcrumbs', 'Breadcrumb names and destinations', [str('label', 'Text visitors see'), str('href', 'Page destination', { link: true, hint: 'Use the page route, for example /about/.' })], { summary: '{label}' }),
+      str('homeLabel', 'Home link text'), str('homeHref', 'Home link destination', { link: true, hint: 'Usually /.' }),
+      str('contactLabel', 'Contact link text'), str('contactHref', 'Contact link destination', { link: true, hint: 'Usually /contact/.' }), str('headerCta', 'Header contact button text'),
       str('exploreTitle', 'Footer explore heading'), str('sectorsTitle', 'Footer sectors heading'), str('officeTitle', 'Footer office heading'),
       text('footerDescription', 'Footer firm description', { max: 300, soft: 180 }),
       str('exploreSectorLabel', 'Engagement sector link label', { max: 80 }),
       str('previousSectorLabel', 'Previous sector label', { max: 40 }),
       str('nextSectorLabel', 'Next sector label', { max: 40 }),
       str('horizontalScrollLabel', 'Horizontal scroller label', { max: 40 }),
-      list('explore', 'Footer explore links', [str('label', 'Label'), str('href', 'Link', { link: true })], { summary: '{label}' }),
-      list('legal', 'Footer legal links', [str('label', 'Label'), str('href', 'Link', { link: true })], { summary: '{label}' }),
+      list('explore', 'Footer explore links', [str('label', 'Text visitors see'), str('href', 'Page destination', { link: true, hint: 'Use a site route or a full HTTPS URL.' })], { summary: '{label}' }),
+      list('legal', 'Footer legal links', [str('label', 'Text visitors see'), str('href', 'Page destination', { link: true, hint: 'Use a site route or a full HTTPS URL. Legal destinations need owner review.' })], { summary: '{label}' }),
       str('legalNavLabel', 'Footer legal navigation label'),
-      list('ctaPaths', 'Contact pathways', [str('label', 'Label'), text('description', 'Description'), str('href', 'Link', { link: true })], { summary: '{label}' }),
+      list('ctaPaths', 'Contact pathways', [str('label', 'Text visitors see'), text('description', 'Short explanation'), str('href', 'Destination', { link: true, hint: 'Use a site route, full HTTPS URL, mailto: address, or tel: number as appropriate.' })], { summary: '{label}' }),
       list('contactPathways', 'Contact page pathways', [str('label', 'Label'), text('description', 'Description')], { summary: '{label}' }),
     ]),
     pageText('page_text_home', 'Home', 'content/page-text/home.json'),
@@ -110,22 +110,22 @@ module.exports = {
         ], { summary: '{heading}' }),
       ]),
     ]),
-    file('pages', '00 · Page titles, descriptions & headlines', 'content/pages.json', [
+    file('pages', '00 · Page titles, search descriptions & headlines', 'content/pages.json', [
       pg('home', 'Home', false), pg('about', 'About', true), pg('why', 'Why choose IP3', true), pg('approach', 'Approach', true), pg('capabilities', 'Capabilities', true),
       pg('sectors', 'Sectors', true), pg('engagements', 'Engagements', true), pg('insights', 'Insights', true),
       pg('people', 'People', true), pg('contact', 'Contact', true), pg('privacy', 'Privacy', false), pg('terms', 'Terms', false),
     ]),
 
-    file('home_hero', '01 · Home — Hero slider', 'content/home/hero.json', [
-      strs('reassurance', 'Scrolling ticker words'),
-      list('slides', 'Hero slides', [
+    file('home_hero', '01 · Home — hero headlines, slides & media', 'content/home/hero.json', [
+      strs('reassurance', 'Words in the scrolling ticker', { hint: 'Short phrases shown in the moving line above the hero. Keep the existing number and order unless asked.' }),
+      list('slides', 'Homepage slides (display order)', [
         hidden,
-        str('tab', 'Tab label', { max: 40 }),
-        obj('video', 'Background video', [video('src', 'Video file'), image('poster', 'Poster image', { hint: 'Shown while the video loads and if it cannot play.' })]),
+        str('tab', 'Slide selector text', { max: 40, hint: 'The short label visitors use to select this slide.' }),
+        obj('video', 'Slide background media', [video('src', 'Video file (MP4 or WebM)'), image('poster', 'Fallback poster image', { hint: 'Shown while the video loads or cannot play. Keep this image when replacing the video.' })]),
         str('eyebrow', 'Small line above the headline', { max: 90 }),
-        str('h1', 'Headline', { em: true, max: 120 }),
-        text('sub', 'Sub-headline', { max: 300 }),
-        list('cta', 'Buttons', [str('label', 'Label', { max: 40 }), str('href', 'Link', { link: true }), bool('ghost', 'Outline style', { optional: true })], { summary: '{label}' }),
+        str('h1', 'Headline shown on the slide', { em: true, max: 120, hint: 'Keep any existing <em> emphasis in place; it controls the current headline styling.' }),
+        text('sub', 'Supporting text under the headline', { max: 300 }),
+        list('cta', 'Call-to-action buttons', [str('label', 'Button text', { max: 40 }), str('href', 'Button destination', { link: true, hint: 'Use a site route or a full HTTPS URL.' }), bool('ghost', 'Outline button style', { optional: true })], { summary: '{label}' }),
       ], { summary: '{tab}' }),
     ]),
     file('home_stats', '03 · Home — Numbers', 'content/home/stats.json', [
@@ -191,8 +191,8 @@ module.exports = {
     file('home_partners', '08 · Clients & funders', 'content/home/partners.json', [
       strs('clients', 'Clients & partners'), strs('funders', 'Funders & development partners'),
     ]),
-    file('home_faq', '09 · Contact — FAQ', 'content/home/faq.json', [
-      list('items', 'Questions', [hidden, str('q', 'Question'), text('a', 'Answer')], { summary: '{q}' }),
+    file('home_faq', '09 · Contact — questions & answers', 'content/home/faq.json', [
+      list('items', 'Contact page questions and answers', [hidden, str('q', 'Question shown on the page'), text('a', 'Answer shown when opened')], { summary: '{q}' }),
     ]),
 
     file('capabilities', '10 · Capabilities', 'content/capabilities.json', [
@@ -226,11 +226,11 @@ module.exports = {
       ], { summary: '{title}' }),
     ]),
     require('./sector-pages'),
-    file('engagements', '12 · Engagements', 'content/engagements.json', [
-      list('items', 'Engagements', [
-        hidden, slug(), str('client', 'Client'), str('year', 'Year'), str('sector', 'Sector name'),
-        str('sectorSlug', 'Sector slug', { hint: 'Must match a sector slug.', ref: 'sectors' }),
-        str('title', 'Title'), text('summary', 'Summary'), strs('tags', 'Tags'), image('image', 'Image'),
+    file('engagements', '12 · Engagements — projects & assignments', 'content/engagements.json', [
+      list('items', 'Project and assignment records', [
+        hidden, slug('slug', 'Record key (leave unchanged)', { hint: 'Developer-managed link used by the website. Do not change a published key; ask the site maintainer if a change is required.' }), str('client', 'Client or commissioning organization'), str('year', 'Year or period'), str('sector', 'Sector name shown to visitors'),
+        str('sectorSlug', 'Linked sector key', { hint: 'Must exactly match an existing sector key. Leave unchanged unless correcting a verified link.', ref: 'sectors' }),
+        str('title', 'Project or assignment title'), text('summary', 'Short project description'), strs('tags', 'Topic tags'), image('image', 'Project image', { hint: 'Select an approved image from Photos. If the hosted editor offers upload, use only supported images. Do not remove a file used elsewhere.' }),
       ], { summary: '{client} — {title}' }),
     ]),
     file('insights', '13 · Insights', 'content/insights.json', [
@@ -250,13 +250,13 @@ module.exports = {
         strs('people', 'IP3 people credited', { optional: true, ref: 'people', hint: 'Person slugs from the People list, e.g. mohammad-syful-hoque.' }),
       ], { summary: '{year} — {title}', optional: true }),
     ]),
-    file('people', '14 · People', 'content/people.json', [
-      list('groups', 'Groups', [
+    file('people', '14 · People — teams & profiles', 'content/people.json', [
+      list('groups', 'Profile groups', [
         str('group', 'Group name'),
-        list('members', 'People', [
-          hidden, slug('slug', 'Profile anchor', { hint: 'Lower-case words joined by hyphens. Used for /people#anchor links and publication credits — set once.' }),
+        list('members', 'Profiles in this group', [
+          hidden, slug('slug', 'Profile anchor (leave unchanged)', { hint: 'Developer-managed link used in profile addresses and publication credits. Do not change it when editing a profile.' }),
           str('name', 'Name'), str('role', 'Role'), text('focus', 'Focus areas', { optional: true }),
-          image('photo', 'Portrait', { optional: true, hint: 'Square or portrait crop, about 480 px wide. Leave empty to show initials.' }),
+          image('photo', 'Profile photograph', { optional: true, hint: 'Select an approved image from Photos. If the hosted editor offers upload, use only supported images. A square or portrait crop around 480 px wide works well. Leave empty to show initials.' }),
           str('affiliation', 'Current post outside IP3', { optional: true, max: 160 }),
           strs('bio', 'Profile paragraphs', { optional: true }),
           strs('education', 'Degrees, most recent first', { optional: true }),
