@@ -25,11 +25,11 @@ settings:
       rename: "IP3 content: rename {oldPath} to {newPath}"
 content:
   - name: start_here
-    label: "Start here · page titles & copy"
+    label: "Page titles, search & page copy"
     type: group
     items:
       - name: pages
-        label: "Page titles, descriptions & headlines"
+        label: "Page titles, search descriptions & headlines"
         type: file
         path: content/pages.json
         format: json
@@ -44,39 +44,39 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
           - name: about
             label: "About"
             type: object
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -87,24 +87,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -115,24 +115,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -143,24 +143,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -171,24 +171,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -199,24 +199,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -227,24 +227,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -255,24 +255,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -283,24 +283,24 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
               - name: h1
-                label: "Page headline"
+                label: "On-page headline"
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
                 options:
                   maxlength: 140
               - name: lead
-                label: "Intro paragraph under the headline"
+                label: "Opening paragraph under the headline"
                 type: text
                 required: true
                 options:
@@ -311,30 +311,30 @@ content:
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
           - name: terms
             label: "Terms"
             type: object
             required: true
             fields:
               - name: title
-                label: "Search-result title"
+                label: "Search title (browser & results)"
                 type: string
                 required: true
-                description: "Shown in the browser tab and Google. Aim for 70 characters or fewer."
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
               - name: desc
-                label: "Search-result description"
+                label: "Search description"
                 type: text
                 required: true
-                description: "Shown under the title in Google. Aim for 165 characters or fewer."
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
       - name: page_text_home
         label: "Home"
         type: file
@@ -351,15 +351,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -389,10 +389,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -424,15 +424,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -462,10 +462,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -497,15 +497,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -535,10 +535,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -570,15 +570,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -608,10 +608,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -643,15 +643,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -681,10 +681,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -716,15 +716,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -754,10 +754,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -789,15 +789,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -827,10 +827,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -862,15 +862,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -900,10 +900,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -935,15 +935,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -973,10 +973,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -1008,15 +1008,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -1046,10 +1046,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -1066,7 +1066,7 @@ content:
                 options:
                   maxlength: 1000
   - name: page_sections
-    label: "Page layout · section order"
+    label: "Page layout · approved section order"
     type: group
     items:
       - name: section_order
@@ -1129,11 +1129,11 @@ content:
             options:
               values: ["With clients and funders (default)", "After selected engagements", "Before founder profile"]
   - name: home_page
-    label: "Home page"
+    label: "Homepage content"
     type: group
     items:
       - name: home_hero
-        label: "Hero slider"
+        label: "hero headlines, slides & media"
         type: file
         path: content/home/hero.json
         format: json
@@ -1143,12 +1143,13 @@ content:
           delete: false
         fields:
           - name: reassurance
-            label: "Scrolling ticker words"
+            label: "Words in the scrolling ticker"
             type: string
             list: true
             required: true
+            description: "Short phrases shown in the moving line above the hero. Keep the existing number and order unless asked."
           - name: slides
-            label: "Hero slides"
+            label: "Homepage slides (display order)"
             type: object
             list:
               collapsible:
@@ -1161,28 +1162,29 @@ content:
                 type: boolean
                 description: "Tick to take it off the website without deleting it."
               - name: tab
-                label: "Tab label"
+                label: "Slide selector text"
                 type: string
                 required: true
+                description: "The short label visitors use to select this slide."
                 options:
                   maxlength: 40
               - name: video
-                label: "Background video"
+                label: "Slide background media"
                 type: object
                 required: true
                 fields:
                   - name: src
-                    label: "Video file"
+                    label: "Video file (MP4 or WebM)"
                     type: file
                     required: true
                     options:
                       media: videos
                       extensions: [mp4, webm]
                   - name: poster
-                    label: "Poster image"
+                    label: "Fallback poster image"
                     type: image
                     required: true
-                    description: "Shown while the video loads and if it cannot play."
+                    description: "Shown while the video loads or cannot play. Keep this image when replacing the video."
                     options:
                       media: images
               - name: eyebrow
@@ -1192,20 +1194,20 @@ content:
                 options:
                   maxlength: 90
               - name: h1
-                label: "Headline"
+                label: "Headline shown on the slide"
                 type: string
                 required: true
-                description: "Wrap words in <em>…</em> to show them in the accent colour."
+                description: "Keep any existing <em> emphasis in place; it controls the current headline styling."
                 options:
                   maxlength: 120
               - name: sub
-                label: "Sub-headline"
+                label: "Supporting text under the headline"
                 type: text
                 required: true
                 options:
                   maxlength: 300
               - name: cta
-                label: "Buttons"
+                label: "Call-to-action buttons"
                 type: object
                 list:
                   collapsible:
@@ -1214,17 +1216,18 @@ content:
                 required: true
                 fields:
                   - name: label
-                    label: "Label"
+                    label: "Button text"
                     type: string
                     required: true
                     options:
                       maxlength: 40
                   - name: href
-                    label: "Link"
+                    label: "Button destination"
                     type: string
                     required: true
+                    description: "Use a site route or a full HTTPS URL."
                   - name: ghost
-                    label: "Outline style"
+                    label: "Outline button style"
                     type: boolean
       - name: home_stats
         label: "Numbers"
@@ -1734,7 +1737,7 @@ content:
             list: true
             required: true
   - name: contact
-    label: "Contact page"
+    label: "Contact page & FAQs"
     type: group
     items:
       - name: page_text_contact
@@ -1753,15 +1756,15 @@ content:
             list:
               collapsible:
                 collapsed: true
-                summary: "{slug}"
+                summary: "{title}"
             required: true
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
                 readonly: true
-                description: "Fixed template key. Editors do not need to change this."
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -1791,10 +1794,10 @@ content:
                 summary: "{label}"
             fields:
               - name: slug
-                label: "Template key"
+                label: "Template key (leave unchanged)"
                 type: string
                 required: true
-                description: "Internal template key. Do not change unless a developer asks."
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
@@ -1811,7 +1814,7 @@ content:
                 options:
                   maxlength: 1000
       - name: home_faq
-        label: "FAQ"
+        label: "questions & answers"
         type: file
         path: content/home/faq.json
         format: json
@@ -1821,7 +1824,7 @@ content:
           delete: false
         fields:
           - name: items
-            label: "Questions"
+            label: "Contact page questions and answers"
             type: object
             list:
               collapsible:
@@ -1834,15 +1837,15 @@ content:
                 type: boolean
                 description: "Tick to take it off the website without deleting it."
               - name: q
-                label: "Question"
+                label: "Question shown on the page"
                 type: string
                 required: true
               - name: a
-                label: "Answer"
+                label: "Answer shown when opened"
                 type: text
                 required: true
   - name: capabilities
-    label: "Capabilities & proof of work"
+    label: "Capabilities, assignments & proof"
     type: group
     items:
       - name: capabilities
@@ -3127,7 +3130,7 @@ content:
                 list: true
                 required: true
   - name: sectors
-    label: "Sectors"
+    label: "Sectors & sector pages"
     type: group
     items:
       - name: sectors
@@ -3613,7 +3616,7 @@ content:
     type: group
     items:
       - name: engagements
-        label: "Engagements"
+        label: "projects & assignments"
         type: file
         path: content/engagements.json
         format: json
@@ -3623,7 +3626,7 @@ content:
           delete: false
         fields:
           - name: items
-            label: "Engagements"
+            label: "Project and assignment records"
             type: object
             list:
               collapsible:
@@ -3636,47 +3639,48 @@ content:
                 type: boolean
                 description: "Tick to take it off the website without deleting it."
               - name: slug
-                label: "URL slug"
+                label: "Record key (leave unchanged)"
                 type: string
                 required: true
-                description: "Lower-case words joined by hyphens. Changing it changes the page address — set once."
+                description: "Developer-managed link used by the website. Do not change a published key; ask the site maintainer if a change is required."
                 pattern:
                   regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                   message: "Use lowercase letters and numbers separated by hyphens."
               - name: client
-                label: "Client"
+                label: "Client or commissioning organization"
                 type: string
                 required: true
               - name: year
-                label: "Year"
+                label: "Year or period"
                 type: string
                 required: true
               - name: sector
-                label: "Sector name"
+                label: "Sector name shown to visitors"
                 type: string
                 required: true
               - name: sectorSlug
-                label: "Sector slug"
+                label: "Linked sector key"
                 type: string
                 required: true
-                description: "Must match a sector slug."
+                description: "Must exactly match an existing sector key. Leave unchanged unless correcting a verified link."
               - name: title
-                label: "Title"
+                label: "Project or assignment title"
                 type: string
                 required: true
               - name: summary
-                label: "Summary"
+                label: "Short project description"
                 type: text
                 required: true
               - name: tags
-                label: "Tags"
+                label: "Topic tags"
                 type: string
                 list: true
                 required: true
               - name: image
-                label: "Image"
+                label: "Project image"
                 type: image
                 required: true
+                description: "Select an approved image from Photos. If the hosted editor offers upload, use only supported images. Do not remove a file used elsewhere."
                 options:
                   media: images
       - name: insights
@@ -3820,11 +3824,11 @@ content:
                 list: true
                 description: "Person slugs from the People list, e.g. mohammad-syful-hoque."
   - name: people
-    label: "People"
+    label: "People & founder profiles"
     type: group
     items:
       - name: people
-        label: "People"
+        label: "teams & profiles"
         type: file
         path: content/people.json
         format: json
@@ -3834,7 +3838,7 @@ content:
           delete: false
         fields:
           - name: groups
-            label: "Groups"
+            label: "Profile groups"
             type: object
             list:
               collapsible:
@@ -3847,7 +3851,7 @@ content:
                 type: string
                 required: true
               - name: members
-                label: "People"
+                label: "Profiles in this group"
                 type: object
                 list:
                   collapsible:
@@ -3860,10 +3864,10 @@ content:
                     type: boolean
                     description: "Tick to take it off the website without deleting it."
                   - name: slug
-                    label: "Profile anchor"
+                    label: "Profile anchor (leave unchanged)"
                     type: string
                     required: true
-                    description: "Lower-case words joined by hyphens. Used for /people#anchor links and publication credits — set once."
+                    description: "Developer-managed link used in profile addresses and publication credits. Do not change it when editing a profile."
                     pattern:
                       regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
                       message: "Use lowercase letters and numbers separated by hyphens."
@@ -3879,9 +3883,9 @@ content:
                     label: "Focus areas"
                     type: text
                   - name: photo
-                    label: "Portrait"
+                    label: "Profile photograph"
                     type: image
-                    description: "Square or portrait crop, about 480 px wide. Leave empty to show initials."
+                    description: "Select an approved image from Photos. If the hosted editor offers upload, use only supported images. A square or portrait crop around 480 px wide works well. Leave empty to show initials."
                     options:
                       media: images
                   - name: affiliation
@@ -4901,11 +4905,11 @@ content:
                     type: text
                     required: true
   - name: site_settings
-    label: "Website settings"
+    label: "Website settings · contact & navigation"
     type: group
     items:
       - name: site
-        label: "Contact details"
+        label: "contact & office details"
         type: file
         path: content/site.json
         format: json
@@ -4924,10 +4928,10 @@ content:
             type: string
             required: true
           - name: phone
-            label: "Phone number"
+            label: "Phone number shown on the site"
             type: string
             required: true
-            description: "Written as you want it shown, e.g. +880 1914 011 329."
+            description: "Use the display format you want visitors to see, e.g. +880 1914 011 329."
           - name: address
             label: "Address lines"
             type: string
@@ -4955,10 +4959,10 @@ content:
             type: string
             required: true
           - name: mapUrl
-            label: "Map link"
+            label: "Office map link"
             type: string
             required: true
-            description: "The link opened by the contact page map button."
+            description: "The destination opened by the contact page map button. Use a complete HTTPS link."
           - name: officeLabel
             label: "Office label"
             type: string
@@ -4976,7 +4980,7 @@ content:
             type: string
             required: true
       - name: navigation
-        label: "Navigation & footer links"
+        label: "header, navigation & footer"
         type: file
         path: content/navigation.json
         format: json
@@ -4986,7 +4990,7 @@ content:
           delete: false
         fields:
           - name: primary
-            label: "Primary navigation links"
+            label: "Header navigation links"
             type: object
             list:
               collapsible:
@@ -4995,19 +4999,20 @@ content:
             required: true
             fields:
               - name: label
-                label: "Label"
+                label: "Text visitors see"
                 type: string
                 required: true
               - name: href
-                label: "Link"
+                label: "Page destination"
                 type: string
                 required: true
+                description: "Use a site route such as /about/ or a full HTTPS URL."
               - name: hidden
                 label: "Hide this item"
                 type: boolean
                 description: "Tick to take it off the website without deleting it."
           - name: breadcrumbs
-            label: "Breadcrumb labels"
+            label: "Breadcrumb names and destinations"
             type: object
             list:
               collapsible:
@@ -5016,31 +5021,34 @@ content:
             required: true
             fields:
               - name: label
-                label: "Label"
+                label: "Text visitors see"
                 type: string
                 required: true
               - name: href
-                label: "Page route"
+                label: "Page destination"
                 type: string
                 required: true
+                description: "Use the page route, for example /about/."
           - name: homeLabel
-            label: "Home link label"
+            label: "Home link text"
             type: string
             required: true
           - name: homeHref
             label: "Home link destination"
             type: string
             required: true
+            description: "Usually /."
           - name: contactLabel
-            label: "Contact link label"
+            label: "Contact link text"
             type: string
             required: true
           - name: contactHref
             label: "Contact link destination"
             type: string
             required: true
+            description: "Usually /contact/."
           - name: headerCta
-            label: "Header contact button"
+            label: "Header contact button text"
             type: string
             required: true
           - name: exploreTitle
@@ -5095,13 +5103,14 @@ content:
             required: true
             fields:
               - name: label
-                label: "Label"
+                label: "Text visitors see"
                 type: string
                 required: true
               - name: href
-                label: "Link"
+                label: "Page destination"
                 type: string
                 required: true
+                description: "Use a site route or a full HTTPS URL."
           - name: legal
             label: "Footer legal links"
             type: object
@@ -5112,13 +5121,14 @@ content:
             required: true
             fields:
               - name: label
-                label: "Label"
+                label: "Text visitors see"
                 type: string
                 required: true
               - name: href
-                label: "Link"
+                label: "Page destination"
                 type: string
                 required: true
+                description: "Use a site route or a full HTTPS URL. Legal destinations need owner review."
           - name: legalNavLabel
             label: "Footer legal navigation label"
             type: string
@@ -5133,17 +5143,18 @@ content:
             required: true
             fields:
               - name: label
-                label: "Label"
+                label: "Text visitors see"
                 type: string
                 required: true
               - name: description
-                label: "Description"
+                label: "Short explanation"
                 type: text
                 required: true
               - name: href
-                label: "Link"
+                label: "Destination"
                 type: string
                 required: true
+                description: "Use a site route, full HTTPS URL, mailto: address, or tel: number as appropriate."
           - name: contactPathways
             label: "Contact page pathways"
             type: object
@@ -5162,7 +5173,7 @@ content:
                 type: text
                 required: true
   - name: legal
-    label: "Privacy & terms"
+    label: "Legal pages · review before edits"
     type: group
     items:
       - name: legal

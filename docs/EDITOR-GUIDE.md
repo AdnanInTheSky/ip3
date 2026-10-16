@@ -8,21 +8,21 @@ This guide is for staff who update the website in Pages CMS. You can edit text, 
 2. Open `mdsyfulhoque-afk/ip3-bd.org`.
 3. Choose the `content` branch before changing anything. It is the draft branch. The `main` branch is production and must only be changed through an approved pull request.
 4. Use the left menu to find the area:
-   - **Start here · page titles & copy** for search titles, search descriptions and common page headings.
-   - **Page layout · section order** to set the order of eligible Home, About, People and Contact page sections.
-   - **Home page** for the hero, statistics, cards, testimonials and partner names.
-   - **Capabilities & proof of work** for capabilities, assignment examples, photos and videos.
-   - **Sectors** for sector order and sector page content.
+   - **Page titles, search & page copy** for browser/search titles, search descriptions and page headings.
+   - **Page layout · approved section order** for the limited section-order controls on eligible pages.
+   - **Homepage content** for the hero, statistics, cards, testimonials and partner names.
+   - **Contact page & FAQs** for contact page headings and questions.
+   - **Capabilities, assignments & proof** for capabilities, assignment examples, photos and videos.
+   - **Sectors & sector pages** for sector order and page content.
    - **Engagements & insights** for project summaries, articles and publications.
-   - **People** for profiles and the founder bio.
+   - **People & founder profiles** for profiles and the founder bio.
    - **About IP3 & approach** for organization and methodology pages.
-   - **Contact page** for contact page headings and FAQs.
-   - **Website settings** for contact details, navigation and footer links.
-   - **Privacy & terms** for legal copy; changes there need legal review.
+   - **Website settings · contact & navigation** for contact details, navigation and footer links.
+   - **Legal pages · review before edits** for legal copy; changes there need legal review.
 
 ## Edit, check and preview
 
-1. Open the item you want to change. Field descriptions explain what the field controls and show limits or formatting rules.
+1. Open the item you want to change. Start with the task shortcuts below; field descriptions explain what a field controls and show limits or formatting rules.
 2. Change only the content you intend to update. Use **Hide this item** where available to take a record off the website while keeping it available to restore. Reorder list items only when display order should change.
 3. To reorder a page, open **Page layout · section order** and drag the middle sections into the order you want. The page headline stays first; Home, About and People keep their contact call to action at the end. Keep every listed section in the list exactly once. The build rejects missing, duplicated or unsupported sections, so an invalid order cannot reach production.
 4. Save. Pages CMS writes the draft to the `content` branch. Saving does not update the public website.
@@ -42,24 +42,35 @@ The editor save and GitHub check start automatically, and the preview becomes av
 
 | Update | Where to edit |
 |---|---|
-| Search title or description | Start here → Page titles, descriptions & headlines |
-| Homepage hero headline, video or buttons | Home page → Hero slider |
-| Homepage number or testimonial | Home page → Numbers or Testimonials |
-| Capability title or service details | Capabilities & proof of work → Capabilities |
-| Sector order or sector photo | Sectors → Sectors |
-| Project or publication | Engagements & insights → Engagements or Insights |
-| Profile photograph or bio | People → People or Founder profile |
-| Phone, email or address | Website settings → Contact details |
-| Navigation or footer text | Website settings → Navigation & footer links |
-| Contact FAQ | Contact page → FAQ |
+| Homepage headline, video, poster or button | Homepage content → hero headlines, slides & media |
+| Replace a photo or video | Photos or Videos library, then the matching field in Homepage content, People & founder profiles, Engagements & insights, or another relevant form |
+| Add or update a people profile | People & founder profiles → teams & profiles |
+| Update a project or assignment | Engagements & insights → projects & assignments |
+| Search title or description | Page titles, search & page copy → Page titles, search descriptions & headlines |
+| Contact page FAQ | Contact page & FAQs → questions & answers |
+| Phone, email, address or office map | Website settings · contact & navigation → contact & office details |
+| Header navigation or footer link | Website settings · contact & navigation → header, navigation & footer |
+| Homepage number or testimonial | Homepage content → Numbers or Testimonials |
+| Capability title or service details | Capabilities, assignments & proof → Capabilities |
+| Sector order or sector photo | Sectors & sector pages → Sectors |
+| Article or publication | Engagements & insights → Insights |
+
+### Content fields and website keys
+
+Edit the words, descriptions, dates, links, and images intended for visitors. Fields called **Template key**, **Record key**, or **Profile anchor** connect content to page templates, URLs, or related records. They are developer-managed identifiers; leave them unchanged when updating copy or media. A change may break links or page rendering even if the field accepts text.
+
+Search titles and descriptions are suggestions for browsers and search engines. Search engines may display different text. Keep them accurate and concise; the displayed length guidance is a target, not a guarantee of the search result.
+
+Use the existing hide control to temporarily remove a supported list item while keeping its record. List reordering changes the order within that list only. **Page layout · approved section order** is a separate, restricted control: it does not make every section reusable or allow moving sections across pages. Keep all existing items once and use only the options shown by the CMS.
+
+For the homepage hero, keep the poster image when replacing a background video. It is used while the video loads and when it cannot play. Update a button's text and destination together, then inspect the preview to ensure the destination is correct.
 
 ## Content and media safeguards
 
 - The CMS menu does not offer create, rename or delete operations for whole content files. Edit existing lists and records. Use a hide control where one is provided instead of removing an item.
-- Slugs are checked for lowercase letters, numbers and hyphens. A slug can change a page URL, so do not change a published slug without an owner-approved redirect plan.
-- Upload photos to **Photos** in JPEG, PNG or WebP format. Aim for 500 KiB or less; images over 2 MiB fail validation.
-- Upload videos to **Videos** in MP4 or WebM format. Aim for 8 MiB or less. WebM files over 8 MiB and any video over 25 MiB fail validation.
-- Keep existing filenames when replacing media only if the old file is no longer needed and every reference has been checked. The CMS upload limit has not been verified; the repository validation is authoritative.
+- Slugs and other keys may connect page URLs, templates, or related records. Leave existing identifiers unchanged unless the site maintainer has planned and approved the change.
+- Use **Photos** for JPEG, PNG or WebP images and **Videos** for MP4 or WebM video. Aim for images under 500 KiB and video under 8 MiB; validation rejects images over 2 MiB, WebM over 8 MiB, and any video over 25 MiB.
+- The hosted upload control and its size limits have not been verified. If the editor offers upload, follow the repository format and size rules above. Before replacing a file, confirm it is not referenced by another page or record. Do not delete media files as part of routine editing.
 - Do not edit privacy or terms language without legal review. Do not change website contact details, navigation destinations, or SEO metadata unless authorized to do so.
 
 ## If the check fails
