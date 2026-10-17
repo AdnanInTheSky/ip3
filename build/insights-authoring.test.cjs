@@ -83,16 +83,13 @@ test('owner kit for 3355 retains its caveats and legacy identity under the expli
   assert.match(a.body, /https:\/\/doi\.org\//); assert.match(a.reviewNotes, /Existing legacy title\/slug retained/);
   assert.equal(a.publishedDate || '', ''); assert.ok(a.coverAlt); assert.ok(articleRedirects(records).some(rule => rule.destination === articlePath(a)));
 });
-test('in-preparation topics visibly disclose missing text, hide unfinished edits and have no Article schema or legacy redirect', () => {
+test('retired preparation status cannot bypass the private-draft decision', () => {
   const a=structuredClone(records.find(a=>a.sourceStatus==='missing'));
   a.publicationStatus='in-preparation';
   a.body='UNFINISHED-EDITOR-TEXT'; a.summary='UNREVIEWED-SUMMARY';
-  const {articlePage,articleCard}=require('../src/pages-articles'), html=articlePage(a), card=articleCard(a);
-  assert.match(html,/In preparation/); assert.match(html,/<meta name="robots" content="noindex">/);
-  assert.doesNotMatch(html,/UNFINISHED-EDITOR-TEXT|UNREVIEWED-SUMMARY|"@type":"Article"/);
-  assert.match(card,/In preparation/); assert.doesNotMatch(card,/UNREVIEWED-SUMMARY/);
-  assert.match(html,/Back to Insights/);
-  const all=copy(); Object.assign(all.find(x=>x.wpId===a.wpId),a); assert.deepEqual(validateArticles(all),[]);
+  const all=copy(); Object.assign(all.find(x=>x.wpId===a.wpId),a);
+  assert.ok(validateArticles(all).some(error=>error.includes('invalid publication status')));
+  assert.throws(()=>visibleArticles(all),/invalid publication status/);
 });
 test('content branch explicitly disables Vercel Git deployments while production release stays gated', () => {
   const config = require('../vercel.json'); assert.equal(config.git.deploymentEnabled.content, false);
@@ -102,6 +99,7 @@ test('CMS exposes Markdown, editable metadata and dedicated infographic fields w
   const field = name => collection.fields.find(f => f.name === name);
   assert.equal(field('body').type, 'rich-text'); assert.equal(field('body').options.format, 'markdown');
   assert.equal(field('body').options.media, 'insights_images'); assert.ok(!field('slug').readonly);
+  assert.deepEqual(field('publicationStatus').values, ['draft', 'published']);
   for (const name of ['title', 'slug', 'summary', 'category', 'publicationStatus', 'coverImage', 'coverAlt', 'coverCaption', 'infographics']) assert.ok(field(name));
   assert.equal(field('approvedContentSha256').readonly, true); assert.equal(field('wpId').optional, true);
   const media = schema.media.find(m => m.name === 'insights_images'); assert.equal(media.input, 'assets/insights'); assert.deepEqual(media.extensions, ['png', 'webp']);

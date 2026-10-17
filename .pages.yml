@@ -3877,9 +3877,9 @@ content:
             label: "Publication status"
             type: select
             required: true
-            description: "Keep the twelve missing legacy bodies as private drafts until complete and owner-approved. In-preparation shows a clearly labelled topic page; its unfinished body is hidden, noindexed and excluded from the sitemap and legacy redirects. Published requires complete approved content."
+            description: "Draft remains private. Published requires complete content and approval of this exact revision. Keep the twelve missing legacy bodies as drafts until written and owner-approved."
             options:
-              values: ["draft", "in-preparation", "published"]
+              values: ["draft", "published"]
           - name: contentReadiness
             label: "Writing progress"
             type: select
