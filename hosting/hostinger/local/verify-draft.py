@@ -1,5 +1,6 @@
 """Actual HTTP against cached local Apache/PHP; loopback only, no provider credentials."""
 import argparse, hashlib, json, os, pathlib, socket, subprocess, tempfile, time, urllib.request, urllib.error
+from article_http_policy import article_expectation, preparation_html_is_safe
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--document-root', required=True)
@@ -10,7 +11,7 @@ args = parser.parse_args()
 repo = pathlib.Path(__file__).resolve().parents[3]
 document = pathlib.Path(args.document_root).resolve()
 output = pathlib.Path(args.evidence_output).resolve()
-allowed = [repo / 'docs/local-preparation-20261017', repo / 'docs/articles-preservation-20261017']
+allowed = [repo / 'docs/local-preparation-20261017', repo / 'docs/articles-preservation-20261017', repo / 'docs/phased-launch-20261018']
 assert any(document.is_relative_to(folder) for folder in allowed) and document.is_dir()
 assert any(output.is_relative_to(folder) for folder in allowed) and not output.exists()
 runtime = pathlib.Path.home() / '.cache/ip3-hostinger-poc-runtime/root'
@@ -106,10 +107,19 @@ with tempfile.TemporaryDirectory(prefix='ip3-http-draft-') as temp:
         articles = [json.loads(file.read_text()) for file in (repo/'content/articles').glob('*.json')]
         for article in articles:
             canonical = '/insights/' + article['slug']
+            expected = article_expectation(article)
+            status, _, body = request(canonical)
+            check('article-visibility:' + article['slug'], status == expected['page_status'], status=status)
+            if expected['preparation']:
+                check('article-preparation-metadata:' + article['slug'], preparation_html_is_safe(body))
             if article['publicationStatus'] != 'published':
-                status, _, _ = request(canonical)
-                check('draft-unpublished:' + article['wpId'], status == 404, status=status)
+                if article.get('wpId'):
+                    for root_path in ['/', '/index.php', '/index.html']:
+                        status, _, _ = request(root_path + '?p=' + article['wpId'])
+                        check('unpublished-legacy:' + article['wpId'] + ':' + root_path, status == expected['legacy_status'], status=status)
                 continue
+            if not article.get('wpId'):
+                continue  # New owner-written articles have no legacy WordPress selector.
             for root_path in ['/', '/index.php', '/index.html']:
                 route = root_path + '?utm_source=local&p=' + article['wpId']
                 status, headers, _ = request(route)
@@ -119,10 +129,10 @@ with tempfile.TemporaryDirectory(prefix='ip3-http-draft-') as temp:
                 check('article-alias:' + canonical + suffix, status == 308 and headers.get('location') == base + canonical, status=status)
             article_id = article['wpId']
             for route in [f'/?p={article_id}&p={article_id}', f'/?p={article_id}&p', f'/?p={article_id}&page_id=6281',
-                          f'/?p={article_id}&s', f'/?P={article_id}', f'/?%70={article_id}', '/?p=%31'+article_id[1:], canonical+'?p='+article_id]:
+                          f'/?p={article_id}&s', f'/?P={article_id}', f'/?%70={article_id}', '/?p=%'+format(ord(article_id[0]),'02X')+article_id[1:], canonical+'?p='+article_id]:
                 status, _, body = request(route)
                 check('article-selector-denied:' + route, status == 404 and body == (document/'404.html').read_bytes(), status=status)
-        for route in ['/?page_id=6281&page_id=6281', '/?page_id=6281&p=3355', '/?p%61ge_id=6281', '/?page_id', '/?author=3', '/?cat=105', '/index.html?p=3355', '/unknown-ip3-page']:
+        for route in ['/?page_id=6281&page_id=6281', '/?page_id=6281&p=3355', '/?p%61ge_id=6281', '/?page_id', '/?author=3', '/?cat=105', '/index.html?p=999999999', '/unknown-ip3-page']:
             status, _, body = request(route)
             check('unresolved:' + route, status == 404 and body == (document/'404.html').read_bytes(), status=status)
         for route in ['/.env', '/.git/config', '/api/contact-lib.php', '/wp-config.php']:
