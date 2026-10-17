@@ -127,6 +127,22 @@ test('existing logo density suffixes and image names remain allowed without path
   assert.throws(() => safeRelative('assets/img/../private.png'), /Unsafe/);
 });
 
+test('Insights PNG and WebP media package safely; executable and unsupported media fail closed', t => {
+  const f = fixture(t);
+  f.write('assets/insights/3355-cover.webp', 'image');
+  f.write('assets/insights/figures/finance-chart.png', 'image');
+  const plan = planRelease(f.options);
+  assert.equal(plan.manifest.files.filter(x => x.path.startsWith('assets/insights/')).length, 2);
+  const output = writeLocalPackage(plan, f.root);
+  assert.equal(verifyLocalPackage(output, plan.manifestSha256).verified, true);
+  for (const name of ['payload.php', 'unreviewed.svg', 'image.jpg']) {
+    f.write('assets/insights/' + name, 'unsafe');
+    assert.throws(() => planRelease(f.options), /Unexpected public file/);
+    fs.unlinkSync(path.join(f.dist, 'assets/insights', name));
+  }
+  assert.throws(() => safeRelative('assets/insights/../private.webp'), /Unsafe/);
+});
+
 test('verified article identities determine exact release page count and missing/extra routes fail closed', t => {
   const f = fixture(t), articleSlugs = ['verified-article-one', 'verified-article-two'];
   for (const slug of articleSlugs) f.write('insights/' + slug + '.html', '<!doctype html><title>Full article</title>');

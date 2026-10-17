@@ -41,7 +41,7 @@ function scan(root, expectedPages, overlay = false, hostinger = false) {
       const hostingerAllowed = hostinger && ['.htaccess','api/contact.php','api/contact-lib.php','hostinger-build.json'].includes(relative);
       const allowed = overlay
         ? relative === '.htaccess'
-        : hostingerAllowed || expectedPages.includes(relative) || ['build.json','robots.txt','sitemap.xml','site.webmanifest'].includes(relative) || /^assets\/(?:img|video|logo|vendor|css|js)\/[a-zA-Z0-9_./ @()-]+\.(?:webp|jpg|jpeg|png|svg|ico|mp4|webm|woff2?|ttf|otf|css|js|txt)$/i.test(relative);
+        : hostingerAllowed || expectedPages.includes(relative) || ['build.json','robots.txt','sitemap.xml','site.webmanifest'].includes(relative) || /^assets\/insights\/(?:[a-zA-Z0-9_-]+\/)*[a-zA-Z0-9_.-]+\.(?:png|webp)$/i.test(relative) || /^assets\/(?:img|video|logo|vendor|css|js)\/[a-zA-Z0-9_./ @()-]+\.(?:webp|jpg|jpeg|png|svg|ico|mp4|webm|woff2?|ttf|otf|css|js|txt)$/i.test(relative);
       if (!allowed) reject('Unexpected public file: ' + relative);
       const bytes = fs.readFileSync(file);
       // Conservative leak screening, not a replacement for repository secret review.
