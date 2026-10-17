@@ -1,10 +1,12 @@
-# Insights CMS — লেখার সহজ নির্দেশিকা
+# Insights CMS — writing and phased publication
+
+**18 October phased-launch update:** The owner now authorizes 4 complete texts plus 12 public In preparation topic pages. This supersedes earlier instructions below to keep all16 drafts or finish all16 before launch. In-preparation pages hide unfinished body/media, carry noindex, stay out of sitemap and receive no legacy redirects. All16 are listed in Insights. Publication configuration in GitHub does not prove a live Hostinger release.
 
 18 October 2026. **This configuration is prepared for GitHub’s content branch.** Keep every article draft. Hosted editor/save/review UAT is still required; a successful repository check is not publication approval.
 
 **১. কোথায় লিখবেন / Open the right branch**
 
-Sign into [Pages CMS](https://app.pagescms.org/) with your own GitHub session. Choose the IP3 repository and **content** branch. Open **Engagements & insights → Insights — full articles & source review**. Confirm the branch before saving. Do not work directly on main. The content branch disables Vercel Git deployments. No Hostinger upload workflow is enabled. This configuration does not itself enforce branch choice; actual GitHub review protection remains a launch gate.
+Sign into [Pages CMS](https://app.pagescms.org/) with your own GitHub session. Choose the IP3 repository and **content** branch. Open **Engagements & insights → full articles & source review**. Confirm the branch before saving. Do not work directly on main. The content branch disables Vercel Git deployments. No Hostinger upload workflow is enabled. This configuration does not itself enforce branch choice; actual GitHub review protection remains a launch gate.
 
 **২. Existing 16 articles**
 

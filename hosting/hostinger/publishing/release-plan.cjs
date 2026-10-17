@@ -72,7 +72,7 @@ function planRelease({ dist, commit, sectorSlugs, articleSlugs = [], overlay = n
   if (new Set(files.map(x => x.path.toLowerCase())).size !== files.length) reject('Duplicate or case-colliding path');
   if (remoteTarget !== null && !new RegExp('^/home/u[0-9]+/ip3-static-releases/' + commit + '$').test(remoteTarget)) reject('Only a non-public immutable release path may be proposed');
   const publicFiles = files.map(({ source, ...rest }) => rest);
-  const manifest = { version: 3, commit, pageCount: expectedPages.length, articleSlugs, articlePreservationComplete: articleSlugs.length === 16, sourceHash: build.sourceHash || null,
+  const manifest = { version: 3, commit, pageCount: expectedPages.length, articleSlugs, articlePreservationComplete: build.articlePreservationComplete === true, preparationArticleSlugs: build.preparationArticleSlugs || [], sourceHash: build.sourceHash || null,
     sourceDirty: build.sourceDirty ?? null, reproducibleClock: build.reproducibleClock === true,
     totalBytes: files.reduce((n,x) => n + x.bytes, 0), files: publicFiles };
   return { manifest, manifestSha256: sha256(JSON.stringify(manifest)), remoteTarget, draft: true,

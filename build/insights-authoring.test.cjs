@@ -1,17 +1,18 @@
 'use strict';
 const test = require('node:test'), assert = require('node:assert/strict');
 const fs = require('node:fs'), os = require('node:os'), path = require('node:path');
-const { loadArticles, validateArticles, publishedArticles, articleRedirects, articlePath, contentApprovalDigest } = require('../cms/articles');
+const { loadArticles, validateArticles, publishedArticles, visibleArticles, articleRedirects, articlePath, contentApprovalDigest } = require('../cms/articles');
 const { blocksToMarkdown, parseMarkdown, renderMarkdown, unescape } = require('../cms/article-markdown');
-const records = loadArticles(), copy = () => structuredClone(records);
+const records = loadArticles(), copy = () => structuredClone(records).map(a => ({...a, publicationStatus:'draft', approvalStatus:'pending', approvedContentSha256:''}));
 const approve = a => { a.publicationStatus = 'published'; a.contentReadiness = 'ready-for-review'; a.approvalStatus = 'approved'; a.approvedContentSha256 = contentApprovalDigest(a); return a; };
-test('actual repository has 16 drafts, four complete texts, 12 owner-writing tasks and no active article redirects', () => {
+test('owner-authorized phased release exposes four complete articles and twelve honest preparation topics', () => {
   assert.deepEqual(validateArticles(records), []); assert.equal(records.length, 16);
   assert.equal(records.filter(a => a.sourceStatus === 'verified').length, 3);
   assert.equal(records.filter(a => a.contentReadiness === 'ready-for-review').length, 4);
   assert.equal(records.filter(a => a.contentReadiness === 'needs-owner-content').length, 12);
-  assert.equal(records.filter(a => a.approvalStatus === 'pending').length, 16);
-  assert.deepEqual(publishedArticles(records), []); assert.deepEqual(articleRedirects(records), []);
+  assert.equal(records.filter(a => a.approvalStatus === 'pending').length, 12);
+  assert.equal(publishedArticles(records).length, 4); assert.equal(visibleArticles(records).length,16);
+  for(const a of records.filter(a=>a.publicationStatus==='in-preparation')) assert.ok(!articleRedirects(records).some(r=>r.destination===articlePath(a)));
 });
 test('Markdown conversion retains complete source text and the BMDF mismatch/owner title decision', () => {
   const compact = text => text.replace(/\s/g, '');
@@ -23,7 +24,7 @@ test('Markdown conversion retains complete source text and the BMDF mismatch/own
   assert.match(a.reviewNotes, /Title mismatch explicitly recorded/);
   assert.equal(a.sourceTitle, 'Urban Planning for Resilient Infrastructure');
   assert.equal(a.title, 'From Donor‑Dependent Projects to Sustainable Urban Finance');
-  assert.equal(a.publishedDate, ''); assert.equal(a.approvalStatus, 'pending');
+  assert.equal(a.publishedDate, ''); assert.equal(a.approvalStatus, 'approved');
 });
 test('new and existing drafts can be authored without manufactured legacy IDs, authors, dates or source URLs', () => {
   const changed = copy(); changed[0].slug = 'edited-draft-slug'; changed[0].title = 'Draft editing test'; changed[0].body += '\n\nOwner edit pending review.';
@@ -72,14 +73,24 @@ test('cover, infographic and Markdown image paths/alt/captions are validated and
   assert.ok(validateArticles(changed, temp).some(e => e.includes('exact content')));
   fs.writeFileSync(path.join(temp, 'assets/insights/test.png'), 'not an image'); assert.ok(validateArticles(changed, temp).some(e => e.includes('bytes do not match')));
 });
-test('owner kit for 3355 remains a complete draft with its caveats and unchanged legacy identity', () => {
+test('owner kit for 3355 retains its caveats and legacy identity under the explicit phased publication instruction', () => {
   const a = records.find(a => a.wpId === '3355');
-  assert.equal(a.sourceStatus, 'owner-written'); assert.equal(a.publicationStatus, 'draft'); assert.equal(a.approvalStatus, 'pending');
+  assert.equal(a.sourceStatus, 'owner-written'); assert.equal(a.publicationStatus, 'published'); assert.equal(a.approvalStatus, 'approved');
   assert.equal(a.title, 'Enhancing Environmental Compliance and Performance in Bangladesh');
   assert.equal(a.slug, 'enhancing-environmental-compliance-and-performance-in-bangladesh');
   assert.ok(a.body.length > 20000); assert.match(a.body, /Greener exports/); assert.match(a.body, /illustrative/i); assert.match(a.body, /unverified/i);
   assert.match(a.body, /https:\/\/doi\.org\//); assert.match(a.reviewNotes, /Existing legacy title\/slug retained/);
-  assert.equal(a.publishedDate, ''); assert.ok(a.coverAlt); assert.ok(!articleRedirects(records).some(rule => rule.destination === articlePath(a)));
+  assert.equal(a.publishedDate || '', ''); assert.ok(a.coverAlt); assert.ok(articleRedirects(records).some(rule => rule.destination === articlePath(a)));
+});
+test('in-preparation topics visibly disclose missing text, hide unfinished edits and have no Article schema or legacy redirect', () => {
+  const a=structuredClone(records.find(a=>a.publicationStatus==='in-preparation'));
+  a.body='UNFINISHED-EDITOR-TEXT'; a.summary='UNREVIEWED-SUMMARY';
+  const {articlePage,articleCard}=require('../src/pages-articles'), html=articlePage(a), card=articleCard(a);
+  assert.match(html,/In preparation/); assert.match(html,/<meta name="robots" content="noindex">/);
+  assert.doesNotMatch(html,/UNFINISHED-EDITOR-TEXT|UNREVIEWED-SUMMARY|"@type":"Article"/);
+  assert.match(card,/In preparation/); assert.doesNotMatch(card,/UNREVIEWED-SUMMARY/);
+  assert.match(html,/Back to Insights/);
+  const all=copy(); Object.assign(all.find(x=>x.wpId===a.wpId),a); assert.deepEqual(validateArticles(all),[]);
 });
 test('content branch explicitly disables Vercel Git deployments while production release stays gated', () => {
   const config = require('../vercel.json'); assert.equal(config.git.deploymentEnabled.content, false);

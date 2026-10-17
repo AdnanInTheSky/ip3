@@ -89,9 +89,11 @@ test('base pages plus verified articles reconcile with canonical sitemap and exc
     fs.mkdirSync(path.dirname(file), {recursive:true}); fs.writeFileSync(file, '<!doctype html>');
   }
   const origin = require('../../content/site.json').url;
-  const sitemap = routes.filter(r => r !== '/404').map(r => '<url><loc>' + origin + r + '</loc></url>').join('');
+  const preparing = new Set(articleRecords.filter(a=>a.publicationStatus==='in-preparation').map(a=>'/insights/'+a.slug));
+  const indexable = routes.filter(r => r !== '/404' && !preparing.has(r));
+  const sitemap = indexable.map(r => '<url><loc>' + origin + r + '</loc></url>').join('');
   fs.writeFileSync(path.join(root, 'sitemap.xml'), '<urlset>'+sitemap+'</urlset>');
-  assert.equal(reconcileSite(root).sitemapUrls, routes.length - 1);
+  assert.equal(reconcileSite(root).sitemapUrls, indexable.length);
   fs.writeFileSync(path.join(root, 'sitemap.xml'), '<urlset>'+sitemap.replace('<url><loc>' + origin + '/about</loc></url>', '')+'</urlset>');
   assert.throws(() => reconcileSite(root), /indexable base and published/);
   fs.writeFileSync(path.join(root, 'sitemap.xml'), '<urlset>'+sitemap+'<url><loc>' + origin + '/about</loc></url></urlset>');

@@ -18,9 +18,15 @@ function renderBody(blocks) {
   return html;
 }
 function articleCard(article) {
+  if (article.publicationStatus === 'in-preparation') return `<article class="ins-card article-card"><div class="ins-card__b"><span class="ins-card__t">In preparation</span><h3><a href="${articlePath(article)}">${esc(article.title)}</a></h3><p>The full article will be added after editorial review.</p></div></article>`;
   return `<article class="ins-card article-card">${article.coverImage ? `<img src="${esc(article.coverImage)}" alt="${esc(article.coverAlt)}" loading="lazy" decoding="async">` : ''}<div class="ins-card__b"><span class="ins-card__t">${esc(article.category)}</span><h3><a href="${articlePath(article)}">${esc(article.title)}</a></h3><p>${esc(article.summary)}</p></div></article>`;
 }
 function articlePage(article) {
+  if (article.publicationStatus === 'in-preparation') return page({
+    title: article.title, desc: 'This Insights article is in preparation. The full text will be added after editorial review.',
+    path: articlePath(article), noindex: true,
+    body: `<section class="section article-page"><div class="container article-reading"><nav aria-label="Breadcrumb"><a href="/insights">Insights</a></nav><p class="eyebrow">In preparation</p><h1>${esc(article.title)}</h1><p>This article is in preparation. The full text will be added after editorial review.</p><a class="btn btn--ghost" href="/insights">Back to Insights</a></div></section>`,
+  });
   const body = `<section class="section article-page"><div class="container article-reading">
     <nav aria-label="Breadcrumb"><a href="/insights">Insights</a></nav>
     <header><p class="eyebrow">${esc(article.category)}</p><h1>${esc(article.title)}</h1>${article.publishedDate ? `<p class="small"><time datetime="${esc(article.publishedDate)}">${esc(article.publishedDate)}</time></p>` : ''}</header>

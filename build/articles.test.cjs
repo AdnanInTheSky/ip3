@@ -31,7 +31,7 @@ test('missing text, changed identity/body, duplicate IDs/slugs and absent preser
 test('complete source content is preserved verbatim as text; drafts and attachment references stay out of publication', () => {
   const sources = require('../docs/articles-preservation-20261017/sources/public-articles.json');
   const compact = text => text.replace(/\s/g, '');
-  for (const article of publishedArticles(records)) {
+  for (const article of publishedArticles(records).filter(a => a.sourceStatus === 'verified')) {
     const source = sources.find(s => s.wpId === article.wpId);
     assert.equal(article.sourceTitle, source.title);
     assert.equal(article.title, registry.find(r => r.wpId === article.wpId).approvedTitle || source.title);
@@ -101,7 +101,7 @@ test('article renderer escapes text and hub links only published articles with a
   const { insights } = require('../src/pages-inner');
   assert.match(renderBody([{ kind: 'paragraph', text: '<img src=x onerror=alert(1)>' }]), /&lt;img/);
   const hub = insights();
-  for (const article of records) assert.equal(hub.includes('href="' + articlePath(article) + '"'), false);
+  for (const article of records) assert.equal(hub.includes('href="' + articlePath(article) + '"'), true);
   for (const article of publishedArticles(records)) {
     const html = articlePage(article);
     assert.match(html, /aria-label="Breadcrumb"/); assert.match(html, /Back to Insights/);

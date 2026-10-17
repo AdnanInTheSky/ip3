@@ -4,3 +4,4 @@ node_modules
 .vercel
 /dist/
 /.lighthouseci/
+/docs/phased-launch-20261018/

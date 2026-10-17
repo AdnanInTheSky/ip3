@@ -82,7 +82,8 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]));
 
   // 3. sitemap, robots, manifest
-  const urls = pages.map(([f]) => f).filter((f) => f !== '404.html').map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));
+  const preparing = new Set(D.articles.filter(a => a.publicationStatus === 'in-preparation').map(a => `insights/${a.slug}.html`));
+  const urls = pages.map(([f]) => f).filter((f) => f !== '404.html' && !preparing.has(f)).map((f) => (f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')));
   const today = timestamp.toISOString().slice(0, 10);
   write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${cfg.url}${u}</loc><lastmod>${today}</lastmod><priority>${u === '/' ? '1.0' : u.split('/').length > 2 ? '0.6' : '0.8'}</priority></url>`).join('\n')}\n</urlset>\n`);
   write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${cfg.url}/sitemap.xml\n`);
@@ -120,8 +121,9 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     pageCount: pages.length,
     sitemapUrlCount: urls.length,
     articleSlugs: D.articles.map(a => a.slug),
-    articlePreservationComplete: require('../cms/articles').registry.every(item => D.articles.some(a => a.wpId === item.wpId)),
-    excludedFromSitemap: [{ route: '/404', reason: 'Custom error document; not an indexable content page.' }],
+    preparationArticleSlugs: D.articles.filter(a => a.publicationStatus === 'in-preparation').map(a => a.slug),
+    articlePreservationComplete: require('../cms/articles').registry.every(item => D.articles.some(a => a.wpId === item.wpId && a.publicationStatus === 'published')),
+    excludedFromSitemap: [{ route: '/404', reason: 'Custom error document; not an indexable content page.' }, ...D.articles.filter(a => a.publicationStatus === 'in-preparation').map(a => ({ route: '/insights/' + a.slug, reason: 'In-preparation topic, not a completed article.' }))],
     validated: true,
   }, null, 2) + '\n');
 

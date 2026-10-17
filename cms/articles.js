@@ -53,7 +53,7 @@ function validateArticles(records, root = ROOT) {
     if (article.wpId) seen.add(article.wpId);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(article.slug || '') || slugs.has(article.slug)) reject(article, 'slug is invalid or duplicated');
     slugs.add(article.slug);
-    if (!['draft', 'published'].includes(article.publicationStatus)) reject(article, 'invalid publication status');
+    if (!['draft', 'in-preparation', 'published'].includes(article.publicationStatus)) reject(article, 'invalid publication status');
     if (!['missing', 'identity-review', 'verified', 'owner-written', undefined, ''].includes(article.sourceStatus)) reject(article, 'invalid source status');
     if (!['Article', 'Blog Post', 'Featured Article', 'Project Report'].includes(article.category)) reject(article, 'invalid article type');
     if (!article.title?.trim()) reject(article, 'title required');
@@ -89,6 +89,11 @@ function publishedArticles(records = loadArticles()) {
   if (errors.length) throw new Error(errors.join('\n'));
   return records.filter(a => a.publicationStatus === 'published').sort((a, b) => (a.wpId || a.slug).localeCompare(b.wpId || b.slug));
 }
+function visibleArticles(records = loadArticles()) {
+  const errors = validateArticles(records);
+  if (errors.length) throw new Error(errors.join('\n'));
+  return records.filter(a => ['published', 'in-preparation'].includes(a.publicationStatus)).sort((a,b) => (a.wpId || a.slug).localeCompare(b.wpId || b.slug));
+}
 function articleRedirects(records = loadArticles()) {
   return publishedArticles(records).filter(article => article.wpId).flatMap(article => {
     const legacy = registry.find(r => r.wpId === article.wpId);
@@ -98,4 +103,4 @@ function articleRedirects(records = loadArticles()) {
     ];
   });
 }
-module.exports = { registry, loadArticles, validateArticles, publishedArticles, articleRedirects, articlePath, bodyHash, contentApprovalDigest, imageErrors };
+module.exports = { registry, loadArticles, validateArticles, publishedArticles, visibleArticles, articleRedirects, articlePath, bodyHash, contentApprovalDigest, imageErrors };

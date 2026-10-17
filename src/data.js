@@ -7,7 +7,7 @@ const live = (list) => list.filter((x) => !x.hidden);
 const hero = C.file('home/hero');
 const engagements = live(C.file('engagements').items);
 const insightContent = C.file('insights');
-const articles = require('../cms/articles').publishedArticles(C.dir('articles'));
+const articles = require('../cms/articles').visibleArticles(C.dir('articles'));
 const pageNames = ['home', 'about', 'why', 'approach', 'capabilities', 'sectors', 'engagements', 'insights', 'people', 'contact', 'notfound'];
 const pageText = Object.fromEntries(pageNames.map((name) => [name, C.file(`page-text/${name}`)]));
 const headings = Object.fromEntries(Object.values(pageText).flatMap((page) => page.headings.map((item) => [item.slug, item])));

@@ -3874,12 +3874,12 @@ content:
             options:
               values: ["Article", "Blog Post", "Featured Article", "Project Report"]
           - name: publicationStatus
-            label: "Publication status — choose draft while writing"
+            label: "Publication status"
             type: select
             required: true
-            description: "Choose draft for new or edited work. Published requires complete content and approval of the exact current revision."
+            description: "Draft is private. In-preparation shows a clearly labelled topic page; its unfinished body is hidden, noindexed and excluded from the sitemap and legacy redirects. Published requires complete approved content."
             options:
-              values: ["draft", "published"]
+              values: ["draft", "in-preparation", "published"]
           - name: contentReadiness
             label: "Writing progress"
             type: select
