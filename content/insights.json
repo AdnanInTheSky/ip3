@@ -8,7 +8,8 @@
         "Sustainable Finance",
         "Bangladesh"
       ],
-      "image": "/assets/img/co2.webp"
+      "image": "/assets/img/co2.webp",
+      "legacyWpId": "17320"
     },
     {
       "type": "Research",
@@ -18,7 +19,8 @@
         "Education",
         "Data"
       ],
-      "image": "/assets/img/training-5.webp"
+      "image": "/assets/img/training-5.webp",
+      "legacyWpId": "7192"
     },
     {
       "type": "Analysis",
@@ -28,7 +30,8 @@
         "ESG",
         "Competitiveness"
       ],
-      "image": "/assets/img/smokestacks.webp"
+      "image": "/assets/img/smokestacks.webp",
+      "legacyWpId": "17298"
     },
     {
       "type": "Case study",
@@ -38,7 +41,8 @@
         "Municipal Finance",
         "Institutional Reform"
       ],
-      "image": "/assets/img/dhaka.webp"
+      "image": "/assets/img/dhaka.webp",
+      "legacyWpId": "8763"
     }
   ],
   "fieldStories": [

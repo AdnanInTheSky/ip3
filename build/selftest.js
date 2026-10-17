@@ -64,7 +64,7 @@ const root = path.join(temp, 'site');
 const contentSource = path.join(REPO, 'content');
 const contentTarget = path.join(root, 'content');
 fs.mkdirSync(root, { recursive: true });
-for (const rel of ['build/validate.js', 'build/build-all.js', 'cms/schema.js']) {
+for (const rel of ['build/validate.js', 'build/build-all.js', 'build/local-output.js', 'cms/schema.js']) {
   const target = path.join(root, rel); fs.mkdirSync(path.dirname(target), { recursive: true }); fs.copyFileSync(path.join(REPO, rel), target);
 }
 fs.cpSync(path.join(REPO, 'cms'), path.join(root, 'cms'), { recursive: true }); // schema.js requires cms/helpers.js and cms/capability-proof/
@@ -260,7 +260,7 @@ test('negative content/build safeguards', async (t) => {
   }
 });
 
-test('LF and CRLF source checkouts produce identical dist files apart from build time', (t) => {
+test('LF and CRLF source checkouts produce identical public payload apart from time and exact-source provenance', (t) => {
   const tempRoot = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-line-ending-selftest-'));
   t.after(() => fs.rmSync(tempRoot, { recursive: true, force: true }));
   const roots = { lf: path.join(tempRoot, 'lf'), crlf: path.join(tempRoot, 'crlf') };
@@ -269,6 +269,7 @@ test('LF and CRLF source checkouts produce identical dist files apart from build
     for (const rel of ['build', 'cms', 'src', 'content', 'assets']) {
       fs.cpSync(path.join(REPO, rel), path.join(root, rel), { recursive: true });
     }
+    for (const rel of ['package.json', 'package-lock.json', 'vercel.json', '.pages.yml']) fs.copyFileSync(path.join(REPO, rel), path.join(root, rel));
   }
 
   const sourceFiles = [];
@@ -305,6 +306,7 @@ test('LF and CRLF source checkouts produce identical dist files apart from build
           if (rel === 'build.json') {
             const stamp = JSON.parse(bytes.toString('utf8'));
             delete stamp.builtAt;
+            delete stamp.sourceHash;
             result[rel] = crypto.createHash('sha256').update(JSON.stringify(stamp)).digest('hex');
           } else result[rel] = crypto.createHash('sha256').update(bytes).digest('hex');
         }
@@ -314,6 +316,8 @@ test('LF and CRLF source checkouts produce identical dist files apart from build
   }
 
   assert.deepEqual(distHashes(roots.crlf), distHashes(roots.lf));
+  assert.notEqual(JSON.parse(fs.readFileSync(path.join(roots.crlf, 'dist/build.json'))).sourceHash,
+    JSON.parse(fs.readFileSync(path.join(roots.lf, 'dist/build.json'))).sourceHash, 'exact source hashes distinguish newline bytes');
   for (const root of Object.values(roots)) {
     assert.doesNotMatch(fs.readFileSync(path.join(root, 'dist', 'contact.html'), 'utf8'), /data-contact-api/);
   }

@@ -38,15 +38,16 @@ async function openContentPr({ token, repo, head, checkedSha, fetchImpl = fetch,
     return { status: 'unchanged' };
   }
 
-  const changedContent = comparison.files.filter((file) => file.filename.startsWith('content/')).map((file) => `- \`${file.filename}\` (${file.status})`);
+  const changedContent = comparison.files.filter((file) => file.filename.startsWith('content/') || file.filename.startsWith('assets/insights/')).map((file) => `- \`${file.filename}\` (${file.status})`);
   const changedList = changedContent.length ? changedContent.join('\n') : '- No files under `content/` (review the code changes shown in the PR).';
   const body = [
     'Pages CMS content changes are ready for review.',
     '',
-    'Changed content files:',
+    'Changed content and Insights media files:',
     changedList,
     '',
-    'Please inspect the Vercel Preview linked to this PR and the successful `check` run before merging.',
+    'Please inspect the approved preview evidence linked to this PR and the successful `check` run before merging.',
+    'A preview is not automatically available on Hostinger; record the authorized staging evidence or keep publication pending.',
     'This PR is opened only after the exact branch head passed the content check.',
     'Merge with **Create a merge commit** so the content and default-branch histories stay connected for the automatic sync.',
   ].join('\n');

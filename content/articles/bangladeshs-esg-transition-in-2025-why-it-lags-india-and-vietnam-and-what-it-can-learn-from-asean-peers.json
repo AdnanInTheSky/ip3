@@ -1,0 +1,50 @@
+{
+  "wpId": "17298",
+  "slug": "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+  "title": "Bangladesh’s ESG Transition in 2025: Why It Lags India and Vietnam — and What It Can Learn from ASEAN Peers",
+  "category": "Article",
+  "publicationStatus": "draft",
+  "sourceStatus": "verified",
+  "summary": "I assessed Bangladesh’s ESG transition relative to India and Vietnam over 2024–2025 using three comparable lenses—mandatory disclosure rules, real-economy clean-power penetration, and sustainable-finance depth—drawing metrics from a single harmonized dataset for electricity and regulator/market sources for finance and reporting.",
+  "body": "by Mohammad Syful Hoque\n\nI assessed Bangladesh’s ESG transition relative to India and Vietnam over 2024–2025 using three comparable lenses—mandatory disclosure rules, real\\-economy clean\\-power penetration, and sustainable\\-finance depth—drawing metrics from a single harmonized dataset for electricity and regulator/market sources for finance and reporting\\. What I find is that, Bangladesh lacks an exchange\\-level ESG mandate, relying instead on voluntary, GRI\\-aligned guidance; by contrast, India mandates BRSR \\(with “BRSR Core” assurance and value\\-chain KPIs\\) and Vietnam embeds sustainability disclosures in annual reports via MOF Circular 96/2020\\. In 2024 Bangladesh’s low\\-carbon electricity share was \\~2% \\(wind\\+solar \\~1\\.3%\\) versus \\~22% for India \\(\\~10% wind\\+solar\\) and \\~44% for Vietnam \\(\\~13% wind\\+solar\\), underscoring a substantive transition gap with direct implications for corporate emissions and export competitiveness\\. Sustainable\\-finance activity also diverged: Bangladeshi banks/NBFIs reported no investments in green bonds/sukuk/impact funds in Q2–Q4 2024, while Vietnam issued \\~VND 6,875\\.1 bn \\(\\~USD 0\\.27 bn\\) of verified green bonds and India’s aligned GSS\\+ market reached \\~USD 55\\.9 bn by end\\-2024, including a sovereign green curve\\. Although Bangladesh Bank issued IFRS S1/S2\\-based disclosure guidelines in December 2023, coverage is limited to banks and FIs and is not yet economy\\-wide\\. Overall, Bangladesh lags because mandates are lighter, clean\\-power penetration is lower, and sustainable\\-finance plumbing is thin; targeted listing rules with limited assurance, value\\-chain data rails, a sovereign green bond to anchor pricing, and bankable renewable\\-energy auctions/PPAs constitute near\\-term, high\\-leverage fixes\\.\n\n## What This Means\n\n- Higher cost of capital: Investors price uncertainty; lack of assurance and thin green benchmarks widens spreads\\.\n\n- Export risk: Buyers increasingly require auditable ESG data and renewable\\-powered production\\.\n\n- Weak project bankability: Without a sovereign green curve, taxonomy, and bankable PPAs, clean\\-power and industrial decarbonization deals struggle\\.",
+  "sourceTitle": "Bangladesh’s ESG Transition in 2025: Why It Lags India and Vietnam — and What It Can Learn from ASEAN Peers",
+  "sourceUrl": "https://ip3-bd.org/?p=17298",
+  "sourceObservedAt": "2026-10-17T17:46:13.527289+00:00",
+  "verifiedBodySha256": "302b1a26b0bccd404d83d83e39d600ca4680244d72e39919af3bdb11ad36a648",
+  "publishedDate": "2025-08-27",
+  "reviewNotes": "Full public article text captured and checked against the complete rendered content area; no attachment references found. Owner approved preserve-all disposition.",
+  "legacySourceBody": [
+    {
+      "kind": "paragraph",
+      "text": "by Mohammad Syful Hoque"
+    },
+    {
+      "kind": "paragraph",
+      "text": "I assessed Bangladesh’s ESG transition relative to India and Vietnam over 2024–2025 using three comparable lenses—mandatory disclosure rules, real-economy clean-power penetration, and sustainable-finance depth—drawing metrics from a single harmonized dataset for electricity and regulator/market sources for finance and reporting. What I find is that, Bangladesh lacks an exchange-level ESG mandate, relying instead on voluntary, GRI-aligned guidance; by contrast, India mandates BRSR (with “BRSR Core” assurance and value-chain KPIs) and Vietnam embeds sustainability disclosures in annual reports via MOF Circular 96/2020. In 2024 Bangladesh’s low-carbon electricity share was ~2% (wind+solar ~1.3%) versus ~22% for India (~10% wind+solar) and ~44% for Vietnam (~13% wind+solar), underscoring a substantive transition gap with direct implications for corporate emissions and export competitiveness. Sustainable-finance activity also diverged: Bangladeshi banks/NBFIs reported no investments in green bonds/sukuk/impact funds in Q2–Q4 2024, while Vietnam issued ~VND 6,875.1 bn (~USD 0.27 bn) of verified green bonds and India’s aligned GSS+ market reached ~USD 55.9 bn by end-2024, including a sovereign green curve. Although Bangladesh Bank issued IFRS S1/S2-based disclosure guidelines in December 2023, coverage is limited to banks and FIs and is not yet economy-wide. Overall, Bangladesh lags because mandates are lighter, clean-power penetration is lower, and sustainable-finance plumbing is thin; targeted listing rules with limited assurance, value-chain data rails, a sovereign green bond to anchor pricing, and bankable renewable-energy auctions/PPAs constitute near-term, high-leverage fixes."
+    },
+    {
+      "kind": "heading",
+      "text": "What This Means"
+    },
+    {
+      "kind": "list-item",
+      "text": "Higher cost of capital: Investors price uncertainty; lack of assurance and thin green benchmarks widens spreads."
+    },
+    {
+      "kind": "list-item",
+      "text": "Export risk: Buyers increasingly require auditable ESG data and renewable-powered production."
+    },
+    {
+      "kind": "list-item",
+      "text": "Weak project bankability: Without a sovereign green curve, taxonomy, and bankable PPAs, clean-power and industrial decarbonization deals struggle."
+    }
+  ],
+  "verifiedMarkdownSha256": "eab285558811feb9bba997b96f218d9c3237b027e93da6dc472fd297fca68a18",
+  "contentReadiness": "ready-for-review",
+  "approvalStatus": "pending",
+  "approvedContentSha256": "",
+  "coverImage": "",
+  "coverAlt": "",
+  "coverCaption": "",
+  "infographics": []
+}

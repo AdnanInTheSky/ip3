@@ -33,7 +33,7 @@ const groups = [
   { name: 'contact', label: 'Contact page & FAQs', items: ['page_text_contact', 'home_faq'] },
   { name: 'capabilities', label: 'Capabilities, assignments & proof', items: ['capabilities', 'capproof_hero', 'capproof_led', 'capproof_method', 'capproof_rows', 'capproof_browser', 'capproof_room', 'capproof_reel', 'proof', 'field_media'] },
   { name: 'sectors', label: 'Sectors & sector pages', items: ['sectors', 'sector_pages'] },
-  { name: 'work_insights', label: 'Engagements & insights', items: ['engagements', 'insights'] },
+  { name: 'work_insights', label: 'Engagements & insights', items: ['engagements', 'insights', 'articles'] },
   { name: 'people', label: 'People & founder profiles', items: ['people', 'founder'] },
   { name: 'about_approach', label: 'About IP3 & approach', items: ['about', 'why', 'approach_problem', 'approach_pathway', 'approach_standards', 'approach_orbit', 'approach_toolkit', 'approach_outcomes'] },
   { name: 'site_settings', label: 'Website settings · contact & navigation', items: ['site', 'navigation'] },
@@ -43,6 +43,7 @@ const groups = [
 module.exports = {
   groups,
   media: [
+    { name: 'insights_images', label: 'Insights — owned infographics', input: 'assets/insights', output: '/assets/insights', extensions: ['png', 'webp'] },
     { name: 'images', label: 'Photos', input: 'assets/img', output: '/assets/img', extensions: ['webp', 'jpg', 'jpeg', 'png'] },
     { name: 'videos', label: 'Videos', input: 'assets/video', output: '/assets/video', extensions: ['mp4', 'webm'] },
   ],
@@ -234,7 +235,7 @@ module.exports = {
       ], { summary: '{client} — {title}' }),
     ]),
     file('insights', '13 · Insights', 'content/insights.json', [
-      list('items', 'Articles', [hidden, str('type', 'Type'), str('title', 'Title'), text('text', 'Summary'), strs('tags', 'Tags'), image('image', 'Image')], { summary: '{title}' }),
+      list('items', 'Articles', [hidden, str('type', 'Type'), str('title', 'Title'), text('text', 'Summary'), strs('tags', 'Tags'), image('image', 'Image'), str('legacyWpId', 'Related legacy identity', { optional: true, readonly: true })], { summary: '{title}' }),
       list('fieldStories', 'Field video stories', [
         slug(), str('type', 'Category'), str('title', 'Story headline'), video('video', 'Video'), image('poster', 'Poster image'),
       ], { summary: '{title}' }),
@@ -250,6 +251,36 @@ module.exports = {
         strs('people', 'IP3 people credited', { optional: true, ref: 'people', hint: 'Person slugs from the People list, e.g. mohammad-syful-hoque.' }),
       ], { summary: '{year} — {title}', optional: true }),
     ]),
+    collection('articles', '13b · Insights — full articles & source review', 'content/articles', [
+      str('wpId', 'Legacy article ID (leave unchanged; blank for new articles)', { readonly: true, optional: true }),
+      slug('slug', 'Article URL slug', { hint: 'Set lowercase words joined by hyphens. Existing published URLs require reviewer approval before a change.' }),
+      str('title', 'Article title', { max: 240 }),
+      select('category', 'Category', ['Article', 'Blog Post', 'Featured Article', 'Project Report'], { hint: 'Use a more specific category only when supported by the source.' }),
+      select('publicationStatus', 'Publication status — choose draft while writing', ['draft', 'published'], { hint: 'Choose draft for new or edited work. Published requires complete content and approval of the exact current revision.' }),
+      select('contentReadiness', 'Writing progress', ['needs-owner-content', 'ready-for-review'], { hint: 'Choose needs-owner-content until the full article is written; ready-for-review requests review, not publication.' }),
+      select('approvalStatus', 'Content approval (reviewer managed)', ['pending', 'approved'], { readonly: true, optional: true }),
+      str('approvedContentSha256', 'Approved revision digest (reviewer managed)', { readonly: true, optional: true }),
+      select('sourceStatus', 'Source review (maintainer managed)', ['missing', 'identity-review', 'verified', 'owner-written'], { readonly: true, optional: true }),
+      text('summary', 'Sourced summary', { optional: true, max: 800 }),
+      { name: 'body', label: 'Full article — visual Markdown editor', type: 'rich-text', optional: true, hint: 'Use paragraphs, headings, bold/italic, lists, links and tables. Raw HTML is rejected. Insert an image on its own paragraph, provide alt text, and use Source mode for an optional Markdown image-title caption; or use the simpler Infographics fields below.', options: { format: 'markdown', media: 'insights_images', extensions: ['png', 'webp'], rename: 'safe', switcher: true } },
+      image('coverImage', 'Cover image (optional)', { optional: true, media: 'insights_images' }),
+      str('coverAlt', 'Cover image alternative text', { optional: true, hint: 'Required whenever a cover is selected. Describe what the image communicates.' }),
+      text('coverCaption', 'Cover image caption (optional)', { optional: true }),
+      list('infographics', 'Infographics — images shown after the article', [
+        image('image', 'Infographic PNG or WebP', { media: 'insights_images' }),
+        str('alt', 'Alternative text (required)'), text('caption', 'Caption (optional)', { optional: true }),
+      ], { optional: true, summary: '{alt}', hint: 'Upload only images you own or may publish. Every image needs alt text. Never paste WordPress attachment URLs.' }),
+      str('sourceTitle', 'Verified source title', { readonly: true, optional: true }),
+      str('sourceUrl', 'Public source URL', { readonly: true, optional: true }),
+      str('sourceObservedAt', 'Source observation time', { readonly: true, optional: true }),
+      str('verifiedBodySha256', 'Verified text digest', { optional: true, readonly: true }),
+      str('verifiedMarkdownSha256', 'Verified Markdown digest', { optional: true, readonly: true }),
+      list('legacySourceBody', 'Archived source text — provenance only', [str('kind', 'Original block kind'), text('text', 'Original text')], { optional: true, readonly: true, summary: '{kind}' }),
+      str('publishedDate', 'Publication date as sourced', { optional: true, readonly: true }),
+      text('omittedMediaLabels', 'Omitted illustration labels (source record)', { optional: true, readonly: true }),
+      text('mediaNote', 'Text-only edition note', { optional: true, readonly: true }),
+      text('reviewNotes', 'Editorial/source notes (not shown on website)', { optional: true }),
+    ], { primary: 'title', fields: ['title', 'publicationStatus', 'contentReadiness', 'approvalStatus'], sort: 'title' }),
     file('people', '14 · People — teams & profiles', 'content/people.json', [
       list('groups', 'Profile groups', [
         str('group', 'Group name'),

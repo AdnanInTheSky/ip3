@@ -31,14 +31,15 @@ function field(fields, name) {
   return undefined;
 }
 
-test('editor wording changes preserve the complete CMS content contract', () => {
+test('existing CMS contract is preserved alongside the approved article extension', () => {
   const contract = {
-    media: schema.media,
-    groups: schema.groups.map(({ name, items }) => ({ name, items })),
-    content: schema.content,
+    media: schema.media.filter(item => item.name !== 'insights_images'),
+    groups: schema.groups.map(({ name, items }) => ({ name, items: items.filter(item => item !== 'articles') })),
+    content: schema.content.filter(item => item.name !== 'articles').map(item => item.name !== 'insights' ? item : ({ ...item,
+      fields: item.fields.map(f => f.name !== 'items' ? f : ({ ...f, fields: f.fields.filter(child => child.name !== 'legacyWpId') })) })),
   };
   const actual = createHash('sha256').update(JSON.stringify(withoutEditorCopy(contract))).digest('hex');
-  assert.equal(actual, contractHash, 'Only labels, help text, summaries, and group display labels may change in this task');
+  assert.equal(actual, contractHash, 'The existing forms must retain their content contract');
 });
 
 test('common editing tasks have clear form, field, help, and collapsed-list labels', () => {
