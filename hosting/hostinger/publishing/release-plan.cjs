@@ -119,7 +119,7 @@ if (require.main === module) {
     if (args.some(x => !['--write-local','--hostinger'].includes(x))) reject('Only --hostinger and --write-local are supported; no remote or activation mode exists');
     const workspace = path.resolve(__dirname, '../../..');
     const sectorSlugs = JSON.parse(fs.readFileSync(path.join(workspace, 'content/sectors.json'))).items.map(x => x.slug);
-    const articleSlugs = require('../../../cms/articles').publishedArticles().map(a => a.slug);
+    const articleSlugs = require('../../../cms/articles').visibleArticles().map(a => a.slug);
     const build = JSON.parse(fs.readFileSync(path.join(workspace, 'dist/build.json')));
     const plan = planRelease({ dist: path.join(workspace, args.includes('--hostinger') ? 'hosting/hostinger/dist-hostinger' : 'dist'), commit: build.commit, sectorSlugs, articleSlugs, hostinger: args.includes('--hostinger') });
     const { files, ...summary } = plan;

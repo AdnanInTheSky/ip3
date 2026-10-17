@@ -49,7 +49,7 @@ function reconcileSite(dist) {
   }};
   walk(dist);
   const actual = html.map(f => f === 'index.html' ? '/' : '/' + f.replace(/\.html$/, '')).sort();
-  if (JSON.stringify(actual) !== JSON.stringify([...routes].sort())) throw new Error('Expected exactly the base routes plus source-verified published article routes');
+  if (JSON.stringify(actual) !== JSON.stringify([...routes].sort())) throw new Error('Expected exactly the base routes plus published and in-preparation article routes');
   const xml = fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8');
   const mapped = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => {
     const url = new URL(m[1]);
@@ -58,7 +58,7 @@ function reconcileSite(dist) {
   }).sort();
   const preparing = new Set(articleRecords.filter(a => a.publicationStatus === 'in-preparation').map(articlePath));
   if (JSON.stringify(mapped) !== JSON.stringify(routes.filter(r => r !== '/404' && !preparing.has(r)).sort())) throw new Error('Sitemap must contain exactly the indexable base and published article routes');
-  return { generatedPages: actual.length, sitemapUrls: mapped.length, excluded: [{ route: '/404', reason: 'Custom error document' }], routes: actual };
+  return { generatedPages: actual.length, sitemapUrls: mapped.length, excluded: [{ route: '/404', reason: 'Custom error document' }, ...[...preparing].sort().map(route => ({ route, reason: 'In preparation; noindex; unfinished body withheld' }))], routes: actual };
 }
 function legacyCases() {
   return inventory.rows.map(row => ({ url: row.legacy_url, path: row.legacy_path_and_query, action: row.action,

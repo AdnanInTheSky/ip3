@@ -94,6 +94,7 @@ test('base pages plus verified articles reconcile with canonical sitemap and exc
   const sitemap = indexable.map(r => '<url><loc>' + origin + r + '</loc></url>').join('');
   fs.writeFileSync(path.join(root, 'sitemap.xml'), '<urlset>'+sitemap+'</urlset>');
   assert.equal(reconcileSite(root).sitemapUrls, indexable.length);
+  assert.deepEqual(reconcileSite(root).excluded.map(x => x.route).sort(), ['/404', ...preparing].sort());
   fs.writeFileSync(path.join(root, 'sitemap.xml'), '<urlset>'+sitemap.replace('<url><loc>' + origin + '/about</loc></url>', '')+'</urlset>');
   assert.throws(() => reconcileSite(root), /indexable base and published/);
   fs.writeFileSync(path.join(root, 'sitemap.xml'), '<urlset>'+sitemap+'<url><loc>' + origin + '/about</loc></url></urlset>');
