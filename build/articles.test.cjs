@@ -101,11 +101,11 @@ test('article renderer escapes text and hub links only published articles with a
   const { insights } = require('../src/pages-inner');
   assert.match(renderBody([{ kind: 'paragraph', text: '<img src=x onerror=alert(1)>' }]), /&lt;img/);
   const hub = insights();
-  for (const article of records) assert.equal(hub.includes('href="' + articlePath(article) + '"'), true);
+  for (const article of records) assert.equal(hub.includes('href="' + articlePath(article) + '"'), article.publicationStatus === 'published');
   for (const article of publishedArticles(records)) {
     const html = articlePage(article);
     assert.match(html, /aria-label="Breadcrumb"/); assert.match(html, /Back to Insights/);
-    assert.ok(html.includes('rel="canonical" href="https://www.ip3-bd.org' + articlePath(article)));
+    assert.ok(html.includes('rel="canonical" href="https://ip3-bd.org' + articlePath(article)));
     assert.doesNotMatch(html, /\/wp-content\/uploads\//);
   }
 });

@@ -5,14 +5,15 @@ const { loadArticles, validateArticles, publishedArticles, visibleArticles, arti
 const { blocksToMarkdown, parseMarkdown, renderMarkdown, unescape } = require('../cms/article-markdown');
 const records = loadArticles(), copy = () => structuredClone(records).map(a => ({...a, publicationStatus:'draft', approvalStatus:'pending', approvedContentSha256:''}));
 const approve = a => { a.publicationStatus = 'published'; a.contentReadiness = 'ready-for-review'; a.approvalStatus = 'approved'; a.approvedContentSha256 = contentApprovalDigest(a); return a; };
-test('owner-authorized phased release exposes four complete articles and twelve honest preparation topics', () => {
+test('owner readiness decision exposes four complete articles and keeps twelve missing bodies as private drafts', () => {
   assert.deepEqual(validateArticles(records), []); assert.equal(records.length, 16);
   assert.equal(records.filter(a => a.sourceStatus === 'verified').length, 3);
   assert.equal(records.filter(a => a.contentReadiness === 'ready-for-review').length, 4);
   assert.equal(records.filter(a => a.contentReadiness === 'needs-owner-content').length, 12);
   assert.equal(records.filter(a => a.approvalStatus === 'pending').length, 12);
-  assert.equal(publishedArticles(records).length, 4); assert.equal(visibleArticles(records).length,16);
-  for(const a of records.filter(a=>a.publicationStatus==='in-preparation')) assert.ok(!articleRedirects(records).some(r=>r.destination===articlePath(a)));
+  assert.equal(publishedArticles(records).length, 4); assert.equal(visibleArticles(records).length,4);
+  assert.equal(records.filter(a=>a.publicationStatus==='draft').length,12);
+  for(const a of records.filter(a=>a.publicationStatus==='draft')) assert.ok(!articleRedirects(records).some(r=>r.destination===articlePath(a)));
 });
 test('Markdown conversion retains complete source text and the BMDF mismatch/owner title decision', () => {
   const compact = text => text.replace(/\s/g, '');
@@ -83,7 +84,8 @@ test('owner kit for 3355 retains its caveats and legacy identity under the expli
   assert.equal(a.publishedDate || '', ''); assert.ok(a.coverAlt); assert.ok(articleRedirects(records).some(rule => rule.destination === articlePath(a)));
 });
 test('in-preparation topics visibly disclose missing text, hide unfinished edits and have no Article schema or legacy redirect', () => {
-  const a=structuredClone(records.find(a=>a.publicationStatus==='in-preparation'));
+  const a=structuredClone(records.find(a=>a.sourceStatus==='missing'));
+  a.publicationStatus='in-preparation';
   a.body='UNFINISHED-EDITOR-TEXT'; a.summary='UNREVIEWED-SUMMARY';
   const {articlePage,articleCard}=require('../src/pages-articles'), html=articlePage(a), card=articleCard(a);
   assert.match(html,/In preparation/); assert.match(html,/<meta name="robots" content="noindex">/);

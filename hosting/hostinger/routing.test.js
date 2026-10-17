@@ -42,3 +42,15 @@ test('candidate legacy query rules are absent unless explicitly requested locall
 test('external redirect destinations are refused', () => {
   for(const destination of ['https://other.example/','//other.example/']) assert.throws(()=>generateHtaccess(routes,[{source:'/test',destination}]),/Unsupported/);
 });
+test('private drafts deny clean and stale HTML paths without shadowing a published article', () => {
+  const generated = generateHtaccess(routes, config.redirects, { privateArticleSlugs: ['unwritten-article'] });
+  const line = generated.split('\n').find(line => line.includes('^insights/unwritten-article'));
+  assert.ok(line.endsWith('- [R=404,L,NC]'));
+  const expression = new RegExp(line.split('"')[1], 'i');
+  for (const input of ['insights/unwritten-article', 'insights/unwritten-article/', 'insights/unwritten-article.html', 'insights/unwritten-article.html/extra']) assert.ok(expression.test(input));
+  assert.ok(!expression.test('insights/unwritten-article-extra'));
+  for (const slugs of [['../escape'], ['same', 'same'], ['about']]) {
+    const publicRoutes = slugs[0] === 'about' ? [...routes, '/insights/about'] : routes;
+    assert.throws(() => generateHtaccess(publicRoutes, config.redirects, { privateArticleSlugs: slugs }), /Private article slugs/);
+  }
+});

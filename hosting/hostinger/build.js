@@ -5,15 +5,18 @@ const crypto = require('node:crypto');
 const { spawnSync } = require('node:child_process');
 const { outputPath } = require('../../build/local-output');
 const { validateRedirects } = require('./redirect-policy.cjs');
-const { articleRedirects } = require('../../cms/articles');
+const { articleRedirects, loadArticles } = require('../../cms/articles');
 const ROOT = path.resolve(__dirname, '../..');
 const OUT = path.join(__dirname, 'dist-hostinger');
 const escape = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // Apache otherwise appends the inherited query after a literal fragment.
 const redirectDestination = (s) => s.includes('#') ? s.replace('#', '?%{QUERY_STRING}#') : s;
 
-function generateHtaccess(routes, redirects, { legacyPreview = false, articleRules = [] } = {}) {
+function generateHtaccess(routes, redirects, { legacyPreview = false, articleRules = [], privateArticleSlugs = [] } = {}) {
   validateRedirects(routes, redirects);
+  if (!Array.isArray(privateArticleSlugs) || new Set(privateArticleSlugs).size !== privateArticleSlugs.length ||
+      privateArticleSlugs.some(slug => typeof slug !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || routes.includes('/insights/' + slug)))
+    throw new Error('Private article slugs must be unique, safe and absent from public routes');
   const lines = [
     '# Generated Hostinger LOCAL proof of concept. Not deployed or approved for activation.',
     '# No cross-domain or HTTPS redirect is activated by this adapter.',
@@ -21,6 +24,8 @@ function generateHtaccess(routes, redirects, { legacyPreview = false, articleRul
     'RewriteEngine On',
     'RewriteRule "(^|/)\\.(?!well-known(?:/|$))" - [F,L]',
     'RewriteRule "^api/contact-lib\\.php$" - [F,L]',
+    // Deny stale HTML from an earlier staging/release without deleting retained files.
+    ...privateArticleSlugs.map(slug => `RewriteRule "^insights/${escape(slug)}(?:\\.html)?(?:/.*)?$" - [R=404,L,NC]`),
     'RewriteCond %{QUERY_STRING} (^|&)[^=&]*%[^=&]*=',
     'RewriteRule "^(?:index\\.(?:php|html))?$" - [R=404,L]',
   ];
@@ -100,7 +105,10 @@ function build({ legacyPreview = false, output } = {}) {
   const pages = walk(out).filter((f) => f.endsWith('.html'));
   const routes = pages.map((f) => f === 'index.html' ? '/' : '/' + f.slice(0,-5));
   const config = require(path.join(ROOT, 'vercel.json'));
-  fs.writeFileSync(path.join(out, '.htaccess'), generateHtaccess(routes, config.redirects, { legacyPreview, articleRules: articleRedirects() }));
+  fs.writeFileSync(path.join(out, '.htaccess'), generateHtaccess(routes, config.redirects, {
+    legacyPreview, articleRules: articleRedirects(),
+    privateArticleSlugs: loadArticles().filter(a => a.publicationStatus === 'draft').map(a => a.slug),
+  }));
   fs.mkdirSync(path.join(out, 'api'), { recursive: true });
   fs.copyFileSync(path.join(__dirname, 'contact/index.php'), path.join(out, 'api/contact.php'));
   fs.copyFileSync(path.join(__dirname, 'contact/handler.php'), path.join(out, 'api/contact-lib.php'));

@@ -256,7 +256,7 @@ module.exports = {
       slug('slug', 'Article URL slug', { hint: 'Set lowercase words joined by hyphens. Existing published URLs require reviewer approval before a change.' }),
       str('title', 'Article title', { max: 240 }),
       select('category', 'Category', ['Article', 'Blog Post', 'Featured Article', 'Project Report'], { hint: 'Use a more specific category only when supported by the source.' }),
-      select('publicationStatus', 'Publication status', ['draft', 'in-preparation', 'published'], { hint: 'Draft is private. In-preparation shows a clearly labelled topic page; its unfinished body is hidden, noindexed and excluded from the sitemap and legacy redirects. Published requires complete approved content.' }),
+      select('publicationStatus', 'Publication status', ['draft', 'in-preparation', 'published'], { hint: 'Keep the twelve missing legacy bodies as private drafts until complete and owner-approved. In-preparation shows a clearly labelled topic page; its unfinished body is hidden, noindexed and excluded from the sitemap and legacy redirects. Published requires complete approved content.' }),
       select('contentReadiness', 'Writing progress', ['needs-owner-content', 'ready-for-review'], { hint: 'Choose needs-owner-content until the full article is written; ready-for-review requests review, not publication.' }),
       select('approvalStatus', 'Content approval (reviewer managed)', ['pending', 'approved'], { readonly: true, optional: true }),
       str('approvedContentSha256', 'Approved revision digest (reviewer managed)', { readonly: true, optional: true }),
