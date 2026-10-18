@@ -1,0 +1,447 @@
+[
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "6281"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "6281"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/about",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "6624"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "6624"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "6770"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors/digital-government-data-dpi",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "6770"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors/digital-government-data-dpi",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7028"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7028"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7168"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors/education-skills-human-capital",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7168"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors/education-skills-human-capital",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7448"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#policy-economics-strategy",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7448"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#policy-economics-strategy",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7742"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#program-project-design",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "7742"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#program-project-design",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "8034"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#program-project-design",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "8034"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#program-project-design",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "8165"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#monitoring-evaluation-learning",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "8165"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/capabilities#monitoring-evaluation-learning",
+    "permanent": true
+  },
+  {
+    "source": "/",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "8242"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors/climate-energy-resilience",
+    "permanent": true
+  },
+  {
+    "source": "/index.php",
+    "has": [
+      {
+        "type": "query",
+        "key": "page_id",
+        "value": "8242"
+      }
+    ],
+    "missing": [
+      {
+        "type": "query",
+        "key": "p"
+      },
+      {
+        "type": "query",
+        "key": "paged"
+      }
+    ],
+    "destination": "/sectors/climate-energy-resilience",
+    "permanent": true
+  },
+  {
+    "source": "/frontpage-2",
+    "destination": "/",
+    "permanent": true
+  }
+]

@@ -16,7 +16,12 @@ function git(cwd, ...args) {
 
 function makeRepo(t, { content = true } = {}) {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'ip3-publishing-test-'));
-  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  t.after(() => {
+    const resolved = path.resolve(root);
+    assert.equal(path.dirname(resolved), path.resolve(os.tmpdir()));
+    assert.match(path.basename(resolved), /^ip3-publishing-test-/);
+    fs.rmSync(resolved, { recursive: true, force: true, maxRetries: 5, retryDelay: 200 });
+  });
   const remote = path.join(root, 'remote.git');
   const cwd = path.join(root, 'work');
   git(root, 'init', '--bare', '--initial-branch=main', remote);
@@ -143,7 +148,8 @@ test('open-content-pr ignores a stale successful check for an older branch head'
 
 test('open-content-pr opens or updates a content PR from local Git diff data', async (t) => {
   const { cwd } = makeRepo(t);
-  const checkedSha = commitOn(cwd, 'content', 'content/about.json', '{"title":"Editor update"}\n');
+  commitOn(cwd, 'content', 'content/about.json', '{"title":"Editor update"}\n');
+  const checkedSha = commitOn(cwd, 'content', 'assets/insights/editor-fixture.png', 'Synthetic PR-list fixture; not published.');
   git(cwd, 'fetch', 'origin');
   const mock = apiFetchForRepo({ cwd });
   const opened = await openContentPr({ token: TOKEN, repo: REPOSITORY, head: 'content', checkedSha, fetchImpl: mock.fetchImpl, log() {} });
@@ -152,7 +158,10 @@ test('open-content-pr opens or updates a content PR from local Git diff data', a
   const body = JSON.parse(post.options.body);
   assert.equal(body.head, 'content');
   assert.match(body.body, /content\/about\.json/);
+  assert.match(body.body, /assets\/insights\/editor-fixture\.png/);
   assert.match(body.body, /Create a merge commit/);
+  assert.match(body.body, /approved preview evidence/);
+  assert.doesNotMatch(body.body, /Vercel Preview/);
 
   const existing = [{ number: 7, html_url: 'https://github.com/owner/site/pull/7' }];
   const updateMock = apiFetchForRepo({ cwd, openPulls: existing });

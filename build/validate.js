@@ -6,6 +6,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 const schema = require('../cms/schema');
+const { validateArticles } = require('../cms/articles');
 const { editableSectionOrders, validateOrder } = require('../cms/section-order');
 const { validateHomeTestimonialsPlacement } = require('../cms/section-placement');
 
@@ -84,6 +85,7 @@ function run({ quiet = false } = {}) {
         if (f.ref) refs.push({ p, file: where.file, kind: f.ref, value: v });
         return;
       }
+      case 'rich-text': if (typeof v !== 'string') err(p, 'must be Markdown text'); return;
       case 'number': if (typeof v !== 'number' || !Number.isFinite(v)) err(p, 'must be a number'); return;
       case 'boolean': if (typeof v !== 'boolean') err(p, 'must be true or false'); return;
       case 'select': if (!f.values.includes(v)) err(p, `"${v}" is not one of ${f.values.join(', ')}`); return;
@@ -176,6 +178,9 @@ function run({ quiet = false } = {}) {
   try {
     validateHomeTestimonialsPlacement(data.section_placement?.homeTestimonials, sectionOrder.home, data.home_testimonials?.items);
   } catch (e) { err('homeTestimonials', e.message); }
+
+  for (const message of validateArticles(data.articles || [], ROOT)) { where.file = 'content/articles'; err('', message); }
+  const articleRoutes = new Set((data.articles || []).filter(a => a.publicationStatus === 'published').map(a => '/insights/' + a.slug));
 
   // cross-references between files
   const slugsOf = (list) => new Set((list || []).map((x) => x.slug));
@@ -271,7 +276,7 @@ function run({ quiet = false } = {}) {
     where.file = r.file;
     if (r.kind === 'route') {
       const [route, hash] = r.value.split('#');
-      const ok = ROUTES.includes(route) || (route.startsWith('/sectors/') && secSlugs.has(route.slice(9)) && !sectorItems.find((sector) => sector.slug === route.slice(9)).hidden);
+      const ok = ROUTES.includes(route) || articleRoutes.has(route) || (route.startsWith('/sectors/') && secSlugs.has(route.slice(9)) && !sectorItems.find((sector) => sector.slug === route.slice(9)).hidden);
       if (!ok) err(r.p, `link ${r.value} does not match any page`);
       else if (hash && route === '/capabilities' && !capSlugs.has(hash)) err(r.p, `link ${r.value}: no capability with slug "${hash}"`);
     } else if (!sets[r.kind].has(r.value)) err(r.p, `"${r.value}" is not an existing ${{ capabilities: 'capability', people: 'person', fieldphotos: 'meeting photo', proof: 'assignment' }[r.kind] || r.kind.replace(/s$/, '')} slug`);

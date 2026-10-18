@@ -99,6 +99,9 @@ function insights() {
   const pg = D.pages.insights;
   const t = D.pageText.insights;
   const pubs = D.publications;
+  const { articleCard } = require('./pages-articles');
+  // Legacy article summaries must not bypass the draft/publication gate.
+  const summaries = D.insights.filter(item => !item.legacyWpId);
   const order = ['Report', 'Journal article', 'Book chapter', 'Policy brief', 'Commentary'];
   const kinds = order.filter((k) => pubs.some((p) => p.kind === k));
   const plural = (k) => (k === 'Commentary' ? k : `${k}s`);
@@ -115,7 +118,8 @@ function insights() {
   const jsonld = pubs.length ? [{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: pubs.map((p, i) => ({ '@type': 'ListItem', position: i + 1, item: { '@type': p.kind === 'Commentary' ? 'Article' : 'ScholarlyArticle', name: p.title, datePublished: String(p.year), publisher: p.publisher, ...(p.href ? { url: p.href } : {}) } })) }] : [];
   const body = [
     phero({ crumbs: [breadcrumb('/insights')], h1: rich(pg.h1), lead: esc(pg.lead), bg: { type: 'image', src: '/assets/img/co2.webp' } }),
-    sec(`<div class="ins" data-stagger>${D.insights.map(insCard).join('')}</div>`),
+    ...(D.articles.length ? [sec(`<h2>Articles</h2><div class="ins article-grid">${D.articles.map(articleCard).join('')}</div>`, '', 'articles')] : []),
+    sec(`<h2>Research summaries</h2><div class="ins" data-stagger>${summaries.map(insCard).join('')}</div>`),
     publications,
     `<section class="section section--dark on-dark dark"><div class="container">${sectionHead('insights-field')}<div class="cards3" data-stagger>${D.fieldStories.map((story) => `<figure class="photo" style="aspect-ratio:4/5;border-radius:var(--r)"><video muted loop playsinline preload="none" poster="${story.poster}" data-lazyvideo><source data-src="${story.video}" type="${story.video.endsWith('.webm') ? 'video/webm' : 'video/mp4'}"></video><figcaption style="position:absolute;inset:auto 0 0 0;padding:24px;background:linear-gradient(0deg,rgba(14,12,11,.9),transparent)"><span class="eyebrow" style="font-size:.64rem">${esc(story.type)}</span><h3 style="margin-top:10px;color:#fff;font-size:1.3rem">${esc(story.title)}</h3></figcaption></figure>`).join('')}</div></div></section>`,
     cta('cta-insights'),
