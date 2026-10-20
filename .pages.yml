@@ -3071,6 +3071,12 @@ content:
                 label: "Verified photo of this assignment"
                 type: string
                 description: "Only where a banner or slide in the photo proves the assignment."
+              - name: thumb
+                label: "Card thumbnail (illustrative)"
+                type: image
+                description: "Decorative picture for the assignment card when there is no verified photo or matching engagement. It is not claimed to be from the assignment."
+                options:
+                  media: images
               - name: source
                 label: "Source line"
                 type: string

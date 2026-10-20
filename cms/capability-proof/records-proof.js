@@ -1,4 +1,4 @@
-const { str, text, list, obj, strs, select, hidden, slug, file } = require('../helpers');
+const { str, text, list, obj, strs, select, image, hidden, slug, file } = require('../helpers');
 
 // The documented assignments shown as proof on /capabilities. Facts are copied from the founder's signed CV
 // (via the portfolio record); nothing is inferred. Scope figures are scope, never outcomes.
@@ -26,6 +26,7 @@ module.exports = file('proof', '11 · Proof — documented assignments', 'conten
     strs('caps', 'Capabilities this assignment proves', { ref: 'capabilities', hint: 'First one is the primary capability.' }),
     str('engagement', 'Matching IP3 selected engagement', { optional: true, ref: 'engagements', hint: 'Only where the two records are the same assignment.' }),
     str('photo', 'Verified photo of this assignment', { optional: true, ref: 'fieldphotos', hint: 'Only where a banner or slide in the photo proves the assignment.' }),
+    image('thumb', 'Card thumbnail (illustrative)', { optional: true, hint: 'Decorative picture for the assignment card when there is no verified photo or matching engagement. It is not claimed to be from the assignment.' }),
     str('source', 'Source line', { max: 320 }),
     text('note', 'Caveat shown on the record', { optional: true, max: 320 }),
   ], { summary: '{ref} — {short}' }),

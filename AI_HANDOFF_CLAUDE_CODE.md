@@ -1,5 +1,11 @@
 # Media fill from FINAL WEBSITE PHOTOS (2026-10-20, branch `media-fill` from `sector-links`)
 
+## Update: /capabilities assignment cards now all show a photo
+
+- 32 of 37 assignment cards had a generated pattern with a client monogram. New optional proof field `thumb` (CMS: "Card thumbnail (illustrative)", `src/cap/util.js` thumb()) now holds a picture for each; the other 5 already had a verified photo or matching engagement. 0 monogram cards remain.
+- Pictures are in `assets/img/proof/` (1200x900 crops from the folder's real field photos, existing site photos, and some stock images chosen by topic). They are decorative (alt empty, no caption) and NOT claimed to be from the assignment. Replace any with real project photos via the `thumb` field; real verified photos still go through `photo` as before.
+- Stock/topic pictures used (provenance unconfirmed): early-warning, madrasah, TVET, primary, teacher, LDC meeting, ESMAP, country memo, green trade, services trade, clean-energy finance, cargo, petrochemical, steel, tree-puzzle (electricity reform).
+
 - Method: every folder image was perceptual-hashed against `assets/`; 38 were already on the site. Of the 13 unused videos, only `Educational Innovation.mp4` was already in `assets/video` (unreferenced).
 - Sector heroes (they had a still photo only): Education -> Educational Innovation; Governance -> Future-Ready Governance; Economic transformation -> "Untitled design" (green business/finance word film). Posters are frames from the films (`assets/img/poster-sector-*.webp`). Health still uses its photo: no health film in the folder.
 - Galleries (field photos from the same garment-factory/workshop series): Economic +5, Health +3, Governance +1. Captions/alt describe only what is visible.
