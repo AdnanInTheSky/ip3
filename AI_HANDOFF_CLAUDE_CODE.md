@@ -1,3 +1,21 @@
+# Media fill from FINAL WEBSITE PHOTOS (2026-10-20, branch `media-fill` from `sector-links`)
+
+## Update: /capabilities assignment cards now all show a photo
+
+- 32 of 37 assignment cards had a generated pattern with a client monogram. New optional proof field `thumb` (CMS: "Card thumbnail (illustrative)", `src/cap/util.js` thumb()) now holds a picture for each; the other 5 already had a verified photo or matching engagement. 0 monogram cards remain.
+- Pictures are in `assets/img/proof/` (1200x900 crops from the folder's real field photos, existing site photos, and some stock images chosen by topic). They are decorative (alt empty, no caption) and NOT claimed to be from the assignment. Replace any with real project photos via the `thumb` field; real verified photos still go through `photo` as before.
+- Stock/topic pictures used (provenance unconfirmed): early-warning, madrasah, TVET, primary, teacher, LDC meeting, ESMAP, country memo, green trade, services trade, clean-energy finance, cargo, petrochemical, steel, tree-puzzle (electricity reform).
+
+- Method: every folder image was perceptual-hashed against `assets/`; 38 were already on the site. Of the 13 unused videos, only `Educational Innovation.mp4` was already in `assets/video` (unreferenced).
+- Sector heroes (they had a still photo only): Education -> Educational Innovation; Governance -> Future-Ready Governance; Economic transformation -> "Untitled design" (green business/finance word film). Posters are frames from the films (`assets/img/poster-sector-*.webp`). Health still uses its photo: no health film in the folder.
+- Galleries (field photos from the same garment-factory/workshop series): Economic +5, Health +3, Governance +1. Captions/alt describe only what is visible.
+- /capabilities reel +2: About intro film (1:05) and the climate/ESG/circular title card.
+- Not used: design-mockup screenshots and collages, stock imagery (smokestacks, robots, landfill, wind turbines), close-up portraits, "News Coverage" template video, Green Economies (carries a third-party "UPPARE" watermark), Circular economy and iStock clips (stock footage), the ESG vertical video, HERO VIDEO.
+- NOT done, on purpose: the 3 articles without covers. Changing a cover changes the article's approved content digest, so each needs IP3 re-approval first.
+- Still unfilled: 6 people profiles without photos (nothing in the folder matches them).
+- Review: provenance/consent for the new field photos (workers visible); the About intro film is 10.4 MB (CI re-encodes above 8 MiB, `check` warns); Economic hero film is a text montage, replace it if IP3 prefers footage.
+- Verified: build, check, links, `npm test` (84), `test:hostinger` (36); browser: all new media URLs 200, governance hero plays, economic gallery has 8 items. Preview config `ml-main` (port 3540).
+
 # AI handoff — Sector links + Approach "what you receive" (2026-10-20, slice 2)
 
 - Worktree: `D:\CONTENT IP3 WEBSITE\NEW WEBSITE DESIGN\ip3-bd.org-sector-links`, branch `sector-links` from origin/main `ca7e83a`. Commit 1 is a copy of the uncommitted Mandate Finder work (slice 1, from the `mandate-finder` worktree, which was left untouched); commit 2 is this slice. Not pushed.

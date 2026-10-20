@@ -336,6 +336,30 @@
         "data-digital-responsible-ai",
         "monitoring-evaluation-learning"
       ]
+    },
+    {
+      "slug": "about-intro-film",
+      "src": "/assets/video/reel/about-intro-film.mp4",
+      "poster": "/assets/img/reel/about-intro-film.webp",
+      "title": "About IP3 introduction film",
+      "caption": "A 1-minute film that opens on the line ‘In an era of rapid digital and technological transformation’ over a robotic hand, then moves through animated arrows and a team photo under the word ‘our’.",
+      "runtime": "1:05",
+      "caps": [
+        "policy-economics-strategy",
+        "institutions-governance-delivery"
+      ]
+    },
+    {
+      "slug": "climate-esg-title-card",
+      "src": "/assets/video/reel/climate-esg-title-card.mp4",
+      "poster": "/assets/img/reel/climate-esg-title-card.webp",
+      "title": "Climate action, ESG strategy, biodiversity conservation and circular economy principles",
+      "caption": "An animated title card reading Climate Action, ESG Strategy, Biodiversity Conservation & Circular Economy Principles, beside a head made of recycled materials.",
+      "runtime": "0:05",
+      "caps": [
+        "development-finance",
+        "program-project-design"
+      ]
     }
   ]
 }

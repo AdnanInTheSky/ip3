@@ -71,7 +71,7 @@ function pillarDots(code, { decorative = false } = {}) {
 function thumb(p, { sizes = '(min-width:900px) 360px, 80vw', mono = true } = {}) {
   const ph = p.photo && photoBySlug[p.photo];
   const eng = p.engagement && engBySlug[p.engagement];
-  const src = ph ? ph.image : eng ? eng.image : '';
+  const src = ph ? ph.image : eng ? eng.image : p.thumb || '';
   if (src) {
     const dims = ph ? `width="${ph.w}" height="${ph.h}"` : 'width="1200" height="900"';
     return `<div class="cp-thumb" data-tone="${toneOf(p)}"><img src="${esc(src)}" ${dims} alt="" loading="lazy" decoding="async" sizes="${sizes}"${ph ? ` style="object-position:${focal(ph)}"` : ''}></div>`;
