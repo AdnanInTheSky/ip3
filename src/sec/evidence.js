@@ -1,7 +1,6 @@
 // On the record: the sector's documented assignments in a responsive evidence grid. Each card opens the full record
-// on /capabilities. Engagements already shown through their record are not repeated in the list underneath.
-const { D, T, esc, n2, head, recordsFor, engBySlug, L } = require('./util');
-const { engRow } = require('../pages-home');
+// on /capabilities. The sector's engagements are linked from the connected-work section (links.js).
+const { T, esc, n2, head, recordsFor, L } = require('./util');
 
 function card(p, i) {
   const scope = p.scope && p.scope.value ? `<span class="sx-card__scope"><b>${esc(p.scope.value)}</b> ${esc(p.scope.label)}</span>` : '';
@@ -19,11 +18,9 @@ function card(p, i) {
   </li>`;
 }
 
-function render({ s, pg }) {
+function render({ pg }) {
   const ev = pg.evidence;
   const recs = recordsFor(pg);
-  const shownEng = new Set(recs.map((p) => p.engagement).filter(Boolean));
-  const engs = (s.engagements || []).map((k) => engBySlug[k]).filter((e) => e && !shownEng.has(e.slug));
   const ledger = recs.length ? `
 <section class="sx-led section--paper" id="sx-evidence" data-sx-led aria-labelledby="sx-evidence-h">
   <div class="container sx-led__head">${head(ev, 'sx-evidence-h', { split: !!ev.lead })}<p class="sx-led__count"><b>${String(recs.length).padStart(2, '0')}</b> ${esc(T['sx-meta-records'])}</p></div>
@@ -31,8 +28,7 @@ function render({ s, pg }) {
     <ol class="sx-led__track" role="list" data-sx-led-track>${recs.map(card).join('')}</ol>
   </div>
 </section>` : '';
-  const related = engs.length ? `<section class="section section--paper sx-related" aria-label="${esc(D.headings['sector-related'].eyebrow)}"><div class="container">${L.sectionHead('sector-related')}<div class="eng">${engs.map(engRow).join('')}</div></div></section>` : '';
-  return ledger + related;
+  return ledger;
 }
 
 module.exports = { render };

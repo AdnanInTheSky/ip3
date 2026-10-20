@@ -1,9 +1,10 @@
 // Where we add value (the sector's focus areas) beside the capabilities applied — both from content/sectors.json.
 const { D, T, esc, plain, rich, n2, capBySlug, L } = require('./util');
+const { sectorCaps } = require('../pages-finder');
 
 function render({ s }) {
   const h = D.headings['sector-add-value'];
-  const caps = s.caps.map((k) => capBySlug[k]).filter(Boolean);
+  const caps = sectorCaps(s).map((k) => capBySlug[k]).filter(Boolean);
   return `
 <section class="section section--sand sx-exp" id="sx-expertise" aria-labelledby="sx-exp-h">
   <div class="container sx-exp__grid">

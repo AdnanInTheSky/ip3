@@ -12,7 +12,7 @@
     },
     {
       "slug": "sector-related",
-      "eyebrow": "Related engagements",
+      "eyebrow": "Related work",
       "title": "Selected <em>work in this sector.</em>"
     },
     {
@@ -177,6 +177,56 @@
       "slug": "sx-next-aria",
       "label": "Sector page — screen-reader name of the next-sector block",
       "text": "Next sector"
+    },
+    {
+      "slug": "sx-links-capabilities",
+      "label": "Sector page — related work: capabilities column heading",
+      "text": "Capabilities applied"
+    },
+    {
+      "slug": "sx-links-engagements",
+      "label": "Sector page — related work: engagements column heading",
+      "text": "Engagements"
+    },
+    {
+      "slug": "sx-links-insights",
+      "label": "Sector page — related work: articles column heading",
+      "text": "Published insights"
+    },
+    {
+      "slug": "sx-links-none-capabilities",
+      "label": "Sector page — related work: shown when no capability is linked",
+      "text": "No capability is linked to this sector yet."
+    },
+    {
+      "slug": "sx-links-none-engagements",
+      "label": "Sector page — related work: shown when no engagement is published for the sector",
+      "text": "No engagement in this sector is published on the site yet."
+    },
+    {
+      "slug": "sx-links-none-insights",
+      "label": "Sector page — related work: shown when no article is published for the sector",
+      "text": "No article on this sector is published yet."
+    },
+    {
+      "slug": "sx-links-all-capabilities",
+      "label": "Sector page — related work: link to all capabilities",
+      "text": "All capabilities"
+    },
+    {
+      "slug": "sx-links-all-engagements",
+      "label": "Sector page — related work: link to all engagements",
+      "text": "All engagements"
+    },
+    {
+      "slug": "sx-links-all-insights",
+      "label": "Sector page — related work: link to all insights",
+      "text": "All insights"
+    },
+    {
+      "slug": "sx-links-finder",
+      "label": "Sector page — related work: link to the Mandate Finder",
+      "text": "Find the right support for your mandate"
     }
   ]
 }

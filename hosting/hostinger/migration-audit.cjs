@@ -8,7 +8,7 @@ const aliases = require('../../vercel.json').redirects;
 const preview = require('./confirmed-legacy-preview.json');
 const sectors = require('../../content/sectors.json').items;
 const articleRecords = loadArticles(), published = publishedArticles(articleRecords), articleRules = articleRedirects(articleRecords);
-const routes = ['/', '/404', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/privacy', '/terms', ...sectors.map(s => '/sectors/' + s.slug), ...visibleArticles(articleRecords).map(articlePath)];
+const routes = ['/', '/404', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/find-support', '/privacy', '/terms', ...sectors.map(s => '/sectors/' + s.slug), ...visibleArticles(articleRecords).map(articlePath)];
 function inventoryOutcome(row, draft = []) {
   // robots.txt is a generated static crawl file, independently hash-checked by HTTP acceptance.
   if (row.legacy_path_and_query === '/robots.txt') return { status: 200 };

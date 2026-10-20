@@ -1,0 +1,38 @@
+{
+  "headings": [
+    {
+      "slug": "finder-step-sector",
+      "eyebrow": "Step 1 of 2",
+      "title": "Which sector is the challenge in?",
+      "lead": "Choose the area closest to the problem you are working on. Each option shows the challenge IP3 most often helps with there."
+    },
+    {
+      "slug": "finder-step-help",
+      "eyebrow": "Step 2 of 2",
+      "title": "What kind of help do you need?"
+    },
+    {
+      "slug": "finder-results",
+      "eyebrow": "Where to look next",
+      "title": "Relevant IP3 work for your <em>mandate.</em>",
+      "lead": "These links point to IP3's published capabilities, engagements and articles. They describe past and current work; they do not predict the outcome of a new assignment."
+    }
+  ],
+  "copy": [
+    { "slug": "help-diagnosis", "label": "Help type — diagnosis", "text": "Diagnosis — understand the problem and the options" },
+    { "slug": "help-design", "label": "Help type — project design", "text": "Project design — turn a concept into a fundable proposal" },
+    { "slug": "help-finance", "label": "Help type — finance", "text": "Finance — prepare an investable pipeline or finance structure" },
+    { "slug": "help-implementation", "label": "Help type — implementation", "text": "Implementation — make a policy or programme operational" },
+    { "slug": "help-evaluation", "label": "Help type — evaluation", "text": "Evaluation — measure a baseline, progress or impact" },
+    { "slug": "results-capabilities", "label": "Results — capabilities heading", "text": "Matching capabilities" },
+    { "slug": "results-engagements", "label": "Results — engagements heading", "text": "Related engagements" },
+    { "slug": "results-insights", "label": "Results — insights heading", "text": "Published insights" },
+    { "slug": "results-none", "label": "Results — nothing published yet", "text": "Nothing published for this combination yet. IP3 can still discuss it with you." },
+    { "slug": "results-empty", "label": "Results — before a choice is made", "text": "Choose a sector and a kind of help to see matching work." },
+    { "slug": "cta-contact", "label": "Continue to contact button", "text": "Discuss this mandate" },
+    { "slug": "cta-note", "label": "Note under the contact button", "text": "Your choices are added to the contact form as a starting point. Nothing is saved or sent until you send the email from your own email app." },
+    { "slug": "cta-reset", "label": "Start again button", "text": "Start again" },
+    { "slug": "noscript", "label": "Message when JavaScript is off", "text": "The finder needs JavaScript. You can browse Capabilities, Sectors and Engagements directly, or contact IP3." },
+    { "slug": "contact-prefill", "label": "Message added to the contact form", "text": "I found IP3 through the Mandate Finder. Sector: {{sector}}. Help needed: {{help}}. A short description of what we are trying to change:" }
+  ]
+}

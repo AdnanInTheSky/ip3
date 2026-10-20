@@ -1,6 +1,6 @@
 // /sectors/<slug> — page assembly for the eight sector pages. Each section is a module in this folder that returns an HTML string.
 // Section order: aperture hero → statement → signature scroll scene → practice index → who we serve → context → field gallery →
-// on the record (+ related engagements) → where we add value / capabilities → closing → next-sector portal → CTA.
+// on the record → where we add value / capabilities → connected work (capabilities, engagements, articles) → closing → next-sector portal → CTA.
 // The long-form words live in content/sector-pages/<slug>.json; a sector without that file falls back to hero, expertise and CTA.
 const { D, esc } = require('./util');
 const { page, cta } = require('../layout');
@@ -11,6 +11,7 @@ const { practice, audiences, context, closing } = require('./practice');
 const gallery = require('./gallery');
 const evidence = require('./evidence');
 const expertise = require('./expertise');
+const links = require('./links');
 const next = require('./next');
 
 function sectorPage(s, idx) {
@@ -26,6 +27,7 @@ function sectorPage(s, idx) {
     pg ? gallery.render(ctx) : '',
     pg ? evidence.render(ctx) : '',
     expertise.render(ctx),
+    links.render(ctx),
     pg ? closing(ctx) : '',
     next.render(ctx),
     cta('cta-sector', { eyebrow: s.title }),

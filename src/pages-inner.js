@@ -39,7 +39,12 @@ function approach() {
   const pg = D.pages.approach;
   const { problem: s3, pathway: s4, standards: s5, orbit: s6, toolkit: s7, outcomes: s8 } = D.approach;
   const case_ = (p) => (p ? `<div class="case">${esc(p)}</div>` : '');
-  const move = (c, i) => `<article class="move" data-reveal><div><div class="move__n">0${i + 1}</div><h3>${esc(c.title)}</h3><p style="color:var(--ink-2)">${esc(c.text)}</p>${case_(c.paragraph)}</div><ul>${c.bullets.map((b) => { const [k, ...v] = b.split(' — '); return `<li><b>${esc(k)}</b>${esc(v.join(' — '))}</li>`; }).join('')}</ul></article>`;
+  // What the client receives at each movement, linked to the capability that delivers it.
+  const receive = (c) => {
+    const cap = D.capabilities.cards.find((k) => k.slug === c.capability);
+    return `<p class="move__get"><b>${esc(D.pageText.approach['pathway-receive'])}</b> ${esc(c.receive)}${cap ? ` <span>${esc(D.pageText.approach['pathway-capability'])} <a class="link" href="/capabilities#${cap.slug}">${esc(cap.title)}${arrow}</a></span>` : ''}</p>`;
+  };
+  const move = (c, i) => `<article class="move" data-reveal><div><div class="move__n">0${i + 1}</div><h3>${esc(c.title)}</h3><p style="color:var(--ink-2)">${esc(c.text)}</p>${receive(c)}${case_(c.paragraph)}</div><ul>${c.bullets.map((b) => { const [k, ...v] = b.split(' — '); return `<li><b>${esc(k)}</b>${esc(v.join(' — '))}</li>`; }).join('')}</ul></article>`;
   const nodes = s6.orbitItems.map((o, i) => `<div class="orbit__node" style="--a:${i * 60 - 90}deg"><div><b>${o.shortLabel}</b><span>${esc(o.label)}</span></div></div>`).join('');
   // The six movements as a pinned CSS-3D film: 48 fragments move from scatter to an ordered grid, one arrangement per movement.
   const frags = Array.from({ length: 48 }, (_, i) => `<i class="frag${i % 9 === 0 ? ' frag--k' : ''}"></i>`).join('');
@@ -166,7 +171,7 @@ function contact() {
     sec(`${sectionHead('contact-ways')}<div class="cards4" data-stagger>${D.navigation.contactPathways.map((p, i) => tile(esc(p.label), esc(p.description), '0' + (i + 1))).join('')}</div>`, 'section--sand'),
     sec(`<div class="two two--top"><div style="position:sticky;top:130px"><span class="eyebrow" data-reveal>${esc(faqHead.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(faqHead.title)}</h2></div><div class="acc" data-stagger>${D.faq.map((q, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(q.q)}</summary><p>${esc(q.a)}</p></details>`).join('')}</div></div>`),
   ];
-  const body = [sections[0], renderOrder('contact', D.sectionOrder.contact, sections.slice(1))].join('\n');
+  const body = [sections[0], renderOrder('contact', D.sectionOrder.contact, sections.slice(1)), require('./pages-finder').finderPrefill()].join('\n');
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: D.faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })) }];
   return page({ title: pg.title, desc: pg.desc, path: '/contact', body, jsonld });
 }
