@@ -11,7 +11,7 @@ const editableSectionOrders = {
     label: 'About',
     fieldLabel: 'About — middle sections',
     hint: 'Drag sections to change their order. The page headline stays first and the contact section stays last. Every section must appear once.',
-    default: ['Introduction', 'Vision, mission & aims', 'Principles', 'Policy lifecycle', 'Strategic pillars', 'Our values', 'What makes IP3 different', 'Our network'],
+    default: ['Introduction', 'Vision, mission & aims', 'Principles', 'Our values', 'What makes IP3 different', 'Our network'],
   },
   people: {
     label: 'People',

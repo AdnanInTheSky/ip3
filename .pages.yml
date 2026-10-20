@@ -1201,7 +1201,7 @@ content:
             required: true
             description: "Drag sections to change their order. The page headline stays first and the contact section stays last. Every section must appear once."
             options:
-              values: ["Introduction", "Vision, mission & aims", "Principles", "Policy lifecycle", "Strategic pillars", "Our values", "What makes IP3 different", "Our network"]
+              values: ["Introduction", "Vision, mission & aims", "Principles", "Our values", "What makes IP3 different", "Our network"]
           - name: people
             label: "People — middle sections"
             type: select
@@ -1823,6 +1823,12 @@ content:
                 label: "Role & organisation"
                 type: string
                 required: true
+              - name: photo
+                label: "Portrait photo"
+                type: image
+                description: "A square head-and-shoulders photo of the person quoted."
+                options:
+                  media: images
       - name: home_partners
         label: "Clients & funders"
         type: file

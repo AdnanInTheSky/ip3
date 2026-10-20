@@ -589,13 +589,12 @@
     window.addEventListener('load', function () { setTimeout(refresh, 250); jumpToHash(); });
   }
 
-  /* ---------- brand film: grows from an inset card to the full width as it scrolls in ---------- */
+  /* ---------- brand film: the framed card settles into place as it scrolls in ---------- */
   function initFilm() {
     $$('[data-film]').forEach(function (el) {
-      var frame = $('[data-film-frame]', el), video = $('video', el);
+      var frame = $('[data-film-frame]', el);
       if (!frame) return;
-      gsap.fromTo(frame, { clipPath: 'inset(6% 9% 6% 9% round 28px)' }, { clipPath: 'inset(0% 0% 0% 0% round 0px)', ease: 'none', scrollTrigger: { trigger: frame, start: 'top 85%', end: 'center 55%', scrub: 0.6 } });
-      if (video) gsap.fromTo(video, { scale: 1.12 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: frame, start: 'top bottom', end: 'bottom top', scrub: 0.8 } });
+      gsap.fromTo(frame, { y: 40, scale: 0.96, autoAlpha: 0.4 }, { y: 0, scale: 1, autoAlpha: 1, ease: 'none', scrollTrigger: { trigger: frame, start: 'top 90%', end: 'top 55%', scrub: 0.6 } });
     });
   }
 

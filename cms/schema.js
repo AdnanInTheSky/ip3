@@ -188,7 +188,7 @@ module.exports = {
       pair('items', 'Items'),
     ]),
     file('home_testimonials', '07 · Home — Testimonials', 'content/home/testimonials.json', [
-      list('items', 'Testimonials', [hidden, text('quote', 'Quote'), str('name', 'Name'), str('role', 'Role & organisation')], { summary: '{name}' }),
+      list('items', 'Testimonials', [hidden, text('quote', 'Quote'), str('name', 'Name'), str('role', 'Role & organisation'), image('photo', 'Portrait photo', { optional: true, hint: 'A square head-and-shoulders photo of the person quoted.' })], { summary: '{name}' }),
     ]),
     file('home_partners', '08 · Clients & funders', 'content/home/partners.json', [
       strs('clients', 'Clients & partners'), strs('funders', 'Funders & development partners'),
