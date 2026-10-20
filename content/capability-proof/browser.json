@@ -19,7 +19,7 @@
   "deliveredLabel": "Delivered",
   "withheldLabel": "Dates withheld while the record is reconciled",
   "clientLabel": "Client",
-  "roleLabel": "Role",
+  "roleLabel": "Role of IP3 Expert",
   "periodLabel": "Period",
   "referenceLabel": "Reference",
   "locationLabel": "Geography",

@@ -170,13 +170,15 @@ function film() {
   const f = W().film;
   return `
 <section class="wfilm on-dark dark" aria-labelledby="film-title" data-film>
-  <div class="container">
-    <span class="eyebrow" data-reveal>${esc(f.kicker)}</span>
-    <h2 class="split" id="film-title">${esc(f.heading)}</h2>
-    <p class="lead" data-reveal>${esc(f.lead)}</p>
-  </div>
-  <div class="wfilm__frame" data-film-frame>
-    <video muted loop playsinline preload="none" poster="${f.poster}" aria-label="${esc(f.label)}" data-lazyvideo><source data-src="${f.video.replace(/\.mp4$/, '.webm')}" type="video/webm"><source data-src="${f.video}" type="video/mp4"></video>
+  <div class="container wfilm__grid">
+    <div class="wfilm__copy">
+      <span class="eyebrow" data-reveal>${esc(f.kicker)}</span>
+      <h2 class="split" id="film-title">${esc(f.heading)}</h2>
+      <p class="lead" data-reveal>${esc(f.lead)}</p>
+    </div>
+    <figure class="wfilm__frame" data-film-frame>
+      <video muted loop playsinline preload="none" poster="${f.poster}" aria-label="${esc(f.label)}" data-lazyvideo><source data-src="${f.video.replace(/\.mp4$/, '.webm')}" type="video/webm"><source data-src="${f.video}" type="video/mp4"></video>
+    </figure>
   </div>
 </section>`;
 }
@@ -269,7 +271,7 @@ function method() {
 
 function why() {
   const pg = D.pages.why;
-  const body = [journey(), bridge(), film(), capabilities(), sectorMap(), work(), terminal(), method(), cta('cta-why')].join('\n');
+  const body = [journey(), film(), capabilities(), sectorMap(), work(), terminal(), method(), cta('cta-why')].join('\n');
   return page({
     title: pg.title, desc: pg.desc, path: '/why-ip3', body, bodyClass: 'why',
     preload: '<link rel="preload" as="image" href="/assets/img/why-contours.svg" fetchpriority="high">',

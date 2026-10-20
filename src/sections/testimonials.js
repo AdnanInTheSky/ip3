@@ -2,7 +2,7 @@
 const { esc } = require('../layout');
 
 function testimonialCards(items) {
-  return items.map((t) => `<figure class="quote"><blockquote>${esc(t.quote)}</blockquote><footer><b>${esc(t.name)}</b><span>${esc(t.role)}</span></footer></figure>`).join('');
+  return items.map((t) => `<figure class="quote"><blockquote>${esc(t.quote)}</blockquote><footer>${t.photo ? `<img class="quote__ph" src="${esc(t.photo)}" alt="" width="64" height="64" loading="lazy" decoding="async">` : ''}<div><b>${esc(t.name)}</b><span>${esc(t.role)}</span></div></footer></figure>`).join('');
 }
 
 function testimonialsSection(items) {
