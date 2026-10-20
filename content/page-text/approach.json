@@ -42,6 +42,16 @@
       "slug": "eyebrow-beyond-recommendation",
       "label": "Beyond recommendation eyebrow",
       "text": "Beyond the recommendation"
+    },
+    {
+      "slug": "pathway-receive",
+      "label": "Six movements — label before “what you receive”",
+      "text": "What you receive"
+    },
+    {
+      "slug": "pathway-capability",
+      "label": "Six movements — text before the matching capability link",
+      "text": "Related capability:"
     }
   ]
 }

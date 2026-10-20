@@ -706,6 +706,10 @@ html:not(.js) .wy__item p,.wy:not(.is-ready) .wy__item p{margin:12px 0 4px}
 .move__n{font-family:var(--f-display);font-size:clamp(4rem,8vw,7rem);line-height:.8;font-weight:300;color:transparent;-webkit-text-stroke:1px var(--rust-500)}
 .move h3{font-size:clamp(1.8rem,3vw,2.6rem);margin:14px 0}
 .move .case{margin-top:20px;padding:18px 20px;border-left:3px solid var(--leaf);background:var(--sand);border-radius:0 12px 12px 0;font-size:.95rem;color:var(--ink-2)}
+.move__get{margin-top:18px;padding-top:16px;border-top:1px solid var(--line-2);font-size:.98rem;color:var(--ink)}
+.move__get b{display:block;margin-bottom:6px;font:700 .7rem var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--rust)}
+.move__get span{display:block;margin-top:10px;font-size:.9rem;color:var(--ink-2)}
+.move__get .link{display:inline-flex;gap:8px;align-items:center}
 .move ul{display:grid;gap:12px;margin-top:6px}
 .move li{padding:14px 0;border-top:1px solid var(--line-2);font-size:.96rem;color:var(--ink-2)}
 .move li b{font:700 .7rem var(--f-ui);letter-spacing:.14em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:4px}

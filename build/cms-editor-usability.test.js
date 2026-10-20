@@ -8,7 +8,7 @@ const schema = require('../cms/schema');
 const { editableSectionOrders } = require('../cms/section-order');
 const { testimonialPlacements, defaultTestimonialPlacement } = require('../cms/section-placement');
 
-const contractHash = 'fbfe4bd1d598e61ef4997aa9c07920f6307b2b7040729889e353597beca44300';
+const contractHash = 'c8976cfd1ec569d9b5a349621a4d6ce88aeacc20ebe7297cae29d77dabd690ee';
 const editorOnlyKeys = new Set(['label', 'hint', 'summary']);
 function withoutEditorCopy(value) {
   if (Array.isArray(value)) return value.map(withoutEditorCopy);

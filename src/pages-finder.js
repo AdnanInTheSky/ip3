@@ -88,4 +88,12 @@ function finderPrefill() {
   return `<script type="application/json" id="finder-prefill">${JSON.stringify(map).replace(/</g, '\\u003c')}</script>`;
 }
 
-module.exports = { finder, finderPrefill, HELP, ARTICLE_LINKS };
+// Shared with the /sectors/<slug> pages (src/sec/links.js) so a sector links to the same work the finder shows for it.
+// Capabilities: the sector's own list, plus the data and digital capability for the digital sectors.
+const sectorCaps = (s) => [...new Set([...(s.caps || []), ...(DIGITAL_SECTORS.includes(s.slug) ? ['data-digital-responsible-ai'] : [])])];
+// Engagements: those whose linked sector is this one, then any an editor added to the sector's own list.
+const sectorEngagements = (s) => [...new Set([...D.engagements.filter((e) => e.sectorSlug === s.slug).map((e) => e.slug), ...(s.engagements || [])])];
+// Published articles mapped to this sector in ARTICLE_LINKS.
+const sectorArticles = (slug) => D.articles.filter((a) => a.publicationStatus === 'published' && ARTICLE_LINKS[a.slug] && ARTICLE_LINKS[a.slug].sectors.includes(slug));
+
+module.exports = { finder, finderPrefill, HELP, ARTICLE_LINKS, DIGITAL_SECTORS, sectorCaps, sectorEngagements, sectorArticles };

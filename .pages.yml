@@ -4918,6 +4918,18 @@ content:
                 label: "Text"
                 type: text
                 required: true
+              - name: receive
+                label: "What you receive"
+                type: text
+                required: true
+                description: "One plain-language sentence on what the client receives at this step. Keep it to deliverables IP3 actually provides."
+                options:
+                  maxlength: 220
+              - name: capability
+                label: "Matching capability"
+                type: string
+                required: true
+                description: "Capability URL slug, e.g. program-project-design. The step links to that capability on /capabilities."
               - name: bullets
                 label: "Bullets"
                 type: string

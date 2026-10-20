@@ -371,6 +371,8 @@ module.exports = {
       str('subtitle', 'Small label'), str('title', 'Heading'), text('paragraph', 'Introduction'),
       list('cards', 'Movements', [
         str('title', 'Title'), text('text', 'Text'),
+        text('receive', 'What you receive', { max: 220, soft: 160, hint: 'One plain-language sentence on what the client receives at this step. Keep it to deliverables IP3 actually provides.' }),
+        str('capability', 'Matching capability', { ref: 'capabilities', hint: 'Capability URL slug, e.g. program-project-design. The step links to that capability on /capabilities.' }),
         strs('bullets', 'Bullets', { hint: 'Format: "Label — text". The part before the dash is shown in bold.' }),
         text('paragraph', 'Case-study example', { optional: true }),
       ], { summary: '{title}' }),
