@@ -51,7 +51,9 @@
       "photo": "/assets/img/training-3.webp",
       "engagements": [
         "adb-nsep"
-      ]
+      ],
+      "video": "/assets/video/educational-innovation.mp4",
+      "poster": "/assets/img/poster-sector-education.webp"
     },
     {
       "hidden": false,
@@ -127,7 +129,9 @@
         "bmdf-transformation",
         "bmdf-oscb"
       ],
-      "image": "/assets/img/139720611101581014575935906844014742848876883n.jpg"
+      "image": "/assets/img/139720611101581014575935906844014742848876883n.jpg",
+      "video": "/assets/video/sectors/future-ready-governance.mp4",
+      "poster": "/assets/img/poster-sector-governance.webp"
     },
     {
       "hidden": false,
@@ -154,7 +158,9 @@
       "engagements": [
         "worldbank-fat",
         "sida-cpd-textile"
-      ]
+      ],
+      "video": "/assets/video/sectors/business-finance-economy.mp4",
+      "poster": "/assets/img/poster-sector-economic.webp"
     },
     {
       "hidden": false,
