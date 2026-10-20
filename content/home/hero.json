@@ -103,6 +103,24 @@
           "ghost": true
         }
       ]
+    },
+    {
+      "hidden": false,
+      "tab": "Education Innovation",
+      "video": {
+        "src": "/assets/video/educational-innovation-1.mp4",
+        "poster": "/assets/img/031024climate-action-esg-strategy-sustainability-47-1.png"
+      },
+      "eyebrow": "Revolutionize Education System",
+      "h1": "Transforming Education System with Cutting-Edge Digital Inclusion and Ecosystem Strategies.",
+      "sub": "Our core offerings include datafication of education, mediated through technology – a transnational assemblage of people, technologies and policies that increasingly affects how national education systems are organized and managed.",
+      "cta": [
+        {
+          "label": "Education, Skills & Human Capital",
+          "href": "/sectors/education-skills-human-capital",
+          "ghost": false
+        }
+      ]
     }
   ]
 }
