@@ -1,3 +1,55 @@
+# AI handoff — Sector links + Approach "what you receive" (2026-10-20, slice 2)
+
+- Worktree: `D:\CONTENT IP3 WEBSITE\NEW WEBSITE DESIGN\ip3-bd.org-sector-links`, branch `sector-links` from origin/main `ca7e83a`. Commit 1 is a copy of the uncommitted Mandate Finder work (slice 1, from the `mandate-finder` worktree, which was left untouched); commit 2 is this slice. Not pushed.
+- Preview: config `sl-main` (port 3540) in the parent folder's `.claude/launch.json`.
+
+## Done
+- Every `/sectors/<slug>` page now has the same "Related work" block (`src/sec/links.js`, CSS `src/css/sec/75-links.css`) after "Where we add value": three columns linking capabilities (`/capabilities#slug`), engagements (`/engagements#slug`) and published articles (`/insights/<slug>`), each with an "All …" link, plus a link to `/find-support`. An empty column says so instead of disappearing (Health and AI have no engagement or article yet).
+- One source for the mappings: `src/pages-finder.js` now exports `sectorCaps` (sector `caps` + the data/digital capability for `DIGITAL_SECTORS`), `sectorEngagements` (engagements whose `sectorSlug` is the sector, then any slugs an editor listed on the sector) and `sectorArticles` (from `ARTICLE_LINKS`). "Capabilities applied" cards use `sectorCaps` too.
+- The old "Related engagements" row list under the assignment ledger is gone; those engagements now sit in the new block. Its heading (`sector-related`) is reused, with the eyebrow changed from "Related engagements" to "Related work".
+- `/approach` six movements: each step now has a "What you receive" line and "Related capability: <title>" linking to `/capabilities#slug`. Fields `receive` and `capability` are in `content/approach/pathway.json` and registered in `cms/schema.js` (form "21 · Approach — Six movements"); labels are in `content/page-text/approach.json` (`pathway-receive`, `pathway-capability`). `npm run cms` was re-run, and the CMS contract hash in `build/cms-editor-usability.test.js` was updated for this intended schema change.
+
+## Verification
+- `npm run build`, `npm run check`, `npm run links`, `npm test` (84 pass), `npm run test:hostinger` (36 pass). The 5 metadata-length warnings were there before this work.
+- Browser (1440px and 375px): climate page links to 4 capabilities, 2 engagements and 2 articles; health page shows the empty-column notes; /approach shows all six lines and links. No horizontal overflow, no console errors.
+
+## Needs IP3 review (new copy and mappings, not from a client source)
+- The six "What you receive" sentences in `content/approach/pathway.json` are drafted from each movement's own "What We Deliver" / "Deliverable Map" bullets. Please confirm the wording.
+- Step → capability mapping: Sense & Diagnose → Policy, Economics & Strategy; Build Intelligence → Data, Digital & Responsible AI (from "decision-grade data and service analytics"; Policy, Economics & Strategy is the other candidate); Co-Design & Test → Program & Project Design; Mobilise → Development Finance; Implement & Transfer → Institutions, Governance & Delivery; Learn & Scale → Monitoring, Evaluation, Learning & Impact.
+- New sector-page labels in `content/page-text/sectors.json` (`sx-links-*`), including the empty-column notes "No engagement in this sector is published on the site yet." and "No article on this sector is published yet."
+- The Digital Government page still lists `bmdf-oscb` and `worldbank-fat` through its own `engagements` field, although their `sectorSlug` is Governance and Economic Transformation. They were kept on purpose; remove them in the CMS if they should not appear there.
+- Article → sector mapping is still `ARTICLE_LINKS` in `src/pages-finder.js` (as in slice 1).
+
+## Not done (later slices)
+- About/Why proof points linked to evidence; engagement entries (mandate, role, deliverables, evidenced result); People → work links; Insights topic filters; Privacy/Terms review; metadata-length warnings. The Approach case-study paragraphs (Ghana, Malawi, municipal finance, LDC graduation) were not checked against proof.json in this slice.
+
+---
+
+# AI handoff — Mandate Finder (2026-10-20)
+
+- Worktree: `D:\CONTENT IP3 WEBSITE\NEW WEBSITE DESIGN\ip3-bd.org-mandate`, branch `mandate-finder` from origin/main `ca7e83a`. Uncommitted, not pushed.
+- Preview: config `mf-main` (port 3530) in the parent folder's `.claude/launch.json`.
+
+## Done (slice 1 of the review: challenge → capability → proof → contact)
+- New page `/find-support` (`src/pages-finder.js`): step 1 sector (shows each sector's problem), step 2 help type (diagnosis / project design / finance / implementation / evaluation). Results list matching capabilities, engagements and the 4 published articles. Browser-only; nothing stored or sent.
+- "Discuss this mandate" links to `/contact?sector=<slug>&help=<key>#contact-form`; the contact page pre-fills Engagement type, Focus area and a starter message. Only known keys are accepted; no free text is taken from the URL.
+- Home hero slide 1 primary CTA → "Find the right support" (`/find-support`). Finder also in footer Explore and breadcrumbs.
+- Copy is CMS-editable: `content/page-text/finder.json` (form "00 · Page text — Mandate Finder") + `pages.finder`.
+- Route registered in `build/validate.js`, Hostinger route list + test (21 → 22), CMS contract hash updated in `build/cms-editor-usability.test.js` (intended schema change).
+
+## Verification
+- `npm run build`, `npm run check`, `npm run links`, `npm test` (84 pass), `npm run test:hostinger` (36 pass).
+- Browser: filtering (Governance + Finance → 1 capability, 3 engagements, 2 articles), contact prefill, mobile 375px (hero CTA above the fold, no overflow), no console errors.
+
+## Needs IP3 review
+- Mappings in `src/pages-finder.js`: help type → capability, engagement tags → help type, and article → sectors/help (articles have no sector field). Keep to published, source-backed work.
+- Contact page: the "prepares an email, you send it" note already sits under the button (`form-note`); no change made.
+
+## Not done (later slices from the review)
+- Approach "what you receive at each step" + service links; About/Why proof points linked to evidence; sector → capabilities/engagements/articles links; engagement entries (mandate, role, deliverables, evidenced result); People → work links; Insights topic filters; Privacy/Terms review; metadata-length warnings (about/sectors/engagements desc).
+
+---
+
 # Responsive refinement — 2026-10-12 (branch `responsive-refine`, from main 92e8786)
 
 - Goal: phone and tablet presentation only. No text, order, asset, link or route changes.

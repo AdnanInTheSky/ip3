@@ -824,7 +824,47 @@
     (function loop(t) { if (visible) draw(t); requestAnimationFrame(loop); })(0);
   }
 
+  /* ---------- mandate finder (/find-support) — runs only in the browser; nothing is stored or sent ---------- */
+  function initFinder() {
+    var f = $('[data-finder]');
+    if (!f) return;
+    var out = $('[data-finder-out]', f), empty = $('[data-finder-empty]', f), go = $('[data-finder-contact]', f);
+    var has = function (el, k, v) { return (' ' + (el.getAttribute('data-' + k) || '') + ' ').indexOf(' ' + v + ' ') > -1; };
+    function update() {
+      var s = f.elements.sector.value, h = f.elements.help.value, ready = !!(s && h);
+      out.hidden = !ready; empty.hidden = ready;
+      go.parentNode.hidden = !ready;
+      if (!ready) return;
+      $$('.mf-group', out).forEach(function (g) {
+        var and = g.getAttribute('data-mode') === 'and', shown = 0;
+        $$('.mf-item', g).forEach(function (it) {
+          var sm = has(it, 'sectors', s) || has(it, 'sectors', '*'), hm = has(it, 'helps', h);
+          var on = and ? sm && hm : sm || hm;
+          it.hidden = !on; if (on) shown++;
+          if (on && sm) g.querySelector('ul').insertBefore(it, g.querySelector('ul').firstChild); // sector matches first
+        });
+        $('.mf-none', g).hidden = shown > 0;
+      });
+      go.href = '/contact?sector=' + encodeURIComponent(s) + '&help=' + encodeURIComponent(h) + '#contact-form';
+    }
+    f.addEventListener('change', update);
+    f.addEventListener('reset', function () { setTimeout(update, 0); });
+    update();
+  }
+  function initFinderPrefill() {
+    var src = $('#finder-prefill'), form = $('#contact-form');
+    if (!src || !form || !window.URLSearchParams) return;
+    var q = new URLSearchParams(location.search), map;
+    try { map = JSON.parse(src.textContent); } catch (e) { return; }
+    var sector = map.sectors[q.get('sector')], help = map.help[q.get('help')];
+    if (!sector || !help) return; // only known keys are accepted; free text from the URL is never used
+    var pick = function (name, text) { var el = form.elements[name]; if (el && text) $$('option', el).forEach(function (o) { if (o.textContent === text) el.value = o.value; }); };
+    pick('engagement', help.engagement); pick('focus', help.focus);
+    if (form.elements.message && !form.elements.message.value) form.elements.message.value = map.message.replace('{{sector}}', sector).replace('{{help}}', help.label) + '\n\n';
+  }
+
   /* ---------- boot ---------- */
+  initFinder(); initFinderPrefill();
   initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initHand(); initWhy(); initTilt();
   // Sector narratives own their motion lifecycle. Keep their policy text visible,
   // use native scrolling, and avoid stacking global reveals/Lenis over the scene.

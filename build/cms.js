@@ -15,7 +15,7 @@ const ALLOWED_KEYS = new Set([
   'list', 'collapsible', 'collapsed', 'summary', 'required', 'description',
   'options', 'maxlength', 'values', 'settings', 'content', 'merge', 'commit',
   'identity', 'templates', 'create', 'update', 'delete', 'operations', 'pattern',
-  'regex', 'message', 'readonly',
+  'regex', 'message', 'readonly', 'switcher',
 ]);
 const put = (indent, s) => {
   if (!s.startsWith('#')) {
@@ -46,7 +46,10 @@ function field(f, indent) {
   const opts = [];
   if ((f.type === 'string' || f.type === 'text') && f.max) opts.push(['maxlength', f.max]);
   if (f.type === 'select') opts.push(['values', `[${f.values.map(q).join(', ')}]`]);
-  if (f.type === 'image') opts.push(['media', 'images']);
+  if (f.type === 'image') opts.push(['media', f.media || 'images']);
+  if (f.type === 'rich-text') {
+    for (const [key, value] of Object.entries(f.options || {})) opts.push([key, Array.isArray(value) ? `[${value.map(q).join(', ')}]` : typeof value === 'string' ? q(value) : value]);
+  }
   if (f.type === 'video') { opts.push(['media', 'videos']); opts.push(['extensions', '[mp4, webm]']); }
   if (opts.length) { put(i, 'options:'); opts.forEach(([k, v]) => put(i + 2, `${k}: ${v}`)); }
   if (f.type === 'object') { put(i, 'fields:'); f.fields.forEach((x) => field(x, i + 2)); }
@@ -92,11 +95,11 @@ function build() {
     put(indent + 2, `path: ${c.path}`);
     put(indent + 2, 'format: json');
     put(indent + 2, 'operations:');
-    put(indent + 4, 'create: false');
+    put(indent + 4, `create: ${c.name === 'articles'}`);
     put(indent + 4, 'rename: false');
     put(indent + 4, 'delete: false');
     if (c.type === 'collection') {
-      put(indent + 2, 'filename: "{primary}.json"');
+      put(indent + 2, c.name === 'articles' ? 'filename: "{fields.slug}.json"' : 'filename: "{primary}.json"');
       put(indent + 2, 'view:');
       put(indent + 4, `primary: ${c.view.primary}`);
       put(indent + 4, `fields: [${c.view.fields.join(', ')}]`);

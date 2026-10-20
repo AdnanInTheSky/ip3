@@ -4,9 +4,9 @@
     "desc": "IP3 Consulting helps multilateral institutions, development partners, governments, businesses and research institutions design policies, prepare investments, strengthen institutions and measure development impact."
   },
   "about": {
-    "title": "About IP3 — Institute for Public Policy & Practice",
-    "desc": "IP3 is a next-generation think tank and policy advisory firm founded in 2018, combining systems thinking, data and digital ecosystems, and translational research to turn evidence into measurable impact.",
-    "h1": "A strategic policy & management solutions firm for a <em>sustainable future.</em>",
+    "title": "About IP3 Consulting — Institute for Public Policy & Practice",
+    "desc": "IP3 is a next-generation think tank, an Action Research and Management Consulting firm founded in 2018, combining systems thinking, data and digital ecosystems, and translational research to turn evidence into measurable impact.",
+    "h1": "A strategic policy analysis, action research & management solutions firm for an <em>equitable, resilient, and sustainable future.</em>",
     "lead": "The Institute for Public Policy and Practice works at the intersection of policy research, strategic advisory, management solutions and implementation."
   },
   "why": {
@@ -55,7 +55,13 @@
     "title": "Contact",
     "desc": "Contact IP3 Consulting Limited in Dhaka — discuss a consulting assignment, a partnership, a research collaboration, or request our capability statement.",
     "h1": "Tell us the mandate <em>you need to deliver.</em>",
-    "lead": "Every submission is reviewed by our team. We aim to respond within one business day."
+    "lead": "Use the form to prepare an email draft, then send it from your email app. You can also call or email us directly."
+  },
+  "finder": {
+    "title": "Mandate Finder",
+    "desc": "Match your sector and the kind of help you need to IP3's relevant capabilities, engagements and published insights, then start a conversation.",
+    "h1": "Find the right <em>support.</em>",
+    "lead": "Two short questions connect your challenge to IP3's relevant work. It is anonymous: nothing you choose is saved or sent."
   },
   "privacy": {
     "title": "Privacy Policy",

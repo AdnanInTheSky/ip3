@@ -1,6 +1,12 @@
 # GENERATED from cms/schema.js — do not edit by hand. Change the schema, then run: npm run cms
 # Pages CMS configuration docs: https://pagescms.org/docs/configuration/
 media:
+  - name: insights_images
+    label: "Insights — owned infographics"
+    input: assets/insights
+    output: /assets/insights
+    rename: safe
+    extensions: [png, webp]
   - name: images
     label: "Photos"
     input: assets/img
@@ -279,6 +285,34 @@ content:
                   maxlength: 420
           - name: contact
             label: "Contact"
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: "Search title (browser & results)"
+                type: string
+                required: true
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
+              - name: desc
+                label: "Search description"
+                type: text
+                required: true
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
+              - name: h1
+                label: "On-page headline"
+                type: string
+                required: true
+                description: "Wrap words in <em>…</em> to show them in the accent colour."
+                options:
+                  maxlength: 140
+              - name: lead
+                label: "Opening paragraph under the headline"
+                type: text
+                required: true
+                options:
+                  maxlength: 420
+          - name: finder
+            label: "Mandate Finder"
             type: object
             required: true
             fields:
@@ -996,6 +1030,79 @@ content:
         label: "404"
         type: file
         path: content/page-text/notfound.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: headings
+            label: "Headings, eyebrows & leads"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: slug
+                label: "Template key (leave unchanged)"
+                type: string
+                required: true
+                readonly: true
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
+                pattern:
+                  regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  message: "Use lowercase letters and numbers separated by hyphens."
+              - name: eyebrow
+                label: "Eyebrow"
+                type: string
+                options:
+                  maxlength: 80
+              - name: title
+                label: "Heading"
+                type: text
+                required: true
+                description: "Keep <em> only on headings where that emphasis already appears."
+                options:
+                  maxlength: 160
+              - name: lead
+                label: "Lead paragraph"
+                type: text
+                options:
+                  maxlength: 420
+          - name: copy
+            label: "Other marketing copy & CTA labels"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - name: slug
+                label: "Template key (leave unchanged)"
+                type: string
+                required: true
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
+                pattern:
+                  regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  message: "Use lowercase letters and numbers separated by hyphens."
+              - name: label
+                label: "Editor label"
+                type: string
+                required: true
+                options:
+                  maxlength: 100
+              - name: text
+                label: "Copy"
+                type: text
+                required: true
+                options:
+                  maxlength: 1000
+      - name: page_text_finder
+        label: "Mandate Finder"
+        type: file
+        path: content/page-text/finder.json
         format: json
         operations:
           create: false
@@ -3729,6 +3836,10 @@ content:
                 required: true
                 options:
                   media: images
+              - name: legacyWpId
+                label: "Related legacy identity"
+                type: string
+                readonly: true
           - name: fieldStories
             label: "Field video stories"
             type: object
@@ -3823,6 +3934,177 @@ content:
                 type: string
                 list: true
                 description: "Person slugs from the People list, e.g. mohammad-syful-hoque."
+      - name: articles
+        label: "full articles & source review"
+        type: collection
+        path: content/articles
+        format: json
+        operations:
+          create: true
+          rename: false
+          delete: false
+        filename: "{fields.slug}.json"
+        view:
+          primary: title
+          fields: [title, publicationStatus, contentReadiness, approvalStatus]
+          sort: title
+        fields:
+          - name: wpId
+            label: "Legacy article ID (leave unchanged; blank for new articles)"
+            type: string
+            readonly: true
+          - name: slug
+            label: "Article URL slug"
+            type: string
+            required: true
+            description: "Set lowercase words joined by hyphens. Existing published URLs require reviewer approval before a change."
+            pattern:
+              regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              message: "Use lowercase letters and numbers separated by hyphens."
+          - name: title
+            label: "Article title"
+            type: string
+            required: true
+            options:
+              maxlength: 240
+          - name: category
+            label: "Category"
+            type: select
+            required: true
+            description: "Use a more specific category only when supported by the source."
+            options:
+              values: ["Article", "Blog Post", "Featured Article", "Project Report"]
+          - name: publicationStatus
+            label: "Publication status"
+            type: select
+            required: true
+            description: "Draft remains private. Published requires complete content and approval of this exact revision. Keep the twelve missing legacy bodies as drafts until written and owner-approved."
+            options:
+              values: ["draft", "published"]
+          - name: contentReadiness
+            label: "Writing progress"
+            type: select
+            required: true
+            description: "Choose needs-owner-content until the full article is written; ready-for-review requests review, not publication."
+            options:
+              values: ["needs-owner-content", "ready-for-review"]
+          - name: approvalStatus
+            label: "Content approval (reviewer managed)"
+            type: select
+            readonly: true
+            options:
+              values: ["pending", "approved"]
+          - name: approvedContentSha256
+            label: "Approved revision digest (reviewer managed)"
+            type: string
+            readonly: true
+          - name: sourceStatus
+            label: "Source review (maintainer managed)"
+            type: select
+            readonly: true
+            options:
+              values: ["missing", "identity-review", "verified", "owner-written"]
+          - name: summary
+            label: "Sourced summary"
+            type: text
+            options:
+              maxlength: 800
+          - name: body
+            label: "Full article — visual Markdown editor"
+            type: rich-text
+            description: "Use paragraphs, headings, bold/italic, lists, links and tables. Raw HTML is rejected. Insert an image on its own paragraph, provide alt text, and use Source mode for an optional Markdown image-title caption; or use the simpler Infographics fields below."
+            options:
+              format: "markdown"
+              media: "insights_images"
+              extensions: ["png", "webp"]
+              rename: "safe"
+              switcher: true
+          - name: coverImage
+            label: "Cover image (optional)"
+            type: image
+            options:
+              media: insights_images
+          - name: coverAlt
+            label: "Cover image alternative text"
+            type: string
+            description: "Required whenever a cover is selected. Describe what the image communicates."
+          - name: coverCaption
+            label: "Cover image caption (optional)"
+            type: text
+          - name: infographics
+            label: "Infographics — images shown after the article"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{alt}"
+            description: "Upload only images you own or may publish. Every image needs alt text. Never paste WordPress attachment URLs."
+            fields:
+              - name: image
+                label: "Infographic PNG or WebP"
+                type: image
+                required: true
+                options:
+                  media: insights_images
+              - name: alt
+                label: "Alternative text (required)"
+                type: string
+                required: true
+              - name: caption
+                label: "Caption (optional)"
+                type: text
+          - name: sourceTitle
+            label: "Verified source title"
+            type: string
+            readonly: true
+          - name: sourceUrl
+            label: "Public source URL"
+            type: string
+            readonly: true
+          - name: sourceObservedAt
+            label: "Source observation time"
+            type: string
+            readonly: true
+          - name: verifiedBodySha256
+            label: "Verified text digest"
+            type: string
+            readonly: true
+          - name: verifiedMarkdownSha256
+            label: "Verified Markdown digest"
+            type: string
+            readonly: true
+          - name: legacySourceBody
+            label: "Archived source text — provenance only"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{kind}"
+            readonly: true
+            fields:
+              - name: kind
+                label: "Original block kind"
+                type: string
+                required: true
+              - name: text
+                label: "Original text"
+                type: text
+                required: true
+          - name: publishedDate
+            label: "Publication date as sourced"
+            type: string
+            readonly: true
+          - name: omittedMediaLabels
+            label: "Omitted illustration labels (source record)"
+            type: text
+            readonly: true
+          - name: mediaNote
+            label: "Text-only edition note"
+            type: text
+            readonly: true
+          - name: reviewNotes
+            label: "Editorial/source notes (not shown on website)"
+            type: text
   - name: people
     label: "People & founder profiles"
     type: group
@@ -4636,6 +4918,18 @@ content:
                 label: "Text"
                 type: text
                 required: true
+              - name: receive
+                label: "What you receive"
+                type: text
+                required: true
+                description: "One plain-language sentence on what the client receives at this step. Keep it to deliverables IP3 actually provides."
+                options:
+                  maxlength: 220
+              - name: capability
+                label: "Matching capability"
+                type: string
+                required: true
+                description: "Capability URL slug, e.g. program-project-design. The step links to that capability on /capabilities."
               - name: bullets
                 label: "Bullets"
                 type: string

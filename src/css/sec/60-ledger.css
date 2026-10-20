@@ -21,5 +21,4 @@
 .sx-card__go{display:inline-flex;align-items:center;gap:10px;margin-top:auto;padding-top:12px;font:600 .74rem/1.4 var(--f-ui);letter-spacing:.07em;text-transform:uppercase;color:var(--rust)}
 .sx-card__scope+.sx-card__go{margin-top:0;padding-top:4px}
 .sx-card__go svg{width:15px;height:15px;flex:none}
-.sx-related .eng{margin-top:10px}
 @media (prefers-reduced-motion:reduce){.sx-card__a{transition:none}}

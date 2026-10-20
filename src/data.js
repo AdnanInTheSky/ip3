@@ -7,7 +7,8 @@ const live = (list) => list.filter((x) => !x.hidden);
 const hero = C.file('home/hero');
 const engagements = live(C.file('engagements').items);
 const insightContent = C.file('insights');
-const pageNames = ['home', 'about', 'why', 'approach', 'capabilities', 'sectors', 'engagements', 'insights', 'people', 'contact', 'notfound'];
+const articles = require('../cms/articles').visibleArticles(C.dir('articles'));
+const pageNames = ['home', 'about', 'why', 'approach', 'capabilities', 'sectors', 'engagements', 'insights', 'people', 'contact', 'notfound', 'finder'];
 const pageText = Object.fromEntries(pageNames.map((name) => [name, C.file(`page-text/${name}`)]));
 const headings = Object.fromEntries(Object.values(pageText).flatMap((page) => page.headings.map((item) => [item.slug, item])));
 const copy = Object.fromEntries(Object.entries(pageText).map(([name, page]) => [name, Object.fromEntries(page.copy.map((item) => [item.slug, item.text]))]));
@@ -34,6 +35,7 @@ module.exports = {
   translation: C.file('home/translation'),
   engagements,
   insights: live(insightContent.items),
+  articles,
   fieldStories: insightContent.fieldStories,
   publications: live(insightContent.publications || []),
   evidence: C.file('home/evidence'),

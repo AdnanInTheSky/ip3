@@ -29,17 +29,17 @@
     {
       "slug": "form-submit",
       "label": "Contact form submit button",
-      "text": "Send message"
+      "text": "Prepare email"
     },
     {
       "slug": "form-success",
       "label": "Contact form success message",
-      "text": "Thank you — your message is ready. If your email app did not open, write to {{email}}."
+      "text": "Your email draft is ready. Press Send in your email app to send it. If no email app opened, write to {{email}}."
     },
     {
       "slug": "form-note",
       "label": "Contact form privacy note",
-      "text": "We aim to respond within one business day. Your details are used only to reply to this enquiry."
+      "text": "This form opens a draft in your email app. IP3 receives it only after you press Send there. Your details are used only to reply to your enquiry."
     }
   ]
 }

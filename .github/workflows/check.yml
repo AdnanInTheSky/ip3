@@ -31,5 +31,7 @@ jobs:
         run: npm test
       - name: Validate content and Pages CMS config
         run: npm run check
+      - name: Run local Hostinger preparation regressions
+        run: npm run test:hostinger
       - name: Build and check internal links
         run: npm run verify
