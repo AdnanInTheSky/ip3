@@ -111,6 +111,31 @@
         "image": "/assets/img/field/conference-table-consultation.webp",
         "alt": "Participants around a long conference table with desk microphones and laptops in a meeting room. A man on the left raises a hand as he speaks.",
         "caption": "Meeting around a conference table"
+      },
+      {
+        "image": "/assets/img/field/rct-sewing-machine-workshop.webp",
+        "alt": "A long workshop table with industrial sewing machines in a row, and more machines and shelving behind.",
+        "caption": "Sewing machines on a workshop table"
+      },
+      {
+        "image": "/assets/img/field/rct-sewing-workstation.webp",
+        "alt": "An industrial sewing machine on a table in a workshop with corrugated walls; a worker is partly visible behind it.",
+        "caption": "A sewing workstation in a small workshop"
+      },
+      {
+        "image": "/assets/img/field/showcard-interview-workshop.webp",
+        "alt": "Two men wearing face masks sit in a workshop. One holds a phone; the other holds up a sheet printed with a green diagram.",
+        "caption": "An interview with a printed showcard, in a workshop"
+      },
+      {
+        "image": "/assets/img/field/pilot-meeting-garment-office.webp",
+        "alt": "People sit around a table with cups and papers in an office. Denim garments hang on a rack behind them.",
+        "caption": "A meeting around a table in a garment office"
+      },
+      {
+        "image": "/assets/img/field/factory-line-workers.webp",
+        "alt": "Workers sit along a green conveyor line on a factory floor.",
+        "caption": "Workers along a production line"
       }
     ]
   },
