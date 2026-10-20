@@ -28,6 +28,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   const P = require('../src/pages-inner');
   const { why } = require('../src/pages-why');
   const { articlePage } = require('../src/pages-articles');
+  const { finder } = require('../src/pages-finder');
   const normalizeText = (value) => value.replace(/\r\n/g, '\n');
   const hash = (s) => crypto.createHash('md5').update(s).digest('hex').slice(0, 8);
   const read = (p) => normalizeText(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -75,6 +76,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     ...D.articles.map(article => [`insights/${article.slug}.html`, articlePage(article)]),
     ['people.html', P.people()],
     ['contact.html', P.contact()],
+    ['find-support.html', finder()],
     ['privacy.html', P.legal('privacy')],
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],

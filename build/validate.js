@@ -14,7 +14,7 @@ const KB = 1024;
 const MB = 1024 * KB;
 const LIMITS = { image: { warn: 500 * KB, max: 2 * MB }, video: { warn: 8 * MB, max: 25 * MB } };
 const EXT = { image: ['.webp', '.jpg', '.jpeg', '.png'], video: ['.mp4', '.webm'] };
-const ROUTES = ['/', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/privacy', '/terms'];
+const ROUTES = ['/', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/find-support', '/privacy', '/terms'];
 // The 3D camera on /why-ip3 has one keyframe per scene, in this order.
 const WHY_SCENES = ['complexity', 'evidence', 'insight', 'policy', 'practice', 'impact'];
 const REQUIRED_HEADING_KEYS = [
@@ -25,10 +25,10 @@ const REQUIRED_HEADING_KEYS = [
   'capabilities-start', 'capability-deliverables', 'capability-applied', 'capability-includes', 'capability-related', 'sector-add-value', 'sector-capabilities',
   'sector-related', 'insights-field', 'insights-publications', 'people-network', 'contact-visit', 'contact-ways', 'contact-faq', 'contact-form',
   'cta-default', 'cta-about', 'cta-approach', 'cta-capabilities', 'cta-sectors', 'cta-sector',
-  'cta-engagements', 'cta-insights', 'cta-people', 'not-found',
+  'cta-engagements', 'cta-insights', 'cta-people', 'not-found', 'finder-step-sector', 'finder-step-help', 'finder-results',
 ];
 const RICH_HEADING_KEYS = new Set([
-  'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'cta-about',
+  'finder-results', 'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'cta-about',
   'why-capabilities', 'why-sectors', 'why-work', 'why-method', 'cta-why',
   'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes', 'cta-approach',
   'capabilities-start', 'cta-capabilities', 'contact-ways', 'contact-faq', 'cta-engagements',

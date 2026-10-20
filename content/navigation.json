@@ -19,7 +19,8 @@
     { "label": "Engagements", "href": "/engagements" },
     { "label": "Insights", "href": "/insights" },
     { "label": "People", "href": "/people" },
-    { "label": "Contact", "href": "/contact" }
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Mandate Finder", "href": "/find-support" }
   ],
   "homeLabel": "Home",
   "homeHref": "/",
@@ -42,7 +43,8 @@
     { "label": "Sectors", "href": "/sectors" },
     { "label": "Selected engagements", "href": "/engagements" },
     { "label": "Insights", "href": "/insights" },
-    { "label": "People", "href": "/people" }
+    { "label": "People", "href": "/people" },
+    { "label": "Mandate Finder", "href": "/find-support" }
   ],
   "legal": [
     { "label": "Privacy Policy", "href": "/privacy" },

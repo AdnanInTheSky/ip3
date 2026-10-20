@@ -5,10 +5,10 @@ const path = require('node:path');
 const { generateHtaccess } = require('./build');
 const config = require('../../vercel.json');
 const data = require('../../src/data');
-const routes = ['/', '/404','/about','/approach','/capabilities','/contact','/engagements','/insights','/people','/privacy','/terms','/why-ip3','/sectors',...data.sectors.map(s=>'/sectors/'+s.slug)];
+const routes = ['/', '/404','/about','/approach','/capabilities','/contact','/find-support','/engagements','/insights','/people','/privacy','/terms','/why-ip3','/sectors',...data.sectors.map(s=>'/sectors/'+s.slug)];
 const base = generateHtaccess(routes, config.redirects);
-test('all21supported clean routes are mapped without changing page identities', () => {
-  assert.equal(routes.length,21);
+test('all22supported clean routes are mapped without changing page identities', () => {
+  assert.equal(routes.length,22);
   for(const route of routes.filter(r=>r!=='/')) assert.ok(base.includes('"'+route.slice(1)+'.html" [L]'));
 });
 test('directory collision and listings are controlled without generic redirect backreferences', () => {

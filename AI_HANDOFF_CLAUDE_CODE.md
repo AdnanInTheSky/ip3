@@ -1,3 +1,28 @@
+# AI handoff — Mandate Finder (2026-10-20)
+
+- Worktree: `D:\CONTENT IP3 WEBSITE\NEW WEBSITE DESIGN\ip3-bd.org-mandate`, branch `mandate-finder` from origin/main `ca7e83a`. Uncommitted, not pushed.
+- Preview: config `mf-main` (port 3530) in the parent folder's `.claude/launch.json`.
+
+## Done (slice 1 of the review: challenge → capability → proof → contact)
+- New page `/find-support` (`src/pages-finder.js`): step 1 sector (shows each sector's problem), step 2 help type (diagnosis / project design / finance / implementation / evaluation). Results list matching capabilities, engagements and the 4 published articles. Browser-only; nothing stored or sent.
+- "Discuss this mandate" links to `/contact?sector=<slug>&help=<key>#contact-form`; the contact page pre-fills Engagement type, Focus area and a starter message. Only known keys are accepted; no free text is taken from the URL.
+- Home hero slide 1 primary CTA → "Find the right support" (`/find-support`). Finder also in footer Explore and breadcrumbs.
+- Copy is CMS-editable: `content/page-text/finder.json` (form "00 · Page text — Mandate Finder") + `pages.finder`.
+- Route registered in `build/validate.js`, Hostinger route list + test (21 → 22), CMS contract hash updated in `build/cms-editor-usability.test.js` (intended schema change).
+
+## Verification
+- `npm run build`, `npm run check`, `npm run links`, `npm test` (84 pass), `npm run test:hostinger` (36 pass).
+- Browser: filtering (Governance + Finance → 1 capability, 3 engagements, 2 articles), contact prefill, mobile 375px (hero CTA above the fold, no overflow), no console errors.
+
+## Needs IP3 review
+- Mappings in `src/pages-finder.js`: help type → capability, engagement tags → help type, and article → sectors/help (articles have no sector field). Keep to published, source-backed work.
+- Contact page: the "prepares an email, you send it" note already sits under the button (`form-note`); no change made.
+
+## Not done (later slices from the review)
+- Approach "what you receive at each step" + service links; About/Why proof points linked to evidence; sector → capabilities/engagements/articles links; engagement entries (mandate, role, deliverables, evidenced result); People → work links; Insights topic filters; Privacy/Terms review; metadata-length warnings (about/sectors/engagements desc).
+
+---
+
 # Responsive refinement — 2026-10-12 (branch `responsive-refine`, from main 92e8786)
 
 - Goal: phone and tablet presentation only. No text, order, asset, link or route changes.

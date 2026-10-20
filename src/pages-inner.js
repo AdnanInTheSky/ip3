@@ -166,7 +166,7 @@ function contact() {
     sec(`${sectionHead('contact-ways')}<div class="cards4" data-stagger>${D.navigation.contactPathways.map((p, i) => tile(esc(p.label), esc(p.description), '0' + (i + 1))).join('')}</div>`, 'section--sand'),
     sec(`<div class="two two--top"><div style="position:sticky;top:130px"><span class="eyebrow" data-reveal>${esc(faqHead.eyebrow)}</span><h2 class="split" style="margin-top:18px">${rich(faqHead.title)}</h2></div><div class="acc" data-stagger>${D.faq.map((q, i) => `<details${i === 0 ? ' open' : ''}><summary>${esc(q.q)}</summary><p>${esc(q.a)}</p></details>`).join('')}</div></div>`),
   ];
-  const body = [sections[0], renderOrder('contact', D.sectionOrder.contact, sections.slice(1))].join('\n');
+  const body = [sections[0], renderOrder('contact', D.sectionOrder.contact, sections.slice(1)), require('./pages-finder').finderPrefill()].join('\n');
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: D.faq.map((q) => ({ '@type': 'Question', name: q.q, acceptedAnswer: { '@type': 'Answer', text: q.a } })) }];
   return page({ title: pg.title, desc: pg.desc, path: '/contact', body, jsonld });
 }
