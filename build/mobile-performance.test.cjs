@@ -27,6 +27,9 @@ test('Home discovers pinned fonts with local mirrors while Explore retains its b
   assert.match(html, /<style data-theme-fonts>/); assert.match(html, /as="font" type="font\/woff2" crossorigin/);
   assert.doesNotMatch(html, /fonts\.googleapis\.com/);
   assert.match(html, /url\(https:\/\/fonts\.gstatic\.com/); assert.match(html, /url\(\/assets\/fonts\//);
+  const { document } = require('linkedom').parseHTML(html);
+  assert.equal(document.querySelectorAll('link[rel="preload"][as="script"][fetchpriority="high"]').length, 4);
+  for (const name of ['gsap.min.js', 'ScrollTrigger.min.js', 'lenis.min.js', 'site.js']) assert.equal([...document.querySelectorAll('script[src]')].filter(n => n.getAttribute('src').split('?')[0].endsWith('/' + name)).length, 1, 'Preload must not execute a script twice');
   assert.match(page({ title: 'Test', desc: 'Test', path: '/explore', body: '<h1>IP3</h1>' }), /rel="stylesheet" href="https:\/\/fonts\.googleapis\.com/);
 });
 test('native analytical routes omit unused global motion vendors while Home preserves them', () => {

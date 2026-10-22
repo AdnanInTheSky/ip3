@@ -187,7 +187,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" cont
 <link rel="manifest" href="/site.webmanifest">
 ${path === '/' ? themeFonts : originalFonts}
 <link rel="stylesheet" href="/assets/css/site.css?v=__CSSV__">
-${styles ? `${styles}\n` : ''}${preload}
+${path === '/' ? '<link rel="preload" as="script" href="/assets/vendor/gsap.min.js" fetchpriority="high"><link rel="preload" as="script" href="/assets/vendor/ScrollTrigger.min.js" fetchpriority="high"><link rel="preload" as="script" href="/assets/vendor/lenis.min.js" fetchpriority="high"><link rel="preload" as="script" href="/assets/js/site.js?v=__JSV__" fetchpriority="high">\n' : ''}${styles ? `${styles}\n` : ''}${preload}
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js')</script>
 ${ld}
 </head>

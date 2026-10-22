@@ -1,5 +1,6 @@
 const fs = require('node:fs'), path = require('node:path'), assert = require('node:assert/strict'), crypto = require('node:crypto');
 const root = path.join(__dirname, '..'), out = path.resolve(process.env.EXPLORE_QA_OUT || path.join(root, 'docs/interactive-experience/mobile-performance-2026-10-22'));
+const readReport = name => { const file = path.join(out, name); return JSON.parse(fs.existsSync(file) ? fs.readFileSync(file) : require('node:zlib').gunzipSync(fs.readFileSync(file + '.gz'))); };
 const phases = Object.fromEntries(['baseline', 'after'].map(phase => [phase, JSON.parse(fs.readFileSync(path.join(out, `performance-${phase}.json`)))]));
 const metric = (rows, key) => { const values = rows.map(r => r[key]).sort((a, b) => a - b); return { median: values.length % 2 ? values[(values.length - 1) / 2] : (values[values.length / 2 - 1] + values[values.length / 2]) / 2, min: values[0], max: values.at(-1) }; };
 const forms = process.env.EXPLORE_PERFORMANCE_FORMS?.split(',') || ['mobile', 'desktop'];
@@ -10,7 +11,7 @@ for (const form of forms) for (const name of ['home', 'hub', ...require('../src/
   const row = { name, form };
   for (const [phase, data] of Object.entries(phases)) {
     const rows = data.results.filter(r => r.name === name && r.form === form).map(r => {
-      const raw = JSON.parse(fs.readFileSync(path.join(out, `lh-${phase}-${form}-${name}-${r.trial}.json`)));
+      const raw = readReport(`lh-${phase}-${form}-${name}-${r.trial}.json`);
       return { ...r, FCP: raw.audits['first-contentful-paint'].numericValue, mainThread: raw.audits['mainthread-work-breakdown'].numericValue };
     }); assert.equal(rows.length, name === 'home' ? 3 : 1);
     row[phase] = { runs: rows.length, ...Object.fromEntries(['LCP', 'FCP', 'TBT', 'CLS', 'performance', 'accessibility', 'bytes', 'mainThread'].map(k => [k, metric(rows, k)])) };
@@ -20,8 +21,8 @@ for (const form of forms) for (const name of ['home', 'hub', ...require('../src/
 }
 const diagnostics = [];
 for (const form of forms) {
-  const before = JSON.parse(fs.readFileSync(path.join(out, `lh-baseline-${form}-home-1.json`)));
-  const after = JSON.parse(fs.readFileSync(path.join(out, `lh-after-${form}-home-1.json`)));
+  const before = readReport(`lh-baseline-${form}-home-1.json`);
+  const after = readReport(`lh-after-${form}-home-1.json`);
   assert.equal(before.lighthouseVersion, after.lighthouseVersion);
   for (const key of ['formFactor', 'screenEmulation', 'throttlingMethod', 'throttling']) assert.deepEqual(before.configSettings[key], after.configSettings[key]);
   diagnostics.push({ form, lighthouseVersion: after.lighthouseVersion, config: after.configSettings, beforeFonts: before.audits['network-requests'].details.items.filter(r => r.resourceType === 'Font'), afterFonts: after.audits['network-requests'].details.items.filter(r => r.resourceType === 'Font'), lcpBreakdown: after.audits['lcp-breakdown-insight'].details, renderBlocking: after.audits['render-blocking-insight'].details });
