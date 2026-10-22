@@ -8,8 +8,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 9059,
-      "sha256": "916a63702a34d28362cfe41926384dca66b316549f1c6faae64dc5ab1331252e"
+      "bytes": 9406,
+      "sha256": "7f5f4826fc4b873a70672f97da69b3a8ac64a9c5a8f8e85113c965c071a6bb84"
     },
     {
       "path": "adversarial.log",
@@ -1490,6 +1490,11 @@
       "path": "resolved-harness-failures/final-regression.log",
       "bytes": 14570,
       "sha256": "4b1bffb5004a9b063dba038047e49366b70dcc331a2b9ebe630d79ebe6e37cb4"
+    },
+    {
+      "path": "resolved-harness-failures/github-workflow-context.json",
+      "bytes": 561,
+      "sha256": "c6ac170da753640ee304366c4254944de9c9380bf667482d16f2e0ed5e44a4e1"
     },
     {
       "path": "scientific-vectors.json",

@@ -1,0 +1,9 @@
+{
+  "run": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39814965018",
+  "head": "b95600d28a854e94ddcbada9434b812208d9f638",
+  "conclusion": "failure",
+  "jobsCreated": 0,
+  "diagnosis": "Job-level env referenced runner.temp, unavailable in that context. Use fixed isolated /tmp paths on the declared Ubuntu runner; keep separate Chromium/Firefox outputs and upload both.",
+  "change": ".github/workflows/explorer-browser.yml only; no check or threshold removed",
+  "resolution": "Must be verified by corrected workflow run at next source SHA"
+}

@@ -69,6 +69,8 @@ Human NVDA/Firefox, VoiceOver/Safari and physical devices are **not conducted**.
 
 `resolved-harness-failures/` retains two initial test-harness failures: expecting six visible home slides when the CMS config has five visible out of six records, and trying to verify auto-advance while the pointer/focus intentionally held the hero paused. The harness now derives visible count from authoritative data and moves focus/pointer to the header for resume testing. Product visibility was not changed to fit a test; pause behavior was not weakened.
 
+An initial GitHub workflow validation failed before job creation because the job-level environment used an unavailable runner context. The workflow uses isolated `/tmp/ip3-acceptance` paths on its declared Ubuntu runner instead; checks and thresholds are retained. The failed run receipt is preserved and corrected CI execution must be observed.
+
 The earlier export protocol's null bounds also limited old endpoint proofs. That actual product defect is fixed, and current proof asserts finite min/max/step against controls before every endpoint matrix. The old receipt history is not deleted or relabelled as new success.
 
 ## Reproduction commands

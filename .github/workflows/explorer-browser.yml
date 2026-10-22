@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
-      EXPLORE_QA_OUT: ${{ runner.temp }}/ip3-acceptance/chromium
+      EXPLORE_QA_OUT: /tmp/ip3-acceptance/chromium
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -37,11 +37,11 @@ jobs:
         run: node scripts/explore-review-check.cjs
         env:
           EXPLORE_BROWSER: firefox
-          EXPLORE_QA_OUT: ${{ runner.temp }}/ip3-acceptance/firefox
+          EXPLORE_QA_OUT: /tmp/ip3-acceptance/firefox
       - name: Preserve measured results and screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: interactive-experience-${{ github.run_id }}
-          path: ${{ runner.temp }}/ip3-acceptance/
+          path: /tmp/ip3-acceptance/
           retention-days: 14
