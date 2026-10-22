@@ -1,0 +1,545 @@
+{
+  "meaning": "Complete unchanged Lighthouse reports, gzip compressed after byte-equality check",
+  "files": [
+    {
+      "name": "lh-after-desktop-development-impact-1.json",
+      "archive": "lh-after-desktop-development-impact-1.json.gz",
+      "bytes": 900016,
+      "archiveBytes": 421169,
+      "sha256": "0f8c2ac58303d46ec45446a68d224cdd41233460f1a318a4a2a683f320bb9471",
+      "archiveSHA256": "63081af199326e16a6cfa2ae38ce2e4f4bfa2b0738ec7c0f4065438bfc6ed8a5",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-economics-trade-1.json",
+      "archive": "lh-after-desktop-economics-trade-1.json.gz",
+      "bytes": 856623,
+      "archiveBytes": 390348,
+      "sha256": "ca05a151bba06d7a4cf54e2ccb20eb0bd3dfdbe37a67cad70958d3a88c88c71d",
+      "archiveSHA256": "623be14a679e362bdf858173600a4c9e74905d6ad1a37aa89a0390ca3917aa77",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-finance-investment-1.json",
+      "archive": "lh-after-desktop-finance-investment-1.json.gz",
+      "bytes": 904260,
+      "archiveBytes": 426625,
+      "sha256": "32ba4c6e8598470ddd6f046a4e750d368b90afdc0163a6b80741e608c31a6b9c",
+      "archiveSHA256": "f66647b61339fec7bbddd5fc7287098b1b751ecd29f5c849f42fc562b4f4de3d",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-home-1.json",
+      "archive": "lh-after-desktop-home-1.json.gz",
+      "bytes": 1057901,
+      "archiveBytes": 539885,
+      "sha256": "7ca79ff8382f2df4bc1411de9a35cdae2b493734006e171061400f1a60e31719",
+      "archiveSHA256": "1b1625f335f3226560d840851c6dfbaba1f45317d88793de1569772567e9255b",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-home-2.json",
+      "archive": "lh-after-desktop-home-2.json.gz",
+      "bytes": 1062528,
+      "archiveBytes": 544407,
+      "sha256": "9f235e84b90d9f0a1dd5ce39eef6de5a9d3c4291c0964830b4b8bf705b2c1ffe",
+      "archiveSHA256": "76751bd7183b138ea0d6c80cac5acaa5b4af33f41d91a39f31cbb39af3d9915d",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-home-3.json",
+      "archive": "lh-after-desktop-home-3.json.gz",
+      "bytes": 1054711,
+      "archiveBytes": 539705,
+      "sha256": "9378788056a437357e8b7acbb3bbccb081bc359c74f9d9dc1e9f6de84277cd0c",
+      "archiveSHA256": "b4ee1048debedd87992986caf1f9f4570e26027b191991fa58fd2c6a5713f74b",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-hub-1.json",
+      "archive": "lh-after-desktop-hub-1.json.gz",
+      "bytes": 800343,
+      "archiveBytes": 287819,
+      "sha256": "d61be93e570143e063bf0fae77e77a626401371448b1da709a5b8b5d51c0a6ef",
+      "archiveSHA256": "30aa6f708cf617c2541fd4973cef9f6c836ed853a2c5acfc536a548fb3effab6",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-management-delivery-1.json",
+      "archive": "lh-after-desktop-management-delivery-1.json.gz",
+      "bytes": 917331,
+      "archiveBytes": 418708,
+      "sha256": "23da13c252d832c18df4d9ca051a78d04455912048502a977919e3aa7d0dc465",
+      "archiveSHA256": "8a2bf7103dca62f8dc485dc356bdf6e25f1ca71e77fac493e1961447bd97eefc",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-market-enterprise-1.json",
+      "archive": "lh-after-desktop-market-enterprise-1.json.gz",
+      "bytes": 894162,
+      "archiveBytes": 400074,
+      "sha256": "65cd333dda690c6629c907ea4ab0a2e28b82500b28426ef60fd4f3421042d2d1",
+      "archiveSHA256": "8be5e39b6e9e3b85c6802d83ba4fec79c6cadd434389e1c96dcc08a4c91bf0d5",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-desktop-policy-governance-1.json",
+      "archive": "lh-after-desktop-policy-governance-1.json.gz",
+      "bytes": 901110,
+      "archiveBytes": 428910,
+      "sha256": "556a251b9c66e02f0b04fd7fbf81de5b3a79149a5c944470393f3f1d1970cb17",
+      "archiveSHA256": "0312dd25c3dd58f77b1edb6212236eb5541cf7304c0a1df4adb4d03b0afcce6f",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-development-impact-1.json",
+      "archive": "lh-after-final-desktop-development-impact-1.json.gz",
+      "bytes": 905463,
+      "archiveBytes": 422909,
+      "sha256": "f57ad86804673cfd645e81edb40aebd9092b607534ad0a0fca9f3b938ec89bd4",
+      "archiveSHA256": "00b9f6ecb59ae7aec6bad24f8c63856d6f1eea0b4a6cc08656085d2c3e9aef84",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-economics-trade-1.json",
+      "archive": "lh-after-final-desktop-economics-trade-1.json.gz",
+      "bytes": 878997,
+      "archiveBytes": 390150,
+      "sha256": "4b1fc40417c40c328138b04b5840b2a177c921c30ba9074a2d7e3d065e80cd9d",
+      "archiveSHA256": "b6277011e6fff29fa2df9ce5fd11eda9fa25112af045107fec8a10b4907db09a",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-finance-investment-1.json",
+      "archive": "lh-after-final-desktop-finance-investment-1.json.gz",
+      "bytes": 847209,
+      "archiveBytes": 411872,
+      "sha256": "21352c7a299c9d4ce89ea87f252864d186508b36bb6849f2d88916859152a35c",
+      "archiveSHA256": "ca86344c1b4f35814507f3aa883248a3a27d3e5ccddf9850bc2c5449504a919e",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-home-1.json",
+      "archive": "lh-after-final-desktop-home-1.json.gz",
+      "bytes": 1046662,
+      "archiveBytes": 532936,
+      "sha256": "19ad6d24d38849201ecc0cbefe7bef3af928fff5d986fc6659f3c35bceecb3c0",
+      "archiveSHA256": "9a0df932ace8add1d8e41b68058e9b6887d17b9cec4977bd9d0836262ab479f4",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-home-2.json",
+      "archive": "lh-after-final-desktop-home-2.json.gz",
+      "bytes": 1052091,
+      "archiveBytes": 538599,
+      "sha256": "ce72a5963774bae7fb3746ffb9e57a38a589bd5d19ddb58d5c97ced76718c993",
+      "archiveSHA256": "50de136a3b3ac130f185949200439d861b8a8812ea37ed841de8e46bd04b7f40",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-home-3.json",
+      "archive": "lh-after-final-desktop-home-3.json.gz",
+      "bytes": 1059682,
+      "archiveBytes": 540000,
+      "sha256": "b8e60c816e565a2e5570a6714a1032b321a4df962fd1560b09294745cc4f2c27",
+      "archiveSHA256": "e4d58ace796719f30fa7b44e0a12e75168a4de5fb4c7ebe0c46c892d5fdf097f",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-hub-1.json",
+      "archive": "lh-after-final-desktop-hub-1.json.gz",
+      "bytes": 799976,
+      "archiveBytes": 287726,
+      "sha256": "348155990f0de96500b00ecec82de998f88d3779daf4ddef7b6dfe7e14404f9d",
+      "archiveSHA256": "cb572178475070e328e1d56f8d98425c62672a86ae9b598dcfbc15edb4e190dd",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-management-delivery-1.json",
+      "archive": "lh-after-final-desktop-management-delivery-1.json.gz",
+      "bytes": 919444,
+      "archiveBytes": 419463,
+      "sha256": "54767680676a93438edfa42e56bdef010cdd94bc6bc5f466f2cc72f6519461f1",
+      "archiveSHA256": "4668087717e9979c9600fffaf5df34b225f88fe46e838f25435f5157ec36880d",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-market-enterprise-1.json",
+      "archive": "lh-after-final-desktop-market-enterprise-1.json.gz",
+      "bytes": 895523,
+      "archiveBytes": 420599,
+      "sha256": "de35f952c8ab22cc0f211bab22448f6aadcf6fba4379a7c0fd28edd5f426df0c",
+      "archiveSHA256": "45ffdb8a34a856f34ca797c2a8271b419c1085350e7ba24d57ea84f4d2b3299a",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-desktop-policy-governance-1.json",
+      "archive": "lh-after-final-desktop-policy-governance-1.json.gz",
+      "bytes": 897030,
+      "archiveBytes": 404318,
+      "sha256": "c7dd7fb2bf3c3b0bd5870b0b67dbb525432872b258574f3f5ae38b6b1bffc395",
+      "archiveSHA256": "416b4f55614063ded973086a97e792a6ab504a54ecb42ebaa45592bea2854164",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-development-impact-1.json",
+      "archive": "lh-after-final-mobile-development-impact-1.json.gz",
+      "bytes": 823690,
+      "archiveBytes": 371024,
+      "sha256": "3d2d181524a66b8b1b6a4db15faa98eb67fd0936dd63831415a6c332d25b6eea",
+      "archiveSHA256": "63427009f0ba920834c23c37077a88ff6eae83a838c1cdd40328463b763c9f44",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-economics-trade-1.json",
+      "archive": "lh-after-final-mobile-economics-trade-1.json.gz",
+      "bytes": 816049,
+      "archiveBytes": 366453,
+      "sha256": "ed1ebe935e75c57bcc0f09436392357b6d6ab0efc9276ccf535f3419e6a59dd9",
+      "archiveSHA256": "5401512a97926bffa27b7f61ec8f404d25a5663a57e1603c4a9b1f1bbb1ed48b",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-finance-investment-1.json",
+      "archive": "lh-after-final-mobile-finance-investment-1.json.gz",
+      "bytes": 837800,
+      "archiveBytes": 350582,
+      "sha256": "598007bc23f5b19173a78b123ff4f7b320982caf8fa3036daa59ffb2242b4367",
+      "archiveSHA256": "028e1e474ffc18462c7cf07326d920807d30f715e7c5864af7f83b9ca5f0a3bc",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-home-1.json",
+      "archive": "lh-after-final-mobile-home-1.json.gz",
+      "bytes": 615500,
+      "archiveBytes": 239072,
+      "sha256": "4bbbb83d49464c650815487199eed84e9cb37abd966d423d1780e0e783a78012",
+      "archiveSHA256": "7292b0e486d46c7dc6fd48b9b25e2ece6ac58b114f7985e621242a32a7c1c13c",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-home-2.json",
+      "archive": "lh-after-final-mobile-home-2.json.gz",
+      "bytes": 655456,
+      "archiveBytes": 278710,
+      "sha256": "020bff23702b56d3269ec223cca16b68dab2cc5dab60234f25b5d2eabc34937f",
+      "archiveSHA256": "8051cc83afe32f3b734ee6918723baed5015819d57cbba448ff9a216e0c6df24",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-home-3.json",
+      "archive": "lh-after-final-mobile-home-3.json.gz",
+      "bytes": 661570,
+      "archiveBytes": 281663,
+      "sha256": "2a5b426d365d514a74cb18dcd3c143a72adcc5f5f624ec5a026eff257f47a671",
+      "archiveSHA256": "0d716d8cb73e0c4be6e62bdaf0f713cda135b43265a127ceb6a8b488b0441847",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-hub-1.json",
+      "archive": "lh-after-final-mobile-hub-1.json.gz",
+      "bytes": 761987,
+      "archiveBytes": 267631,
+      "sha256": "86cbc1fe19312932c5ad30268d21b5d8984ee77336075f25bb2cbdbc27303455",
+      "archiveSHA256": "379bcee2c8f2957fda376a74e74d650b3dea4e22d59e997fab9cebbc9079882a",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-management-delivery-1.json",
+      "archive": "lh-after-final-mobile-management-delivery-1.json.gz",
+      "bytes": 865947,
+      "archiveBytes": 349199,
+      "sha256": "64de9dad4d6909bc483ff1c2364de009d056ae7b8fc95e8a392621a7f0d614f8",
+      "archiveSHA256": "1b6525289882033a97efe4825965a6126976d9be2fc34f184019b88975f0f74c",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-market-enterprise-1.json",
+      "archive": "lh-after-final-mobile-market-enterprise-1.json.gz",
+      "bytes": 847902,
+      "archiveBytes": 337587,
+      "sha256": "b9ec9c1cb6d6aea76f08592c70430106c49b3c5e1f7d90514e582025ddfba464",
+      "archiveSHA256": "eb3f68b67fbdb6f654ff90372ab5c2b2f5a4aa5c610cd208454c8b8b361ba5bf",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-final-mobile-policy-governance-1.json",
+      "archive": "lh-after-final-mobile-policy-governance-1.json.gz",
+      "bytes": 816953,
+      "archiveBytes": 317178,
+      "sha256": "d0d7e965725a29e6a53ee6c72a84e38f43d634995ac8a129a546bd616b501ecd",
+      "archiveSHA256": "59b368f941758ebfb44ce70304667f7b8d88f827e660675adcb49c99c7c0e141",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-development-impact-1.json",
+      "archive": "lh-after-mobile-development-impact-1.json.gz",
+      "bytes": 852335,
+      "archiveBytes": 388478,
+      "sha256": "0606b67f2cbd69ff1d633f83b73056e45006b0b9cad830b67e045f1f87c5b9af",
+      "archiveSHA256": "03d6435de39e3ea81665d2afeb7efd34d93148b2a07be83cc3f2f47288c16a6e",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-economics-trade-1.json",
+      "archive": "lh-after-mobile-economics-trade-1.json.gz",
+      "bytes": 788895,
+      "archiveBytes": 347690,
+      "sha256": "6850e16fa3d12e7c108c2b869c5f2c72d391b0ceca57f8f1e19a85a6948334cf",
+      "archiveSHA256": "ebb33af7e3506b3196cbf420e96513babfd54d69fcb4edab35d899751af45a27",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-finance-investment-1.json",
+      "archive": "lh-after-mobile-finance-investment-1.json.gz",
+      "bytes": 835971,
+      "archiveBytes": 366004,
+      "sha256": "3b48651bdc11aed2d0bc06b69d6af97f1941cf311610f3c55449f11b078d4db7",
+      "archiveSHA256": "84da06be4d268e32d6a6fa5619649935c0838d94f0cbf14a12b35003ce1d9eb8",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-home-1.json",
+      "archive": "lh-after-mobile-home-1.json.gz",
+      "bytes": 629977,
+      "archiveBytes": 253177,
+      "sha256": "d9637c32b5b956622edf15833f6b811fccd5b20e49b92f919c48d6efa075e74f",
+      "archiveSHA256": "1d89012f42af5cce41a71fe4e311ac30bdf1b1d001c870ac39283e98adf551ef",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-home-2.json",
+      "archive": "lh-after-mobile-home-2.json.gz",
+      "bytes": 657919,
+      "archiveBytes": 280117,
+      "sha256": "ded311fd116bf57f27f342db5dff1fd90f6cd505e744d493f91b6c20a6d2063a",
+      "archiveSHA256": "0927279bdfc32a95e2349e6a0098492bb6102d9731c6777d187f1fccef48ce5f",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-home-3.json",
+      "archive": "lh-after-mobile-home-3.json.gz",
+      "bytes": 687504,
+      "archiveBytes": 302443,
+      "sha256": "c96e5a6b3b875d6bfdd1b4fadbc401a64af4eacead7fb8a2dbb4009a5bfde321",
+      "archiveSHA256": "8b14f4d2d76982967463cb29c7553c60ba4fb4a681811f99184a51350ca1c338",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-hub-1.json",
+      "archive": "lh-after-mobile-hub-1.json.gz",
+      "bytes": 731501,
+      "archiveBytes": 245649,
+      "sha256": "27a91c5560acab972515102c0d5d9365b40e5455a0cf71da759e2ca3f94925bd",
+      "archiveSHA256": "4bd54649db3d7e2931a4a5da86694ced86b3cf4b4e3ffd7b59c266e9c1d56d65",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-management-delivery-1.json",
+      "archive": "lh-after-mobile-management-delivery-1.json.gz",
+      "bytes": 865076,
+      "archiveBytes": 349098,
+      "sha256": "f08c6816caa310ec9cb8bd2af7696208560f2e70f7d2f739db8a3a93facace56",
+      "archiveSHA256": "0b100b15d3dcafd2fe9a4ec8bac3d89204065d5f8e1b6e10088cde4e15550c2f",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-market-enterprise-1.json",
+      "archive": "lh-after-mobile-market-enterprise-1.json.gz",
+      "bytes": 819300,
+      "archiveBytes": 337259,
+      "sha256": "cec1b9570b7c983ddf6203cb0bc3b5ca6451f7c116939ecb9294c3eb8e4d19fc",
+      "archiveSHA256": "69acd21a9f40fbbd3370d127e54bf53e3f39767d521476e0a1cd3318da5e4686",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-after-mobile-policy-governance-1.json",
+      "archive": "lh-after-mobile-policy-governance-1.json.gz",
+      "bytes": 844390,
+      "archiveBytes": 335862,
+      "sha256": "48bd916ee177210134f0e2685bbdbbe5851ddc6bf7c567180c4096c6cab00982",
+      "archiveSHA256": "43d70181237b381255ac721813ab4f4c79ce1ec246fc22ec5b2afd8c9f3a7a59",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-development-impact-1.json",
+      "archive": "lh-baseline-desktop-development-impact-1.json.gz",
+      "bytes": 931291,
+      "archiveBytes": 424724,
+      "sha256": "ad4ddc15444caf3f9c2160286b9aab3fc99d9845afa8a516e2cd29d87fbddc62",
+      "archiveSHA256": "a6a2da536384c5ae73541530d3193045ad5bf7278efab8c06e8b86560ceeca59",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-economics-trade-1.json",
+      "archive": "lh-baseline-desktop-economics-trade-1.json.gz",
+      "bytes": 873437,
+      "archiveBytes": 396828,
+      "sha256": "9f41c4d0016ded5e911d704f1767bc8097af02c9f9733cba2df8b5109c900478",
+      "archiveSHA256": "129465282619630eb067fbfce60699e24b75ba6cf794c6c18301784219db47dd",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-finance-investment-1.json",
+      "archive": "lh-baseline-desktop-finance-investment-1.json.gz",
+      "bytes": 892049,
+      "archiveBytes": 405776,
+      "sha256": "8eab02177a9a5165c4ef447061dc7d66f2f8757e5d8c2d6d0c39ce623eb94d66",
+      "archiveSHA256": "6926ac47e2d42a64b3636e7a84346e825b64495716bfacc72ddc36a00dd9db2c",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-home-1.json",
+      "archive": "lh-baseline-desktop-home-1.json.gz",
+      "bytes": 1067819,
+      "archiveBytes": 544632,
+      "sha256": "460463f88db861fbe34c598912db2871d9296776af8cf6ddb950128466caf74c",
+      "archiveSHA256": "85956f748a4cda1d98600d77fe5e565b400a2f843cf6266d94ed229d1662a66c",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-home-2.json",
+      "archive": "lh-baseline-desktop-home-2.json.gz",
+      "bytes": 1045073,
+      "archiveBytes": 525085,
+      "sha256": "e876dd0f5da10faa38dada6ba2db7f4de22bec0a4d111c7810932d4fbcc73ad5",
+      "archiveSHA256": "d89d81755cce14bd0feb0b30b984848cd5ae752b35100510d1b7872a584f90cb",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-home-3.json",
+      "archive": "lh-baseline-desktop-home-3.json.gz",
+      "bytes": 1060735,
+      "archiveBytes": 539879,
+      "sha256": "efad0557544389f5c5241a59ba753aa092a8438db8c25f155aa684bfc1efa1bd",
+      "archiveSHA256": "32d485217fae1994dfdba0c60b83af9e8591a16c7ad44b64a2e3ad78687f2616",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-hub-1.json",
+      "archive": "lh-baseline-desktop-hub-1.json.gz",
+      "bytes": 794600,
+      "archiveBytes": 268648,
+      "sha256": "4a4b9f1711505bb4705e4746801637a0a4b7c615f1ff6f8f5e1ea093df1dcf43",
+      "archiveSHA256": "102b2195900b11dbdf6d6d2f91441f33436e35d4e1006c744df1342fa7e0830e",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-management-delivery-1.json",
+      "archive": "lh-baseline-desktop-management-delivery-1.json.gz",
+      "bytes": 908179,
+      "archiveBytes": 409199,
+      "sha256": "dec85405c1516da65423c54d1cd5bf57cfde2c1a8b68a3894a30edbbafc2487a",
+      "archiveSHA256": "ad0507b5e7cf688c5b96470da6308643c3f5cfe1b4672ab6cceabddd19c4e32d",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-market-enterprise-1.json",
+      "archive": "lh-baseline-desktop-market-enterprise-1.json.gz",
+      "bytes": 884736,
+      "archiveBytes": 394985,
+      "sha256": "b3b8da1cf0bea3441b1af8614ca32df40a3f1bb0739e8461fb49d652327fcbfc",
+      "archiveSHA256": "e3bdbe5889b2a7aaaf5eab3c9a11b74ab8cde207176d267d583809c51cf7e203",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-desktop-policy-governance-1.json",
+      "archive": "lh-baseline-desktop-policy-governance-1.json.gz",
+      "bytes": 891367,
+      "archiveBytes": 412172,
+      "sha256": "b80fd71556bfdc7a8318b688c83c4031c8d257161cbadb7f979e3edfe0a1579e",
+      "archiveSHA256": "4f5bb52c409b7922cf6491a987ed4a418ccb0fbc9263c2a276866a548081b78f",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-development-impact-1.json",
+      "archive": "lh-baseline-mobile-development-impact-1.json.gz",
+      "bytes": 852389,
+      "archiveBytes": 403408,
+      "sha256": "ccd187eb20ad2b824feb9384dddc21ed81ebe22603e4397184a634c556c3541d",
+      "archiveSHA256": "5b49a10e8dacc700a5f6f215cdb7e8a2a6c87a8bcb5d2bffb8cfe5234dd1b060",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-economics-trade-1.json",
+      "archive": "lh-baseline-mobile-economics-trade-1.json.gz",
+      "bytes": 813009,
+      "archiveBytes": 362860,
+      "sha256": "139e54b9e679389bd090df74054ec7dddede393a8fc9cb94ff49c416db13cf9b",
+      "archiveSHA256": "e750af1c338565404bc374c2730f70a97f13e5a701f18523ac8dc9db5dfc38c9",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-finance-investment-1.json",
+      "archive": "lh-baseline-mobile-finance-investment-1.json.gz",
+      "bytes": 836201,
+      "archiveBytes": 350285,
+      "sha256": "905545794c06619059cc8c8f9fba6ee83af93b028edbfba825008749d4fac06b",
+      "archiveSHA256": "fc4caa5814e9b4f45bb747039dab80bc39614c178b0ea42e049f27493c6a1fc6",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-home-1.json",
+      "archive": "lh-baseline-mobile-home-1.json.gz",
+      "bytes": 570131,
+      "archiveBytes": 207497,
+      "sha256": "6adba39655a6c3c0bed3981add47b22d9030a6789d2cd721d5d0654f688ef8d3",
+      "archiveSHA256": "bfe508ed17ac1b9e45139bb06d801a9ed2c63eab0cd830193e414a04b775f52d",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-home-2.json",
+      "archive": "lh-baseline-mobile-home-2.json.gz",
+      "bytes": 688123,
+      "archiveBytes": 299531,
+      "sha256": "e7a067bdc21595016bf5bb8426ccc4a9426fdf4da6e0cc84c9fa75d4248328da",
+      "archiveSHA256": "bb1f48c4267a6542976dab378be2141c4d1ca58f69492b1150b68e667b54ca73",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-home-3.json",
+      "archive": "lh-baseline-mobile-home-3.json.gz",
+      "bytes": 678388,
+      "archiveBytes": 291250,
+      "sha256": "27f3346dd61d04b174b342eedc5718984538ec75d749e8b0b48e7924f67066ba",
+      "archiveSHA256": "f36d82a44043bc76119dcfed0b2bca8005be99d7df53a2881278a486564c0307",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-hub-1.json",
+      "archive": "lh-baseline-mobile-hub-1.json.gz",
+      "bytes": 767115,
+      "archiveBytes": 267537,
+      "sha256": "53336050bdca048d671471ecd6123c8805eea85d8c064ce46d936cf64661d97f",
+      "archiveSHA256": "76968b79f42693b26edd294be95c8a9e0d0abe06db93092d250f8a1de2655aa1",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-management-delivery-1.json",
+      "archive": "lh-baseline-mobile-management-delivery-1.json.gz",
+      "bytes": 854385,
+      "archiveBytes": 341428,
+      "sha256": "c3212233cbd0d666c6bdb4bdd62365c862ffd5e142a21c41e271ee02f2eca2e8",
+      "archiveSHA256": "b8e7839ff7f785897f3321933a0ec28fab79c3ebe305cb3fda5354bbd26009ae",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-market-enterprise-1.json",
+      "archive": "lh-baseline-mobile-market-enterprise-1.json.gz",
+      "bytes": 841842,
+      "archiveBytes": 334237,
+      "sha256": "fe7a256afe4ec3c897b80130778182588c438de1e9fe32c5740953eb326e2d9d",
+      "archiveSHA256": "51d0ec569e00ab41ee701cafa39607626d6586661602028892e2a79e6f6afa03",
+      "roundTripVerified": true
+    },
+    {
+      "name": "lh-baseline-mobile-policy-governance-1.json",
+      "archive": "lh-baseline-mobile-policy-governance-1.json.gz",
+      "bytes": 822451,
+      "archiveBytes": 315689,
+      "sha256": "0858d6334462460b0779a9ee424ea3ea88edbea381cab5f6cdc0068883a98053",
+      "archiveSHA256": "41aff7c7435b3eef846d8876ae8c2dfc017569d1c7db486aa93abb3f645cf2ae",
+      "roundTripVerified": true
+    }
+  ]
+}

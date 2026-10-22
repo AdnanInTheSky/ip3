@@ -1,0 +1,12 @@
+{
+  "source": "assets\\img\\031024climate-action-esg-strategy-sustainability-47-1.png",
+  "output": "assets\\img\\education-innovation-poster-lossless.webp",
+  "source_bytes": 1360481,
+  "output_bytes": 955076,
+  "pixel_identical": true,
+  "dimensions": [
+    1366,
+    768
+  ],
+  "method": "Pillow lossless WebP; no resize or artwork change"
+}

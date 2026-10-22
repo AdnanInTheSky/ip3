@@ -1,53 +1,50 @@
-Six original standalone analytical infographics now run as native IP3 website pages. Their 64 public/private scenario variants, editorial heroes, animated sections, controls, calculations and charts are retained inside the existing navigation/footer and theme fonts. No iframe or video replacement is used.
+# IP3 Explore — final scientific/technical acceptance refinement
 
-## Current review remediation — 22 October 2026
+## Verdict: NO-GO for production
 
-- Reconciled all 16 supplied findings against current code and authenticated 14 original-source proof receipts.
-- Added six decision/evidence guides, full readable chart data, selected-case reset and local versioned JSON/CSV exports. Finance now shows signed flows including Year 0 and every year; conceptual preview geometry stays non-quantitative. Original model experiences and theme fonts retained.
-- Current local proof: 105 regression tests; 36 hosting tests; 64-case reset matrix; 18 independent chart/table/download vectors; desktop/mobile Chromium and Edge touch; zero automated axe findings in tested main content. Lighthouse model scores: 88–91 performance, 100 accessibility. Inherited Home LCP remains slow.
-- **8 Fixed / 5 Verified / 3 Blocked. This draft is not ready for production acceptance.** Critical empirical/domain gate IP3-03 remains blocked; human screen-reader acceptance (IP3-09) and authenticated hosted proof (IP3-15) are also blocked.
-- [Full current audit and before/after evidence](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/review-2026-10-22/CURRENT_REVIEW.md)
-- [Updated 16-row issue register](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/review-2026-10-22/ISSUE_REGISTER_UPDATED.csv)
+This draft preserves the existing Node static-site architecture, six complete native model experiences, 64 detailed case variants, 12 entry pathways, approved heroes/diagrams, theme fonts and shared shell. No merge, production deployment or protection changes are authorised.
 
-## Review routes
+The final reassessment supersedes the earlier reported counts. It reconciles **21 issues: 8 Fixed / 9 Verified / 3 Blocked / 1 Partially Fixed**. Critical IP3-03 remains open; automated arithmetic is not empirical calibration or external domain approval.
 
-- `/explore` — 12 entry scenarios
-- `/explore/economics-trade`
-- `/explore/finance-investment`
-- `/explore/market-enterprise`
-- `/explore/development-impact`
-- `/explore/policy-governance`
-- `/explore/management-delivery`
+## Targeted corrections
 
-Home adds a lightweight CMS-orderable preview after Why IP3. Approach retains its six-movement film. Existing six Capabilities and eight Sectors get contextual links. The existing contact form accepts an allowlisted discipline prefill without sending simulation values.
+- Fix server-side min/max/step serialization (undefined Linkedom properties previously produced NaN/null). Share readable labels; require metadata to match browser controls before endpoint testing.
+- Remove residual unapproved Enterprise fieldwork counts/credit and Delivery professional-engagement wording through the authoritative importer. Preserve original references.
+- Correct Impact's dotted-counterfactual footnote; supply verified author-year method context for all six models.
+- Stage hero media, retain a pixel-identical lossless poster and add explicit keyboard pause/focus/reduced-motion handling. No film/animation replaced by evidence screenshots.
+- Move Lighthouse warning rules to supported ci.assert.assertions without lowering thresholds. Add Gecko and final hero/scientific checks; isolate CI artifacts.
 
-## Verification
+## Fresh local proof
 
-- `npm ci`, `npm run check`, `npm run verify`: pass; 33 pages and internal links/sitemap verified.
-- `npm test`: 102 pass, including independent model arithmetic/architecture tests.
-- `npm run test:hostinger`: 36 pass.
-- Chromium: all 64 variants at 1440/820/390/320; 48 browser numerical vectors; keyboard, reduced motion, no-JS content and no-iframe/single-shell checks pass.
-- Microsoft Edge: touch interactions, mobile widths and automated WCAG checks pass on six pages. Automated new-main-content findings: 0.
-- Local mobile Lighthouse: new pages performance 88–92/accessibility 100. Home before/after performance 65/66, LCP 14.71/14.74 seconds, CLS 0/0. Existing slow homepage LCP remains; these are single local lab runs, not field INP or hosted-preview evidence.
-- All six reference SHA-256 values match the handoff manifest. Originals remain source-only.
+- **115 regression / 36 hosting tests pass**; build, CMS and 33-page link/metadata checks pass (seven inherited warnings remain).
+- Full Chromium: 64 variants at four widths and 48 displayed-value vectors, no failures.
+- Chromium **and Firefox/Gecko**: each 64 selected-case resets + 18 true default/min/max complete series/table/graph/download vectors, finite metadata contracts and zero tested axe findings.
+- Microsoft Edge touch emulation at 390/320; 46 independently expressed worked scientific vectors; 12 new hero/privacy/no-JS checks pass.
+- **60 Lighthouse reports** retained: controlled baseline and two targeted iterations, repeated Home mobile/desktop measurements, separate hub/model results.
+- Home median LCP: **mobile 14.74 → 7.60s; desktop 2.57 → 1.46s**. Mobile remains slow; no field CWV/INP pass or statistical significance claim.
 
-## Corrections and review boundaries
+Earlier endpoint proofs were insufficient for invalid metadata; this is explicitly documented, not relabelled as prior success. Resolved harness assumptions and actual before/after captures are preserved.
 
-Finance result labels now describe generic illustrative NPV/IRR, with correct Year 0 cash flows and a full annual table. Impact warns about infeasible percentage counterfactuals. Enterprise and Delivery chart domains now expand with adverse inputs. Finance contrast and motion lifecycle were corrected.
+## Open gates
 
-Numerical correctness is checked against independently expressed expectations; empirical calibration and external domain signoff have not been supplied. No newly proposed named client/result credit is published. Owner visual/content acceptance, a human screen-reader pass, broader engine/physical-device checks and authorised release remain pending. This draft PR must not be merged as an assertion that those approvals already exist.
+- **IP3-03 P0:** intended-use empirical evidence and qualified independent model sign-off unavailable.
+- **IP3-09 P1:** human NVDA/Firefox, VoiceOver/Safari and physical-device acceptance unavailable; executable scripts prepared.
+- **IP3-15 P1:** protected hosted acceptance unavailable (team ip-3 API scope 403; anonymous SSO redirect). No local/CI substitution or weakening of protection.
+- **IP3-18 P1 Partially Fixed:** remaining mobile LCP and authenticated/field performance work.
+- Final owner content/visual acceptance and release authorisation remain required.
 
-## Review documents and actual browser screenshots
+## Review deliverables
 
-- [Implementation and changed-file architecture](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/IMPLEMENTATION.md)
-- [Measured QA report and remaining gates](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/QA_REPORT.md)
-- [D01–D18 mapping](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/DECISION_MAPPING.md)
-- [Before: homepage](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/baseline/home.png)
-- [After: mobile homepage preview](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/qa/homepage-preview-390.png)
-- [Economics: desktop hero](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/qa/economics-trade-1440-hero.png)
-- [Finance: desktop analytical section](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/qa/finance-investment-1440-lab.png)
-- [Delivery: mobile hero](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/qa/management-delivery-390-hero.png)
+All in [review-2026-10-22](https://github.com/mdsyfulhoque-afk/ip3-bd.org/tree/codex/ip3-interactive-experience/docs/interactive-experience/review-2026-10-22):
 
-The QA directory also contains four actual browser captures per model, raw Lighthouse/axe results and machine-readable test summaries. CI includes a dedicated browser job and extends Lighthouse coverage to the new routes.
+- FINAL_ACCEPTANCE_REVIEW.md
+- ISSUE_REGISTER_FINAL.csv
+- SCIENTIFIC_MODEL_REVIEW.md (six individual dossiers)
+- EDITORIAL_AND_GRAPH_REVIEW.md
+- ACCESSIBILITY_ACCEPTANCE.md
+- HOSTED_VERIFICATION.md
+- PERFORMANCE_REVIEW.md
+- FINAL_QA_EVIDENCE/ (index, hashed receipts, logs, exported files and before/after screenshots; full Lighthouse JSON archived without byte changes)
+- RELEASE_DECISION.md
 
-Rollback: revert this feature PR. No production merge or deployment is requested by creating the draft.
+Technically available for review; scientific acceptance incomplete; production release not authorised. Revert this feature PR for rollback. Existing source/evidence history is preserved.

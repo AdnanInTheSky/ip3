@@ -17,14 +17,7 @@
   };
   const cfg=configs[slug],protocol=JSON.parse(root.querySelector('[data-model-protocol]').textContent);
   const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const label=id=>({
-    'et-tariff':'Additional tariff (%)','et-fx':'FX depreciation (%)','et-elasticity':'Demand elasticity',
-    'fi-rate':'Discount rate (%)','fi-stress':'Benefit/cost stress (%)',
-    'me-price':'Price (USD/unit)','me-cost':'Variable cost (USD/unit)','me-productivity':'Productivity uplift (%)','me-elasticity':'Demand elasticity',
-    'di-tpre':'Treated baseline (%)','di-tpost':'Treated endline (%)','di-cpre':'Comparison baseline (%)','di-cpost':'Comparison endline (%)',
-    'pg-steps':'Steps removed (of 10)','pg-digital':'Digital uptake (%)','pg-rework':'Rework rate (%)','pg-volume':'Applications per month',
-    'md-team':'Team size (people)','md-available':'Availability (%)','md-rework':'Rework (%)','md-depend':'Dependency drag (%)'
-  }[id]||id);
+  const label=id=>protocol.inputs.find(x=>x.id===id)?.label||id;
   cfg.ids.forEach(id=>{const input=$(id);if(!input.getAttribute('aria-label')&&!input.labels?.length)input.setAttribute('aria-label',label(id))});
   function snapshot(){
     const key=root.querySelector('[data-case][aria-selected=true]').dataset.case,context=root.querySelector('[data-sector][aria-pressed=true]').dataset.sector,scenario=protocol.cases[key][context];

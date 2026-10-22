@@ -1,0 +1,368 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "1e3ffefc1db4",
+  "model": "management-delivery",
+  "title": "Management & Delivery",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "field",
+    "context": "private",
+    "title": "How does an enterprise keep execution consistent across locations?"
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Original linear teaching model; no observed task-level delivery dataset supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+    "methodReferences": [
+      {
+        "label": "UK Government: project delivery standard",
+        "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+        "author": "UK Government",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      },
+      {
+        "label": "Government Functional Standard GovS 002: Project Delivery, version 2.1",
+        "author": "Government Project Delivery and Cabinet Office",
+        "publicationDate": "2025",
+        "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+        "role": "Project-delivery governance and planning context; no calibration of linear package throughput or probability of completion"
+      }
+    ]
+  },
+  "method": "A linear throughput illustration with 120 equivalent work packages, 0.75 packages/person/week and an illustrative 24-week target. The fixed comparison uses 10 people, 65% availability, 24% rework and 23% dependency drag.",
+  "formula": "Weekly rate = team × 0.75 × availability × (1−dependency drag)/(1+rework); duration = ceil(120/rate); schedule gap = 24−duration.",
+  "limits": "This is not a critical-path or resource-loaded schedule. It has no real dependencies, holidays, cost model or uncertainty distribution. The chart horizon expands to include slow scenarios.",
+  "guidance": {
+    "question": "How do availability, rework and dependency drag change illustrative throughput and completion time?",
+    "assumption": "120 equivalent packages; 0.75 packages/person/week; fixed baseline of 10 people, 65% availability, 24% rework and 23% dependency drag.",
+    "rule": "Completion within 24 weeks meets the illustrative target. Duration is rounded up to whole weeks; the chart shows continuous throughput capped at 120 packages.",
+    "next": "Build a resource-loaded schedule with actual package sizes, dependency logic, calendars, skills, costs and uncertainty; test against delivery records.",
+    "chart": "Horizontal: weeks, expanding for slow scenarios. Vertical: cumulative completed packages. Dashed: fixed baseline; solid: selected scenario; vertical dotted marker: week 24.",
+    "risk": "Dependency drag is a scalar assumption, not a dependency network. This does not perform critical-path analysis or estimate a completion probability.",
+    "parameterOrigin": "Original linear teaching model; no observed task-level delivery dataset supplied.",
+    "references": [
+      {
+        "label": "Government Functional Standard GovS 002: Project Delivery, version 2.1",
+        "author": "Government Project Delivery and Cabinet Office",
+        "publicationDate": "2025",
+        "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+        "role": "Project-delivery governance and planning context; no calibration of linear package throughput or probability of completion"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "md-team",
+      "label": "Team size (people)",
+      "default": 12,
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "value": 12
+    },
+    {
+      "id": "md-available",
+      "label": "Availability (%)",
+      "default": 80,
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "value": 80
+    },
+    {
+      "id": "md-rework",
+      "label": "Rework (%)",
+      "default": 14,
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "value": 14
+    },
+    {
+      "id": "md-depend",
+      "label": "Dependency drag (%)",
+      "default": 12,
+      "min": 0,
+      "max": 35,
+      "step": 1,
+      "value": 12
+    }
+  ],
+  "results": [
+    {
+      "measure": "Illustrative duration",
+      "displayValue": "22 wk"
+    },
+    {
+      "measure": "Relative to 24-week target",
+      "displayValue": "2 wk ahead"
+    },
+    {
+      "measure": "Packages per week",
+      "displayValue": "5.6/wk"
+    },
+    {
+      "measure": "Relative throughput",
+      "displayValue": "+84%"
+    }
+  ],
+  "chart": {
+    "title": "Cumulative equivalent work packages; linear throughput, target at week 24",
+    "headers": [
+      "Week",
+      "Fixed baseline (completed packages)",
+      "Selected scenario (completed packages)"
+    ],
+    "rows": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        3.027217741935484,
+        5.557894736842105
+      ],
+      [
+        2,
+        6.054435483870968,
+        11.11578947368421
+      ],
+      [
+        3,
+        9.081653225806452,
+        16.673684210526314
+      ],
+      [
+        4,
+        12.108870967741936,
+        22.23157894736842
+      ],
+      [
+        5,
+        15.13608870967742,
+        27.789473684210524
+      ],
+      [
+        6,
+        18.163306451612904,
+        33.34736842105263
+      ],
+      [
+        7,
+        21.190524193548388,
+        38.90526315789474
+      ],
+      [
+        8,
+        24.217741935483872,
+        44.46315789473684
+      ],
+      [
+        9,
+        27.244959677419356,
+        50.02105263157894
+      ],
+      [
+        10,
+        30.27217741935484,
+        55.57894736842105
+      ],
+      [
+        11,
+        33.29939516129032,
+        61.136842105263156
+      ],
+      [
+        12,
+        36.32661290322581,
+        66.69473684210526
+      ],
+      [
+        13,
+        39.353830645161295,
+        72.25263157894736
+      ],
+      [
+        14,
+        42.381048387096776,
+        77.81052631578947
+      ],
+      [
+        15,
+        45.408266129032256,
+        83.36842105263158
+      ],
+      [
+        16,
+        48.435483870967744,
+        88.92631578947368
+      ],
+      [
+        17,
+        51.46270161290323,
+        94.48421052631578
+      ],
+      [
+        18,
+        54.48991935483871,
+        100.04210526315788
+      ],
+      [
+        19,
+        57.51713709677419,
+        105.6
+      ],
+      [
+        20,
+        60.54435483870968,
+        111.1578947368421
+      ],
+      [
+        21,
+        63.57157258064517,
+        116.7157894736842
+      ],
+      [
+        22,
+        66.59879032258064,
+        120
+      ],
+      [
+        23,
+        69.62600806451613,
+        120
+      ],
+      [
+        24,
+        72.65322580645162,
+        120
+      ],
+      [
+        25,
+        75.6804435483871,
+        120
+      ],
+      [
+        26,
+        78.70766129032259,
+        120
+      ],
+      [
+        27,
+        81.73487903225806,
+        120
+      ],
+      [
+        28,
+        84.76209677419355,
+        120
+      ],
+      [
+        29,
+        87.78931451612904,
+        120
+      ],
+      [
+        30,
+        90.81653225806451,
+        120
+      ],
+      [
+        31,
+        93.84375,
+        120
+      ],
+      [
+        32,
+        96.87096774193549,
+        120
+      ],
+      [
+        33,
+        99.89818548387098,
+        120
+      ],
+      [
+        34,
+        102.92540322580646,
+        120
+      ],
+      [
+        35,
+        105.95262096774194,
+        120
+      ],
+      [
+        36,
+        108.97983870967742,
+        120
+      ],
+      [
+        37,
+        112.00705645161291,
+        120
+      ],
+      [
+        38,
+        115.03427419354838,
+        120
+      ],
+      [
+        39,
+        118.06149193548387,
+        120
+      ],
+      [
+        40,
+        120,
+        120
+      ],
+      [
+        41,
+        120,
+        120
+      ],
+      [
+        42,
+        120,
+        120
+      ],
+      [
+        43,
+        120,
+        120
+      ],
+      [
+        44,
+        120,
+        120
+      ],
+      [
+        45,
+        120,
+        120
+      ],
+      [
+        46,
+        120,
+        120
+      ],
+      [
+        47,
+        120,
+        120
+      ],
+      [
+        48,
+        120,
+        120
+      ]
+    ]
+  }
+}

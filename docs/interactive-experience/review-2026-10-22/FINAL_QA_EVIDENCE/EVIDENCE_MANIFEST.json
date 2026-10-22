@@ -1,0 +1,1510 @@
+{
+  "scope": "Final local evidence bytes, including preserved failures and original report archives; not external approval",
+  "files": [
+    {
+      "path": "BASELINE.json",
+      "bytes": 1262,
+      "sha256": "a5397c4e47f3f836cd5ae08ed8d4ca31c5e5efcc08ce93ffee7be9d8b5f408e8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9059,
+      "sha256": "916a63702a34d28362cfe41926384dca66b316549f1c6faae64dc5ab1331252e"
+    },
+    {
+      "path": "adversarial.log",
+      "bytes": 1264,
+      "sha256": "8dd4fef4c5028107c8491b6d7e4657a53b5395dd9c0228e5fa7de71909fc9ca3"
+    },
+    {
+      "path": "baseline-hosting.log",
+      "bytes": 3630,
+      "sha256": "1b8a47734978613e4616acf1371ee08dd07d686e9728fd1204919b26945ee50d"
+    },
+    {
+      "path": "baseline-regression.log",
+      "bytes": 12649,
+      "sha256": "d94934ffa364ecf3e94acee2e3e5111484d2aeb687559e7a37f59b5f2ae15e55"
+    },
+    {
+      "path": "build.log",
+      "bytes": 105,
+      "sha256": "38eaf19c55eab59c4105e0874c3fa57cd9f738a63c0052a35fa4a2c4e01a09ef"
+    },
+    {
+      "path": "chromium-full.log",
+      "bytes": 520,
+      "sha256": "65b4c628b150dcb90163afed6f568428fdb3642f14196294f9f458c8b32cfbdc"
+    },
+    {
+      "path": "chromium-full/browser-results.json",
+      "bytes": 5390,
+      "sha256": "241b24f7cc9b10c89606a31ef523d7ed5a80aeb256c1d8e460b6c429bbb74ef8"
+    },
+    {
+      "path": "chromium-full/development-impact-1440-hero.png",
+      "bytes": 1467333,
+      "sha256": "be1d173a79a7c4e42c3fc56a77c6b17f073458af51b777ec3103d85904d29993"
+    },
+    {
+      "path": "chromium-full/development-impact-1440-lab.png",
+      "bytes": 661959,
+      "sha256": "ef808f48c371044862fd7df8d8cdba1456755eae8231b4845191a93508aed337"
+    },
+    {
+      "path": "chromium-full/development-impact-390-hero.png",
+      "bytes": 505903,
+      "sha256": "e215187b54b0a0182b3e7009112335794bb9f66e3e79ab7d2ef1400b157de685"
+    },
+    {
+      "path": "chromium-full/development-impact-390-lab.png",
+      "bytes": 317705,
+      "sha256": "7013ed7a4e7fe70da86b90c8d2dea56bec4f6e1cd0ba47e5b2827f76a8fb1044"
+    },
+    {
+      "path": "chromium-full/development-impact-axe.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "chromium-full/economics-trade-1440-hero.png",
+      "bytes": 1561190,
+      "sha256": "6b5a6f37c197250df26ce4f596d409b13ba9ce5230fc0ce67b6d83bea31668d9"
+    },
+    {
+      "path": "chromium-full/economics-trade-1440-lab.png",
+      "bytes": 659414,
+      "sha256": "f9818770e894bef3ed07a60df98cc8968f00871594a0e283a1cbf357c06be85b"
+    },
+    {
+      "path": "chromium-full/economics-trade-390-hero.png",
+      "bytes": 535027,
+      "sha256": "ab710ecf062b014e4ff9cee35625b0ab05b957c1fedd5eec17b95bf9d1e57b61"
+    },
+    {
+      "path": "chromium-full/economics-trade-390-lab.png",
+      "bytes": 305779,
+      "sha256": "a03c9d22a2e24f508b3d13c08e80401df3e821f7172dab232023365a77fbff4d"
+    },
+    {
+      "path": "chromium-full/economics-trade-axe.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "chromium-full/edge-results.json",
+      "bytes": 1732,
+      "sha256": "03651bffc3eae3216a9bbb5ad2fe2817e8ceb0e68452613069aa3189a5e5c269"
+    },
+    {
+      "path": "chromium-full/finance-investment-1440-hero.png",
+      "bytes": 1819500,
+      "sha256": "5219cd2ea9e7694e5ca49e03a8933917cf7162091ef372039bdd0f2f25207e48"
+    },
+    {
+      "path": "chromium-full/finance-investment-1440-lab.png",
+      "bytes": 715223,
+      "sha256": "d5ea9d5d2f142ee1610060d2c4eaf211a490e3b7937f8c24339c09df8c474a1b"
+    },
+    {
+      "path": "chromium-full/finance-investment-390-hero.png",
+      "bytes": 607367,
+      "sha256": "8311e3a585975dca8731a213c1340c865dd1371f7ccc0722b21728733b0c63a2"
+    },
+    {
+      "path": "chromium-full/finance-investment-390-lab.png",
+      "bytes": 315297,
+      "sha256": "0fbb843c03e6db04ab055e1ff3645bd9c78e37bc062fff4cf9c4fb29f97cb0c2"
+    },
+    {
+      "path": "chromium-full/finance-investment-axe.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "chromium-full/homepage-preview-390.png",
+      "bytes": 149679,
+      "sha256": "e2b95c29894c0b4d514e8a9a0b720f80ce7af4f15a2c9e07dd7bb99be87504e9"
+    },
+    {
+      "path": "chromium-full/management-delivery-1440-hero.png",
+      "bytes": 1456519,
+      "sha256": "28caf5b8df6d209a98c1d22776742aba05b5c22ad2e8da3bd3cefc9d5dbfb65b"
+    },
+    {
+      "path": "chromium-full/management-delivery-1440-lab.png",
+      "bytes": 688009,
+      "sha256": "98b5becab1b553e8a7f514c17eba8f585377196f74ad2b9261ae5069adfebd6b"
+    },
+    {
+      "path": "chromium-full/management-delivery-390-hero.png",
+      "bytes": 505043,
+      "sha256": "7648630b7ca2fd0198b278ad2b9125bac1492bbc912984fb23de2b6a59009f34"
+    },
+    {
+      "path": "chromium-full/management-delivery-390-lab.png",
+      "bytes": 324643,
+      "sha256": "614eec97955ea6119ed31e92627b552d4e65b240f85aa7faf62e49f8af1fa75d"
+    },
+    {
+      "path": "chromium-full/management-delivery-axe.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "chromium-full/market-enterprise-1440-hero.png",
+      "bytes": 1549468,
+      "sha256": "bd5c0cc0c1bd36538add0cc516e121fbc075850684043fa273ec0b0f8cb9c4d7"
+    },
+    {
+      "path": "chromium-full/market-enterprise-1440-lab.png",
+      "bytes": 667888,
+      "sha256": "ec27fb00e68028a4cdc330dabf8e1bb15a6eea2999d3c80227d9c84b32f36144"
+    },
+    {
+      "path": "chromium-full/market-enterprise-390-hero.png",
+      "bytes": 524518,
+      "sha256": "932de7b1e47b8e1ffdd91ad1aedf2600293618fe202c52f2b3174a5587deb50e"
+    },
+    {
+      "path": "chromium-full/market-enterprise-390-lab.png",
+      "bytes": 317706,
+      "sha256": "e8e20f6684fc79ecf0fd760b98d95884e0e9827e8c5ad48999ab60f4e322bc52"
+    },
+    {
+      "path": "chromium-full/market-enterprise-axe.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "chromium-full/policy-governance-1440-hero.png",
+      "bytes": 1456913,
+      "sha256": "2552ef52a06d6deffe5b2223c6c8231160d68eaae2c5b8bbba9b9743e5eabb61"
+    },
+    {
+      "path": "chromium-full/policy-governance-1440-lab.png",
+      "bytes": 674478,
+      "sha256": "c5f1b59bf70772bc2a06f2e8a57e499b89818d9991127d20db103d66e86999a2"
+    },
+    {
+      "path": "chromium-full/policy-governance-390-hero.png",
+      "bytes": 505893,
+      "sha256": "3293ac4f9043e6d3d6f06132e8ad6b59d2f4534c73ab7c0ff2725c0bd8afc7d9"
+    },
+    {
+      "path": "chromium-full/policy-governance-390-lab.png",
+      "bytes": 316464,
+      "sha256": "41a96d30167a5fc6241e0a6daace2285e9972cc2a149093f773844773d93f45e"
+    },
+    {
+      "path": "chromium-full/policy-governance-axe.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "chromium-models.log",
+      "bytes": 499,
+      "sha256": "faadf7de19f6ef23fc4a068cd480bba49b19358a2390a97e9bed93549aeefa23"
+    },
+    {
+      "path": "chromium-models/development-impact-1440-after.png",
+      "bytes": 580330,
+      "sha256": "333d33d18a0bc4b62bc38b1bba79bec82ecb14ff4456a376ae1786b60cbbd872"
+    },
+    {
+      "path": "chromium-models/development-impact-1440-data.png",
+      "bytes": 608749,
+      "sha256": "8ecfdb8b4246945f3d42740a5b83eb40aea8f71f175d18eb980be766cbe050f9"
+    },
+    {
+      "path": "chromium-models/development-impact-320-after.png",
+      "bytes": 234736,
+      "sha256": "b3ae85632b07555b8844137cbc17b4a71aea3379e80381004e1fa709b4e3d2c3"
+    },
+    {
+      "path": "chromium-models/development-impact-320-data.png",
+      "bytes": 296694,
+      "sha256": "a8d5a06df4f960f6632496b6e4594cde2953c16bd00ac68acd0aebcd2b972c78"
+    },
+    {
+      "path": "chromium-models/development-impact-390-after.png",
+      "bytes": 264107,
+      "sha256": "4d94fc90bb9a957416d878b92aa51b087c9e8984c08b5c8d598cace22df29cc1"
+    },
+    {
+      "path": "chromium-models/development-impact-390-data.png",
+      "bytes": 337918,
+      "sha256": "0495aa03e1b5cbfbeafa80eaeddf8690ffe2f6aeaeb3df04ca067cf9fe4667dc"
+    },
+    {
+      "path": "chromium-models/development-impact-chart.csv",
+      "bytes": 4172,
+      "sha256": "55dc70eb8efff7e45bacc05169e349ba019c1c81c39fa145c3551b7ae32d82ca"
+    },
+    {
+      "path": "chromium-models/development-impact-default.json",
+      "bytes": 5601,
+      "sha256": "5538d14f11b2b0d901906826e5b09bdc0e03fbcc1e28b27a5704ba9a662d1f93"
+    },
+    {
+      "path": "chromium-models/development-impact-max.json",
+      "bytes": 5606,
+      "sha256": "8d28f6d336f80db074a7ccefb9652c51f370a396747045bb22ceb548d44047b2"
+    },
+    {
+      "path": "chromium-models/development-impact-min.json",
+      "bytes": 5584,
+      "sha256": "132cce7342d0236ab27c51956820386c80464d8521135e574c1c39c9b9488cca"
+    },
+    {
+      "path": "chromium-models/economics-trade-1440-after.png",
+      "bytes": 645610,
+      "sha256": "ed31cb055b51253c0c47395959e28599d82bb212ad06834b7349e567f15446f2"
+    },
+    {
+      "path": "chromium-models/economics-trade-1440-data.png",
+      "bytes": 624397,
+      "sha256": "5917ce91e4af138e2bc5a6c54a5f157c8fbeb54b6890dfd0987b22d84eef32e2"
+    },
+    {
+      "path": "chromium-models/economics-trade-320-after.png",
+      "bytes": 262296,
+      "sha256": "bd2f696dc615fe70ab832ed8ee8d0e4000d1f66b929e940b5a59e755ba5f7083"
+    },
+    {
+      "path": "chromium-models/economics-trade-320-data.png",
+      "bytes": 312377,
+      "sha256": "b20f72b4065b6063f68cfd8f3bbb9ffb264507f6794f5bd796c7ed46be6e5e10"
+    },
+    {
+      "path": "chromium-models/economics-trade-390-after.png",
+      "bytes": 292157,
+      "sha256": "693f8e95e42c20a6da6e089887ee93d78c3a037302e9ce5ac5195b87d42ee347"
+    },
+    {
+      "path": "chromium-models/economics-trade-390-data.png",
+      "bytes": 337435,
+      "sha256": "2cfa766beff3a93fedc244bf258399097c5bca4622c3a57218216cff20d2b389"
+    },
+    {
+      "path": "chromium-models/economics-trade-chart.csv",
+      "bytes": 35793,
+      "sha256": "595b9f67bc4f63b85f75ae0442870c62a1f359648092c4086218ab36740ef69d"
+    },
+    {
+      "path": "chromium-models/economics-trade-default.json",
+      "bytes": 13160,
+      "sha256": "c62a231e18c2ad0223b8c2508896b7be56018bca4a5204562f445af7cd69c2f8"
+    },
+    {
+      "path": "chromium-models/economics-trade-max.json",
+      "bytes": 12816,
+      "sha256": "c417601ebc1e29f95f82a6cd4e6af80284b0a026bdde9ad28df2a42e2600b2a4"
+    },
+    {
+      "path": "chromium-models/economics-trade-min.json",
+      "bytes": 13165,
+      "sha256": "4b8f300f2c062f3d11546999c0ac5c370a9e7b0e13d68047046adf75082df5a8"
+    },
+    {
+      "path": "chromium-models/finance-investment-1440-after.png",
+      "bytes": 623441,
+      "sha256": "53e4408ad264d1d29335fae330be03ad59fd8f68401a8a3b37528cb11bac03fc"
+    },
+    {
+      "path": "chromium-models/finance-investment-1440-data.png",
+      "bytes": 644122,
+      "sha256": "b6b01f9d94e835cbed08687426bc0e0b44671910176715f36dd4a1dac354193f"
+    },
+    {
+      "path": "chromium-models/finance-investment-320-after.png",
+      "bytes": 255935,
+      "sha256": "45efb58004f13edc4cf94bc1c9ffe560f81c5ae1c8e079282b2df404c1dbaa98"
+    },
+    {
+      "path": "chromium-models/finance-investment-320-data.png",
+      "bytes": 313029,
+      "sha256": "6f634a730f7a70c491b96079270109d5839ee49941394536a56be67964e025ad"
+    },
+    {
+      "path": "chromium-models/finance-investment-390-after.png",
+      "bytes": 277588,
+      "sha256": "5cc4a858e9d9e85f0386309d836f40f94cc5d9d0c77aee8438ab3e00fabe71cc"
+    },
+    {
+      "path": "chromium-models/finance-investment-390-data.png",
+      "bytes": 339040,
+      "sha256": "439ee16acf4e18b04a94b02d085af0de5b721fbeea16c57c6b7eadd23eec8dd0"
+    },
+    {
+      "path": "chromium-models/finance-investment-chart.csv",
+      "bytes": 5715,
+      "sha256": "af5a038e98df79f253cdb4b7f9abaf9bbe1e4cd4f190b29362368b6d7a5e7595"
+    },
+    {
+      "path": "chromium-models/finance-investment-default.json",
+      "bytes": 5935,
+      "sha256": "f1372223c01d4c15586d3887e69bc920aab66585f54bd6bd94ae5037408742d7"
+    },
+    {
+      "path": "chromium-models/finance-investment-max.json",
+      "bytes": 5945,
+      "sha256": "4a400db93b53f42d51af3a16f56b797631d6373c01aaf22772e44d989afddef5"
+    },
+    {
+      "path": "chromium-models/finance-investment-min.json",
+      "bytes": 5934,
+      "sha256": "ff5859a21e0a8f59e38dc02be40d3371ef8c801bdf7ccbb13bd33df5bc8baff2"
+    },
+    {
+      "path": "chromium-models/management-delivery-1440-after.png",
+      "bytes": 603507,
+      "sha256": "82b8dd730c9597951a50a993b9eb619c984c350ddcd578ead9fe8831217d6ca8"
+    },
+    {
+      "path": "chromium-models/management-delivery-1440-data.png",
+      "bytes": 591946,
+      "sha256": "1cdb1697ed11282100421d687f07b9285b52ad40f15775d495f83e15e6aa6b18"
+    },
+    {
+      "path": "chromium-models/management-delivery-320-after.png",
+      "bytes": 245104,
+      "sha256": "555a762f2a6db21efb547e5d0b04e95349a63068dbad126c1a55db2b63a4c40f"
+    },
+    {
+      "path": "chromium-models/management-delivery-320-data.png",
+      "bytes": 294373,
+      "sha256": "4f9f59e9576a68d6931ebb3d1effb3fed539bcaa0f2066b8a0817087710b6178"
+    },
+    {
+      "path": "chromium-models/management-delivery-390-after.png",
+      "bytes": 285448,
+      "sha256": "dc17ba06a51a7d082148d4b9bd288088920eef8d30e052fe7df68e9c71b1c1b6"
+    },
+    {
+      "path": "chromium-models/management-delivery-390-data.png",
+      "bytes": 330327,
+      "sha256": "0af05bc89e937f22037794b24bb93d1efcabf75c591bf2f02b2ea4ab4351e75c"
+    },
+    {
+      "path": "chromium-models/management-delivery-chart.csv",
+      "bytes": 17263,
+      "sha256": "f4729f542df066ce0099b677901fc4a84eea40220844c1dcbd049307a1b8527f"
+    },
+    {
+      "path": "chromium-models/management-delivery-default.json",
+      "bytes": 8668,
+      "sha256": "cdc15a3e873d27baf039fcddfe69f52cd9cd54b8ca7010369381132aea637bc5"
+    },
+    {
+      "path": "chromium-models/management-delivery-max.json",
+      "bytes": 8605,
+      "sha256": "4dd0dc786b6bfff247b9b1e8ed6c3625b0902581a02dbcf0baa4643d149adbc6"
+    },
+    {
+      "path": "chromium-models/management-delivery-min.json",
+      "bytes": 9811,
+      "sha256": "a0ac98284b8ce2f68d73be0a08fc487689c271bd45c4decf9884f2c90b6dd0f4"
+    },
+    {
+      "path": "chromium-models/market-enterprise-1440-after.png",
+      "bytes": 619611,
+      "sha256": "02bf7cc6ca6c4b5104d9f8d6d85794a70fe18126537f026c468afe2fe2f5c321"
+    },
+    {
+      "path": "chromium-models/market-enterprise-1440-data.png",
+      "bytes": 611492,
+      "sha256": "9d57ec9b38852fc7033c22facecdde57635ae7d30c5767b7f07649dd7b16df85"
+    },
+    {
+      "path": "chromium-models/market-enterprise-320-after.png",
+      "bytes": 260007,
+      "sha256": "b7b068c00ad8d89f6bf35289fbf9da2c35e0a0bf483b4b65082be5cbc2f2e271"
+    },
+    {
+      "path": "chromium-models/market-enterprise-320-data.png",
+      "bytes": 301010,
+      "sha256": "070881f0f44e8f0313f4549350d99f84e7d353805770a722b7a30244f257e7b4"
+    },
+    {
+      "path": "chromium-models/market-enterprise-390-after.png",
+      "bytes": 300766,
+      "sha256": "935b97db63047abdae1324f86dcdbccc57e28d9bfb09aa615a4a3cc2b1008cfa"
+    },
+    {
+      "path": "chromium-models/market-enterprise-390-data.png",
+      "bytes": 342402,
+      "sha256": "ea88b354942f2d07a578dfe466cc9f65156765c4c66fa73092d3e8936c8f38a2"
+    },
+    {
+      "path": "chromium-models/market-enterprise-chart.csv",
+      "bytes": 13650,
+      "sha256": "e7f516e535eebfd6d303a52eaba8fa96946c1e3517b8af9822959e58ee5a57d2"
+    },
+    {
+      "path": "chromium-models/market-enterprise-default.json",
+      "bytes": 9417,
+      "sha256": "0becf8d424debc2b8dabe6e92e31c32e4a69adcf93e3f1cd4ea432cfcc4d9c78"
+    },
+    {
+      "path": "chromium-models/market-enterprise-max.json",
+      "bytes": 9419,
+      "sha256": "264fa565761a8a803bb43014217d0f874f5ad5008b11af478572cb107a174afa"
+    },
+    {
+      "path": "chromium-models/market-enterprise-min.json",
+      "bytes": 9187,
+      "sha256": "467b0c87371ee10fd215d33ad73ab21406d9dd39c62e35514f03bd660ad2e3a7"
+    },
+    {
+      "path": "chromium-models/policy-governance-1440-after.png",
+      "bytes": 576684,
+      "sha256": "76eec37231e41255a6ee96465ca2d0f4e55c660d64e1c325d3eefc91c87bedcc"
+    },
+    {
+      "path": "chromium-models/policy-governance-1440-data.png",
+      "bytes": 607938,
+      "sha256": "6d190a64196987e4ddb97117c9bf509a12ddd3ad5f46f2251e2c651e11568f67"
+    },
+    {
+      "path": "chromium-models/policy-governance-320-after.png",
+      "bytes": 245153,
+      "sha256": "898f376f4787db2c56aef60d19960a191f20b9745240d990d88b637e47ee81ca"
+    },
+    {
+      "path": "chromium-models/policy-governance-320-data.png",
+      "bytes": 294751,
+      "sha256": "6233f7a7a5a1f5cba155dab051dd26e69eb6d168045ed7a39ea8c08b52aca5be"
+    },
+    {
+      "path": "chromium-models/policy-governance-390-after.png",
+      "bytes": 283141,
+      "sha256": "6717e49a0c8d0f49fe6a739dee60981e7a365cb5faefde4db00314db0cead898"
+    },
+    {
+      "path": "chromium-models/policy-governance-390-data.png",
+      "bytes": 328613,
+      "sha256": "4508c586e5d4ffb43e2bc4e934ba8607161a37aae47611c98b0ca6cc964133b6"
+    },
+    {
+      "path": "chromium-models/policy-governance-chart.csv",
+      "bytes": 3889,
+      "sha256": "06c32c95f47bb3cf31a12b5c7aa24978b12a047e6a68561a7bfe204e34a59ee6"
+    },
+    {
+      "path": "chromium-models/policy-governance-default.json",
+      "bytes": 5258,
+      "sha256": "20aaddf34ddfaec557b01ce3284cb4ad2d1ec01a77ca4c521afb1a86199b6149"
+    },
+    {
+      "path": "chromium-models/policy-governance-max.json",
+      "bytes": 5293,
+      "sha256": "e1c0a33c2dffc2900f77a817cbf11d5ec6b11087b3722ce28ead737ae4ccdfe9"
+    },
+    {
+      "path": "chromium-models/policy-governance-min.json",
+      "bytes": 5239,
+      "sha256": "aaa5a2ba00f3a2de1efd78e12c4b76208303b672882bbf3cd0ed34e91ebb64c4"
+    },
+    {
+      "path": "chromium-models/review-browser-results.json",
+      "bytes": 907,
+      "sha256": "d5ebbff6bd26a83f641c3d05ae7bacfcb6bdf265d09ffea197eda09a9fa4da3f"
+    },
+    {
+      "path": "content-check.log",
+      "bytes": 911,
+      "sha256": "43f213ec662f2d681034f3e05c2ff151d936d1bfcb187fc1f0addc604847bdc8"
+    },
+    {
+      "path": "delivery-claim-1440-after.png",
+      "bytes": 14328,
+      "sha256": "0ae9cc274c95b3efd85e8acf1e35a067c0e302a5645c132cd11dbcea66dcf442"
+    },
+    {
+      "path": "delivery-claim-1440-before.png",
+      "bytes": 14363,
+      "sha256": "95e1a0ecb0253dce40c08b71d5f96911ccbb5593adcb1130cc8e293898161213"
+    },
+    {
+      "path": "delivery-claim-390-after.png",
+      "bytes": 15581,
+      "sha256": "26f71c436b75dda3943fb57e9e7644146b440bf79f92a26e237684304c190caf"
+    },
+    {
+      "path": "delivery-claim-390-before.png",
+      "bytes": 15570,
+      "sha256": "1bcd7f957584ad03d9c9e410af55a5c5c47487a665b9340a0bd8397487dcec51"
+    },
+    {
+      "path": "edge-touch.log",
+      "bytes": 646,
+      "sha256": "f304adc1a34b07aa334d73ca9a52c1b745aa3c0cbf82a225c3f6d6b39d5252a0"
+    },
+    {
+      "path": "edge/edge-touch-results.json",
+      "bytes": 976,
+      "sha256": "64235dd99aa40fd220f253cdd1299ca5e453fe8c87cf89e4a55c127fbd6b23c0"
+    },
+    {
+      "path": "enterprise-claims-1440-after.png",
+      "bytes": 412803,
+      "sha256": "298f3da22d6f7717b7592a6994f9f4940942c184e06a6f5a570fff2034bc5b2d"
+    },
+    {
+      "path": "enterprise-claims-1440-before.png",
+      "bytes": 415453,
+      "sha256": "bc8d9635072caac0a32d06bb0e9fa3163ab683aed4aeb1d0b0c72bacfa8e78b0"
+    },
+    {
+      "path": "enterprise-claims-390-after.png",
+      "bytes": 251831,
+      "sha256": "57f6f529804acd3f6db577162a3546cb76c80f69e6fdcfb10ac2484ee14e4c95"
+    },
+    {
+      "path": "enterprise-claims-390-before.png",
+      "bytes": 245001,
+      "sha256": "bbca272b2589c0cacc5d365ad3afff43a51118be013ef1a3d331199612d7f224"
+    },
+    {
+      "path": "environments.json",
+      "bytes": 349,
+      "sha256": "7f85bcf390fc6492179baf00543bbd1b9c7552deb4c3f4474e00bd61d73eca41"
+    },
+    {
+      "path": "final-browser-specific.json",
+      "bytes": 1742,
+      "sha256": "8172b58ec97f1676220803e79f33239e4997bcb22ea0e82d5b303361507644f0"
+    },
+    {
+      "path": "final-browser-specific.log",
+      "bytes": 40,
+      "sha256": "8245be5d66e5d9fc2bb1af78cc0321ce6b6a5e4214c3c6780361480dd9dffffc"
+    },
+    {
+      "path": "final-hosting.log",
+      "bytes": 3634,
+      "sha256": "d562bf7c4d8469ef18915fe94cade2955fd1fc34037b66ce53be33d91f601473"
+    },
+    {
+      "path": "final-regression.log",
+      "bytes": 13714,
+      "sha256": "35b58c479d0ec7d833e61c2fd0369c098114697aa221adde102402cccee4231f"
+    },
+    {
+      "path": "final-task-input.json",
+      "bytes": 385,
+      "sha256": "6972a9e2db916f1fb0710b4edfc135a15e03a6877d29838a21714371cd21011a"
+    },
+    {
+      "path": "firefox-install.log",
+      "bytes": 2288,
+      "sha256": "94de172f0047da3d1fe354b8fb555be0f2ee2fdb04d9db38f71bded6797d5a64"
+    },
+    {
+      "path": "firefox-models.log",
+      "bytes": 499,
+      "sha256": "faadf7de19f6ef23fc4a068cd480bba49b19358a2390a97e9bed93549aeefa23"
+    },
+    {
+      "path": "firefox-models/development-impact-1440-after.png",
+      "bytes": 760377,
+      "sha256": "428a5512c67319692370a9cac511e0c741287d9699eaf31e6ca510c0242f0222"
+    },
+    {
+      "path": "firefox-models/development-impact-1440-data.png",
+      "bytes": 760377,
+      "sha256": "428a5512c67319692370a9cac511e0c741287d9699eaf31e6ca510c0242f0222"
+    },
+    {
+      "path": "firefox-models/development-impact-320-after.png",
+      "bytes": 281688,
+      "sha256": "b530ca99b554a8647e823257d62467e214c7ecd13ed8bd80e7e4b644f1a7425f"
+    },
+    {
+      "path": "firefox-models/development-impact-320-data.png",
+      "bytes": 334445,
+      "sha256": "69524ac9671e6a95f5f8ed41e7eedc7dfdbd0f57264366635ed3527205b98f5b"
+    },
+    {
+      "path": "firefox-models/development-impact-390-after.png",
+      "bytes": 329725,
+      "sha256": "748c769d51106abe6d7525c9203b4f400a2a0e4be33b33d4b44705bc50761c99"
+    },
+    {
+      "path": "firefox-models/development-impact-390-data.png",
+      "bytes": 380468,
+      "sha256": "a3cf7e8c35db0d89b861f596e5aee0a33baedfd635da0bbd9903d9b113669b86"
+    },
+    {
+      "path": "firefox-models/development-impact-chart.csv",
+      "bytes": 4172,
+      "sha256": "55dc70eb8efff7e45bacc05169e349ba019c1c81c39fa145c3551b7ae32d82ca"
+    },
+    {
+      "path": "firefox-models/development-impact-default.json",
+      "bytes": 5601,
+      "sha256": "5538d14f11b2b0d901906826e5b09bdc0e03fbcc1e28b27a5704ba9a662d1f93"
+    },
+    {
+      "path": "firefox-models/development-impact-max.json",
+      "bytes": 5606,
+      "sha256": "8d28f6d336f80db074a7ccefb9652c51f370a396747045bb22ceb548d44047b2"
+    },
+    {
+      "path": "firefox-models/development-impact-min.json",
+      "bytes": 5584,
+      "sha256": "132cce7342d0236ab27c51956820386c80464d8521135e574c1c39c9b9488cca"
+    },
+    {
+      "path": "firefox-models/economics-trade-1440-after.png",
+      "bytes": 811879,
+      "sha256": "ce6d0c0ab4edd653ca91695800210a4fb84d5044d7b319e2eee82c8c92afbe67"
+    },
+    {
+      "path": "firefox-models/economics-trade-1440-data.png",
+      "bytes": 811879,
+      "sha256": "ce6d0c0ab4edd653ca91695800210a4fb84d5044d7b319e2eee82c8c92afbe67"
+    },
+    {
+      "path": "firefox-models/economics-trade-320-after.png",
+      "bytes": 319980,
+      "sha256": "30a90adc97d3868514b21bb9e5303cebc56624f5474d7ee184a60b55e636e29b"
+    },
+    {
+      "path": "firefox-models/economics-trade-320-data.png",
+      "bytes": 356910,
+      "sha256": "478b702d95a720ce80d175dd537f756b7cd807c988dcb2cf3fb8ebf6e3c70c64"
+    },
+    {
+      "path": "firefox-models/economics-trade-390-after.png",
+      "bytes": 367370,
+      "sha256": "a0cbc6fa77e6591581eb15260ad8cc4afad94bed226515282a0be6d2fa2829f5"
+    },
+    {
+      "path": "firefox-models/economics-trade-390-data.png",
+      "bytes": 384860,
+      "sha256": "a9e10577fb4f427f83f016485286c8c1223fce85e8caf1f5761900e486097fe8"
+    },
+    {
+      "path": "firefox-models/economics-trade-chart.csv",
+      "bytes": 35793,
+      "sha256": "595b9f67bc4f63b85f75ae0442870c62a1f359648092c4086218ab36740ef69d"
+    },
+    {
+      "path": "firefox-models/economics-trade-default.json",
+      "bytes": 13160,
+      "sha256": "c62a231e18c2ad0223b8c2508896b7be56018bca4a5204562f445af7cd69c2f8"
+    },
+    {
+      "path": "firefox-models/economics-trade-max.json",
+      "bytes": 12816,
+      "sha256": "c417601ebc1e29f95f82a6cd4e6af80284b0a026bdde9ad28df2a42e2600b2a4"
+    },
+    {
+      "path": "firefox-models/economics-trade-min.json",
+      "bytes": 13161,
+      "sha256": "5441ae0de44ccb3659a7365938919fbeaa54a7003099700af15480504949b28b"
+    },
+    {
+      "path": "firefox-models/finance-investment-1440-after.png",
+      "bytes": 984205,
+      "sha256": "99b1c099e66ef3e3fb99ea59f142dec6c124ab6d6062119b0a82d0c4f42008ef"
+    },
+    {
+      "path": "firefox-models/finance-investment-1440-data.png",
+      "bytes": 851393,
+      "sha256": "528b416e42a71435431d79e114d464cf7a59aa170c602850bc51d9dedeff153e"
+    },
+    {
+      "path": "firefox-models/finance-investment-320-after.png",
+      "bytes": 305619,
+      "sha256": "b5de17aef0130c231bbc398a3b6f613dd63a260d6b5fa30f8389525d365c8f69"
+    },
+    {
+      "path": "firefox-models/finance-investment-320-data.png",
+      "bytes": 354071,
+      "sha256": "dc31ddcfd02f8519e85569795ec7fa1d726b3b95a533ce56e6ab48d7f80f8d0c"
+    },
+    {
+      "path": "firefox-models/finance-investment-390-after.png",
+      "bytes": 354286,
+      "sha256": "10175fccb0a14e7c0ded999c8bbd3fa77421456e62e2a733015343356979605f"
+    },
+    {
+      "path": "firefox-models/finance-investment-390-data.png",
+      "bytes": 397973,
+      "sha256": "a6eb0ce2053d52493d26b312007d8d13dbb2ef7804c63f108f432627ed79a668"
+    },
+    {
+      "path": "firefox-models/finance-investment-chart.csv",
+      "bytes": 5715,
+      "sha256": "af5a038e98df79f253cdb4b7f9abaf9bbe1e4cd4f190b29362368b6d7a5e7595"
+    },
+    {
+      "path": "firefox-models/finance-investment-default.json",
+      "bytes": 5935,
+      "sha256": "f1372223c01d4c15586d3887e69bc920aab66585f54bd6bd94ae5037408742d7"
+    },
+    {
+      "path": "firefox-models/finance-investment-max.json",
+      "bytes": 5945,
+      "sha256": "4a400db93b53f42d51af3a16f56b797631d6373c01aaf22772e44d989afddef5"
+    },
+    {
+      "path": "firefox-models/finance-investment-min.json",
+      "bytes": 5934,
+      "sha256": "ff5859a21e0a8f59e38dc02be40d3371ef8c801bdf7ccbb13bd33df5bc8baff2"
+    },
+    {
+      "path": "firefox-models/management-delivery-1440-after.png",
+      "bytes": 774475,
+      "sha256": "48332ac4a03eed486bcc64f466bbce01229a0a85ef3f31935c2f98b91da7ea73"
+    },
+    {
+      "path": "firefox-models/management-delivery-1440-data.png",
+      "bytes": 774475,
+      "sha256": "48332ac4a03eed486bcc64f466bbce01229a0a85ef3f31935c2f98b91da7ea73"
+    },
+    {
+      "path": "firefox-models/management-delivery-320-after.png",
+      "bytes": 294514,
+      "sha256": "740bb51f1d78a92696b187264b53f6ff27c78c5bec771e1d607b25f111b9835a"
+    },
+    {
+      "path": "firefox-models/management-delivery-320-data.png",
+      "bytes": 334786,
+      "sha256": "6089db812181bbda924510081f830c889dc4d00459ab8f13df83ad7232b190c1"
+    },
+    {
+      "path": "firefox-models/management-delivery-390-after.png",
+      "bytes": 342586,
+      "sha256": "22026f5a7b27b16ab9507e53cc194cd9e0f3b0edfa83190d87593e3d05aa3b27"
+    },
+    {
+      "path": "firefox-models/management-delivery-390-data.png",
+      "bytes": 382090,
+      "sha256": "2c46f7ad6e66a7df93fa61101e174b23e692e784a0b95b98ed3ba8c1e41ac043"
+    },
+    {
+      "path": "firefox-models/management-delivery-chart.csv",
+      "bytes": 17263,
+      "sha256": "f4729f542df066ce0099b677901fc4a84eea40220844c1dcbd049307a1b8527f"
+    },
+    {
+      "path": "firefox-models/management-delivery-default.json",
+      "bytes": 8668,
+      "sha256": "cdc15a3e873d27baf039fcddfe69f52cd9cd54b8ca7010369381132aea637bc5"
+    },
+    {
+      "path": "firefox-models/management-delivery-max.json",
+      "bytes": 8605,
+      "sha256": "4dd0dc786b6bfff247b9b1e8ed6c3625b0902581a02dbcf0baa4643d149adbc6"
+    },
+    {
+      "path": "firefox-models/management-delivery-min.json",
+      "bytes": 9811,
+      "sha256": "a0ac98284b8ce2f68d73be0a08fc487689c271bd45c4decf9884f2c90b6dd0f4"
+    },
+    {
+      "path": "firefox-models/market-enterprise-1440-after.png",
+      "bytes": 972150,
+      "sha256": "3d46d6f51efd9c48eeef29b529ad3af928f9085130e8f606b2510d3528da4a67"
+    },
+    {
+      "path": "firefox-models/market-enterprise-1440-data.png",
+      "bytes": 833122,
+      "sha256": "40779e895fe7d14f5020d9ac7c198e6844624fda6b555906931462635b382d8a"
+    },
+    {
+      "path": "firefox-models/market-enterprise-320-after.png",
+      "bytes": 313975,
+      "sha256": "bec02e6f398f103211eda86a9078f52cc5a4155c587bb485b36868e3cd167d9a"
+    },
+    {
+      "path": "firefox-models/market-enterprise-320-data.png",
+      "bytes": 337665,
+      "sha256": "f9acf27deec121f7bef5bc1c3c8ee38b20dc6a42c46116bd27ea8a10c083cc48"
+    },
+    {
+      "path": "firefox-models/market-enterprise-390-after.png",
+      "bytes": 367214,
+      "sha256": "ef6cd38952053f5ac60b3c349a8e46abd630dbc39d7c6525a6304ae57b164223"
+    },
+    {
+      "path": "firefox-models/market-enterprise-390-data.png",
+      "bytes": 386896,
+      "sha256": "6c80c9aba3ec7bf26cdfb8e356c1345ba94d4a3e9bd029375dcdf072f044e925"
+    },
+    {
+      "path": "firefox-models/market-enterprise-chart.csv",
+      "bytes": 13650,
+      "sha256": "e7f516e535eebfd6d303a52eaba8fa96946c1e3517b8af9822959e58ee5a57d2"
+    },
+    {
+      "path": "firefox-models/market-enterprise-default.json",
+      "bytes": 9417,
+      "sha256": "0becf8d424debc2b8dabe6e92e31c32e4a69adcf93e3f1cd4ea432cfcc4d9c78"
+    },
+    {
+      "path": "firefox-models/market-enterprise-max.json",
+      "bytes": 9419,
+      "sha256": "264fa565761a8a803bb43014217d0f874f5ad5008b11af478572cb107a174afa"
+    },
+    {
+      "path": "firefox-models/market-enterprise-min.json",
+      "bytes": 9187,
+      "sha256": "467b0c87371ee10fd215d33ad73ab21406d9dd39c62e35514f03bd660ad2e3a7"
+    },
+    {
+      "path": "firefox-models/policy-governance-1440-after.png",
+      "bytes": 762720,
+      "sha256": "a6befda95ef8170e866ead0d5f63dcaa53d130269bd3c2390c539fac919be795"
+    },
+    {
+      "path": "firefox-models/policy-governance-1440-data.png",
+      "bytes": 762720,
+      "sha256": "a6befda95ef8170e866ead0d5f63dcaa53d130269bd3c2390c539fac919be795"
+    },
+    {
+      "path": "firefox-models/policy-governance-320-after.png",
+      "bytes": 292854,
+      "sha256": "f352b38d028c884c5b5dea43f77dd0e7c19e5a2ecf5f7e8b4f687f60fdff9331"
+    },
+    {
+      "path": "firefox-models/policy-governance-320-data.png",
+      "bytes": 331534,
+      "sha256": "5d72741505c9c62820cde6cfe410f3ceb18cc6c851f20d0340c0ab1f0ecd7897"
+    },
+    {
+      "path": "firefox-models/policy-governance-390-after.png",
+      "bytes": 338957,
+      "sha256": "cc750f4535dbb5049e9317c38f15e6c8960907f9719230813a705a4c36924f24"
+    },
+    {
+      "path": "firefox-models/policy-governance-390-data.png",
+      "bytes": 380435,
+      "sha256": "523afc042ef540340f0dc225f6b26ae679d7ea05c951888992ec196e70076a88"
+    },
+    {
+      "path": "firefox-models/policy-governance-chart.csv",
+      "bytes": 3889,
+      "sha256": "06c32c95f47bb3cf31a12b5c7aa24978b12a047e6a68561a7bfe204e34a59ee6"
+    },
+    {
+      "path": "firefox-models/policy-governance-default.json",
+      "bytes": 5258,
+      "sha256": "20aaddf34ddfaec557b01ce3284cb4ad2d1ec01a77ca4c521afb1a86199b6149"
+    },
+    {
+      "path": "firefox-models/policy-governance-max.json",
+      "bytes": 5293,
+      "sha256": "e1c0a33c2dffc2900f77a817cbf11d5ec6b11087b3722ce28ead737ae4ccdfe9"
+    },
+    {
+      "path": "firefox-models/policy-governance-min.json",
+      "bytes": 5239,
+      "sha256": "aaa5a2ba00f3a2de1efd78e12c4b76208303b672882bbf3cd0ed34e91ebb64c4"
+    },
+    {
+      "path": "firefox-models/review-browser-results.json",
+      "bytes": 906,
+      "sha256": "9e4594f41540dc32d71a895be1342783c37fcf445315e89ead42a5f29a6928e5"
+    },
+    {
+      "path": "home-1440-after.png",
+      "bytes": 1849578,
+      "sha256": "2e9c6ef4c9fb61effa046e831b2a8252d2f636726fb4e042c1e34e8a7114c54e"
+    },
+    {
+      "path": "home-1440-before.png",
+      "bytes": 1793225,
+      "sha256": "660b219f51da477339954a1bc61566e3f7103cf34b3f031c86df3c2be34aefed"
+    },
+    {
+      "path": "home-390-after.png",
+      "bytes": 483128,
+      "sha256": "621d02fc7669ede6daf085a3e667d7878e8dfce9268acef8851a8528c8937fec"
+    },
+    {
+      "path": "home-390-before.png",
+      "bytes": 504166,
+      "sha256": "f38f0bd055f217fe9ee3abd66ad41a13638d1222bd8b1e767f19c66a725a6f43"
+    },
+    {
+      "path": "hosted-connector.json",
+      "bytes": 463,
+      "sha256": "95f758666171b78560a32f35b71df39a7a89451bd9fa2a5df7ab9d7c50aa99ef"
+    },
+    {
+      "path": "hosted-http.json",
+      "bytes": 372,
+      "sha256": "7339b9c8fcb3d69c50a4955b1984301ae4c2241142e37c1c84f1153fa3b83d4d"
+    },
+    {
+      "path": "impact-line-note-1440-after.png",
+      "bytes": 30631,
+      "sha256": "100c79ecddeacf4e57b7ce1b685dc88ac2ad783ee902694e081751ff4d8a0486"
+    },
+    {
+      "path": "impact-line-note-1440-before.png",
+      "bytes": 31325,
+      "sha256": "6ecd5bc7438b38807502e3ac3c22574c46a9450a5b57643b65269df9fc1da43a"
+    },
+    {
+      "path": "impact-line-note-390-after.png",
+      "bytes": 38419,
+      "sha256": "0222ea4c1a5301203a919a0ee56030ada3970701333e91049559756413723157"
+    },
+    {
+      "path": "impact-line-note-390-before.png",
+      "bytes": 38488,
+      "sha256": "8e9c721c099ee6b595cd973ac3ccd15a2b3d6640c05a991573763c4c435eee28"
+    },
+    {
+      "path": "input-bounds-nojs-after.png",
+      "bytes": 54956,
+      "sha256": "c2323085dd284122e9e231910bc494f05b7413a46abba7170b97791c65353324"
+    },
+    {
+      "path": "input-bounds-nojs-before.png",
+      "bytes": 40707,
+      "sha256": "02abf5cc5121b1134e5141a26321d1691c0abd5e1f5a8ae67f1947661362b582"
+    },
+    {
+      "path": "issue-summary.json",
+      "bytes": 236,
+      "sha256": "6455a374281ae97d856a3a28aff156fc78574327f7b3b47232c916cd6302310d"
+    },
+    {
+      "path": "lh-after-desktop-development-impact-1.json.gz",
+      "bytes": 421169,
+      "sha256": "63081af199326e16a6cfa2ae38ce2e4f4bfa2b0738ec7c0f4065438bfc6ed8a5"
+    },
+    {
+      "path": "lh-after-desktop-economics-trade-1.json.gz",
+      "bytes": 390348,
+      "sha256": "623be14a679e362bdf858173600a4c9e74905d6ad1a37aa89a0390ca3917aa77"
+    },
+    {
+      "path": "lh-after-desktop-finance-investment-1.json.gz",
+      "bytes": 426625,
+      "sha256": "f66647b61339fec7bbddd5fc7287098b1b751ecd29f5c849f42fc562b4f4de3d"
+    },
+    {
+      "path": "lh-after-desktop-home-1.json.gz",
+      "bytes": 539885,
+      "sha256": "1b1625f335f3226560d840851c6dfbaba1f45317d88793de1569772567e9255b"
+    },
+    {
+      "path": "lh-after-desktop-home-2.json.gz",
+      "bytes": 544407,
+      "sha256": "76751bd7183b138ea0d6c80cac5acaa5b4af33f41d91a39f31cbb39af3d9915d"
+    },
+    {
+      "path": "lh-after-desktop-home-3.json.gz",
+      "bytes": 539705,
+      "sha256": "b4ee1048debedd87992986caf1f9f4570e26027b191991fa58fd2c6a5713f74b"
+    },
+    {
+      "path": "lh-after-desktop-hub-1.json.gz",
+      "bytes": 287819,
+      "sha256": "30aa6f708cf617c2541fd4973cef9f6c836ed853a2c5acfc536a548fb3effab6"
+    },
+    {
+      "path": "lh-after-desktop-management-delivery-1.json.gz",
+      "bytes": 418708,
+      "sha256": "8a2bf7103dca62f8dc485dc356bdf6e25f1ca71e77fac493e1961447bd97eefc"
+    },
+    {
+      "path": "lh-after-desktop-market-enterprise-1.json.gz",
+      "bytes": 400074,
+      "sha256": "8be5e39b6e9e3b85c6802d83ba4fec79c6cadd434389e1c96dcc08a4c91bf0d5"
+    },
+    {
+      "path": "lh-after-desktop-policy-governance-1.json.gz",
+      "bytes": 428910,
+      "sha256": "0312dd25c3dd58f77b1edb6212236eb5541cf7304c0a1df4adb4d03b0afcce6f"
+    },
+    {
+      "path": "lh-after-final-desktop-development-impact-1.json.gz",
+      "bytes": 422909,
+      "sha256": "00b9f6ecb59ae7aec6bad24f8c63856d6f1eea0b4a6cc08656085d2c3e9aef84"
+    },
+    {
+      "path": "lh-after-final-desktop-economics-trade-1.json.gz",
+      "bytes": 390150,
+      "sha256": "b6277011e6fff29fa2df9ce5fd11eda9fa25112af045107fec8a10b4907db09a"
+    },
+    {
+      "path": "lh-after-final-desktop-finance-investment-1.json.gz",
+      "bytes": 411872,
+      "sha256": "ca86344c1b4f35814507f3aa883248a3a27d3e5ccddf9850bc2c5449504a919e"
+    },
+    {
+      "path": "lh-after-final-desktop-home-1.json.gz",
+      "bytes": 532936,
+      "sha256": "9a0df932ace8add1d8e41b68058e9b6887d17b9cec4977bd9d0836262ab479f4"
+    },
+    {
+      "path": "lh-after-final-desktop-home-2.json.gz",
+      "bytes": 538599,
+      "sha256": "50de136a3b3ac130f185949200439d861b8a8812ea37ed841de8e46bd04b7f40"
+    },
+    {
+      "path": "lh-after-final-desktop-home-3.json.gz",
+      "bytes": 540000,
+      "sha256": "e4d58ace796719f30fa7b44e0a12e75168a4de5fb4c7ebe0c46c892d5fdf097f"
+    },
+    {
+      "path": "lh-after-final-desktop-hub-1.json.gz",
+      "bytes": 287726,
+      "sha256": "cb572178475070e328e1d56f8d98425c62672a86ae9b598dcfbc15edb4e190dd"
+    },
+    {
+      "path": "lh-after-final-desktop-management-delivery-1.json.gz",
+      "bytes": 419463,
+      "sha256": "4668087717e9979c9600fffaf5df34b225f88fe46e838f25435f5157ec36880d"
+    },
+    {
+      "path": "lh-after-final-desktop-market-enterprise-1.json.gz",
+      "bytes": 420599,
+      "sha256": "45ffdb8a34a856f34ca797c2a8271b419c1085350e7ba24d57ea84f4d2b3299a"
+    },
+    {
+      "path": "lh-after-final-desktop-policy-governance-1.json.gz",
+      "bytes": 404318,
+      "sha256": "416b4f55614063ded973086a97e792a6ab504a54ecb42ebaa45592bea2854164"
+    },
+    {
+      "path": "lh-after-final-mobile-development-impact-1.json.gz",
+      "bytes": 371024,
+      "sha256": "63427009f0ba920834c23c37077a88ff6eae83a838c1cdd40328463b763c9f44"
+    },
+    {
+      "path": "lh-after-final-mobile-economics-trade-1.json.gz",
+      "bytes": 366453,
+      "sha256": "5401512a97926bffa27b7f61ec8f404d25a5663a57e1603c4a9b1f1bbb1ed48b"
+    },
+    {
+      "path": "lh-after-final-mobile-finance-investment-1.json.gz",
+      "bytes": 350582,
+      "sha256": "028e1e474ffc18462c7cf07326d920807d30f715e7c5864af7f83b9ca5f0a3bc"
+    },
+    {
+      "path": "lh-after-final-mobile-home-1.json.gz",
+      "bytes": 239072,
+      "sha256": "7292b0e486d46c7dc6fd48b9b25e2ece6ac58b114f7985e621242a32a7c1c13c"
+    },
+    {
+      "path": "lh-after-final-mobile-home-2.json.gz",
+      "bytes": 278710,
+      "sha256": "8051cc83afe32f3b734ee6918723baed5015819d57cbba448ff9a216e0c6df24"
+    },
+    {
+      "path": "lh-after-final-mobile-home-3.json.gz",
+      "bytes": 281663,
+      "sha256": "0d716d8cb73e0c4be6e62bdaf0f713cda135b43265a127ceb6a8b488b0441847"
+    },
+    {
+      "path": "lh-after-final-mobile-hub-1.json.gz",
+      "bytes": 267631,
+      "sha256": "379bcee2c8f2957fda376a74e74d650b3dea4e22d59e997fab9cebbc9079882a"
+    },
+    {
+      "path": "lh-after-final-mobile-management-delivery-1.json.gz",
+      "bytes": 349199,
+      "sha256": "1b6525289882033a97efe4825965a6126976d9be2fc34f184019b88975f0f74c"
+    },
+    {
+      "path": "lh-after-final-mobile-market-enterprise-1.json.gz",
+      "bytes": 337587,
+      "sha256": "eb3f68b67fbdb6f654ff90372ab5c2b2f5a4aa5c610cd208454c8b8b361ba5bf"
+    },
+    {
+      "path": "lh-after-final-mobile-policy-governance-1.json.gz",
+      "bytes": 317178,
+      "sha256": "59b368f941758ebfb44ce70304667f7b8d88f827e660675adcb49c99c7c0e141"
+    },
+    {
+      "path": "lh-after-mobile-development-impact-1.json.gz",
+      "bytes": 388478,
+      "sha256": "03d6435de39e3ea81665d2afeb7efd34d93148b2a07be83cc3f2f47288c16a6e"
+    },
+    {
+      "path": "lh-after-mobile-economics-trade-1.json.gz",
+      "bytes": 347690,
+      "sha256": "ebb33af7e3506b3196cbf420e96513babfd54d69fcb4edab35d899751af45a27"
+    },
+    {
+      "path": "lh-after-mobile-finance-investment-1.json.gz",
+      "bytes": 366004,
+      "sha256": "84da06be4d268e32d6a6fa5619649935c0838d94f0cbf14a12b35003ce1d9eb8"
+    },
+    {
+      "path": "lh-after-mobile-home-1.json.gz",
+      "bytes": 253177,
+      "sha256": "1d89012f42af5cce41a71fe4e311ac30bdf1b1d001c870ac39283e98adf551ef"
+    },
+    {
+      "path": "lh-after-mobile-home-2.json.gz",
+      "bytes": 280117,
+      "sha256": "0927279bdfc32a95e2349e6a0098492bb6102d9731c6777d187f1fccef48ce5f"
+    },
+    {
+      "path": "lh-after-mobile-home-3.json.gz",
+      "bytes": 302443,
+      "sha256": "8b14f4d2d76982967463cb29c7553c60ba4fb4a681811f99184a51350ca1c338"
+    },
+    {
+      "path": "lh-after-mobile-hub-1.json.gz",
+      "bytes": 245649,
+      "sha256": "4bd54649db3d7e2931a4a5da86694ced86b3cf4b4e3ffd7b59c266e9c1d56d65"
+    },
+    {
+      "path": "lh-after-mobile-management-delivery-1.json.gz",
+      "bytes": 349098,
+      "sha256": "0b100b15d3dcafd2fe9a4ec8bac3d89204065d5f8e1b6e10088cde4e15550c2f"
+    },
+    {
+      "path": "lh-after-mobile-market-enterprise-1.json.gz",
+      "bytes": 337259,
+      "sha256": "69acd21a9f40fbbd3370d127e54bf53e3f39767d521476e0a1cd3318da5e4686"
+    },
+    {
+      "path": "lh-after-mobile-policy-governance-1.json.gz",
+      "bytes": 335862,
+      "sha256": "43d70181237b381255ac721813ab4f4c79ce1ec246fc22ec5b2afd8c9f3a7a59"
+    },
+    {
+      "path": "lh-baseline-desktop-development-impact-1.json.gz",
+      "bytes": 424724,
+      "sha256": "a6a2da536384c5ae73541530d3193045ad5bf7278efab8c06e8b86560ceeca59"
+    },
+    {
+      "path": "lh-baseline-desktop-economics-trade-1.json.gz",
+      "bytes": 396828,
+      "sha256": "129465282619630eb067fbfce60699e24b75ba6cf794c6c18301784219db47dd"
+    },
+    {
+      "path": "lh-baseline-desktop-finance-investment-1.json.gz",
+      "bytes": 405776,
+      "sha256": "6926ac47e2d42a64b3636e7a84346e825b64495716bfacc72ddc36a00dd9db2c"
+    },
+    {
+      "path": "lh-baseline-desktop-home-1.json.gz",
+      "bytes": 544632,
+      "sha256": "85956f748a4cda1d98600d77fe5e565b400a2f843cf6266d94ed229d1662a66c"
+    },
+    {
+      "path": "lh-baseline-desktop-home-2.json.gz",
+      "bytes": 525085,
+      "sha256": "d89d81755cce14bd0feb0b30b984848cd5ae752b35100510d1b7872a584f90cb"
+    },
+    {
+      "path": "lh-baseline-desktop-home-3.json.gz",
+      "bytes": 539879,
+      "sha256": "32d485217fae1994dfdba0c60b83af9e8591a16c7ad44b64a2e3ad78687f2616"
+    },
+    {
+      "path": "lh-baseline-desktop-hub-1.json.gz",
+      "bytes": 268648,
+      "sha256": "102b2195900b11dbdf6d6d2f91441f33436e35d4e1006c744df1342fa7e0830e"
+    },
+    {
+      "path": "lh-baseline-desktop-management-delivery-1.json.gz",
+      "bytes": 409199,
+      "sha256": "ad0507b5e7cf688c5b96470da6308643c3f5cfe1b4672ab6cceabddd19c4e32d"
+    },
+    {
+      "path": "lh-baseline-desktop-market-enterprise-1.json.gz",
+      "bytes": 394985,
+      "sha256": "e3bdbe5889b2a7aaaf5eab3c9a11b74ab8cde207176d267d583809c51cf7e203"
+    },
+    {
+      "path": "lh-baseline-desktop-policy-governance-1.json.gz",
+      "bytes": 412172,
+      "sha256": "4f5bb52c409b7922cf6491a987ed4a418ccb0fbc9263c2a276866a548081b78f"
+    },
+    {
+      "path": "lh-baseline-mobile-development-impact-1.json.gz",
+      "bytes": 403408,
+      "sha256": "5b49a10e8dacc700a5f6f215cdb7e8a2a6c87a8bcb5d2bffb8cfe5234dd1b060"
+    },
+    {
+      "path": "lh-baseline-mobile-economics-trade-1.json.gz",
+      "bytes": 362860,
+      "sha256": "e750af1c338565404bc374c2730f70a97f13e5a701f18523ac8dc9db5dfc38c9"
+    },
+    {
+      "path": "lh-baseline-mobile-finance-investment-1.json.gz",
+      "bytes": 350285,
+      "sha256": "fc4caa5814e9b4f45bb747039dab80bc39614c178b0ea42e049f27493c6a1fc6"
+    },
+    {
+      "path": "lh-baseline-mobile-home-1.json.gz",
+      "bytes": 207497,
+      "sha256": "bfe508ed17ac1b9e45139bb06d801a9ed2c63eab0cd830193e414a04b775f52d"
+    },
+    {
+      "path": "lh-baseline-mobile-home-2.json.gz",
+      "bytes": 299531,
+      "sha256": "bb1f48c4267a6542976dab378be2141c4d1ca58f69492b1150b68e667b54ca73"
+    },
+    {
+      "path": "lh-baseline-mobile-home-3.json.gz",
+      "bytes": 291250,
+      "sha256": "f36d82a44043bc76119dcfed0b2bca8005be99d7df53a2881278a486564c0307"
+    },
+    {
+      "path": "lh-baseline-mobile-hub-1.json.gz",
+      "bytes": 267537,
+      "sha256": "76968b79f42693b26edd294be95c8a9e0d0abe06db93092d250f8a1de2655aa1"
+    },
+    {
+      "path": "lh-baseline-mobile-management-delivery-1.json.gz",
+      "bytes": 341428,
+      "sha256": "b8e7839ff7f785897f3321933a0ec28fab79c3ebe305cb3fda5354bbd26009ae"
+    },
+    {
+      "path": "lh-baseline-mobile-market-enterprise-1.json.gz",
+      "bytes": 334237,
+      "sha256": "51d0ec569e00ab41ee701cafa39607626d6586661602028892e2a79e6f6afa03"
+    },
+    {
+      "path": "lh-baseline-mobile-policy-governance-1.json.gz",
+      "bytes": 315689,
+      "sha256": "41aff7c7435b3eef846d8876ae8c2dfc017569d1c7db486aa93abb3f645cf2ae"
+    },
+    {
+      "path": "lighthouse-archives.json",
+      "bytes": 23634,
+      "sha256": "85f81319208e0d7dba7027627e71f0f17265e1fe430bd5aba79daa8e8e029db1"
+    },
+    {
+      "path": "links.log",
+      "bytes": 187,
+      "sha256": "4d7ed750b12e568bd35df818b30751ed28f335decc00a91d96a53de4da57ee42"
+    },
+    {
+      "path": "model-protocols.json",
+      "bytes": 129804,
+      "sha256": "b35bdc38c77c6f251775596bbf05ecdfe3a3b311416c15be8fced35f95dc2201"
+    },
+    {
+      "path": "performance-after-final.json",
+      "bytes": 5623,
+      "sha256": "ca7ec99962aa621e1b645434703090ddab91292bdfbaf694c215dc9e51f0cd81"
+    },
+    {
+      "path": "performance-after-final.log",
+      "bytes": 3507,
+      "sha256": "931da54cabe1629c256f0b53cb9575b31cd7e5fe8941e3afda47c34b5da52ba8"
+    },
+    {
+      "path": "performance-after.json",
+      "bytes": 5558,
+      "sha256": "549243fa150fbcaf51375753eed870a06b80bd9578f4c1209a3118406410a811"
+    },
+    {
+      "path": "performance-after.log",
+      "bytes": 3442,
+      "sha256": "7a7d7d6bdf9a30cf1560d5bc415dfcfdf27aa2dc5d1fa273ccb4cd83d1a1cd6e"
+    },
+    {
+      "path": "performance-analysis.json",
+      "bytes": 31375,
+      "sha256": "3470910a8c1a2fd246f96a13fe55f166a77f211a994260fd58de86a87299cb8f"
+    },
+    {
+      "path": "performance-baseline.json",
+      "bytes": 5601,
+      "sha256": "008aa06625306b8414179f044e4a44f2b8f39c0934be9adce8fc1e70a100a78e"
+    },
+    {
+      "path": "performance-baseline.log",
+      "bytes": 3482,
+      "sha256": "8c2674c699dbd8c598acf299b729f77562bb2c0e78e1dcc104e80050d8db0cc9"
+    },
+    {
+      "path": "performance-baseline/asset-0.css",
+      "bytes": 116428,
+      "sha256": "3f830f9f80cb07a14ddc2934945616cfc248b60a9beec567cd294803e6b4c4a9"
+    },
+    {
+      "path": "performance-baseline/asset-1.css",
+      "bytes": 4740,
+      "sha256": "8a17a84688103984085548a21f1060b9dd44efa0daa25baf007f0d20015a8dba"
+    },
+    {
+      "path": "performance-baseline/asset-10.js",
+      "bytes": 18873,
+      "sha256": "cd80bd96ee25f2a315066e22f1ee9d38c9927b31b083c5c7d117d9204b5d1e92"
+    },
+    {
+      "path": "performance-baseline/asset-11.css",
+      "bytes": 25073,
+      "sha256": "759ca94cc451e9594f4876891151967ad6e4f9841f310e2d1a01855407243187"
+    },
+    {
+      "path": "performance-baseline/asset-12.js",
+      "bytes": 20070,
+      "sha256": "f1ee6f575b87339d592eb0cb818d0abe63337d034ca461e60dfacccf745dc59d"
+    },
+    {
+      "path": "performance-baseline/asset-13.css",
+      "bytes": 24210,
+      "sha256": "da74b2d888bb213d073f11ffdd59659b8c3c26e58ffa250241e20af8e8c632d0"
+    },
+    {
+      "path": "performance-baseline/asset-14.js",
+      "bytes": 21032,
+      "sha256": "67e97ac70f51affd53f504f70d05035bf1e948f0a05d365e6f55c42ad0a6423d"
+    },
+    {
+      "path": "performance-baseline/asset-15.css",
+      "bytes": 25064,
+      "sha256": "aa22cc7d8ab8452ec9827439a92288e4e5ceb72fc97d7d3a292a3d4c654a3892"
+    },
+    {
+      "path": "performance-baseline/asset-16.js",
+      "bytes": 20934,
+      "sha256": "3fcbfe648eb621ba598ade1ee2f730452533b7a559689d6b92833329bb6b4223"
+    },
+    {
+      "path": "performance-baseline/asset-17.css",
+      "bytes": 25683,
+      "sha256": "c3191e175964847e9fe04c8acac05a9aff6479b33d00c9fa054df581bb9f143c"
+    },
+    {
+      "path": "performance-baseline/asset-18.js",
+      "bytes": 21709,
+      "sha256": "1332d9dd116c7767f809d208703e111c85ad262ea039455d11d9ffe41dc1b8d8"
+    },
+    {
+      "path": "performance-baseline/asset-2.js",
+      "bytes": 53913,
+      "sha256": "b5e3dc57ccee5f9af98ea53b4afbb6d174156f3a3c78ea42ae1805e66218ea9c"
+    },
+    {
+      "path": "performance-baseline/asset-3.js",
+      "bytes": 5816,
+      "sha256": "7bd13d2413a37d8aae90a1cde37d31b045d8736f4f528284d38c6d3b96b80056"
+    },
+    {
+      "path": "performance-baseline/asset-4.css",
+      "bytes": 24884,
+      "sha256": "b9bde2f05d080793225adcb2631e6a3904c95465fbe5e4adfdd83c6891c408e4"
+    },
+    {
+      "path": "performance-baseline/asset-5.css",
+      "bytes": 7800,
+      "sha256": "34309eac112306f677337d92d8e10a54e0434dd9b70e0a5b5b0001e97822e753"
+    },
+    {
+      "path": "performance-baseline/asset-6.js",
+      "bytes": 6502,
+      "sha256": "056a8d2f21b996930d5f547fdab3d63910d88623dbda74ff3926c120dd65b666"
+    },
+    {
+      "path": "performance-baseline/asset-7.js",
+      "bytes": 19871,
+      "sha256": "faf046f4cd7ccf85005c209fd9d307f470a8ca02b14049df179cb23ab70ae0be"
+    },
+    {
+      "path": "performance-baseline/asset-8.js",
+      "bytes": 9901,
+      "sha256": "32c339ce376daf41754c6600033387f411b4ff1f1a957798183862fc3b1e5ec9"
+    },
+    {
+      "path": "performance-baseline/asset-9.css",
+      "bytes": 28152,
+      "sha256": "5b6a56b5438600b4e6f2968df22a73f70c1d68e908a8b18c725cd99ec26dc19f"
+    },
+    {
+      "path": "performance-baseline/assets.json",
+      "bytes": 1298,
+      "sha256": "cfec2a438d8f32901bcb5e85111d978c659630ed9129ce722bd808d863a62ecd"
+    },
+    {
+      "path": "performance-baseline/development-impact.html",
+      "bytes": 63598,
+      "sha256": "f30fbe660dbbc164d6a41f34ae2ab73e568bc7c25ea95d7d4a2d93ed9bb7c0b5"
+    },
+    {
+      "path": "performance-baseline/economics-trade.html",
+      "bytes": 65511,
+      "sha256": "e0b70d5a304641e829ead8edeb9cdd55c234d2b276b1750e547d3303df2fa201"
+    },
+    {
+      "path": "performance-baseline/finance-investment.html",
+      "bytes": 73079,
+      "sha256": "c4258567e4ce76a01e43185d1a54cf49c06054ce8e836d2c03ff4fc7702719c9"
+    },
+    {
+      "path": "performance-baseline/home.html",
+      "bytes": 184081,
+      "sha256": "2c93cc34dc0d16a554aa992f71795aec2d4deff211a15adf2600d78c4174ada2"
+    },
+    {
+      "path": "performance-baseline/hub.html",
+      "bytes": 20473,
+      "sha256": "8e5c04b40db356cac788b3b3817fcc10b90daebedad6a80b42e314dc96037925"
+    },
+    {
+      "path": "performance-baseline/identity.json",
+      "bytes": 1135,
+      "sha256": "3f526fb01a96525da550694104832a1542cd117f218d50206d22e615bc4bcbc8"
+    },
+    {
+      "path": "performance-baseline/management-delivery.html",
+      "bytes": 66558,
+      "sha256": "659d15db0760b17c4c188214b2a4a08ecf2d8de161385bc558ee26ebc9933d7e"
+    },
+    {
+      "path": "performance-baseline/market-enterprise.html",
+      "bytes": 61959,
+      "sha256": "500d28c4d2114e8caf4ad3318ee5772940b983572850fed37d4f4af2a8ad9a20"
+    },
+    {
+      "path": "performance-baseline/policy-governance.html",
+      "bytes": 62223,
+      "sha256": "921bb0d998011f3b1c32dc8bee23254ac60da7fa6ccae61dd372cbeec3ec878f"
+    },
+    {
+      "path": "poster-optimization.json",
+      "bytes": 357,
+      "sha256": "82d23ee4245268ed69ccdf86690585d2b1c89df1ba24a737ebf31d1830dadd57"
+    },
+    {
+      "path": "resolved-harness-failures/final-browser-specific.json",
+      "bytes": 469,
+      "sha256": "974c4ace9584a8dc4175ac51a091790df16942bc5245d7d57e3bdcbf7c4bc024"
+    },
+    {
+      "path": "resolved-harness-failures/final-browser-specific.log",
+      "bytes": 220,
+      "sha256": "400b596c3f2d98bb9e4b282e5ca8a37eda080bea126b25accc336940ecfb2611"
+    },
+    {
+      "path": "resolved-harness-failures/final-regression.log",
+      "bytes": 14570,
+      "sha256": "4b1bffb5004a9b063dba038047e49366b70dcc331a2b9ebe630d79ebe6e37cb4"
+    },
+    {
+      "path": "scientific-vectors.json",
+      "bytes": 27423,
+      "sha256": "de24bf3fd335c70566396c8adcdcb98163a8c44f9172f6527a4f2e8d80f1ac1d"
+    },
+    {
+      "path": "source-receipt-verification.json",
+      "bytes": 5453,
+      "sha256": "51d5068a5e6e2397cfad4d89626fce1d9eb557848bb20ce7dc47dd7fd51a2ffd"
+    },
+    {
+      "path": "source-runtime-receipt.json",
+      "bytes": 3793,
+      "sha256": "392c6645f5c0b32f5e7b92322d7485fdee4a500034e00c39ec828d0eee4c1140"
+    }
+  ]
+}

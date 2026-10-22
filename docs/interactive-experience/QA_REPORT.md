@@ -1,5 +1,7 @@
 # IP3 native interactive experience — QA record
 
+> Final scientific and acceptance reassessment: [latest final review](review-2026-10-22/FINAL_ACCEPTANCE_REVIEW.md). The earlier results below are historical; the final review records reopened findings, fresh engine checks and remaining NO-GO gates.
+
 ## Current review addendum — 22 October 2026
 
 The later current-website audit supersedes the initial counts below: **105 regression tests**, **36 hosting tests**, **64 selected-case reset checks**, **18 independent full-series/export/graph vectors** and current browser/accessibility proof pass. See [full audit](review-2026-10-22/CURRENT_REVIEW.md) and [all 16 issue dispositions](review-2026-10-22/ISSUE_REGISTER_UPDATED.csv), including before/after captures.

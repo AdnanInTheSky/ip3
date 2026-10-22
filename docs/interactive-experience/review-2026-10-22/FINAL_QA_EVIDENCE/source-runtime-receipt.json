@@ -1,0 +1,111 @@
+{
+  "sourceMeaning": "Exact local source/runtime bytes used for final review, with original source hashes preserved; not empirical approval",
+  "files": [
+    {
+      "name": "src/explore/index.js",
+      "sha256": "0c767385fbb704df186ae74bfa41cbcecca2bbfdc5b7d255161b9350e5423e28",
+      "bytes": 18944
+    },
+    {
+      "name": "src/explore/input-labels.js",
+      "sha256": "a63f58f2ebaa2a6ee3d58fda91649c9679df530acbba705068dc49d16ecb6b77",
+      "bytes": 826
+    },
+    {
+      "name": "src/explore/model.js",
+      "sha256": "25fff25998ab33382eeb8ba5538f898954d8b596c5abefcebb7a8596f10f4b0e",
+      "bytes": 9187
+    },
+    {
+      "name": "src/explore/guidance.js",
+      "sha256": "c00cb76d5397abb1f79295fec5559135f7e690dcc597ba27168d1abcae2f6413",
+      "bytes": 9058
+    },
+    {
+      "name": "src/explore/math.js",
+      "sha256": "056a8d2f21b996930d5f547fdab3d63910d88623dbda74ff3926c120dd65b666",
+      "bytes": 6502
+    },
+    {
+      "name": "src/js/site.js",
+      "sha256": "8ebc12caf6598617776228fdd9e79d55e321bf08923ebd00ae18fa3e1c41ae0d",
+      "bytes": 56155
+    },
+    {
+      "name": "src/pages-home.js",
+      "sha256": "1fc81d3efd6a6c412813715f417eefa0b6fd7141b4737ceee0c3be8d3963caf1",
+      "bytes": 13204
+    },
+    {
+      "name": "src/css/site.css",
+      "sha256": "6bdaa7ab7dfc8c8ebe5ade57aa5c6833a4b7e7726ca7db0071a061a461c9bf5b",
+      "bytes": 121652
+    },
+    {
+      "name": "scripts/import-explore.cjs",
+      "sha256": "e65f490b881d2e7d173e1db077e5185fee4e911deb332dbae58b3134e9d79981",
+      "bytes": 20355
+    },
+    {
+      "name": "scripts/explore-review-check.cjs",
+      "sha256": "aa9188d7f5b2aa82ec056c8f0b3669e8732436f158b6cfa0a645bdd34e3b363f",
+      "bytes": 11964
+    },
+    {
+      "name": "scripts/explore-final-browser.cjs",
+      "sha256": "9b0bf1bb34ac0fb85831f2fe1c8a573116d8eeaa269a8a393ca8c02fbfb3a6d6",
+      "bytes": 7452
+    },
+    {
+      "name": "scripts/explore-final-performance.cjs",
+      "sha256": "b5ec0cde76fbc31b67ab89a5e7e60d72c5b268f2a16aaf6f32234d39366db83a",
+      "bytes": 5245
+    },
+    {
+      "name": "scripts/explore-scientific-proof.cjs",
+      "sha256": "c52d93479a055f101adaad348655d1fb736b2d4a716bfc40e75016f66164d9dd",
+      "bytes": 3513
+    },
+    {
+      "name": "lighthouserc.json",
+      "sha256": "f577880abaa0682ebd869d70979850b3acf52842faa227764c59224e495b219a",
+      "bytes": 1481
+    },
+    {
+      "name": "build/explore.test.cjs",
+      "sha256": "64ac77208af396e185b6b63247c07235f005a4cdbc6b2e0d7af56453c98b8b49",
+      "bytes": 9268
+    },
+    {
+      "name": "build/explore-scientific.test.cjs",
+      "sha256": "7d3b6a3c241b69ce6445d1529c2d7fe37efebdb0775882d88297008a001f7bac",
+      "bytes": 4197
+    }
+  ],
+  "build": {
+    "commit": "addb8ad303032aec3938ed8ac64c34ab6f737e36",
+    "vercelGitCommitSha": null,
+    "builtAt": "2026-10-22T15:55:15.652Z",
+    "contentHash": "5879a582c73d68d38840ed8c461a00db14a21d225d9eff8d08879a7080b3add4",
+    "sourceHash": "efb51d010d3b56ccb163bdf1fa41ac7da45f4fe5380d6059527272fdbb64bc0e",
+    "sourceDirty": true,
+    "reproducibleClock": false,
+    "pageCount": 33,
+    "sitemapUrlCount": 32,
+    "articleSlugs": [
+      "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+      "unlocking-inclusive-green-finance-in-bangladesh-a-multi-criteria-innovation-approach-for-product-design",
+      "enhancing-environmental-compliance-and-performance-in-bangladesh",
+      "from-donor-dependent-projects-to-sustainable-urban-finance"
+    ],
+    "preparationArticleSlugs": [],
+    "articlePreservationComplete": false,
+    "excludedFromSitemap": [
+      {
+        "route": "/404",
+        "reason": "Custom error document; not an indexable content page."
+      }
+    ],
+    "validated": true
+  }
+}

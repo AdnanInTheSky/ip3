@@ -8,6 +8,7 @@ module.exports = {
     chart: 'Horizontal: additional tariff (%). Vertical: export volume index (baseline 100). The table also reports buyer price and receipts indices. The selected dot is the current tariff.',
     risk: 'Partial-equilibrium sensitivity only; no welfare, employment or general-equilibrium estimate.',
     parameterOrigin: 'Original teaching prototype; no fitted trade observations supplied.',
+    references:[{label:'WITS SMART theoretical framework',author:'World Bank',publicationDate:'2010',url:'https://wits.worldbank.org/WITS/WITS/WITSHELP/Content/SMART/SMART%20-%20Introduction.htm',role:'Partial-equilibrium modelling context; this lab is not SMART and does not calibrate its 60% pass-through from this reference'}],
   },
   'finance-investment': {
     question: 'Under which cash-flow and discount assumptions does an illustrative investment have positive NPV?',
@@ -27,6 +28,7 @@ module.exports = {
     chart: 'Horizontal: units per month. Vertical: operating profit in USD per month. Solid line: profit at fixed selected price/cost; dot: demand implied by the elasticity model; dashed marker: break-even if in range.',
     risk: 'The volume sweep holds price and effective unit cost fixed; it is not a second demand curve or a forecast of sales.',
     parameterOrigin: 'Original stylised enterprise assumptions; no company observations supplied.',
+    references:[{label:'Principles of Accounting, Volume 2: Managerial Accounting, section 3.1',author:'Franklin, Graybeal and Cooper; OpenStax',publicationDate:'2019',url:'https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin',role:'Contribution-margin and cost-volume-profit methods; no calibration of the synthetic firm or demand elasticity'}],
   },
   'development-impact': {
     question: 'How does the treated group’s before–after change compare with the comparison group’s change?',
@@ -46,6 +48,7 @@ module.exports = {
     chart: 'Horizontal: staff hours per case, common zero and scale. Rows: before and after. Core handling is solid; rework is hatched. Component totals match the table.',
     risk: 'Released capacity requires an operational plan; service quality, access, transition costs and actual cash expenditure are outside the model.',
     parameterOrigin: 'Original demonstration time coefficients and hourly valuation; no agency time-and-motion or payroll dataset supplied.',
+    references:[{label:'The Green Book',author:'HM Treasury',publicationDate:'2026',url:'https://www.gov.uk/government/publications/the-green-book--2/the-green-book-2026',role:'Appraisal and opportunity-cost context; no evidence for the synthetic time coefficients or BDT 650/hour assumption'}],
   },
   'management-delivery': {
     question: 'How do availability, rework and dependency drag change illustrative throughput and completion time?',
@@ -55,5 +58,6 @@ module.exports = {
     chart: 'Horizontal: weeks, expanding for slow scenarios. Vertical: cumulative completed packages. Dashed: fixed baseline; solid: selected scenario; vertical dotted marker: week 24.',
     risk: 'Dependency drag is a scalar assumption, not a dependency network. This does not perform critical-path analysis or estimate a completion probability.',
     parameterOrigin: 'Original linear teaching model; no observed task-level delivery dataset supplied.',
+    references:[{label:'Government Functional Standard GovS 002: Project Delivery, version 2.1',author:'Government Project Delivery and Cabinet Office',publicationDate:'2025',url:'https://www.gov.uk/government/publications/project-delivery-functional-standard',role:'Project-delivery governance and planning context; no calibration of linear package throughput or probability of completion'}],
   },
 };

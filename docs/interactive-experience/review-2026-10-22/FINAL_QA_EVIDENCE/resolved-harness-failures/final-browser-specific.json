@@ -1,0 +1,16 @@
+{
+  "browser": "156.0.8078.4",
+  "errors": [
+    "page.waitForFunction: Timeout 11000ms exceeded.\n    at D:\\CONTENT IP3 WEBSITE\\NEW WEBSITE DESIGN\\ip3-interactive-experience-20261022\\scripts\\explore-final-browser.cjs:19:11"
+  ],
+  "checks": [
+    {
+      "heroVideo": "starts after initial copy reveal",
+      "firstMediaDelay": 1800
+    },
+    {
+      "pause": "stops slides, video and CSS motion for more than one slide interval"
+    }
+  ],
+  "passed": false
+}

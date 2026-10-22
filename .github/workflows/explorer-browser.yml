@@ -8,6 +8,8 @@ jobs:
   explorer:
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    env:
+      EXPLORE_QA_OUT: ${{ runner.temp }}/ip3-acceptance/chromium
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -15,7 +17,7 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - run: npx playwright install --with-deps chromium firefox
       - run: npm run build
       - name: Start the static preview
         run: |
@@ -29,10 +31,17 @@ jobs:
       - run: npm run test:explore:browser
       - run: node scripts/explore-edge-check.cjs
       - run: node scripts/explore-review-check.cjs
+      - run: node scripts/explore-final-browser.cjs
+      - run: node scripts/explore-scientific-proof.cjs
+      - name: Verify models independently in Firefox
+        run: node scripts/explore-review-check.cjs
+        env:
+          EXPLORE_BROWSER: firefox
+          EXPLORE_QA_OUT: ${{ runner.temp }}/ip3-acceptance/firefox
       - name: Preserve measured results and screenshots
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: interactive-experience-${{ github.run_id }}
-          path: docs/interactive-experience/qa/
+          path: ${{ runner.temp }}/ip3-acceptance/
           retention-days: 14

@@ -45,6 +45,7 @@ for (const m of catalogue) {
     for (const key of ['ref', 'source', 'evidence', 'reftype']) if (typeof d[key] === 'string') d[key] = key==='source'||key==='reftype'?'Illustrative analytical application':'Synthetic teaching scenario. No client result is asserted.';
     if (d.note) d.note = d.note.replace('The named World Bank project concerned technology-adoption research.', 'This is a hypothetical technology-adoption investment application.');
     if (d.note) d.note = d.note.replace('The economic-NPV illustration', 'The generic NPV illustration').replace('simplified equal annual economic benefit flows', 'simplified equal annual demonstration flows').replace('project financial returns from hypothetical cash flows', 'generic project returns from hypothetical flows');
+    if(m.slug==='market-enterprise'&&Array.isArray(d.methods))d.methods=d.methods.map(t=>t==='400-firm survey'?'Enterprise survey design':t==='120 KIIs · 8 FGDs'?'Key informant interviews and focus groups':t);
   }
   js = js.replace(caseLiteral, JSON.stringify(cases));
   const order = vm.runInNewContext(js.match(/(?:const )?order\s*=\s*(\[[^\]]*\])/)[1]);
@@ -97,6 +98,8 @@ for (const m of catalogue) {
 `);
   }
   if (m.slug === 'market-enterprise') {
+    body=body.replace(/<section class="me-shell me-proof me-reveal"[\s\S]*?<\/section>/, '<section class="me-shell me-proof me-reveal" aria-label="Illustrative enterprise research methods"><div class="me-proofbar"><div class="me-proofitem"><strong>01</strong><small>SURVEY DESIGN</small><p>Define enterprise sampling, measurement and data-quality requirements.</p></div><div class="me-proofitem"><strong>02</strong><small>STAKEHOLDER INQUIRY</small><p>Plan interviews and group discussions to investigate mechanisms and constraints.</p></div><div class="me-proofitem"><strong>03</strong><small>TRIANGULATION</small><p>Compare evidence sources and test competing explanations before recommending action.</p></div></div></section>')
+      .replace('Cases reflect documented professional project domains where identified. Private-company examples are illustrative unless specifically stated otherwise.', 'All cases describe hypothetical applications. No completed engagement, client endorsement or empirical outcome is asserted.');
     js = js.replace('units=1200*Math.pow(price/120,-elasticity),effectiveCost=cost/(1+prod),contribution=price-effectiveCost,fixed=29000,profit=units*contribution-fixed,revenue=units*price,margin=revenue>0?100*profit/revenue:0,breakEven=contribution>0?Math.ceil(fixed/contribution):Infinity',
       '{units,effectiveCost,contribution,fixed,profit,revenue,margin,breakEven}=window.IP3ModelMath.enterprise(price,cost,prod,elasticity)');
     // Include the full plotted line, not just the selected point, in the y-axis.
@@ -111,6 +114,7 @@ for (const m of catalogue) {
     js=js.replace("$('me-chartgrid').innerHTML=grid;", `$('me-chartgrid').innerHTML=grid;const crossing=contribution>0?fixed/contribution:Infinity;$('me-break-even').innerHTML=crossing<=xMax?'<line x1="'+X(crossing)+'" x2="'+X(crossing)+'" y1="'+T+'" y2="'+B+'" stroke="#f0c8aa" stroke-dasharray="5 5"/><text x="'+Math.max(110,Math.min(450,X(crossing)))+'" y="'+(B-8)+'" text-anchor="middle">Break-even '+breakEven+' units</text>':'';`);
   }
   if (m.slug === 'development-impact') {
+    body=body.replace('The dashed line is a trend-adjusted counterfactual', 'The dotted line is a constructed counterfactual');
     body=body.replace(/Difference.in.differences/g,'Illustrative two-period DiD contrast').replace(/Estimated net effect/g,'Illustrative contrast');
     js=js.replace('Estimated net difference ', 'Illustrative two-period contrast ');
     js = js.replace('deltaT=q-p,deltaC=s-r,did=deltaT-deltaC,cf=p+deltaC', '{deltaT,deltaC,did,cf}=window.IP3ModelMath.impact(p,q,r,s)');
@@ -146,7 +150,8 @@ for (const m of catalogue) {
     .replaceAll('CV-linked research context', 'Illustrative analytical context');
   js=js.replaceAll('Documented project contexts are identified.', 'All applications are hypothetical.')
     .replaceAll('This is a strategy illustration or CV-referenced research domain', 'This is a hypothetical strategy illustration')
-    .replaceAll('informed by documented work—not a claim of completed company work or verified impact', 'using synthetic assumptions, with no claim of completed company work or verified impact');
+    .replaceAll('informed by documented work—not a claim of completed company work or verified impact', 'using synthetic assumptions, with no claim of completed company work or verified impact')
+    .replaceAll('The reference points to a documented professional engagement.', 'The reference describes a hypothetical analytical application.');
   const tourId = m.prefix === 'di' ? 'di-tour' : `${m.prefix}-tour`;
   const benchId = m.prefix === 'di' ? 'di-workbench' : `${m.prefix}-workbench`;
   const stateKey = m.prefix === 'et' || m.prefix === 'me' ? 'theme' : m.prefix === 'fi' ? 'key' : 'active';

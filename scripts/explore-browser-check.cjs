@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const catalogue = require('../src/explore/catalogue');
-const OUT = path.join(__dirname, '../docs/interactive-experience/qa');
+const OUT = process.env.EXPLORE_QA_OUT || path.join(__dirname, '../docs/interactive-experience/qa');
 fs.mkdirSync(OUT, { recursive: true });
 const base = process.env.EXPLORE_BASE_URL || 'http://localhost:3123';
 const failures = [], report = { base, timestamp: new Date().toISOString(), pages: [], failures };

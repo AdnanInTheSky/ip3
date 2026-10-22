@@ -1,0 +1,45 @@
+{
+  "base": "http://localhost:3123",
+  "engine": "firefox",
+  "timestamp": "2026-10-22T16:04:36.108Z",
+  "pages": [
+    {
+      "slug": "economics-trade",
+      "resetCases": 10,
+      "independentSeriesVectors": 3,
+      "axe": []
+    },
+    {
+      "slug": "finance-investment",
+      "resetCases": 8,
+      "independentSeriesVectors": 3,
+      "axe": []
+    },
+    {
+      "slug": "market-enterprise",
+      "resetCases": 10,
+      "independentSeriesVectors": 3,
+      "axe": []
+    },
+    {
+      "slug": "development-impact",
+      "resetCases": 12,
+      "independentSeriesVectors": 3,
+      "axe": []
+    },
+    {
+      "slug": "policy-governance",
+      "resetCases": 12,
+      "independentSeriesVectors": 3,
+      "axe": []
+    },
+    {
+      "slug": "management-delivery",
+      "resetCases": 12,
+      "independentSeriesVectors": 3,
+      "axe": []
+    }
+  ],
+  "errors": [],
+  "passed": true
+}

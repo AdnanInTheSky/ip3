@@ -100,3 +100,10 @@ test('decision guidance, evidence boundaries, reset and export are present witho
   const {model}=require('../src/explore');
   for(const m of catalogue){const html=model(m);assert.equal((html.match(/data-model-summary/g)||[]).length,1);assert.match(html,/data-model-reset/);assert.match(html,/data-model-export="json"/);assert.match(html,/data-model-export="csv"/);assert.match(html,/data-model-protocol/);assert.match(html,/Evidence provenance and research context/);assert.match(html,/Current results and full chart data/);assert.match(html,/Reading the threshold/);assert.match(html,/not empirically validated/);assert.ok(!/<iframe\b/.test(html));}
 });
+test('rendered protocol has finite accurate bounds, steps and readable defaults in every model',()=>{
+  const {parseHTML}=require('linkedom');
+  for(const m of catalogue){const {document}=parseHTML(require('../src/explore').model(m));const p=JSON.parse(document.querySelector('[data-model-protocol]').textContent);for(const x of p.inputs){const n=document.getElementById(x.id);assert.deepEqual([x.min,x.max,x.step],[Number(n.getAttribute('min')),Number(n.getAttribute('max')),Number(n.getAttribute('step'))]);assert.ok([x.min,x.max,x.step,x.default].every(Number.isFinite));assert.ok(x.step>0&&x.default>=x.min&&x.default<=x.max);assert.ok(x.label!==x.id);}assert.doesNotMatch(document.querySelector('[data-model-inputs]').textContent,/NaN|null|undefined/);}
+});
+test('new Explorer narratives contain no unapproved survey counts or implied assignment credit',()=>{
+  for(const m of catalogue){const html=require('../src/explore').model(m);assert.doesNotMatch(html,/400-firm survey|FIRMS SURVEYED|Sweden–CPD|120 KIIs|documented professional engagement|Cases reflect documented professional/);}
+});

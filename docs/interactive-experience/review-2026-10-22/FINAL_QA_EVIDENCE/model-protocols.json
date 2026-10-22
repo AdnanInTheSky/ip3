@@ -1,0 +1,3108 @@
+[
+  {
+    "slug": "economics-trade",
+    "title": "Economics & Trade",
+    "revision": "26b7d661298d",
+    "protocol": "ip3-illustration/1",
+    "inputs": [
+      {
+        "id": "et-tariff",
+        "label": "Additional tariff (%)",
+        "default": 12,
+        "min": 0,
+        "max": 30,
+        "step": 1
+      },
+      {
+        "id": "et-fx",
+        "label": "FX depreciation (%)",
+        "default": 8,
+        "min": -15,
+        "max": 25,
+        "step": 1
+      },
+      {
+        "id": "et-elasticity",
+        "label": "Demand elasticity",
+        "default": 1.5,
+        "min": 0.5,
+        "max": 3,
+        "step": 0.1
+      }
+    ],
+    "cases": {
+      "transition": {
+        "public": {
+          "label": "01 / PUBLIC POLICY TRANSITION",
+          "title": "Preparing an economy for life beyond trade preferences.",
+          "desc": "LDC graduation alters preference margins, financing conditions and the terms of competition. Research helps sequence a transition rather than react to each shock separately.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Preferences at risk. Readiness unclear.",
+          "problems": [
+            "Fragmented intelligence on preferences and access",
+            "Gaps in productive capacity and export diversification",
+            "Financing and reform priorities disconnected"
+          ],
+          "outputTitle": "A sequenced trade-transition strategy.",
+          "outputs": [
+            "Evidence-based risks and opportunity map",
+            "Prioritised policy and financing responses",
+            "Institutional and EU engagement roadmap"
+          ],
+          "methods": [
+            "Trade preference gap analysis",
+            "Sector competitiveness review",
+            "Productive capacity indicators",
+            "Policy and financing options"
+          ],
+          "gates": [
+            [
+              "Diagnose",
+              "Locate the exposure"
+            ],
+            [
+              "Negotiate",
+              "Prioritise partners"
+            ],
+            [
+              "Implement",
+              "Phase reforms"
+            ]
+          ]
+        },
+        "private": {
+          "label": "01 / EXPORTER MARKET-ACCESS STRATEGY",
+          "title": "What does the loss of a tariff preference mean for an exporter?",
+          "desc": "When preferential access changes, the immediate impact depends on buyers, margins, country of origin, product mix and substitution possibilities—not a headline tariff alone.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "A buyer strategy built on one advantage.",
+          "problems": [
+            "Price competitiveness tied to preferences",
+            "Country and buyer concentration poorly mapped",
+            "Limited analysis of switching and certification costs"
+          ],
+          "outputTitle": "An evidence-led market access plan.",
+          "outputs": [
+            "Buyer- and product-level tariff exposure map",
+            "Market diversification and pricing scenarios",
+            "Investment, compliance and transition priorities"
+          ],
+          "methods": [
+            "HS-product / destination mapping",
+            "Tariff and rules-of-origin screening",
+            "Unit cost and margin analysis",
+            "Buyer demand scenarios"
+          ],
+          "gates": [
+            [
+              "Map",
+              "Identify exposure"
+            ],
+            [
+              "Adapt",
+              "Reprice or diversify"
+            ],
+            [
+              "Stage",
+              "Reinvest selectively"
+            ]
+          ]
+        }
+      },
+      "access": {
+        "public": {
+          "label": "02 / TRADE POLICY AND TARIFF SHOCKS",
+          "title": "Turning tariff uncertainty into a policy response.",
+          "desc": "A tariff announcement is not an economy-wide outcome. Its transmission depends on sector composition, demand elasticity, exchange rates, value chains and partner responses.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "A single shock. Many competing claims.",
+          "problems": [
+            "Tariff headlines mistaken for predicted export losses",
+            "Product exposure and elasticities not reconciled",
+            "Response options lack distributional review"
+          ],
+          "outputTitle": "A transparent trade-risk dashboard.",
+          "outputs": [
+            "Sector-by-market exposure and uncertainty bands",
+            "Negotiation, adjustment and support options",
+            "Decision triggers and monitoring indicators"
+          ],
+          "methods": [
+            "Effective tariff / price wedges",
+            "Partial-equilibrium sensitivity",
+            "Elasticity ranges and FX scenarios",
+            "Stakeholder and welfare analysis"
+          ],
+          "gates": [
+            [
+              "Scope",
+              "Find affected sectors"
+            ],
+            [
+              "Test",
+              "Run scenarios"
+            ],
+            [
+              "Respond",
+              "Protect competitiveness"
+            ]
+          ]
+        },
+        "private": {
+          "label": "02 / EXPORT PRICE AND DEMAND RISK",
+          "title": "Protecting margins when foreign market conditions turn.",
+          "desc": "An exporting firm may face higher buyer prices, weaker orders and fluctuating exchange rates at the same time. A useful strategy separates price, volume, margin and local-currency cash flow.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Commercial decisions made from headlines.",
+          "problems": [
+            "FX revenue confused with real profitability",
+            "Buyer price sensitivity untested",
+            "Order concentration and input exposure hidden"
+          ],
+          "outputTitle": "A conditional export and pricing strategy.",
+          "outputs": [
+            "Scenario-tested price and volume assumptions",
+            "Buyer segmentation and market alternatives",
+            "Hedging, sourcing and cost-reduction decisions"
+          ],
+          "methods": [
+            "Cost and margin waterfalls",
+            "Export-demand scenarios",
+            "FX pass-through sensitivity",
+            "Competitive positioning"
+          ],
+          "gates": [
+            [
+              "Quantify",
+              "Separate price and volume"
+            ],
+            [
+              "Hedge",
+              "Manage cash-flow risk"
+            ],
+            [
+              "Pivot",
+              "Target resilient buyers"
+            ]
+          ]
+        }
+      },
+      "services": {
+        "public": {
+          "label": "03 / TRADE IN SERVICES",
+          "title": "Making invisible trade barriers visible.",
+          "desc": "Services exports may face licensing, payment, data-flow, skills and recognition barriers that do not appear as conventional border tariffs. Good diagnostics identify which constraints can actually change.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Services potential, limited policy clarity.",
+          "problems": [
+            "Fragmented information on cross-border services",
+            "Regulatory and payments constraints unmapped",
+            "Weak classification and firm-level evidence"
+          ],
+          "outputTitle": "A services competitiveness reform agenda.",
+          "outputs": [
+            "Tradable service and market opportunity map",
+            "Ranked regulatory and transaction-cost reforms",
+            "Measurable policy indicators and dialogue plan"
+          ],
+          "methods": [
+            "Services trade classification",
+            "Firm and provider interviews",
+            "Regulatory restriction mapping",
+            "Trade cost and market-demand analysis"
+          ],
+          "gates": [
+            [
+              "Classify",
+              "Understand transactions"
+            ],
+            [
+              "Reform",
+              "Remove binding frictions"
+            ],
+            [
+              "Measure",
+              "Track exportability"
+            ]
+          ]
+        },
+        "private": {
+          "label": "03 / DIGITAL SERVICES EXPORTS",
+          "title": "Choosing where a digital exporter should compete.",
+          "desc": "Software and professional-service exporters compete across skills, contracts, trust, payments and buyer discovery. Market entry needs evidence about reachable demand and the true cost of delivery.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Export aspirations without validated demand.",
+          "problems": [
+            "Markets ranked using size, not accessible demand",
+            "Client acquisition cost and compliance overlooked",
+            "Cross-border billing and delivery risk uncertain"
+          ],
+          "outputTitle": "A staged digital export-market plan.",
+          "outputs": [
+            "Prioritised target buyers and jurisdictions",
+            "Unit economics and compliance checklist",
+            "Pilot-to-scale milestones and learning metrics"
+          ],
+          "methods": [
+            "Serviceable market sizing",
+            "Buyer interviews and market tests",
+            "CAC / margin economics",
+            "Regulatory and FX friction review"
+          ],
+          "gates": [
+            [
+              "Select",
+              "Find reachable niches"
+            ],
+            [
+              "Validate",
+              "Test paid demand"
+            ],
+            [
+              "Scale",
+              "Invest after evidence"
+            ]
+          ]
+        }
+      },
+      "capacity": {
+        "public": {
+          "label": "04 / PRODUCTIVE CAPACITY & GREEN TRADE",
+          "title": "Finding the productive constraints behind slow diversification.",
+          "desc": "Trade performance depends on far more than market access. Energy, transport, institutions, finance and firm capabilities shape the ability to move into higher-value exports.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Export ambitions beyond production capability.",
+          "problems": [
+            "Sector targets detached from production bottlenecks",
+            "Infrastructure and skills constraints fragmented",
+            "Green transition investment priorities unclear"
+          ],
+          "outputTitle": "A capability-led competitiveness strategy.",
+          "outputs": [
+            "Mapped binding constraints by sector",
+            "Productive-capacity and green investment priorities",
+            "Cross-ministry implementation and metrics"
+          ],
+          "methods": [
+            "Productive Capacities Index review",
+            "Firm and value-chain diagnostics",
+            "Infrastructure / skills constraint mapping",
+            "Policy sequencing and costing"
+          ],
+          "gates": [
+            [
+              "Locate",
+              "Test binding constraints"
+            ],
+            [
+              "Invest",
+              "Close critical gaps"
+            ],
+            [
+              "Learn",
+              "Measure firm response"
+            ]
+          ]
+        },
+        "private": {
+          "label": "04 / INDUSTRIAL PRODUCTIVITY",
+          "title": "Testing whether technology adoption actually pays.",
+          "desc": "Factory-level energy efficiency decisions often stall when firms cannot verify savings, financing payback or operational risk. Randomised evidence and firm-level data improve adoption decisions.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Promising technology, uncertain adoption.",
+          "problems": [
+            "Savings claims not matched to shop-floor data",
+            "Credit constraints and behaviour underexplored",
+            "Decision-makers lack independent evidence"
+          ],
+          "outputTitle": "Evidence-backed productivity investment.",
+          "outputs": [
+            "Measured adoption barriers and cost drivers",
+            "Experimental learning on uptake mechanisms",
+            "A practical scale-up and finance case"
+          ],
+          "methods": [
+            "Enterprise surveys and RCT design",
+            "Energy and productivity measurements",
+            "Adoption incentive analysis",
+            "Cost-effectiveness scenarios"
+          ],
+          "gates": [
+            [
+              "Test",
+              "Measure benefits"
+            ],
+            [
+              "Enable",
+              "Address adoption barriers"
+            ],
+            [
+              "Scale",
+              "Invest with evidence"
+            ]
+          ]
+        }
+      },
+      "reform": {
+        "public": {
+          "label": "05 / INVESTMENT CLIMATE REFORM",
+          "title": "Reducing the cost of doing business through better rules.",
+          "desc": "Complex licensing, unclear institutional mandates and uneven administrative practice can suppress private investment even when demand exists. Reform needs evidence, coordination and delivery oversight.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Regulatory friction without accountability.",
+          "problems": [
+            "Duplicated procedures and unclear requirements",
+            "Private-sector feedback poorly structured",
+            "Reforms not linked to measurable implementation"
+          ],
+          "outputTitle": "A reform programme that can be delivered.",
+          "outputs": [
+            "Prioritised regulatory and institutional fixes",
+            "Public-private consultation mechanisms",
+            "Results framework and accountability measures"
+          ],
+          "methods": [
+            "Regulatory process mapping",
+            "Firm / institution interviews",
+            "Results-based measurement",
+            "Institutional risk and feasibility"
+          ],
+          "gates": [
+            [
+              "Listen",
+              "Measure transaction costs"
+            ],
+            [
+              "Simplify",
+              "Redesign procedures"
+            ],
+            [
+              "Monitor",
+              "Track implementation"
+            ]
+          ]
+        },
+        "private": {
+          "label": "05 / PRIVATE INVESTMENT & COMPLIANCE",
+          "title": "Locating the hidden costs in an expansion decision.",
+          "desc": "Business growth can be blocked by an accumulation of small frictions: permits, land access, logistics, time costs, financing and uncertain administrative practice.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "A growth plan with invisible regulatory costs.",
+          "problems": [
+            "Permit timelines absent from the business plan",
+            "Site and logistics constraints underpriced",
+            "Investor milestones and approvals misaligned"
+          ],
+          "outputTitle": "An implementation-ready expansion pathway.",
+          "outputs": [
+            "Regulatory and transaction-cost map",
+            "Sequenced compliance and investment milestones",
+            "Sensitivity-tested site and supply-chain options"
+          ],
+          "methods": [
+            "Process and transaction-cost audits",
+            "Site / logistics feasibility",
+            "Scenario and risk mapping",
+            "Execution readiness diagnostics"
+          ],
+          "gates": [
+            [
+              "Audit",
+              "Find bottlenecks"
+            ],
+            [
+              "Sequence",
+              "Avoid schedule shocks"
+            ],
+            [
+              "Invest",
+              "Release capital by gate"
+            ]
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "status": "Synthetic demonstration; not empirically validated",
+      "parameterOrigin": "Original teaching prototype; no fitted trade observations supplied.",
+      "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+      "domainReview": "Independent domain sign-off not supplied",
+      "claimApproval": "No new named-client credit approved or asserted",
+      "referenceSHA256": "d1f7516391f5f097693915f7fa0a05998e26f792ff4d69cefa95e10fcdfe9f12",
+      "methodReferences": [
+        {
+          "label": "WTO: tariffs and trade",
+          "url": "https://www.wto.org/english/tratop_e/tariffs_e/tariffs_e.htm",
+          "author": "WTO",
+          "role": "Method or disciplinary context only; not parameter calibration",
+          "publicationDate": "Not established in this catalogue; consult linked record"
+        },
+        {
+          "label": "WITS SMART theoretical framework",
+          "author": "World Bank",
+          "publicationDate": "2010",
+          "url": "https://wits.worldbank.org/WITS/WITS/WITSHELP/Content/SMART/SMART%20-%20Introduction.htm",
+          "role": "Partial-equilibrium modelling context; this lab is not SMART and does not calibrate its 60% pass-through from this reference"
+        }
+      ]
+    },
+    "method": "Constant-elasticity demand with an assumed 60% exchange-rate pass-through. All indices use a baseline of 100. Positive FX change means depreciation: more local currency per US dollar.",
+    "formula": "Producer price = 1 − 0.6d/(1+d); buyer price = (1+t) × producer price; quantity = buyer price^(−ε); USD receipts = producer price × quantity; local receipts = USD receipts × (1+d).",
+    "limits": "The 60% coefficient is synthetic. There is no supply response, competitor response, capacity constraint or fitted trade dataset. These are scenario indices, not an official forecast.",
+    "guidance": {
+      "question": "How sensitive are export volumes and receipts to tariffs, exchange rates and demand elasticity?",
+      "assumption": "Baseline indices are 100. FX pass-through is assumed to be 60%; elasticity is selected, not estimated.",
+      "rule": "Compare each index with 100 and test the direction of change. An index below 100 is a modelled decline, not evidence of a welfare loss of the same size.",
+      "next": "Obtain product–destination tariffs, transaction prices, volumes, capacity and competitor data; estimate elasticities and pass-through before advising on policy.",
+      "chart": "Horizontal: additional tariff (%). Vertical: export volume index (baseline 100). The table also reports buyer price and receipts indices. The selected dot is the current tariff.",
+      "risk": "Partial-equilibrium sensitivity only; no welfare, employment or general-equilibrium estimate.",
+      "parameterOrigin": "Original teaching prototype; no fitted trade observations supplied.",
+      "references": [
+        {
+          "label": "WITS SMART theoretical framework",
+          "author": "World Bank",
+          "publicationDate": "2010",
+          "url": "https://wits.worldbank.org/WITS/WITS/WITSHELP/Content/SMART/SMART%20-%20Introduction.htm",
+          "role": "Partial-equilibrium modelling context; this lab is not SMART and does not calibrate its 60% pass-through from this reference"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "finance-investment",
+    "title": "Finance & Investment",
+    "revision": "ebcee34656de",
+    "protocol": "ip3-illustration/1",
+    "inputs": [
+      {
+        "id": "fi-rate",
+        "label": "Discount rate (%)",
+        "default": 8,
+        "min": 4,
+        "max": 14,
+        "step": 0.5
+      },
+      {
+        "id": "fi-stress",
+        "label": "Benefit/cost stress (%)",
+        "default": 0,
+        "min": 0,
+        "max": 40,
+        "step": 5
+      }
+    ],
+    "cases": {
+      "resilience": {
+        "public": {
+          "label": "01 / Public climate investment",
+          "title": "Investing in warning systems that avert future losses.",
+          "desc": "Early warning systems create social benefits, but investment approval needs defensible avoided-loss estimates, long-term operating finance and clear institutional ownership.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "High value, uncertain finance",
+          "problems": [
+            "Scattered risk and hazard evidence",
+            "Benefits and avoided losses hard to value",
+            "O&M and institutional responsibilities unclear"
+          ],
+          "outputTitle": "A deliverable investment facility",
+          "outputs": [
+            "Prioritised multi-country investment pipeline",
+            "Economic appraisal and sensitivity framework",
+            "Life-cycle financing and delivery roadmap"
+          ],
+          "methods": [
+            "Economic CBA · EIRR / ENPV",
+            "O&M finance and affordability",
+            "Risk and sensitivity scenarios",
+            "Investment screening"
+          ],
+          "gates": [
+            [
+              "Value",
+              "Monetise avoided loss"
+            ],
+            [
+              "Finance",
+              "Fund the full life cycle"
+            ],
+            [
+              "Deliver",
+              "Assign operational roles"
+            ]
+          ],
+          "capex": 65,
+          "benefit": 14.2,
+          "opex": 2.3,
+          "years": 18,
+          "rate": 8,
+          "note": "Economic benefits can include avoided harm and losses, but they do not automatically generate cash for annual operating expenses. Fiscal and institutional sustainability require separate appraisal."
+        },
+        "private": {
+          "label": "01 / Private resilience investment",
+          "title": "Should a logistics company invest in business-continuity infrastructure?",
+          "desc": "Flood protection, resilient storage and redundant systems may reduce downtime. The investor must separate true incremental savings from overly optimistic assumptions.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "An exposure not priced into capex",
+          "problems": [
+            "Uncertain frequency and cost of disruption",
+            "Insurance, repairs and downtime tracked separately",
+            "Unknown cost of business continuity"
+          ],
+          "outputTitle": "A risk-adjusted capital decision",
+          "outputs": [
+            "Quantified avoided downtime scenarios",
+            "Alternative investments and financing paths",
+            "Stage-gated resilience investment plan"
+          ],
+          "methods": [
+            "Enterprise disruption scenarios",
+            "DCF · NPV / IRR",
+            "Insurance / residual-risk review",
+            "Capital budgeting"
+          ],
+          "gates": [
+            [
+              "Exposure",
+              "Price disruptions"
+            ],
+            [
+              "Return",
+              "Stress-test savings"
+            ],
+            [
+              "Act",
+              "Phase the investment"
+            ]
+          ],
+          "capex": 25,
+          "benefit": 7.1,
+          "opex": 1.4,
+          "years": 10,
+          "rate": 10,
+          "note": "Commercial benefits in this hypothetical case are annual avoided losses and operating gains. Validate probabilities, timing, financing costs and residual risk before committing capital."
+        }
+      },
+      "human": {
+        "public": {
+          "label": "02 / Human-capital investment",
+          "title": "Can education infrastructure generate lasting social returns?",
+          "desc": "Education investments need to link learning, retention and future productivity gains to credible costs while testing whether institutions can operate and maintain new services.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Spending plans without credible pathways",
+          "problems": [
+            "Learning gains are long-dated and uncertain",
+            "Capex and recurrent budgets evaluated separately",
+            "Weak links between costs, inclusion and benefits"
+          ],
+          "outputTitle": "An appraised and sequenced reform",
+          "outputs": [
+            "ENPV / EIRR and benefit-cost scenarios",
+            "Costed investment and recurrent requirements",
+            "Targeting, results and implementation logic"
+          ],
+          "methods": [
+            "Education economic CBA",
+            "Learning / earnings benefit models",
+            "Affordability and scenario tests",
+            "Institutional capacity appraisal"
+          ],
+          "gates": [
+            [
+              "Effect",
+              "Test learning pathways"
+            ],
+            [
+              "Cost",
+              "Value full-life costs"
+            ],
+            [
+              "Scale",
+              "Fund operations"
+            ]
+          ],
+          "capex": 90,
+          "benefit": 13.4,
+          "opex": 2.3,
+          "years": 20,
+          "rate": 8,
+          "note": "Human-capital benefit streams depend on causal learning effects, counterfactual outcomes and earnings assumptions. The demonstration uses simplified equal annual demonstration flows—not a real education-project model."
+        },
+        "private": {
+          "label": "02 / Private skills investment",
+          "title": "When does a new workforce academy earn back its investment?",
+          "desc": "A firm planning an in-house skills facility must connect training expenditure to measurable productivity, retention and quality improvements rather than enrolment counts alone.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Training budget mistaken for an outcome",
+          "problems": [
+            "Productivity improvements not measured",
+            "Training and attrition costs left out",
+            "Demand for skills is changing"
+          ],
+          "outputTitle": "A measurable people-investment case",
+          "outputs": [
+            "Training-to-productivity value chain",
+            "Costed academy and staffing model",
+            "Go / pilot / expand decision gates"
+          ],
+          "methods": [
+            "Skills-demand mapping",
+            "Financial NPV / IRR",
+            "Productivity and retention analysis",
+            "Phased financial plan"
+          ],
+          "gates": [
+            [
+              "Measure",
+              "Define skill demand"
+            ],
+            [
+              "Model",
+              "Value net benefits"
+            ],
+            [
+              "Pilot",
+              "Prove before scaling"
+            ]
+          ],
+          "capex": 8,
+          "benefit": 2.5,
+          "opex": 0.8,
+          "years": 8,
+          "rate": 10,
+          "note": "Productivity and retention gains are hypothetical cash-equivalent benefits here; they would require direct measurement and conservative attribution in a real corporate decision."
+        }
+      },
+      "energy": {
+        "public": {
+          "label": "03 / Green public investment",
+          "title": "Designing an energy transition that can be financed and maintained.",
+          "desc": "Green infrastructure policy requires a connection between emissions, environmental benefits, service reliability, funding needs and the ability of agencies to execute.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Policy ambition, weak project readiness",
+          "problems": [
+            "Projects not screened by value and readiness",
+            "Benefits, tariffs and fiscal costs conflated",
+            "Institutional constraints and risks undercounted"
+          ],
+          "outputTitle": "A pipeline with credible financing",
+          "outputs": [
+            "Ranked and screened investments",
+            "Economic / financial appraisal package",
+            "Phased procurement and operating plan"
+          ],
+          "methods": [
+            "Shadow-price and economic CBA",
+            "Financial sustainability / WACC",
+            "Green-finance options",
+            "Environmental and social risks"
+          ],
+          "gates": [
+            [
+              "Screen",
+              "Identify net social value"
+            ],
+            [
+              "Structure",
+              "Map funding sources"
+            ],
+            [
+              "Govern",
+              "Secure delivery mandate"
+            ]
+          ],
+          "capex": 38,
+          "benefit": 8.8,
+          "opex": 1.7,
+          "years": 16,
+          "rate": 8,
+          "note": "Economic returns on a public green project differ from tariff revenue and fiscal funding. Carbon prices, shadow pricing and externalities would require project-specific evidence."
+        },
+        "private": {
+          "label": "03 / Factory efficiency investment",
+          "title": "Does an energy-efficient motor upgrade make commercial sense?",
+          "desc": "A manufacturing firm needs to consider equipment cost, energy savings, utilisation, maintenance, credit constraints and workers’ willingness to adopt new technology.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Savings claims with missing assumptions",
+          "problems": [
+            "Energy savings tested in isolation",
+            "Finance constraints and downtime unpriced",
+            "Actual adoption and utilisation uncertain"
+          ],
+          "outputTitle": "A risk-aware retrofit decision",
+          "outputs": [
+            "Validated baseline and alternative packages",
+            "NPV / IRR and downside thresholds",
+            "Pilot, adoption and measurement plan"
+          ],
+          "methods": [
+            "Energy-cost baseline",
+            "Financial NPV / IRR / payback",
+            "Adoption and behaviour diagnostics",
+            "Credit and downside scenarios"
+          ],
+          "gates": [
+            [
+              "Baseline",
+              "Measure power use"
+            ],
+            [
+              "Return",
+              "Test unit economics"
+            ],
+            [
+              "Pilot",
+              "Verify adoption"
+            ]
+          ],
+          "capex": 4.8,
+          "benefit": 1.35,
+          "opex": 0.27,
+          "years": 9,
+          "rate": 10,
+          "note": "This is a hypothetical technology-adoption investment application. The equipment investment numbers and finance workflow shown here are invented examples, not observed returns."
+        }
+      },
+      "capital": {
+        "public": {
+          "label": "04 / Public capital programme",
+          "title": "Turning an infrastructure wish-list into a financeable investment pipeline.",
+          "desc": "Local infrastructure can promise development gains yet stall because of weak project screening, unclear repayment capacity, fragmented approvals and operating cost gaps.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Project concepts without capital discipline",
+          "problems": [
+            "Projects ranked without shared appraisal rules",
+            "Funding sources and liabilities fragmented",
+            "Cost overruns and procurement risk overlooked"
+          ],
+          "outputTitle": "A sequenced public investment portfolio",
+          "outputs": [
+            "Comparable investment screening matrix",
+            "Funding, procurement and risk options",
+            "Implementation and monitoring controls"
+          ],
+          "methods": [
+            "Multi-criteria project screening",
+            "Economic CBA / fiscal affordability",
+            "Finance structuring and WACC",
+            "Institutional readiness review"
+          ],
+          "gates": [
+            [
+              "Select",
+              "Prioritise social value"
+            ],
+            [
+              "Fund",
+              "Test affordability"
+            ],
+            [
+              "Deliver",
+              "Manage programme risk"
+            ]
+          ],
+          "capex": 55,
+          "benefit": 11.5,
+          "opex": 3,
+          "years": 20,
+          "rate": 8,
+          "note": "The generic NPV illustration is not a debt-service forecast or municipal-budget cash flow. Public investment selection also requires fiscal affordability, distributional review and governance."
+        },
+        "private": {
+          "label": "04 / Enterprise growth investment",
+          "title": "How much expansion capital should an enterprise actually commit?",
+          "desc": "When demand forecasts, financing costs and execution capacity are uncertain, expansion is a sequence of capital-allocation decisions—not a single optimistic sales projection.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Expansion driven by demand optimism",
+          "problems": [
+            "Market forecasts lack downside cases",
+            "Debt and operating leverage untested",
+            "Capacity ramp-up and liquidity disconnected"
+          ],
+          "outputTitle": "An investment staged around evidence",
+          "outputs": [
+            "Integrated revenue and capex scenarios",
+            "Return thresholds and funding options",
+            "Milestones for pilot, expand or defer"
+          ],
+          "methods": [
+            "Market-demand and DCF scenarios",
+            "Financing options / WACC",
+            "Break-even and downside tests",
+            "Investment stage gates"
+          ],
+          "gates": [
+            [
+              "Demand",
+              "Validate the market"
+            ],
+            [
+              "Capital",
+              "Structure funding"
+            ],
+            [
+              "Gate",
+              "Expand conditionally"
+            ]
+          ],
+          "capex": 18.5,
+          "benefit": 5.4,
+          "opex": 1.6,
+          "years": 9,
+          "rate": 10,
+          "note": "The model reports generic project returns from hypothetical flows before financing and tax complications. Actual enterprise investment needs detailed operating, tax and debt schedules."
+        }
+      }
+    },
+    "provenance": {
+      "status": "Synthetic demonstration; not empirically validated",
+      "parameterOrigin": "Case-specific investment, benefit, operating cost, years and default discount rate from the original prototype; no underlying project accounts supplied.",
+      "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+      "domainReview": "Independent domain sign-off not supplied",
+      "claimApproval": "No new named-client credit approved or asserted",
+      "referenceSHA256": "a8bca7dd3fcb91f54d9571d67f1d1c49380ef2a327e4a39f7a6201511ce6bebd",
+      "methodReferences": [
+        {
+          "label": "European Commission / JASPERS: economic appraisal",
+          "url": "https://jaspers.eib.org/knowledge/publications/economic-appraisal-vademecum-2021-2027-general-principles-and-sector-applications",
+          "author": "European Commission / JASPERS",
+          "role": "Method or disciplinary context only; not parameter calibration",
+          "publicationDate": "Not established in this catalogue; consult linked record"
+        },
+        {
+          "label": "Guidelines for the Economic Analysis of Projects",
+          "author": "Asian Development Bank",
+          "publicationDate": "2017",
+          "url": "https://www.adb.org/sites/default/files/institutional-document/32256/economic-analysis-projects.pdf",
+          "role": "Economic-appraisal methods; this lab does not implement the full framework or calibrate parameters from it"
+        }
+      ]
+    },
+    "method": "An initial Year 0 investment followed by equal annual net flows. Benefits fall and operating costs rise under the selected stress assumption. NPV includes Year 0; IRR is the discount rate at which NPV is zero.",
+    "formula": "Annual net flow = benefit × (1 − stress) − operating cost × (1 + stress/2). NPV = −investment + Σ(net flow/(1+r)^year). IRR solves NPV = 0 for this conventional cash-flow pattern.",
+    "limits": "Synthetic flows exclude residual value, taxes, replacement costs, inflation, financing and shadow-price adjustments. Public/private context does not by itself establish ENPV/FNPV or EIRR/FIRR. Generic NPV and IRR describe only the entered demonstration flows.",
+    "guidance": {
+      "question": "Under which cash-flow and discount assumptions does an illustrative investment have positive NPV?",
+      "assumption": "Year 0 investment, equal annual flows, end-of-year discounting and no residual value. Case selection changes these synthetic flows.",
+      "rule": "NPV = 0 is the arithmetic threshold at the selected discount rate. A positive NPV here is insufficient for an investment recommendation or a public economic appraisal.",
+      "next": "Obtain dated investment, operating, replacement and residual flows; specify currency and price basis, taxes, externalities, shadow prices and financing separately.",
+      "chart": "Horizontal: year, including Year 0. Vertical: discounted net flow in USD millions. Bars below zero are outflows; the full table uses the same annual values.",
+      "risk": "This single teaching account is neither an independently prepared economic account nor an investor financing model. No ENPV/EIRR or FNPV/FIRR conclusion is asserted.",
+      "parameterOrigin": "Case-specific investment, benefit, operating cost, years and default discount rate from the original prototype; no underlying project accounts supplied.",
+      "references": [
+        {
+          "label": "Guidelines for the Economic Analysis of Projects",
+          "author": "Asian Development Bank",
+          "publicationDate": "2017",
+          "url": "https://www.adb.org/sites/default/files/institutional-document/32256/economic-analysis-projects.pdf",
+          "role": "Economic-appraisal methods; this lab does not implement the full framework or calibrate parameters from it"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "market-enterprise",
+    "title": "Market & Enterprise",
+    "revision": "608bf0f859b0",
+    "protocol": "ip3-illustration/1",
+    "inputs": [
+      {
+        "id": "me-price",
+        "label": "Price (USD/unit)",
+        "default": 125,
+        "min": 85,
+        "max": 175,
+        "step": 1
+      },
+      {
+        "id": "me-cost",
+        "label": "Variable cost (USD/unit)",
+        "default": 78,
+        "min": 50,
+        "max": 120,
+        "step": 1
+      },
+      {
+        "id": "me-productivity",
+        "label": "Productivity uplift (%)",
+        "default": 8,
+        "min": 0,
+        "max": 30,
+        "step": 1
+      },
+      {
+        "id": "me-elasticity",
+        "label": "Demand elasticity",
+        "default": 1.3,
+        "min": 0.3,
+        "max": 2.5,
+        "step": 0.1
+      }
+    ],
+    "cases": {
+      "technology": {
+        "public": {
+          "label": "01 / PUBLIC · FIRM TECHNOLOGY",
+          "title": "What keeps firms from adopting better technology?",
+          "desc": "A manufacturing economy cannot close its productivity gap without measuring the technologies firms actually use and understanding the barriers to adoption.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Technology needs unclear.",
+          "problems": [
+            "Uneven firm-level capability and equipment use",
+            "Limited evidence on adoption barriers by sector",
+            "Interventions poorly targeted to firm readiness"
+          ],
+          "resultTitle": "A measurable productivity agenda.",
+          "results": [
+            "Segment firms by capability and barriers",
+            "Target adoption, skills and financing mechanisms",
+            "Track actual take-up and performance"
+          ],
+          "methods": [
+            "Firm-level adoption surveys",
+            "Sector diagnostics",
+            "Technology-use mapping",
+            "Econometric analysis"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Measure gaps"
+            ],
+            [
+              "Target",
+              "Match support"
+            ],
+            [
+              "Evaluate",
+              "Test adoption"
+            ]
+          ]
+        },
+        "private": {
+          "label": "01 / PRIVATE · OPERATIONS",
+          "title": "Where does an upgrade actually improve performance?",
+          "desc": "Equipment expenditure alone is not productivity. Firms need evidence about bottlenecks, worker capability, financing and returns before selecting new technology.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Technology spending without a business case.",
+          "problems": [
+            "Bottlenecks hidden across the production line",
+            "Capital budget separated from skills needs",
+            "Benefits assumed instead of measured"
+          ],
+          "resultTitle": "A sequenced adoption roadmap.",
+          "results": [
+            "Compare alternative process and equipment upgrades",
+            "Combine skills, financing and maintenance plans",
+            "Pilot adoption before full roll-out"
+          ],
+          "methods": [
+            "Time and motion diagnostics",
+            "Process-cost benchmarking",
+            "Investment feasibility",
+            "Pilot evaluation"
+          ],
+          "steps": [
+            [
+              "Audit",
+              "Locate losses"
+            ],
+            [
+              "Pilot",
+              "Test upgrades"
+            ],
+            [
+              "Scale",
+              "Track return"
+            ]
+          ]
+        }
+      },
+      "green": {
+        "public": {
+          "label": "02 / PUBLIC · GREEN INDUSTRY",
+          "title": "Turning the green transition into a firm-level programme.",
+          "desc": "Climate goals become actionable when policymakers understand factory constraints, access to green finance and the incentives shaping energy and technology choices.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Green ambition, fragmented evidence.",
+          "problems": [
+            "Energy and investment gaps vary across factories",
+            "Green finance and regulatory requirements difficult to navigate",
+            "Policy instruments disconnected from firm economics"
+          ],
+          "resultTitle": "A realistic industry transition pathway.",
+          "results": [
+            "Prioritise feasible cleaner technologies",
+            "Identify finance and regulatory constraints",
+            "Design sequenced incentives and support"
+          ],
+          "methods": [
+            "Enterprise survey design",
+            "Key informant interviews and focus groups",
+            "Green-finance diagnostics",
+            "Policy and regulatory review"
+          ],
+          "steps": [
+            [
+              "Listen",
+              "Gather firm evidence"
+            ],
+            [
+              "Compare",
+              "Rank barriers"
+            ],
+            [
+              "Design",
+              "Sequence reforms"
+            ]
+          ]
+        },
+        "private": {
+          "label": "02 / PRIVATE · GREEN COMPETITIVENESS",
+          "title": "When does a greener production line make business sense?",
+          "desc": "For an exporter, clean energy and process efficiency decisions depend on lifecycle costs, buyer requirements, operational risk and available financing.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Clean technology perceived as only a cost.",
+          "problems": [
+            "Energy savings and upfront cost poorly compared",
+            "Buyer sustainability demands difficult to price",
+            "Green financing options not evaluated"
+          ],
+          "resultTitle": "An investment-ready transition plan.",
+          "results": [
+            "Prioritise projects by payback and resilience",
+            "Align operational measures with buyer needs",
+            "Map financing and execution milestones"
+          ],
+          "methods": [
+            "Energy and material-cost audit",
+            "Lifecycle costing",
+            "Market and buyer assessment",
+            "Climate risk screening"
+          ],
+          "steps": [
+            [
+              "Measure",
+              "Energy baseline"
+            ],
+            [
+              "Select",
+              "Best options"
+            ],
+            [
+              "Finance",
+              "Stage delivery"
+            ]
+          ]
+        }
+      },
+      "workforce": {
+        "public": {
+          "label": "03 / PUBLIC · WORKER SERVICE MARKETS",
+          "title": "Designing worker services that support better jobs.",
+          "desc": "Employment, health and productivity intersect. A functioning worker-services market needs credible evidence on access, business incentives and service quality.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Workforce needs and service incentives misaligned.",
+          "problems": [
+            "Workers face barriers to reliable services",
+            "Factory value proposition not made visible",
+            "Programme effects insufficiently tested"
+          ],
+          "resultTitle": "A service model with measurable value.",
+          "results": [
+            "Map worker needs and service delivery gaps",
+            "Test models using rigorous evaluation",
+            "Align factory, worker and provider incentives"
+          ],
+          "methods": [
+            "RCT and impact evaluation",
+            "Worker and factory data",
+            "Business value analysis",
+            "Market-systems research"
+          ],
+          "steps": [
+            [
+              "Assess",
+              "Identify unmet need"
+            ],
+            [
+              "Test",
+              "Evaluate models"
+            ],
+            [
+              "Improve",
+              "Align incentives"
+            ]
+          ]
+        },
+        "private": {
+          "label": "03 / PRIVATE · WORKFORCE PERFORMANCE",
+          "title": "Can worker wellbeing become part of operating strategy?",
+          "desc": "Worker services should be assessed alongside retention, absence, service use, costs and longer-run productivity—not treated as a standalone corporate benefit.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "People costs measured, people value missed.",
+          "problems": [
+            "Absence and turnover treated as isolated metrics",
+            "Worker service investments lack a testable hypothesis",
+            "No integrated performance dashboard"
+          ],
+          "resultTitle": "A measurable workforce investment case.",
+          "results": [
+            "Link service quality with operating indicators",
+            "Compare costs and potential business value",
+            "Test interventions and monitor outcomes"
+          ],
+          "methods": [
+            "Worker needs assessment",
+            "Retention and absence analysis",
+            "Cost-effectiveness framework",
+            "Impact evaluation design"
+          ],
+          "steps": [
+            [
+              "Understand",
+              "Worker needs"
+            ],
+            [
+              "Trial",
+              "Measure change"
+            ],
+            [
+              "Adjust",
+              "Scale carefully"
+            ]
+          ]
+        }
+      },
+      "regulation": {
+        "public": {
+          "label": "04 / PUBLIC · BUSINESS ENVIRONMENT",
+          "title": "Removing the hidden costs of doing business.",
+          "desc": "Better business rules are not only about reducing forms. Institutional processes, licensing, transparency and implementation capacity determine how well markets function.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Regulation imposes hidden transaction costs.",
+          "problems": [
+            "Overlapping procedures and uncertain processing time",
+            "Weak feedback loops between businesses and agencies",
+            "Simplifications not tracked for actual use"
+          ],
+          "resultTitle": "A reform that firms can experience.",
+          "results": [
+            "Map costs and priority bottlenecks",
+            "Co-design simplification and digital tools",
+            "Monitor service standards and business confidence"
+          ],
+          "methods": [
+            "Regulatory process mapping",
+            "Firm consultations and surveys",
+            "Results-based measurement",
+            "Institutional analysis"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Document friction"
+            ],
+            [
+              "Reform",
+              "Simplify rules"
+            ],
+            [
+              "Verify",
+              "Track delivery"
+            ]
+          ]
+        },
+        "private": {
+          "label": "04 / PRIVATE · MARKET ENTRY",
+          "title": "Making expansion decisions with fewer blind spots.",
+          "desc": "An attractive market may still impose costly delays through registration, certification, permits, logistics and uncertainty. Strategy must price those frictions explicitly.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Expansion plan ignores the cost of friction.",
+          "problems": [
+            "Time-to-market assumptions too optimistic",
+            "Approvals and certification risks uncosted",
+            "Market-entry milestones unsequenced"
+          ],
+          "resultTitle": "An executable market-entry plan.",
+          "results": [
+            "Identify requirements and real transaction costs",
+            "Compare entry channels and locations",
+            "Create compliance and investment milestones"
+          ],
+          "methods": [
+            "Process mapping",
+            "Market-entry feasibility",
+            "Transaction-cost modelling",
+            "Sensitivity analysis"
+          ],
+          "steps": [
+            [
+              "Identify",
+              "Map constraints"
+            ],
+            [
+              "Compare",
+              "Entry options"
+            ],
+            [
+              "Execute",
+              "Stage capital"
+            ]
+          ]
+        }
+      },
+      "sme": {
+        "public": {
+          "label": "05 / PUBLIC · INCLUSIVE ENTERPRISE",
+          "title": "Connecting rural producers with viable markets.",
+          "desc": "Small producers often have capability, quality and market-access constraints at the same time. Enterprise development must link training to buyer demand and commercialization.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Producers remain outside high-value markets.",
+          "problems": [
+            "Fragmented buyer relationships and information",
+            "Limited commercialization and quality systems",
+            "Training results not linked to viable demand"
+          ],
+          "resultTitle": "A market-linked enterprise pathway.",
+          "results": [
+            "Understand the full value chain",
+            "Identify commercially relevant upgrades",
+            "Evaluate income and livelihood pathways"
+          ],
+          "methods": [
+            "Value-chain mapping",
+            "Producer and market interviews",
+            "End-line evaluation",
+            "Technology-use assessment"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Trace value chain"
+            ],
+            [
+              "Link",
+              "Strengthen markets"
+            ],
+            [
+              "Evaluate",
+              "Measure results"
+            ]
+          ]
+        },
+        "private": {
+          "label": "05 / PRIVATE · SME GROWTH",
+          "title": "Finding the next viable market for a growing enterprise.",
+          "desc": "A smaller enterprise must choose products, segments and channels where customers will pay, supply remains reliable and contribution margins support growth.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Growth is driven by volume, not economics.",
+          "problems": [
+            "Market segments and willingness-to-pay unclear",
+            "Channel and logistics costs mismeasured",
+            "Scale-up outpaces product quality and cash flow"
+          ],
+          "resultTitle": "A disciplined go-to-market plan.",
+          "results": [
+            "Prioritise customer segments and channels",
+            "Test product pricing and unit economics",
+            "Sequence investment to demand signals"
+          ],
+          "methods": [
+            "Customer and competitor research",
+            "Value chain economics",
+            "Pricing and margin analysis",
+            "Growth experiments"
+          ],
+          "steps": [
+            [
+              "Discover",
+              "Find segments"
+            ],
+            [
+              "Test",
+              "Validate margins"
+            ],
+            [
+              "Expand",
+              "Scale evidence"
+            ]
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "status": "Synthetic demonstration; not empirically validated",
+      "parameterOrigin": "Original stylised enterprise assumptions; no company observations supplied.",
+      "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+      "domainReview": "Independent domain sign-off not supplied",
+      "claimApproval": "No new named-client credit approved or asserted",
+      "referenceSHA256": "17a1627d57bb3e22e574942e97e5adcf629554448d66a7ed8c26eb14e81d43a1",
+      "methodReferences": [
+        {
+          "label": "World Bank: Enterprise Surveys",
+          "url": "https://www.enterprisesurveys.org/",
+          "author": "World Bank",
+          "role": "Method or disciplinary context only; not parameter calibration",
+          "publicationDate": "Not established in this catalogue; consult linked record"
+        },
+        {
+          "label": "Principles of Accounting, Volume 2: Managerial Accounting, section 3.1",
+          "author": "Franklin, Graybeal and Cooper; OpenStax",
+          "publicationDate": "2019",
+          "url": "https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin",
+          "role": "Contribution-margin and cost-volume-profit methods; no calibration of the synthetic firm or demand elasticity"
+        }
+      ]
+    },
+    "method": "A stylised monthly enterprise with 1,200 units of demand at a price of $120, fixed costs of $29,000, constant demand elasticity and productivity reducing variable unit cost.",
+    "formula": "Units = 1200 × (price/120)^(−elasticity); effective cost = variable cost/(1+productivity); profit = units × (price−effective cost) − 29000; break-even units = ceil(29000/contribution) when contribution > 0.",
+    "limits": "Demand and cost assumptions are synthetic. No taxes, credit, competitors or capacity constraints are modelled. Nonpositive unit contribution means break-even is unattainable under these assumptions.",
+    "guidance": {
+      "question": "What volume covers fixed costs at the selected price and effective variable cost?",
+      "assumption": "Monthly fixed cost is $29,000; demand is 1,200 units at $120 before the selected elasticity adjustment. Productivity reduces variable cost only.",
+      "rule": "Operating profit crosses zero at fixed cost divided by positive unit contribution. Displayed break-even rounds up to a whole unit. With contribution ≤ 0 there is no finite break-even.",
+      "next": "Validate transaction-level demand, capacity, variable and fixed costs, seasonality and competitor responses; investigate whether demand at the proposed price is attainable.",
+      "chart": "Horizontal: units per month. Vertical: operating profit in USD per month. Solid line: profit at fixed selected price/cost; dot: demand implied by the elasticity model; dashed marker: break-even if in range.",
+      "risk": "The volume sweep holds price and effective unit cost fixed; it is not a second demand curve or a forecast of sales.",
+      "parameterOrigin": "Original stylised enterprise assumptions; no company observations supplied.",
+      "references": [
+        {
+          "label": "Principles of Accounting, Volume 2: Managerial Accounting, section 3.1",
+          "author": "Franklin, Graybeal and Cooper; OpenStax",
+          "publicationDate": "2019",
+          "url": "https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin",
+          "role": "Contribution-margin and cost-volume-profit methods; no calibration of the synthetic firm or demand elasticity"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "development-impact",
+    "title": "Development & Impact",
+    "revision": "08012a61b493",
+    "protocol": "ip3-illustration/1",
+    "inputs": [
+      {
+        "id": "di-tpre",
+        "label": "Treated baseline (%)",
+        "default": 46,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "di-tpost",
+        "label": "Treated endline (%)",
+        "default": 74,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "di-cpre",
+        "label": "Comparison baseline (%)",
+        "default": 43,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "id": "di-cpost",
+        "label": "Comparison endline (%)",
+        "default": 56,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      }
+    ],
+    "cases": {
+      "education": {
+        "public": {
+          "label": "01 / PUBLIC · EDUCATION & HUMAN CAPITAL",
+          "title": "What would better learning actually look like?",
+          "desc": "Education investment can produce new infrastructure without producing better learning. Programme design must identify how inputs become effective teaching, retention, inclusion and measurable skill gains.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Inputs are visible. Learning is not.",
+          "problems": [
+            "Access and quality vary across communities",
+            "Equipment and training do not guarantee classroom use",
+            "Costs are known; long-term value is uncertain"
+          ],
+          "resultTitle": "An evaluable human-capital pathway.",
+          "results": [
+            "Link investment packages to learning pathways",
+            "Specify outcome and equity indicators",
+            "Appraise returns, delivery feasibility and evaluation design"
+          ],
+          "methods": [
+            "Theory of change",
+            "CBA / EIRR",
+            "Learning assessments",
+            "Baseline & follow-up"
+          ],
+          "steps": [
+            [
+              "Diagnose",
+              "Find learning gaps"
+            ],
+            [
+              "Design",
+              "Connect inputs to use"
+            ],
+            [
+              "Evaluate",
+              "Test improvement"
+            ]
+          ]
+        },
+        "private": {
+          "label": "01 / PRIVATE · EDUCATION SERVICES",
+          "title": "Does a learning product improve capability—not just uptake?",
+          "desc": "A training or education technology provider may count enrolments and active accounts while remaining uncertain whether students or workers actually improve their competencies.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Usage is mistaken for effectiveness.",
+          "problems": [
+            "Completion counts are treated as skill gains",
+            "Customer outcomes are poorly measured",
+            "Impact evidence is disconnected from product improvements"
+          ],
+          "resultTitle": "A results-led learning proposition.",
+          "results": [
+            "Define measurable competencies and usage pathways",
+            "Compare learner progress against a credible benchmark",
+            "Connect learning effectiveness to product choices"
+          ],
+          "methods": [
+            "Skills assessment",
+            "Matched comparisons",
+            "Usage & completion analytics",
+            "Outcome dashboards"
+          ],
+          "steps": [
+            [
+              "Define",
+              "Specify competencies"
+            ],
+            [
+              "Measure",
+              "Track learning"
+            ],
+            [
+              "Refine",
+              "Improve product"
+            ]
+          ]
+        }
+      },
+      "health": {
+        "public": {
+          "label": "02 / PUBLIC · WORKER HEALTH & SOCIAL IMPACT",
+          "title": "Can better health access change workers’ lives?",
+          "desc": "Worker-focused services need evidence on access, uptake, health outcomes and their links to job wellbeing—not only clinic visits or outreach volume.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Delivery statistics obscure who benefits.",
+          "problems": [
+            "Workers may face barriers to access and trust",
+            "Programme utilisation is not health improvement",
+            "Business and social outcomes are rarely evaluated together"
+          ],
+          "resultTitle": "A worker-centred impact story.",
+          "results": [
+            "Assess wellbeing and access with appropriate consent",
+            "Use credible programme and comparison evidence",
+            "Connect worker outcomes to sustainable service models"
+          ],
+          "methods": [
+            "RCT design & analysis",
+            "Worker/factory surveys",
+            "Process evaluation",
+            "Business value analysis"
+          ],
+          "steps": [
+            [
+              "Listen",
+              "Map worker needs"
+            ],
+            [
+              "Compare",
+              "Estimate outcomes"
+            ],
+            [
+              "Improve",
+              "Strengthen access"
+            ]
+          ]
+        },
+        "private": {
+          "label": "02 / PRIVATE · EMPLOYEE WELLBEING",
+          "title": "Is a factory wellbeing investment creating shared value?",
+          "desc": "Employers considering worker healthcare or wellbeing benefits need to understand take-up, productivity, retention and worker outcomes before expanding a programme.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Benefits are purchased, not evaluated.",
+          "problems": [
+            "Needs differ across job roles and workers",
+            "Absence and retention metrics lack context",
+            "Social returns and business value are confused"
+          ],
+          "resultTitle": "A measurable wellbeing investment.",
+          "results": [
+            "Measure access, usage and worker experience",
+            "Compare productivity and retention trajectories",
+            "Protect privacy while testing business value"
+          ],
+          "methods": [
+            "Employee survey",
+            "Difference-in-differences",
+            "Business value analysis",
+            "Privacy-conscious dashboards"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Identify needs"
+            ],
+            [
+              "Pilot",
+              "Test service"
+            ],
+            [
+              "Decide",
+              "Assess scale-up"
+            ]
+          ]
+        }
+      },
+      "climate": {
+        "public": {
+          "label": "03 / PUBLIC · RESILIENCE & EARLY WARNING",
+          "title": "Does an early warning actually reach the last mile?",
+          "desc": "Resilience investment requires more than equipment. Effective warning systems have to convert hazard intelligence into timely action by people at risk.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Forecast systems do not guarantee action.",
+          "problems": [
+            "Warnings fail to reach some exposed communities",
+            "Agencies have fragmented roles and protocols",
+            "Benefit streams and operations funding are unclear"
+          ],
+          "resultTitle": "An investable, inclusive resilience system.",
+          "results": [
+            "Design last-mile information and response pathways",
+            "Connect costs and avoided-loss scenarios",
+            "Specify indicators, governance and financing"
+          ],
+          "methods": [
+            "Economic appraisal / CBA",
+            "Risk & vulnerability mapping",
+            "Institutional diagnostics",
+            "Results framework"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Trace exposure"
+            ],
+            [
+              "Connect",
+              "Design alerts"
+            ],
+            [
+              "Prepare",
+              "Finance delivery"
+            ]
+          ]
+        },
+        "private": {
+          "label": "03 / PRIVATE · CLIMATE RISK MANAGEMENT",
+          "title": "Will resilience investment protect business continuity?",
+          "desc": "Firms exposed to floods, heat or supply-chain disruption need decision-quality estimates of losses avoided, operational feasibility and worker protection.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Climate shocks are treated as one-off events.",
+          "problems": [
+            "Exposure is not translated into operational risk",
+            "Alert procedures are rarely stress-tested",
+            "Adaptation investment competes with immediate budgets"
+          ],
+          "resultTitle": "A measurable resilience strategy.",
+          "results": [
+            "Link hazards to downtime and economic losses",
+            "Design protocols with suppliers and workers",
+            "Test avoided-loss and continuity scenarios"
+          ],
+          "methods": [
+            "Risk mapping",
+            "Scenario and sensitivity analysis",
+            "Contingency planning",
+            "Operations monitoring"
+          ],
+          "steps": [
+            [
+              "Quantify",
+              "Estimate exposure"
+            ],
+            [
+              "Prepare",
+              "Test response"
+            ],
+            [
+              "Invest",
+              "Protect continuity"
+            ]
+          ]
+        }
+      },
+      "livelihoods": {
+        "public": {
+          "label": "04 / PUBLIC · LIVELIHOODS & INCLUSION",
+          "title": "When incomes rise, which opportunities become durable?",
+          "desc": "Livelihood programmes should test whether support changes access to markets, earnings, resilience and inclusion—not just the number of producers trained.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Activity counts hide livelihood vulnerability.",
+          "problems": [
+            "Producer earnings fluctuate with markets and shocks",
+            "Skills and technology may not connect to buyers",
+            "Effects differ by gender, assets and location"
+          ],
+          "resultTitle": "A market-linked inclusion pathway.",
+          "results": [
+            "Map market, income and resilience constraints",
+            "Track income and adoption with a comparison strategy",
+            "Identify who benefits and why"
+          ],
+          "methods": [
+            "Household surveys",
+            "Value-chain assessment",
+            "Distributional analysis",
+            "End-line evaluation"
+          ],
+          "steps": [
+            [
+              "Segment",
+              "Identify constraints"
+            ],
+            [
+              "Link",
+              "Improve market access"
+            ],
+            [
+              "Verify",
+              "Assess incomes"
+            ]
+          ]
+        },
+        "private": {
+          "label": "04 / PRIVATE · INCLUSIVE VALUE CHAINS",
+          "title": "Can an inclusive sourcing model sustain higher incomes?",
+          "desc": "Agribusinesses and social enterprises need to learn whether supplier support improves producer income while strengthening quality, reliability and long-term supply.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Supplier support lacks outcome evidence.",
+          "problems": [
+            "Training is not linked to producer margins",
+            "Procurement conditions are uneven",
+            "Benefits may bypass smaller or poorer suppliers"
+          ],
+          "resultTitle": "A measurable shared-value model.",
+          "results": [
+            "Track producer net income, not merely revenue",
+            "Measure reliability and upgrading costs",
+            "Adjust sourcing based on distributional evidence"
+          ],
+          "methods": [
+            "Supplier panels",
+            "Net income analysis",
+            "Value-chain mapping",
+            "Equity monitoring"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Assess suppliers"
+            ],
+            [
+              "Test",
+              "Measure margins"
+            ],
+            [
+              "Scale",
+              "Reward outcomes"
+            ]
+          ]
+        }
+      },
+      "adoption": {
+        "public": {
+          "label": "05 / PUBLIC · TECHNOLOGY & BEHAVIOUR",
+          "title": "Why does promising technology fail to spread?",
+          "desc": "A technology can be profitable on paper while businesses and workers remain reluctant to use it. Adoption research identifies the real incentives, frictions and information gaps.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Diffusion is assumed, not understood.",
+          "problems": [
+            "Knowledge and finance constraints interact",
+            "Firms report technology but vary in effective use",
+            "Policies may overlook behaviour and firm heterogeneity"
+          ],
+          "resultTitle": "An evidence-led adoption strategy.",
+          "results": [
+            "Identify barriers by firm and technology type",
+            "Test appropriately designed information or incentive responses",
+            "Measure meaningful use and productivity outcomes"
+          ],
+          "methods": [
+            "Firm-level surveys",
+            "Behavioural diagnostics",
+            "Experimental or quasi-experimental design",
+            "Productivity analysis"
+          ],
+          "steps": [
+            [
+              "Diagnose",
+              "Find adoption barriers"
+            ],
+            [
+              "Test",
+              "Trial an approach"
+            ],
+            [
+              "Track",
+              "Measure use"
+            ]
+          ]
+        },
+        "private": {
+          "label": "05 / PRIVATE · PRODUCT & PROCESS ADOPTION",
+          "title": "Will a new production technology actually be used?",
+          "desc": "Manufacturers and service businesses face an adoption gap between capital investment and sustained operational behaviour, especially when training and incentives are weak.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Purchasing technology is confused with using it.",
+          "problems": [
+            "Workers and managers face different incentives",
+            "Operations do not capture baseline capability",
+            "Initial uptake may not survive implementation"
+          ],
+          "resultTitle": "A test-and-learn rollout.",
+          "results": [
+            "Segment users and identify adoption friction",
+            "Pilot with measurable operational outcomes",
+            "Scale only after identifying successful practices"
+          ],
+          "methods": [
+            "Adoption funnel analysis",
+            "A/B test or field experiment",
+            "Process observation",
+            "Productivity tracking"
+          ],
+          "steps": [
+            [
+              "Baseline",
+              "Measure readiness"
+            ],
+            [
+              "Pilot",
+              "Test incentives"
+            ],
+            [
+              "Scale",
+              "Sustain use"
+            ]
+          ]
+        }
+      },
+      "governance": {
+        "public": {
+          "label": "06 / PUBLIC · INSTITUTIONS & REFORM",
+          "title": "Can policy reform make public services work better?",
+          "desc": "Changing a regulation is not itself a development outcome. Reform needs evidence that citizens and enterprises experience faster, fairer and more reliable service.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Reform completion obscures service outcomes.",
+          "problems": [
+            "Processes remain fragmented after policy changes",
+            "Administrative data are hard to compare",
+            "Users experience delays and unequal treatment"
+          ],
+          "resultTitle": "Accountable institutional performance.",
+          "results": [
+            "Measure time, cost, access and user experience",
+            "Verify changes through administrative and field data",
+            "Link evidence to process and governance redesign"
+          ],
+          "methods": [
+            "Results-based management",
+            "Service journey mapping",
+            "Regulatory diagnostics",
+            "Institutional M&E"
+          ],
+          "steps": [
+            [
+              "Measure",
+              "Baseline services"
+            ],
+            [
+              "Reform",
+              "Simplify process"
+            ],
+            [
+              "Review",
+              "Audit outcomes"
+            ]
+          ]
+        },
+        "private": {
+          "label": "06 / PRIVATE · ORGANISATIONAL IMPACT",
+          "title": "Are management changes improving service delivery?",
+          "desc": "A company or service provider may digitise processes and report milestones without knowing whether clients receive better, more inclusive and more efficient services.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Digitalisation is mistaken for performance.",
+          "problems": [
+            "Operational KPIs are disconnected from user needs",
+            "Efficiency may shift burdens onto customers",
+            "Teams lack a credible before/after comparison"
+          ],
+          "resultTitle": "A measurable service transformation.",
+          "results": [
+            "Specify service-quality and inclusion outcomes",
+            "Track cycle times, costs and satisfaction",
+            "Use evaluation findings to redesign workflows"
+          ],
+          "methods": [
+            "Service process mapping",
+            "Operational performance panel",
+            "Client journey research",
+            "Quasi-experimental monitoring"
+          ],
+          "steps": [
+            [
+              "Observe",
+              "Find bottlenecks"
+            ],
+            [
+              "Test",
+              "Redesign services"
+            ],
+            [
+              "Verify",
+              "Measure quality"
+            ]
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "status": "Synthetic demonstration; not empirically validated",
+      "parameterOrigin": "Four synthetic percentages entered by the reader; no participant-level observations supplied.",
+      "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+      "domainReview": "Independent domain sign-off not supplied",
+      "claimApproval": "No new named-client credit approved or asserted",
+      "referenceSHA256": "c9c9275d60a83e74c51da86b432821baea9c1587c1367021fabc1e38c26749f8",
+      "methodReferences": [
+        {
+          "label": "World Bank: Impact Evaluation in Practice",
+          "url": "https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice",
+          "author": "World Bank",
+          "role": "Method or disciplinary context only; not parameter calibration",
+          "publicationDate": "Not established in this catalogue; consult linked record"
+        },
+        {
+          "label": "Impact Evaluation in Practice, second edition",
+          "author": "Gertler, Martinez, Premand, Rawlings and Vermeersch; World Bank and Inter-American Development Bank",
+          "publicationDate": "2016",
+          "url": "https://publications.iadb.org/en/impact-evaluation-practice-second-edition",
+          "role": "Evaluation and identification methods; not the source of the four synthetic percentages"
+        }
+      ]
+    },
+    "method": "Two groups observed before and after an intervention. The arithmetic compares their changes, measured in percentage points (pp). Causal interpretation requires credible identification, including parallel trends.",
+    "formula": "Treated change = treated endline − baseline; comparison change = comparison endline − baseline; DiD = treated change − comparison change; counterfactual = treated baseline + comparison change.",
+    "limits": "There are no observations, uncertainty intervals or parallel-trend diagnostics. Arithmetic alone establishes no causal effect. Extreme inputs can produce an infeasible counterfactual outside 0–100%; the chart displays and flags that result without silently clipping it.",
+    "guidance": {
+      "question": "How does the treated group’s before–after change compare with the comparison group’s change?",
+      "assumption": "Four synthetic outcome percentages and one constructed counterfactual. There is no sample, standard error or confidence interval.",
+      "rule": "A zero DiD contrast means equal changes in this illustration. A nonzero contrast alone establishes no causal effect. Counterfactuals outside 0–100% flag infeasible percentage assumptions.",
+      "next": "Check pre-intervention trends, group composition, treatment timing, spillovers, concurrent shocks, attrition and missingness; then specify an identification and inference strategy.",
+      "chart": "Horizontal: before and after. Vertical: outcome (%). Solid: treated; dashed: comparison; dotted: constructed treated counterfactual. Differences are percentage points, not percentage changes.",
+      "risk": "Identification checklist: parallel trends, stable composition, timing, no spillovers and attrition — all Not assessed. These inputs cannot supply those diagnostics.",
+      "parameterOrigin": "Four synthetic percentages entered by the reader; no participant-level observations supplied.",
+      "references": [
+        {
+          "label": "Impact Evaluation in Practice, second edition",
+          "author": "Gertler, Martinez, Premand, Rawlings and Vermeersch; World Bank and Inter-American Development Bank",
+          "publicationDate": "2016",
+          "url": "https://publications.iadb.org/en/impact-evaluation-practice-second-edition",
+          "role": "Evaluation and identification methods; not the source of the four synthetic percentages"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "policy-governance",
+    "title": "Policy & Governance",
+    "revision": "d40e4c3e8c67",
+    "protocol": "ip3-illustration/1",
+    "inputs": [
+      {
+        "id": "pg-steps",
+        "label": "Steps removed (of 10)",
+        "default": 3,
+        "min": 0,
+        "max": 5,
+        "step": 1
+      },
+      {
+        "id": "pg-digital",
+        "label": "Digital uptake (%)",
+        "default": 65,
+        "min": 0,
+        "max": 100,
+        "step": 5
+      },
+      {
+        "id": "pg-rework",
+        "label": "Rework rate (%)",
+        "default": 12,
+        "min": 0,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "id": "pg-volume",
+        "label": "Applications per month",
+        "default": 3000,
+        "min": 500,
+        "max": 10000,
+        "step": 500
+      }
+    ],
+    "cases": {
+      "regulation": {
+        "public": {
+          "label": "01 / PUBLIC · REGULATORY REFORM",
+          "title": "When does a regulation actually become easier to comply with?",
+          "desc": "Policy intent is not proof of improved business experience. Map the real administrative journey and ask what changes in the time, cost and uncertainty that users face.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Complex rules create hidden transaction costs.",
+          "problems": [
+            "Multiple approvals delay legitimate business activity",
+            "Paperwork and repeat visits burden smaller enterprises",
+            "Performance is measured by reform completion—not user experience"
+          ],
+          "resultTitle": "A simpler, verifiable compliance journey.",
+          "results": [
+            "Map actual transactions and approval bottlenecks",
+            "Test simplification and automation against service metrics",
+            "Monitor speed, inclusion, predictability and safeguards"
+          ],
+          "methods": [
+            "Regulatory impact analysis",
+            "Administrative process mapping",
+            "Business confidence surveys",
+            "Results-based measurement"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Trace approvals"
+            ],
+            [
+              "Simplify",
+              "Test changes"
+            ],
+            [
+              "Audit",
+              "Verify burden"
+            ]
+          ]
+        },
+        "private": {
+          "label": "01 / PRIVATE · REGULATORY STRATEGY",
+          "title": "How can firms navigate changing rules without losing momentum?",
+          "desc": "Market entry requires more than knowing what the regulation says. Enterprises need clear sequencing, credible compliance costs and operational readiness.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Compliance uncertainty slows expansion.",
+          "problems": [
+            "Procedural risks are discovered late",
+            "Permits and reporting obligations lack ownership",
+            "Costs vary across locations and operating models"
+          ],
+          "resultTitle": "A defensible market-entry compliance roadmap.",
+          "results": [
+            "Identify formal and practical requirements",
+            "Prioritise high-risk steps and credible alternatives",
+            "Assign ownership, milestones and monitoring"
+          ],
+          "methods": [
+            "Regulatory landscape assessment",
+            "Institutional interviews",
+            "Risk and cost mapping",
+            "Business-process redesign"
+          ],
+          "steps": [
+            [
+              "Identify",
+              "Map obligations"
+            ],
+            [
+              "Prioritise",
+              "Rank exposure"
+            ],
+            [
+              "Deliver",
+              "Build controls"
+            ]
+          ]
+        }
+      },
+      "institutions": {
+        "public": {
+          "label": "02 / PUBLIC · INSTITUTIONAL CAPACITY",
+          "title": "Can agencies carry out the mandate they have been given?",
+          "desc": "Large programmes can fail when responsibility, staffing, incentives and information systems are misaligned—even when technical design is sound.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "The mandate exceeds delivery capacity.",
+          "problems": [
+            "Overlapping roles obscure who is accountable",
+            "Digital and personnel systems do not communicate",
+            "Budgets and field-level capabilities are poorly sequenced"
+          ],
+          "resultTitle": "An implementable institutional operating model.",
+          "results": [
+            "Clarify mandates, roles and decision rights",
+            "Sequence workforce, systems and financial needs",
+            "Establish measurable implementation responsibilities"
+          ],
+          "methods": [
+            "Institutional capacity assessment",
+            "Stakeholder and mandate mapping",
+            "Operating-model design",
+            "Implementation readiness analysis"
+          ],
+          "steps": [
+            [
+              "Clarify",
+              "Mandates"
+            ],
+            [
+              "Equip",
+              "Teams & systems"
+            ],
+            [
+              "Monitor",
+              "Delivery"
+            ]
+          ]
+        },
+        "private": {
+          "label": "02 / PRIVATE · ORGANISATIONAL GOVERNANCE",
+          "title": "Who owns the decision after the new strategy is approved?",
+          "desc": "Organisations may adopt ambitious policies yet still lack authority, incentives, workflows and data to execute them.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Strategy and operations remain disconnected.",
+          "problems": [
+            "Duplicated decision authority slows response",
+            "Weak data ownership undermines management reports",
+            "Incentives do not follow approved goals"
+          ],
+          "resultTitle": "A governable operating model.",
+          "results": [
+            "Create explicit decision rights and escalation routes",
+            "Build performance routines, data governance and controls",
+            "Tie execution roles to measurable service outcomes"
+          ],
+          "methods": [
+            "RACI / decision rights mapping",
+            "Process architecture",
+            "Management information systems",
+            "Organisational diagnostics"
+          ],
+          "steps": [
+            [
+              "Align",
+              "Authority"
+            ],
+            [
+              "Execute",
+              "Ownership"
+            ],
+            [
+              "Improve",
+              "KPIs"
+            ]
+          ]
+        }
+      },
+      "finance": {
+        "public": {
+          "label": "03 / PUBLIC · FISCAL ACCOUNTABILITY",
+          "title": "How will local investment be funded, managed and maintained?",
+          "desc": "Public assets create lasting value only when financial responsibilities, revenue models and operating institutions are viable beyond construction.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Capital budgets overlook service sustainability.",
+          "problems": [
+            "Projects enter pipelines without clear O&M financing",
+            "Municipal revenue and expenditure choices are fragmented",
+            "Infrastructure priorities lack transparent appraisal criteria"
+          ],
+          "resultTitle": "A financially credible, accountable investment plan.",
+          "results": [
+            "Connect costs, revenue sources and service duties",
+            "Rank options using economic and fiscal evidence",
+            "Specify monitoring and audit responsibilities"
+          ],
+          "methods": [
+            "Fiscal capacity analysis",
+            "CBA and lifecycle costing",
+            "Municipal revenue diagnostics",
+            "Budget and accountability mapping"
+          ],
+          "steps": [
+            [
+              "Appraise",
+              "Value & costs"
+            ],
+            [
+              "Finance",
+              "O&M model"
+            ],
+            [
+              "Review",
+              "Accountability"
+            ]
+          ]
+        },
+        "private": {
+          "label": "03 / PRIVATE · INVESTMENT GOVERNANCE",
+          "title": "Can management defend how scarce capital is allocated?",
+          "desc": "Capital decisions are governance decisions: stakeholders need transparent assumptions, risk ownership and checks against overconfidence.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Projects compete without comparable evidence.",
+          "problems": [
+            "Business cases use inconsistent assumptions",
+            "Uncertainty is hidden in optimistic point forecasts",
+            "Post-investment review is disconnected from appraisal"
+          ],
+          "resultTitle": "Transparent capital decisions and oversight.",
+          "results": [
+            "Apply consistent appraisal and sensitivity rules",
+            "Document risks, approvals and control thresholds",
+            "Compare realised performance with investment cases"
+          ],
+          "methods": [
+            "Investment appraisal standards",
+            "Scenario and sensitivity analysis",
+            "Risk registers",
+            "Post-investment review"
+          ],
+          "steps": [
+            [
+              "Compare",
+              "Investment cases"
+            ],
+            [
+              "Approve",
+              "Set safeguards"
+            ],
+            [
+              "Review",
+              "Variance"
+            ]
+          ]
+        }
+      },
+      "dialogue": {
+        "public": {
+          "label": "04 / PUBLIC · STAKEHOLDER DIALOGUE",
+          "title": "Who gets heard when policy choices create winners and losers?",
+          "desc": "Reform lasts when it is analytically defensible and politically workable. The process must hear firms, users, vulnerable groups and implementing agencies.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Reform is designed far from the people affected.",
+          "problems": [
+            "Stakeholder positions are reduced to anecdotes",
+            "Trade-offs are not disclosed before decisions",
+            "Consultation is not connected to accountable follow-up"
+          ],
+          "resultTitle": "Evidence-led, transparent reform choices.",
+          "results": [
+            "Surface who bears costs and who gains",
+            "Convene structured and inclusive consultation",
+            "Publish choices, responsibilities and feedback loops"
+          ],
+          "methods": [
+            "Political economy analysis",
+            "Stakeholder mapping",
+            "FGDs / KIIs",
+            "Distributional impact assessment"
+          ],
+          "steps": [
+            [
+              "Listen",
+              "Map voices"
+            ],
+            [
+              "Negotiate",
+              "Trade-offs"
+            ],
+            [
+              "Report",
+              "Follow-up"
+            ]
+          ]
+        },
+        "private": {
+          "label": "04 / PRIVATE · SOCIAL LICENCE & ESG",
+          "title": "Can a firm earn trust in a difficult transition?",
+          "desc": "Enterprises face conflicting expectations from regulators, investors, workers and communities. A credible response must show how concerns shape decisions.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Consultation is treated as a communications exercise.",
+          "problems": [
+            "Worker and community risks are identified too late",
+            "ESG commitments lack grievance and remedy systems",
+            "Investor reporting is weakly linked to operations"
+          ],
+          "resultTitle": "An accountable stakeholder response.",
+          "results": [
+            "Identify affected groups and material concerns",
+            "Link grievances, investments and operational remedies",
+            "Track engagement quality and reported outcomes"
+          ],
+          "methods": [
+            "Materiality analysis",
+            "Stakeholder consultation",
+            "Grievance mechanism review",
+            "ESG governance diagnostics"
+          ],
+          "steps": [
+            [
+              "Listen",
+              "Risks & voice"
+            ],
+            [
+              "Respond",
+              "Controls"
+            ],
+            [
+              "Disclose",
+              "Progress"
+            ]
+          ]
+        }
+      },
+      "digital": {
+        "public": {
+          "label": "05 / PUBLIC · DIGITAL GOVERNMENT",
+          "title": "Does digitalisation remove friction—or simply digitise it?",
+          "desc": "Public services improve only when technology changes the complete experience of agencies and users. An online form alone does not guarantee fair access.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Disconnected systems reproduce old bottlenecks.",
+          "problems": [
+            "Citizens repeatedly submit the same information",
+            "Records are siloed across agencies",
+            "Digital access and appeals are overlooked"
+          ],
+          "resultTitle": "Integrated services with observable safeguards.",
+          "results": [
+            "Redesign the end-to-end transaction, not just the interface",
+            "Map data responsibility and interoperability",
+            "Measure usage, accessibility, burden and redress"
+          ],
+          "methods": [
+            "User journey mapping",
+            "Digital maturity assessment",
+            "Data governance analysis",
+            "Service performance indicators"
+          ],
+          "steps": [
+            [
+              "Design",
+              "User journey"
+            ],
+            [
+              "Connect",
+              "Data & rules"
+            ],
+            [
+              "Verify",
+              "Access & safety"
+            ]
+          ]
+        },
+        "private": {
+          "label": "05 / PRIVATE · DATA GOVERNANCE",
+          "title": "Can a company turn fragmented data into reliable decisions?",
+          "desc": "A dashboard can look sophisticated while hiding inconsistent definitions, opaque permissions and weak internal accountability.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "More data do not automatically mean better decisions.",
+          "problems": [
+            "Teams use competing KPI definitions",
+            "Systems expose sensitive information without controls",
+            "Decisions cannot be traced back to reliable sources"
+          ],
+          "resultTitle": "Trusted management information and controls.",
+          "results": [
+            "Define ownership, validation and access policies",
+            "Link operational indicators to responsible decision-makers",
+            "Audit data quality and decision processes"
+          ],
+          "methods": [
+            "Data maturity review",
+            "Process mining concept",
+            "KPI governance",
+            "Privacy and access-control assessment"
+          ],
+          "steps": [
+            [
+              "Define",
+              "Data rules"
+            ],
+            [
+              "Validate",
+              "Quality"
+            ],
+            [
+              "Decide",
+              "Audit trail"
+            ]
+          ]
+        }
+      },
+      "resilience": {
+        "public": {
+          "label": "06 / PUBLIC · RESILIENT GOVERNANCE",
+          "title": "Who is responsible when a warning must reach the last mile?",
+          "desc": "A warning system is only as effective as the institutions connecting scientific information to accessible action across multiple levels of government.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Mandates and communication channels are fragmented.",
+          "problems": [
+            "Agencies lack interoperable warning protocols",
+            "Last-mile channels can exclude vulnerable users",
+            "Long-term operations have unclear financing"
+          ],
+          "resultTitle": "An inclusive, accountable risk-governance chain.",
+          "results": [
+            "Define roles and escalation between agencies",
+            "Link interoperability, budgets and communication channels",
+            "Stress-test warning reach, accessibility and feedback"
+          ],
+          "methods": [
+            "Risk governance analysis",
+            "Institutional mapping",
+            "Service continuity planning",
+            "Inclusive communications design"
+          ],
+          "steps": [
+            [
+              "Coordinate",
+              "Roles"
+            ],
+            [
+              "Reach",
+              "Last mile"
+            ],
+            [
+              "Test",
+              "Readiness"
+            ]
+          ]
+        },
+        "private": {
+          "label": "06 / PRIVATE · ENTERPRISE RESILIENCE",
+          "title": "Does the business know who acts when the system is disrupted?",
+          "desc": "Supplier risks, climate events and business continuity failures expose weaknesses in management authority and coordination.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Risk plans exist without tested accountability.",
+          "problems": [
+            "Crisis escalation paths are unclear",
+            "Supplier risk is invisible until disruption",
+            "Continuity procedures are seldom exercised"
+          ],
+          "resultTitle": "A tested enterprise resilience governance model.",
+          "results": [
+            "Map dependencies and mission-critical functions",
+            "Assign escalation rights and communication protocols",
+            "Run exercises and track remediation"
+          ],
+          "methods": [
+            "Business continuity assessment",
+            "Scenario stress-testing",
+            "Supplier governance review",
+            "Crisis tabletop exercises"
+          ],
+          "steps": [
+            [
+              "Map",
+              "Exposure"
+            ],
+            [
+              "Assign",
+              "Response"
+            ],
+            [
+              "Rehearse",
+              "Continuity"
+            ]
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "status": "Synthetic demonstration; not empirically validated",
+      "parameterOrigin": "Original demonstration time coefficients and hourly valuation; no agency time-and-motion or payroll dataset supplied.",
+      "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+      "domainReview": "Independent domain sign-off not supplied",
+      "claimApproval": "No new named-client credit approved or asserted",
+      "referenceSHA256": "856c08174279d0a40fa5129d85ad7e37e6fe7c2da35145a109ab0497c077c978",
+      "methodReferences": [
+        {
+          "label": "World Bank: governance",
+          "url": "https://www.worldbank.org/en/topic/governance",
+          "author": "World Bank",
+          "role": "Method or disciplinary context only; not parameter calibration",
+          "publicationDate": "Not established in this catalogue; consult linked record"
+        },
+        {
+          "label": "The Green Book",
+          "author": "HM Treasury",
+          "publicationDate": "2026",
+          "url": "https://www.gov.uk/government/publications/the-green-book--2/the-green-book-2026",
+          "role": "Appraisal and opportunity-cost context; no evidence for the synthetic time coefficients or BDT 650/hour assumption"
+        }
+      ]
+    },
+    "method": "The baseline is 1.5 core hours plus 24% rework at 2.2 hours per instance. Up to five of ten assumed steps can be removed. Digital uptake and simplification affect core time; rework is modelled separately.",
+    "formula": "Baseline = 1.5 + 0.24 × 2.2 hours; new core = 1.5 × (1−0.065 × steps) × (1−0.36 × digital uptake); new total = core + rework × 2.2; annual hours released = (baseline−new total) × monthly cases × 12.",
+    "limits": "All coefficients and the BDT 650/hour valuation are synthetic. Time opportunity value is not a cash saving or budget reduction. Negative released hours mean workload increased.",
+    "guidance": {
+      "question": "How might simplification, digital uptake and rework change administrative effort?",
+      "assumption": "Baseline: 1.5 core hours + 0.24 × 2.2 rework hours per case. Digital and step coefficients, monthly volume and BDT 650/hour are synthetic.",
+      "rule": "Zero annual hours released means no workload change. Negative values mean extra workload. Staff-time opportunity value does not establish a budget saving or fiscal space.",
+      "next": "Collect time-and-motion observations, demand volumes, channel uptake, rework reasons, implementation costs and service-quality/distributional measures.",
+      "chart": "Horizontal: staff hours per case, common zero and scale. Rows: before and after. Core handling is solid; rework is hatched. Component totals match the table.",
+      "risk": "Released capacity requires an operational plan; service quality, access, transition costs and actual cash expenditure are outside the model.",
+      "parameterOrigin": "Original demonstration time coefficients and hourly valuation; no agency time-and-motion or payroll dataset supplied.",
+      "references": [
+        {
+          "label": "The Green Book",
+          "author": "HM Treasury",
+          "publicationDate": "2026",
+          "url": "https://www.gov.uk/government/publications/the-green-book--2/the-green-book-2026",
+          "role": "Appraisal and opportunity-cost context; no evidence for the synthetic time coefficients or BDT 650/hour assumption"
+        }
+      ]
+    }
+  },
+  {
+    "slug": "management-delivery",
+    "title": "Management & Delivery",
+    "revision": "1e3ffefc1db4",
+    "protocol": "ip3-illustration/1",
+    "inputs": [
+      {
+        "id": "md-team",
+        "label": "Team size (people)",
+        "default": 12,
+        "min": 5,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "id": "md-available",
+        "label": "Availability (%)",
+        "default": 80,
+        "min": 50,
+        "max": 100,
+        "step": 5
+      },
+      {
+        "id": "md-rework",
+        "label": "Rework (%)",
+        "default": 14,
+        "min": 0,
+        "max": 40,
+        "step": 2
+      },
+      {
+        "id": "md-depend",
+        "label": "Dependency drag (%)",
+        "default": 12,
+        "min": 0,
+        "max": 35,
+        "step": 1
+      }
+    ],
+    "cases": {
+      "strategy": {
+        "public": {
+          "label": "01 / PUBLIC · STRATEGY TO EXECUTION",
+          "title": "What turns an approved investment into a programme that can actually start?",
+          "desc": "An investment appraisal is only the beginning. Delivery requires sequenced work packages, resourced ownership, procurement readiness and practical escalation routes.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "The strategy exists; the delivery chain is incomplete.",
+          "problems": [
+            "Outputs are specified but readiness and dependencies are unclear",
+            "Budget, procurement, staffing and timing assumptions diverge",
+            "Multiple institutions share work without a single action owner"
+          ],
+          "resultTitle": "A costed, owned and sequenced delivery architecture.",
+          "results": [
+            "Translate programme objectives into work packages and milestones",
+            "Match budgets, procurement gates and people to the critical path",
+            "Use readiness checks and escalation rules before mobilisation"
+          ],
+          "methods": [
+            "Theory of change to workplan",
+            "Implementation-readiness assessment",
+            "RACI / responsibility matrix",
+            "Milestone and risk analysis"
+          ],
+          "steps": [
+            [
+              "Frame",
+              "Mandate"
+            ],
+            [
+              "Sequence",
+              "Milestones"
+            ],
+            [
+              "Mobilise",
+              "Teams"
+            ]
+          ]
+        },
+        "private": {
+          "label": "01 / PRIVATE · COMMERCIAL EXECUTION",
+          "title": "Can a growth strategy survive its first 90 days of execution?",
+          "desc": "Enterprise plans often fail between executive approval and the teams responsible for implementing them.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Ambition is distributed; accountability is not.",
+          "problems": [
+            "Commercial goals are disconnected from operational capacity",
+            "Initiatives compete for the same staff and budget",
+            "Success measures are defined too late"
+          ],
+          "resultTitle": "A focused, accountable growth programme.",
+          "results": [
+            "Prioritise initiatives by value and execution feasibility",
+            "Assign initiative owners, milestones and dependencies",
+            "Install review cadences and early-warning indicators"
+          ],
+          "methods": [
+            "Strategy deployment",
+            "90-day execution roadmap",
+            "Resource-capacity analysis",
+            "Initiative scorecards"
+          ],
+          "steps": [
+            [
+              "Prioritise",
+              "Value"
+            ],
+            [
+              "Assign",
+              "Owners"
+            ],
+            [
+              "Review",
+              "Weekly"
+            ]
+          ]
+        }
+      },
+      "portfolio": {
+        "public": {
+          "label": "02 / PUBLIC · PROGRAMME PORTFOLIO",
+          "title": "How do multiple investments become one manageable delivery pipeline?",
+          "desc": "A portfolio needs consistent screening, resource sequencing, governance gates and clear criteria for advancing ideas to investment-ready delivery.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Projects are identified without a common prioritisation logic.",
+          "problems": [
+            "Proposals differ in maturity, costing and evidence",
+            "Sequencing ignores implementation capacity",
+            "Procurement and operations costs emerge too late"
+          ],
+          "resultTitle": "A gated, prioritised investment delivery portfolio.",
+          "results": [
+            "Screen opportunities against shared feasibility and readiness criteria",
+            "Prioritise value, risk, affordability and institutional capacity",
+            "Gate concepts through design, appraisal, funding and execution"
+          ],
+          "methods": [
+            "Portfolio screening",
+            "Stage-gate architecture",
+            "Resource balancing",
+            "Risk and dependency register"
+          ],
+          "steps": [
+            [
+              "Screen",
+              "Options"
+            ],
+            [
+              "Gate",
+              "Readiness"
+            ],
+            [
+              "Sequence",
+              "Pipeline"
+            ]
+          ]
+        },
+        "private": {
+          "label": "02 / PRIVATE · CAPITAL & PROJECT PORTFOLIO",
+          "title": "Which initiatives deserve scarce management attention this quarter?",
+          "desc": "The challenge is not generating a long initiative list; it is making transparent trade-offs across money, people and execution risk.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Too many projects compete for too little capacity.",
+          "problems": [
+            "Aspirational timelines hide resource contention",
+            "Projects are approved without exit criteria",
+            "Portfolio performance lacks a common cadence"
+          ],
+          "resultTitle": "A smaller, executable project portfolio.",
+          "results": [
+            "Rank initiatives by value, readiness and delivery risk",
+            "Reserve capacity for bottlenecks and dependencies",
+            "Stop, sequence or redesign low-readiness initiatives"
+          ],
+          "methods": [
+            "Portfolio rationalisation",
+            "Benefit-risk prioritisation",
+            "Scenario capacity planning",
+            "Stage-gate reviews"
+          ],
+          "steps": [
+            [
+              "Rank",
+              "Trade-offs"
+            ],
+            [
+              "Resource",
+              "Capacity"
+            ],
+            [
+              "Decide",
+              "Gates"
+            ]
+          ]
+        }
+      },
+      "operating": {
+        "public": {
+          "label": "03 / PUBLIC · OPERATING MODEL",
+          "title": "Who makes the decision after the project consultant leaves?",
+          "desc": "A programme needs durable management arrangements—not only a successful launch—to sustain performance and transfer institutional capability.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Governance diagrams do not describe day-to-day decisions.",
+          "problems": [
+            "Decision rights and escalation are overlapping",
+            "Critical knowledge sits with temporary advisers",
+            "Policies lack matching routines, roles and templates"
+          ],
+          "resultTitle": "An operationally credible, transferable management model.",
+          "results": [
+            "Define owners, decision rights and operational handoffs",
+            "Translate policy documents into recurring workflows and controls",
+            "Build institutional documentation and transition capacity"
+          ],
+          "methods": [
+            "Operating model blueprint",
+            "Decision-rights map",
+            "SOP and process design",
+            "Capability transfer plan"
+          ],
+          "steps": [
+            [
+              "Define",
+              "Roles"
+            ],
+            [
+              "Codify",
+              "Processes"
+            ],
+            [
+              "Transfer",
+              "Capability"
+            ]
+          ]
+        },
+        "private": {
+          "label": "03 / PRIVATE · ENTERPRISE OPERATIONS",
+          "title": "Is the organisation structured around how value is actually delivered?",
+          "desc": "Growth frequently exposes handoff failures between commercial, finance, HR and operations teams.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Functions optimise locally while the process stalls.",
+          "problems": [
+            "Orders pass through unclear approval chains",
+            "Management information arrives after decisions are made",
+            "Teams duplicate activity without assigned accountability"
+          ],
+          "resultTitle": "A coherent end-to-end operating model.",
+          "results": [
+            "Map the work as customers and staff experience it",
+            "Redesign decision rights, handoffs and service standards",
+            "Test the revised workflow and build routine feedback"
+          ],
+          "methods": [
+            "Process mapping",
+            "RACI accountability",
+            "Service-level design",
+            "Management controls"
+          ],
+          "steps": [
+            [
+              "Trace",
+              "Process"
+            ],
+            [
+              "Redesign",
+              "Handoffs"
+            ],
+            [
+              "Run",
+              "Controls"
+            ]
+          ]
+        }
+      },
+      "digital": {
+        "public": {
+          "label": "04 / PUBLIC · DIGITAL DELIVERY",
+          "title": "Can digitalisation remove friction rather than simply move it online?",
+          "desc": "Digitising a broken procedure can reproduce the same bottlenecks. Redesign the underlying service, data flows and accountability before automating steps.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Electronic forms preserve manual-era bottlenecks.",
+          "problems": [
+            "Approval chains persist behind a new interface",
+            "Duplicate records and exceptions remain unresolved",
+            "Adoption is counted without service-quality evidence"
+          ],
+          "resultTitle": "A service process designed before it is digitised.",
+          "results": [
+            "Simplify the journey and exception handling first",
+            "Define data handoffs, ownership and quality checks",
+            "Track user time, rework, access and service reliability"
+          ],
+          "methods": [
+            "Service blueprint",
+            "Business process reengineering",
+            "Data governance mapping",
+            "Adoption and quality monitoring"
+          ],
+          "steps": [
+            [
+              "Simplify",
+              "Workflow"
+            ],
+            [
+              "Integrate",
+              "Data"
+            ],
+            [
+              "Verify",
+              "Service"
+            ]
+          ]
+        },
+        "private": {
+          "label": "04 / PRIVATE · PROCESS MODERNISATION",
+          "title": "Will a new enterprise system change how decisions are made?",
+          "desc": "Software only improves delivery when processes, incentives, training and performance signals evolve together.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "New tools arrive without operational redesign.",
+          "problems": [
+            "Data entry burden shifts from one team to another",
+            "Staff revert to spreadsheets and informal approvals",
+            "Leaders lack agreed performance indicators"
+          ],
+          "resultTitle": "A user-centred, measurable system rollout.",
+          "results": [
+            "Define target processes and minimum viable workflows",
+            "Pilot with frontline teams before scaling",
+            "Link training, data quality and management reviews"
+          ],
+          "methods": [
+            "Process redesign",
+            "Pilot and rollout plan",
+            "Change management",
+            "Operational KPI dashboard"
+          ],
+          "steps": [
+            [
+              "Prototype",
+              "Workflow"
+            ],
+            [
+              "Enable",
+              "People"
+            ],
+            [
+              "Scale",
+              "Evidence"
+            ]
+          ]
+        }
+      },
+      "performance": {
+        "public": {
+          "label": "05 / PUBLIC · PERFORMANCE ASSURANCE",
+          "title": "Are delivery reports measuring activities or the change intended?",
+          "desc": "A credible management system distinguishes inputs and milestones from outputs, outcomes, implementation quality and attribution.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Activity reporting is mistaken for programme performance.",
+          "problems": [
+            "Teams focus on spending and milestone completion",
+            "Inconsistent indicators make comparisons unreliable",
+            "Evidence arrives too late to improve implementation"
+          ],
+          "resultTitle": "A learning-oriented delivery and results system.",
+          "results": [
+            "Map results chains and verification responsibilities",
+            "Build quality checks into monitoring and data collection",
+            "Use reviews to adapt delivery without overstating attribution"
+          ],
+          "methods": [
+            "Results framework / logframe",
+            "Indicator protocols",
+            "Data-quality assurance",
+            "Adaptive management review"
+          ],
+          "steps": [
+            [
+              "Define",
+              "Results"
+            ],
+            [
+              "Measure",
+              "Quality"
+            ],
+            [
+              "Adapt",
+              "Decisions"
+            ]
+          ]
+        },
+        "private": {
+          "label": "05 / PRIVATE · PERFORMANCE MANAGEMENT",
+          "title": "Can management distinguish real operational improvement from noise?",
+          "desc": "Enterprise dashboards often aggregate activity while missing the drivers of efficiency, retention and service quality.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "KPIs multiply while management insight weakens.",
+          "problems": [
+            "Metrics do not connect to unit economics or customer outcomes",
+            "Definitions differ by team or location",
+            "Decisions are not logged against resulting performance"
+          ],
+          "resultTitle": "A decision-ready enterprise performance system.",
+          "results": [
+            "Select a small set of actionable, verifiable indicators",
+            "Connect data ownership to operational routines",
+            "Test whether actions improve outcomes over time"
+          ],
+          "methods": [
+            "KPI architecture",
+            "Unit-economics logic",
+            "Measurement assurance",
+            "Management review design"
+          ],
+          "steps": [
+            [
+              "Choose",
+              "Signals"
+            ],
+            [
+              "Validate",
+              "Data"
+            ],
+            [
+              "Learn",
+              "Effect"
+            ]
+          ]
+        }
+      },
+      "field": {
+        "public": {
+          "label": "06 / PUBLIC · FIELD OPERATIONS",
+          "title": "How do geographically distributed teams deliver consistent evidence?",
+          "desc": "Large-scale implementation fails when sampling, training, supervision, data collection and real-time quality assurance are not designed as one field system.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Field teams collect records, but evidence quality varies.",
+          "problems": [
+            "Training and protocols differ across sites",
+            "Errors are detected after field teams have moved on",
+            "Data pipelines and escalation rules are fragmented"
+          ],
+          "resultTitle": "A controlled field execution and evidence pipeline.",
+          "results": [
+            "Standardise instruments, protocols and supervision",
+            "Use live validation, spot checks and field feedback",
+            "Build audit trails and timed escalation for quality problems"
+          ],
+          "methods": [
+            "Field operations planning",
+            "Enumerator training protocol",
+            "Real-time QA dashboards",
+            "Survey implementation audit"
+          ],
+          "steps": [
+            [
+              "Prepare",
+              "Teams"
+            ],
+            [
+              "Monitor",
+              "Quality"
+            ],
+            [
+              "Correct",
+              "Fast"
+            ]
+          ]
+        },
+        "private": {
+          "label": "06 / PRIVATE · MULTI-SITE DELIVERY",
+          "title": "How does an enterprise keep execution consistent across locations?",
+          "desc": "A multi-branch or multi-factory organisation needs standard processes with enough local learning to respond to different realities.",
+          "ref": "Synthetic teaching scenario. No client result is asserted.",
+          "source": "Illustrative analytical application",
+          "problemTitle": "Local teams operate as separate systems.",
+          "problems": [
+            "Process quality depends on individual managers",
+            "Exceptions are hidden until monthly reporting",
+            "Lessons fail to travel between sites"
+          ],
+          "resultTitle": "A repeatable, adaptable multi-site delivery system.",
+          "results": [
+            "Specify non-negotiable operating and data standards",
+            "Provide location-level scorecards and escalation routes",
+            "Share tested improvements and support weaker sites"
+          ],
+          "methods": [
+            "Multi-site SOP design",
+            "Field QA and audit",
+            "Location performance review",
+            "Learning and escalation protocol"
+          ],
+          "steps": [
+            [
+              "Standardise",
+              "Core"
+            ],
+            [
+              "Support",
+              "Sites"
+            ],
+            [
+              "Improve",
+              "Loop"
+            ]
+          ]
+        }
+      }
+    },
+    "provenance": {
+      "status": "Synthetic demonstration; not empirically validated",
+      "parameterOrigin": "Original linear teaching model; no observed task-level delivery dataset supplied.",
+      "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+      "domainReview": "Independent domain sign-off not supplied",
+      "claimApproval": "No new named-client credit approved or asserted",
+      "referenceSHA256": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+      "methodReferences": [
+        {
+          "label": "UK Government: project delivery standard",
+          "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+          "author": "UK Government",
+          "role": "Method or disciplinary context only; not parameter calibration",
+          "publicationDate": "Not established in this catalogue; consult linked record"
+        },
+        {
+          "label": "Government Functional Standard GovS 002: Project Delivery, version 2.1",
+          "author": "Government Project Delivery and Cabinet Office",
+          "publicationDate": "2025",
+          "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+          "role": "Project-delivery governance and planning context; no calibration of linear package throughput or probability of completion"
+        }
+      ]
+    },
+    "method": "A linear throughput illustration with 120 equivalent work packages, 0.75 packages/person/week and an illustrative 24-week target. The fixed comparison uses 10 people, 65% availability, 24% rework and 23% dependency drag.",
+    "formula": "Weekly rate = team × 0.75 × availability × (1−dependency drag)/(1+rework); duration = ceil(120/rate); schedule gap = 24−duration.",
+    "limits": "This is not a critical-path or resource-loaded schedule. It has no real dependencies, holidays, cost model or uncertainty distribution. The chart horizon expands to include slow scenarios.",
+    "guidance": {
+      "question": "How do availability, rework and dependency drag change illustrative throughput and completion time?",
+      "assumption": "120 equivalent packages; 0.75 packages/person/week; fixed baseline of 10 people, 65% availability, 24% rework and 23% dependency drag.",
+      "rule": "Completion within 24 weeks meets the illustrative target. Duration is rounded up to whole weeks; the chart shows continuous throughput capped at 120 packages.",
+      "next": "Build a resource-loaded schedule with actual package sizes, dependency logic, calendars, skills, costs and uncertainty; test against delivery records.",
+      "chart": "Horizontal: weeks, expanding for slow scenarios. Vertical: cumulative completed packages. Dashed: fixed baseline; solid: selected scenario; vertical dotted marker: week 24.",
+      "risk": "Dependency drag is a scalar assumption, not a dependency network. This does not perform critical-path analysis or estimate a completion probability.",
+      "parameterOrigin": "Original linear teaching model; no observed task-level delivery dataset supplied.",
+      "references": [
+        {
+          "label": "Government Functional Standard GovS 002: Project Delivery, version 2.1",
+          "author": "Government Project Delivery and Cabinet Office",
+          "publicationDate": "2025",
+          "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+          "role": "Project-delivery governance and planning context; no calibration of linear package throughput or probability of completion"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "source": "source/FINAL_MASTER_PROMPT_2026-10-22.txt",
+  "sha256": "edee5b71e14b9d3a7213b2370699b621ead6d7e1cb62cd33dba3a0dd056375e0",
+  "bytes": 22885,
+  "baselineCommit": "addb8ad303032aec3938ed8ac64c34ab6f737e36",
+  "originalReviewBaseline": "df4d5e9",
+  "instructionBoundary": "User-supplied acceptance assignment; external methodological references do not grant approvals."
+}

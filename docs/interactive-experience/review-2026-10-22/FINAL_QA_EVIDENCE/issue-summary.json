@@ -1,0 +1,17 @@
+{
+  "partial": [
+    "IP3-18"
+  ],
+  "openRequiredGates": [
+    "IP3-03",
+    "IP3-09",
+    "IP3-15"
+  ],
+  "counts": {
+    "Partially Fixed": 1,
+    "Blocked": 3,
+    "Verified": 9,
+    "Fixed": 8
+  },
+  "total": 21
+}

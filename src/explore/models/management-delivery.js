@@ -19,7 +19,7 @@ function setCase(k=active,s=sector,animate=true){
  $('di-results').innerHTML=d.results.map(x=>'<li>'+safe(x)+'</li>').join('');
  $('di-methods').innerHTML=d.methods.map(x=>'<span class="di-chip">'+safe(x)+'</span>').join('');
  $('di-steps').innerHTML=d.steps.map(x=>'<div><strong>'+safe(x[0])+'</strong><span>'+safe(x[1])+'</span></div>').join('');
- $('di-boundary').innerHTML=s==='public'?'<strong>Evidence boundary:</strong> The reference points to a documented professional engagement. The proposed problems, responses and simulation are illustrative, not measured engagement outcomes.':'<strong>Evidence boundary:</strong> This is a hypothetical private-sector application of transferable methods. It does not imply a completed client engagement or documented results.';
+ $('di-boundary').innerHTML=s==='public'?'<strong>Evidence boundary:</strong> The reference describes a hypothetical analytical application. The proposed problems, responses and simulation are illustrative, not measured engagement outcomes.':'<strong>Evidence boundary:</strong> This is a hypothetical private-sector application of transferable methods. It does not imply a completed client engagement or documented results.';
  if(animate){swap('di-storyhead');swap('di-flow')};requestAnimationFrame(notifySize)
 }
 const BASE={team:10,availability:.65,rework:.24,depend:.23},TOTAL=120,TARGET=24,UNIT=.75,HORIZON=48;

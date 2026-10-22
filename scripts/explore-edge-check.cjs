@@ -1,7 +1,8 @@
 const {chromium}=require('@playwright/test');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const base=process.env.EXPLORE_BASE_URL||'http://localhost:3123';
-const out=path.join(__dirname,'../docs/interactive-experience/qa');
+const out=process.env.EXPLORE_QA_OUT||path.join(__dirname,'../docs/interactive-experience/qa');
+fs.mkdirSync(out,{recursive:true});
 let activeBrowser;
 (async()=>{
  const browser=activeBrowser=await chromium.launch({headless:true}),context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();const results=[];

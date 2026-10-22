@@ -1,13 +1,13 @@
 // Review remediation proof: actual downloads, selected-case reset, graph/table
 // coordinates and independent numerical expectations. No application math import.
-const {chromium}=require('@playwright/test');
+const browsers=require('@playwright/test'),engine=process.env.EXPLORE_BROWSER||'chromium';
 const {default:AxeBuilder}=require('@axe-core/playwright');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
 const catalogue=require('../src/explore/catalogue');
-const out=path.join(__dirname,'../docs/interactive-experience/qa/review-2026-10-22');
+const out=process.env.EXPLORE_QA_OUT||path.join(__dirname,'../docs/interactive-experience/qa/review-2026-10-22');
 const base=process.env.EXPLORE_BASE_URL||'http://localhost:3123';
 fs.mkdirSync(out,{recursive:true});
-const report={base,timestamp:new Date().toISOString(),pages:[],errors:[]};
+const report={base,engine,timestamp:new Date().toISOString(),pages:[],errors:[]};
 const near=(a,b,tolerance=1e-6)=>assert.ok(Math.abs(a-b)<=tolerance,`${a} != ${b}`);
 async function input(page,values){await page.evaluate(v=>{for(const [id,value]of Object.entries(v)){const n=document.getElementById(id);n.value=value;n.dispatchEvent(new Event('input',{bubbles:true}))}},values);await page.waitForTimeout(160)}
 async function download(page,format,name){const waiting=page.waitForEvent('download');await page.locator(`[data-model-export="${format}"]`).click();const d=await waiting;const target=path.join(out,name+'.'+format);await d.saveAs(target);return fs.readFileSync(target,'utf8')}
@@ -33,13 +33,15 @@ async function checkGraph(page,s){
   if(s.model==='management-delivery'){assert.equal(points.length,rows.length*2);rows.forEach((r,i)=>{near(points[i*2],60+r[0]/rows.at(-1)[0]*474,.011);near(points[i*2+1],260-r[2]/120*208,.011)});near(+(await page.locator('#md-target-line').getAttribute('x1')),60+24/rows.at(-1)[0]*474)}
 }
 (async()=>{
-  const browser=await chromium.launch();
+  const browser=await browsers[engine].launch();
   try{
     for(const m of catalogue){
       const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),page=await context.newPage(),row={slug:m.slug,resetCases:0,independentSeriesVectors:0};report.pages.push(row);
       page.on('pageerror',e=>report.errors.push(m.slug+': '+e.message));
       await page.goto(base+'/explore/'+m.slug,{waitUntil:'networkidle'});
       const protocol=await page.locator('[data-model-protocol]').textContent().then(JSON.parse);
+      const uiBounds=await page.locator('.ip3-model input[type=range]').evaluateAll(ns=>ns.map(n=>({id:n.id,min:+n.min,max:+n.max,step:+n.step})));
+      for(const x of protocol.inputs){assert.ok([x.min,x.max,x.step,x.default].every(Number.isFinite),x.id+' invalid metadata');assert.ok(x.step>0&&x.default>=x.min&&x.default<=x.max);assert.deepEqual({id:x.id,min:x.min,max:x.max,step:x.step},uiBounds.find(n=>n.id===x.id));}
       assert.equal(await page.locator('[data-model-summary]').count(),1);
       assert.equal(await page.locator('.xp-decision').count(),1);
       for(const key of Object.keys(protocol.cases))for(const context of ['public','private']){

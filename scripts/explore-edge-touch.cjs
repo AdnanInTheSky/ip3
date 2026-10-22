@@ -16,5 +16,5 @@ let browser;
   for(const width of [390,320]){await page.setViewportSize({width,height:844});assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1))}
   results.push({slug:m.slug,browser:'Microsoft Edge',touch:true,widths:[390,320],wcagViolations:axe.violations.length});
  }
- assert.deepEqual(errors,[]);await browser.close();fs.writeFileSync(path.join(__dirname,'../docs/interactive-experience/qa/edge-touch-results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results));
+ assert.deepEqual(errors,[]);await browser.close();fs.writeFileSync(path.join(process.env.EXPLORE_QA_OUT||path.join(__dirname,'../docs/interactive-experience/qa'),'edge-touch-results.json'),JSON.stringify(results,null,2));console.log(JSON.stringify(results));
 })().catch(async e=>{await browser?.close();console.error(e);process.exitCode=1});
