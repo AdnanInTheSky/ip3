@@ -90,3 +90,13 @@ test('rejects broken links in valid unquoted HTML attributes', (t) => {
   assert.match(errors, /\/missing-photo\.jpg does not resolve/);
   assert.match(errors, /\/missing-poster\.jpg does not resolve/);
 });
+
+test('accepts unquoted canonical, href, image references and alt values', (t) => {
+  const root = fixture(t, {
+    'index.html': '<!doctype html><html><head><title>Home</title><link rel=canonical href=https://example.test/></head><body><h1>Home</h1><a href=/about>About</a><img data-src=/assets/preview.jpg src=/assets/photo.jpg alt=Photo></body></html>',
+    'about.html': page({ path: '/about', title: 'About', heading: 'About' }),
+    'assets/preview.jpg': 'image',
+    'assets/photo.jpg': 'image',
+  });
+  assert.deepEqual(verify({ dist: root, siteUrl: 'https://example.test' }).errors, []);
+});
