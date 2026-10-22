@@ -11,3 +11,4 @@ docs/interactive-experience/review-2026-10-22/source/* -text
 docs/interactive-experience/qa/review-2026-10-22/*-chart.csv -text
 *.gz binary
 docs/interactive-experience/review-2026-10-22/FINAL_QA_EVIDENCE/** -text
+docs/interactive-experience/review-2026-10-22/ISSUE_REGISTER_FINAL.csv -text
