@@ -125,6 +125,11 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .hero__ctrl button{width:50px;height:50px;border-radius:50%;border:1px solid rgba(255,255,255,.4);display:grid;place-items:center;color:#fff;transition:background .3s,color .3s}
 .hero__ctrl button:hover{background:#fff;color:var(--ink)}
 .hero__ctrl svg{width:18px;height:18px}
+.hero__ctrl [data-hero-pause-label]{display:none}
+.hero__motion{position:relative;text-align:left;padding:12px 0 2px;min-height:44px;color:rgba(255,255,255,.8)}
+.hero__motion svg{width:14px;height:14px}
+.hero__motion span{display:block;margin-top:5px;font:600 .68rem/1.3 var(--f-ui);letter-spacing:.01em}
+@media(max-width:560px){.hero__motion{border-top:1px solid rgba(255,255,255,.18)}}
 .hero__count{position:absolute;z-index:3;right:var(--gutter);bottom:128px;font-family:var(--f-display);font-size:1.4rem;color:#fff}
 .hero__count span{opacity:.5}
 .scrollcue{position:absolute;z-index:3;left:50%;bottom:92px;display:none}
@@ -211,6 +216,7 @@ em,.em{font-style:italic;color:var(--rust-600);font-variation-settings:'opsz' 14
 .dc-cell,.dc-slot{--r:var(--r3);--c:var(--c3);min-width:0}
 .dc-cell{padding-bottom:var(--gap)}
 .dc-slot{grid-column:1/-1}
+.js .dc:not(.is-ready) .dc-slot:not([data-tone="1"]){display:none}
 .dc.is-ready .dc-cell{grid-row:var(--r);grid-column:calc(var(--c) + 1)}
 .dc.is-ready .dc-slot{grid-row:calc(var(--r) + 1);display:none}
 .dc.is-ready .dc-slot.is-on{display:block;animation:dc-in .35s var(--ease) both;padding-bottom:var(--gap)}
@@ -1336,11 +1342,11 @@ a.chip::after{content:"";position:absolute;inset:-4px -2px}
   .section__head{gap:18px}
   /* home hero: grows with its copy instead of clipping it on short phones; the slide labels stay visible under the numbers */
   .hero{height:auto;min-height:max(600px,100svh);max-height:none;display:flex;flex-direction:column}
-  .hero__inner{flex:1 0 auto;height:auto;padding-top:calc(var(--head-h) + 40px);padding-bottom:calc(128px + env(safe-area-inset-bottom))}
+  .hero__inner{flex:1 0 auto;height:auto;padding-top:calc(var(--head-h) + 40px);padding-bottom:32px}
   .hero__text h1{font-size:clamp(2.1rem,1.15rem + 4.8vw,2.85rem);margin:14px 0 16px;max-width:14ch}
   .hero__text .lead{font-size:1rem;line-height:1.62}
   .hero__cta{gap:10px;margin-top:24px}
-  .hero__ui{padding-bottom:calc(22px + env(safe-area-inset-bottom))}
+  .hero__ui{position:relative;inset:auto;flex:0 0 auto;padding-bottom:calc(22px + env(safe-area-inset-bottom))}
   .hero__tabs{gap:10px}
   .hero__tab{padding:12px 0 2px;min-height:44px}
   .hero__tab span{display:block;margin-top:5px;font-size:.68rem;line-height:1.3;letter-spacing:.01em}
@@ -1371,7 +1377,7 @@ a.chip::after{content:"";position:absolute;inset:-4px -2px}
 @media (max-width:420px){
   .hero__tabs{grid-template-columns:repeat(2,1fr);gap:0 16px;border-top:0}
   .hero__tab{border-top:1px solid rgba(255,255,255,.18)}
-  .hero__inner{padding-bottom:calc(140px + env(safe-area-inset-bottom))}
+  .hero__inner{padding-bottom:32px}
   .hero__tab{padding-top:10px}
 }
 /* landscape phones: the hero and page heroes fit the short screen */

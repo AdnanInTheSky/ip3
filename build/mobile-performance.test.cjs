@@ -21,12 +21,13 @@ test('same families, styles, full weights and subset ranges remain available loc
   for (const subset of ['latin-ext', 'vietnamese', 'cyrillic']) assert.ok(css.includes(subset));
   for (const match of css.matchAll(/url\(([^)]+)\)/g)) assert.ok(fs.existsSync(path.join(root, match[1])));
 });
-test('all pages discover pinned font files directly with local mirrors and no blocking Google stylesheet', () => {
+test('Home discovers pinned fonts with local mirrors while Explore retains its baseline font delivery', () => {
   const { page } = require('../src/layout');
   const html = page({ title: 'Test', desc: 'Test', path: '/', body: '<h1>IP3</h1>' });
   assert.match(html, /<style data-theme-fonts>/); assert.match(html, /as="font" type="font\/woff2" crossorigin/);
   assert.doesNotMatch(html, /fonts\.googleapis\.com/);
   assert.match(html, /url\(https:\/\/fonts\.gstatic\.com/); assert.match(html, /url\(\/assets\/fonts\//);
+  assert.match(page({ title: 'Test', desc: 'Test', path: '/explore', body: '<h1>IP3</h1>' }), /rel="stylesheet" href="https:\/\/fonts\.googleapis\.com/);
 });
 test('native analytical routes omit unused global motion vendors while Home preserves them', () => {
   const { model, catalogue } = require('../src/explore');

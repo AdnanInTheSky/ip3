@@ -26,7 +26,7 @@ function hero() {
   <div class="hero__contours" aria-hidden="true"></div>
   <div class="container hero__inner"><div class="hero__copy" aria-live="polite">${texts}</div></div>
   <div class="hero__ctrl">
-    <button type="button" data-hero-pause aria-pressed="false" aria-label="Pause automatic slides and background video" title="Pause automatic slides and background video"><svg data-hero-pause-icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg></button>
+    <button type="button" data-hero-pause aria-pressed="false" aria-label="Pause automatic slides and background video" title="Pause automatic slides and background video"><svg data-hero-pause-icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><span data-hero-pause-label aria-hidden="true">Pause motion</span></button>
     <button type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
     <button type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
   </div>
