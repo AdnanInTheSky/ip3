@@ -1,5 +1,11 @@
 # IP3 native interactive experience — QA record
 
+## Current review addendum — 22 October 2026
+
+The later current-website audit supersedes the initial counts below: **105 regression tests**, **36 hosting tests**, **64 selected-case reset checks**, **18 independent full-series/export/graph vectors** and current browser/accessibility proof pass. See [full audit](review-2026-10-22/CURRENT_REVIEW.md) and [all 16 issue dispositions](review-2026-10-22/ISSUE_REGISTER_UPDATED.csv), including before/after captures.
+
+Disposition: **8 Fixed / 5 Verified / 3 Blocked**. Critical release gate IP3-03 (empirical evidence and independent domain sign-off) remains open. IP3-09 human accessibility acceptance and IP3-15 authenticated hosted proof remain blocked. No production readiness, WCAG certification, institutional endorsement or empirical validation is claimed. The inherited homepage LCP limitation remains.
+
 Date: 22 October 2026. Environment: Node 24.16.0, Windows, local static server, Playwright Chromium and installed Microsoft Edge. Release classification: implemented and locally verified for PR review; owner acceptance and production release are pending.
 
 ## Observed results

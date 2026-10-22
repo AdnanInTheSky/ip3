@@ -1,12 +1,13 @@
 // Local before/after lab measurement. Does not claim field INP or Vercel measurements.
 const fs=require('node:fs'),path=require('node:path'),http=require('node:http');
 const {execFileSync,spawn}=require('node:child_process');
-const root=path.join(__dirname,'..'),out=path.join(root,'docs/interactive-experience/qa');
+const root=path.join(__dirname,'..'),evidenceRoot=path.join(root,'docs/interactive-experience/qa'),out=process.env.EXPLORE_PERFORMANCE_OUT||evidenceRoot;
+fs.mkdirSync(out,{recursive:true});
 const cli=process.env.LIGHTHOUSE_CLI||require.resolve('lighthouse/cli/index.js');
 const browserPath=process.env.CHROME_PATH||require('@playwright/test').chromium.executablePath();
-const baselineCommit=JSON.parse(fs.readFileSync(path.join(out,'../baseline/build.json'),'utf8')).commit;
+const baselineCommit=JSON.parse(fs.readFileSync(path.join(evidenceRoot,'../baseline/build.json'),'utf8')).commit;
 const baselineJs=execFileSync('git',['show',`${baselineCommit}:src/js/site.js`],{cwd:root,encoding:'utf8'}).replaceAll('__IP3_CONTACT_EMAIL__',JSON.stringify(require('../src/config').email));
-const baselineHtml=fs.readFileSync(path.join(out,'../baseline/home.html'),'utf8');
+const baselineHtml=fs.readFileSync(path.join(evidenceRoot,'../baseline/home.html'),'utf8');
 const version=baselineHtml.match(/assets\/js\/site\.js\?v=([^"&]+)/)[1];
 const mime={'.html':'text/html','.js':'application/javascript','.css':'text/css','.svg':'image/svg+xml','.webp':'image/webp','.png':'image/png','.mp4':'video/mp4','.json':'application/json','.woff2':'font/woff2'};
 const server=http.createServer((req,res)=>{

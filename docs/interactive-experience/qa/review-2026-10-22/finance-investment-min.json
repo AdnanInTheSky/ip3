@@ -1,0 +1,158 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "d6c99199ce38",
+  "model": "finance-investment",
+  "title": "Finance & Investment",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "capital",
+    "context": "private",
+    "title": "How much expansion capital should an enterprise actually commit?"
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Case-specific investment, benefit, operating cost, years and default discount rate from the original prototype; no underlying project accounts supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "a8bca7dd3fcb91f54d9571d67f1d1c49380ef2a327e4a39f7a6201511ce6bebd",
+    "methodReferences": [
+      {
+        "label": "European Commission / JASPERS: economic appraisal",
+        "url": "https://jaspers.eib.org/knowledge/publications/economic-appraisal-vademecum-2021-2027-general-principles-and-sector-applications",
+        "author": "European Commission / JASPERS",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      },
+      {
+        "label": "Guidelines for the Economic Analysis of Projects",
+        "author": "Asian Development Bank",
+        "publicationDate": "2017",
+        "url": "https://www.adb.org/sites/default/files/institutional-document/32256/economic-analysis-projects.pdf",
+        "role": "Economic-appraisal methods; this lab does not implement the full framework or calibrate parameters from it"
+      }
+    ]
+  },
+  "method": "An initial Year 0 investment followed by equal annual net flows. Benefits fall and operating costs rise under the selected stress assumption. NPV includes Year 0; IRR is the discount rate at which NPV is zero.",
+  "formula": "Annual net flow = benefit × (1 − stress) − operating cost × (1 + stress/2). NPV = −investment + Σ(net flow/(1+r)^year). IRR solves NPV = 0 for this conventional cash-flow pattern.",
+  "limits": "Synthetic flows exclude residual value, taxes, replacement costs, inflation, financing and shadow-price adjustments. Public/private context does not by itself establish ENPV/FNPV or EIRR/FIRR. Generic NPV and IRR describe only the entered demonstration flows.",
+  "guidance": {
+    "question": "Under which cash-flow and discount assumptions does an illustrative investment have positive NPV?",
+    "assumption": "Year 0 investment, equal annual flows, end-of-year discounting and no residual value. Case selection changes these synthetic flows.",
+    "rule": "NPV = 0 is the arithmetic threshold at the selected discount rate. A positive NPV here is insufficient for an investment recommendation or a public economic appraisal.",
+    "next": "Obtain dated investment, operating, replacement and residual flows; specify currency and price basis, taxes, externalities, shadow prices and financing separately.",
+    "chart": "Horizontal: year, including Year 0. Vertical: discounted net flow in USD millions. Bars below zero are outflows; the full table uses the same annual values.",
+    "risk": "This single teaching account is neither an independently prepared economic account nor an investor financing model. No ENPV/EIRR or FNPV/FIRR conclusion is asserted.",
+    "parameterOrigin": "Case-specific investment, benefit, operating cost, years and default discount rate from the original prototype; no underlying project accounts supplied.",
+    "references": [
+      {
+        "label": "Guidelines for the Economic Analysis of Projects",
+        "author": "Asian Development Bank",
+        "publicationDate": "2017",
+        "url": "https://www.adb.org/sites/default/files/institutional-document/32256/economic-analysis-projects.pdf",
+        "role": "Economic-appraisal methods; this lab does not implement the full framework or calibrate parameters from it"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "fi-rate",
+      "default": 10,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Discount rate (%)",
+      "value": 9
+    },
+    {
+      "id": "fi-stress",
+      "default": 0,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Benefit/cost stress (%)",
+      "value": 20
+    }
+  ],
+  "financeAssumptions": {
+    "capex": 18.5,
+    "benefit": 5.4,
+    "opex": 1.6,
+    "years": 9,
+    "currency": "USD million"
+  },
+  "results": [
+    {
+      "measure": "Illustrative NPV",
+      "displayValue": "−$3.2m"
+    },
+    {
+      "measure": "Illustrative project IRR",
+      "displayValue": "4.6%"
+    },
+    {
+      "measure": "Initial investment",
+      "displayValue": "$18.5m"
+    }
+  ],
+  "chart": {
+    "title": "All annual flows, including the initial investment",
+    "headers": [
+      "Year",
+      "Net flow (USD million)",
+      "Discounted flow (USD million)"
+    ],
+    "rows": [
+      [
+        0,
+        -18.5,
+        -18.5
+      ],
+      [
+        1,
+        2.56,
+        2.348623853211009
+      ],
+      [
+        2,
+        2.56,
+        2.1547007827623936
+      ],
+      [
+        3,
+        2.56,
+        1.9767897089563242
+      ],
+      [
+        4,
+        2.56,
+        1.8135685403269026
+      ],
+      [
+        5,
+        2.56,
+        1.6638243489237639
+      ],
+      [
+        6,
+        2.56,
+        1.5264443568107926
+      ],
+      [
+        7,
+        2.56,
+        1.400407666798892
+      ],
+      [
+        8,
+        2.56,
+        1.2847776759622862
+      ],
+      [
+        9,
+        2.56,
+        1.1786951155617302
+      ]
+    ]
+  }
+}

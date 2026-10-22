@@ -1,0 +1,134 @@
+{
+  "scope": "user-supplied ZIP only; actual localhost unavailable",
+  "receipt_method": "literal text anchor, char offset, whole-file SHA-256; image hashed",
+  "receipts": {
+    "inventory": {
+      "source_relative_path": "README_FIRST_Handoff_Inventory_2026-10-22.md",
+      "sha256": "f70d7338f43c0266744d7cdef60b5255a1b368a328366ab526a6b41795466447",
+      "bytes": 5750,
+      "type": "text",
+      "char_start": 388,
+      "char_end": 548,
+      "anchor": "no production IP3 repository source code**. `06_Prototype_Reference` is the *isolated ChatGPT reference prototype* with its own HTML, CSS, JavaScript, data, dem"
+    },
+    "qaAddendum": {
+      "source_relative_path": "02_QA_and_Logs/QA_Status_Addendum_2026-10-22.md",
+      "sha256": "0892d50ef6619a3164e00181637ac6adfe4c757d00a4aa7108516712c13d8174",
+      "bytes": 3382,
+      "type": "text",
+      "char_start": 1741,
+      "char_end": 1901,
+      "anchor": "Integrated prototype browser QA: BLOCKED.** Seven Playwright navigation attempts returned `ERR_BLOCKED_BY_ADMINISTRATOR`. Log: `Prototype_Browser_Blocked_Attemp"
+    },
+    "evidenceNotes": {
+      "source_relative_path": "05_Evidence/Evidence_Source_and_Approval_Notes_2026-10-22.md",
+      "sha256": "1eb8fecfd61de9a356b1c814d113b260f6a9057bdbf7693db21641f7c308c1b2",
+      "bytes": 2144,
+      "type": "text",
+      "char_start": 534,
+      "char_end": 694,
+      "anchor": "Approved wording / credit:** **Not available** for every entry. Neither the original signed-client certificates nor an explicit owner-approved publicity/attribu"
+    },
+    "engine": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/assets/app.js",
+      "sha256": "5790cb3181f7c02b8521f08657111235414a3624efab659df25a7db756924585",
+      "bytes": 12621,
+      "type": "text",
+      "char_start": 7053,
+      "char_end": 7213,
+      "anchor": "Verified engagements ↗</a></div>`;}\n };\n $$('[data-discipline]',host).forEach(btn=>btn.addEventListener('click',()=>{stop();select(Number(btn.dataset.discipline"
+    },
+    "data": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/assets/data.js",
+      "sha256": "6b9cb0506cb660a762598c169b797b2291737d535b1992d396d40ed449105bce",
+      "bytes": 12417,
+      "type": "text",
+      "char_start": 301,
+      "char_end": 461,
+      "anchor": "proof:'European Commission / EU Delegation · Bangladesh LDC graduation; UNCTAD / CPD · productive-capacity assessment',\n   public:{title:'Trade preference trans"
+    },
+    "financeModel": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/models/finance-investment.html",
+      "sha256": "a8bca7dd3fcb91f54d9571d67f1d1c49380ef2a327e4a39f7a6201511ce6bebd",
+      "bytes": 56401,
+      "type": "text",
+      "char_start": 49489,
+      "char_end": 49649,
+      "anchor": "function flow(x,stress){let cash=x.benefit*(1-stress/100)-x.opex*(1+stress/200);return [-x.capex,...Array(x.years).fill(cash)]}\nfunction npv(arr,rate){return ar"
+    },
+    "impactmodel": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/models/development-impact.html",
+      "sha256": "c9c9275d60a83e74c51da86b432821baea9c1587c1367021fabc1e38c26749f8",
+      "bytes": 57746,
+      "type": "text",
+      "char_start": 52858,
+      "char_end": 53018,
+      "anchor": "function sim(){const p=+$('di-tpre').value,q=+$('di-tpost').value,r=+$('di-cpre').value,s=+$('di-cpost').value,deltaT=q-p,deltaC=s-r,did=deltaT-deltaC,cf=p+delt"
+    },
+    "managementmodel": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/models/management-delivery.html",
+      "sha256": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+      "bytes": 61263,
+      "type": "text",
+      "char_start": 56446,
+      "char_end": 56606,
+      "anchor": "function rate(team,availability,rework,depend){return team*UNIT*availability*(1-depend)/(1+rework)}\nconst brate=rate(BASE.team,BASE.availability,BASE.rework,BAS"
+    },
+    "css": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/assets/style.css",
+      "sha256": "7ec22c740d7247a1b175f8aa81e658785e47e2505cffe09d1e5452d260dac558",
+      "bytes": 21549,
+      "type": "text",
+      "char_start": 16246,
+      "char_end": 16406,
+      "anchor": "iframe{display:block;width:100%;height:1800px;border:0;background:#f5f2ed}.frame-banner{background:#e4e8dd;padding:17px 23px;display:flex;justify-content:space-"
+    },
+    "financePage": {
+      "source_relative_path": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/explore/finance-investment/index.html",
+      "sha256": "1b9b04a6d25b8e036b99b9eec4908673fdb5b38dfe375032337bbad91393e3e8",
+      "bytes": 7039,
+      "type": "text",
+      "char_start": 3071,
+      "char_end": 3231,
+      "anchor": "Production integration will be native and audited.</p><div class=\"model-frame\"><div class=\"frame-banner\"><span><b>LIVE ILLUSTRATIVE MODEL</b> · Finance &amp; In"
+    },
+    "modelref": {
+      "source_relative_path": "04_Model_References/Six_Model_Reference_Sheet_DRAFT_2026-10-22.md",
+      "sha256": "a9e460064153797b768dbeeb2924669a9439cae2e8eba3099d3df17d6c1e885e",
+      "bytes": 12387,
+      "type": "text",
+      "char_start": 101,
+      "char_end": 261,
+      "anchor": "not independently peer-reviewed. Extracted directly from existing standalone model HTML scripts included in `06_Prototype_Reference/models/`. No numeric outputs"
+    },
+    "routeNotes": {
+      "source_relative_path": "03_Routes_and_Content/Placement_and_Crosslinks_DRAFT_2026-10-22.md",
+      "sha256": "f91b7b91866cd30e796e9dccf4a68332040897679f02240df2f1c42926e12159",
+      "bytes": 4640,
+      "type": "text",
+      "char_start": 289,
+      "char_end": 449,
+      "anchor": "full page preserves its original hero, detailed case selector, public/private variants, animated diagrams, simulator, charts and explanatory content. Existing I"
+    },
+    "decision": {
+      "source_relative_path": "01_Decisions/Decision_Plan_v1.0_2026-10-21.md",
+      "sha256": "b7a430fe38ef2bc325eed67ac8a6887159387d42251e1186d82aead1d556592b",
+      "bytes": 16576,
+      "type": "text",
+      "char_start": 2624,
+      "char_end": 2784,
+      "anchor": "D08 | Analytical honesty is non-negotiable | Explicit synthetic assumptions and model limitations; independently review formulas | Present simulations as real f"
+    },
+    "visual": {
+      "source_relative_path": "07_Design_Assets/IP3_Development_Impact_Preview_desktop.png",
+      "sha256": "43bd1e5a2f70b0d6be1e0589195ae5af4c8232a8b7987f098a55e970fd8d81a2",
+      "bytes": 2461789,
+      "type": "image",
+      "dimensions_px": [
+        1440,
+        4071
+      ],
+      "anchor": "file image (design preview, not browser capture)"
+    }
+  }
+}

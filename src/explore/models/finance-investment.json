@@ -142,7 +142,7 @@
         "opex": 2.3,
         "years": 20,
         "rate": 8,
-        "note": "Human-capital benefit streams depend on causal learning effects, counterfactual outcomes and earnings assumptions. The demonstration uses simplified equal annual economic benefit flows—not a real education-project model."
+        "note": "Human-capital benefit streams depend on causal learning effects, counterfactual outcomes and earnings assumptions. The demonstration uses simplified equal annual demonstration flows—not a real education-project model."
       },
       "private": {
         "label": "02 / Private skills investment",
@@ -326,7 +326,7 @@
         "opex": 3,
         "years": 20,
         "rate": 8,
-        "note": "The economic-NPV illustration is not a debt-service forecast or municipal-budget cash flow. Public investment selection also requires fiscal affordability, distributional review and governance."
+        "note": "The generic NPV illustration is not a debt-service forecast or municipal-budget cash flow. Public investment selection also requires fiscal affordability, distributional review and governance."
       },
       "private": {
         "label": "04 / Enterprise growth investment",
@@ -371,7 +371,7 @@
         "opex": 1.6,
         "years": 9,
         "rate": 10,
-        "note": "The model reports project financial returns from hypothetical cash flows before financing and tax complications. Actual enterprise investment needs detailed operating, tax and debt schedules."
+        "note": "The model reports generic project returns from hypothetical flows before financing and tax complications. Actual enterprise investment needs detailed operating, tax and debt schedules."
       }
     }
   }

@@ -28,6 +28,7 @@ jobs:
           exit 1
       - run: npm run test:explore:browser
       - run: node scripts/explore-edge-check.cjs
+      - run: node scripts/explore-review-check.cjs
       - name: Preserve measured results and screenshots
         if: always()
         uses: actions/upload-artifact@v4

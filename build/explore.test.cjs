@@ -87,3 +87,16 @@ test('native CSS is scoped and no original document or six-model preload enters 
   for(const m of catalogue){const css=fs.readFileSync(path.join(__dirname,`../src/explore/models/${m.slug}.css`),'utf8');postcss.parse(css).walkRules(rule=>{if(rule.parent.type==='atrule'&&/keyframes$/.test(rule.parent.name))return;assert.ok(rule.selectors.every(s=>s.startsWith('.ip3-model')),rule.selector)});}
   const html=require('../src/pages-home').home();assert.equal((html.match(/data-xp-select=/g)||[]).length,6);assert.doesNotMatch(html,/assets\/js\/models\/|<iframe/);
 });
+test('chart protocol includes all plotted points, signed Year 0 and readable series units',()=>{
+  const trade=M.chartData('economics-trade',[12,8,1.5]);assert.equal(trade.rows.length,61);near(trade.rows[24][0],12);near(trade.rows[24][1],100*M.trade(.12,.08,1.5).qty);
+  const finance=M.chartData('finance-investment',[10,0],{capex:100,benefit:65,opex:5,years:2});assert.deepEqual(finance.rows[0],[0,-100,-100]);near(finance.rows[2][2],60/1.1**2);
+  const market=M.chartData('market-enterprise',[85,120,0,2.5]);assert.equal(market.rows.length,61);assert.ok(market.rows.at(-1)[0]>=M.enterprise(85,120,0,2.5).units);assert.ok(market.rows.every(r=>r[1]<0));
+  assert.equal(M.chartData('development-impact',[100,100,0,100]).rows[1][3],200);
+  const workload=M.chartData('policy-governance',[0,0,24,3000]);near(workload.rows[0][3],workload.rows[1][3]);
+  const delivery=M.chartData('management-delivery',[5,50,40,35]);assert.equal(delivery.rows.at(-1)[0],144);near(delivery.rows.at(-1)[2],120);
+  assert.throws(()=>M.chartData('unknown',[]));
+});
+test('decision guidance, evidence boundaries, reset and export are present without changing theme or shell',()=>{
+  const {model}=require('../src/explore');
+  for(const m of catalogue){const html=model(m);assert.equal((html.match(/data-model-summary/g)||[]).length,1);assert.match(html,/data-model-reset/);assert.match(html,/data-model-export="json"/);assert.match(html,/data-model-export="csv"/);assert.match(html,/data-model-protocol/);assert.match(html,/Evidence provenance and research context/);assert.match(html,/Current results and full chart data/);assert.match(html,/Reading the threshold/);assert.match(html,/not empirically validated/);assert.ok(!/<iframe\b/.test(html));}
+});

@@ -1,5 +1,14 @@
 Six original standalone analytical infographics now run as native IP3 website pages. Their 64 public/private scenario variants, editorial heroes, animated sections, controls, calculations and charts are retained inside the existing navigation/footer and theme fonts. No iframe or video replacement is used.
 
+## Current review remediation — 22 October 2026
+
+- Reconciled all 16 supplied findings against current code and authenticated 14 original-source proof receipts.
+- Added six decision/evidence guides, full readable chart data, selected-case reset and local versioned JSON/CSV exports. Finance now shows signed flows including Year 0 and every year; conceptual preview geometry stays non-quantitative. Original model experiences and theme fonts retained.
+- Current local proof: 105 regression tests; 36 hosting tests; 64-case reset matrix; 18 independent chart/table/download vectors; desktop/mobile Chromium and Edge touch; zero automated axe findings in tested main content. Lighthouse model scores: 88–91 performance, 100 accessibility. Inherited Home LCP remains slow.
+- **8 Fixed / 5 Verified / 3 Blocked. This draft is not ready for production acceptance.** Critical empirical/domain gate IP3-03 remains blocked; human screen-reader acceptance (IP3-09) and authenticated hosted proof (IP3-15) are also blocked.
+- [Full current audit and before/after evidence](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/review-2026-10-22/CURRENT_REVIEW.md)
+- [Updated 16-row issue register](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/review-2026-10-22/ISSUE_REGISTER_UPDATED.csv)
+
 ## Review routes
 
 - `/explore` — 12 entry scenarios

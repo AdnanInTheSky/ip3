@@ -1,0 +1,226 @@
+diff --git a/scripts/import-explore.cjs b/scripts/import-explore.cjs
+index 5f186d9..63869b1 100644
+--- a/scripts/import-explore.cjs
++++ b/scripts/import-explore.cjs
+@@ -44,6 +44,7 @@ for (const m of catalogue) {
+   for (const item of Object.values(cases)) for (const d of Object.values(item)) {
+     for (const key of ['ref', 'source', 'evidence', 'reftype']) if (typeof d[key] === 'string') d[key] = key==='source'||key==='reftype'?'Illustrative analytical application':'Synthetic teaching scenario. No client result is asserted.';
+     if (d.note) d.note = d.note.replace('The named World Bank project concerned technology-adoption research.', 'This is a hypothetical technology-adoption investment application.');
++    if (d.note) d.note = d.note.replace('The economic-NPV illustration', 'The generic NPV illustration').replace('simplified equal annual economic benefit flows', 'simplified equal annual demonstration flows').replace('project financial returns from hypothetical cash flows', 'generic project returns from hypothetical flows');
+   }
+   js = js.replace(caseLiteral, JSON.stringify(cases));
+   const order = vm.runInNewContext(js.match(/(?:const )?order\s*=\s*(\[[^\]]*\])/)[1]);
+@@ -80,12 +81,20 @@ for (const m of catalogue) {
+   css = ast.toString();
+   // Retain the working diagram/rendering code, call verified shared calculations.
+   if (m.slug === 'economics-trade') js = replaceFunction(js, 'predict', 'function predict(t,d,eps){return window.IP3ModelMath.trade(t,d,eps);}');
++  if (m.slug === 'economics-trade') {
++    js=js.replace('const v=[];for(let i=0;i<=60;i++)v.push(predict((i/60)*.30,fx,eps).qty*100)', "const v=window.IP3ModelMath.chartData('economics-trade',[tariff*100,fx*100,eps]).rows.map(row=>row[1])");
++    js=js.replace("$('et-grid').innerHTML=ticks;", "ticks+='<line x1=\"'+left+'\" x2=\"'+right+'\" y1=\"'+Y(100)+'\" y2=\"'+Y(100)+'\" stroke=\"#f0c8aa\" stroke-dasharray=\"5 5\"/><text x=\"'+right+'\" y=\"'+(Y(100)-5)+'\" text-anchor=\"end\">Baseline 100</text>';$('et-grid').innerHTML=ticks;");
++  }
+   if (m.slug === 'finance-investment') {
+     js = replaceFunction(js, 'flow', 'function flow(x,stress){return window.IP3ModelMath.flow(x,stress);}');
+     js = replaceFunction(js, 'npv', 'function npv(arr,rate){return window.IP3ModelMath.npv(arr,rate);}');
+     js = replaceFunction(js, 'irr', 'function irr(arr){return window.IP3ModelMath.irr(arr);}');
+     js = js.replace("sector==='public'?'Illustrative economic NPV':'Illustrative financial NPV'", "'Illustrative NPV'")
+       .replace("sector==='public'?'Economic IRR (EIRR)':'Project IRR (FIRR)'", "'Illustrative project IRR'");
++    body=body.replace('YEAR 01','YEAR 00').replace('MODEL CASH FLOWS<br/>Hover or focus a bar for values','USD MILLIONS · YEAR 0 INCLUDED<br/>Signed flows; full table below').replace('Illustrative discounted annual cash flows / economic net benefits','Illustrative signed discounted net flows, including Year 0');
++    js=js.replace(/ const vals=arr\.slice\(1\)[\s\S]*?(?= \$\('fi-modelnote'\))/, ` const rows=window.IP3ModelMath.chartData('finance-investment',[rate,stress],x).rows,lo=Math.min(0,...rows.map(z=>z[2])),hi=Math.max(1,...rows.map(z=>z[2])),Y=v=>190-(v-lo)/(hi-lo)*160,zero=Y(0),slot=500/rows.length;
++ $('fi-bars').innerHTML='<svg viewBox="0 0 560 230" role="img" aria-label="Signed discounted annual flows in USD millions, including negative Year 0 investment. Read all values in the adjacent chart data table."><text x="10" y="14">USD million</text>'+[lo,0,hi].map(v=>'<line x1="48" x2="548" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="#8aa797" stroke-dasharray="'+(v===0?'none':'3 5')+'"/><text x="43" y="'+(Y(v)+4)+'" text-anchor="end">'+Number(v.toFixed(1))+'</text>').join('')+rows.map((z,i)=>{const x=48+i*slot+slot*.15,y=Math.min(Y(z[2]),zero);return '<g><title>Year '+z[0]+': '+z[2].toFixed(6)+' USD million discounted net flow</title><rect class="xp-cash-bar" style="animation-delay:'+i*25+'ms" x="'+x+'" y="'+y+'" width="'+slot*.7+'" height="'+Math.abs(zero-Y(z[2]))+'" fill="'+(z[2]<0?'#e9b99e':'#b8dfc2')+'" stroke="#ffffff" stroke-width=".5"/><text x="'+(x+slot*.35)+'" y="209" text-anchor="middle">'+z[0]+'</text></g>'}).join('')+'<text x="548" y="227" text-anchor="end">Year</text></svg>';
++`);
+   }
+   if (m.slug === 'market-enterprise') {
+     js = js.replace('units=1200*Math.pow(price/120,-elasticity),effectiveCost=cost/(1+prod),contribution=price-effectiveCost,fixed=29000,profit=units*contribution-fixed,revenue=units*price,margin=revenue>0?100*profit/revenue:0,breakEven=contribution>0?Math.ceil(fixed/contribution):Infinity',
+@@ -97,8 +106,13 @@ for (const m of catalogue) {
+       .replace("'Modelled monthly operating profit against zero to 2500 units sold.", "'Modelled monthly operating profit against zero to '+xMax+' units sold.");
+     js = js.replace("$('me-chart').setAttribute('aria-label'", `document.querySelectorAll('#me-chart text[data-volume-tick]').forEach(node=>{node.textContent=Math.round(Number(node.dataset.volumeTick)*xMax/2500).toLocaleString('en-US')+(node.dataset.volumeSuffix||'')});$('me-chart').setAttribute('aria-label'`);
+     body=body.replace(/<text([^>]*y="245"[^>]*)>([\d,]+)( units \/ month)?<\/text>/g,(all,attributes,value,suffix)=>`<text${attributes} data-volume-tick="${value.replaceAll(',','')}" data-volume-suffix="${suffix||''}">${value}${suffix||''}</text>`);
++    js=js.replace('for(let i=0;i<=60;i++){const v=i*xMax/60;vals.push({x:X(v),y:Y(v*contribution-fixed)})}', "for(const row of window.IP3ModelMath.chartData('market-enterprise',[price,cost,prod*100,elasticity]).rows)vals.push({x:X(row[0]),y:Y(row[1])});");
++    body=body.replace(/(<[^>]*id="me-marker"[^>]*>)/, '<g id="me-break-even"></g>$1');
++    js=js.replace("$('me-chartgrid').innerHTML=grid;", `$('me-chartgrid').innerHTML=grid;const crossing=contribution>0?fixed/contribution:Infinity;$('me-break-even').innerHTML=crossing<=xMax?'<line x1="'+X(crossing)+'" x2="'+X(crossing)+'" y1="'+T+'" y2="'+B+'" stroke="#f0c8aa" stroke-dasharray="5 5"/><text x="'+Math.max(110,Math.min(450,X(crossing)))+'" y="'+(B-8)+'" text-anchor="middle">Break-even '+breakEven+' units</text>':'';`);
+   }
+   if (m.slug === 'development-impact') {
++    body=body.replace(/Difference.in.differences/g,'Illustrative two-period DiD contrast').replace(/Estimated net effect/g,'Illustrative contrast');
++    js=js.replace('Estimated net difference ', 'Illustrative two-period contrast ');
+     js = js.replace('deltaT=q-p,deltaC=s-r,did=deltaT-deltaC,cf=p+deltaC', '{deltaT,deltaC,did,cf}=window.IP3ModelMath.impact(p,q,r,s)');
+     js = js.replace("'NET DIFFERENCE '+diffDisplay(did)+' pp'", "'NET DIFFERENCE '+diffDisplay(did)+' pp'+(cf<0||cf>100?' · INFEASIBLE COUNTERFACTUAL':'')");
+     js = js.replace('Y=v=>yBottom-(v/100)*(yBottom-yTop)', 'yMin=Math.min(0,Math.floor(cf/20)*20),yMax=Math.max(100,Math.ceil(cf/20)*20),Y=v=>yBottom-((v-yMin)/(yMax-yMin))*(yBottom-yTop)');
+@@ -107,6 +121,9 @@ for (const m of catalogue) {
+   if (m.slug === 'policy-governance') {
+     js = js.replace(/const baselineCore=1\.5,[\s\S]*?const saved=\(baseline-after\)\*vol\*12, percent=\(baseline-after\)\/baseline\*100, value=saved\*650;/,
+       'const {baselineCore,baselineRework,baseline,newCore,newRework,after,saved,percent,value}=window.IP3ModelMath.governance(steps,dig,rw,vol);');
++    body=body.replace('<defs>', '<defs><pattern id="pg-rework-hatch" width="7" height="7" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="#d8a187"/><path d="M-2 2L2 -2M0 7L7 0M5 9L9 5" stroke="#653927" stroke-width="1.2"/></pattern>')
++      .replace(/fill="#d8a187"( height="38" id="pg-bar-(?:before|after)-rework")/g,'fill="url(#pg-rework-hatch)"$1');
++    body=body.replace('<rect fill="#d8a187" height="5"', '<rect fill="url(#pg-rework-hatch)" height="5"');
+   }
+   if (m.slug === 'management-delivery') {
+     js = replaceFunction(js, 'rate', 'function rate(team,availability,rework,depend){return window.IP3ModelMath.deliveryRate(team,availability,rework,depend);}');
+@@ -127,6 +144,9 @@ for (const m of catalogue) {
+     .replaceAll('The reference points to a documented CV engagement.', 'The reference describes an illustrative analytical application.')
+     .replaceAll('Workflows draw on CV project contexts.', 'Workflows are hypothetical analytical examples.')
+     .replaceAll('CV-linked research context', 'Illustrative analytical context');
++  js=js.replaceAll('Documented project contexts are identified.', 'All applications are hypothetical.')
++    .replaceAll('This is a strategy illustration or CV-referenced research domain', 'This is a hypothetical strategy illustration')
++    .replaceAll('informed by documented work—not a claim of completed company work or verified impact', 'using synthetic assumptions, with no claim of completed company work or verified impact');
+   const tourId = m.prefix === 'di' ? 'di-tour' : `${m.prefix}-tour`;
+   const benchId = m.prefix === 'di' ? 'di-workbench' : `${m.prefix}-workbench`;
+   const stateKey = m.prefix === 'et' || m.prefix === 'me' ? 'theme' : m.prefix === 'fi' ? 'key' : 'active';
+diff --git a/src/explore/index.js b/src/explore/index.js
+index 34c2508..ad4b55d 100644
+--- a/src/explore/index.js
++++ b/src/explore/index.js
+@@ -3,6 +3,7 @@ const path = require('node:path');
+ const crypto = require('node:crypto');
+ const { esc, page, btn } = require('../layout');
+ const catalogue = require('./catalogue');
++const guidance = require('./guidance');
+ const normalizedRead = filename => fs.readFileSync(filename, 'utf8').replace(/\r\n/g,'\n');
+ const file = (slug, ext) => normalizedRead(path.join(__dirname, 'models', `${slug}.${ext}`));
+ const version = value => crypto.createHash('sha256').update(value).digest('hex').slice(0, 12);
+@@ -33,13 +34,13 @@ function preview() {
+     <p class="xp-overline" data-xp-kicker>${esc(m.title)}</p><h3 data-xp-question>${esc(m.public[1])}</h3><div data-xp-visual>${signature(m)}</div><p class="xp-note">Conceptual preview · synthetic teaching examples</p>
+     <label class="xp-sensitivity"><span data-xp-input-label>Additional tariff (%)</span><input data-xp-factor type="range" min="0" max="30" value="12" aria-describedby="xp-factor-note"></label><output class="xp-result" data-xp-result aria-live="polite">Illustrative export volume index: ${(require('./math').trade(.12,.08,1.5).qty*100).toFixed(1)}</output><p class="xp-note" id="xp-factor-note" data-xp-assumptions>Illustrative assumptions: FX +8%, elasticity 1.5, baseline index 100.</p>
+     <a class="btn btn--light" data-xp-link href="/explore/${m.slug}">Explore the interactive model</a></div></div>
+-    <p class="xp-more"><a class="link" href="/explore">Discover all 12 entry scenarios →</a></p>
++    <p class="xp-more"><a class="link" href="/explore">Discover all 12 entry pathways →</a></p>
+     <script type="application/json" data-xp-data>${JSON.stringify(catalogue.map(x=>({slug:x.slug,title:x.title,public:x.public,private:x.private,visual:signature(x)}))).replace(/</g,'\\u003c')}</script>
+     <noscript><p>Select a full experience below. Scenario descriptions and methodology remain available without scripting.</p><ul>${catalogue.map(x=>`<li><a href="/explore/${x.slug}">${esc(x.title)}</a></li>`).join('')}</ul></noscript>
+     </div></section>`;
+ }
+ function hub() {
+-  const body = `<section class="section xp-hub"><div class="container"><span class="eyebrow">Interactive Explorer · Illustrative labs</span><h1>Explore our thinking<br><em>in action.</em></h1><p class="lead">Six disciplines. Twelve entry scenarios. Follow a question into a complete animated experience, change the assumptions and examine what the model can—and cannot—indicate.</p><p class="xp-intro-note">All numerical examples are synthetic. They are not forecasts or client results.</p>
++  const body = `<section class="section xp-hub"><div class="container"><span class="eyebrow">Interactive Explorer · Illustrative labs</span><h1>Explore our thinking<br><em>in action.</em></h1><p class="lead">Twelve entry pathways: six disciplines × two audiences. Follow a public or private question into a complete animated experience, change the assumptions and examine what the model can—and cannot—indicate.</p><p class="xp-intro-note">The six workbenches contain 64 detailed public/private case variants in total. These are analytical illustrations, distinct from IP3’s official capabilities and sectors. All numerical examples are synthetic, not forecasts or client results.</p>
+     <nav class="xp-index" aria-label="Choose an analytical discipline">${catalogue.map(m=>`<a href="#${m.slug}">${esc(m.title)}</a>`).join('')}</nav>
+     <div class="xp-tour-controls"><button type="button" class="btn btn--ghost" data-hub-tour aria-pressed="false">Start guided tour</button><p role="status" data-hub-status>Tour starts only when you choose.</p></div>
+     ${catalogue.map((m,i)=>`<section class="xp-hub-discipline" id="${m.slug}" aria-labelledby="xp-title-${m.slug}"><div><span class="eyebrow">0${i+1} / Analytical discipline</span><h2 id="xp-title-${m.slug}">${esc(m.title)}</h2><p>${esc(m.tag)}</p></div><div class="xp-cases">${['public','private'].map(context=>{const c=m[context];return `<article data-hub-case><span class="xp-context">${context==='public'?'Public':'Private'} application</span><h3>${esc(c[0])}</h3><p>${esc(c[1])}</p><dl><dt>Evidence approach</dt><dd>${esc(c[2])}</dd><dt>Decision output</dt><dd>${esc(c[3])}</dd></dl><p class="xp-source">Research anchor: <a href="${esc(m.sources[0][1])}" target="_blank" rel="noopener noreferrer">${esc(m.sources[0][0])}</a>. Method reference; no coefficient calibration implied.</p><a class="link" href="/explore/${m.slug}?context=${context}">Open full ${context} experience →</a></article>`}).join('')}</div></section>`).join('')}
+@@ -55,12 +56,28 @@ function transcripts(m) {
+ }
+ function model(m) {
+   const css = file(m.slug,'css'), js = file(m.slug,'js');
+-  const originalBody = require('./render-initial')(file(m.slug,'html'), js);
++  const g=guidance[m.slug], caseData=JSON.parse(file(m.slug,'json'));
++  const {document}=require('linkedom').parseHTML('<div id="model-fragment">'+require('./render-initial')(file(m.slug,'html'), js)+'</div>');
++  const fragment=document.querySelector('#model-fragment');
++  const inputNodes=[...fragment.querySelectorAll('input[type=range]')];
++  const defaults=inputNodes.map(n=>Number(n.getAttribute('value')));
++  // Finance's initial case sets its own rate rather than the generic HTML default.
++  if(m.slug==='finance-investment')defaults[0]=caseData.cases[caseData.order[0]].public.rate;
++  const revision=version(file(m.slug,'js')+normalizedRead(path.join(__dirname,'math.js'))+normalizedRead(path.join(__dirname,'model.js'))+JSON.stringify({guidance:g,method:m.method,formula:m.formula,limits:m.limits,sources:m.sources}));
++  const provenance={status:'Synthetic demonstration; not empirically validated',parameterOrigin:g.parameterOrigin,calibration:'None supplied; no fitted coefficients or observed outcome dataset',domainReview:'Independent domain sign-off not supplied',claimApproval:'No new named-client credit approved or asserted',referenceSHA256:require('./reference-manifest.json').find(x=>x.slug===m.slug).sha256,methodReferences:[...m.sources.map(([label,url])=>({label,url,author:label.split(':')[0],role:'Method or disciplinary context only; not parameter calibration',publicationDate:'Not established in this catalogue; consult linked record'})),...(g.references||[])]};
++  const data={slug:m.slug,title:m.title,revision,protocol:'ip3-illustration/1',inputs:inputNodes.map((n,i)=>({id:n.id,default:defaults[i],min:Number(n.min),max:Number(n.max),step:Number(n.step),label:n.getAttribute('aria-label')||n.closest('label')?.textContent.trim().split('\n')[0]||n.id})),cases:caseData.cases,provenance,method:m.method,formula:m.formula,limits:m.limits,guidance:g};
++  const chart=require('./math').chartData(m.slug,defaults,caseData.cases[caseData.order[0]].public);
++  const table=(title,headers,rows)=>`<table class="xp-results-table"><caption>${esc(title)}</caption><thead><tr>${headers.map(h=>`<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map((v,i)=>`<${i?'td':'th scope="row"'}>${esc(typeof v==='number'?Number(v.toFixed(6)):v)}</${i?'td':'th'}>`).join('')}</tr>`).join('')}</tbody></table>`;
++  const bench=fragment.querySelector('[id$="-workbench"]');
++  bench.insertAdjacentHTML('beforebegin',`<aside class="xp-decision" aria-label="Decision guide"><span class="xp-brief-label">Decision guide · synthetic illustration</span><h2>${esc(g.question)}</h2><dl><dt>Method</dt><dd>${esc(m.method)}</dd><dt>Key assumption</dt><dd>${esc(g.assumption)}</dd><dt>Reading the threshold</dt><dd>${esc(g.rule)}</dd></dl><details><summary>Evidence needed before a real decision</summary><p>${esc(g.next)}</p><p>${esc(g.risk)}</p></details><a href="#model-methodology">Full methodology and source provenance ↓</a></aside>`);
++  const calculator=inputNodes[0].closest('.et-simulator,.fi-model,.me-sim,.di-simulator');
++  calculator.insertAdjacentHTML('afterend',`<section class="xp-data-panel" aria-labelledby="xp-chart-data-title"><h3 id="xp-chart-data-title">Read and reproduce this illustration.</h3><p>${esc(g.chart)}</p><p class="xp-evidence-label">Synthetic inputs · no empirical calibration · no uncertainty interval estimated</p><p>${esc(g.risk)}</p><div class="xp-actions"><button type="button" data-model-reset>Reset selected case</button><button type="button" data-model-export="json">Download assumptions & results (JSON)</button><button type="button" data-model-export="csv">Download chart data (CSV)</button></div><p class="xp-help">Reset restores the selected case’s defaults and pauses its tour. Downloads include synthetic status, defaults, current assumptions, results and chart data. Values remain in your browser. Keyboard: use arrow keys on sliders and scenario tabs; Home/End selects their limits.</p><p role="status" aria-live="polite" aria-atomic="true" data-model-summary></p><p data-model-action-status role="status"></p><details><summary>Current inputs and reset defaults</summary><div data-model-inputs>${table('Control defaults', ['Input','Default','Allowed range'],data.inputs.map(x=>[x.id,x.default,x.min+'–'+x.max]))}</div></details><details><summary>Current results and full chart data</summary><div data-model-table>${table(chart.title,chart.headers,chart.rows)}</div></details><p class="xp-help">Calculation version: <code>${revision}</code>. Full-precision values are retained in downloads; readable tables round to six decimals.</p><noscript><p>JavaScript is needed for reset and downloads. The default chart data and methodology remain readable.</p></noscript></section>`);
++  const originalBody=fragment.innerHTML;
+   const body = `<div class="xp-model-toolbar"><div class="container"><a href="/explore">← All analytical experiences</a><span>Illustrative lab · synthetic assumptions</span><button type="button" data-model-motion aria-pressed="false">Pause motion</button></div></div>
+     <noscript><p>The default illustration is shown below. Turn on JavaScript to change scenarios and recalculate charts, or read every scenario in the narrative list after the model.</p></noscript>
+-    <div class="ip3-model" data-model="${m.slug}">${originalBody}${m.slug==='finance-investment'?`<script type="application/json" data-finance-cases>${JSON.stringify(JSON.parse(file(m.slug,'json')).cases).replace(/</g,'\\u003c')}</script>`:''}</div>
+-    <section class="section xp-method" id="model-methodology" aria-labelledby="xp-method-title"><div class="container narrow"><span class="eyebrow">Interpretation & methodology</span><h2 id="xp-method-title">Understand the assumptions.</h2><p class="lead">${esc(m.method)}</p><details open><summary>Calculation and units</summary><p>${esc(m.formula)}</p></details><details open><summary>What this model cannot establish</summary><p>${esc(m.limits)}</p><p>There is no empirical calibration dataset in the handoff. Changing a scenario changes its narrative; controls are a shared teaching model, except Finance, where each case also defines its own cash-flow assumptions.</p></details><p role="status" aria-live="polite" aria-atomic="true" data-model-summary></p><div data-model-table></div>
+-    <details><summary>Research references and professional context</summary><ul>${m.sources.map(([label,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a></li>`).join('')}</ul><p>These references explain the analytical discipline. They do not validate the synthetic coefficients or imply endorsement.</p><p>For professional context, explore <a href="/engagements">documented engagements</a>. The hypothetical applications and model outputs on this page are not engagement results.</p></details>
++    <div class="ip3-model" data-model="${m.slug}">${originalBody}<script type="application/json" data-model-protocol>${JSON.stringify(data).replace(/</g,'\\u003c')}</script>${m.slug==='finance-investment'?`<script type="application/json" data-finance-cases>${JSON.stringify(caseData.cases).replace(/</g,'\\u003c')}</script>`:''}</div>
++    <section class="section xp-method" id="model-methodology" aria-labelledby="xp-method-title"><div class="container narrow"><span class="eyebrow">Interpretation & methodology</span><h2 id="xp-method-title">Understand the assumptions.</h2><p class="lead">${esc(m.method)}</p><details open><summary>Calculation and units</summary><p>${esc(m.formula)}</p><p>In formulas, tariff, FX change, discount rate, stress, productivity, digital uptake, rework, availability and dependency drag use fractions where applicable (8% = 0.08). Slider labels show percentages. Elasticity is unitless; outcome differences use percentage points.</p></details><details open><summary>What this model cannot establish</summary><p>${esc(m.limits)}</p><p>There is no empirical calibration dataset in the handoff. Changing a scenario changes its narrative; controls are a shared teaching model, except Finance, where each case also defines its own cash-flow assumptions.</p></details>
++    <details open><summary>Evidence provenance and research context</summary><dl class="xp-provenance"><dt>Evidence status</dt><dd>${esc(provenance.status)}</dd><dt>Parameter origin</dt><dd>${esc(g.parameterOrigin)}</dd><dt>Calibration and external review</dt><dd>${esc(provenance.calibration)}. ${esc(provenance.domainReview)}.</dd><dt>Attribution approval</dt><dd>${esc(provenance.claimApproval)}</dd></dl><ul>${m.sources.map(([label,url])=>`<li><a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a> — method/disciplinary context; publication date not established in this catalogue, consult linked record. Not a calibration dataset.</li>`).join('')}</ul>${m.slug==='finance-investment'?'<p>Asian Development Bank (2017), <a href="https://www.adb.org/sites/default/files/institutional-document/32256/economic-analysis-projects.pdf" target="_blank" rel="noopener noreferrer">Guidelines for the Economic Analysis of Projects</a>: professional economic-appraisal context. This lab does not implement that full appraisal framework.</p>':''}${m.slug==='development-impact'?'<p>Gertler, Martinez, Premand, Rawlings and Vermeersch (2016), <a href="https://publications.iadb.org/en/impact-evaluation-practice-second-edition" target="_blank" rel="noopener noreferrer">Impact Evaluation in Practice, second edition</a>, World Bank and Inter-American Development Bank: identification and evaluation methods, not a source for these four percentages.</p>':''}<p>References do not validate synthetic coefficients, approve IP3 claims or imply institutional endorsement.</p><p>For professional context, explore <a href="/engagements">documented engagements</a>. Hypothetical applications and outputs on this page are not engagement results.</p></details>
+     ${transcripts(m)}<noscript><p>JavaScript is required to recalculate the interactive charts. The original hero, all scenario narratives, assumptions and links remain readable here.</p></noscript>
+     <div class="xp-next"><a class="link" href="/capabilities#${m.capability}">Related IP3 capability →</a><a class="link" href="/sectors">Explore relevant sectors →</a></div>
+     <div class="xp-enquire"><h3>Discuss your ${esc(m.title.toLowerCase())} question.</h3><p>Bring your decision and evidence needs. Simulator values stay in this browser.</p>${btn('Discuss this discipline',`/contact?discipline=${m.slug}#contact-form`)}</div></div></section>`;
+diff --git a/src/explore/math.js b/src/explore/math.js
+index 34df674..bb71dd9 100644
+--- a/src/explore/math.js
++++ b/src/explore/math.js
+@@ -57,5 +57,17 @@
+     if (team <= 0 || availability <= 0 || availability > 1 || rework < 0 || depend < 0 || depend >= 1) throw new RangeError('Invalid delivery assumptions.');
+     return team * .75 * availability * (1 - depend) / (1 + rework);
+   }
+-  return { trade, flow, npv, irr, enterprise, impact, governance, deliveryRate };
++  // Numeric chart coordinates, readable tables and exports share this protocol.
++  // Values are unrounded here; rounding belongs to the presentation layer.
++  function chartData(slug, v, cashCase) {
++    finite(...v);
++    if (slug === 'economics-trade') return { title: 'Tariff sensitivity; FX and elasticity held at selected values', headers: ['Additional tariff (%)', 'Export volume (index; baseline 100)', 'Buyer price (index; baseline 100)', 'USD receipts (index; baseline 100)', 'Local receipts (index; baseline 100)'], rows: Array.from({length:61},(_,i)=>{const x=trade(i*.005,v[1]/100,v[2]);return [i*.5,x.qty*100,x.buyer*100,x.usd*100,x.local*100]}) };
++    if (slug === 'finance-investment') return { title: 'All annual flows, including the initial investment', headers: ['Year', 'Net flow (USD million)', 'Discounted flow (USD million)'], rows: flow(cashCase,v[1]).map((x,y)=>[y,x,x/(1+v[0]/100)**y]) };
++    if (slug === 'market-enterprise') { const x=enterprise(v[0],v[1],v[2]/100,v[3]),max=Math.max(2500,Math.ceil(x.units/500)*500);return {title:'Operating profit at alternative volumes; selected price and effective cost held fixed',headers:['Units per month','Operating profit (USD per month)'],rows:Array.from({length:61},(_,i)=>{const units=i*max/60;return [units,units*x.contribution-x.fixed]})}; }
++    if (slug === 'development-impact') { const x=impact(...v);return {title:'Synthetic two-period outcomes; constructed counterfactual is not an observation',headers:['Period','Treated (%)','Comparison (%)','Constructed treated counterfactual (%)'],rows:[['Before',v[0],v[2],v[0]],['After',v[1],v[3],x.cf]]}; }
++    if (slug === 'policy-governance') { const x=governance(v[0],v[1]/100,v[2]/100,v[3]);return {title:'Administrative workload components on a common hours-per-case scale',headers:['Pathway','Core handling (hours per case)','Rework (hours per case)','Total (hours per case)'],rows:[['Before',x.baselineCore,x.baselineRework,x.baseline],['After',x.newCore,x.newRework,x.after]]}; }
++    if (slug === 'management-delivery') { const r=deliveryRate(v[0],v[1]/100,v[2]/100,v[3]/100),b=deliveryRate(10,.65,.24,.23),h=Math.max(48,Math.ceil(Math.ceil(120/r)/12)*12);return {title:'Cumulative equivalent work packages; linear throughput, target at week 24',headers:['Week','Fixed baseline (completed packages)','Selected scenario (completed packages)'],rows:Array.from({length:h+1},(_,w)=>[w,Math.min(120,w*b),Math.min(120,w*r)])}; }
++    throw new RangeError('Unknown analytical model.');
++  }
++  return { trade, flow, npv, irr, enterprise, impact, governance, deliveryRate, chartData };
+ });
+diff --git a/src/explore/model.js b/src/explore/model.js
+index 7ef0198..e87645d 100644
+--- a/src/explore/model.js
++++ b/src/explore/model.js
+@@ -11,28 +11,53 @@
+     'economics-trade':{ids:['et-tariff','et-fx','et-elasticity'],outputs:[['Export volume index','et-volume'],['USD receipts index','et-usd'],['Local receipts index','et-local'],['Buyer price index','et-price']]},
+     'finance-investment':{ids:['fi-rate','fi-stress'],outputs:[['Illustrative NPV','fi-npv'],['Illustrative project IRR','fi-irr'],['Initial investment','fi-capex']]},
+     'market-enterprise':{ids:['me-price','me-cost','me-productivity','me-elasticity'],outputs:[['Monthly operating profit','me-profit'],['Operating margin','me-margin'],['Break-even volume','me-breakeven'],['Unit contribution','me-contrib']]},
+-    'development-impact':{ids:['di-tpre','di-tpost','di-cpre','di-cpost'],outputs:[['Difference in differences (pp)','di-did'],['Treated change (pp)','di-gain'],['Comparison change (pp)','di-controlgain'],['Counterfactual (%)','di-counterfactual']]},
++    'development-impact':{ids:['di-tpre','di-tpost','di-cpre','di-cpost'],outputs:[['Illustrative two-period DiD contrast (pp)','di-did'],['Treated change (pp)','di-gain'],['Comparison change (pp)','di-controlgain'],['Counterfactual (%)','di-counterfactual']]},
+     'policy-governance':{ids:['pg-steps','pg-digital','pg-rework','pg-volume'],outputs:[['Annual hours released','pg-hours'],['Workload change','pg-reduction'],['Staff-time opportunity value (not budget savings)','pg-value'],['Reformed hours per case','pg-after']]},
+     'management-delivery':{ids:['md-team','md-available','md-rework','md-depend'],outputs:[['Illustrative duration','md-weeks'],['Relative to 24-week target','md-gap'],['Packages per week','md-rate'],['Relative throughput','md-lift']]},
+   };
+-  const cfg=configs[slug];
+-  cfg.ids.forEach(id=>{const input=$(id);if(!input.getAttribute('aria-label')&&!input.labels?.length){const label=input.closest('label')?.textContent||id.replace(/^(et|fi|me|di|pg|md)-/,'').replace(/-/g,' ');input.setAttribute('aria-label',label.trim())}});
++  const cfg=configs[slug],protocol=JSON.parse(root.querySelector('[data-model-protocol]').textContent);
+   const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++  const label=id=>({
++    'et-tariff':'Additional tariff (%)','et-fx':'FX depreciation (%)','et-elasticity':'Demand elasticity',
++    'fi-rate':'Discount rate (%)','fi-stress':'Benefit/cost stress (%)',
++    'me-price':'Price (USD/unit)','me-cost':'Variable cost (USD/unit)','me-productivity':'Productivity uplift (%)','me-elasticity':'Demand elasticity',
++    'di-tpre':'Treated baseline (%)','di-tpost':'Treated endline (%)','di-cpre':'Comparison baseline (%)','di-cpost':'Comparison endline (%)',
++    'pg-steps':'Steps removed (of 10)','pg-digital':'Digital uptake (%)','pg-rework':'Rework rate (%)','pg-volume':'Applications per month',
++    'md-team':'Team size (people)','md-available':'Availability (%)','md-rework':'Rework (%)','md-depend':'Dependency drag (%)'
++  }[id]||id);
++  cfg.ids.forEach(id=>{const input=$(id);if(!input.getAttribute('aria-label')&&!input.labels?.length)input.setAttribute('aria-label',label(id))});
++  function snapshot(){
++    const key=root.querySelector('[data-case][aria-selected=true]').dataset.case,context=root.querySelector('[data-sector][aria-pressed=true]').dataset.sector,scenario=protocol.cases[key][context];
++    const inputs=protocol.inputs.map(x=>({...x,label:label(x.id),default:slug==='finance-investment'&&x.id==='fi-rate'?scenario.rate:x.default,value:number(x.id)}));
++    return {protocol:protocol.protocol,calculationVersion:protocol.revision,model:slug,title:protocol.title,evidenceStatus:protocol.provenance.status,scenario:{key,context,title:scenario.title},provenance:protocol.provenance,method:protocol.method,formula:protocol.formula,limits:protocol.limits,guidance:protocol.guidance,inputs,financeAssumptions:slug==='finance-investment'?{capex:scenario.capex,benefit:scenario.benefit,opex:scenario.opex,years:scenario.years,currency:'USD million'}:undefined,results:cfg.outputs.map(([measure,id])=>({measure,displayValue:text(id)})),chart:M.chartData(slug,inputs.map(x=>x.value),scenario)};
++  }
++  function table(caption,headers,rows){return '<table class="xp-results-table"><caption>'+safe(caption)+'</caption><thead><tr>'+headers.map(h=>'<th scope="col">'+safe(h)+'</th>').join('')+'</tr></thead><tbody>'+rows.map(row=>'<tr>'+row.map((v,i)=>'<'+(i?'td':'th scope="row"')+'>'+safe(typeof v==='number'?Number(v.toFixed(6)):v)+'</'+(i?'td':'th')+'>').join('')+'</tr>').join('')+'</tbody></table>'}
++  let lastState='';
+   function render(){
+-    const rows=cfg.outputs.map(([label,id])=>[label,text(id)]);
+-    const summary=document.querySelector('[data-model-summary]');summary.textContent='Current illustrative results: '+rows.map(r=>r[0]+': '+r[1]).join('; ')+'.';
+-    if(slug==='development-impact'){const result=M.impact(...cfg.ids.map(number));if(!result.feasible)summary.textContent+=' Warning: counterfactual outside 0–100%; the chosen inputs do not describe a feasible percentage counterfactual.';}
+-    const container=document.querySelector('[data-model-table]');
+-    let html='<table class="xp-results-table"><caption>Current results in text</caption><thead><tr><th scope="col">Measure</th><th scope="col">Illustrative value</th></tr></thead><tbody>'+rows.map(([label,value])=>'<tr><th scope="row">'+safe(label)+'</th><td>'+safe(value)+'</td></tr>').join('')+'</tbody></table>';
+-    if(slug==='finance-investment'){
+-      const scenario=JSON.parse(root.querySelector('[data-finance-cases]').textContent),key=root.querySelector('[data-case][aria-selected=true]').dataset.case,sector=root.querySelector('[data-sector][aria-pressed=true]').dataset.sector;
+-      const values=M.flow(scenario[key][sector],number('fi-stress')),r=number('fi-rate')/100;
+-      html+='<details><summary>Full annual cash-flow table, including Year 0</summary><table class="xp-results-table"><caption>Cash-flow assumptions in USD millions</caption><thead><tr><th scope="col">Year</th><th scope="col">Net flow</th><th scope="col">Discounted flow</th></tr></thead><tbody>'+values.map((v,year)=>'<tr><th scope="row">'+year+'</th><td>'+v.toFixed(3)+'</td><td>'+(v/(1+r)**year).toFixed(3)+'</td></tr>').join('')+'</tbody></table></details>';
+-    }
+-    container.innerHTML=html;
++    const s=snapshot(),summary=root.querySelector('[data-model-summary]');
++    const state=JSON.stringify([s.scenario,s.inputs.map(x=>x.value),s.results]);
++    // Keep unchanged table nodes stable for keyboard and assistive-technology readers.
++    if(state===lastState)return;lastState=state;
++    summary.textContent='Current illustrative results: '+s.results.map(r=>r.measure+': '+r.displayValue).join('; ')+'.';
++    if(slug==='development-impact'){const result=M.impact(...cfg.ids.map(number));if(!result.feasible)summary.textContent+=' Warning: counterfactual outside 0–100%; the chosen inputs do not describe a feasible percentage counterfactual.';summary.textContent+=' Illustrative two-period contrast only; no causal effect or confidence interval established.'}
++    root.querySelector('[data-model-table]').innerHTML=table('Current results in text',['Measure','Illustrative value'],s.results.map(r=>[r.measure,r.displayValue]))+table(s.chart.title,s.chart.headers,s.chart.rows);
++    root.querySelector('[data-model-inputs]').innerHTML=table('Current controls and selected-case defaults',['Input and unit','Current','Reset default','Allowed range'],s.inputs.map(x=>[x.label,x.value,x.default,x.min+'–'+x.max]));
+   }
++  root.querySelector('[data-model-reset]').addEventListener('click',()=>{
++    root.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
++    const s=snapshot();s.inputs.forEach(x=>{$(x.id).value=x.default;$(x.id).dispatchEvent(new Event('input',{bubbles:true}))});render();root.querySelector('[data-model-action-status]').textContent='Selected case defaults restored. Scenario and audience retained; tour paused.';
++  });
++  root.querySelectorAll('[data-model-export]').forEach(button=>button.addEventListener('click',()=>{
++    render();const s=snapshot(),format=button.dataset.modelExport;let body;
++    if(format==='json')body=JSON.stringify(s,null,2)+'\n';
++    else{
++      const rows=[['record_type','name','coordinate','measure','value'],['metadata','evidence_status','','',s.evidenceStatus],['metadata','model','','',s.model],['metadata','calculation_version','','',s.calculationVersion],['metadata','protocol','','',s.protocol],['metadata','scenario',s.scenario.context,s.scenario.key,s.scenario.title],['metadata','method','','',s.method],['metadata','formula','','',s.formula],['metadata','limits','','',s.limits],['metadata','parameter_origin','','',s.provenance.parameterOrigin],['metadata','calibration','','',s.provenance.calibration],['metadata','domain_review','','',s.provenance.domainReview],['metadata','reference_sha256','','',s.provenance.referenceSHA256],['metadata','claim_approval','','',s.provenance.claimApproval],...s.provenance.methodReferences.flatMap(r=>[['reference',r.label,r.url,r.role,r.publicationDate],['reference_author',r.label,r.url,'author_or_publisher',r.author]]),...s.inputs.flatMap(x=>[['input',x.id,x.label,'current',x.value],['input',x.id,x.label,'reset_default',x.default]]),...Object.entries(s.financeAssumptions||{}).map(([k,v])=>['fixed_assumption',k,'','',v]),...s.results.map(r=>['result',r.measure,'','display_value',r.displayValue]),...s.chart.rows.flatMap(row=>row.slice(1).map((v,i)=>['chart',s.chart.title,row[0],s.chart.headers[i+1],v]))];
++      const cell=v=>'"'+String(typeof v==='string'&&/^[=+@-]/.test(v)?"'"+v:v).replace(/"/g,'""')+'"';body='\uFEFF'+rows.map(row=>row.map(cell).join(',')).join('\r\n')+'\r\n';
++    }
++    const url=URL.createObjectURL(new Blob([body],{type:format==='json'?'application/json':'text/csv;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='ip3-synthetic-'+slug+'-'+s.scenario.key+'-'+s.scenario.context+'-'+s.calculationVersion+'.'+format;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);root.querySelector('[data-model-action-status]').textContent='Synthetic '+format.toUpperCase()+' download prepared with current assumptions and calculation version. This is not a validated finding.';
++  }));
+   let pending;
+-  root.addEventListener('input',()=>{clearTimeout(pending);pending=setTimeout(render,150)});root.addEventListener('click',()=>{clearTimeout(pending);pending=setTimeout(render,0)});root.addEventListener('keydown',()=>{clearTimeout(pending);pending=setTimeout(render,0)});
+-  // Observe text-only scenario refreshes initiated by an opted-in automatic tour.
+-  const output=$(cfg.outputs[0][1]);if(output)new MutationObserver(()=>{clearTimeout(pending);pending=setTimeout(render,150)}).observe(output,{childList:true,subtree:true,characterData:true});render();
++  const schedule=()=>{clearTimeout(pending);pending=setTimeout(render,100)};
++  root.addEventListener('input',schedule);root.addEventListener('click',schedule);root.addEventListener('keydown',schedule);
++  const output=$(cfg.outputs[0][1]);if(output)new MutationObserver(schedule).observe(output,{childList:true,subtree:true,characterData:true});render();
+ })();

@@ -79,7 +79,9 @@ function verify({ dist = DEFAULT_DIST, siteUrl = process.env.SITE_URL || require
     const sourcePath = path.relative(absoluteDist, sourceFile).split(path.sep).join('/');
     const base = `${siteOrigin}/${sourcePath}`;
 
-    const titles = [...html.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)].map((match) => decodeHtml(match[1].replace(/<[^>]*>/g, '').trim()));
+    // SVG may contain legitimate per-chart/per-mark titles. Page metadata lives in head.
+    const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/i)?.[1] || '';
+    const titles = [...head.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)].map((match) => decodeHtml(match[1].replace(/<[^>]*>/g, '').trim()));
     if (titles.length !== 1 || !titles[0]) errors.push(`${sourcePath}: expected exactly one non-empty <title>, found ${titles.length}`);
     else unique(seenTitles, titles[0], sourceFile, 'title');
 

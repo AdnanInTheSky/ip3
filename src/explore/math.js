@@ -57,5 +57,17 @@
     if (team <= 0 || availability <= 0 || availability > 1 || rework < 0 || depend < 0 || depend >= 1) throw new RangeError('Invalid delivery assumptions.');
     return team * .75 * availability * (1 - depend) / (1 + rework);
   }
-  return { trade, flow, npv, irr, enterprise, impact, governance, deliveryRate };
+  // Numeric chart coordinates, readable tables and exports share this protocol.
+  // Values are unrounded here; rounding belongs to the presentation layer.
+  function chartData(slug, v, cashCase) {
+    finite(...v);
+    if (slug === 'economics-trade') return { title: 'Tariff sensitivity; FX and elasticity held at selected values', headers: ['Additional tariff (%)', 'Export volume (index; baseline 100)', 'Buyer price (index; baseline 100)', 'USD receipts (index; baseline 100)', 'Local receipts (index; baseline 100)'], rows: Array.from({length:61},(_,i)=>{const x=trade(i*.005,v[1]/100,v[2]);return [i*.5,x.qty*100,x.buyer*100,x.usd*100,x.local*100]}) };
+    if (slug === 'finance-investment') return { title: 'All annual flows, including the initial investment', headers: ['Year', 'Net flow (USD million)', 'Discounted flow (USD million)'], rows: flow(cashCase,v[1]).map((x,y)=>[y,x,x/(1+v[0]/100)**y]) };
+    if (slug === 'market-enterprise') { const x=enterprise(v[0],v[1],v[2]/100,v[3]),max=Math.max(2500,Math.ceil(x.units/500)*500);return {title:'Operating profit at alternative volumes; selected price and effective cost held fixed',headers:['Units per month','Operating profit (USD per month)'],rows:Array.from({length:61},(_,i)=>{const units=i*max/60;return [units,units*x.contribution-x.fixed]})}; }
+    if (slug === 'development-impact') { const x=impact(...v);return {title:'Synthetic two-period outcomes; constructed counterfactual is not an observation',headers:['Period','Treated (%)','Comparison (%)','Constructed treated counterfactual (%)'],rows:[['Before',v[0],v[2],v[0]],['After',v[1],v[3],x.cf]]}; }
+    if (slug === 'policy-governance') { const x=governance(v[0],v[1]/100,v[2]/100,v[3]);return {title:'Administrative workload components on a common hours-per-case scale',headers:['Pathway','Core handling (hours per case)','Rework (hours per case)','Total (hours per case)'],rows:[['Before',x.baselineCore,x.baselineRework,x.baseline],['After',x.newCore,x.newRework,x.after]]}; }
+    if (slug === 'management-delivery') { const r=deliveryRate(v[0],v[1]/100,v[2]/100,v[3]/100),b=deliveryRate(10,.65,.24,.23),h=Math.max(48,Math.ceil(Math.ceil(120/r)/12)*12);return {title:'Cumulative equivalent work packages; linear throughput, target at week 24',headers:['Week','Fixed baseline (completed packages)','Selected scenario (completed packages)'],rows:Array.from({length:h+1},(_,w)=>[w,Math.min(120,w*b),Math.min(120,w*r)])}; }
+    throw new RangeError('Unknown analytical model.');
+  }
+  return { trade, flow, npv, irr, enterprise, impact, governance, deliveryRate, chartData };
 });
