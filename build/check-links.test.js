@@ -77,3 +77,16 @@ test('rejects missing required metadata and sitemap URLs without built pages', (
   assert.match(errors, /sitemap: malformed URL/);
   assert.match(errors, /does not resolve to a generated page/);
 });
+
+test('rejects broken links in valid unquoted HTML attributes', (t) => {
+  const root = fixture(t, {
+    'index.html': page({
+      path: '/', title: 'Home', heading: 'Home',
+      body: '<a href=/missing-page>Broken</a><img src=/missing-photo.jpg alt=Photo><video poster=/missing-poster.jpg></video>',
+    }),
+  }, ['https://example.test/']);
+  const errors = verify({ dist: root, siteUrl: 'https://example.test' }).errors.join('\n');
+  assert.match(errors, /\/missing-page does not resolve/);
+  assert.match(errors, /\/missing-photo\.jpg does not resolve/);
+  assert.match(errors, /\/missing-poster\.jpg does not resolve/);
+});
