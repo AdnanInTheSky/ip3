@@ -52,7 +52,9 @@
         else if (dy < -6 || y < 120) head.classList.remove('is-hidden');
       }
       lastY = y;
-      if (bar) { var h = d.documentElement.scrollHeight - window.innerHeight; bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')'; }
+      // At the top the progress is exactly zero. Avoid forcing a full document
+      // layout while fonts/styles and the analytical scene are initializing.
+      if (bar) { var h = y > 0 ? d.documentElement.scrollHeight - window.innerHeight : 0; bar.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')'; }
     }
     window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   }

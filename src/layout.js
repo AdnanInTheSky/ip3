@@ -10,7 +10,7 @@ const strip = (s) => String(s).replace(/<[^>]+>/g, '');
 const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
 const arrowL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>';
 
-const fontsHref = 'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap';
+const themeFonts = require('./fonts');
 
 function btn(label, href, cls = '') {
   return `<a class="btn ${cls}" href="${href}">${label}${arrow}</a>`;
@@ -181,8 +181,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" cont
 <link rel="icon" type="image/png" sizes="48x48" href="/assets/logo/favicon-48.png">
 <link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="${fontsHref}">
+${themeFonts}
 <link rel="stylesheet" href="/assets/css/site.css?v=__CSSV__">
 ${styles ? `${styles}\n` : ''}${preload}
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js')</script>
@@ -196,9 +195,9 @@ ${header(path)}
 ${body}
 </main>
 ${footer()}
-<script src="/assets/vendor/gsap.min.js" defer></script>
+${bodyClass === 'explore-model' ? '' : `<script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-<script src="/assets/vendor/lenis.min.js" defer></script>
+<script src="/assets/vendor/lenis.min.js" defer></script>`}
 ${cfg.turnstileSiteKey ? '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>\n' : ''}${analytics}<script src="/assets/js/site.js?v=__JSV__" defer></script>
 ${scripts ? `${scripts}\n` : ''}</body>
 </html>

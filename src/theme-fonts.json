@@ -1,0 +1,165 @@
+{
+  "source": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+  "note": "Unmodified Google Fonts WOFF2 bytes; full original subsets and variable axes retained.",
+  "files": [
+    {
+      "filename": "6NUT8FyLNQOQZAnv9ZwNpOQkzP9Ddt2Wew.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOQkzP9Ddt2Wew.woff2",
+      "bytes": 40160,
+      "sha256": "d7a49baf574c46db65f5a1754a578506c5643b3f40090e423bbfff843c1a0470"
+    },
+    {
+      "filename": "6NUT8FyLNQOQZAnv9ZwNpOUkzP9Ddt2Wew.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOUkzP9Ddt2Wew.woff2",
+      "bytes": 130100,
+      "sha256": "6e929bb741281c850e883e874c7c91d620227e01b70a424fd62617e018f87d0f"
+    },
+    {
+      "filename": "6NUT8FyLNQOQZAnv9ZwNpOskzP9Ddt0.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzP9Ddt0.woff2",
+      "bytes": 149512,
+      "sha256": "f6cb5ecfce80bdb07f44a1a330e7258d0c7618eb6b0a8043b7ba2afe19fcbfa8"
+    },
+    {
+      "filename": "6NUV8FyLNQOQZAnv9ZwHlOkuy91BRtw.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwHlOkuy91BRtw.woff2",
+      "bytes": 34308,
+      "sha256": "bc5c1f2dca610837c6a11a164ae3cc7ed51b0a0d209eb0cbf705d7f63e87a2c4"
+    },
+    {
+      "filename": "6NUV8FyLNQOQZAnv9ZwGlOkuy91BRtw.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwGlOkuy91BRtw.woff2",
+      "bytes": 105476,
+      "sha256": "bfbcc574c88f5008f497dd150b7d043db484b5d5866c949b1c6e64f50a085ad8"
+    },
+    {
+      "filename": "6NUV8FyLNQOQZAnv9ZwIlOkuy91B.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOkuy91B.woff2",
+      "bytes": 120800,
+      "sha256": "94bb7e04bb1a32237a67935c72526e42a3e52ee4aebd50299802b18a93114251"
+    },
+    {
+      "filename": "S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2",
+      "source": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USSwaPGQ3q5d0N7w.woff2",
+      "bytes": 2988,
+      "sha256": "f74c0a0ebbe359255553a5445ccf2a75973d9c70807452ca12820b7bcfc9bbb9"
+    },
+    {
+      "filename": "S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2",
+      "source": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh7USSwiPGQ3q5d0.woff2",
+      "bytes": 13912,
+      "sha256": "7bb29c58eadc0f0c7b704f5fce2490d10cb62efa55797a09c9b8f91b3b54cb34"
+    },
+    {
+      "filename": "S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2",
+      "source": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2",
+      "bytes": 2988,
+      "sha256": "b85c84c655bcbba3bd628b2c1fea0fbdb5b158a9022281a2f910e82fd6da5098"
+    },
+    {
+      "filename": "S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+      "source": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+      "bytes": 13980,
+      "sha256": "d4ae5188a65370ecfe28f42293bbee8297cfd5712c6aadfdb270d48f2bcd88b0"
+    },
+    {
+      "filename": "S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2",
+      "source": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2",
+      "bytes": 3028,
+      "sha256": "78e850d569834892d3f4bdfd2084c7a7c0dc64ae4226f3231af30dae706400e2"
+    },
+    {
+      "filename": "S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2",
+      "source": "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2",
+      "bytes": 14168,
+      "sha256": "7a7ce1a34f3e9944fe88fc61abbc93b6db383afa2b90815fd7ccea456fbce4e5"
+    },
+    {
+      "filename": "JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2",
+      "source": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2",
+      "bytes": 24072,
+      "sha256": "744830a0e77dd14dd543a4230d6e3ce67ca961634074b5d536ebafc66c732301"
+    },
+    {
+      "filename": "JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2",
+      "source": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2",
+      "bytes": 21492,
+      "sha256": "0b00fbd6edcc84cd5f77364bbeb06b75ed263c740061eba34511f1e2ac1a82d3"
+    },
+    {
+      "filename": "JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2",
+      "source": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2",
+      "bytes": 10620,
+      "sha256": "9e2672d100bc36a37073fb250abfaa7394f5151bf5dda3f4d5fc281345eb391b"
+    },
+    {
+      "filename": "JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2",
+      "source": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2",
+      "bytes": 68224,
+      "sha256": "920711de9ae96c18970fa4faca73cd302b93ac5ed57ebeb6bfec2ddeff930082"
+    },
+    {
+      "filename": "JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+      "source": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+      "bytes": 35508,
+      "sha256": "6438d7b8ea9c7c3992d5e2fd2afdb1ff948570a3ef0bedae76247b51632960ba"
+    }
+  ],
+  "licenses": [
+    {
+      "filename": "fraunces-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/fraunces/OFL.txt",
+      "sha256": "bdf4c22802eaf804f998195871c6b8938aac2ac14b2d78a8bd66a6f1eced833b"
+    },
+    {
+      "filename": "lato-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lato/OFL.txt",
+      "sha256": "74ba064d03f1f1c4a952da936c3eb71866c34404916734de3cae73b34357e59e"
+    },
+    {
+      "filename": "montserrat-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/montserrat/OFL.txt",
+      "sha256": "8b7141c03fa4f8d44e6345d5d4931709290f0f67875e452e95ac1fd3a027802e"
+    }
+  ],
+  "optimizedFonts": [
+    {
+      "filename": "6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+      "original": "6NUV8FyLNQOQZAnv9ZwIlOkuy91B.woff2",
+      "style": "normal",
+      "weightRange": [
+        100,
+        900
+      ],
+      "soft": 0,
+      "bytes": 67468,
+      "sha256": "bbb3102ef66feefffb8cac2993382c5e5df05a124c8e3c78786e83d8d002cb5b",
+      "retainedVariableAxes": [
+        "opsz",
+        "wght",
+        "WONK"
+      ]
+    },
+    {
+      "filename": "6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+      "original": "6NUT8FyLNQOQZAnv9ZwNpOskzP9Ddt0.woff2",
+      "style": "italic",
+      "weightRange": [
+        100,
+        900
+      ],
+      "soft": 0,
+      "bytes": 81800,
+      "sha256": "6cc1820fffc9faf428b0c8b09227948985cd7c8813088311d085d9f4880557e6",
+      "retainedVariableAxes": [
+        "opsz",
+        "wght",
+        "WONK"
+      ]
+    }
+  ],
+  "optimizedSource": "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0,0..1;1,9..144,100..900,0,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+  "delivery": "Embedded font-face declarations, existing Google font CDN primary with byte-identical same-origin fallback; no visitor/build Google stylesheet API request."
+}

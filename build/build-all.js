@@ -94,7 +94,18 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],
   ];
-  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]));
+  for (const [file, html] of pages) {
+    let rendered = html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]);
+    if (file === 'index.html' || file === 'explore.html' || file.startsWith('explore/')) {
+      const routeCss = require('./page-css.cjs').pageCss(css, rendered);
+      const key = file === 'index.html' ? 'home' : file === 'explore.html' ? 'explore' : 'analytical';
+      // Equal model styles share one immutable URL across the six journeys.
+      const asset = `site-${key}-${hash(routeCss)}.css`;
+      write(`assets/css/${asset}`, routeCss);
+      rendered = rendered.replace(`/assets/css/site.css?v=${V.__CSSV__}`, `/assets/css/${asset}?v=${hash(routeCss)}`);
+    }
+    write(file, rendered);
+  }
 
   // 3. sitemap, robots, manifest
   const preparing = new Set(D.articles.filter(a => a.publicationStatus === 'in-preparation').map(a => `insights/${a.slug}.html`));
