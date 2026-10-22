@@ -1,0 +1,8 @@
+{"name":"home-before","performance":0.65,"accessibility":0.95,"LCP":14708.068000000001,"CLS":0,"TBT":261,"bytes":7075163}
+{"name":"home-after","performance":0.66,"accessibility":0.95,"LCP":14741.103899999998,"CLS":0,"TBT":231,"bytes":6195688}
+{"name":"economics-trade","performance":0.89,"accessibility":1,"LCP":3381.8385500000004,"CLS":0.003307866570471188,"TBT":75,"bytes":750865}
+{"name":"finance-investment","performance":0.88,"accessibility":1,"LCP":3536.0925000000007,"CLS":0.0034720801776687467,"TBT":17,"bytes":760149}
+{"name":"market-enterprise","performance":0.91,"accessibility":1,"LCP":3226.581,"CLS":0.003548695433814721,"TBT":7.5,"bytes":750702}
+{"name":"development-impact","performance":0.9,"accessibility":1,"LCP":3382.6544999999996,"CLS":0.0004031397628437354,"TBT":44,"bytes":752550}
+{"name":"policy-governance","performance":0.92,"accessibility":1,"LCP":3077.6174499999997,"CLS":0.003885181356077449,"TBT":32.5,"bytes":753027}
+{"name":"management-delivery","performance":0.9,"accessibility":1,"LCP":3382.0822499999995,"CLS":0.001514808409279012,"TBT":24,"bytes":756053}

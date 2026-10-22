@@ -1,0 +1,38 @@
+[
+  {
+    "file": "development-impact.html",
+    "expected": "c9c9275d60a83e74c51da86b432821baea9c1587c1367021fabc1e38c26749f8",
+    "actual": "c9c9275d60a83e74c51da86b432821baea9c1587c1367021fabc1e38c26749f8",
+    "matched": true
+  },
+  {
+    "file": "economics-trade.html",
+    "expected": "d1f7516391f5f097693915f7fa0a05998e26f792ff4d69cefa95e10fcdfe9f12",
+    "actual": "d1f7516391f5f097693915f7fa0a05998e26f792ff4d69cefa95e10fcdfe9f12",
+    "matched": true
+  },
+  {
+    "file": "finance-investment.html",
+    "expected": "a8bca7dd3fcb91f54d9571d67f1d1c49380ef2a327e4a39f7a6201511ce6bebd",
+    "actual": "a8bca7dd3fcb91f54d9571d67f1d1c49380ef2a327e4a39f7a6201511ce6bebd",
+    "matched": true
+  },
+  {
+    "file": "management-delivery.html",
+    "expected": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+    "actual": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+    "matched": true
+  },
+  {
+    "file": "market-enterprise.html",
+    "expected": "17a1627d57bb3e22e574942e97e5adcf629554448d66a7ed8c26eb14e81d43a1",
+    "actual": "17a1627d57bb3e22e574942e97e5adcf629554448d66a7ed8c26eb14e81d43a1",
+    "matched": true
+  },
+  {
+    "file": "policy-governance.html",
+    "expected": "856c08174279d0a40fa5129d85ad7e37e6fe7c2da35145a109ab0497c077c978",
+    "actual": "856c08174279d0a40fa5129d85ad7e37e6fe7c2da35145a109ab0497c077c978",
+    "matched": true
+  }
+]

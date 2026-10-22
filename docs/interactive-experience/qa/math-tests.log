@@ -1,0 +1,18 @@
+✔ six routes and exact original hashes remain traceable (8.8799ms)
+✔ trade neutral baseline, sign, analytical elasticity and complete input grid (0.7863ms)
+✔ finance discount timing and conventional IRR known solutions (1.2853ms)
+✔ all eight finance cases match independent annuity and IRR residuals at UI boundaries (10.4592ms)
+✔ enterprise fixed vs variable costs, zero and negative contribution, boundary grid (1.0635ms)
+✔ DiD arithmetic, pp units, negative/zero changes and infeasible counterfactuals (0.6617ms)
+✔ governance neutral reference, negative hours and value interpretation (0.5139ms)
+✔ delivery correct capacity, rounding, baseline and slow/fast boundaries (0.2876ms)
+✔ native pages preserve full initial state, static narratives and a single shared shell (290.0934ms)
+✔ native CSS is scoped and no original document or six-model preload enters Home (67.254ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 465.3975
