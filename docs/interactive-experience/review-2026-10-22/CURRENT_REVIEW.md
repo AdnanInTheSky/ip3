@@ -1,5 +1,7 @@
 # Current Explore audit, remediation and proof
 
+> Mobile optimisation follow-up: [23 October results and evidence](../mobile-performance-2026-10-22/MOBILE_PERFORMANCE_REVIEW.md). Historical source/acceptance records below are preserved.
+
 > Final scientific and acceptance reassessment: [latest final review](FINAL_ACCEPTANCE_REVIEW.md). The earlier results below are historical; the final review records reopened findings, fresh engine checks and remaining NO-GO gates.
 
 Review date: 22 October 2026 (Asia/Dhaka). Before-code baseline: `df4d5e9`. Scope: the running `/explore` hub, six native detail pages, homepage preview and shared-site regression journeys. This supplements the original implementation QA report.

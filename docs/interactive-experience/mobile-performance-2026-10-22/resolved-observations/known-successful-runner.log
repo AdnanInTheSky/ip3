@@ -1,0 +1,7 @@
+
+explorer	Set up job	2026-10-22T18:27:38.7277431Z Version: 20261012.601
+explorer	Set up job	2026-10-22T18:27:38.7282835Z ##[group]Operating System
+explorer	Set up job	2026-10-22T18:27:38.7286507Z Image: ubuntu-24.04
+explorer	Set up job	2026-10-22T18:27:38.7287096Z Version: 20261012.334.1
+explorer	Run actions/setup-node@v4	2026-10-22T18:27:47.2200577Z   node-version: 24
+

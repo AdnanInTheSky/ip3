@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "economics-trade",
+    "browser": "Microsoft Edge",
+    "touch": true,
+    "widths": [
+      390,
+      320
+    ],
+    "wcagViolations": 0
+  },
+  {
+    "slug": "finance-investment",
+    "browser": "Microsoft Edge",
+    "touch": true,
+    "widths": [
+      390,
+      320
+    ],
+    "wcagViolations": 0
+  },
+  {
+    "slug": "market-enterprise",
+    "browser": "Microsoft Edge",
+    "touch": true,
+    "widths": [
+      390,
+      320
+    ],
+    "wcagViolations": 0
+  },
+  {
+    "slug": "development-impact",
+    "browser": "Microsoft Edge",
+    "touch": true,
+    "widths": [
+      390,
+      320
+    ],
+    "wcagViolations": 0
+  },
+  {
+    "slug": "policy-governance",
+    "browser": "Microsoft Edge",
+    "touch": true,
+    "widths": [
+      390,
+      320
+    ],
+    "wcagViolations": 0
+  },
+  {
+    "slug": "management-delivery",
+    "browser": "Microsoft Edge",
+    "touch": true,
+    "widths": [
+      390,
+      320
+    ],
+    "wcagViolations": 0
+  }
+]

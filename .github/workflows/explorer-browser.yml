@@ -6,7 +6,7 @@ permissions:
   contents: read
 jobs:
   explorer:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
       EXPLORE_QA_OUT: /tmp/ip3-acceptance/chromium
@@ -17,7 +17,9 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci
-      - run: npx playwright install --with-deps chromium firefox
+      - name: Install both browsers and system dependencies
+        timeout-minutes: 8
+        run: npx playwright install --with-deps chromium firefox
       - run: npm run build
       - name: Start the static preview
         run: |

@@ -1,5 +1,16 @@
 # IP3 Explore — final scientific/technical acceptance refinement
 
+## Latest mobile follow-up — 23 October 2026
+
+- **123 regression / 36 hosting tests pass.** All six native experiences, 64 variants, original media, theme fonts and controls are retained.
+- Matched mobile/gzip comparison, 20 unique accepted runs: Home median LCP **5.453 → 4.636 s**, TBT **300 → 208 ms**, performance **73 → 78**. Six model LCP values **1.89–1.90 → 1.57–1.59 s**. Home FCP is slower (**1.590 → 2.099 s**); IP3-18 remains **Partially Fixed**.
+- Deliver route-relevant CSS, omit unused native-page vendors, optimize Home font/script scheduling, defer Home reveals near view and compress local text responses. Preserve original Explore font delivery after rejecting measured regressions.
+- Restore the single existing Pause control on compact screens (IP3-22) and fix mobile CTA/tab overlap with responsive flow (IP3-23). Paired screenshots, enlarged text, six breakpoints, 22 scroll checks, 12 hero checks, font fallback and glyph proofs are retained.
+- Browser CI pins the previously successful Ubuntu 24.04 image after a dependency-install stall; no tests or thresholds are removed.
+- [Full mobile report and evidence](https://github.com/mdsyfulhoque-afk/ip3-bd.org/blob/codex/ip3-interactive-experience/docs/interactive-experience/mobile-performance-2026-10-22/MOBILE_PERFORMANCE_REVIEW.md).
+
+**Production remains NO-GO.** Scientific, human-accessibility and authorised hosted-runtime gates remain open. The earlier acceptance history follows; its original counts/measurements are historical.
+
 ## Verdict: NO-GO for production
 
 This draft preserves the existing Node static-site architecture, six complete native model experiences, 64 detailed case variants, 12 entry pathways, approved heroes/diagrams, theme fonts and shared shell. No merge, production deployment or protection changes are authorised.

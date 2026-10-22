@@ -1,0 +1,1084 @@
+{
+  "phase": "after",
+  "browser": "156.0.8078.4",
+  "pages": [
+    {
+      "name": "home",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Turning complex policy challenges into implementable, investable solutions.",
+          "x": 21.046875,
+          "y": 349.75,
+          "width": 306.609375,
+          "height": 154.4375,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "37.12px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.81664px",
+          "variations": "\"SOFT\" 0, \"WONK\" 1, \"opsz\" 144"
+        },
+        {
+          "selector": ".hero__text.is-active .lead",
+          "text": "IP3 Consulting Limited is a policy and development advisory firm helping multilateral institutions, development partners, governments, businesses and research organizations design ",
+          "x": 21.046875,
+          "y": 520.1875,
+          "width": 347.90625,
+          "height": 155.4375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2"
+      ],
+      "homeFlow": {
+        "uiHeight": 162.375,
+        "ctaToControlsGap": 32
+      }
+    },
+    {
+      "name": "hub",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Explore our thinking\nin action.",
+          "x": 21.046875,
+          "y": 174.25,
+          "width": 347.90625,
+          "height": 80.5625,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "38.74px",
+          "fontWeight": "400",
+          "letterSpacing": "-0.85228px",
+          "variations": "\"SOFT\" 0, \"WONK\" 1, \"opsz\" 144"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "economics-trade",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Markets move.\nEvidence moves\ndecisions.",
+          "x": 20,
+          "y": 263.109375,
+          "width": 350,
+          "height": 152.25,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "54px",
+          "fontWeight": "400",
+          "letterSpacing": "-2.3px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 108.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "01 / ECONOMICS & TRADE\nMarkets move.\nEvidence moves\ndecisions.\n\nTrade shocks, weak productivity and fragmented policy are rarely isolated problems. We connect economic intelligence",
+          "x": 0,
+          "y": 172.109375,
+          "width": 390,
+          "height": 7950.34375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "finance-investment",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Capital follows conviction.\nConviction follows evidence.",
+          "x": 20.265625,
+          "y": 266.109375,
+          "width": 349.46875,
+          "height": 251.71875,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "53px",
+          "fontWeight": "400",
+          "letterSpacing": "-2.5px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 108.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "02 / FINANCE & INVESTMENT\nCapital follows conviction.\nConviction follows evidence.\n\nAn attractive investment is not merely one with a positive return on paper. It is economically w",
+          "x": 0,
+          "y": 172.109375,
+          "width": 390,
+          "height": 8315.96875,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "market-enterprise",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Understand firms.\nUnlock markets.\nCreate value.",
+          "x": 20,
+          "y": 260.109375,
+          "width": 350,
+          "height": 200.875,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "54px",
+          "fontWeight": "400",
+          "letterSpacing": "-2.6px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 108.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "03 / MARKET & ENTERPRISE\nUnderstand firms.\nUnlock markets.\nCreate value.\n\nA firm is more than a balance sheet. It is a network of people, technology, demand, regulation and investm",
+          "x": 0,
+          "y": 172.109375,
+          "width": 390,
+          "height": 8518.265625,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "development-impact",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Progress must\nbe proven.\nNot presumed.",
+          "x": 19,
+          "y": 259.109375,
+          "width": 352,
+          "height": 162.421875,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "57px",
+          "fontWeight": "400",
+          "letterSpacing": "-2.8px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 108.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "04 / DEVELOPMENT & IMPACT\nProgress must\nbe proven.\nNot presumed.\n\nA programme can reach thousands and still leave its most important question unanswered: what changed because of it",
+          "x": 0,
+          "y": 172.109375,
+          "width": 390,
+          "height": 8439.90625,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "policy-governance",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Policy is a\npromise.\nGovernance\nis the proof.",
+          "x": 19,
+          "y": 259.109375,
+          "width": 352,
+          "height": 216.5625,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "57px",
+          "fontWeight": "400",
+          "letterSpacing": "-2.8px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 108.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "05 / POLICY & GOVERNANCE\nPolicy is a\npromise.\nGovernance\nis the proof.\n\nA law can change while the experience of citizens and enterprises does not. We trace the distance between fo",
+          "x": 0,
+          "y": 172.109375,
+          "width": 390,
+          "height": 8817.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "management-delivery",
+      "width": 390,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "",
+          "x": 0,
+          "y": 10,
+          "width": 390,
+          "height": 58,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Strategy sets\nthe direction.\nDelivery makes\nit real.",
+          "x": 19,
+          "y": 259.109375,
+          "width": 352,
+          "height": 216.5625,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "57px",
+          "fontWeight": "400",
+          "letterSpacing": "-2.8px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 390,
+          "height": 108.109375,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "06 / MANAGEMENT & DELIVERY\nStrategy sets\nthe direction.\nDelivery makes\nit real.\n\nA plan is not a result. We connect strategy to execution—clarifying ownership, aligning resources, ",
+          "x": 0,
+          "y": 172.109375,
+          "width": 390,
+          "height": 8868.71875,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "15px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "home",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Turning complex policy challenges into implementable, investable solutions.",
+          "x": 80,
+          "y": 212.1875,
+          "width": 880,
+          "height": 251.578125,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "80.64px",
+          "fontWeight": "400",
+          "letterSpacing": "-1.77408px",
+          "variations": "\"SOFT\" 0, \"WONK\" 1, \"opsz\" 144"
+        },
+        {
+          "selector": ".hero__text.is-active .lead",
+          "text": "IP3 Consulting Limited is a policy and development advisory firm helping multilateral institutions, development partners, governments, businesses and research organizations design ",
+          "x": 80,
+          "y": 489.765625,
+          "width": 647.265625,
+          "height": 118.75,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "18px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2"
+      ],
+      "homeFlow": {
+        "uiHeight": 164.78125,
+        "ctaToControlsGap": 144.703125
+      }
+    },
+    {
+      "name": "hub",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Explore our thinking\nin action.",
+          "x": 80,
+          "y": 198.890625,
+          "width": 1280,
+          "height": 179.71875,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "86.4px",
+          "fontWeight": "400",
+          "letterSpacing": "-1.9008px",
+          "variations": "\"SOFT\" 0, \"WONK\" 1, \"opsz\" 144"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "economics-trade",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Markets move.\nEvidence moves\ndecisions.",
+          "x": 76.3125,
+          "y": 267.609375,
+          "width": 650.109375,
+          "height": 272.0625,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "96.48px",
+          "fontWeight": "400",
+          "letterSpacing": "-4.3px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 1440,
+          "height": 79,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "01 / ECONOMICS & TRADE\nMarkets move.\nEvidence moves\ndecisions.\n\nTrade shocks, weak productivity and fragmented policy are rarely isolated problems. We connect economic intelligence",
+          "x": 0,
+          "y": 143,
+          "width": 1440,
+          "height": 4863.0625,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "finance-investment",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Capital follows conviction.\nConviction follows evidence.",
+          "x": 79.875,
+          "y": 273,
+          "width": 667.8125,
+          "height": 358.375,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "94.32px",
+          "fontWeight": "400",
+          "letterSpacing": "-3.9px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 1440,
+          "height": 79,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "02 / FINANCE & INVESTMENT\nCapital follows conviction.\nConviction follows evidence.\n\nAn attractive investment is not merely one with a positive return on paper. It is economically w",
+          "x": 0,
+          "y": 143,
+          "width": 1440,
+          "height": 5260.21875,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "market-enterprise",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Understand firms.\nUnlock markets.\nCreate value.",
+          "x": 76.3125,
+          "y": 269.9375,
+          "width": 653.71875,
+          "height": 277.171875,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "99.36px",
+          "fontWeight": "400",
+          "letterSpacing": "-4px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 1440,
+          "height": 79,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "03 / MARKET & ENTERPRISE\nUnderstand firms.\nUnlock markets.\nCreate value.\n\nA firm is more than a balance sheet. It is a network of people, technology, demand, regulation and investm",
+          "x": 0,
+          "y": 143,
+          "width": 1440,
+          "height": 5216.125,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "development-impact",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Progress must\nbe proven.\nNot presumed.",
+          "x": 77.75,
+          "y": 255,
+          "width": 618.953125,
+          "height": 280.59375,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "102.24px",
+          "fontWeight": "400",
+          "letterSpacing": "-4px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 1440,
+          "height": 79,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "04 / DEVELOPMENT & IMPACT\nProgress must\nbe proven.\nNot presumed.\n\nA programme can reach thousands and still leave its most important question unanswered: what changed because of it",
+          "x": 0,
+          "y": 143,
+          "width": 1440,
+          "height": 5222.640625,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "policy-governance",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Policy is a\npromise.\nGovernance\nis the proof.",
+          "x": 77.75,
+          "y": 255,
+          "width": 618.953125,
+          "height": 374.125,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "102.24px",
+          "fontWeight": "400",
+          "letterSpacing": "-4px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 1440,
+          "height": 79,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "05 / POLICY & GOVERNANCE\nPolicy is a\npromise.\nGovernance\nis the proof.\n\nA law can change while the experience of citizens and enterprises does not. We trace the distance between fo",
+          "x": 0,
+          "y": 143,
+          "width": 1440,
+          "height": 5372.046875,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    },
+    {
+      "name": "management-delivery",
+      "width": 1440,
+      "geometry": [
+        {
+          "selector": "header.head",
+          "text": "About\nWhy IP3\nApproach\nCapabilities\nSectors\nEngagements\nInsights\nPeople\nContact Us",
+          "x": 0,
+          "y": 14,
+          "width": 1440,
+          "height": 64,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": "h1",
+          "text": "Strategy sets\nthe direction.\nDelivery makes\nit real.",
+          "x": 77.75,
+          "y": 255,
+          "width": 618.953125,
+          "height": 374.125,
+          "fontFamily": "Fraunces, Georgia, \"Times New Roman\", serif",
+          "fontSize": "102.24px",
+          "fontWeight": "400",
+          "letterSpacing": "-4px",
+          "variations": "normal"
+        },
+        {
+          "selector": ".xp-model-toolbar",
+          "text": "← All analytical experiences\nIllustrative lab · synthetic assumptions\nEnable motion",
+          "x": 0,
+          "y": 64,
+          "width": 1440,
+          "height": 79,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "17px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        },
+        {
+          "selector": ".ip3-model",
+          "text": "06 / MANAGEMENT & DELIVERY\nStrategy sets\nthe direction.\nDelivery makes\nit real.\n\nA plan is not a result. We connect strategy to execution—clarifying ownership, aligning resources, ",
+          "x": 0,
+          "y": 143,
+          "width": 1440,
+          "height": 5500.15625,
+          "fontFamily": "Lato, system-ui, sans-serif",
+          "fontSize": "16px",
+          "fontWeight": "400",
+          "letterSpacing": "normal",
+          "variations": "normal"
+        }
+      ],
+      "fontRequests": [
+        "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,100..900,0..100,0..1;1,9..144,100..900,0..100,0..1&family=Lato:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap",
+        "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXg.woff2",
+        "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOk.woff2",
+        "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzA.woff2",
+        "https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ.woff2"
+      ],
+      "homeFlow": null
+    }
+  ],
+  "errors": [],
+  "interactionChecks": {
+    "desktopPointerTilt": {
+      "classPresent": true,
+      "rx": "1.20deg",
+      "transform": "matrix3d(0.99961, 0.000584747, -0.0279155, 3.10172e-05, 0, 0.999781, 0.0209424, -2.32694e-05, 0.0279216, -0.0209343, 0.999391, -0.00111043, 0, -6, 0, 1)"
+    },
+    "mobileDrawer": "open and Escape close pass",
+    "mobileSectorScroll": {
+      "left": 328,
+      "overflow": true
+    }
+  },
+  "motionControlBreakpoints": [
+    {
+      "width": 320,
+      "oneVisiblePause": true,
+      "targetWidth": 134,
+      "targetHeight": 48.125
+    },
+    {
+      "width": 390,
+      "oneVisiblePause": true,
+      "targetWidth": 165.953125,
+      "targetHeight": 48.125
+    },
+    {
+      "width": 820,
+      "oneVisiblePause": true,
+      "targetWidth": 175.109375,
+      "targetHeight": 57.890625
+    },
+    {
+      "width": 1040,
+      "oneVisiblePause": true,
+      "targetWidth": 225.703125,
+      "targetHeight": 57.890625
+    },
+    {
+      "width": 1041,
+      "oneVisiblePause": true,
+      "targetWidth": 50,
+      "targetHeight": 50
+    },
+    {
+      "width": 1440,
+      "oneVisiblePause": true,
+      "targetWidth": 50,
+      "targetHeight": 50
+    }
+  ],
+  "enlargedTextHero": {
+    "width": 320,
+    "textSize": "200%",
+    "ctaToControlsGap": 58.265625
+  },
+  "fontFallback": {
+    "expectedCDNFailure": true,
+    "localMirrors": [
+      "http://localhost:3123/assets/fonts/6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+      "http://localhost:3123/assets/fonts/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+      "http://localhost:3123/assets/fonts/6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+      "http://localhost:3123/assets/fonts/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2"
+    ],
+    "fonts": [
+      {
+        "spec": "400 20px Fraunces",
+        "ready": true
+      },
+      {
+        "spec": "italic 400 20px Fraunces",
+        "ready": true
+      },
+      {
+        "spec": "400 20px Lato",
+        "ready": true
+      },
+      {
+        "spec": "600 20px Montserrat",
+        "ready": true
+      }
+    ]
+  },
+  "passed": true
+}

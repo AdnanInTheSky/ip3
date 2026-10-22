@@ -1,0 +1,223 @@
+{
+  "scope": "Historical application-commit check attempt before the runner pin. It is not presented as a passing browser run. Final review-head status is available from PR checks.",
+  "applicationCommit": "1d7d8c585e11eb24529e21360f6d45d5779c0c6f",
+  "capturedAt": "2026-10-22T19:07:31.566Z",
+  "pr": {
+    "headRefOid": "1d7d8c585e11eb24529e21360f6d45d5779c0c6f",
+    "isDraft": true,
+    "statusCheckRollup": [
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-22T19:03:29Z",
+        "conclusion": "CANCELLED",
+        "detailsUrl": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811526/job/120016716741",
+        "name": "explorer",
+        "startedAt": "2026-10-22T18:43:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Interactive model browser checks"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-22T18:43:28Z",
+        "conclusion": "SKIPPED",
+        "detailsUrl": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833855243/job/120016873087",
+        "name": "smoke",
+        "startedAt": "2026-10-22T18:43:28Z",
+        "status": "COMPLETED",
+        "workflowName": "Production smoke check"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-22T18:43:38Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811392/job/120016716285",
+        "name": "check",
+        "startedAt": "2026-10-22T18:43:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Content check"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-22T18:47:28Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811333/job/120016716361",
+        "name": "lighthouse",
+        "startedAt": "2026-10-22T18:43:12Z",
+        "status": "COMPLETED",
+        "workflowName": "Lighthouse report"
+      },
+      {
+        "__typename": "StatusContext",
+        "context": "Vercel",
+        "startedAt": "2026-10-22T18:43:25Z",
+        "state": "SUCCESS",
+        "targetUrl": "https://vercel.com/ip-3/ip3-bd-org/HudAbpG82jEKuDcVQoj5TKjCTKof"
+      },
+      {
+        "__typename": "CheckRun",
+        "completedAt": "2026-10-22T18:43:26Z",
+        "conclusion": "SUCCESS",
+        "detailsUrl": "https://vercel.com/github",
+        "name": "Vercel Preview Comments",
+        "startedAt": "2026-10-22T18:43:26Z",
+        "status": "COMPLETED",
+        "workflowName": ""
+      }
+    ],
+    "url": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/30"
+  },
+  "browserAttempt": {
+    "conclusion": "cancelled",
+    "jobs": [
+      {
+        "completedAt": "2026-10-22T19:03:29Z",
+        "conclusion": "cancelled",
+        "databaseId": 120016716741,
+        "name": "explorer",
+        "startedAt": "2026-10-22T18:43:12Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-22T18:43:14Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-22T18:43:13Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T18:43:20Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-22T18:43:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T18:43:22Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-node@v4",
+            "number": 3,
+            "startedAt": "2026-10-22T18:43:20Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T18:43:24Z",
+            "conclusion": "success",
+            "name": "Run npm ci",
+            "number": 4,
+            "startedAt": "2026-10-22T18:43:22Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "cancelled",
+            "name": "Run npx playwright install --with-deps chromium firefox",
+            "number": 5,
+            "startedAt": "2026-10-22T18:43:24Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Run npm run build",
+            "number": 6,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Start the static preview",
+            "number": 7,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Run npm run test:explore:browser",
+            "number": 8,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Run node scripts/explore-edge-check.cjs",
+            "number": 9,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Run node scripts/explore-review-check.cjs",
+            "number": 10,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Run node scripts/explore-final-browser.cjs",
+            "number": 11,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Run node scripts/explore-scientific-proof.cjs",
+            "number": 12,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Verify models independently in Firefox",
+            "number": 13,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "success",
+            "name": "Preserve measured results and screenshots",
+            "number": 14,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "skipped",
+            "name": "Post Run actions/setup-node@v4",
+            "number": 27,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:26Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 28,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-22T19:03:27Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 29,
+            "startedAt": "2026-10-22T19:03:26Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811526/job/120016716741"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811526"
+  }
+}

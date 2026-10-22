@@ -1,0 +1,126 @@
+{
+  "unchanged": true,
+  "files": [
+    {
+      "name": "assets/css/explorer.css",
+      "sha256": "8a17a84688103984085548a21f1060b9dd44efa0daa25baf007f0d20015a8dba"
+    },
+    {
+      "name": "assets/css/model.css",
+      "sha256": "34309eac112306f677337d92d8e10a54e0434dd9b70e0a5b5b0001e97822e753"
+    },
+    {
+      "name": "assets/css/models/development-impact.css",
+      "sha256": "da74b2d888bb213d073f11ffdd59659b8c3c26e58ffa250241e20af8e8c632d0"
+    },
+    {
+      "name": "assets/css/models/economics-trade.css",
+      "sha256": "b9bde2f05d080793225adcb2631e6a3904c95465fbe5e4adfdd83c6891c408e4"
+    },
+    {
+      "name": "assets/css/models/finance-investment.css",
+      "sha256": "5b6a56b5438600b4e6f2968df22a73f70c1d68e908a8b18c725cd99ec26dc19f"
+    },
+    {
+      "name": "assets/css/models/management-delivery.css",
+      "sha256": "c3191e175964847e9fe04c8acac05a9aff6479b33d00c9fa054df581bb9f143c"
+    },
+    {
+      "name": "assets/css/models/market-enterprise.css",
+      "sha256": "759ca94cc451e9594f4876891151967ad6e4f9841f310e2d1a01855407243187"
+    },
+    {
+      "name": "assets/css/models/policy-governance.css",
+      "sha256": "aa22cc7d8ab8452ec9827439a92288e4e5ceb72fc97d7d3a292a3d4c654a3892"
+    },
+    {
+      "name": "assets/css/site-analytical-98963d3c.css",
+      "sha256": "fa50aa40310d0de201c5e1c27aac58f0b38f75964fc5ad5b6b34dfc6eae762da"
+    },
+    {
+      "name": "assets/css/site-explore-be8c280d.css",
+      "sha256": "1776b4947d8536d40798bbb741b44b08b43edde16fd3e4d48b58464a489fa133"
+    },
+    {
+      "name": "assets/js/explorer.js",
+      "sha256": "7bd13d2413a37d8aae90a1cde37d31b045d8736f4f528284d38c6d3b96b80056"
+    },
+    {
+      "name": "assets/js/model-math.js",
+      "sha256": "056a8d2f21b996930d5f547fdab3d63910d88623dbda74ff3926c120dd65b666"
+    },
+    {
+      "name": "assets/js/model.js",
+      "sha256": "25fff25998ab33382eeb8ba5538f898954d8b596c5abefcebb7a8596f10f4b0e"
+    },
+    {
+      "name": "assets/js/models/development-impact.js",
+      "sha256": "67e97ac70f51affd53f504f70d05035bf1e948f0a05d365e6f55c42ad0a6423d"
+    },
+    {
+      "name": "assets/js/models/economics-trade.js",
+      "sha256": "faf046f4cd7ccf85005c209fd9d307f470a8ca02b14049df179cb23ab70ae0be"
+    },
+    {
+      "name": "assets/js/models/finance-investment.js",
+      "sha256": "cd80bd96ee25f2a315066e22f1ee9d38c9927b31b083c5c7d117d9204b5d1e92"
+    },
+    {
+      "name": "assets/js/models/management-delivery.js",
+      "sha256": "f8011987d72edd22f9143f5462171550c961f7acf837fbfe789333a8c5104f48"
+    },
+    {
+      "name": "assets/js/models/market-enterprise.js",
+      "sha256": "1dedb837d6b167bf121499ff8789c29d0e14a3476d22cf2561a06726edaf59c9"
+    },
+    {
+      "name": "assets/js/models/policy-governance.js",
+      "sha256": "3fcbfe648eb621ba598ade1ee2f730452533b7a559689d6b92833329bb6b4223"
+    },
+    {
+      "name": "assets/js/site.js",
+      "sha256": "c81527bff66ec1718422961d66a340fe3f0b5b99213e1891f728207b8b0aa748"
+    },
+    {
+      "name": "assets/vendor/ScrollTrigger.min.js",
+      "sha256": "ad33c2df9ada8a663c2147357828f980d0b7ca731ef33eb3c6e4f327c3b2cda5"
+    },
+    {
+      "name": "assets/vendor/gsap.min.js",
+      "sha256": "28033e449a31ebcc396e5be8b13b63152bf03094288fb5867034321927bce087"
+    },
+    {
+      "name": "assets/vendor/lenis.min.js",
+      "sha256": "b2958f142f832f0d5e547cdef77e6fadfce16bea60982fc8bbf50395a2439df8"
+    },
+    {
+      "name": "explore.html",
+      "sha256": "699012f41f685aa193f0233a318464bcc8e4ad1c13b0d321d8d7948c5c16afd1"
+    },
+    {
+      "name": "explore/development-impact.html",
+      "sha256": "cae81963ac9437abc9bb3460587e9ec6bdf9f3c5d947a27043fc97ea03b0112d"
+    },
+    {
+      "name": "explore/economics-trade.html",
+      "sha256": "e918cc6945a885ee2c8f76f876272b1208a75f307fdba6dfc619678367923f84"
+    },
+    {
+      "name": "explore/finance-investment.html",
+      "sha256": "0cd2bd8c983ce23501b1958a499388d3ff7fbed2bca3ee17d01a9fce51eb657a"
+    },
+    {
+      "name": "explore/management-delivery.html",
+      "sha256": "ba98507a232962444a23addda133b5cb201a1d48fee901d04d055bee99163c39"
+    },
+    {
+      "name": "explore/market-enterprise.html",
+      "sha256": "b4b5b9fa40cf26a33361aa627e39abc71eab66b2b86963a51e67b3694681d894"
+    },
+    {
+      "name": "explore/policy-governance.html",
+      "sha256": "f4e6bec25e8301dc508668deb82640a2c1a4e8e1c4421fe5bfb9c964d96972c6"
+    }
+  ],
+  "note": "Home-only preload priority changes; all seven Explore HTML pages and 23 referenced local CSS/JS assets are byte-identical to their measured build."
+}

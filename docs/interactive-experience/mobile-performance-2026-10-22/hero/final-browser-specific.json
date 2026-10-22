@@ -1,0 +1,57 @@
+{
+  "browser": "156.0.8078.4",
+  "errors": [],
+  "checks": [
+    {
+      "heroVideo": "starts after initial copy reveal",
+      "firstMediaDelay": 1798.9000000059605
+    },
+    {
+      "pause": "stops slides, video and CSS motion for more than one slide interval"
+    },
+    {
+      "resume": "automatic advance verified"
+    },
+    {
+      "originalSlides": 5,
+      "manualSelection": "all configured visible slides retained"
+    },
+    {
+      "dynamicReducedMotion": "pauses all hero videos and disables autoplay control"
+    },
+    {
+      "initialReducedMotion": "poster-only, including sixth slide; no MP4 source attached"
+    },
+    {
+      "model": "economics-trade",
+      "privacy": "No POST or local/session storage on control/reset; local downloads covered separately",
+      "bounds": "finite"
+    },
+    {
+      "model": "finance-investment",
+      "privacy": "No POST or local/session storage on control/reset; local downloads covered separately",
+      "bounds": "finite"
+    },
+    {
+      "model": "market-enterprise",
+      "privacy": "No POST or local/session storage on control/reset; local downloads covered separately",
+      "bounds": "finite"
+    },
+    {
+      "model": "development-impact",
+      "privacy": "No POST or local/session storage on control/reset; local downloads covered separately",
+      "bounds": "finite"
+    },
+    {
+      "model": "policy-governance",
+      "privacy": "No POST or local/session storage on control/reset; local downloads covered separately",
+      "bounds": "finite"
+    },
+    {
+      "model": "management-delivery",
+      "privacy": "No POST or local/session storage on control/reset; local downloads covered separately",
+      "bounds": "finite"
+    }
+  ],
+  "passed": true
+}

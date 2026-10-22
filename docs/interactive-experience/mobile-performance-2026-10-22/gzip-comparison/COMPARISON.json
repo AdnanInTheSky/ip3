@@ -1,0 +1,1135 @@
+{
+  "scope": "Paired local Lighthouse lab comparison: Home uses embedded pinned declarations/optimized font CDN with local mirrors; Explore retains baseline font delivery. Both sides use the same declared transport, simulated throttling, Chromium and Lighthouse. No field INP or authenticated deployment acceptance.",
+  "transport": "gzip negotiated for both baseline and after",
+  "build": {
+    "commit": "4cb540855e53841427931ef96c1fb6df18d481cd",
+    "vercelGitCommitSha": null,
+    "builtAt": "2026-10-22T18:37:44.199Z",
+    "contentHash": "5879a582c73d68d38840ed8c461a00db14a21d225d9eff8d08879a7080b3add4",
+    "sourceHash": "a173d8c09dcd0d4b1ac308a89878cc096c3db9466f16f8e3baf591f930616a73",
+    "sourceDirty": true,
+    "reproducibleClock": false,
+    "pageCount": 33,
+    "sitemapUrlCount": 32,
+    "articleSlugs": [
+      "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+      "unlocking-inclusive-green-finance-in-bangladesh-a-multi-criteria-innovation-approach-for-product-design",
+      "enhancing-environmental-compliance-and-performance-in-bangladesh",
+      "from-donor-dependent-projects-to-sustainable-urban-finance"
+    ],
+    "preparationArticleSlugs": [],
+    "articlePreservationComplete": false,
+    "excludedFromSitemap": [
+      {
+        "route": "/404",
+        "reason": "Custom error document; not an indexable content page."
+      }
+    ],
+    "validated": true
+  },
+  "baselineIdentity": {
+    "commit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+    "build": {
+      "commit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+      "vercelGitCommitSha": null,
+      "builtAt": "2026-10-22T16:41:39.395Z",
+      "contentHash": "5879a582c73d68d38840ed8c461a00db14a21d225d9eff8d08879a7080b3add4",
+      "sourceHash": "a857ee9b0ae3bc8e5088b86ab903edf791d6d9962791969d13a9f58068135810",
+      "sourceDirty": false,
+      "reproducibleClock": false,
+      "pageCount": 33,
+      "sitemapUrlCount": 32,
+      "articleSlugs": [
+        "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+        "unlocking-inclusive-green-finance-in-bangladesh-a-multi-criteria-innovation-approach-for-product-design",
+        "enhancing-environmental-compliance-and-performance-in-bangladesh",
+        "from-donor-dependent-projects-to-sustainable-urban-finance"
+      ],
+      "preparationArticleSlugs": [],
+      "articlePreservationComplete": false,
+      "excludedFromSitemap": [
+        {
+          "route": "/404",
+          "reason": "Custom error document; not an indexable content page."
+        }
+      ],
+      "validated": true
+    }
+  },
+  "comparisons": [
+    {
+      "name": "home",
+      "form": "mobile",
+      "baseline": {
+        "runs": 3,
+        "LCP": {
+          "median": 5453.3265,
+          "min": 5391.80415,
+          "max": 5461.5637
+        },
+        "FCP": {
+          "median": 1590.0414999999998,
+          "min": 1586.7410999999997,
+          "max": 1673.8430000000003
+        },
+        "TBT": {
+          "median": 300,
+          "min": 269.0000000000002,
+          "max": 397
+        },
+        "CLS": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "performance": {
+          "median": 0.73,
+          "min": 0.68,
+          "max": 0.74
+        },
+        "accessibility": {
+          "median": 0.95,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "bytes": {
+          "median": 2728482,
+          "min": 2728481,
+          "max": 2729449
+        },
+        "mainThread": {
+          "median": 4291.636000000069,
+          "min": 4049.948000000086,
+          "max": 4873.91600000008
+        }
+      },
+      "after": {
+        "runs": 3,
+        "LCP": {
+          "median": 4636.3305,
+          "min": 4628.521100000002,
+          "max": 4729.461000000004
+        },
+        "FCP": {
+          "median": 2098.964,
+          "min": 2003.607,
+          "max": 2103.1621000000005
+        },
+        "TBT": {
+          "median": 208,
+          "min": 200.07380000000012,
+          "max": 306
+        },
+        "CLS": {
+          "median": 0,
+          "min": 0,
+          "max": 0.005990704356763309
+        },
+        "performance": {
+          "median": 0.78,
+          "min": 0.74,
+          "max": 0.79
+        },
+        "accessibility": {
+          "median": 0.97,
+          "min": 0.97,
+          "max": 0.97
+        },
+        "bytes": {
+          "median": 2599133,
+          "min": 2599132,
+          "max": 2599729
+        },
+        "mainThread": {
+          "median": 3785.960000000092,
+          "min": 3463.8160000000526,
+          "max": 6110.719999999859
+        }
+      },
+      "LCPChangePercent": -14.981608014851123
+    },
+    {
+      "name": "hub",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1663.1554,
+          "min": 1663.1554,
+          "max": 1663.1554
+        },
+        "FCP": {
+          "median": 1432.0294000000001,
+          "min": 1432.0294000000001,
+          "max": 1432.0294000000001
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.01436620376137426,
+          "min": 0.01436620376137426,
+          "max": 0.01436620376137426
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 428491,
+          "min": 428491,
+          "max": 428491
+        },
+        "mainThread": {
+          "median": 1163.3360000000005,
+          "min": 1163.3360000000005,
+          "max": 1163.3360000000005
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1589.2194499999996,
+          "min": 1589.2194499999996,
+          "max": 1589.2194499999996
+        },
+        "FCP": {
+          "median": 1490.5814999999998,
+          "min": 1490.5814999999998,
+          "max": 1490.5814999999998
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0151949353162788,
+          "min": 0.0151949353162788,
+          "max": 0.0151949353162788
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 411579,
+          "min": 411579,
+          "max": 411579
+        },
+        "mainThread": {
+          "median": 1037.168000000002,
+          "min": 1037.168000000002,
+          "max": 1037.168000000002
+        }
+      },
+      "LCPChangePercent": -4.445522649296663
+    },
+    {
+      "name": "economics-trade",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1904.6747500000001,
+          "min": 1904.6747500000001,
+          "max": 1904.6747500000001
+        },
+        "FCP": {
+          "median": 1598.1961000000001,
+          "min": 1598.1961000000001,
+          "max": 1598.1961000000001
+        },
+        "TBT": {
+          "median": 20.500000000000114,
+          "min": 20.500000000000114,
+          "max": 20.500000000000114
+        },
+        "CLS": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 474579,
+          "min": 474579,
+          "max": 474579
+        },
+        "mainThread": {
+          "median": 2750.7799999999734,
+          "min": 2750.7799999999734,
+          "max": 2750.7799999999734
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1582.8292,
+          "min": 1582.8292,
+          "max": 1582.8292
+        },
+        "FCP": {
+          "median": 1582.8292,
+          "min": 1582.8292,
+          "max": 1582.8292
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.003183717552821379,
+          "min": 0.003183717552821379,
+          "max": 0.003183717552821379
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 406805,
+          "min": 406805,
+          "max": 406805
+        },
+        "mainThread": {
+          "median": 2195.9200000000055,
+          "min": 2195.9200000000055,
+          "max": 2195.9200000000055
+        }
+      },
+      "LCPChangePercent": -16.897664548763526
+    },
+    {
+      "name": "finance-investment",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1889.63965,
+          "min": 1889.63965,
+          "max": 1889.63965
+        },
+        "FCP": {
+          "median": 1578.3347,
+          "min": 1578.3347,
+          "max": 1578.3347
+        },
+        "TBT": {
+          "median": 1.5,
+          "min": 1.5,
+          "max": 1.5
+        },
+        "CLS": {
+          "median": 0.000237721999571217,
+          "min": 0.000237721999571217,
+          "max": 0.000237721999571217
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 473004,
+          "min": 473004,
+          "max": 473004
+        },
+        "mainThread": {
+          "median": 2242.668000000006,
+          "min": 2242.668000000006,
+          "max": 2242.668000000006
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1578.2528000000002,
+          "min": 1578.2528000000002,
+          "max": 1578.2528000000002
+        },
+        "FCP": {
+          "median": 1578.2528000000002,
+          "min": 1578.2528000000002,
+          "max": 1578.2528000000002
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0017320894311417725,
+          "min": 0.0017320894311417725,
+          "max": 0.0017320894311417725
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 405230,
+          "min": 405230,
+          "max": 405230
+        },
+        "mainThread": {
+          "median": 2286.416000000013,
+          "min": 2286.416000000013,
+          "max": 2286.416000000013
+        }
+      },
+      "LCPChangePercent": -16.478636548508064
+    },
+    {
+      "name": "market-enterprise",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1887.036,
+          "min": 1887.036,
+          "max": 1887.036
+        },
+        "FCP": {
+          "median": 1578.2466,
+          "min": 1578.2466,
+          "max": 1578.2466
+        },
+        "TBT": {
+          "median": 23,
+          "min": 23,
+          "max": 23
+        },
+        "CLS": {
+          "median": 0.00003811686457687518,
+          "min": 0.00003811686457687518,
+          "max": 0.00003811686457687518
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 473668,
+          "min": 473668,
+          "max": 473668
+        },
+        "mainThread": {
+          "median": 2754.240000000017,
+          "min": 2754.240000000017,
+          "max": 2754.240000000017
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1575.6916,
+          "min": 1575.6916,
+          "max": 1575.6916
+        },
+        "FCP": {
+          "median": 1575.6916,
+          "min": 1575.6916,
+          "max": 1575.6916
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0035362893675295434,
+          "min": 0.0035362893675295434,
+          "max": 0.0035362893675295434
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 405890,
+          "min": 405890,
+          "max": 405890
+        },
+        "mainThread": {
+          "median": 2107.5800000000067,
+          "min": 2107.5800000000067,
+          "max": 2107.5800000000067
+        }
+      },
+      "LCPChangePercent": -16.4991234931395
+    },
+    {
+      "name": "development-impact",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1888.58835,
+          "min": 1888.58835,
+          "max": 1888.58835
+        },
+        "FCP": {
+          "median": 1584.5965000000003,
+          "min": 1584.5965000000003,
+          "max": 1584.5965000000003
+        },
+        "TBT": {
+          "median": 10,
+          "min": 10,
+          "max": 10
+        },
+        "CLS": {
+          "median": 0.003386357490355428,
+          "min": 0.003386357490355428,
+          "max": 0.003386357490355428
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 472995,
+          "min": 472995,
+          "max": 472995
+        },
+        "mainThread": {
+          "median": 2286.1239999999966,
+          "min": 2286.1239999999966,
+          "max": 2286.1239999999966
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1575.2138000000002,
+          "min": 1575.2138000000002,
+          "max": 1575.2138000000002
+        },
+        "FCP": {
+          "median": 1575.2138000000002,
+          "min": 1575.2138000000002,
+          "max": 1575.2138000000002
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0016078140963662708,
+          "min": 0.0016078140963662708,
+          "max": 0.0016078140963662708
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 405216,
+          "min": 405216,
+          "max": 405216
+        },
+        "mainThread": {
+          "median": 2046.936000000002,
+          "min": 2046.936000000002,
+          "max": 2046.936000000002
+        }
+      },
+      "LCPChangePercent": -16.59305745479155
+    },
+    {
+      "name": "policy-governance",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1889.1154999999999,
+          "min": 1889.1154999999999,
+          "max": 1889.1154999999999
+        },
+        "FCP": {
+          "median": 1573.9275000000002,
+          "min": 1573.9275000000002,
+          "max": 1573.9275000000002
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.001522456530496495,
+          "min": 0.001522456530496495,
+          "max": 0.001522456530496495
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 473372,
+          "min": 473372,
+          "max": 473372
+        },
+        "mainThread": {
+          "median": 1977.3120000000029,
+          "min": 1977.3120000000029,
+          "max": 1977.3120000000029
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1585.5074,
+          "min": 1585.5074,
+          "max": 1585.5074
+        },
+        "FCP": {
+          "median": 1585.5074,
+          "min": 1585.5074,
+          "max": 1585.5074
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0015397749667751919,
+          "min": 0.0015397749667751919,
+          "max": 0.0015397749667751919
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 405623,
+          "min": 405623,
+          "max": 405623
+        },
+        "mainThread": {
+          "median": 2226.0120000000056,
+          "min": 2226.0120000000056,
+          "max": 2226.0120000000056
+        }
+      },
+      "LCPChangePercent": -16.071441899661508
+    },
+    {
+      "name": "management-delivery",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1888.4509999999998,
+          "min": 1888.4509999999998,
+          "max": 1888.4509999999998
+        },
+        "FCP": {
+          "median": 1580.4795,
+          "min": 1580.4795,
+          "max": 1580.4795
+        },
+        "TBT": {
+          "median": 10.5,
+          "min": 10.5,
+          "max": 10.5
+        },
+        "CLS": {
+          "median": 0.001916873132755164,
+          "min": 0.001916873132755164,
+          "max": 0.001916873132755164
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 475331,
+          "min": 475331,
+          "max": 475331
+        },
+        "mainThread": {
+          "median": 1989.892000000004,
+          "min": 1989.892000000004,
+          "max": 1989.892000000004
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 1571.9694000000004,
+          "min": 1571.9694000000004,
+          "max": 1571.9694000000004
+        },
+        "FCP": {
+          "median": 1571.9694000000004,
+          "min": 1571.9694000000004,
+          "max": 1571.9694000000004
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.004219468486883668,
+          "min": 0.004219468486883668,
+          "max": 0.004219468486883668
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 407561,
+          "min": 407561,
+          "max": 407561
+        },
+        "mainThread": {
+          "median": 2105.8240000000037,
+          "min": 2105.8240000000037,
+          "max": 2105.8240000000037
+        }
+      },
+      "LCPChangePercent": -16.758793317909728
+    }
+  ],
+  "diagnostics": [
+    {
+      "form": "mobile",
+      "lighthouseVersion": "13.4.1",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility"
+        ],
+        "skipAudits": null
+      },
+      "beforeFonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOkuy91B.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1471.765999995172,
+          "networkRequestTime": 1628.179999999702,
+          "networkEndTime": 1848.8749999925494,
+          "finished": true,
+          "transferSize": 121395,
+          "resourceSize": 120800,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1474.9009999930859,
+          "networkRequestTime": 1632.680999994278,
+          "networkEndTime": 1855.957999996841,
+          "finished": true,
+          "transferSize": 14098,
+          "resourceSize": 13980,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1483.1660000011325,
+          "networkRequestTime": 1632.7709999978542,
+          "networkEndTime": 1882.4499999955297,
+          "finished": true,
+          "transferSize": 35644,
+          "resourceSize": 35508,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzP9Ddt0.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1502.5609999969602,
+          "networkRequestTime": 1632.8469999954104,
+          "networkEndTime": 1892.2990000024438,
+          "finished": true,
+          "transferSize": 149712,
+          "resourceSize": 149512,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        }
+      ],
+      "afterFonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 44.001999996602535,
+          "networkRequestTime": 44.51699999719858,
+          "networkEndTime": 3256.494999997318,
+          "finished": true,
+          "transferSize": 14513,
+          "resourceSize": 13980,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 44.239000000059605,
+          "networkRequestTime": 44.65500000119209,
+          "networkEndTime": 3355.0419999957085,
+          "finished": true,
+          "transferSize": 67622,
+          "resourceSize": 67468,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 44.28399999439716,
+          "networkRequestTime": 44.725000001490116,
+          "networkEndTime": 3358.603999994695,
+          "finished": true,
+          "transferSize": 81925,
+          "resourceSize": 81800,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 44.3289999961853,
+          "networkRequestTime": 44.81300000101328,
+          "networkEndTime": 3353.057000003755,
+          "finished": true,
+          "transferSize": 35644,
+          "resourceSize": 35508,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        }
+      ],
+      "lcpBreakdown": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "label",
+                "valueType": "text",
+                "label": "Subpart"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "label": "Time to first byte",
+                "duration": 33.965
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "label": "Element render delay",
+                "duration": 3520.244
+              }
+            ]
+          },
+          {
+            "type": "node",
+            "lhId": "page-6-P",
+            "path": "1,HTML,1,BODY,4,MAIN,0,SECTION,3,DIV,0,DIV,0,DIV,2,P",
+            "selector": "div.container > div.hero__copy > div.hero__text > p.lead",
+            "boundingRect": {
+              "top": 343,
+              "bottom": 499,
+              "left": 22,
+              "right": 390,
+              "width": 368,
+              "height": 155
+            },
+            "snippet": "<p class=\"lead\" style=\"translate: none; rotate: none; scale: none;\">",
+            "nodeLabel": "div.container > div.hero__copy > div.hero__text > p.lead"
+          }
+        ]
+      },
+      "renderBlocking": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedMs",
+            "valueType": "timespanMs",
+            "label": "Duration"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://localhost:3124/assets/css/explorer.css?v=8a17a8468810",
+            "totalBytes": 1838,
+            "wastedMs": 305
+          },
+          {
+            "url": "http://localhost:3124/assets/css/site-home-c7b61e26.css?v=c7b61e26",
+            "totalBytes": 15727,
+            "wastedMs": 455
+          }
+        ]
+      }
+    }
+  ],
+  "sourceFiles": [
+    {
+      "filename": "build/build-all.js",
+      "bytes": 10173,
+      "sha256": "95225c5214ba0fd7ecab1594dcc6e3250e2456c4770732aaa9bdd9fb23bdd342"
+    },
+    {
+      "filename": "build/page-css.cjs",
+      "bytes": 1601,
+      "sha256": "5d83c5692d9954a6ade17fc50979b68157c1f08deeba5b28d02e8c4ce958b312"
+    },
+    {
+      "filename": "build/http-compression.cjs",
+      "bytes": 1172,
+      "sha256": "3927bf0bd7a2e2a1e62e610b88b1a916ddbcce34cc56b752c2ecccb1f2ff9f97"
+    },
+    {
+      "filename": "src/layout.js",
+      "bytes": 13328,
+      "sha256": "7c768be06378bf27d4539305fafe71d8d05357953e074911013cc785b5691fbf"
+    },
+    {
+      "filename": "src/pages-home.js",
+      "bytes": 13270,
+      "sha256": "1dd28c5fad8d708adbae2400df557ead5b7ae6ee876d6fc5a099178a51f70295"
+    },
+    {
+      "filename": "src/fonts.js",
+      "bytes": 1957,
+      "sha256": "c5940b476e80d1ceb824bfd588fcd1e0e1b6a7d1d92c272113a02935c3113d30"
+    },
+    {
+      "filename": "src/theme-fonts.json",
+      "bytes": 7223,
+      "sha256": "2bf404892666fbca04206e39c24d166b9702c81b16262c259292fbe08bb29e4e"
+    },
+    {
+      "filename": "src/js/site.js",
+      "bytes": 58318,
+      "sha256": "79803519efa641660b1702349eb11d5496cd9f068a1e3554e614f786f9dc3859"
+    },
+    {
+      "filename": "src/css/site.css",
+      "bytes": 122076,
+      "sha256": "0e6c0cf2edce6a0d41fb42bef95d10d6e656af898b361084913887bd2daccf2b"
+    },
+    {
+      "filename": "assets/fonts/theme.css",
+      "bytes": 11869,
+      "sha256": "f40134ccb817a4eb317a827e13c993f42ab73dcb61377ff51f304010bad3f056"
+    }
+  ]
+}

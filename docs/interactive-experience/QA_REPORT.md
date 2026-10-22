@@ -1,5 +1,7 @@
 # IP3 native interactive experience — QA record
 
+> Mobile follow-up: [23 October performance, responsive fixes and remaining budget](mobile-performance-2026-10-22/MOBILE_PERFORMANCE_REVIEW.md). The original reports below remain historical evidence.
+
 > Final scientific and acceptance reassessment: [latest final review](review-2026-10-22/FINAL_ACCEPTANCE_REVIEW.md). The earlier results below are historical; the final review records reopened findings, fresh engine checks and remaining NO-GO gates.
 
 ## Current review addendum — 22 October 2026

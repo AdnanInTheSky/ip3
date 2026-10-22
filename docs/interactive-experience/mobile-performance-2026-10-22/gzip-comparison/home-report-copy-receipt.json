@@ -1,0 +1,23 @@
+{
+  "copies": [
+    {
+      "source": "lh-priority-home-mobile-home-1.json",
+      "target": "lh-after-mobile-home-1.json",
+      "sha256": "2c73def645d6a9ca9a3589d64fbf065edf4dc25e33ba424ea3e4765d6fb131a0",
+      "byteEqualityVerified": true
+    },
+    {
+      "source": "lh-priority-home-mobile-home-2.json",
+      "target": "lh-after-mobile-home-2.json",
+      "sha256": "fdd71a1d70e018ff8947a4a866481f9c9f85e4a200a454f5e8b1c17b10675fe6",
+      "byteEqualityVerified": true
+    },
+    {
+      "source": "lh-priority-home-mobile-home-3.json",
+      "target": "lh-after-mobile-home-3.json",
+      "sha256": "a867229ca4abf44a2ee1c4e066f46ea054844e8366d0defc58367a18516260c7",
+      "byteEqualityVerified": true
+    }
+  ],
+  "meaning": "Byte-identical copies under canonical filenames, not rewritten Lighthouse results or additional measurements"
+}

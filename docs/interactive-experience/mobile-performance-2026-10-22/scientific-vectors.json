@@ -1,0 +1,1169 @@
+{
+  "meaning": "Synthetic implementation vectors independently reproduced; no empirical calibration, confidence interval or external domain approval implied",
+  "count": 46,
+  "rows": [
+    {
+      "model": "economics-trade",
+      "inputs": {
+        "tariff": 0,
+        "fx": 0,
+        "elasticity": 1.5
+      },
+      "actual": {
+        "producer": 1,
+        "buyer": 1,
+        "qty": 1,
+        "usd": 1,
+        "local": 1
+      },
+      "independentExpected": {
+        "producer": 1,
+        "buyer": 1,
+        "qty": 1,
+        "usd": 1,
+        "local": 1
+      },
+      "passed": true
+    },
+    {
+      "model": "economics-trade",
+      "inputs": {
+        "tariff": 0.12,
+        "fx": 0.08,
+        "elasticity": 1.5
+      },
+      "actual": {
+        "producer": 0.9555555555555556,
+        "buyer": 1.0702222222222224,
+        "qty": 0.903210657191822,
+        "usd": 0.86306796131663,
+        "local": 0.9321133982219605
+      },
+      "independentExpected": {
+        "producer": 0.9555555555555555,
+        "buyer": 1.0702222222222222,
+        "qty": 0.9032106571918223,
+        "usd": 0.8630679613166301,
+        "local": 0.9321133982219606
+      },
+      "passed": true
+    },
+    {
+      "model": "economics-trade",
+      "inputs": {
+        "tariff": 0.3,
+        "fx": -0.15,
+        "elasticity": 3
+      },
+      "actual": {
+        "producer": 1.1058823529411765,
+        "buyer": 1.4376470588235295,
+        "qty": 0.3365450129663141,
+        "usd": 0.3721791908098062,
+        "local": 0.31635231218833526
+      },
+      "independentExpected": {
+        "producer": 1.1058823529411765,
+        "buyer": 1.4376470588235295,
+        "qty": 0.3365450129663141,
+        "usd": 0.3721791908098062,
+        "local": 0.31635231218833526
+      },
+      "passed": true
+    },
+    {
+      "model": "economics-trade",
+      "inputs": {
+        "tariff": 0,
+        "fx": 0.25,
+        "elasticity": 3
+      },
+      "actual": {
+        "producer": 0.88,
+        "buyer": 0.88,
+        "qty": 1.467411720510894,
+        "usd": 1.2913223140495869,
+        "local": 1.6141528925619837
+      },
+      "independentExpected": {
+        "producer": 0.8800000000000001,
+        "buyer": 0.8800000000000001,
+        "qty": 1.4674117205108934,
+        "usd": 1.2913223140495864,
+        "local": 1.614152892561983
+      },
+      "passed": true
+    },
+    {
+      "model": "economics-trade",
+      "inputs": {
+        "tariff": 0.3,
+        "fx": 0.25,
+        "elasticity": 0.5
+      },
+      "actual": {
+        "producer": 0.88,
+        "buyer": 1.1440000000000001,
+        "qty": 0.9349469900084572,
+        "usd": 0.8227533512074423,
+        "local": 1.0284416890093029
+      },
+      "independentExpected": {
+        "producer": 0.8800000000000001,
+        "buyer": 1.1440000000000001,
+        "qty": 0.9349469900084572,
+        "usd": 0.8227533512074424,
+        "local": 1.028441689009303
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "resilience",
+        "context": "public",
+        "rate": 0.08,
+        "stress": 0,
+        "capex": 65,
+        "benefit": 14.2,
+        "opex": 2.3,
+        "years": 18
+      },
+      "actual": {
+        "npv": 46.525456918981284,
+        "year0": -65,
+        "annual": 11.899999999999999,
+        "irr": 0.17266581842178852,
+        "irrResidual": -4.263256414560601e-14
+      },
+      "independentExpected": {
+        "npv": 46.52545691898136,
+        "year0": -65,
+        "annual": 11.899999999999999
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "resilience",
+        "context": "public",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 65,
+        "benefit": 14.2,
+        "opex": 2.3,
+        "years": 18
+      },
+      "actual": {
+        "npv": 7.917550574370198,
+        "year0": -65,
+        "annual": 5.76,
+        "irr": 0.05455249950330321,
+        "irrResidual": 8.526512829121202e-14
+      },
+      "independentExpected": {
+        "npv": 7.917550574370253,
+        "year0": -65,
+        "annual": 5.76
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "resilience",
+        "context": "public",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 65,
+        "benefit": 14.2,
+        "opex": 2.3,
+        "years": 18
+      },
+      "actual": {
+        "npv": -27.747658122290762,
+        "year0": -65,
+        "annual": 5.76,
+        "irr": 0.05455249950330321,
+        "irrResidual": 8.526512829121202e-14
+      },
+      "independentExpected": {
+        "npv": -27.747658122290737,
+        "year0": -65,
+        "annual": 5.76
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "resilience",
+        "context": "private",
+        "rate": 0.1,
+        "stress": 0,
+        "capex": 25,
+        "benefit": 7.1,
+        "opex": 1.4,
+        "years": 10
+      },
+      "actual": {
+        "npv": 10.024032502516672,
+        "year0": -25,
+        "annual": 5.699999999999999,
+        "irr": 0.18690698740003386,
+        "irrResidual": 3.552713678800501e-15
+      },
+      "independentExpected": {
+        "npv": 10.024032502516704,
+        "year0": -25,
+        "annual": 5.699999999999999
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "resilience",
+        "context": "private",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 25,
+        "benefit": 7.1,
+        "opex": 1.4,
+        "years": 10
+      },
+      "actual": {
+        "npv": -4.07388888926403,
+        "year0": -25,
+        "annual": 2.58,
+        "irr": 0.005768416059060866,
+        "irrResidual": -5.009326287108706e-13
+      },
+      "independentExpected": {
+        "npv": -4.073888889264012,
+        "year0": -25,
+        "annual": 2.58
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "resilience",
+        "context": "private",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 25,
+        "benefit": 7.1,
+        "opex": 1.4,
+        "years": 10
+      },
+      "actual": {
+        "npv": -11.542421632562567,
+        "year0": -25,
+        "annual": 2.58,
+        "irr": 0.005768416059060866,
+        "irrResidual": -5.009326287108706e-13
+      },
+      "independentExpected": {
+        "npv": -11.542421632562558,
+        "year0": -25,
+        "annual": 2.58
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "human",
+        "context": "public",
+        "rate": 0.08,
+        "stress": 0,
+        "capex": 90,
+        "benefit": 13.4,
+        "opex": 2.3,
+        "years": 20
+      },
+      "actual": {
+        "npv": 18.981436222687076,
+        "year0": -90,
+        "annual": 11.100000000000001,
+        "irr": 0.10726092336749515,
+        "irrResidual": -2.842170943040401e-14
+      },
+      "independentExpected": {
+        "npv": 18.981436222687194,
+        "year0": -90,
+        "annual": 11.100000000000001
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "human",
+        "context": "public",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 90,
+        "benefit": 13.4,
+        "opex": 2.3,
+        "years": 20
+      },
+      "actual": {
+        "npv": -18.24307689857064,
+        "year0": -90,
+        "annual": 5.279999999999999,
+        "irr": 0.015731603068518285,
+        "irrResidual": 4.973799150320701e-13
+      },
+      "independentExpected": {
+        "npv": -18.24307689857058,
+        "year0": -90,
+        "annual": 5.279999999999999
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "human",
+        "context": "public",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 90,
+        "benefit": 13.4,
+        "opex": 2.3,
+        "years": 20
+      },
+      "actual": {
+        "npv": -55.02987068746783,
+        "year0": -90,
+        "annual": 5.279999999999999,
+        "irr": 0.015731603068518285,
+        "irrResidual": 4.973799150320701e-13
+      },
+      "independentExpected": {
+        "npv": -55.02987068746782,
+        "year0": -90,
+        "annual": 5.279999999999999
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "human",
+        "context": "private",
+        "rate": 0.1,
+        "stress": 0,
+        "capex": 8,
+        "benefit": 2.5,
+        "opex": 0.8,
+        "years": 8
+      },
+      "actual": {
+        "npv": 1.0693745364345288,
+        "year0": -8,
+        "annual": 1.7,
+        "irr": 0.1357428492107987,
+        "irrResidual": -3.552713678800501e-15
+      },
+      "independentExpected": {
+        "npv": 1.0693745364345357,
+        "year0": -8,
+        "annual": 1.7
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "human",
+        "context": "private",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 8,
+        "benefit": 2.5,
+        "opex": 0.8,
+        "years": 8
+      },
+      "actual": {
+        "npv": -4.364317767526784,
+        "year0": -8,
+        "annual": 0.54,
+        "irr": -0.11972930789853015,
+        "irrResidual": 8.881784197001252e-15
+      },
+      "independentExpected": {
+        "npv": -4.364317767526782,
+        "year0": -8,
+        "annual": 0.54
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "human",
+        "context": "private",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 8,
+        "benefit": 2.5,
+        "opex": 0.8,
+        "years": 8
+      },
+      "actual": {
+        "npv": -5.495013497281507,
+        "year0": -8,
+        "annual": 0.54,
+        "irr": -0.11972930789853015,
+        "irrResidual": 8.881784197001252e-15
+      },
+      "independentExpected": {
+        "npv": -5.495013497281505,
+        "year0": -8,
+        "annual": 0.54
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "energy",
+        "context": "public",
+        "rate": 0.08,
+        "stress": 0,
+        "capex": 38,
+        "benefit": 8.8,
+        "opex": 1.7,
+        "years": 16
+      },
+      "actual": {
+        "npv": 24.84472100396039,
+        "year0": -38,
+        "annual": 7.1000000000000005,
+        "irr": 0.17212205271922032,
+        "irrResidual": 2.1316282072803006e-14
+      },
+      "independentExpected": {
+        "npv": 24.844721003960444,
+        "year0": -38,
+        "annual": 7.1000000000000005
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "energy",
+        "context": "public",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 38,
+        "benefit": 8.8,
+        "opex": 1.7,
+        "years": 16
+      },
+      "actual": {
+        "npv": -0.2465622305531705,
+        "year0": -38,
+        "annual": 3.24,
+        "irr": 0.03911895769505269,
+        "irrResidual": 9.947598300641403e-14
+      },
+      "independentExpected": {
+        "npv": -0.2465622305531312,
+        "year0": -38,
+        "annual": 3.24
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "energy",
+        "context": "public",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 38,
+        "benefit": 8.8,
+        "opex": 1.7,
+        "years": 16
+      },
+      "actual": {
+        "npv": -17.701206778847595,
+        "year0": -38,
+        "annual": 3.24,
+        "irr": 0.03911895769505269,
+        "irrResidual": 9.947598300641403e-14
+      },
+      "independentExpected": {
+        "npv": -17.70120677884758,
+        "year0": -38,
+        "annual": 3.24
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "energy",
+        "context": "private",
+        "rate": 0.1,
+        "stress": 0,
+        "capex": 4.8,
+        "benefit": 1.35,
+        "opex": 0.27,
+        "years": 9
+      },
+      "actual": {
+        "npv": 1.4197457215771616,
+        "year0": -4.8,
+        "annual": 1.08,
+        "irr": 0.17040410473272527,
+        "irrResidual": -1.7763568394002505e-15
+      },
+      "independentExpected": {
+        "npv": 1.4197457215771667,
+        "year0": -4.8,
+        "annual": 1.08
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "energy",
+        "context": "private",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 4.8,
+        "benefit": 1.35,
+        "opex": 0.27,
+        "years": 9
+      },
+      "actual": {
+        "npv": -1.1864288372827947,
+        "year0": -4.8,
+        "annual": 0.48600000000000004,
+        "irr": -0.018195284659924982,
+        "irrResidual": -1.509903313490213e-14
+      },
+      "independentExpected": {
+        "npv": -1.1864288372827905,
+        "year0": -4.8,
+        "annual": 0.48600000000000004
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "energy",
+        "context": "private",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 4.8,
+        "benefit": 1.35,
+        "opex": 0.27,
+        "years": 9
+      },
+      "actual": {
+        "npv": -2.3960632873275047,
+        "year0": -4.8,
+        "annual": 0.48600000000000004,
+        "irr": -0.018195284659924982,
+        "irrResidual": -1.509903313490213e-14
+      },
+      "independentExpected": {
+        "npv": -2.3960632873275034,
+        "year0": -4.8,
+        "annual": 0.48600000000000004
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "capital",
+        "context": "public",
+        "rate": 0.08,
+        "stress": 0,
+        "capex": 55,
+        "benefit": 11.5,
+        "opex": 3,
+        "years": 20
+      },
+      "actual": {
+        "npv": 28.45425296331892,
+        "year0": -55,
+        "annual": 8.5,
+        "irr": 0.1440749767481041,
+        "irrResidual": 7.105427357601002e-15
+      },
+      "independentExpected": {
+        "npv": 28.454252963318993,
+        "year0": -55,
+        "annual": 8.5
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "capital",
+        "context": "public",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 55,
+        "benefit": 11.5,
+        "opex": 3,
+        "years": 20
+      },
+      "actual": {
+        "npv": -10.15192306160664,
+        "year0": -55,
+        "annual": 3.3,
+        "irr": 0.018029583787621095,
+        "irrResidual": 2.4868995751603507e-13
+      },
+      "independentExpected": {
+        "npv": -10.15192306160661,
+        "year0": -55,
+        "annual": 3.3
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "capital",
+        "context": "public",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 55,
+        "benefit": 11.5,
+        "opex": 3,
+        "years": 20
+      },
+      "actual": {
+        "npv": -33.143669179667405,
+        "year0": -55,
+        "annual": 3.3,
+        "irr": 0.018029583787621095,
+        "irrResidual": 2.4868995751603507e-13
+      },
+      "independentExpected": {
+        "npv": -33.143669179667384,
+        "year0": -55,
+        "annual": 3.3
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "capital",
+        "context": "private",
+        "rate": 0.1,
+        "stress": 0,
+        "capex": 18.5,
+        "benefit": 5.4,
+        "opex": 1.6,
+        "years": 9
+      },
+      "actual": {
+        "npv": 3.384290501845566,
+        "year0": -18.5,
+        "annual": 3.8000000000000003,
+        "irr": 0.14438841187976614,
+        "irrResidual": -7.105427357601002e-15
+      },
+      "independentExpected": {
+        "npv": 3.3842905018455838,
+        "year0": -18.5,
+        "annual": 3.8000000000000003
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "capital",
+        "context": "private",
+        "rate": 0.04,
+        "stress": 40,
+        "capex": 18.5,
+        "benefit": 5.4,
+        "opex": 1.6,
+        "years": 9
+      },
+      "actual": {
+        "npv": -8.685362274101417,
+        "year0": -18.5,
+        "annual": 1.3200000000000003,
+        "irr": -0.0804871003273166,
+        "irrResidual": 2.1316282072803006e-14
+      },
+      "independentExpected": {
+        "npv": -8.685362274101406,
+        "year0": -18.5,
+        "annual": 1.3200000000000003
+      },
+      "passed": true
+    },
+    {
+      "model": "finance-investment",
+      "inputs": {
+        "key": "capital",
+        "context": "private",
+        "rate": 0.14,
+        "stress": 40,
+        "capex": 18.5,
+        "benefit": 5.4,
+        "opex": 1.6,
+        "years": 9
+      },
+      "actual": {
+        "npv": -11.970789175457421,
+        "year0": -18.5,
+        "annual": 1.3200000000000003,
+        "irr": -0.0804871003273166,
+        "irrResidual": 2.1316282072803006e-14
+      },
+      "independentExpected": {
+        "npv": -11.970789175457416,
+        "year0": -18.5,
+        "annual": 1.3200000000000003
+      },
+      "passed": true
+    },
+    {
+      "model": "market-enterprise",
+      "inputs": {
+        "price": 125,
+        "cost": 78,
+        "productivity": 0.08,
+        "elasticity": 1.3
+      },
+      "actual": {
+        "units": 1137.9779551204695,
+        "effectiveCost": 72.22222222222221,
+        "contribution": 52.777777777777786,
+        "fixed": 29000,
+        "profit": 31059.947631358118,
+        "revenue": 142247.24439005868,
+        "margin": 21.835184058953075,
+        "breakEven": 550
+      },
+      "independentExpected": {
+        "units": 1137.9779551204695,
+        "effectiveCost": 72.22222222222221,
+        "contribution": 52.777777777777786,
+        "profit": 31059.947631358118,
+        "revenue": 142247.24439005868,
+        "margin": 21.835184058953075
+      },
+      "passed": true
+    },
+    {
+      "model": "market-enterprise",
+      "inputs": {
+        "price": 85,
+        "cost": 120,
+        "productivity": 0,
+        "elasticity": 2.5
+      },
+      "actual": {
+        "units": 2841.757709503712,
+        "effectiveCost": 120,
+        "contribution": -35,
+        "fixed": 29000,
+        "profit": -128461.51983262991,
+        "revenue": 241549.4053078155,
+        "margin": -53.18229604785264,
+        "breakEven": "No finite break-even"
+      },
+      "independentExpected": {
+        "units": 2841.757709503712,
+        "effectiveCost": 120,
+        "contribution": -35,
+        "profit": -128461.51983262991,
+        "revenue": 241549.4053078155,
+        "margin": -53.18229604785264
+      },
+      "passed": true
+    },
+    {
+      "model": "market-enterprise",
+      "inputs": {
+        "price": 100,
+        "cost": 100,
+        "productivity": 0,
+        "elasticity": 1
+      },
+      "actual": {
+        "units": 1440,
+        "effectiveCost": 100,
+        "contribution": 0,
+        "fixed": 29000,
+        "profit": -29000,
+        "revenue": 144000,
+        "margin": -20.13888888888889,
+        "breakEven": "No finite break-even"
+      },
+      "independentExpected": {
+        "units": 1440,
+        "effectiveCost": 100,
+        "contribution": 0,
+        "profit": -29000,
+        "revenue": 144000,
+        "margin": -20.13888888888889
+      },
+      "passed": true
+    },
+    {
+      "model": "market-enterprise",
+      "inputs": {
+        "price": 175,
+        "cost": 50,
+        "productivity": 0.3,
+        "elasticity": 0.3
+      },
+      "actual": {
+        "units": 1071.5790276678704,
+        "effectiveCost": 38.46153846153846,
+        "contribution": 136.53846153846155,
+        "fixed": 29000,
+        "profit": 117311.75185465155,
+        "revenue": 187526.3298418773,
+        "margin": 62.5574829697617,
+        "breakEven": 213
+      },
+      "independentExpected": {
+        "units": 1071.5790276678704,
+        "effectiveCost": 38.46153846153846,
+        "contribution": 136.53846153846155,
+        "profit": 117311.75185465155,
+        "revenue": 187526.3298418773,
+        "margin": 62.5574829697617
+      },
+      "passed": true
+    },
+    {
+      "model": "development-impact",
+      "inputs": {
+        "treatedBefore": 46,
+        "treatedAfter": 74,
+        "comparisonBefore": 43,
+        "comparisonAfter": 56
+      },
+      "actual": {
+        "deltaT": 28,
+        "deltaC": 13,
+        "did": 15,
+        "cf": 59,
+        "feasible": true
+      },
+      "independentExpected": {
+        "deltaT": 28,
+        "deltaC": 13,
+        "did": 15,
+        "cf": 59
+      },
+      "passed": true
+    },
+    {
+      "model": "development-impact",
+      "inputs": {
+        "treatedBefore": 100,
+        "treatedAfter": 100,
+        "comparisonBefore": 0,
+        "comparisonAfter": 100
+      },
+      "actual": {
+        "deltaT": 0,
+        "deltaC": 100,
+        "did": -100,
+        "cf": 200,
+        "feasible": false
+      },
+      "independentExpected": {
+        "deltaT": 0,
+        "deltaC": 100,
+        "did": -100,
+        "cf": 200
+      },
+      "passed": true
+    },
+    {
+      "model": "development-impact",
+      "inputs": {
+        "treatedBefore": 0,
+        "treatedAfter": 0,
+        "comparisonBefore": 100,
+        "comparisonAfter": 0
+      },
+      "actual": {
+        "deltaT": 0,
+        "deltaC": -100,
+        "did": 100,
+        "cf": -100,
+        "feasible": false
+      },
+      "independentExpected": {
+        "deltaT": 0,
+        "deltaC": -100,
+        "did": 100,
+        "cf": -100
+      },
+      "passed": true
+    },
+    {
+      "model": "development-impact",
+      "inputs": {
+        "treatedBefore": 50,
+        "treatedAfter": 60,
+        "comparisonBefore": 40,
+        "comparisonAfter": 50
+      },
+      "actual": {
+        "deltaT": 10,
+        "deltaC": 10,
+        "did": 0,
+        "cf": 60,
+        "feasible": true
+      },
+      "independentExpected": {
+        "deltaT": 10,
+        "deltaC": 10,
+        "did": 0,
+        "cf": 60
+      },
+      "passed": true
+    },
+    {
+      "model": "development-impact",
+      "inputs": {
+        "treatedBefore": 70,
+        "treatedAfter": 50,
+        "comparisonBefore": 40,
+        "comparisonAfter": 60
+      },
+      "actual": {
+        "deltaT": -20,
+        "deltaC": 20,
+        "did": -40,
+        "cf": 90,
+        "feasible": true
+      },
+      "independentExpected": {
+        "deltaT": -20,
+        "deltaC": 20,
+        "did": -40,
+        "cf": 90
+      },
+      "passed": true
+    },
+    {
+      "model": "policy-governance",
+      "inputs": {
+        "steps": 3,
+        "digital": 0.65,
+        "rework": 0.12,
+        "monthlyVolume": 3000
+      },
+      "actual": {
+        "baselineCore": 1.5,
+        "baselineRework": 0.528,
+        "baseline": 2.028,
+        "newCore": 0.924945,
+        "newRework": 0.264,
+        "after": 1.188945,
+        "saved": 30205.980000000003,
+        "percent": 41.373520710059175,
+        "value": 19633887.000000004
+      },
+      "independentExpected": {
+        "newCore": 0.924945,
+        "newRework": 0.264,
+        "after": 1.188945,
+        "saved": 30205.980000000003,
+        "percent": 41.373520710059175,
+        "value": 19633887.000000004
+      },
+      "passed": true
+    },
+    {
+      "model": "policy-governance",
+      "inputs": {
+        "steps": 0,
+        "digital": 0,
+        "rework": 0.24,
+        "monthlyVolume": 3000
+      },
+      "actual": {
+        "baselineCore": 1.5,
+        "baselineRework": 0.528,
+        "baseline": 2.028,
+        "newCore": 1.5,
+        "newRework": 0.528,
+        "after": 2.028,
+        "saved": 0,
+        "percent": 0,
+        "value": 0
+      },
+      "independentExpected": {
+        "newCore": 1.5,
+        "newRework": 0.528,
+        "after": 2.028,
+        "saved": 0,
+        "percent": 0,
+        "value": 0
+      },
+      "passed": true
+    },
+    {
+      "model": "policy-governance",
+      "inputs": {
+        "steps": 0,
+        "digital": 0,
+        "rework": 0.4,
+        "monthlyVolume": 10000
+      },
+      "actual": {
+        "baselineCore": 1.5,
+        "baselineRework": 0.528,
+        "baseline": 2.028,
+        "newCore": 1.5,
+        "newRework": 0.8800000000000001,
+        "after": 2.38,
+        "saved": -42239.999999999985,
+        "percent": -17.35700197238658,
+        "value": -27455999.99999999
+      },
+      "independentExpected": {
+        "newCore": 1.5,
+        "newRework": 0.8800000000000001,
+        "after": 2.38,
+        "saved": -42239.999999999985,
+        "percent": -17.35700197238658,
+        "value": -27455999.99999999
+      },
+      "passed": true
+    },
+    {
+      "model": "policy-governance",
+      "inputs": {
+        "steps": 5,
+        "digital": 1,
+        "rework": 0,
+        "monthlyVolume": 500
+      },
+      "actual": {
+        "baselineCore": 1.5,
+        "baselineRework": 0.528,
+        "baseline": 2.028,
+        "newCore": 0.6480000000000001,
+        "newRework": 0,
+        "after": 0.6480000000000001,
+        "saved": 8280,
+        "percent": 68.0473372781065,
+        "value": 5382000
+      },
+      "independentExpected": {
+        "newCore": 0.6480000000000001,
+        "newRework": 0,
+        "after": 0.6480000000000001,
+        "saved": 8280,
+        "percent": 68.04733727810651,
+        "value": 5382000
+      },
+      "passed": true
+    },
+    {
+      "model": "management-delivery",
+      "inputs": {
+        "team": 12,
+        "availability": 0.8,
+        "rework": 0.14,
+        "dependencyDrag": 0.12
+      },
+      "actual": {
+        "weekly": 5.557894736842105,
+        "duration": 22,
+        "horizon": 48
+      },
+      "independentExpected": {
+        "weekly": 5.557894736842105,
+        "duration": 22,
+        "horizon": 48
+      },
+      "passed": true
+    },
+    {
+      "model": "management-delivery",
+      "inputs": {
+        "team": 5,
+        "availability": 0.5,
+        "rework": 0.4,
+        "dependencyDrag": 0.35
+      },
+      "actual": {
+        "weekly": 0.8705357142857143,
+        "duration": 138,
+        "horizon": 144
+      },
+      "independentExpected": {
+        "weekly": 0.8705357142857143,
+        "duration": 138,
+        "horizon": 144
+      },
+      "passed": true
+    },
+    {
+      "model": "management-delivery",
+      "inputs": {
+        "team": 20,
+        "availability": 1,
+        "rework": 0,
+        "dependencyDrag": 0
+      },
+      "actual": {
+        "weekly": 15,
+        "duration": 8,
+        "horizon": 48
+      },
+      "independentExpected": {
+        "weekly": 15,
+        "duration": 8,
+        "horizon": 48
+      },
+      "passed": true
+    },
+    {
+      "model": "management-delivery",
+      "inputs": {
+        "team": 10,
+        "availability": 0.65,
+        "rework": 0.24,
+        "dependencyDrag": 0.23
+      },
+      "actual": {
+        "weekly": 3.027217741935484,
+        "duration": 40,
+        "horizon": 48
+      },
+      "independentExpected": {
+        "weekly": 3.027217741935484,
+        "duration": 40,
+        "horizon": 48
+      },
+      "passed": true
+    }
+  ],
+  "passed": true
+}
