@@ -1,0 +1,77 @@
+{
+  "type": "Local mobile Lighthouse lab; one cold run per route; not field INP",
+  "results": [
+    {
+      "name": "home-before",
+      "performance": 0.62,
+      "accessibility": 0.95,
+      "LCP": 14707.449999999997,
+      "CLS": 0,
+      "TBT": 350,
+      "bytes": 4800828
+    },
+    {
+      "name": "home-after",
+      "performance": 0.62,
+      "accessibility": 0.95,
+      "LCP": 14757.645,
+      "CLS": 0,
+      "TBT": 350,
+      "bytes": 4894251
+    },
+    {
+      "name": "economics-trade",
+      "performance": 0.91,
+      "accessibility": 1,
+      "LCP": 2771.1479000000004,
+      "CLS": 0.0028279545509405043,
+      "TBT": 0,
+      "bytes": 785058
+    },
+    {
+      "name": "finance-investment",
+      "performance": 0.89,
+      "accessibility": 1,
+      "LCP": 3532.44715,
+      "CLS": 0,
+      "TBT": 50.054050000000416,
+      "bytes": 794851
+    },
+    {
+      "name": "market-enterprise",
+      "performance": 0.88,
+      "accessibility": 1,
+      "LCP": 3531.3404499999997,
+      "CLS": 0.000192003150883051,
+      "TBT": 38,
+      "bytes": 781841
+    },
+    {
+      "name": "development-impact",
+      "performance": 0.88,
+      "accessibility": 1,
+      "LCP": 3535.2897000000003,
+      "CLS": 0,
+      "TBT": 38.5,
+      "bytes": 783580
+    },
+    {
+      "name": "policy-governance",
+      "performance": 0.88,
+      "accessibility": 1,
+      "LCP": 3528.45975,
+      "CLS": 0,
+      "TBT": 17.5,
+      "bytes": 782962
+    },
+    {
+      "name": "management-delivery",
+      "performance": 0.88,
+      "accessibility": 1,
+      "LCP": 3533.50555,
+      "CLS": 0.0000238907342457245,
+      "TBT": 10.5,
+      "bytes": 788698
+    }
+  ]
+}

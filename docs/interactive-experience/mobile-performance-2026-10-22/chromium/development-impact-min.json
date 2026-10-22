@@ -1,0 +1,136 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "08012a61b493",
+  "model": "development-impact",
+  "title": "Development & Impact",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "governance",
+    "context": "private",
+    "title": "Are management changes improving service delivery?"
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Four synthetic percentages entered by the reader; no participant-level observations supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "c9c9275d60a83e74c51da86b432821baea9c1587c1367021fabc1e38c26749f8",
+    "methodReferences": [
+      {
+        "label": "World Bank: Impact Evaluation in Practice",
+        "url": "https://www.worldbank.org/en/programs/sief-trust-fund/publication/impact-evaluation-in-practice",
+        "author": "World Bank",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      },
+      {
+        "label": "Impact Evaluation in Practice, second edition",
+        "author": "Gertler, Martinez, Premand, Rawlings and Vermeersch; World Bank and Inter-American Development Bank",
+        "publicationDate": "2016",
+        "url": "https://publications.iadb.org/en/impact-evaluation-practice-second-edition",
+        "role": "Evaluation and identification methods; not the source of the four synthetic percentages"
+      }
+    ]
+  },
+  "method": "Two groups observed before and after an intervention. The arithmetic compares their changes, measured in percentage points (pp). Causal interpretation requires credible identification, including parallel trends.",
+  "formula": "Treated change = treated endline − baseline; comparison change = comparison endline − baseline; DiD = treated change − comparison change; counterfactual = treated baseline + comparison change.",
+  "limits": "There are no observations, uncertainty intervals or parallel-trend diagnostics. Arithmetic alone establishes no causal effect. Extreme inputs can produce an infeasible counterfactual outside 0–100%; the chart displays and flags that result without silently clipping it.",
+  "guidance": {
+    "question": "How does the treated group’s before–after change compare with the comparison group’s change?",
+    "assumption": "Four synthetic outcome percentages and one constructed counterfactual. There is no sample, standard error or confidence interval.",
+    "rule": "A zero DiD contrast means equal changes in this illustration. A nonzero contrast alone establishes no causal effect. Counterfactuals outside 0–100% flag infeasible percentage assumptions.",
+    "next": "Check pre-intervention trends, group composition, treatment timing, spillovers, concurrent shocks, attrition and missingness; then specify an identification and inference strategy.",
+    "chart": "Horizontal: before and after. Vertical: outcome (%). Solid: treated; dashed: comparison; dotted: constructed treated counterfactual. Differences are percentage points, not percentage changes.",
+    "risk": "Identification checklist: parallel trends, stable composition, timing, no spillovers and attrition — all Not assessed. These inputs cannot supply those diagnostics.",
+    "parameterOrigin": "Four synthetic percentages entered by the reader; no participant-level observations supplied.",
+    "references": [
+      {
+        "label": "Impact Evaluation in Practice, second edition",
+        "author": "Gertler, Martinez, Premand, Rawlings and Vermeersch; World Bank and Inter-American Development Bank",
+        "publicationDate": "2016",
+        "url": "https://publications.iadb.org/en/impact-evaluation-practice-second-edition",
+        "role": "Evaluation and identification methods; not the source of the four synthetic percentages"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "di-tpre",
+      "label": "Treated baseline (%)",
+      "default": 46,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "value": 0
+    },
+    {
+      "id": "di-tpost",
+      "label": "Treated endline (%)",
+      "default": 74,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "value": 0
+    },
+    {
+      "id": "di-cpre",
+      "label": "Comparison baseline (%)",
+      "default": 43,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "value": 0
+    },
+    {
+      "id": "di-cpost",
+      "label": "Comparison endline (%)",
+      "default": 56,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "value": 0
+    }
+  ],
+  "results": [
+    {
+      "measure": "Illustrative two-period DiD contrast (pp)",
+      "displayValue": "0pp"
+    },
+    {
+      "measure": "Treated change (pp)",
+      "displayValue": "0pp"
+    },
+    {
+      "measure": "Comparison change (pp)",
+      "displayValue": "0pp"
+    },
+    {
+      "measure": "Counterfactual (%)",
+      "displayValue": "0%"
+    }
+  ],
+  "chart": {
+    "title": "Synthetic two-period outcomes; constructed counterfactual is not an observation",
+    "headers": [
+      "Period",
+      "Treated (%)",
+      "Comparison (%)",
+      "Constructed treated counterfactual (%)"
+    ],
+    "rows": [
+      [
+        "Before",
+        0,
+        0,
+        0
+      ],
+      [
+        "After",
+        0,
+        0,
+        0
+      ]
+    ]
+  }
+}

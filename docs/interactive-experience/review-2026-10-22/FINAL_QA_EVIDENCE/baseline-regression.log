@@ -1,0 +1,174 @@
+
+> ip3-consulting-site@3.0.0 test
+> node --test build/selftest.js build/check-links.test.js build/contact.test.js build/cms-editor-usability.test.js scripts/smoke-deploy.test.js .github/scripts/publishing.test.js build/articles.test.cjs build/insights-authoring.test.cjs build/explore.test.cjs
+
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-oH8brY\remote.git
+ * [new branch]      main -> main
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-vYaxSI\remote.git
+ * [new branch]      main -> main
+Switched to a new branch 'content'
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-vYaxSI\remote.git
+ * [new branch]      content -> content
+Switched to branch 'main'
+warning: in the working copy of 'main-update.txt', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-vYaxSI\remote.git
+   74fe43f..96abadb  main -> main
+Switched to a new branch 'content'
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-vYaxSI\remote.git
+   74fe43f..96abadb  HEAD -> content
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-mYyGxx\remote.git
+ * [new branch]      main -> main
+Switched to a new branch 'content'
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-mYyGxx\remote.git
+ * [new branch]      content -> content
+Switched to branch 'main'
+Switched to a new branch 'content'
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-mYyGxx\remote.git
+   004a935..e1bb170  content -> content
+Switched to branch 'main'
+Already on 'main'
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-mYyGxx\remote.git
+   004a935..5f4ff79  main -> main
+Switched to a new branch 'content'
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-wl2ZqG\remote.git
+ * [new branch]      main -> main
+Switched to a new branch 'content'
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-wl2ZqG\remote.git
+ * [new branch]      content -> content
+Switched to branch 'main'
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-xH9fns\remote.git
+ * [new branch]      main -> main
+Switched to a new branch 'content'
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-xH9fns\remote.git
+ * [new branch]      content -> content
+Switched to branch 'main'
+Switched to a new branch 'content'
+warning: in the working copy of 'content/about.json', LF will be replaced by CRLF the next time Git touches it
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-xH9fns\remote.git
+   fb8757b..42850c6  content -> content
+Switched to branch 'main'
+Switched to a new branch 'content'
+To C:\Users\IP3CON~1\AppData\Local\Temp\ip3-publishing-test-xH9fns\remote.git
+   42850c6..c42b3b1  content -> content
+Switched to branch 'main'
+✔ sync-content skips cleanly when origin/content has not been created (1465.6956ms)
+✔ sync-content fast-forwards content when all its commits already exist on main (3452.6395ms)
+✔ sync-content reports and aborts a real merge conflict without dispatching (4396.7898ms)
+✔ open-content-pr ignores a stale successful check for an older branch head (1410.357ms)
+✔ open-content-pr opens or updates a content PR from local Git diff data (5268.023ms)
+✔ 16 stable CMS identities cover exactly the 32 audited legacy article URLs (7.3597ms)
+✔ missing text, changed identity/body, duplicate IDs/slugs and absent preservation records fail closed (209.7356ms)
+✔ complete source content is preserved verbatim as text; drafts and attachment references stay out of publication (43.3489ms)
+✔ all 32 current legacy rows redirect to their own verified article or remain 404 (2.1005ms)
+✔ all 16 identities and query/pretty variants can map after future verified source import using memory-only fixtures (6.2986ms)
+✔ BMDF title uses only the exact owner-approved source heading and retains original-title provenance (7.5053ms)
+✔ query selectors reject duplicates/conflicts/encoding/case/unknown values; known article aliases normalize once (6.6153ms)
+✔ generated Hostinger rules contain verified article selectors only, discard queries and preserve PHP denial (4.3922ms)
+✔ article renderer escapes text and hub links only published articles with accessible return navigation (600.5426ms)
+✔ accepts valid page metadata, local assets, anchors and sitemap URLs (25.7366ms)
+✔ rejects missing href, src, srcset, poster targets and anchor fragments (13.7085ms)
+✔ accepts accessible SVG titles without treating them as page metadata (11.3523ms)
+✔ rejects missing image alt text and duplicate title, h1 and canonical values (13.409ms)
+✔ rejects missing required metadata and sitemap URLs without built pages (8.5082ms)
+✔ existing CMS contract is preserved alongside article and Explorer section extensions (3.9255ms)
+✔ common editing tasks have clear form, field, help, and collapsed-list labels (0.7879ms)
+✔ restricted section order and testimonial pilot remain unchanged (1.7262ms)
+✔ generated Pages CMS configuration matches the schema (107.894ms)
+✔ rejects non-POST and cross-origin submissions (0.9088ms)
+✔ silently accepts a filled honeypot without contacting providers (1.5384ms)
+✔ accepts client clocks up to five minutes ahead and rejects larger future skew (17.2755ms)
+✔ accepts recent forms and rejects forms older than 24 hours using server time (0.8989ms)
+✔ validates fields and enforces the request-size limit (0.4972ms)
+✔ sends escaped HTML and plain text through Resend with a safe reply-to (1.4342ms)
+✔ verifies Turnstile server-side when a secret is configured (0.969ms)
+✔ fails closed when Turnstile is not configured (0.3843ms)
+✔ accepts a Turnstile token for the exact Vercel preview hostname (0.8166ms)
+✔ rejects a Turnstile verdict for a different hostname before sending mail (1.2356ms)
+✔ returns only a generic error when Resend rejects the request (1.0757ms)
+✔ six routes and exact original hashes remain traceable (50.7319ms)
+✔ trade neutral baseline, sign, analytical elasticity and complete input grid (0.5664ms)
+✔ finance discount timing and conventional IRR known solutions (1.203ms)
+✔ all eight finance cases match independent annuity and IRR residuals at UI boundaries (53.1007ms)
+✔ enterprise fixed vs variable costs, zero and negative contribution, boundary grid (0.4562ms)
+✔ DiD arithmetic, pp units, negative/zero changes and infeasible counterfactuals (0.2385ms)
+✔ governance neutral reference, negative hours and value interpretation (0.292ms)
+✔ delivery correct capacity, rounding, baseline and slow/fast boundaries (0.1941ms)
+✔ native pages preserve full initial state, static narratives and a single shared shell (7098.2882ms)
+✔ native CSS is scoped and no original document or six-model preload enters Home (529.3873ms)
+✔ chart protocol includes all plotted points, signed Year 0 and readable series units (0.4179ms)
+✔ decision guidance, evidence boundaries, reset and export are present without changing theme or shell (148.0704ms)
+✔ owner readiness decision exposes four complete articles and keeps twelve missing bodies as private drafts (114.3182ms)
+✔ Markdown conversion retains complete source text and the BMDF mismatch/owner title decision (1.4591ms)
+✔ new and existing drafts can be authored without manufactured legacy IDs, authors, dates or source URLs (16.7513ms)
+✔ publication requires an approved complete revision; later metadata or body edits invalidate approval (31.2779ms)
+✔ Markdown supports visual editor formatting and safely rejects active HTML, unsafe links and malformed images (0.9362ms)
+✔ cover, infographic and Markdown image paths/alt/captions are validated and rendered into actual HTML (486.4703ms)
+✔ owner kit for 3355 retains its caveats and legacy identity under the explicit phased publication instruction (7.1771ms)
+✔ retired preparation status cannot bypass the private-draft decision (3.9339ms)
+✔ content branch explicitly disables Vercel Git deployments while production release stays gated (0.4947ms)
+✔ CMS exposes Markdown, editable metadata and dedicated infographic fields with safe new-entry creation (10.2314ms)
+✔ api contains only deployable contact.js (1.684ms)
+✔ section order renders supported sections in the saved order and rejects fixed-sequence pages (0.7628ms)
+✔ Home testimonial placements move the shared records once and follow reordered anchors (720.4557ms)
+▶ negative content/build safeguards
+  ✔ rejects a missing image (216.6303ms)
+  ✔ rejects a bad internal route (190.1612ms)
+  ✔ rejects a bad page anchor (272.6009ms)
+  ✔ rejects a sector story whose drawing does not have five steps (260.2743ms)
+  ✔ rejects a sector story that cites an unknown assignment (162.6252ms)
+  ✔ rejects a sector story for a sector that does not exist (165.5463ms)
+  ✔ rejects an unknown sector drawing (173.7477ms)
+  ✔ rejects a /why-ip3 system link to an unknown system (258.0881ms)
+  ✔ rejects a /why-ip3 system that relates to itself (145.9127ms)
+  ✔ rejects reordered /why-ip3 scenes (154.5809ms)
+  ✔ rejects a delivery section with a stage added, removed or reordered (647.214ms)
+  ✔ rejects an incomplete section order (156.5953ms)
+  ✔ rejects unsupported testimonial placements and missing visible content (225.8992ms)
+  ✔ rejects a video header without its poster even when a photo exists (127.4395ms)
+  ✔ rejects duplicate or unsupported section order values (148.1843ms)
+  ✔ rejects more systems than the 3D scene draws (194.5587ms)
+  ✔ rejects a publication credit to an unknown person (147.155ms)
+  ✔ rejects a duplicate people profile anchor (167.7748ms)
+  ✔ rejects an unknown publication type (234.9337ms)
+  ✔ rejects script tags in editor copy (152.6993ms)
+  ✔ rejects an unclosed emphasis tag (142.8238ms)
+  ✔ rejects new emphasis on a heading that did not use it (178.8119ms)
+  ✔ rejects an empty required value (316.9469ms)
+  ✔ rejects an invalid email address (452.433ms)
+  ✔ rejects a key absent from the CMS schema (560.4039ms)
+  ✔ rejects a broken content reference (180.7172ms)
+  ✔ rejects hiding every hero slide (160.2287ms)
+  ✔ rejects a link to a hidden sector (139.5845ms)
+  ✔ rejects hiding every primary navigation link (230.9129ms)
+  ✔ warns when a visible engagement points to a hidden sector (299.8748ms)
+  ✔ rejects a value of the wrong type (182.3179ms)
+  ✔ rejects duplicate sector slugs (140.7471ms)
+  ✔ rejects malformed JSON (152.4378ms)
+  ✔ rejects an image over the hard size limit (130.4849ms)
+  ✔ rejects WebM videos above the optimizer target (150.6659ms)
+  ✔ leaves the previous HTML untouched when build validation fails (314.3375ms)
+✔ negative content/build safeguards (8042.5518ms)
+✔ LF and CRLF source checkouts produce identical public payload apart from time and exact-source provenance (15898.0025ms)
+✔ accepts the exact IP3 Vercel production deployment URL and known project aliases (0.7632ms)
+✔ permits canonical public hosts without treating them as trusted Vercel hosts (0.1714ms)
+✔ rejects unrelated projects, lookalike hosts, unsafe URL syntax and protocols (0.5824ms)
+✔ follows relative same-origin redirects and keeps the bypass header on that origin only (22.3685ms)
+✔ never sends a bypass header to an external redirect destination (0.4173ms)
+✔ never sends a bypass header to the canonical host through a redirect (0.2529ms)
+✔ does not attach Vercel bypass credentials to a canonical public hostname (0.9368ms)
+✔ requires a valid JSON build stamp with both commit identities matching (0.5521ms)
+ℹ tests 105
+ℹ suites 0
+ℹ pass 105
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25693.0252

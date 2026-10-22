@@ -29,6 +29,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   const { why } = require('../src/pages-why');
   const { articlePage } = require('../src/pages-articles');
   const { finder } = require('../src/pages-finder');
+  const explorer = require('../src/explore');
   const normalizeText = (value) => value.replace(/\r\n/g, '\n');
   const hash = (s) => crypto.createHash('md5').update(s).digest('hex').slice(0, 8);
   const read = (p) => normalizeText(fs.readFileSync(path.join(root, p), 'utf8'));
@@ -60,6 +61,16 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   write('assets/js/capabilities.js', capJs);
   write('assets/css/sectors.css', secCss);
   write('assets/js/sectors.js', secJs);
+  // Route-local models: no model script, chart or original reference document is preloaded on Home.
+  for (const name of ['explorer', 'model']) {
+    write(`assets/css/${name}.css`, read(`src/explore/${name}.css`));
+    write(`assets/js/${name}.js`, read(`src/explore/${name}.js`));
+  }
+  write('assets/js/model-math.js', read('src/explore/math.js'));
+  for (const model of explorer.catalogue) {
+    write(`assets/css/models/${model.slug}.css`, read(`src/explore/models/${model.slug}.css`));
+    write(`assets/js/models/${model.slug}.js`, read(`src/explore/models/${model.slug}.js`));
+  }
   const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs), __CAPCSSV__: hash(capCss), __CAPJSV__: hash(capJs), __SECCSSV__: hash(secCss), __SECJSV__: hash(secJs) };
 
   // 2. pages
@@ -68,6 +79,8 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     ['about.html', P.about()],
     ['why-ip3.html', why()],
     ['approach.html', P.approach()],
+    ['explore.html', explorer.hub()],
+    ...explorer.catalogue.map(model => [`explore/${model.slug}.html`, explorer.model(model)]),
     ['capabilities.html', P.capabilities()],
     ['sectors.html', P.sectorsIndex()],
     ...D.sectors.map((s, i) => [`sectors/${s.slug}.html`, P.sectorPage(s, i)]),
@@ -81,7 +94,18 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],
   ];
-  for (const [file, html] of pages) write(file, html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]));
+  for (const [file, html] of pages) {
+    let rendered = html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]);
+    if (file === 'index.html' || file === 'explore.html' || file.startsWith('explore/')) {
+      const routeCss = require('./page-css.cjs').pageCss(css, rendered);
+      const key = file === 'index.html' ? 'home' : file === 'explore.html' ? 'explore' : 'analytical';
+      // Equal model styles share one immutable URL across the six journeys.
+      const asset = `site-${key}-${hash(routeCss)}.css`;
+      write(`assets/css/${asset}`, routeCss);
+      rendered = rendered.replace(`/assets/css/site.css?v=${V.__CSSV__}`, `/assets/css/${asset}?v=${hash(routeCss)}`);
+    }
+    write(file, rendered);
+  }
 
   // 3. sitemap, robots, manifest
   const preparing = new Set(D.articles.filter(a => a.publicationStatus === 'in-preparation').map(a => `insights/${a.slug}.html`));

@@ -1,0 +1,9 @@
+{
+  "scope": "GitHub deployment metadata only; no authenticated hosted runtime/build identity test",
+  "applicationCommit": "1d7d8c585e11eb24529e21360f6d45d5779c0c6f",
+  "environment": "Preview",
+  "deployment": 7260618286,
+  "state": "success",
+  "url": "https://ip3-bd-iqkkh64q5-ip-3.vercel.app",
+  "createdAt": "2026-10-22T18:43:26Z"
+}

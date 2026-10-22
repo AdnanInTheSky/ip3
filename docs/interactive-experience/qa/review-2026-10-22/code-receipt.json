@@ -1,0 +1,121 @@
+{
+  "beforeCommit": "df4d5e9072d93001775a2cfd148f32e2b1bdb579",
+  "meaning": "Exact saved source bytes used for the final local browser/remediation verification. External review is not implied.",
+  "files": [
+    {
+      "name": ".github/workflows/explorer-browser.yml",
+      "bytes": 1188,
+      "sha256": "bdac5109bedafc45c55f78bea47646002aa000588d585f1849b72202eecf2f68"
+    },
+    {
+      "name": "build/check-links.js",
+      "bytes": 7963,
+      "sha256": "8b05cc20679a1ead0f684db45f9eeed6f97030c951e00b0777f27c3d68784e23"
+    },
+    {
+      "name": "build/check-links.test.js",
+      "bytes": 4172,
+      "sha256": "bdea2af802161cbc8ef7bff8ab844d3fda3f19aa5f7f0ff610d6d5bc06ffe5bb"
+    },
+    {
+      "name": "build/explore.test.cjs",
+      "bytes": 8169,
+      "sha256": "a04cf12d3d1206252df782c7425b3650f03b26ce459f2416613a0a36593a5f89"
+    },
+    {
+      "name": "scripts/explore-performance.cjs",
+      "bytes": 3778,
+      "sha256": "e5c7434362dc66a2a14b6e7c5d6b726e69c712ef2716dc05b2534458e7457cc7"
+    },
+    {
+      "name": "scripts/explore-review-check.cjs",
+      "bytes": 11452,
+      "sha256": "250d5d4edfd309142129f1ad94de150703df9077ed43527515c7dd51b1cb96d2"
+    },
+    {
+      "name": "scripts/explore-review-receipts.cjs",
+      "bytes": 1897,
+      "sha256": "c6020aae5e47360aaa3bf22e4ce6b1c97d3b70b9b6aed3ff8b105d7fc0e73c32"
+    },
+    {
+      "name": "scripts/import-explore.cjs",
+      "bytes": 18840,
+      "sha256": "98391ec29facadbc8944857de4512e17cd7dbea637ee1c0537404092bc404b3e"
+    },
+    {
+      "name": "src/explore/explorer.js",
+      "bytes": 5816,
+      "sha256": "7bd13d2413a37d8aae90a1cde37d31b045d8736f4f528284d38c6d3b96b80056"
+    },
+    {
+      "name": "src/explore/guidance.js",
+      "bytes": 7546,
+      "sha256": "16fed12ca8a1ea0ec89c3df5c54b6e9652f88860be7cd06f792f7dd8a5c3e39b"
+    },
+    {
+      "name": "src/explore/index.js",
+      "bytes": 19156,
+      "sha256": "aff972b5af97bac44029a14d83fd89655aba013a4effeb550482618d194ec4c6"
+    },
+    {
+      "name": "src/explore/math.js",
+      "bytes": 6502,
+      "sha256": "056a8d2f21b996930d5f547fdab3d63910d88623dbda74ff3926c120dd65b666"
+    },
+    {
+      "name": "src/explore/model.css",
+      "bytes": 7800,
+      "sha256": "34309eac112306f677337d92d8e10a54e0434dd9b70e0a5b5b0001e97822e753"
+    },
+    {
+      "name": "src/explore/model.js",
+      "bytes": 9901,
+      "sha256": "32c339ce376daf41754c6600033387f411b4ff1f1a957798183862fc3b1e5ec9"
+    },
+    {
+      "name": "src/explore/models/development-impact.html",
+      "bytes": 14557,
+      "sha256": "58f074aefc96d20239453c2fb3843ae39f45d95866a462c237484e4c130887fc"
+    },
+    {
+      "name": "src/explore/models/development-impact.js",
+      "bytes": 21032,
+      "sha256": "67e97ac70f51affd53f504f70d05035bf1e948f0a05d365e6f55c42ad0a6423d"
+    },
+    {
+      "name": "src/explore/models/economics-trade.js",
+      "bytes": 19871,
+      "sha256": "faf046f4cd7ccf85005c209fd9d307f470a8ca02b14049df179cb23ab70ae0be"
+    },
+    {
+      "name": "src/explore/models/finance-investment.html",
+      "bytes": 12277,
+      "sha256": "df94c7b36f3330d6f494fb9058b79c296d4c7d4c32320ae399ca3ce898c69263"
+    },
+    {
+      "name": "src/explore/models/finance-investment.js",
+      "bytes": 18873,
+      "sha256": "cd80bd96ee25f2a315066e22f1ee9d38c9927b31b083c5c7d117d9204b5d1e92"
+    },
+    {
+      "name": "src/explore/models/finance-investment.json",
+      "bytes": 14478,
+      "sha256": "0a8c77953afe36874ca907748cbe5c9d04280d9108e5f906406d0bcd33edea4c"
+    },
+    {
+      "name": "src/explore/models/market-enterprise.html",
+      "bytes": 14307,
+      "sha256": "0e3c5d1d4bd32d7669a8bda40c62386c257d2763c986fa10fd86b0bbe12ece88"
+    },
+    {
+      "name": "src/explore/models/market-enterprise.js",
+      "bytes": 20070,
+      "sha256": "f1ee6f575b87339d592eb0cb818d0abe63337d034ca461e60dfacccf745dc59d"
+    },
+    {
+      "name": "src/explore/models/policy-governance.html",
+      "bytes": 16056,
+      "sha256": "c9acd9b0ce9f562a75213195a0adc13fada96ccd4d2a63087c73264a280e0d69"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-22",
+  "branch": "codex/ip3-interactive-experience",
+  "commit": "addb8ad303032aec3938ed8ac64c34ab6f737e36",
+  "status": "",
+  "build": {
+    "commit": "addb8ad303032aec3938ed8ac64c34ab6f737e36",
+    "vercelGitCommitSha": null,
+    "builtAt": "2026-10-22T12:13:19.223Z",
+    "contentHash": "88dec9cf014749244184e278a3f9d017f15f61562c297023c00c8b36e59cdfc6",
+    "sourceHash": "0ce440fdaaf9d67a53b4183d967563369687f96a746c50a587ba126bc04adc0a",
+    "sourceDirty": false,
+    "reproducibleClock": false,
+    "pageCount": 33,
+    "sitemapUrlCount": 32,
+    "articleSlugs": [
+      "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+      "unlocking-inclusive-green-finance-in-bangladesh-a-multi-criteria-innovation-approach-for-product-design",
+      "enhancing-environmental-compliance-and-performance-in-bangladesh",
+      "from-donor-dependent-projects-to-sustainable-urban-finance"
+    ],
+    "preparationArticleSlugs": [],
+    "articlePreservationComplete": false,
+    "excludedFromSitemap": [
+      {
+        "route": "/404",
+        "reason": "Custom error document; not an indexable content page."
+      }
+    ],
+    "validated": true
+  },
+  "originalReviewBaseline": "df4d5e9"
+}

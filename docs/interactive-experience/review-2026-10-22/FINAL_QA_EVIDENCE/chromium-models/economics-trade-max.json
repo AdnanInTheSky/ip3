@@ -1,0 +1,543 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "26b7d661298d",
+  "model": "economics-trade",
+  "title": "Economics & Trade",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "reform",
+    "context": "private",
+    "title": "Locating the hidden costs in an expansion decision."
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Original teaching prototype; no fitted trade observations supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "d1f7516391f5f097693915f7fa0a05998e26f792ff4d69cefa95e10fcdfe9f12",
+    "methodReferences": [
+      {
+        "label": "WTO: tariffs and trade",
+        "url": "https://www.wto.org/english/tratop_e/tariffs_e/tariffs_e.htm",
+        "author": "WTO",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      },
+      {
+        "label": "WITS SMART theoretical framework",
+        "author": "World Bank",
+        "publicationDate": "2010",
+        "url": "https://wits.worldbank.org/WITS/WITS/WITSHELP/Content/SMART/SMART%20-%20Introduction.htm",
+        "role": "Partial-equilibrium modelling context; this lab is not SMART and does not calibrate its 60% pass-through from this reference"
+      }
+    ]
+  },
+  "method": "Constant-elasticity demand with an assumed 60% exchange-rate pass-through. All indices use a baseline of 100. Positive FX change means depreciation: more local currency per US dollar.",
+  "formula": "Producer price = 1 − 0.6d/(1+d); buyer price = (1+t) × producer price; quantity = buyer price^(−ε); USD receipts = producer price × quantity; local receipts = USD receipts × (1+d).",
+  "limits": "The 60% coefficient is synthetic. There is no supply response, competitor response, capacity constraint or fitted trade dataset. These are scenario indices, not an official forecast.",
+  "guidance": {
+    "question": "How sensitive are export volumes and receipts to tariffs, exchange rates and demand elasticity?",
+    "assumption": "Baseline indices are 100. FX pass-through is assumed to be 60%; elasticity is selected, not estimated.",
+    "rule": "Compare each index with 100 and test the direction of change. An index below 100 is a modelled decline, not evidence of a welfare loss of the same size.",
+    "next": "Obtain product–destination tariffs, transaction prices, volumes, capacity and competitor data; estimate elasticities and pass-through before advising on policy.",
+    "chart": "Horizontal: additional tariff (%). Vertical: export volume index (baseline 100). The table also reports buyer price and receipts indices. The selected dot is the current tariff.",
+    "risk": "Partial-equilibrium sensitivity only; no welfare, employment or general-equilibrium estimate.",
+    "parameterOrigin": "Original teaching prototype; no fitted trade observations supplied.",
+    "references": [
+      {
+        "label": "WITS SMART theoretical framework",
+        "author": "World Bank",
+        "publicationDate": "2010",
+        "url": "https://wits.worldbank.org/WITS/WITS/WITSHELP/Content/SMART/SMART%20-%20Introduction.htm",
+        "role": "Partial-equilibrium modelling context; this lab is not SMART and does not calibrate its 60% pass-through from this reference"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "et-tariff",
+      "label": "Additional tariff (%)",
+      "default": 12,
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "value": 30
+    },
+    {
+      "id": "et-fx",
+      "label": "FX depreciation (%)",
+      "default": 8,
+      "min": -15,
+      "max": 25,
+      "step": 1,
+      "value": 25
+    },
+    {
+      "id": "et-elasticity",
+      "label": "Demand elasticity",
+      "default": 1.5,
+      "min": 0.5,
+      "max": 3,
+      "step": 0.1,
+      "value": 3
+    }
+  ],
+  "results": [
+    {
+      "measure": "Export volume index",
+      "displayValue": "66.8"
+    },
+    {
+      "measure": "USD receipts index",
+      "displayValue": "58.8"
+    },
+    {
+      "measure": "Local receipts index",
+      "displayValue": "73.5"
+    },
+    {
+      "measure": "Buyer price index",
+      "displayValue": "114.4"
+    }
+  ],
+  "chart": {
+    "title": "Tariff sensitivity; FX and elasticity held at selected values",
+    "headers": [
+      "Additional tariff (%)",
+      "Export volume (index; baseline 100)",
+      "Buyer price (index; baseline 100)",
+      "USD receipts (index; baseline 100)",
+      "Local receipts (index; baseline 100)"
+    ],
+    "rows": [
+      [
+        0,
+        146.74117205108942,
+        88,
+        129.13223140495867,
+        161.41528925619838
+      ],
+      [
+        0.5,
+        144.56188358579806,
+        88.44,
+        127.21445755550229,
+        159.01807194437788
+      ],
+      [
+        1,
+        142.42553588814278,
+        88.88000000000001,
+        125.33447158156564,
+        156.66808947695702
+      ],
+      [
+        1.5,
+        140.33107651393237,
+        89.32,
+        123.49134733226049,
+        154.3641841653256
+      ],
+      [
+        2,
+        138.27748382135206,
+        89.76,
+        121.68418576278981,
+        152.10523220348728
+      ],
+      [
+        2.5,
+        136.26376592431515,
+        90.19999999999999,
+        119.91211401339734,
+        149.8901425167467
+      ],
+      [
+        3,
+        134.28895968626145,
+        90.64,
+        118.17428452391007,
+        147.7178556548876
+      ],
+      [
+        3.5,
+        132.35212975265637,
+        91.08,
+        116.46987418233759,
+        145.58734272792196
+      ],
+      [
+        4,
+        130.4523676205207,
+        91.52,
+        114.79808350605822,
+        143.49760438257277
+      ],
+      [
+        4.5,
+        128.5887907434068,
+        91.96,
+        113.15813585419801,
+        141.4476698177475
+      ],
+      [
+        5,
+        126.76054167030722,
+        92.4,
+        111.54927666987035,
+        139.43659583733793
+      ],
+      [
+        5.5,
+        124.96678721705699,
+        92.84,
+        109.97077275101014,
+        137.46346593876268
+      ],
+      [
+        6,
+        123.20671766885532,
+        93.28,
+        108.42191154859269,
+        135.52738943574084
+      ],
+      [
+        6.5,
+        121.4795460125992,
+        93.72,
+        106.90200049108729,
+        133.6275006138591
+      ],
+      [
+        7,
+        119.78450719777946,
+        94.16000000000001,
+        105.41036633404592,
+        131.7629579175574
+      ],
+      [
+        7.5,
+        118.12085742475158,
+        94.6,
+        103.94635453378139,
+        129.9329431672267
+      ],
+      [
+        8,
+        116.48787345924259,
+        95.04,
+        102.50932864413346,
+        128.13666080516683
+      ],
+      [
+        8.5,
+        114.88485197201487,
+        95.48,
+        101.0986697353731,
+        126.37333716921637
+      ],
+      [
+        9,
+        113.31110890264956,
+        95.92,
+        99.71377583433161,
+        124.64221979291452
+      ],
+      [
+        9.5,
+        111.76597884646526,
+        96.36,
+        98.35406138488943,
+        122.9425767311118
+      ],
+      [
+        10,
+        110.24881446362838,
+        96.80000000000001,
+        97.01895672799297,
+        121.2736959099912
+      ],
+      [
+        10.5,
+        108.75898590955684,
+        97.24000000000001,
+        95.70790760041001,
+        119.63488450051251
+      ],
+      [
+        11,
+        107.29588028575643,
+        97.68,
+        94.42037465146565,
+        118.02546831433207
+      ],
+      [
+        11.5,
+        105.85890111027017,
+        98.11999999999999,
+        93.15583297703775,
+        116.44479122129718
+      ],
+      [
+        12,
+        104.44746780695478,
+        98.56000000000002,
+        91.9137716701202,
+        114.89221458765027
+      ],
+      [
+        12.5,
+        103.06101521283647,
+        99,
+        90.69369338729608,
+        113.3671167341201
+      ],
+      [
+        13,
+        101.69899310282678,
+        99.44,
+        89.49511393048756,
+        111.86889241310945
+      ],
+      [
+        13.5,
+        100.36086573111562,
+        99.88,
+        88.31756184338175,
+        110.3969523042272
+      ],
+      [
+        14,
+        99.04611138858472,
+        100.32000000000001,
+        87.16057802195456,
+        108.9507225274432
+      ],
+      [
+        14.5,
+        97.75422197561468,
+        100.76,
+        86.02371533854092,
+        107.52964417317617
+      ],
+      [
+        15,
+        96.48470258968646,
+        101.2,
+        84.90653827892409,
+        106.13317284865511
+      ],
+      [
+        15.5,
+        95.23707112720304,
+        101.64,
+        83.80862259193866,
+        104.76077823992334
+      ],
+      [
+        16,
+        94.01085789898201,
+        102.08,
+        82.72955495110418,
+        103.41194368888023
+      ],
+      [
+        16.5,
+        92.8056052588934,
+        102.52000000000001,
+        81.66893262782618,
+        102.08616578478274
+      ],
+      [
+        17,
+        91.62086724513941,
+        102.95999999999998,
+        80.62636317572269,
+        100.78295396965335
+      ],
+      [
+        17.5,
+        90.45620923369312,
+        103.4,
+        79.60146412564994,
+        99.50183015706243
+      ],
+      [
+        18,
+        89.31120760343646,
+        103.84,
+        78.59386269102409,
+        98.2423283637801
+      ],
+      [
+        18.5,
+        88.18544941255233,
+        104.28,
+        77.60319548304605,
+        97.00399435380757
+      ],
+      [
+        19,
+        87.07853208574944,
+        104.71999999999998,
+        76.62910823545951,
+        95.78638529432439
+      ],
+      [
+        19.5,
+        85.99006311191232,
+        105.16000000000001,
+        75.67125553848284,
+        94.58906942310354
+      ],
+      [
+        20,
+        84.91965975178783,
+        105.60000000000001,
+        74.7293005815733,
+        93.41162572696662
+      ],
+      [
+        20.5,
+        83.86694875533426,
+        106.04,
+        73.80291490469415,
+        92.25364363086769
+      ],
+      [
+        21,
+        82.83156608837598,
+        106.47999999999999,
+        72.89177815777086,
+        91.11472269721357
+      ],
+      [
+        21.5,
+        81.81315666821973,
+        106.92000000000002,
+        71.99557786803337,
+        89.9944723350417
+      ],
+      [
+        22,
+        80.8113741079041,
+        107.35999999999999,
+        71.11400921495562,
+        88.8925115186945
+      ],
+      [
+        22.5,
+        79.8258804687649,
+        107.80000000000001,
+        70.2467748125131,
+        87.80846851564138
+      ],
+      [
+        23,
+        78.85634602101568,
+        108.24000000000001,
+        69.39358449849381,
+        86.74198062311727
+      ],
+      [
+        23.5,
+        77.90244901205028,
+        108.67999999999999,
+        68.55415513060424,
+        85.6926939132553
+      ],
+      [
+        24,
+        76.96387544218966,
+        109.11999999999999,
+        67.72821038912691,
+        84.66026298640863
+      ],
+      [
+        24.5,
+        76.04031884760472,
+        109.56000000000002,
+        66.91548058589217,
+        83.6443507323652
+      ],
+      [
+        25,
+        75.13148009015775,
+        110.00000000000001,
+        66.11570247933882,
+        82.64462809917352
+      ],
+      [
+        25.5,
+        74.23706715391515,
+        110.43999999999998,
+        65.32861909544533,
+        81.66077386930665
+      ],
+      [
+        26,
+        73.35679494809446,
+        110.88,
+        64.55397955432312,
+        80.6924744429039
+      ],
+      [
+        26.5,
+        72.49038511621819,
+        111.32000000000002,
+        63.791538902272,
+        79.73942362784001
+      ],
+      [
+        27,
+        71.63756585125411,
+        111.75999999999999,
+        63.04105794910361,
+        78.80132243637951
+      ],
+      [
+        27.5,
+        70.79807171653229,
+        112.19999999999999,
+        62.302303110548415,
+        77.87787888818552
+      ],
+      [
+        28,
+        69.97164347223729,
+        112.64,
+        61.57504625556881,
+        76.96880781946102
+      ],
+      [
+        28.5,
+        69.15802790727973,
+        113.08,
+        60.85906455840616,
+        76.07383069800771
+      ],
+      [
+        29,
+        68.35697767636086,
+        113.52,
+        60.15414035519755,
+        75.19267544399693
+      ],
+      [
+        29.5,
+        67.56825114205073,
+        113.96,
+        59.46006100500464,
+        74.3250762562558
+      ],
+      [
+        30,
+        66.79161222170657,
+        114.4,
+        58.77661875510179,
+        73.47077344387722
+      ]
+    ]
+  }
+}

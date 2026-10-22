@@ -1,0 +1,965 @@
+{
+  "scope": "Paired local Lighthouse lab comparison: original external font stylesheet/full-axis fonts before; embedded pinned declarations, optimized existing font CDN and local mirrors after. Same transport for both sides, simulated throttling, Chromium and Lighthouse. No field INP or authenticated deployment acceptance.",
+  "transport": "gzip negotiated for both baseline and after",
+  "build": {
+    "commit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+    "vercelGitCommitSha": null,
+    "builtAt": "2026-10-22T17:49:01.037Z",
+    "contentHash": "5879a582c73d68d38840ed8c461a00db14a21d225d9eff8d08879a7080b3add4",
+    "sourceHash": "1d0686624cadbc193f5da7900f3927fa41964f616271b37a31eba4d139c8e3be",
+    "sourceDirty": true,
+    "reproducibleClock": false,
+    "pageCount": 33,
+    "sitemapUrlCount": 32,
+    "articleSlugs": [
+      "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+      "unlocking-inclusive-green-finance-in-bangladesh-a-multi-criteria-innovation-approach-for-product-design",
+      "enhancing-environmental-compliance-and-performance-in-bangladesh",
+      "from-donor-dependent-projects-to-sustainable-urban-finance"
+    ],
+    "preparationArticleSlugs": [],
+    "articlePreservationComplete": false,
+    "excludedFromSitemap": [
+      {
+        "route": "/404",
+        "reason": "Custom error document; not an indexable content page."
+      }
+    ],
+    "validated": true
+  },
+  "baselineIdentity": {
+    "commit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+    "build": {
+      "commit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+      "vercelGitCommitSha": null,
+      "builtAt": "2026-10-22T16:41:39.395Z",
+      "contentHash": "5879a582c73d68d38840ed8c461a00db14a21d225d9eff8d08879a7080b3add4",
+      "sourceHash": "a857ee9b0ae3bc8e5088b86ab903edf791d6d9962791969d13a9f58068135810",
+      "sourceDirty": false,
+      "reproducibleClock": false,
+      "pageCount": 33,
+      "sitemapUrlCount": 32,
+      "articleSlugs": [
+        "bangladeshs-esg-transition-in-2025-why-it-lags-india-and-vietnam-and-what-it-can-learn-from-asean-peers",
+        "unlocking-inclusive-green-finance-in-bangladesh-a-multi-criteria-innovation-approach-for-product-design",
+        "enhancing-environmental-compliance-and-performance-in-bangladesh",
+        "from-donor-dependent-projects-to-sustainable-urban-finance"
+      ],
+      "preparationArticleSlugs": [],
+      "articlePreservationComplete": false,
+      "excludedFromSitemap": [
+        {
+          "route": "/404",
+          "reason": "Custom error document; not an indexable content page."
+        }
+      ],
+      "validated": true
+    }
+  },
+  "comparisons": [
+    {
+      "name": "home",
+      "form": "mobile",
+      "baseline": {
+        "runs": 3,
+        "LCP": {
+          "median": 5453.3265,
+          "min": 5391.80415,
+          "max": 5461.5637
+        },
+        "TBT": {
+          "median": 300,
+          "min": 269.0000000000002,
+          "max": 397
+        },
+        "CLS": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "performance": {
+          "median": 0.73,
+          "min": 0.68,
+          "max": 0.74
+        },
+        "accessibility": {
+          "median": 0.95,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "bytes": {
+          "median": 2728482,
+          "min": 2728481,
+          "max": 2729449
+        }
+      },
+      "after": {
+        "runs": 3,
+        "LCP": {
+          "median": 4629.0991,
+          "min": 4555.293699999999,
+          "max": 4734.4655
+        },
+        "TBT": {
+          "median": 691,
+          "min": 415.9999999999998,
+          "max": 869
+        },
+        "CLS": {
+          "median": 0,
+          "min": 0,
+          "max": 0.0007219534376942372
+        },
+        "performance": {
+          "median": 0.64,
+          "min": 0.62,
+          "max": 0.72
+        },
+        "accessibility": {
+          "median": 0.95,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "bytes": {
+          "median": 2598440,
+          "min": 2598440,
+          "max": 2599036
+        }
+      },
+      "LCPChangePercent": -15.114213315487346
+    },
+    {
+      "name": "hub",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1663.1554,
+          "min": 1663.1554,
+          "max": 1663.1554
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.01436620376137426,
+          "min": 0.01436620376137426,
+          "max": 0.01436620376137426
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 428491,
+          "min": 428491,
+          "max": 428491
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2749.2318000000005,
+          "min": 2749.2318000000005,
+          "max": 2749.2318000000005
+        },
+        "TBT": {
+          "median": 108,
+          "min": 108,
+          "max": 108
+        },
+        "CLS": {
+          "median": 0.01441174063725281,
+          "min": 0.01441174063725281,
+          "max": 0.01441174063725281
+        },
+        "performance": {
+          "median": 0.95,
+          "min": 0.95,
+          "max": 0.95
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 289395,
+          "min": 289395,
+          "max": 289395
+        }
+      },
+      "LCPChangePercent": 65.30215997855645
+    },
+    {
+      "name": "economics-trade",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1904.6747500000001,
+          "min": 1904.6747500000001,
+          "max": 1904.6747500000001
+        },
+        "TBT": {
+          "median": 20.500000000000114,
+          "min": 20.500000000000114,
+          "max": 20.500000000000114
+        },
+        "CLS": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 474579,
+          "min": 474579,
+          "max": 474579
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2897.9626,
+          "min": 2897.9626,
+          "max": 2897.9626
+        },
+        "TBT": {
+          "median": 233,
+          "min": 233,
+          "max": 233
+        },
+        "CLS": {
+          "median": 0.0028279545509405043,
+          "min": 0.0028279545509405043,
+          "max": 0.0028279545509405043
+        },
+        "performance": {
+          "median": 0.91,
+          "min": 0.91,
+          "max": 0.91
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 285053,
+          "min": 285053,
+          "max": 285053
+        }
+      },
+      "LCPChangePercent": 52.149998313360314
+    },
+    {
+      "name": "finance-investment",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1889.63965,
+          "min": 1889.63965,
+          "max": 1889.63965
+        },
+        "TBT": {
+          "median": 1.5,
+          "min": 1.5,
+          "max": 1.5
+        },
+        "CLS": {
+          "median": 0.000237721999571217,
+          "min": 0.000237721999571217,
+          "max": 0.000237721999571217
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 473004,
+          "min": 473004,
+          "max": 473004
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2896.5598,
+          "min": 2896.5598,
+          "max": 2896.5598
+        },
+        "TBT": {
+          "median": 100.22569999999996,
+          "min": 100.22569999999996,
+          "max": 100.22569999999996
+        },
+        "CLS": {
+          "median": 0.003496491074191807,
+          "min": 0.003496491074191807,
+          "max": 0.003496491074191807
+        },
+        "performance": {
+          "median": 0.94,
+          "min": 0.94,
+          "max": 0.94
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 283453,
+          "min": 283453,
+          "max": 283453
+        }
+      },
+      "LCPChangePercent": 53.28635806303068
+    },
+    {
+      "name": "market-enterprise",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1887.036,
+          "min": 1887.036,
+          "max": 1887.036
+        },
+        "TBT": {
+          "median": 23,
+          "min": 23,
+          "max": 23
+        },
+        "CLS": {
+          "median": 0.00003811686457687518,
+          "min": 0.00003811686457687518,
+          "max": 0.00003811686457687518
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 473668,
+          "min": 473668,
+          "max": 473668
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2891.7348,
+          "min": 2891.7348,
+          "max": 2891.7348
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0035362893675295434,
+          "min": 0.0035362893675295434,
+          "max": 0.0035362893675295434
+        },
+        "performance": {
+          "median": 0.94,
+          "min": 0.94,
+          "max": 0.94
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 284104,
+          "min": 284104,
+          "max": 284104
+        }
+      },
+      "LCPChangePercent": 53.24216390148359
+    },
+    {
+      "name": "development-impact",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1888.58835,
+          "min": 1888.58835,
+          "max": 1888.58835
+        },
+        "TBT": {
+          "median": 10,
+          "min": 10,
+          "max": 10
+        },
+        "CLS": {
+          "median": 0.003386357490355428,
+          "min": 0.003386357490355428,
+          "max": 0.003386357490355428
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 472995,
+          "min": 472995,
+          "max": 472995
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2905.018,
+          "min": 2905.018,
+          "max": 2905.018
+        },
+        "TBT": {
+          "median": 221,
+          "min": 221,
+          "max": 221
+        },
+        "CLS": {
+          "median": 0.0032347934570581324,
+          "min": 0.0032347934570581324,
+          "max": 0.0032347934570581324
+        },
+        "performance": {
+          "median": 0.91,
+          "min": 0.91,
+          "max": 0.91
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 283440,
+          "min": 283440,
+          "max": 283440
+        }
+      },
+      "LCPChangePercent": 53.81954463501801
+    },
+    {
+      "name": "policy-governance",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1889.1154999999999,
+          "min": 1889.1154999999999,
+          "max": 1889.1154999999999
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.001522456530496495,
+          "min": 0.001522456530496495,
+          "max": 0.001522456530496495
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 473372,
+          "min": 473372,
+          "max": 473372
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2894.8743999999997,
+          "min": 2894.8743999999997,
+          "max": 2894.8743999999997
+        },
+        "TBT": {
+          "median": 100.14100000000008,
+          "min": 100.14100000000008,
+          "max": 100.14100000000008
+        },
+        "CLS": {
+          "median": 0.003867862919798752,
+          "min": 0.003867862919798752,
+          "max": 0.003867862919798752
+        },
+        "performance": {
+          "median": 0.94,
+          "min": 0.94,
+          "max": 0.94
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 283833,
+          "min": 283833,
+          "max": 283833
+        }
+      },
+      "LCPChangePercent": 53.23967221697137
+    },
+    {
+      "name": "management-delivery",
+      "form": "mobile",
+      "baseline": {
+        "runs": 1,
+        "LCP": {
+          "median": 1888.4509999999998,
+          "min": 1888.4509999999998,
+          "max": 1888.4509999999998
+        },
+        "TBT": {
+          "median": 10.5,
+          "min": 10.5,
+          "max": 10.5
+        },
+        "CLS": {
+          "median": 0.001916873132755164,
+          "min": 0.001916873132755164,
+          "max": 0.001916873132755164
+        },
+        "performance": {
+          "median": 0.99,
+          "min": 0.99,
+          "max": 0.99
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 475331,
+          "min": 475331,
+          "max": 475331
+        }
+      },
+      "after": {
+        "runs": 1,
+        "LCP": {
+          "median": 2896.2438,
+          "min": 2896.2438,
+          "max": 2896.2438
+        },
+        "TBT": {
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "CLS": {
+          "median": 0.0037943746284216004,
+          "min": 0.0037943746284216004,
+          "max": 0.0037943746284216004
+        },
+        "performance": {
+          "median": 0.94,
+          "min": 0.94,
+          "max": 0.94
+        },
+        "accessibility": {
+          "median": 1,
+          "min": 1,
+          "max": 1
+        },
+        "bytes": {
+          "median": 285740,
+          "min": 285740,
+          "max": 285740
+        }
+      },
+      "LCPChangePercent": 53.36610799009349
+    }
+  ],
+  "diagnostics": [
+    {
+      "form": "mobile",
+      "lighthouseVersion": "13.4.1",
+      "config": {
+        "output": [
+          "json"
+        ],
+        "maxWaitForFcp": 30000,
+        "maxWaitForLoad": 45000,
+        "pauseAfterFcpMs": 1000,
+        "pauseAfterLoadMs": 1000,
+        "networkQuietThresholdMs": 1000,
+        "cpuQuietThresholdMs": 1000,
+        "formFactor": "mobile",
+        "throttling": {
+          "rttMs": 150,
+          "throughputKbps": 1638.4,
+          "requestLatencyMs": 562.5,
+          "downloadThroughputKbps": 1474.5600000000002,
+          "uploadThroughputKbps": 675,
+          "cpuSlowdownMultiplier": 4
+        },
+        "throttlingMethod": "simulate",
+        "screenEmulation": {
+          "mobile": true,
+          "width": 412,
+          "height": 823,
+          "deviceScaleFactor": 1.75,
+          "disabled": false
+        },
+        "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+        "auditMode": false,
+        "gatherMode": false,
+        "clearStorageTypes": [
+          "file_systems",
+          "shader_cache",
+          "service_workers",
+          "cache_storage"
+        ],
+        "disableStorageReset": false,
+        "debugNavigation": false,
+        "channel": "cli",
+        "usePassiveGathering": false,
+        "disableFullPageScreenshot": false,
+        "skipAboutBlank": false,
+        "blankPage": "about:blank",
+        "ignoreStatusCode": false,
+        "locale": "en-US",
+        "blockedUrlPatterns": null,
+        "additionalTraceCategories": null,
+        "extraHeaders": null,
+        "precomputedLanternData": null,
+        "onlyAudits": null,
+        "onlyCategories": [
+          "performance",
+          "accessibility"
+        ],
+        "skipAudits": null
+      },
+      "beforeFonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUV8FyLNQOQZAnv9ZwIlOkuy91B.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1471.765999995172,
+          "networkRequestTime": 1628.179999999702,
+          "networkEndTime": 1848.8749999925494,
+          "finished": true,
+          "transferSize": 121395,
+          "resourceSize": 120800,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1474.9009999930859,
+          "networkRequestTime": 1632.680999994278,
+          "networkEndTime": 1855.957999996841,
+          "finished": true,
+          "transferSize": 14098,
+          "resourceSize": 13980,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1483.1660000011325,
+          "networkRequestTime": 1632.7709999978542,
+          "networkEndTime": 1882.4499999955297,
+          "finished": true,
+          "transferSize": 35644,
+          "resourceSize": 35508,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUT8FyLNQOQZAnv9ZwNpOskzP9Ddt0.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 1502.5609999969602,
+          "networkRequestTime": 1632.8469999954104,
+          "networkEndTime": 1892.2990000024438,
+          "finished": true,
+          "transferSize": 149712,
+          "resourceSize": 149512,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "VeryHigh",
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        }
+      ],
+      "afterFonts": [
+        {
+          "url": "https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 113.99800000339746,
+          "networkRequestTime": 114.50699999928474,
+          "networkEndTime": 336.5930000022054,
+          "finished": true,
+          "transferSize": 14098,
+          "resourceSize": 13980,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUI8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAO8UikR_BPug.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 114.27800000458956,
+          "networkRequestTime": 114.6359999999404,
+          "networkEndTime": 421.24899999797344,
+          "finished": true,
+          "transferSize": 67622,
+          "resourceSize": 67468,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/fraunces/v38/6NUG8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9nimTfdtuFo2.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 114.35400000959635,
+          "networkRequestTime": 114.68800000101328,
+          "networkEndTime": 480.8880000039935,
+          "finished": true,
+          "transferSize": 81925,
+          "resourceSize": 81800,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        },
+        {
+          "url": "https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2",
+          "sessionTargetType": "page",
+          "protocol": "h2",
+          "cache": "none",
+          "rendererStartTime": 114.43500000238419,
+          "networkRequestTime": 114.7419999986887,
+          "networkEndTime": 303.6330000087619,
+          "finished": true,
+          "transferSize": 36059,
+          "resourceSize": 35508,
+          "statusCode": 200,
+          "mimeType": "font/woff2",
+          "resourceType": "Font",
+          "priority": "High",
+          "isLinkPreload": true,
+          "experimentalFromMainFrame": true,
+          "entity": "Google Fonts"
+        }
+      ],
+      "lcpBreakdown": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "label",
+                "valueType": "text",
+                "label": "Subpart"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "Duration"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "label": "Time to first byte",
+                "duration": 79.681
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "label": "Element render delay",
+                "duration": 1349.51
+              }
+            ]
+          },
+          {
+            "type": "node",
+            "lhId": "page-6-P",
+            "path": "1,HTML,1,BODY,4,MAIN,0,SECTION,3,DIV,0,DIV,0,DIV,2,P",
+            "selector": "div.container > div.hero__copy > div.hero__text > p.lead",
+            "boundingRect": {
+              "top": 398,
+              "bottom": 553,
+              "left": 22,
+              "right": 390,
+              "width": 368,
+              "height": 155
+            },
+            "snippet": "<p class=\"lead\" style=\"translate: none; rotate: none; scale: none;\">",
+            "nodeLabel": "IP3 Consulting Limited is a policy and development advisory firm helping multil…"
+          }
+        ]
+      },
+      "renderBlocking": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "Transfer Size"
+          },
+          {
+            "key": "wastedMs",
+            "valueType": "timespanMs",
+            "label": "Duration"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://localhost:3124/assets/css/site-home-5bc4c551.css?v=5bc4c551",
+            "totalBytes": 15651,
+            "wastedMs": 314
+          },
+          {
+            "url": "http://localhost:3124/assets/css/explorer.css?v=8a17a8468810",
+            "totalBytes": 1838,
+            "wastedMs": 314
+          }
+        ]
+      }
+    }
+  ],
+  "sourceFiles": [
+    {
+      "filename": "build/build-all.js",
+      "bytes": 10173,
+      "sha256": "95225c5214ba0fd7ecab1594dcc6e3250e2456c4770732aaa9bdd9fb23bdd342"
+    },
+    {
+      "filename": "build/page-css.cjs",
+      "bytes": 1601,
+      "sha256": "5d83c5692d9954a6ade17fc50979b68157c1f08deeba5b28d02e8c4ce958b312"
+    },
+    {
+      "filename": "src/layout.js",
+      "bytes": 12534,
+      "sha256": "0c60f7510a7965bd9ca220288b608c7a5a33f780f79e2cf673678939f874511c"
+    },
+    {
+      "filename": "src/fonts.js",
+      "bytes": 1957,
+      "sha256": "c5940b476e80d1ceb824bfd588fcd1e0e1b6a7d1d92c272113a02935c3113d30"
+    },
+    {
+      "filename": "src/theme-fonts.json",
+      "bytes": 7223,
+      "sha256": "2bf404892666fbca04206e39c24d166b9702c81b16262c259292fbe08bb29e4e"
+    },
+    {
+      "filename": "src/js/site.js",
+      "bytes": 56325,
+      "sha256": "62e47f1dc62d92d05c71b3bf621871fc7d33d61e93d521b7b64a7fa71d58c21a"
+    },
+    {
+      "filename": "src/css/site.css",
+      "bytes": 121652,
+      "sha256": "6bdaa7ab7dfc8c8ebe5ade57aa5c6833a4b7e7726ca7db0071a061a461c9bf5b"
+    },
+    {
+      "filename": "assets/fonts/theme.css",
+      "bytes": 11869,
+      "sha256": "f40134ccb817a4eb317a827e13c993f42ab73dcb61377ff51f304010bad3f056"
+    }
+  ]
+}

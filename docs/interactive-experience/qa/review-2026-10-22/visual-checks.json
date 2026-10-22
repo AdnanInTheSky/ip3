@@ -1,0 +1,161 @@
+[
+  {
+    "model": "economics-trade",
+    "width": 1440,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "economics-trade",
+    "width": 390,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "economics-trade",
+    "width": 320,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "finance-investment",
+    "width": 1440,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "finance-investment",
+    "width": 390,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "finance-investment",
+    "width": 320,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "market-enterprise",
+    "width": 1440,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "market-enterprise",
+    "width": 390,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "market-enterprise",
+    "width": 320,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "market-enterprise",
+    "width": 320,
+    "adverseInputs": {
+      "me-price": 85,
+      "me-cost": 120,
+      "me-productivity": 0,
+      "me-elasticity": 2.5
+    },
+    "overflow": false
+  },
+  {
+    "model": "development-impact",
+    "width": 1440,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "development-impact",
+    "width": 390,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "development-impact",
+    "width": 320,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "development-impact",
+    "width": 320,
+    "adverseInputs": {
+      "di-tpre": 100,
+      "di-tpost": 100,
+      "di-cpre": 0,
+      "di-cpost": 100
+    },
+    "overflow": false
+  },
+  {
+    "model": "policy-governance",
+    "width": 1440,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "policy-governance",
+    "width": 390,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "policy-governance",
+    "width": 320,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "management-delivery",
+    "width": 1440,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "management-delivery",
+    "width": 390,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "management-delivery",
+    "width": 320,
+    "overflow": false,
+    "firstCase": true,
+    "context": "public"
+  },
+  {
+    "model": "management-delivery",
+    "width": 320,
+    "adverseInputs": {
+      "md-team": 5,
+      "md-available": 50,
+      "md-rework": 40,
+      "md-depend": 35
+    },
+    "overflow": false
+  }
+]

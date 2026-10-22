@@ -1,0 +1,25 @@
+✔ accepts valid page metadata, local assets, anchors and sitemap URLs (24.3072ms)
+✔ rejects missing href, src, srcset, poster targets and anchor fragments (9.5934ms)
+✔ accepts accessible SVG titles without treating them as page metadata (6.4538ms)
+✔ rejects missing image alt text and duplicate title, h1 and canonical values (10.8788ms)
+✔ rejects missing required metadata and sitemap URLs without built pages (9.2771ms)
+✔ six routes and exact original hashes remain traceable (10.3222ms)
+✔ trade neutral baseline, sign, analytical elasticity and complete input grid (0.8839ms)
+✔ finance discount timing and conventional IRR known solutions (1.7353ms)
+✔ all eight finance cases match independent annuity and IRR residuals at UI boundaries (12.9966ms)
+✔ enterprise fixed vs variable costs, zero and negative contribution, boundary grid (0.8477ms)
+✔ DiD arithmetic, pp units, negative/zero changes and infeasible counterfactuals (0.4ms)
+✔ governance neutral reference, negative hours and value interpretation (0.5588ms)
+✔ delivery correct capacity, rounding, baseline and slow/fast boundaries (0.4124ms)
+✔ native pages preserve full initial state, static narratives and a single shared shell (1094.6106ms)
+✔ native CSS is scoped and no original document or six-model preload enters Home (101.97ms)
+✔ chart protocol includes all plotted points, signed Year 0 and readable series units (0.4723ms)
+✔ decision guidance, evidence boundaries, reset and export are present without changing theme or shell (137.5359ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1508.2749

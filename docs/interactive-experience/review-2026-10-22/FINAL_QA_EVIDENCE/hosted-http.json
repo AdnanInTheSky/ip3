@@ -1,0 +1,12 @@
+{
+  "url": "https://ip3-bd-icap1r7e6-ip-3.vercel.app/explore",
+  "requestedCommit": "addb8ad303032aec3938ed8ac64c34ab6f737e36",
+  "commitEvidence": "GitHub deployment 7251854289, not authenticated build.json",
+  "status": 302,
+  "redirect": {
+    "origin": "https://vercel.com",
+    "path": "/sso-api",
+    "queryOmitted": true
+  },
+  "hostedInteractionAccepted": false
+}

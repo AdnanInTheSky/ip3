@@ -1,0 +1,130 @@
+{
+  "phase": "after",
+  "baselineCommit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+  "currentCommit": "69d8585b011a5c3341293de22aacbeb221a47544",
+  "browser": "156.0.8078.4",
+  "transport": "gzip negotiated for both baseline and after",
+  "type": "Local Lighthouse lab, simulated default mobile / desktop preset; cold storage for each run; no field INP",
+  "results": [
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.7,
+      "accessibility": 0.97,
+      "LCP": 4664.743,
+      "CLS": 0,
+      "TBT": 505,
+      "bytes": 2599654,
+      "observedLCP": 1213
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 2,
+      "performance": 0.68,
+      "accessibility": 0.97,
+      "LCP": 4627.353799999999,
+      "CLS": 0,
+      "TBT": 606,
+      "bytes": 2599058,
+      "observedLCP": 1278
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 3,
+      "performance": 0.68,
+      "accessibility": 0.97,
+      "LCP": 4626.4951,
+      "CLS": 0,
+      "TBT": 561.9999999999998,
+      "bytes": 2599058,
+      "observedLCP": 1275
+    },
+    {
+      "name": "hub",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1586.5415999999996,
+      "CLS": 0,
+      "TBT": 0,
+      "bytes": 411539,
+      "observedLCP": 1391
+    },
+    {
+      "name": "economics-trade",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1624.2938,
+      "CLS": 0.002557303871573676,
+      "TBT": 0,
+      "bytes": 406784,
+      "observedLCP": 315
+    },
+    {
+      "name": "finance-investment",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1583.7837999999997,
+      "CLS": 0.003038341770875369,
+      "TBT": 0,
+      "bytes": 405208,
+      "observedLCP": 288
+    },
+    {
+      "name": "market-enterprise",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1584.9798,
+      "CLS": 0.0020473363269405136,
+      "TBT": 0,
+      "bytes": 405867,
+      "observedLCP": 366
+    },
+    {
+      "name": "development-impact",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1576.6063999999997,
+      "CLS": 0.002259270259765489,
+      "TBT": 0,
+      "bytes": 405194,
+      "observedLCP": 277
+    },
+    {
+      "name": "policy-governance",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1582.8686000000002,
+      "CLS": 0.0015397749667751919,
+      "TBT": 0,
+      "bytes": 405588,
+      "observedLCP": 274
+    },
+    {
+      "name": "management-delivery",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1587.3924000000002,
+      "CLS": 0.004378624929722884,
+      "TBT": 0,
+      "bytes": 407508,
+      "observedLCP": 296
+    }
+  ]
+}

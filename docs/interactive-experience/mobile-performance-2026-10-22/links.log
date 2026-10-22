@@ -1,0 +1,5 @@
+
+> ip3-consulting-site@3.0.0 links
+> node build/check-links.js
+
+Verified 33 pages, internal href/src/srcset/poster targets, anchors, metadata, image alt attributes and sitemap URLs.

@@ -1,0 +1,378 @@
+{
+  "order": [
+    "resilience",
+    "human",
+    "energy",
+    "capital"
+  ],
+  "cases": {
+    "resilience": {
+      "public": {
+        "label": "01 / Public climate investment",
+        "title": "Investing in warning systems that avert future losses.",
+        "desc": "Early warning systems create social benefits, but investment approval needs defensible avoided-loss estimates, long-term operating finance and clear institutional ownership.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "High value, uncertain finance",
+        "problems": [
+          "Scattered risk and hazard evidence",
+          "Benefits and avoided losses hard to value",
+          "O&M and institutional responsibilities unclear"
+        ],
+        "outputTitle": "A deliverable investment facility",
+        "outputs": [
+          "Prioritised multi-country investment pipeline",
+          "Economic appraisal and sensitivity framework",
+          "Life-cycle financing and delivery roadmap"
+        ],
+        "methods": [
+          "Economic CBA · EIRR / ENPV",
+          "O&M finance and affordability",
+          "Risk and sensitivity scenarios",
+          "Investment screening"
+        ],
+        "gates": [
+          [
+            "Value",
+            "Monetise avoided loss"
+          ],
+          [
+            "Finance",
+            "Fund the full life cycle"
+          ],
+          [
+            "Deliver",
+            "Assign operational roles"
+          ]
+        ],
+        "capex": 65,
+        "benefit": 14.2,
+        "opex": 2.3,
+        "years": 18,
+        "rate": 8,
+        "note": "Economic benefits can include avoided harm and losses, but they do not automatically generate cash for annual operating expenses. Fiscal and institutional sustainability require separate appraisal."
+      },
+      "private": {
+        "label": "01 / Private resilience investment",
+        "title": "Should a logistics company invest in business-continuity infrastructure?",
+        "desc": "Flood protection, resilient storage and redundant systems may reduce downtime. The investor must separate true incremental savings from overly optimistic assumptions.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "An exposure not priced into capex",
+        "problems": [
+          "Uncertain frequency and cost of disruption",
+          "Insurance, repairs and downtime tracked separately",
+          "Unknown cost of business continuity"
+        ],
+        "outputTitle": "A risk-adjusted capital decision",
+        "outputs": [
+          "Quantified avoided downtime scenarios",
+          "Alternative investments and financing paths",
+          "Stage-gated resilience investment plan"
+        ],
+        "methods": [
+          "Enterprise disruption scenarios",
+          "DCF · NPV / IRR",
+          "Insurance / residual-risk review",
+          "Capital budgeting"
+        ],
+        "gates": [
+          [
+            "Exposure",
+            "Price disruptions"
+          ],
+          [
+            "Return",
+            "Stress-test savings"
+          ],
+          [
+            "Act",
+            "Phase the investment"
+          ]
+        ],
+        "capex": 25,
+        "benefit": 7.1,
+        "opex": 1.4,
+        "years": 10,
+        "rate": 10,
+        "note": "Commercial benefits in this hypothetical case are annual avoided losses and operating gains. Validate probabilities, timing, financing costs and residual risk before committing capital."
+      }
+    },
+    "human": {
+      "public": {
+        "label": "02 / Human-capital investment",
+        "title": "Can education infrastructure generate lasting social returns?",
+        "desc": "Education investments need to link learning, retention and future productivity gains to credible costs while testing whether institutions can operate and maintain new services.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Spending plans without credible pathways",
+        "problems": [
+          "Learning gains are long-dated and uncertain",
+          "Capex and recurrent budgets evaluated separately",
+          "Weak links between costs, inclusion and benefits"
+        ],
+        "outputTitle": "An appraised and sequenced reform",
+        "outputs": [
+          "ENPV / EIRR and benefit-cost scenarios",
+          "Costed investment and recurrent requirements",
+          "Targeting, results and implementation logic"
+        ],
+        "methods": [
+          "Education economic CBA",
+          "Learning / earnings benefit models",
+          "Affordability and scenario tests",
+          "Institutional capacity appraisal"
+        ],
+        "gates": [
+          [
+            "Effect",
+            "Test learning pathways"
+          ],
+          [
+            "Cost",
+            "Value full-life costs"
+          ],
+          [
+            "Scale",
+            "Fund operations"
+          ]
+        ],
+        "capex": 90,
+        "benefit": 13.4,
+        "opex": 2.3,
+        "years": 20,
+        "rate": 8,
+        "note": "Human-capital benefit streams depend on causal learning effects, counterfactual outcomes and earnings assumptions. The demonstration uses simplified equal annual demonstration flows—not a real education-project model."
+      },
+      "private": {
+        "label": "02 / Private skills investment",
+        "title": "When does a new workforce academy earn back its investment?",
+        "desc": "A firm planning an in-house skills facility must connect training expenditure to measurable productivity, retention and quality improvements rather than enrolment counts alone.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Training budget mistaken for an outcome",
+        "problems": [
+          "Productivity improvements not measured",
+          "Training and attrition costs left out",
+          "Demand for skills is changing"
+        ],
+        "outputTitle": "A measurable people-investment case",
+        "outputs": [
+          "Training-to-productivity value chain",
+          "Costed academy and staffing model",
+          "Go / pilot / expand decision gates"
+        ],
+        "methods": [
+          "Skills-demand mapping",
+          "Financial NPV / IRR",
+          "Productivity and retention analysis",
+          "Phased financial plan"
+        ],
+        "gates": [
+          [
+            "Measure",
+            "Define skill demand"
+          ],
+          [
+            "Model",
+            "Value net benefits"
+          ],
+          [
+            "Pilot",
+            "Prove before scaling"
+          ]
+        ],
+        "capex": 8,
+        "benefit": 2.5,
+        "opex": 0.8,
+        "years": 8,
+        "rate": 10,
+        "note": "Productivity and retention gains are hypothetical cash-equivalent benefits here; they would require direct measurement and conservative attribution in a real corporate decision."
+      }
+    },
+    "energy": {
+      "public": {
+        "label": "03 / Green public investment",
+        "title": "Designing an energy transition that can be financed and maintained.",
+        "desc": "Green infrastructure policy requires a connection between emissions, environmental benefits, service reliability, funding needs and the ability of agencies to execute.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Policy ambition, weak project readiness",
+        "problems": [
+          "Projects not screened by value and readiness",
+          "Benefits, tariffs and fiscal costs conflated",
+          "Institutional constraints and risks undercounted"
+        ],
+        "outputTitle": "A pipeline with credible financing",
+        "outputs": [
+          "Ranked and screened investments",
+          "Economic / financial appraisal package",
+          "Phased procurement and operating plan"
+        ],
+        "methods": [
+          "Shadow-price and economic CBA",
+          "Financial sustainability / WACC",
+          "Green-finance options",
+          "Environmental and social risks"
+        ],
+        "gates": [
+          [
+            "Screen",
+            "Identify net social value"
+          ],
+          [
+            "Structure",
+            "Map funding sources"
+          ],
+          [
+            "Govern",
+            "Secure delivery mandate"
+          ]
+        ],
+        "capex": 38,
+        "benefit": 8.8,
+        "opex": 1.7,
+        "years": 16,
+        "rate": 8,
+        "note": "Economic returns on a public green project differ from tariff revenue and fiscal funding. Carbon prices, shadow pricing and externalities would require project-specific evidence."
+      },
+      "private": {
+        "label": "03 / Factory efficiency investment",
+        "title": "Does an energy-efficient motor upgrade make commercial sense?",
+        "desc": "A manufacturing firm needs to consider equipment cost, energy savings, utilisation, maintenance, credit constraints and workers’ willingness to adopt new technology.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Savings claims with missing assumptions",
+        "problems": [
+          "Energy savings tested in isolation",
+          "Finance constraints and downtime unpriced",
+          "Actual adoption and utilisation uncertain"
+        ],
+        "outputTitle": "A risk-aware retrofit decision",
+        "outputs": [
+          "Validated baseline and alternative packages",
+          "NPV / IRR and downside thresholds",
+          "Pilot, adoption and measurement plan"
+        ],
+        "methods": [
+          "Energy-cost baseline",
+          "Financial NPV / IRR / payback",
+          "Adoption and behaviour diagnostics",
+          "Credit and downside scenarios"
+        ],
+        "gates": [
+          [
+            "Baseline",
+            "Measure power use"
+          ],
+          [
+            "Return",
+            "Test unit economics"
+          ],
+          [
+            "Pilot",
+            "Verify adoption"
+          ]
+        ],
+        "capex": 4.8,
+        "benefit": 1.35,
+        "opex": 0.27,
+        "years": 9,
+        "rate": 10,
+        "note": "This is a hypothetical technology-adoption investment application. The equipment investment numbers and finance workflow shown here are invented examples, not observed returns."
+      }
+    },
+    "capital": {
+      "public": {
+        "label": "04 / Public capital programme",
+        "title": "Turning an infrastructure wish-list into a financeable investment pipeline.",
+        "desc": "Local infrastructure can promise development gains yet stall because of weak project screening, unclear repayment capacity, fragmented approvals and operating cost gaps.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Project concepts without capital discipline",
+        "problems": [
+          "Projects ranked without shared appraisal rules",
+          "Funding sources and liabilities fragmented",
+          "Cost overruns and procurement risk overlooked"
+        ],
+        "outputTitle": "A sequenced public investment portfolio",
+        "outputs": [
+          "Comparable investment screening matrix",
+          "Funding, procurement and risk options",
+          "Implementation and monitoring controls"
+        ],
+        "methods": [
+          "Multi-criteria project screening",
+          "Economic CBA / fiscal affordability",
+          "Finance structuring and WACC",
+          "Institutional readiness review"
+        ],
+        "gates": [
+          [
+            "Select",
+            "Prioritise social value"
+          ],
+          [
+            "Fund",
+            "Test affordability"
+          ],
+          [
+            "Deliver",
+            "Manage programme risk"
+          ]
+        ],
+        "capex": 55,
+        "benefit": 11.5,
+        "opex": 3,
+        "years": 20,
+        "rate": 8,
+        "note": "The generic NPV illustration is not a debt-service forecast or municipal-budget cash flow. Public investment selection also requires fiscal affordability, distributional review and governance."
+      },
+      "private": {
+        "label": "04 / Enterprise growth investment",
+        "title": "How much expansion capital should an enterprise actually commit?",
+        "desc": "When demand forecasts, financing costs and execution capacity are uncertain, expansion is a sequence of capital-allocation decisions—not a single optimistic sales projection.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Expansion driven by demand optimism",
+        "problems": [
+          "Market forecasts lack downside cases",
+          "Debt and operating leverage untested",
+          "Capacity ramp-up and liquidity disconnected"
+        ],
+        "outputTitle": "An investment staged around evidence",
+        "outputs": [
+          "Integrated revenue and capex scenarios",
+          "Return thresholds and funding options",
+          "Milestones for pilot, expand or defer"
+        ],
+        "methods": [
+          "Market-demand and DCF scenarios",
+          "Financing options / WACC",
+          "Break-even and downside tests",
+          "Investment stage gates"
+        ],
+        "gates": [
+          [
+            "Demand",
+            "Validate the market"
+          ],
+          [
+            "Capital",
+            "Structure funding"
+          ],
+          [
+            "Gate",
+            "Expand conditionally"
+          ]
+        ],
+        "capex": 18.5,
+        "benefit": 5.4,
+        "opex": 1.6,
+        "years": 9,
+        "rate": 10,
+        "note": "The model reports generic project returns from hypothetical flows before financing and tax complications. Actual enterprise investment needs detailed operating, tax and debt schedules."
+      }
+    }
+  }
+}

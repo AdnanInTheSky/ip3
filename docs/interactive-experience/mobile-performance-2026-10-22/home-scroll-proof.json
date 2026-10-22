@@ -1,0 +1,521 @@
+{
+  "checks": [
+    {
+      "width": 390,
+      "selector": "#capabilities",
+      "reveals": [],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": ".stats-band",
+      "reveals": [],
+      "headings": [],
+      "counters": [
+        {
+          "value": "20",
+          "expected": "20"
+        },
+        {
+          "value": "100",
+          "expected": "100"
+        },
+        {
+          "value": "30",
+          "expected": "30"
+        },
+        {
+          "value": "8",
+          "expected": "8"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "selector": "#why-ip3",
+      "reveals": [
+        {
+          "text": "Why IP3",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#thinking-in-action",
+      "reveals": [],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#sectors",
+      "reveals": [],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#translation",
+      "reveals": [
+        {
+          "text": "\n           \n          Policy Intelligence\n          We map ",
+          "opacity": 1
+        },
+        {
+          "text": "\n           \n          Systemic Design\n          We turn fin",
+          "opacity": 1
+        },
+        {
+          "text": "\n          Architecture\n          Delivery Architecture\n    ",
+          "opacity": 1
+        },
+        {
+          "text": "\n           \n          Implementation Management\n          W",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#insights",
+      "reveals": [
+        {
+          "text": "All engagementsAll insights",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#convening",
+      "reveals": [
+        {
+          "text": "Complex reforms fail when ministries, development institutio",
+          "opacity": 1
+        },
+        {
+          "text": "Commission a dialogue",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#clients",
+      "reveals": [
+        {
+          "text": "\n    \n      Clients & partners\n      Asian Development BankP",
+          "opacity": 1
+        },
+        {
+          "text": "Our partnership with IP3 Consulting exceeded every expectati",
+          "opacity": 1
+        },
+        {
+          "text": "IP3’s expert brought a depth of expertise and agility that f",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#leadership",
+      "reveals": [
+        {
+          "text": "Executive Chairman · Economic policy & sustainability transf",
+          "opacity": 1
+        },
+        {
+          "text": "Syful has 20 years of experience in economic policy and sust",
+          "opacity": 1
+        },
+        {
+          "text": "IP3 Consulting isn’t just another policy or research institu",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 390,
+      "selector": "#start",
+      "reveals": [
+        {
+          "text": "Discuss a Consulting AssignmentDiagnostic, design, implement",
+          "opacity": 1
+        },
+        {
+          "text": "Partner With IP3Consortium or subcontracting opportunities.",
+          "opacity": 1
+        },
+        {
+          "text": "Discuss a Research PartnershipResearch, evidence generation ",
+          "opacity": 1
+        },
+        {
+          "text": "Request Our Capability StatementAsk for our full capabilitie",
+          "opacity": 1
+        },
+        {
+          "text": "\n\n  Start the conversation\n  \n  Leave this field empty\n  \n  ",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#capabilities",
+      "reveals": [],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": ".stats-band",
+      "reveals": [],
+      "headings": [],
+      "counters": [
+        {
+          "value": "20",
+          "expected": "20"
+        },
+        {
+          "value": "100",
+          "expected": "100"
+        },
+        {
+          "value": "30",
+          "expected": "30"
+        },
+        {
+          "value": "8",
+          "expected": "8"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "selector": "#why-ip3",
+      "reveals": [
+        {
+          "text": "Why IP3",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#thinking-in-action",
+      "reveals": [],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#sectors",
+      "reveals": [],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#translation",
+      "reveals": [
+        {
+          "text": "\n          Architecture\n          Delivery Architecture\n    ",
+          "opacity": 1
+        },
+        {
+          "text": "\n           \n          Implementation Management\n          W",
+          "opacity": 1
+        },
+        {
+          "text": "\n           \n          Learning & Scale\n          We build r",
+          "opacity": 1
+        },
+        {
+          "text": "\n          \n            Research & Diagnostics\n            F",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#insights",
+      "reveals": [
+        {
+          "text": "All engagementsAll insights",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#convening",
+      "reveals": [
+        {
+          "text": "Connecting policy, capital and implementation",
+          "opacity": 1
+        },
+        {
+          "text": "Complex reforms fail when ministries, development institutio",
+          "opacity": 1
+        },
+        {
+          "text": "Commission a dialogue",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#clients",
+      "reveals": [
+        {
+          "text": "\n    \n      Clients & partners\n      Asian Development BankP",
+          "opacity": 1
+        },
+        {
+          "text": "Our partnership with IP3 Consulting exceeded every expectati",
+          "opacity": 1
+        },
+        {
+          "text": "IP3’s expert brought a depth of expertise and agility that f",
+          "opacity": 1
+        }
+      ],
+      "headings": [],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#leadership",
+      "reveals": [
+        {
+          "text": "Leadership",
+          "opacity": 1
+        },
+        {
+          "text": "Executive Chairman · Economic policy & sustainability transf",
+          "opacity": 1
+        },
+        {
+          "text": "Syful has 20 years of experience in economic policy and sust",
+          "opacity": 1
+        },
+        {
+          "text": "IP3 Consulting isn’t just another policy or research institu",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    },
+    {
+      "width": 1440,
+      "selector": "#start",
+      "reveals": [
+        {
+          "text": "Ready to work with IP3?",
+          "opacity": 1
+        },
+        {
+          "text": "Whether you are preparing a new program, assessing an invest",
+          "opacity": 1
+        },
+        {
+          "text": "Discuss a Consulting AssignmentDiagnostic, design, implement",
+          "opacity": 1
+        },
+        {
+          "text": "Partner With IP3Consortium or subcontracting opportunities.",
+          "opacity": 1
+        },
+        {
+          "text": "Discuss a Research PartnershipResearch, evidence generation ",
+          "opacity": 1
+        },
+        {
+          "text": "\n\n  Start the conversation\n  \n  Leave this field empty\n  \n  ",
+          "opacity": 1
+        }
+      ],
+      "headings": [
+        {
+          "split": "1",
+          "words": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "counters": []
+    }
+  ],
+  "errors": [],
+  "stageControls": [
+    {
+      "stage": 1,
+      "visible": true
+    },
+    {
+      "stage": 2,
+      "visible": true
+    },
+    {
+      "stage": 3,
+      "visible": true
+    },
+    {
+      "stage": 4,
+      "visible": true
+    },
+    {
+      "stage": 5,
+      "visible": true
+    },
+    {
+      "stage": 6,
+      "visible": true
+    }
+  ],
+  "noJavaScriptPanels": [
+    {
+      "stage": "1",
+      "display": "list-item"
+    },
+    {
+      "stage": "2",
+      "display": "list-item"
+    },
+    {
+      "stage": "3",
+      "display": "list-item"
+    },
+    {
+      "stage": "4",
+      "display": "list-item"
+    },
+    {
+      "stage": "5",
+      "display": "list-item"
+    },
+    {
+      "stage": "6",
+      "display": "list-item"
+    }
+  ],
+  "passed": true
+}

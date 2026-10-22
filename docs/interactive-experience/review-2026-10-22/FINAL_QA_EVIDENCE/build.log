@@ -1,0 +1,5 @@
+
+> ip3-consulting-site@3.0.0 build
+> node build/build-all.js
+
+Built 33 pages, sitemap with 32 URLs.

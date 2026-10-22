@@ -1,0 +1,46 @@
+{
+  "phase": "after",
+  "baselineCommit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+  "currentCommit": "4cb540855e53841427931ef96c1fb6df18d481cd",
+  "browser": "156.0.8078.4",
+  "transport": "gzip negotiated for both baseline and after",
+  "type": "Local Lighthouse lab, simulated default mobile / desktop preset; cold storage for each run; no field INP",
+  "results": [
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.74,
+      "accessibility": 0.97,
+      "LCP": 4729.461000000004,
+      "CLS": 0.005990704356763309,
+      "TBT": 306,
+      "bytes": 2599729,
+      "observedLCP": 3554
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 2,
+      "performance": 0.79,
+      "accessibility": 0.97,
+      "LCP": 4636.3305,
+      "CLS": 0,
+      "TBT": 208,
+      "bytes": 2599132,
+      "observedLCP": 1142
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 3,
+      "performance": 0.78,
+      "accessibility": 0.97,
+      "LCP": 4628.521100000002,
+      "CLS": 0,
+      "TBT": 200.07380000000012,
+      "bytes": 2599133,
+      "observedLCP": 1199
+    }
+  ]
+}

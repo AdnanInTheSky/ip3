@@ -48,6 +48,11 @@ test('rejects missing href, src, srcset, poster targets and anchor fragments', (
   assert.match(errors, /\/poster\.jpg does not resolve/);
 });
 
+test('accepts accessible SVG titles without treating them as page metadata', (t) => {
+  const root = fixture(t, {'index.html': page({path:'/',title:'Home',heading:'Home',body:'<svg role="img"><title>Chart</title><g><title>Year 0 investment</title></g></svg>'})}, ['https://example.test/']);
+  assert.deepEqual(verify({dist:root,siteUrl:'https://example.test'}).errors, []);
+});
+
 test('rejects missing image alt text and duplicate title, h1 and canonical values', (t) => {
   const root = fixture(t, {
     'index.html': page({ path: '/', title: 'Same', heading: 'Same heading', body: '<img src="/photo.jpg">' }),

@@ -1,0 +1,120 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "b1fccb927c5d",
+  "model": "policy-governance",
+  "title": "Policy & Governance",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "resilience",
+    "context": "private",
+    "title": "Does the business know who acts when the system is disrupted?"
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Original demonstration time coefficients and hourly valuation; no agency time-and-motion or payroll dataset supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "856c08174279d0a40fa5129d85ad7e37e6fe7c2da35145a109ab0497c077c978",
+    "methodReferences": [
+      {
+        "label": "World Bank: governance",
+        "url": "https://www.worldbank.org/en/topic/governance",
+        "author": "World Bank",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      }
+    ]
+  },
+  "method": "The baseline is 1.5 core hours plus 24% rework at 2.2 hours per instance. Up to five of ten assumed steps can be removed. Digital uptake and simplification affect core time; rework is modelled separately.",
+  "formula": "Baseline = 1.5 + 0.24 × 2.2 hours; new core = 1.5 × (1−0.065 × steps) × (1−0.36 × digital uptake); new total = core + rework × 2.2; annual hours released = (baseline−new total) × monthly cases × 12.",
+  "limits": "All coefficients and the BDT 650/hour valuation are synthetic. Time opportunity value is not a cash saving or budget reduction. Negative released hours mean workload increased.",
+  "guidance": {
+    "question": "How might simplification, digital uptake and rework change administrative effort?",
+    "assumption": "Baseline: 1.5 core hours + 0.24 × 2.2 rework hours per case. Digital and step coefficients, monthly volume and BDT 650/hour are synthetic.",
+    "rule": "Zero annual hours released means no workload change. Negative values mean extra workload. Staff-time opportunity value does not establish a budget saving or fiscal space.",
+    "next": "Collect time-and-motion observations, demand volumes, channel uptake, rework reasons, implementation costs and service-quality/distributional measures.",
+    "chart": "Horizontal: staff hours per case, common zero and scale. Rows: before and after. Core handling is solid; rework is hatched. Component totals match the table.",
+    "risk": "Released capacity requires an operational plan; service quality, access, transition costs and actual cash expenditure are outside the model.",
+    "parameterOrigin": "Original demonstration time coefficients and hourly valuation; no agency time-and-motion or payroll dataset supplied."
+  },
+  "inputs": [
+    {
+      "id": "pg-steps",
+      "default": 3,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Steps removed (of 10)",
+      "value": 3
+    },
+    {
+      "id": "pg-digital",
+      "default": 65,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Digital uptake (%)",
+      "value": 50
+    },
+    {
+      "id": "pg-rework",
+      "default": 12,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Rework rate (%)",
+      "value": 20
+    },
+    {
+      "id": "pg-volume",
+      "default": 3000,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Applications per month",
+      "value": 5500
+    }
+  ],
+  "results": [
+    {
+      "measure": "Annual hours released",
+      "displayValue": "39,458 h"
+    },
+    {
+      "measure": "Workload change",
+      "displayValue": "29.5%"
+    },
+    {
+      "measure": "Staff-time opportunity value (not budget savings)",
+      "displayValue": "৳25.65m"
+    },
+    {
+      "measure": "Reformed hours per case",
+      "displayValue": "1.43 h"
+    }
+  ],
+  "chart": {
+    "title": "Administrative workload components on a common hours-per-case scale",
+    "headers": [
+      "Pathway",
+      "Core handling (hours per case)",
+      "Rework (hours per case)",
+      "Total (hours per case)"
+    ],
+    "rows": [
+      [
+        "Before",
+        1.5,
+        0.528,
+        2.028
+      ],
+      [
+        "After",
+        0.9901500000000001,
+        0.44000000000000006,
+        1.4301500000000003
+      ]
+    ]
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "9bf45d82b5bf",
+  "model": "management-delivery",
+  "title": "Management & Delivery",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "field",
+    "context": "private",
+    "title": "How does an enterprise keep execution consistent across locations?"
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Original linear teaching model; no observed task-level delivery dataset supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+    "methodReferences": [
+      {
+        "label": "UK Government: project delivery standard",
+        "url": "https://www.gov.uk/government/publications/project-delivery-functional-standard",
+        "author": "UK Government",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      }
+    ]
+  },
+  "method": "A linear throughput illustration with 120 equivalent work packages, 0.75 packages/person/week and an illustrative 24-week target. The fixed comparison uses 10 people, 65% availability, 24% rework and 23% dependency drag.",
+  "formula": "Weekly rate = team × 0.75 × availability × (1−dependency drag)/(1+rework); duration = ceil(120/rate); schedule gap = 24−duration.",
+  "limits": "This is not a critical-path or resource-loaded schedule. It has no real dependencies, holidays, cost model or uncertainty distribution. The chart horizon expands to include slow scenarios.",
+  "guidance": {
+    "question": "How do availability, rework and dependency drag change illustrative throughput and completion time?",
+    "assumption": "120 equivalent packages; 0.75 packages/person/week; fixed baseline of 10 people, 65% availability, 24% rework and 23% dependency drag.",
+    "rule": "Completion within 24 weeks meets the illustrative target. Duration is rounded up to whole weeks; the chart shows continuous throughput capped at 120 packages.",
+    "next": "Build a resource-loaded schedule with actual package sizes, dependency logic, calendars, skills, costs and uncertainty; test against delivery records.",
+    "chart": "Horizontal: weeks, expanding for slow scenarios. Vertical: cumulative completed packages. Dashed: fixed baseline; solid: selected scenario; vertical dotted marker: week 24.",
+    "risk": "Dependency drag is a scalar assumption, not a dependency network. This does not perform critical-path analysis or estimate a completion probability.",
+    "parameterOrigin": "Original linear teaching model; no observed task-level delivery dataset supplied."
+  },
+  "inputs": [
+    {
+      "id": "md-team",
+      "default": 12,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Team size (people)",
+      "value": 13
+    },
+    {
+      "id": "md-available",
+      "default": 80,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Availability (%)",
+      "value": 75
+    },
+    {
+      "id": "md-rework",
+      "default": 14,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Rework (%)",
+      "value": 20
+    },
+    {
+      "id": "md-depend",
+      "default": 12,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Dependency drag (%)",
+      "value": 18
+    }
+  ],
+  "results": [
+    {
+      "measure": "Illustrative duration",
+      "displayValue": "25 wk"
+    },
+    {
+      "measure": "Relative to 24-week target",
+      "displayValue": "1 wk late"
+    },
+    {
+      "measure": "Packages per week",
+      "displayValue": "5.0/wk"
+    },
+    {
+      "measure": "Relative throughput",
+      "displayValue": "+65%"
+    }
+  ],
+  "chart": {
+    "title": "Cumulative equivalent work packages; linear throughput, target at week 24",
+    "headers": [
+      "Week",
+      "Fixed baseline (completed packages)",
+      "Selected scenario (completed packages)"
+    ],
+    "rows": [
+      [
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        3.027217741935484,
+        4.996875000000001
+      ],
+      [
+        2,
+        6.054435483870968,
+        9.993750000000002
+      ],
+      [
+        3,
+        9.081653225806452,
+        14.990625000000003
+      ],
+      [
+        4,
+        12.108870967741936,
+        19.987500000000004
+      ],
+      [
+        5,
+        15.13608870967742,
+        24.984375000000007
+      ],
+      [
+        6,
+        18.163306451612904,
+        29.981250000000006
+      ],
+      [
+        7,
+        21.190524193548388,
+        34.978125000000006
+      ],
+      [
+        8,
+        24.217741935483872,
+        39.97500000000001
+      ],
+      [
+        9,
+        27.244959677419356,
+        44.97187500000001
+      ],
+      [
+        10,
+        30.27217741935484,
+        49.968750000000014
+      ],
+      [
+        11,
+        33.29939516129032,
+        54.96562500000001
+      ],
+      [
+        12,
+        36.32661290322581,
+        59.96250000000001
+      ],
+      [
+        13,
+        39.353830645161295,
+        64.95937500000001
+      ],
+      [
+        14,
+        42.381048387096776,
+        69.95625000000001
+      ],
+      [
+        15,
+        45.408266129032256,
+        74.95312500000001
+      ],
+      [
+        16,
+        48.435483870967744,
+        79.95000000000002
+      ],
+      [
+        17,
+        51.46270161290323,
+        84.94687500000002
+      ],
+      [
+        18,
+        54.48991935483871,
+        89.94375000000002
+      ],
+      [
+        19,
+        57.51713709677419,
+        94.94062500000003
+      ],
+      [
+        20,
+        60.54435483870968,
+        99.93750000000003
+      ],
+      [
+        21,
+        63.57157258064517,
+        104.93437500000002
+      ],
+      [
+        22,
+        66.59879032258064,
+        109.93125000000002
+      ],
+      [
+        23,
+        69.62600806451613,
+        114.92812500000002
+      ],
+      [
+        24,
+        72.65322580645162,
+        119.92500000000003
+      ],
+      [
+        25,
+        75.6804435483871,
+        120
+      ],
+      [
+        26,
+        78.70766129032259,
+        120
+      ],
+      [
+        27,
+        81.73487903225806,
+        120
+      ],
+      [
+        28,
+        84.76209677419355,
+        120
+      ],
+      [
+        29,
+        87.78931451612904,
+        120
+      ],
+      [
+        30,
+        90.81653225806451,
+        120
+      ],
+      [
+        31,
+        93.84375,
+        120
+      ],
+      [
+        32,
+        96.87096774193549,
+        120
+      ],
+      [
+        33,
+        99.89818548387098,
+        120
+      ],
+      [
+        34,
+        102.92540322580646,
+        120
+      ],
+      [
+        35,
+        105.95262096774194,
+        120
+      ],
+      [
+        36,
+        108.97983870967742,
+        120
+      ],
+      [
+        37,
+        112.00705645161291,
+        120
+      ],
+      [
+        38,
+        115.03427419354838,
+        120
+      ],
+      [
+        39,
+        118.06149193548387,
+        120
+      ],
+      [
+        40,
+        120,
+        120
+      ],
+      [
+        41,
+        120,
+        120
+      ],
+      [
+        42,
+        120,
+        120
+      ],
+      [
+        43,
+        120,
+        120
+      ],
+      [
+        44,
+        120,
+        120
+      ],
+      [
+        45,
+        120,
+        120
+      ],
+      [
+        46,
+        120,
+        120
+      ],
+      [
+        47,
+        120,
+        120
+      ],
+      [
+        48,
+        120,
+        120
+      ]
+    ]
+  }
+}

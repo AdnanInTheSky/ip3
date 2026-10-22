@@ -1,0 +1,21 @@
+{
+  "phase": "after",
+  "baselineCommit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+  "currentCommit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+  "browser": "156.0.8078.4",
+  "type": "Local Lighthouse lab, simulated default mobile / desktop preset; cold storage for each run; no field INP",
+  "results": [
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.51,
+      "accessibility": 0.95,
+      "LCP": 7964.667000000001,
+      "CLS": 0,
+      "TBT": 565.5,
+      "bytes": 3186528,
+      "observedLCP": 1436
+    }
+  ]
+}

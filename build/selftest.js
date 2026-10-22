@@ -141,7 +141,7 @@ test('negative content/build safeguards', async (t) => {
     });
     await t.test('rejects an incomplete section order', () => {
       reset(); const data = json('section-order.json'); data.home.pop(); save('section-order.json', data);
-      expectValidation(/Home section order must contain exactly 9 supported sections/);
+      expectValidation(/Home section order must contain exactly 10 supported sections/);
     });
     await t.test('rejects unsupported testimonial placements and missing visible content', () => {
       reset(); const placements = json('section-placement.json'); placements.homeTestimonials = 'Inside Why IP3 journey'; save('section-placement.json', placements);
@@ -288,7 +288,7 @@ test('LF and CRLF source checkouts produce identical public payload apart from t
 
   for (const root of Object.values(roots)) {
     const result = spawnSync(process.execPath, ['build/build-all.js'], {
-      cwd: root, encoding: 'utf8', env: { ...process.env, CONTACT_API_ENABLED: '', PUBLIC_TURNSTILE_SITE_KEY: '' },
+      cwd: root, encoding: 'utf8', env: { ...process.env, NODE_PATH: path.join(REPO,'node_modules'), CONTACT_API_ENABLED: '', PUBLIC_TURNSTILE_SITE_KEY: '' },
     });
     assert.equal(result.status, 0, result.stderr || result.stdout || 'build failed');
   }
@@ -324,7 +324,7 @@ test('LF and CRLF source checkouts produce identical public payload apart from t
 
   const enabled = spawnSync(process.execPath, ['build/build-all.js'], {
     cwd: roots.lf, encoding: 'utf8',
-    env: { ...process.env, CONTACT_API_ENABLED: '1', PUBLIC_TURNSTILE_SITE_KEY: 'public-test-key' },
+    env: { ...process.env, NODE_PATH: path.join(REPO,'node_modules'), CONTACT_API_ENABLED: '1', PUBLIC_TURNSTILE_SITE_KEY: 'public-test-key' },
   });
   assert.equal(enabled.status, 0, enabled.stderr || enabled.stdout || 'contact API enabled build failed');
   const enabledContact = fs.readFileSync(path.join(roots.lf, 'dist', 'contact.html'), 'utf8');

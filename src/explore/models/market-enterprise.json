@@ -1,0 +1,411 @@
+{
+  "order": [
+    "technology",
+    "green",
+    "workforce",
+    "regulation",
+    "sme"
+  ],
+  "cases": {
+    "technology": {
+      "public": {
+        "label": "01 / PUBLIC · FIRM TECHNOLOGY",
+        "title": "What keeps firms from adopting better technology?",
+        "desc": "A manufacturing economy cannot close its productivity gap without measuring the technologies firms actually use and understanding the barriers to adoption.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Technology needs unclear.",
+        "problems": [
+          "Uneven firm-level capability and equipment use",
+          "Limited evidence on adoption barriers by sector",
+          "Interventions poorly targeted to firm readiness"
+        ],
+        "resultTitle": "A measurable productivity agenda.",
+        "results": [
+          "Segment firms by capability and barriers",
+          "Target adoption, skills and financing mechanisms",
+          "Track actual take-up and performance"
+        ],
+        "methods": [
+          "Firm-level adoption surveys",
+          "Sector diagnostics",
+          "Technology-use mapping",
+          "Econometric analysis"
+        ],
+        "steps": [
+          [
+            "Map",
+            "Measure gaps"
+          ],
+          [
+            "Target",
+            "Match support"
+          ],
+          [
+            "Evaluate",
+            "Test adoption"
+          ]
+        ]
+      },
+      "private": {
+        "label": "01 / PRIVATE · OPERATIONS",
+        "title": "Where does an upgrade actually improve performance?",
+        "desc": "Equipment expenditure alone is not productivity. Firms need evidence about bottlenecks, worker capability, financing and returns before selecting new technology.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Technology spending without a business case.",
+        "problems": [
+          "Bottlenecks hidden across the production line",
+          "Capital budget separated from skills needs",
+          "Benefits assumed instead of measured"
+        ],
+        "resultTitle": "A sequenced adoption roadmap.",
+        "results": [
+          "Compare alternative process and equipment upgrades",
+          "Combine skills, financing and maintenance plans",
+          "Pilot adoption before full roll-out"
+        ],
+        "methods": [
+          "Time and motion diagnostics",
+          "Process-cost benchmarking",
+          "Investment feasibility",
+          "Pilot evaluation"
+        ],
+        "steps": [
+          [
+            "Audit",
+            "Locate losses"
+          ],
+          [
+            "Pilot",
+            "Test upgrades"
+          ],
+          [
+            "Scale",
+            "Track return"
+          ]
+        ]
+      }
+    },
+    "green": {
+      "public": {
+        "label": "02 / PUBLIC · GREEN INDUSTRY",
+        "title": "Turning the green transition into a firm-level programme.",
+        "desc": "Climate goals become actionable when policymakers understand factory constraints, access to green finance and the incentives shaping energy and technology choices.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Green ambition, fragmented evidence.",
+        "problems": [
+          "Energy and investment gaps vary across factories",
+          "Green finance and regulatory requirements difficult to navigate",
+          "Policy instruments disconnected from firm economics"
+        ],
+        "resultTitle": "A realistic industry transition pathway.",
+        "results": [
+          "Prioritise feasible cleaner technologies",
+          "Identify finance and regulatory constraints",
+          "Design sequenced incentives and support"
+        ],
+        "methods": [
+          "Enterprise survey design",
+          "Key informant interviews and focus groups",
+          "Green-finance diagnostics",
+          "Policy and regulatory review"
+        ],
+        "steps": [
+          [
+            "Listen",
+            "Gather firm evidence"
+          ],
+          [
+            "Compare",
+            "Rank barriers"
+          ],
+          [
+            "Design",
+            "Sequence reforms"
+          ]
+        ]
+      },
+      "private": {
+        "label": "02 / PRIVATE · GREEN COMPETITIVENESS",
+        "title": "When does a greener production line make business sense?",
+        "desc": "For an exporter, clean energy and process efficiency decisions depend on lifecycle costs, buyer requirements, operational risk and available financing.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Clean technology perceived as only a cost.",
+        "problems": [
+          "Energy savings and upfront cost poorly compared",
+          "Buyer sustainability demands difficult to price",
+          "Green financing options not evaluated"
+        ],
+        "resultTitle": "An investment-ready transition plan.",
+        "results": [
+          "Prioritise projects by payback and resilience",
+          "Align operational measures with buyer needs",
+          "Map financing and execution milestones"
+        ],
+        "methods": [
+          "Energy and material-cost audit",
+          "Lifecycle costing",
+          "Market and buyer assessment",
+          "Climate risk screening"
+        ],
+        "steps": [
+          [
+            "Measure",
+            "Energy baseline"
+          ],
+          [
+            "Select",
+            "Best options"
+          ],
+          [
+            "Finance",
+            "Stage delivery"
+          ]
+        ]
+      }
+    },
+    "workforce": {
+      "public": {
+        "label": "03 / PUBLIC · WORKER SERVICE MARKETS",
+        "title": "Designing worker services that support better jobs.",
+        "desc": "Employment, health and productivity intersect. A functioning worker-services market needs credible evidence on access, business incentives and service quality.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Workforce needs and service incentives misaligned.",
+        "problems": [
+          "Workers face barriers to reliable services",
+          "Factory value proposition not made visible",
+          "Programme effects insufficiently tested"
+        ],
+        "resultTitle": "A service model with measurable value.",
+        "results": [
+          "Map worker needs and service delivery gaps",
+          "Test models using rigorous evaluation",
+          "Align factory, worker and provider incentives"
+        ],
+        "methods": [
+          "RCT and impact evaluation",
+          "Worker and factory data",
+          "Business value analysis",
+          "Market-systems research"
+        ],
+        "steps": [
+          [
+            "Assess",
+            "Identify unmet need"
+          ],
+          [
+            "Test",
+            "Evaluate models"
+          ],
+          [
+            "Improve",
+            "Align incentives"
+          ]
+        ]
+      },
+      "private": {
+        "label": "03 / PRIVATE · WORKFORCE PERFORMANCE",
+        "title": "Can worker wellbeing become part of operating strategy?",
+        "desc": "Worker services should be assessed alongside retention, absence, service use, costs and longer-run productivity—not treated as a standalone corporate benefit.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "People costs measured, people value missed.",
+        "problems": [
+          "Absence and turnover treated as isolated metrics",
+          "Worker service investments lack a testable hypothesis",
+          "No integrated performance dashboard"
+        ],
+        "resultTitle": "A measurable workforce investment case.",
+        "results": [
+          "Link service quality with operating indicators",
+          "Compare costs and potential business value",
+          "Test interventions and monitor outcomes"
+        ],
+        "methods": [
+          "Worker needs assessment",
+          "Retention and absence analysis",
+          "Cost-effectiveness framework",
+          "Impact evaluation design"
+        ],
+        "steps": [
+          [
+            "Understand",
+            "Worker needs"
+          ],
+          [
+            "Trial",
+            "Measure change"
+          ],
+          [
+            "Adjust",
+            "Scale carefully"
+          ]
+        ]
+      }
+    },
+    "regulation": {
+      "public": {
+        "label": "04 / PUBLIC · BUSINESS ENVIRONMENT",
+        "title": "Removing the hidden costs of doing business.",
+        "desc": "Better business rules are not only about reducing forms. Institutional processes, licensing, transparency and implementation capacity determine how well markets function.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Regulation imposes hidden transaction costs.",
+        "problems": [
+          "Overlapping procedures and uncertain processing time",
+          "Weak feedback loops between businesses and agencies",
+          "Simplifications not tracked for actual use"
+        ],
+        "resultTitle": "A reform that firms can experience.",
+        "results": [
+          "Map costs and priority bottlenecks",
+          "Co-design simplification and digital tools",
+          "Monitor service standards and business confidence"
+        ],
+        "methods": [
+          "Regulatory process mapping",
+          "Firm consultations and surveys",
+          "Results-based measurement",
+          "Institutional analysis"
+        ],
+        "steps": [
+          [
+            "Map",
+            "Document friction"
+          ],
+          [
+            "Reform",
+            "Simplify rules"
+          ],
+          [
+            "Verify",
+            "Track delivery"
+          ]
+        ]
+      },
+      "private": {
+        "label": "04 / PRIVATE · MARKET ENTRY",
+        "title": "Making expansion decisions with fewer blind spots.",
+        "desc": "An attractive market may still impose costly delays through registration, certification, permits, logistics and uncertainty. Strategy must price those frictions explicitly.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Expansion plan ignores the cost of friction.",
+        "problems": [
+          "Time-to-market assumptions too optimistic",
+          "Approvals and certification risks uncosted",
+          "Market-entry milestones unsequenced"
+        ],
+        "resultTitle": "An executable market-entry plan.",
+        "results": [
+          "Identify requirements and real transaction costs",
+          "Compare entry channels and locations",
+          "Create compliance and investment milestones"
+        ],
+        "methods": [
+          "Process mapping",
+          "Market-entry feasibility",
+          "Transaction-cost modelling",
+          "Sensitivity analysis"
+        ],
+        "steps": [
+          [
+            "Identify",
+            "Map constraints"
+          ],
+          [
+            "Compare",
+            "Entry options"
+          ],
+          [
+            "Execute",
+            "Stage capital"
+          ]
+        ]
+      }
+    },
+    "sme": {
+      "public": {
+        "label": "05 / PUBLIC · INCLUSIVE ENTERPRISE",
+        "title": "Connecting rural producers with viable markets.",
+        "desc": "Small producers often have capability, quality and market-access constraints at the same time. Enterprise development must link training to buyer demand and commercialization.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Producers remain outside high-value markets.",
+        "problems": [
+          "Fragmented buyer relationships and information",
+          "Limited commercialization and quality systems",
+          "Training results not linked to viable demand"
+        ],
+        "resultTitle": "A market-linked enterprise pathway.",
+        "results": [
+          "Understand the full value chain",
+          "Identify commercially relevant upgrades",
+          "Evaluate income and livelihood pathways"
+        ],
+        "methods": [
+          "Value-chain mapping",
+          "Producer and market interviews",
+          "End-line evaluation",
+          "Technology-use assessment"
+        ],
+        "steps": [
+          [
+            "Map",
+            "Trace value chain"
+          ],
+          [
+            "Link",
+            "Strengthen markets"
+          ],
+          [
+            "Evaluate",
+            "Measure results"
+          ]
+        ]
+      },
+      "private": {
+        "label": "05 / PRIVATE · SME GROWTH",
+        "title": "Finding the next viable market for a growing enterprise.",
+        "desc": "A smaller enterprise must choose products, segments and channels where customers will pay, supply remains reliable and contribution margins support growth.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Growth is driven by volume, not economics.",
+        "problems": [
+          "Market segments and willingness-to-pay unclear",
+          "Channel and logistics costs mismeasured",
+          "Scale-up outpaces product quality and cash flow"
+        ],
+        "resultTitle": "A disciplined go-to-market plan.",
+        "results": [
+          "Prioritise customer segments and channels",
+          "Test product pricing and unit economics",
+          "Sequence investment to demand signals"
+        ],
+        "methods": [
+          "Customer and competitor research",
+          "Value chain economics",
+          "Pricing and margin analysis",
+          "Growth experiments"
+        ],
+        "steps": [
+          [
+            "Discover",
+            "Find segments"
+          ],
+          [
+            "Test",
+            "Validate margins"
+          ],
+          [
+            "Expand",
+            "Scale evidence"
+          ]
+        ]
+      }
+    }
+  }
+}

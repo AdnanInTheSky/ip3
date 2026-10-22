@@ -1,0 +1,7 @@
+{
+  "status": 403,
+  "code": "forbidden",
+  "scope": "ip-3",
+  "message": "Vercel API request failed (403: forbidden). Not authorized: Trying to access resource under scope \"ip-3\". You must re-authenticate to this scope or use a token with access to this scope.",
+  "neededAction": "Authorise the existing Vercel connection for team ip-3, then approve access to the protected preview. This session does not expose the suggested team authorisation-link tool."
+}

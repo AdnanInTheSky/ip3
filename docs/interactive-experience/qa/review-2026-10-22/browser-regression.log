@@ -1,0 +1,11 @@
+
+> ip3-consulting-site@3.0.0 test:explore:browser
+> node scripts/explore-browser-check.cjs
+
+economics-trade {"scenarios":10,"vectors":7,"axe":0,"errors":0}
+finance-investment {"scenarios":8,"vectors":5,"axe":0,"errors":0}
+market-enterprise {"scenarios":10,"vectors":9,"axe":0,"errors":0}
+development-impact {"scenarios":12,"vectors":9,"axe":0,"errors":0}
+policy-governance {"scenarios":12,"vectors":9,"axe":0,"errors":0}
+management-delivery {"scenarios":12,"vectors":9,"axe":0,"errors":0}
+BROWSER FAILURES []

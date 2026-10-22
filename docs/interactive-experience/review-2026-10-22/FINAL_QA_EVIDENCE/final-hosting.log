@@ -1,0 +1,48 @@
+
+> ip3-consulting-site@3.0.0 test:hostinger
+> node --test hosting/hostinger/routing.test.js hosting/hostinger/local-preparation.test.cjs hosting/hostinger/publishing/release-plan.test.cjs
+
+✔ fresh build output refuses existing/source/escaped paths and directory junctions (11.8149ms)
+✔ reproducible build clock validates SOURCE_DATE_EPOCH (1.3535ms)
+✔ all 342 inventory URLs and 16 preservation-approved identities reconcile without claiming missing text (13.5596ms)
+✔ each article URL maps only when full text and identity are verified (1.5899ms)
+✔ baseline aliases land directly on canonical pages; draft page IDs require opt-in (1.0413ms)
+✔ conflicting, duplicate, encoded, missing and unknown WordPress query selectors fail closed (2.4376ms)
+✔ redirect graph rejects loops, duplicates, offsite targets, canonical shadowing and missing destinations (0.5714ms)
+✔ unknown paths return 404 while generated html and slash aliases normalize once (1.1318ms)
+✔ base pages plus verified articles reconcile with canonical sitemap and excluded 404 (37.1882ms)
+✔ CLI refuses every remote upload or activation flag before reading build files (262.8907ms)
+✔ valid build produces deterministic manifest with disabled upload and promotion (83.0707ms)
+✔ rejects traversal, encoded paths, absolute paths, control chars and Windows paths (0.5249ms)
+✔ rejects WordPress root paths regardless of case (0.4259ms)
+✔ rejects missing pages and unvalidated or wrong-commit build (120.6363ms)
+✔ rejects source files, environment files, unexpected PHP and source maps (87.1414ms)
+✔ rejects credential marker embedded in otherwise allowed public file (40.8742ms)
+✔ rejects arbitrary remote target and accepts only private immutable release proposal (234.5782ms)
+✔ explicit Hostinger mode allows only the exact reviewed runtime overlay names (101.8905ms)
+✔ local package hashes bytes and refuses overwrite (222.2865ms)
+✔ source mutation between planning and packaging fails closed (153.1485ms)
+✔ package verification rejects changed bytes, missing/extra files and unpinned manifest (435.8617ms)
+✔ stale Hostinger overlay metadata fails closed (65.9038ms)
+✔ rejects directory junctions and symlinks without following them (40.7649ms)
+✔ exact sector identities required; no duplicates or unsafe slugs (37.4768ms)
+✔ existing logo density suffixes and image names remain allowed without path escapes (190.966ms)
+✔ Insights PNG and WebP media package safely; executable and unsupported media fail closed (306.9824ms)
+✔ verified article identities determine exact release page count and missing/extra routes fail closed (107.117ms)
+✔ local recovery rehearsal restores the previous pinned payload after a simulated file replacement (1654.0918ms)
+✔ all22supported clean routes are mapped without changing page identities (1.6361ms)
+✔ directory collision and listings are controlled without generic redirect backreferences (0.3643ms)
+✔ preserves14existing relative aliases and adds no cross-domain host rule (0.1971ms)
+✔ error document is explicit and raw PHP/private library paths are blocked (0.2483ms)
+✔ current security headers and versioned asset cache behavior are retained (0.1563ms)
+✔ candidate legacy query rules are absent unless explicitly requested locally (4.9848ms)
+✔ external redirect destinations are refused (0.6654ms)
+✔ private drafts deny clean and stale HTML paths without shadowing a published article (0.749ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 36
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4422.9741

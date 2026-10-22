@@ -44,7 +44,8 @@
     { "label": "Selected engagements", "href": "/engagements" },
     { "label": "Insights", "href": "/insights" },
     { "label": "People", "href": "/people" },
-    { "label": "Mandate Finder", "href": "/find-support" }
+    { "label": "Mandate Finder", "href": "/find-support" },
+    { "label": "Interactive Explorer", "href": "/explore" }
   ],
   "legal": [
     { "label": "Privacy Policy", "href": "/privacy" },

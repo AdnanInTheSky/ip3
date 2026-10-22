@@ -1,0 +1,479 @@
+# MASTER CODEX PROMPT
+
+## IP3 Explore — Final Scientific, Editorial, UX, Accessibility, Performance & Release Acceptance
+
+**Operating mode:** `token-governor` Deep Mode + `/strict` + `/proof`, where supported.
+
+**Role:** Act as a coordinated team of senior software architects, applied economists, development policy researchers, quantitative-methods reviewers, scientific visualization specialists, accessibility engineers, performance engineers, and independent QA/release auditors.
+
+**Objective:** Elevate the existing IP3 Explore experience to an internationally credible, evidence-transparent, accessible, and technically reliable analytical platform suitable for review by World Bank and Asian Development Bank professionals, leading university researchers, development practitioners, institutional donors, and senior policymakers.
+
+This is a **final refinement, verification, and acceptance-readiness assignment**, not authorization to redesign or rebuild the website.
+
+---
+
+# 1. PROJECT CONTEXT
+
+Repository:
+`https://github.com/mdsyfulhoque-afk/ip3-bd.org`
+
+Current pull request:
+`https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/30`
+
+Local Explorer:
+`http://localhost:3123/explore`
+
+Primary review files:
+
+* `docs/interactive-experience/review-2026-10-22/CURRENT_REVIEW.md`
+* `docs/interactive-experience/review-2026-10-22/ISSUE_REGISTER_UPDATED.csv`
+* `docs/interactive-experience/qa/review-2026-10-22/`
+* Original review package, source receipts, and implementation handoff where available.
+
+Review baseline: `df4d5e9`.
+
+The previous remediation reports:
+
+* 8 issues Fixed.
+* 5 issues Verified.
+* 3 issues Blocked.
+* 105 regression tests passed.
+* 36 hosting regression tests passed.
+* 64 scenario reset checks passed.
+* 18 independent numerical/export checks passed.
+* Desktop/mobile browser and automated accessibility checks passed within their documented scope.
+
+**Treat all of these as reported historical results, not as proof that the current working tree still passes. Reproduce the relevant checks.**
+
+Previously remediated functionality includes decision guidance, assumptions, limitations, evidence provenance, graph/table/export reconciliation, selected-case reset, JSON/CSV downloads, signed Finance Year 0 cash flows, mobile layout, and chart accessibility improvements.
+
+Do not rebuild already verified functionality without demonstrating a current defect.
+
+# 2. NON-NEGOTIABLE PRESERVATION RULES
+
+Preserve the approved website identity and existing architecture, including:
+
+* Fraunces, Montserrat, and Lato typography.
+* Original visual identity, theme, color system, editorial layout, and hero compositions.
+* Original animations, transitions, reduced-motion behavior, and conceptual SVG diagrams.
+* All six analytical disciplines.
+* Existing public/private perspectives, scenario narratives, and case selection.
+* All 64 detailed case variants and 12 entry pathways.
+* Slider responsiveness, calculations, reset, complete data tables, and JSON/CSV exports.
+* Native rendering without iframes.
+* Shared navigation, footer, content routes, and existing service/sector taxonomies.
+* Existing privacy boundaries and local-only export functionality.
+
+Do not introduce artificial data, invented research findings, false institutional endorsements, unverified citations, or fabricated reviewer sign-offs.
+
+Do not downgrade numerical accuracy, accessibility, evidence disclosure, or functional coverage to improve aesthetic appearance or performance scores.
+
+No production deployment, merge, destructive changes, or weakening of authentication protections is authorized.
+
+# 3. EXECUTION STRATEGY
+
+## Phase A — Establish the actual implementation baseline
+
+Inspect the latest available local branch, PR #30, relevant commits, current running website, source files, test suites, and review artifacts.
+
+1. Confirm repository, branch, commit SHA, build identity, and working-tree status.
+2. Identify changes already incorporated into the current implementation.
+3. Reconcile all 16 issue-register entries with current source and browser behavior.
+4. Verify fixes before proposing further modifications.
+5. Identify actual remaining defects and missing acceptance evidence.
+6. Classify every issue as Fixed, Verified, Partially Fixed, Blocked, or Reopened, with explicit criteria.
+7. Preserve original evidence receipts, hashes, and provenance.
+
+If a source, runtime, preview, browser, or permission is unavailable, document the precise restriction. Never substitute an assumed successful result.
+
+**Output:** Updated baseline and evidence-backed delta audit.
+
+## Phase B — Independent scientific and methodological review
+
+Review each analytical workbench separately.
+
+### B1. Economics & Trade
+
+Audit:
+
+* Tariff, exchange-rate, elasticity, price, quantity, and receipt relationships.
+* Units, percentage conventions, sign conventions, and baseline normalization.
+* Correctness of synthetic scenario interpretation.
+* Whether the graph conveys the mathematical model without implying empirically established responses.
+* Endpoint behavior, monotonicity, and parameter sensitivity.
+
+Ensure conclusions distinguish illustrative comparative statics from estimated real-world trade responses.
+
+### B2. Finance & Investment
+
+Audit:
+
+* Complete annual cash flows, including negative Year 0 investment.
+* Discounting, rate conventions, timing, and sign treatment.
+* NPV/IRR arithmetic and possible non-unique or undefined IRR cases.
+* Economic-versus-financial appraisal terminology.
+* Public/private scenario differentiation.
+* Assumptions, cost and benefit boundaries, and valuation exclusions.
+* Chart, summary, data table, and exports at all years.
+
+Do not label a simplified generic calculation as a validated ENPV/EIRR or FNPV/FIRR appraisal unless the correct framework and evidence support it.
+
+### B3. Market & Enterprise
+
+Audit:
+
+* Price-volume-profit relationships.
+* Elasticity-derived demand assumptions.
+* Break-even mathematics.
+* Fixed-cost and variable-cost treatment.
+* Root finding and threshold accuracy.
+* Non-positive contribution margins and other infeasible cases.
+* Distinction between the selected elasticity-derived scenario and the fixed-price volume sweep.
+
+Verify the graph does not create false certainty about future business outcomes.
+
+### B4. Development & Impact
+
+Audit:
+
+* Two-period Difference-in-Differences arithmetic.
+* Treatment, comparison, and constructed-counterfactual series.
+* Percentage-point interpretation.
+* Axis scaling for out-of-range outcomes.
+* Identification assumptions, especially parallel trends.
+* Appropriate disclosure of missing observations, standard errors, and confidence intervals.
+* Causal language and limits of interpretation.
+
+Do not present synthetic DiD arithmetic as an identified causal effect.
+
+### B5. Policy & Governance
+
+Audit:
+
+* Staff-time, rework, process-efficiency, and opportunity-value calculations.
+* Explicit assumptions and dimensional consistency.
+* Interpretation of before/after components.
+* Distinction between opportunity value and fiscal savings.
+* Correct use of conceptual diagrams versus measured quantitative results.
+
+Prevent hypothetical improvements from being interpreted as documented government savings or achieved institutional outcomes.
+
+### B6. Management & Delivery
+
+Audit:
+
+* Capacity, throughput, package equivalents, and completion time.
+* Dynamic chart horizon and extreme scenarios.
+* Week-24 target and benchmark placement.
+* Weekly cumulative series and export accuracy.
+* Linear model assumptions and omitted dependencies.
+* Distinction between throughput arithmetic and critical-path or probabilistic project forecasting.
+
+### Scientific review deliverable
+
+For each of the six models, prepare an independent methodological review dossier containing:
+
+1. Purpose and permitted decision use.
+2. Equations and variable definitions.
+3. Units, defaults, bounds, and assumptions.
+4. Independently reproduced test vectors.
+5. Graph/data/export reconciliation.
+6. Limitations and possible misuse.
+7. Relevant verified academic or institutional methodological references.
+8. Required calibration or external datasets.
+9. Uncertainty and sensitivity requirements.
+10. Items requiring a qualified human specialist's acceptance.
+
+**Critical IP3-03 rule:** Automated arithmetic verification is not empirical calibration or independent domain approval.
+
+If calibration evidence and external expert sign-off are unavailable, retain IP3-03 as Blocked. Do not manufacture empirical validation or close it by changing labels.
+
+Explicitly distinguish:
+
+* **Illustrative Learning Model:** transparent synthetic example, not a validated forecast.
+* **Empirically Calibrated Decision Model:** calibrated with relevant real data and reviewed for the intended use.
+
+Recommend an appropriate publication route for each model, but do not silently change the project's existing acceptance requirements.
+
+## Phase C — International-standard editorial and content assessment
+
+Assess the Explore hub and all six model pages for readability, professional credibility, methodological precision, and decision usefulness.
+
+Use the following audiences as evaluation perspectives:
+
+* Multilateral development bank economists and project specialists.
+* Academic researchers and quantitative-methods reviewers.
+* Development program designers and evaluators.
+* Government policy analysts and senior decision-makers.
+* Donors and institutional funding partners.
+
+Review whether each page clearly explains:
+
+* What decision or policy problem is being examined.
+* Why the analytical approach is relevant.
+* How the illustration operates.
+* Which assumptions drive the results.
+* What the graph actually demonstrates.
+* What cannot be inferred.
+* What additional evidence is necessary before real-world application.
+
+Prefer concise, technically accurate, plain-English communication over decorative or exaggerated institutional language.
+
+Remove or flag unsupported language such as “proven impact,” “validated outcomes,” or “verified engagement” wherever the supporting documentation is insufficient.
+
+For factual academic or empirical assertions, use verified, clickable author–year references, preferring DOI or official institutional publication links. Do not treat a methodological citation as validation of synthetic model parameters.
+
+Preserve the existing professional editorial voice and the approved overall page structure.
+
+**Output:** Page-specific editorial findings with proposed replacement wording and reasons.
+
+## Phase D — Graph and scientific visualization refinement
+
+Audit all six quantitative visualization systems.
+
+Verify:
+
+* Accurate axis labels, dimensions, units, scales, and baseline indicators.
+* Appropriate handling of negative and positive values.
+* Exact matching among formulas, plotted series, data tables, and exported files.
+* Distinguishable line styles and chart elements beyond color.
+* Accessible chart descriptions and alternative tabular representation.
+* Robust resizing on mobile and enlarged text.
+* Clear visual distinction between hypothetical simulation and real-world empirical evidence.
+* Consistent precision and non-misleading rounding.
+* Correct handling of out-of-range values and numerical edge cases.
+
+Preserve the original animations and graphic identity.
+
+Make only targeted changes that measurably improve interpretation, accuracy, usability, or accessibility.
+
+Never add decorative movement that implies unsupported empirical relationships.
+
+**Output:** Model-by-model graph quality assessment with before/after evidence for every substantive change.
+
+## Phase E — Human accessibility acceptance preparation
+
+Address remaining issue IP3-09.
+
+Re-run relevant automated accessibility checks and evaluate keyboard navigation, focus order, slider operation, labels, chart summaries, data tables, downloads, and reduced-motion behavior.
+
+Prepare and, where authorized human testers and environments are available, conduct manual assessments using:
+
+* NVDA with Firefox.
+* VoiceOver with Safari.
+* Relevant physical mobile devices.
+* At least one browser engine independent of Chromium.
+
+Test representative scenarios and adverse edge cases across all six models.
+
+Include tasks for understanding chart values without seeing the graph, changing inputs, interpreting announcements, opening the data table, resetting the selected case, and exporting results.
+
+Record assistive-technology version, browser, device, expected behavior, actual behavior, severity, and reproducible steps.
+
+Fix genuine software accessibility defects found.
+
+If qualified human evaluation is unavailable, produce a complete ready-to-execute acceptance script and retain IP3-09 as Blocked.
+
+Do not claim WCAG certification or complete human acceptance based only on axe or other automated checks.
+
+## Phase F — Authenticated hosted verification
+
+Address remaining issue IP3-15.
+
+Verify PR #30's current build and CI status using authorized repository and hosting access.
+
+For a protected Vercel preview, use only approved authentication, authorized access mechanisms, or officially configured testing credentials.
+
+Do not disable protection, expose secrets, or bypass access restrictions without authorization.
+
+When access is available, verify:
+
+* Exact deployed commit and build identity.
+* Explore hub and six detail routes.
+* Assets, fonts, animations, and navigation.
+* Public/private and scenario interactions.
+* Numerical results and graph data.
+* Reset and JSON/CSV downloads.
+* Responsive behavior and accessibility.
+* Console errors, failed network requests, and unexpected runtime failures.
+
+Where hosted interaction cannot be tested, document the missing permission and the exact secure access action needed.
+
+Do not report successful hosted acceptance based only on local browser tests or deployment build success.
+
+## Phase G — Homepage and Explorer performance
+
+Investigate the inherited homepage mobile Lighthouse LCP, previously reported around **14.76 seconds**.
+
+Identify its actual contributors before making changes.
+
+Examine:
+
+* LCP element and loading chain.
+* Hero media sizing and delivery.
+* Image format, resolution, and compression.
+* Loading priority.
+* Font loading and rendering.
+* Render-blocking CSS/JavaScript.
+* Hydration and main-thread work.
+* Third-party scripts and unnecessary assets.
+* Layout shifts and interaction responsiveness.
+
+Do not remove or substantially alter approved hero designs and original animations merely to improve a score.
+
+Prefer targeted loading, responsive asset, preloading, scheduling, and rendering optimizations.
+
+Run repeatable mobile and desktop measurements, documenting test conditions, variability, baseline and post-change results.
+
+Report LCP, CLS, TBT, and other meaningful available metrics; distinguish lab measurements from field Core Web Vitals and do not infer field INP from TBT.
+
+Evaluate the Explorer's own performance separately from the homepage.
+
+If meaningful improvement requires a visual or architectural trade-off, document it for owner approval rather than making an unauthorized redesign.
+
+## Phase H — Regression, privacy, and release safety
+
+Repeat and extend the relevant checks after modifications.
+
+At minimum cover:
+
+* Current repository regression suite.
+* Hosting checks.
+* Build, content, and link validation.
+* All 64 selected-case reset behaviors.
+* Independent numeric and export vectors.
+* Every graph/table/download reconciliation.
+* Finance Year 0 and signed flow cases.
+* Impact extreme counterfactuals.
+* Delivery worst-case horizons.
+* Enterprise infeasible contribution cases.
+* Keyboard, reduced motion, reflow, and mobile widths.
+* Navigation, homepage, service/sector routes, and Contact privacy behavior.
+
+Existing test counts are baseline evidence, not immutable success criteria. Record the real current counts and failures.
+
+Check export integrity, download naming, content-derived calculation versioning, and whether user inputs are unintentionally transmitted or persisted.
+
+Do not modify generated artifacts while leaving their authoritative source templates or import/build pipeline inconsistent.
+
+# 4. PRIORITY AND BLOCKER MANAGEMENT
+
+Prioritize work as follows:
+
+**P0 — Scientific integrity and unsafe claims**
+
+Resolve factual misrepresentation, numerical inconsistency, graph deception, or incorrect evidentiary claims immediately. Prepare IP3-03 specialist review evidence but keep its sign-off requirement open until genuinely satisfied.
+
+**P1 — Accessibility, hosted validation, and serious user-facing issues**
+
+Complete available technical fixes and prepare verifiable human/hosted acceptance records.
+
+**P1 — Performance**
+
+Investigate the severe inherited homepage LCP and implement safe, demonstrably beneficial optimizations where possible.
+
+**P2 — Editorial and visual refinement**
+
+Improve content clarity, evidence presentation, decision interpretation, and chart readability without unapproved redesign.
+
+**P3 — Optional enhancements**
+
+Only propose enhancements that have measurable user value. Do not let optional features delay acceptance work.
+
+A Blocked issue must identify:
+
+* Precisely what remains unmet.
+* Why code or existing evidence cannot satisfy the gate.
+* Required person, access, dataset, or approval.
+* Evidence needed to close it.
+* Residual risk.
+* Current release implication.
+
+Never silently convert Blocked to Fixed.
+
+# 5. REQUIRED FINAL DELIVERABLES
+
+Create or update the appropriate repository review documentation, preserving existing source records.
+
+Produce:
+
+1. **FINAL_ACCEPTANCE_REVIEW.md** — executive assessment, verified improvements, outstanding risks, and release recommendation.
+2. **ISSUE_REGISTER_FINAL.csv** — all 16 original issues plus any newly discovered issues, with severity, owner, status, proof, and remaining acceptance requirements.
+3. **SCIENTIFIC_MODEL_REVIEW.md** — six model-specific analytical review dossiers.
+4. **EDITORIAL_AND_GRAPH_REVIEW.md** — page-by-page content, presentation, and visualization assessment.
+5. **ACCESSIBILITY_ACCEPTANCE.md** — automated results, human testing outcomes or pending scripts, and outstanding failures.
+6. **HOSTED_VERIFICATION.md** — tested URL, deployed commit, authorization scope, browser evidence, or precise blocked-access explanation.
+7. **PERFORMANCE_REVIEW.md** — homepage and Explorer diagnostic findings, reproducible before/after metrics, and remaining limitations.
+8. **FINAL_QA_EVIDENCE/** — relevant machine-readable results, logs, screenshots, and reproducible commands.
+9. **RELEASE_DECISION.md** — explicit GO / CONDITIONAL GO / NO-GO recommendation with the rationale and unresolved gates.
+
+Use existing repository conventions where suitable rather than duplicating equivalent documents.
+
+Every material finding must carry traceable evidence: source path and line or function, reproducible steps, mathematical verification, browser observation, screenshot, test result, or verified external reference as appropriate.
+
+Where practical, include content hashes or immutable commit references for evidence integrity.
+
+# 6. RELEASE DECISION RULES
+
+A production **GO** recommendation requires:
+
+* No unresolved critical analytical or publication gate.
+* No material numerical or data-integrity defect.
+* Required independent model review and owner acceptance.
+* Completed human accessibility acceptance.
+* Completed authorized hosted verification.
+* Passing required regression and build checks.
+* No unresolved release-critical security/privacy failures.
+* Approved final content and visual presentation.
+
+A **CONDITIONAL GO** may be recommended only if an explicitly authorized release policy permits the remaining conditions and the conditions are fully documented. It is not permission to override existing P0 acceptance gates.
+
+Otherwise recommend **NO-GO** with exact actions required to become releasable.
+
+Do not interpret a successful build or passing automated tests as production approval.
+
+# 7. WORKING RULES
+
+* Inspect before editing.
+* Verify prior fixes before replacing them.
+* Make small, reviewable changes.
+* Keep every change traceable to a finding.
+* Re-run affected tests after changes.
+* Preserve original source and evidence.
+* Do not fabricate tests, screenshots, citations, approvals, or deployment outcomes.
+* Do not weaken protection to make automated checks pass.
+* Do not merge PR #30 or deploy to production.
+* Keep scientific credibility ahead of marketing claims.
+* Clearly state what is tested, inferred, pending, and blocked.
+* If a required system or approval is unavailable, finish all legitimately possible work and document the remaining dependency.
+* Do not stop merely to request decisions already covered by these instructions.
+
+# 8. FINAL RESPONSE FORMAT
+
+Provide a concise but substantive completion summary:
+
+**A. Overall verdict:** Current acceptance status and GO / CONDITIONAL GO / NO-GO.
+
+**B. Changes implemented:** Exact files, functions, and behavioral improvements.
+
+**C. Scientific assessment:** Status of all six models and any restrictions on decision use.
+
+**D. Content and visual assessment:** Most important improvements and unresolved findings.
+
+**E. Verification:** Actual test counts, browser/device coverage, numerical checks, and performance evidence.
+
+**F. Remaining blockers:** Owner, required evidence, and exact next action for each.
+
+**G. Deliverables:** Paths to review documents, logs, and screenshots.
+
+**H. PR #30 readiness:** Whether the current branch is technically ready for review, whether scientific acceptance is complete, and whether production release is authorized.
+
+## FINAL SUCCESS CRITERION
+
+The goal is not merely a visually impressive website with interactive graphs.
+
+The goal is an IP3 Explore platform where every graph, calculation, methodological explanation, evidence statement, and decision implication can withstand informed scrutiny from international development specialists and academic reviewers.
+
+**Preserve the original experience. Strengthen the evidence. Verify the mathematics. Improve the presentation. Protect accessibility and performance. Close only genuinely satisfied acceptance gates.**
+
+**Complete the technical work available now, document every unresolved external dependency, and do not claim production readiness until the full acceptance conditions are met.**

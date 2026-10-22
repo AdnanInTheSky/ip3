@@ -1,0 +1,9 @@
+{
+  "platform": "win32",
+  "node": "v24.16.0",
+  "chromium": "156.0.8078.4",
+  "firefox": "157.0",
+  "firefoxDistribution": "Playwright firefox-1555 (installer identified Firefox 157.0)",
+  "edge": "Installed Microsoft Edge; touch emulation at 390 and 320 CSS pixels",
+  "deviceScope": "Automated/emulated, no physical-device or human AT session"
+}

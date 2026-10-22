@@ -21,6 +21,7 @@ function capabilities() {
     room.render(),
     reel.render(),
     sec(`${sectionHead('capabilities-start')}<div class="cards4" data-stagger>${D.about.lifecycle.map((l, i) => tile(l.title, l.text, '0' + (i + 1))).join('')}</div>`, 'section--sand'),
+    require('../explore').related(['economics-trade','finance-investment','market-enterprise','development-impact','policy-governance','management-delivery']),
     cta('cta-capabilities'),
   ].join('\n');
   return page({

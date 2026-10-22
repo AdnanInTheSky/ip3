@@ -1,0 +1,15 @@
+
+> ip3-consulting-site@3.0.0 check
+> node build/validate.js && node build/cms.js --check
+
+
+7 content warning(s):
+  ! content/pages.json → home.title: 71 characters — aim for 70 or fewer
+  ! content/pages.json → home.desc: 213 characters — aim for 165 or fewer
+  ! content/pages.json → about.desc: 228 characters — aim for 165 or fewer
+  ! content/pages.json → sectors.desc: 228 characters — aim for 165 or fewer
+  ! content/pages.json → engagements.desc: 185 characters — aim for 165 or fewer
+  ! content/home/hero.json → slides[5].video.poster: /assets/img/031024climate-action-esg-strategy-sustainability-47-1.png is 1.3 MB — large for the web; consider compressing it
+  ! content/field-media.json → videos[6].src: /assets/video/reel/about-intro-film.mp4 is 10.4 MB — large for the web; consider compressing it
+Content OK (52 editor sections, 7 warnings).
+.pages.yml is up to date.

@@ -1,0 +1,23 @@
+{
+  "reviewDate": "2026-10-22",
+  "beforeCodeCommit": "df4d5e9",
+  "reviewZipSHA256": "5f175bb1543a29a474a7bfae3862366675faf6d0a6d6b6351d232300557d072f",
+  "providedPDFSHA256": "0bdc291c2ab8f223ef8ed3621fdf3fc602eeee182873f6a7db330f476fea9d89",
+  "sourceCopies": [
+    {
+      "name": "IP3_Explore_Issue_Register_2026-10-22.csv",
+      "bytes": 5851,
+      "sha256": "1c6b6852462595659e25cc199cd51403708c3050c34fb2a8d3ab76b9c03b17c8"
+    },
+    {
+      "name": "IP3_Explore_Proof_Receipts_2026-10-22.json",
+      "bytes": 6882,
+      "sha256": "3ebe93da16c38416bd207860519aba7b2c31e30ba4424dfaf20199e38fb5cf44"
+    },
+    {
+      "name": "IP3_Explore_Strict_Proof_Review_2026-10-22.md",
+      "bytes": 22624,
+      "sha256": "50002ed4e07aac0e37a29442173ee94dd606ebf521dee5ad89610a4027f82432"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "608bf0f859b0",
+  "model": "market-enterprise",
+  "title": "Market & Enterprise",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "sme",
+    "context": "private",
+    "title": "Finding the next viable market for a growing enterprise."
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Original stylised enterprise assumptions; no company observations supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "17a1627d57bb3e22e574942e97e5adcf629554448d66a7ed8c26eb14e81d43a1",
+    "methodReferences": [
+      {
+        "label": "World Bank: Enterprise Surveys",
+        "url": "https://www.enterprisesurveys.org/",
+        "author": "World Bank",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      },
+      {
+        "label": "Principles of Accounting, Volume 2: Managerial Accounting, section 3.1",
+        "author": "Franklin, Graybeal and Cooper; OpenStax",
+        "publicationDate": "2019",
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin",
+        "role": "Contribution-margin and cost-volume-profit methods; no calibration of the synthetic firm or demand elasticity"
+      }
+    ]
+  },
+  "method": "A stylised monthly enterprise with 1,200 units of demand at a price of $120, fixed costs of $29,000, constant demand elasticity and productivity reducing variable unit cost.",
+  "formula": "Units = 1200 × (price/120)^(−elasticity); effective cost = variable cost/(1+productivity); profit = units × (price−effective cost) − 29000; break-even units = ceil(29000/contribution) when contribution > 0.",
+  "limits": "Demand and cost assumptions are synthetic. No taxes, credit, competitors or capacity constraints are modelled. Nonpositive unit contribution means break-even is unattainable under these assumptions.",
+  "guidance": {
+    "question": "What volume covers fixed costs at the selected price and effective variable cost?",
+    "assumption": "Monthly fixed cost is $29,000; demand is 1,200 units at $120 before the selected elasticity adjustment. Productivity reduces variable cost only.",
+    "rule": "Operating profit crosses zero at fixed cost divided by positive unit contribution. Displayed break-even rounds up to a whole unit. With contribution ≤ 0 there is no finite break-even.",
+    "next": "Validate transaction-level demand, capacity, variable and fixed costs, seasonality and competitor responses; investigate whether demand at the proposed price is attainable.",
+    "chart": "Horizontal: units per month. Vertical: operating profit in USD per month. Solid line: profit at fixed selected price/cost; dot: demand implied by the elasticity model; dashed marker: break-even if in range.",
+    "risk": "The volume sweep holds price and effective unit cost fixed; it is not a second demand curve or a forecast of sales.",
+    "parameterOrigin": "Original stylised enterprise assumptions; no company observations supplied.",
+    "references": [
+      {
+        "label": "Principles of Accounting, Volume 2: Managerial Accounting, section 3.1",
+        "author": "Franklin, Graybeal and Cooper; OpenStax",
+        "publicationDate": "2019",
+        "url": "https://openstax.org/books/principles-managerial-accounting/pages/3-1-explain-contribution-margin-and-calculate-contribution-margin-per-unit-contribution-margin-ratio-and-total-contribution-margin",
+        "role": "Contribution-margin and cost-volume-profit methods; no calibration of the synthetic firm or demand elasticity"
+      }
+    ]
+  },
+  "inputs": [
+    {
+      "id": "me-price",
+      "label": "Price (USD/unit)",
+      "default": 125,
+      "min": 85,
+      "max": 175,
+      "step": 1,
+      "value": 175
+    },
+    {
+      "id": "me-cost",
+      "label": "Variable cost (USD/unit)",
+      "default": 78,
+      "min": 50,
+      "max": 120,
+      "step": 1,
+      "value": 120
+    },
+    {
+      "id": "me-productivity",
+      "label": "Productivity uplift (%)",
+      "default": 8,
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "value": 30
+    },
+    {
+      "id": "me-elasticity",
+      "label": "Demand elasticity",
+      "default": 1.3,
+      "min": 0.3,
+      "max": 2.5,
+      "step": 0.1,
+      "value": 2.5
+    }
+  ],
+  "results": [
+    {
+      "measure": "Monthly operating profit",
+      "displayValue": "$9,637"
+    },
+    {
+      "measure": "Operating margin",
+      "displayValue": "11.8%"
+    },
+    {
+      "measure": "Break-even volume",
+      "displayValue": "351units"
+    },
+    {
+      "measure": "Unit contribution",
+      "displayValue": "$82.69"
+    }
+  ],
+  "chart": {
+    "title": "Operating profit at alternative volumes; selected price and effective cost held fixed",
+    "headers": [
+      "Units per month",
+      "Operating profit (USD per month)"
+    ],
+    "rows": [
+      [
+        0,
+        -29000
+      ],
+      [
+        41.666666666666664,
+        -25554.48717948718
+      ],
+      [
+        83.33333333333333,
+        -22108.97435897436
+      ],
+      [
+        125,
+        -18663.46153846154
+      ],
+      [
+        166.66666666666666,
+        -15217.948717948719
+      ],
+      [
+        208.33333333333334,
+        -11772.435897435895
+      ],
+      [
+        250,
+        -8326.923076923078
+      ],
+      [
+        291.6666666666667,
+        -4881.410256410254
+      ],
+      [
+        333.3333333333333,
+        -1435.8974358974374
+      ],
+      [
+        375,
+        2009.6153846153866
+      ],
+      [
+        416.6666666666667,
+        5455.1282051282105
+      ],
+      [
+        458.3333333333333,
+        8900.641025641024
+      ],
+      [
+        500,
+        12346.153846153844
+      ],
+      [
+        541.6666666666666,
+        15791.666666666664
+      ],
+      [
+        583.3333333333334,
+        19237.179487179492
+      ],
+      [
+        625,
+        22682.692307692305
+      ],
+      [
+        666.6666666666666,
+        26128.205128205125
+      ],
+      [
+        708.3333333333334,
+        29573.717948717953
+      ],
+      [
+        750,
+        33019.23076923077
+      ],
+      [
+        791.6666666666666,
+        36464.743589743586
+      ],
+      [
+        833.3333333333334,
+        39910.25641025642
+      ],
+      [
+        875,
+        43355.769230769234
+      ],
+      [
+        916.6666666666666,
+        46801.28205128205
+      ],
+      [
+        958.3333333333334,
+        50246.794871794875
+      ],
+      [
+        1000,
+        53692.30769230769
+      ],
+      [
+        1041.6666666666667,
+        57137.820512820515
+      ],
+      [
+        1083.3333333333333,
+        60583.33333333333
+      ],
+      [
+        1125,
+        64028.846153846156
+      ],
+      [
+        1166.6666666666667,
+        67474.35897435898
+      ],
+      [
+        1208.3333333333333,
+        70919.8717948718
+      ],
+      [
+        1250,
+        74365.38461538461
+      ],
+      [
+        1291.6666666666667,
+        77810.89743589744
+      ],
+      [
+        1333.3333333333333,
+        81256.41025641025
+      ],
+      [
+        1375,
+        84701.92307692308
+      ],
+      [
+        1416.6666666666667,
+        88147.4358974359
+      ],
+      [
+        1458.3333333333333,
+        91592.94871794872
+      ],
+      [
+        1500,
+        95038.46153846155
+      ],
+      [
+        1541.6666666666667,
+        98483.97435897437
+      ],
+      [
+        1583.3333333333333,
+        101929.48717948717
+      ],
+      [
+        1625,
+        105375
+      ],
+      [
+        1666.6666666666667,
+        108820.51282051284
+      ],
+      [
+        1708.3333333333333,
+        112266.02564102563
+      ],
+      [
+        1750,
+        115711.53846153847
+      ],
+      [
+        1791.6666666666667,
+        119157.05128205128
+      ],
+      [
+        1833.3333333333333,
+        122602.5641025641
+      ],
+      [
+        1875,
+        126048.07692307694
+      ],
+      [
+        1916.6666666666667,
+        129493.58974358975
+      ],
+      [
+        1958.3333333333333,
+        132939.10256410256
+      ],
+      [
+        2000,
+        136384.61538461538
+      ],
+      [
+        2041.6666666666667,
+        139830.12820512822
+      ],
+      [
+        2083.3333333333335,
+        143275.64102564103
+      ],
+      [
+        2125,
+        146721.15384615384
+      ],
+      [
+        2166.6666666666665,
+        150166.66666666666
+      ],
+      [
+        2208.3333333333335,
+        153612.1794871795
+      ],
+      [
+        2250,
+        157057.6923076923
+      ],
+      [
+        2291.6666666666665,
+        160503.20512820513
+      ],
+      [
+        2333.3333333333335,
+        163948.71794871797
+      ],
+      [
+        2375,
+        167394.23076923078
+      ],
+      [
+        2416.6666666666665,
+        170839.7435897436
+      ],
+      [
+        2458.3333333333335,
+        174285.25641025644
+      ],
+      [
+        2500,
+        177730.76923076922
+      ]
+    ]
+  }
+}

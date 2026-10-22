@@ -1,0 +1,136 @@
+{
+  "phase": "after",
+  "baselineCommit": "e38bf3312b6c4dcd40007c97ffba2c66d55b559c",
+  "currentCommit": "4cb540855e53841427931ef96c1fb6df18d481cd",
+  "browser": "156.0.8078.4",
+  "transport": "gzip negotiated for both baseline and after",
+  "type": "Local Lighthouse lab, simulated default mobile / desktop preset; cold storage for each run; no field INP",
+  "results": [
+    {
+      "name": "hub",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1589.2194499999996,
+      "CLS": 0.0151949353162788,
+      "TBT": 0,
+      "bytes": 411579,
+      "observedLCP": 396
+    },
+    {
+      "name": "economics-trade",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1582.8292,
+      "CLS": 0.003183717552821379,
+      "TBT": 0,
+      "bytes": 406805,
+      "observedLCP": 303
+    },
+    {
+      "name": "finance-investment",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1578.2528000000002,
+      "CLS": 0.0017320894311417725,
+      "TBT": 0,
+      "bytes": 405230,
+      "observedLCP": 315
+    },
+    {
+      "name": "market-enterprise",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1575.6916,
+      "CLS": 0.0035362893675295434,
+      "TBT": 0,
+      "bytes": 405890,
+      "observedLCP": 273
+    },
+    {
+      "name": "development-impact",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1575.2138000000002,
+      "CLS": 0.0016078140963662708,
+      "TBT": 0,
+      "bytes": 405216,
+      "observedLCP": 291
+    },
+    {
+      "name": "policy-governance",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1585.5074,
+      "CLS": 0.0015397749667751919,
+      "TBT": 0,
+      "bytes": 405623,
+      "observedLCP": 342
+    },
+    {
+      "name": "management-delivery",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.99,
+      "accessibility": 1,
+      "LCP": 1571.9694000000004,
+      "CLS": 0.004219468486883668,
+      "TBT": 0,
+      "bytes": 407561,
+      "observedLCP": 310
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 1,
+      "performance": 0.74,
+      "accessibility": 0.97,
+      "LCP": 4729.461000000004,
+      "CLS": 0.005990704356763309,
+      "TBT": 306,
+      "bytes": 2599729,
+      "observedLCP": 3554
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 2,
+      "performance": 0.79,
+      "accessibility": 0.97,
+      "LCP": 4636.3305,
+      "CLS": 0,
+      "TBT": 208,
+      "bytes": 2599132,
+      "observedLCP": 1142
+    },
+    {
+      "name": "home",
+      "form": "mobile",
+      "trial": 3,
+      "performance": 0.78,
+      "accessibility": 0.97,
+      "LCP": 4628.521100000002,
+      "CLS": 0,
+      "TBT": 200.07380000000012,
+      "bytes": 2599133,
+      "observedLCP": 1199
+    }
+  ],
+  "segments": {
+    "home": "performance-priority-home.json",
+    "explore": "before-home-script-priority/performance-after.json",
+    "nativeByteIdentity": "../unchanged-native-output-proof.json",
+    "meaning": "20 accepted before/after runs total; canonical Home report copies are not additional trials."
+  }
+}

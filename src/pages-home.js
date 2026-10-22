@@ -4,11 +4,12 @@ const { validateHomeTestimonialsPlacement } = require('../cms/section-placement'
 const { testimonialCards, testimonialsSection } = require('./sections/testimonials');
 const { chainSection } = require('./sections/chain');
 const { evidence } = require('./sections/evidence');
+const explorer = require('./explore');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
     <article class="hero__slide${i === 0 ? ' is-active' : ''}" data-slide="${i}" aria-hidden="${i === 0 ? 'false' : 'true'}">
-      <video muted loop playsinline ${i === 0 ? 'autoplay preload="auto"' : 'preload="none"'} poster="${s.video.poster}" aria-hidden="true" tabindex="-1"><source src="${s.video.src}" type="video/mp4"></video>
+      <video muted loop playsinline preload="none" ${i === 0 ? `poster="${s.video.poster}"` : `data-poster="${s.video.poster}"`} aria-hidden="true" tabindex="-1"><source data-src="${s.video.src}" type="video/mp4"></video>
     </article>`).join('');
   const texts = D.hero.map((s, i) => `
     <div class="hero__text${i === 0 ? ' is-active' : ''}" data-text="${i}">
@@ -25,6 +26,7 @@ function hero() {
   <div class="hero__contours" aria-hidden="true"></div>
   <div class="container hero__inner"><div class="hero__copy" aria-live="polite">${texts}</div></div>
   <div class="hero__ctrl">
+    <button type="button" data-hero-pause aria-pressed="false" aria-label="Pause automatic slides and background video" title="Pause automatic slides and background video"><svg data-hero-pause-icon viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5v14M15 5v14"/></svg><span data-hero-pause-label aria-hidden="true">Pause motion</span></button>
     <button type="button" data-prev aria-label="Previous slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg></button>
     <button type="button" data-next aria-label="Next slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
   </div>
@@ -192,7 +194,7 @@ function founder() {
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
   const rule = validateHomeTestimonialsPlacement(D.sectionPlacement.homeTestimonials, D.sectionOrder.home, D.testimonials);
-  const renderers = [stats, capabilities, why, sectors, chainSection, evidence, convening, () => proof(Boolean(rule.embedded)), founder];
+  const renderers = [stats, capabilities, why, explorer.preview, sectors, chainSection, evidence, convening, () => proof(Boolean(rule.embedded)), founder];
   const sections = Object.fromEntries(editableSectionOrders.home.default.map((key, i) => [key, renderers[i]]));
   const anchor = rule.before || rule.after;
   if (anchor) {
@@ -206,7 +208,8 @@ function home() {
     title: D.pages.home.title,
     desc: D.pages.home.desc,
     path: '/', body, bodyClass: 'home', jsonld,
-    preload: '<link rel="preload" as="image" href="/assets/img/poster-hero-1.webp" fetchpriority="high">',
+    ...explorer.assets(),
+    preload: `<link rel="preload" as="image" href="${esc(D.hero[0].video.poster)}" fetchpriority="high">`,
   });
 }
 

@@ -1,0 +1,159 @@
+{
+  "meaning": "Browser tests had not started; dependency installation stalled. Known-successful Ubuntu 24.04 image pinned; full browser coverage retained. No claim that the precise network/root cause is established.",
+  "job": {
+    "id": 120016716741,
+    "run_id": 39833811526,
+    "workflow_name": "Interactive model browser checks",
+    "head_branch": "codex/ip3-interactive-experience",
+    "run_url": "https://api.github.com/repos/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811526",
+    "run_attempt": 1,
+    "node_id": "CR_kwDOVDiWZs8AAAAb8Y3DxQ",
+    "head_sha": "1d7d8c585e11eb24529e21360f6d45d5779c0c6f",
+    "url": "https://api.github.com/repos/mdsyfulhoque-afk/ip3-bd.org/actions/jobs/120016716741",
+    "html_url": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39833811526/job/120016716741",
+    "status": "in_progress",
+    "conclusion": null,
+    "created_at": "2026-10-22T18:43:09Z",
+    "started_at": "2026-10-22T18:43:12Z",
+    "completed_at": null,
+    "name": "explorer",
+    "steps": [
+      {
+        "name": "Set up job",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 1,
+        "started_at": "2026-10-22T18:43:13Z",
+        "completed_at": "2026-10-22T18:43:14Z"
+      },
+      {
+        "name": "Run actions/checkout@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 2,
+        "started_at": "2026-10-22T18:43:14Z",
+        "completed_at": "2026-10-22T18:43:20Z"
+      },
+      {
+        "name": "Run actions/setup-node@v4",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 3,
+        "started_at": "2026-10-22T18:43:20Z",
+        "completed_at": "2026-10-22T18:43:22Z"
+      },
+      {
+        "name": "Run npm ci",
+        "status": "completed",
+        "conclusion": "success",
+        "number": 4,
+        "started_at": "2026-10-22T18:43:22Z",
+        "completed_at": "2026-10-22T18:43:24Z"
+      },
+      {
+        "name": "Run npx playwright install --with-deps chromium firefox",
+        "status": "in_progress",
+        "conclusion": null,
+        "number": 5,
+        "started_at": "2026-10-22T18:43:24Z",
+        "completed_at": null
+      },
+      {
+        "name": "Run npm run build",
+        "status": "pending",
+        "conclusion": null,
+        "number": 6,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Start the static preview",
+        "status": "pending",
+        "conclusion": null,
+        "number": 7,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Run npm run test:explore:browser",
+        "status": "pending",
+        "conclusion": null,
+        "number": 8,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Run node scripts/explore-edge-check.cjs",
+        "status": "pending",
+        "conclusion": null,
+        "number": 9,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Run node scripts/explore-review-check.cjs",
+        "status": "pending",
+        "conclusion": null,
+        "number": 10,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Run node scripts/explore-final-browser.cjs",
+        "status": "pending",
+        "conclusion": null,
+        "number": 11,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Run node scripts/explore-scientific-proof.cjs",
+        "status": "pending",
+        "conclusion": null,
+        "number": 12,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Verify models independently in Firefox",
+        "status": "pending",
+        "conclusion": null,
+        "number": 13,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Preserve measured results and screenshots",
+        "status": "pending",
+        "conclusion": null,
+        "number": 14,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Post Run actions/setup-node@v4",
+        "status": "pending",
+        "conclusion": null,
+        "number": 27,
+        "started_at": null,
+        "completed_at": null
+      },
+      {
+        "name": "Post Run actions/checkout@v4",
+        "status": "pending",
+        "conclusion": null,
+        "number": 28,
+        "started_at": null,
+        "completed_at": null
+      }
+    ],
+    "check_run_url": "https://api.github.com/repos/mdsyfulhoque-afk/ip3-bd.org/check-runs/120016716741",
+    "labels": [
+      "ubuntu-latest"
+    ],
+    "runner_id": 1000001061,
+    "runner_name": "GitHub Actions 1000001061",
+    "runner_group_id": 0,
+    "runner_group_name": "GitHub Actions"
+  }
+}

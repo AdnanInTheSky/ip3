@@ -1193,7 +1193,7 @@ content:
             required: true
             description: "Drag sections to change their order. The hero stays first and the closing contact section stays last. Every section must appear once."
             options:
-              values: ["IP3 in numbers", "Capabilities", "Why IP3", "Sectors", "Translation, not theory", "Engagements & insights", "Convening", "Selected proof", "Founder"]
+              values: ["IP3 in numbers", "Capabilities", "Why IP3", "Thinking in action", "Sectors", "Translation, not theory", "Engagements & insights", "Convening", "Selected proof", "Founder"]
           - name: about
             label: "About — middle sections"
             type: select

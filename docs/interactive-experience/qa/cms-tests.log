@@ -1,0 +1,12 @@
+✔ existing CMS contract is preserved alongside article and Explorer section extensions (5.1311ms)
+✔ common editing tasks have clear form, field, help, and collapsed-list labels (0.8188ms)
+✔ restricted section order and testimonial pilot remain unchanged (2.2564ms)
+✔ generated Pages CMS configuration matches the schema (94.7741ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 224.0205

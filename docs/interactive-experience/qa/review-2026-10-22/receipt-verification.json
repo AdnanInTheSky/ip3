@@ -1,0 +1,148 @@
+{
+  "receiptSHA256": "3ebe93da16c38416bd207860519aba7b2c31e30ba4424dfaf20199e38fb5cf44",
+  "scope": "user-supplied ZIP only; actual localhost unavailable",
+  "interpretation": "Authenticates original-source findings only; current runtime is verified separately.",
+  "results": [
+    {
+      "tag": "inventory",
+      "source": "README_FIRST_Handoff_Inventory_2026-10-22.md",
+      "sha256": "f70d7338f43c0266744d7cdef60b5255a1b368a328366ab526a6b41795466447",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "qaAddendum",
+      "source": "02_QA_and_Logs/QA_Status_Addendum_2026-10-22.md",
+      "sha256": "0892d50ef6619a3164e00181637ac6adfe4c757d00a4aa7108516712c13d8174",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "evidenceNotes",
+      "source": "05_Evidence/Evidence_Source_and_Approval_Notes_2026-10-22.md",
+      "sha256": "1eb8fecfd61de9a356b1c814d113b260f6a9057bdbf7693db21641f7c308c1b2",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "engine",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/assets/app.js",
+      "sha256": "5790cb3181f7c02b8521f08657111235414a3624efab659df25a7db756924585",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "data",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/assets/data.js",
+      "sha256": "6b9cb0506cb660a762598c169b797b2291737d535b1992d396d40ed449105bce",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "financeModel",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/models/finance-investment.html",
+      "sha256": "a8bca7dd3fcb91f54d9571d67f1d1c49380ef2a327e4a39f7a6201511ce6bebd",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "impactmodel",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/models/development-impact.html",
+      "sha256": "c9c9275d60a83e74c51da86b432821baea9c1587c1367021fabc1e38c26749f8",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "managementmodel",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/models/management-delivery.html",
+      "sha256": "4df2fa6a0523c010251c5f1c6d99bb2ae3d851a15dee4f938c6a77da5f349de8",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "css",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/assets/style.css",
+      "sha256": "7ec22c740d7247a1b175f8aa81e658785e47e2505cffe09d1e5452d260dac558",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "financePage",
+      "source": "06_Prototype_Reference/Isolated_Prototype_REFERENCE_ONLY/explore/finance-investment/index.html",
+      "sha256": "1b9b04a6d25b8e036b99b9eec4908673fdb5b38dfe375032337bbad91393e3e8",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "modelref",
+      "source": "04_Model_References/Six_Model_Reference_Sheet_DRAFT_2026-10-22.md",
+      "sha256": "a9e460064153797b768dbeeb2924669a9439cae2e8eba3099d3df17d6c1e885e",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "routeNotes",
+      "source": "03_Routes_and_Content/Placement_and_Crosslinks_DRAFT_2026-10-22.md",
+      "sha256": "f91b7b91866cd30e796e9dccf4a68332040897679f02240df2f1c42926e12159",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "decision",
+      "source": "01_Decisions/Decision_Plan_v1.0_2026-10-21.md",
+      "sha256": "b7a430fe38ef2bc325eed67ac8a6887159387d42251e1186d82aead1d556592b",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Literal text and offsets",
+      "anchorMatched": true,
+      "passed": true
+    },
+    {
+      "tag": "visual",
+      "source": "07_Design_Assets/IP3_Development_Impact_Preview_desktop.png",
+      "sha256": "43bd1e5a2f70b0d6be1e0589195ae5af4c8232a8b7987f098a55e970fd8d81a2",
+      "hashMatched": true,
+      "bytesMatched": true,
+      "anchorCheck": "Not applicable: binary/image receipt uses hash and byte count",
+      "anchorMatched": true,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

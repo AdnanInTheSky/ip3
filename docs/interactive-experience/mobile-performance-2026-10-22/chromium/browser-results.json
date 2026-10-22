@@ -1,0 +1,241 @@
+{
+  "base": "http://localhost:3123",
+  "timestamp": "2026-10-22T17:19:53.600Z",
+  "pages": [
+    {
+      "slug": "economics-trade",
+      "viewports": [
+        {
+          "width": 1440,
+          "viewport": 1440,
+          "scroll": 1440,
+          "root": 1440
+        },
+        {
+          "width": 820,
+          "viewport": 820,
+          "scroll": 820,
+          "root": 820
+        },
+        {
+          "width": 390,
+          "viewport": 390,
+          "scroll": 390,
+          "root": 390
+        },
+        {
+          "width": 320,
+          "viewport": 320,
+          "scroll": 320,
+          "root": 320
+        }
+      ],
+      "errors": [],
+      "scenarioCount": 10,
+      "formulaVectors": 7,
+      "accessibility": [],
+      "fonts": {
+        "hero": "Fraunces, Georgia, \"Times New Roman\", serif",
+        "body": "Lato, system-ui, sans-serif",
+        "control": "Montserrat, system-ui, sans-serif"
+      },
+      "reducedMotion": true
+    },
+    {
+      "slug": "finance-investment",
+      "viewports": [
+        {
+          "width": 1440,
+          "viewport": 1440,
+          "scroll": 1440,
+          "root": 1440
+        },
+        {
+          "width": 820,
+          "viewport": 820,
+          "scroll": 820,
+          "root": 820
+        },
+        {
+          "width": 390,
+          "viewport": 390,
+          "scroll": 390,
+          "root": 390
+        },
+        {
+          "width": 320,
+          "viewport": 320,
+          "scroll": 320,
+          "root": 320
+        }
+      ],
+      "errors": [],
+      "scenarioCount": 8,
+      "formulaVectors": 5,
+      "accessibility": [],
+      "fonts": {
+        "hero": "Fraunces, Georgia, \"Times New Roman\", serif",
+        "body": "Lato, system-ui, sans-serif",
+        "control": "Montserrat, system-ui, sans-serif"
+      },
+      "reducedMotion": true
+    },
+    {
+      "slug": "market-enterprise",
+      "viewports": [
+        {
+          "width": 1440,
+          "viewport": 1440,
+          "scroll": 1440,
+          "root": 1440
+        },
+        {
+          "width": 820,
+          "viewport": 820,
+          "scroll": 820,
+          "root": 820
+        },
+        {
+          "width": 390,
+          "viewport": 390,
+          "scroll": 390,
+          "root": 390
+        },
+        {
+          "width": 320,
+          "viewport": 320,
+          "scroll": 320,
+          "root": 320
+        }
+      ],
+      "errors": [],
+      "scenarioCount": 10,
+      "formulaVectors": 9,
+      "accessibility": [],
+      "fonts": {
+        "hero": "Fraunces, Georgia, \"Times New Roman\", serif",
+        "body": "Lato, system-ui, sans-serif",
+        "control": "Montserrat, system-ui, sans-serif"
+      },
+      "reducedMotion": true
+    },
+    {
+      "slug": "development-impact",
+      "viewports": [
+        {
+          "width": 1440,
+          "viewport": 1440,
+          "scroll": 1440,
+          "root": 1440
+        },
+        {
+          "width": 820,
+          "viewport": 820,
+          "scroll": 820,
+          "root": 820
+        },
+        {
+          "width": 390,
+          "viewport": 390,
+          "scroll": 390,
+          "root": 390
+        },
+        {
+          "width": 320,
+          "viewport": 320,
+          "scroll": 320,
+          "root": 320
+        }
+      ],
+      "errors": [],
+      "scenarioCount": 12,
+      "formulaVectors": 9,
+      "accessibility": [],
+      "fonts": {
+        "hero": "Fraunces, Georgia, \"Times New Roman\", serif",
+        "body": "Lato, system-ui, sans-serif",
+        "control": "Montserrat, system-ui, sans-serif"
+      },
+      "reducedMotion": true
+    },
+    {
+      "slug": "policy-governance",
+      "viewports": [
+        {
+          "width": 1440,
+          "viewport": 1440,
+          "scroll": 1440,
+          "root": 1440
+        },
+        {
+          "width": 820,
+          "viewport": 820,
+          "scroll": 820,
+          "root": 820
+        },
+        {
+          "width": 390,
+          "viewport": 390,
+          "scroll": 390,
+          "root": 390
+        },
+        {
+          "width": 320,
+          "viewport": 320,
+          "scroll": 320,
+          "root": 320
+        }
+      ],
+      "errors": [],
+      "scenarioCount": 12,
+      "formulaVectors": 9,
+      "accessibility": [],
+      "fonts": {
+        "hero": "Fraunces, Georgia, \"Times New Roman\", serif",
+        "body": "Lato, system-ui, sans-serif",
+        "control": "Montserrat, system-ui, sans-serif"
+      },
+      "reducedMotion": true
+    },
+    {
+      "slug": "management-delivery",
+      "viewports": [
+        {
+          "width": 1440,
+          "viewport": 1440,
+          "scroll": 1440,
+          "root": 1440
+        },
+        {
+          "width": 820,
+          "viewport": 820,
+          "scroll": 820,
+          "root": 820
+        },
+        {
+          "width": 390,
+          "viewport": 390,
+          "scroll": 390,
+          "root": 390
+        },
+        {
+          "width": 320,
+          "viewport": 320,
+          "scroll": 320,
+          "root": 320
+        }
+      ],
+      "errors": [],
+      "scenarioCount": 12,
+      "formulaVectors": 9,
+      "accessibility": [],
+      "fonts": {
+        "hero": "Fraunces, Georgia, \"Times New Roman\", serif",
+        "body": "Lato, system-ui, sans-serif",
+        "control": "Montserrat, system-ui, sans-serif"
+      },
+      "reducedMotion": true
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,411 @@
+{
+  "order": [
+    "transition",
+    "access",
+    "services",
+    "capacity",
+    "reform"
+  ],
+  "cases": {
+    "transition": {
+      "public": {
+        "label": "01 / PUBLIC POLICY TRANSITION",
+        "title": "Preparing an economy for life beyond trade preferences.",
+        "desc": "LDC graduation alters preference margins, financing conditions and the terms of competition. Research helps sequence a transition rather than react to each shock separately.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Preferences at risk. Readiness unclear.",
+        "problems": [
+          "Fragmented intelligence on preferences and access",
+          "Gaps in productive capacity and export diversification",
+          "Financing and reform priorities disconnected"
+        ],
+        "outputTitle": "A sequenced trade-transition strategy.",
+        "outputs": [
+          "Evidence-based risks and opportunity map",
+          "Prioritised policy and financing responses",
+          "Institutional and EU engagement roadmap"
+        ],
+        "methods": [
+          "Trade preference gap analysis",
+          "Sector competitiveness review",
+          "Productive capacity indicators",
+          "Policy and financing options"
+        ],
+        "gates": [
+          [
+            "Diagnose",
+            "Locate the exposure"
+          ],
+          [
+            "Negotiate",
+            "Prioritise partners"
+          ],
+          [
+            "Implement",
+            "Phase reforms"
+          ]
+        ]
+      },
+      "private": {
+        "label": "01 / EXPORTER MARKET-ACCESS STRATEGY",
+        "title": "What does the loss of a tariff preference mean for an exporter?",
+        "desc": "When preferential access changes, the immediate impact depends on buyers, margins, country of origin, product mix and substitution possibilities—not a headline tariff alone.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "A buyer strategy built on one advantage.",
+        "problems": [
+          "Price competitiveness tied to preferences",
+          "Country and buyer concentration poorly mapped",
+          "Limited analysis of switching and certification costs"
+        ],
+        "outputTitle": "An evidence-led market access plan.",
+        "outputs": [
+          "Buyer- and product-level tariff exposure map",
+          "Market diversification and pricing scenarios",
+          "Investment, compliance and transition priorities"
+        ],
+        "methods": [
+          "HS-product / destination mapping",
+          "Tariff and rules-of-origin screening",
+          "Unit cost and margin analysis",
+          "Buyer demand scenarios"
+        ],
+        "gates": [
+          [
+            "Map",
+            "Identify exposure"
+          ],
+          [
+            "Adapt",
+            "Reprice or diversify"
+          ],
+          [
+            "Stage",
+            "Reinvest selectively"
+          ]
+        ]
+      }
+    },
+    "access": {
+      "public": {
+        "label": "02 / TRADE POLICY AND TARIFF SHOCKS",
+        "title": "Turning tariff uncertainty into a policy response.",
+        "desc": "A tariff announcement is not an economy-wide outcome. Its transmission depends on sector composition, demand elasticity, exchange rates, value chains and partner responses.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "A single shock. Many competing claims.",
+        "problems": [
+          "Tariff headlines mistaken for predicted export losses",
+          "Product exposure and elasticities not reconciled",
+          "Response options lack distributional review"
+        ],
+        "outputTitle": "A transparent trade-risk dashboard.",
+        "outputs": [
+          "Sector-by-market exposure and uncertainty bands",
+          "Negotiation, adjustment and support options",
+          "Decision triggers and monitoring indicators"
+        ],
+        "methods": [
+          "Effective tariff / price wedges",
+          "Partial-equilibrium sensitivity",
+          "Elasticity ranges and FX scenarios",
+          "Stakeholder and welfare analysis"
+        ],
+        "gates": [
+          [
+            "Scope",
+            "Find affected sectors"
+          ],
+          [
+            "Test",
+            "Run scenarios"
+          ],
+          [
+            "Respond",
+            "Protect competitiveness"
+          ]
+        ]
+      },
+      "private": {
+        "label": "02 / EXPORT PRICE AND DEMAND RISK",
+        "title": "Protecting margins when foreign market conditions turn.",
+        "desc": "An exporting firm may face higher buyer prices, weaker orders and fluctuating exchange rates at the same time. A useful strategy separates price, volume, margin and local-currency cash flow.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Commercial decisions made from headlines.",
+        "problems": [
+          "FX revenue confused with real profitability",
+          "Buyer price sensitivity untested",
+          "Order concentration and input exposure hidden"
+        ],
+        "outputTitle": "A conditional export and pricing strategy.",
+        "outputs": [
+          "Scenario-tested price and volume assumptions",
+          "Buyer segmentation and market alternatives",
+          "Hedging, sourcing and cost-reduction decisions"
+        ],
+        "methods": [
+          "Cost and margin waterfalls",
+          "Export-demand scenarios",
+          "FX pass-through sensitivity",
+          "Competitive positioning"
+        ],
+        "gates": [
+          [
+            "Quantify",
+            "Separate price and volume"
+          ],
+          [
+            "Hedge",
+            "Manage cash-flow risk"
+          ],
+          [
+            "Pivot",
+            "Target resilient buyers"
+          ]
+        ]
+      }
+    },
+    "services": {
+      "public": {
+        "label": "03 / TRADE IN SERVICES",
+        "title": "Making invisible trade barriers visible.",
+        "desc": "Services exports may face licensing, payment, data-flow, skills and recognition barriers that do not appear as conventional border tariffs. Good diagnostics identify which constraints can actually change.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Services potential, limited policy clarity.",
+        "problems": [
+          "Fragmented information on cross-border services",
+          "Regulatory and payments constraints unmapped",
+          "Weak classification and firm-level evidence"
+        ],
+        "outputTitle": "A services competitiveness reform agenda.",
+        "outputs": [
+          "Tradable service and market opportunity map",
+          "Ranked regulatory and transaction-cost reforms",
+          "Measurable policy indicators and dialogue plan"
+        ],
+        "methods": [
+          "Services trade classification",
+          "Firm and provider interviews",
+          "Regulatory restriction mapping",
+          "Trade cost and market-demand analysis"
+        ],
+        "gates": [
+          [
+            "Classify",
+            "Understand transactions"
+          ],
+          [
+            "Reform",
+            "Remove binding frictions"
+          ],
+          [
+            "Measure",
+            "Track exportability"
+          ]
+        ]
+      },
+      "private": {
+        "label": "03 / DIGITAL SERVICES EXPORTS",
+        "title": "Choosing where a digital exporter should compete.",
+        "desc": "Software and professional-service exporters compete across skills, contracts, trust, payments and buyer discovery. Market entry needs evidence about reachable demand and the true cost of delivery.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Export aspirations without validated demand.",
+        "problems": [
+          "Markets ranked using size, not accessible demand",
+          "Client acquisition cost and compliance overlooked",
+          "Cross-border billing and delivery risk uncertain"
+        ],
+        "outputTitle": "A staged digital export-market plan.",
+        "outputs": [
+          "Prioritised target buyers and jurisdictions",
+          "Unit economics and compliance checklist",
+          "Pilot-to-scale milestones and learning metrics"
+        ],
+        "methods": [
+          "Serviceable market sizing",
+          "Buyer interviews and market tests",
+          "CAC / margin economics",
+          "Regulatory and FX friction review"
+        ],
+        "gates": [
+          [
+            "Select",
+            "Find reachable niches"
+          ],
+          [
+            "Validate",
+            "Test paid demand"
+          ],
+          [
+            "Scale",
+            "Invest after evidence"
+          ]
+        ]
+      }
+    },
+    "capacity": {
+      "public": {
+        "label": "04 / PRODUCTIVE CAPACITY & GREEN TRADE",
+        "title": "Finding the productive constraints behind slow diversification.",
+        "desc": "Trade performance depends on far more than market access. Energy, transport, institutions, finance and firm capabilities shape the ability to move into higher-value exports.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Export ambitions beyond production capability.",
+        "problems": [
+          "Sector targets detached from production bottlenecks",
+          "Infrastructure and skills constraints fragmented",
+          "Green transition investment priorities unclear"
+        ],
+        "outputTitle": "A capability-led competitiveness strategy.",
+        "outputs": [
+          "Mapped binding constraints by sector",
+          "Productive-capacity and green investment priorities",
+          "Cross-ministry implementation and metrics"
+        ],
+        "methods": [
+          "Productive Capacities Index review",
+          "Firm and value-chain diagnostics",
+          "Infrastructure / skills constraint mapping",
+          "Policy sequencing and costing"
+        ],
+        "gates": [
+          [
+            "Locate",
+            "Test binding constraints"
+          ],
+          [
+            "Invest",
+            "Close critical gaps"
+          ],
+          [
+            "Learn",
+            "Measure firm response"
+          ]
+        ]
+      },
+      "private": {
+        "label": "04 / INDUSTRIAL PRODUCTIVITY",
+        "title": "Testing whether technology adoption actually pays.",
+        "desc": "Factory-level energy efficiency decisions often stall when firms cannot verify savings, financing payback or operational risk. Randomised evidence and firm-level data improve adoption decisions.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Promising technology, uncertain adoption.",
+        "problems": [
+          "Savings claims not matched to shop-floor data",
+          "Credit constraints and behaviour underexplored",
+          "Decision-makers lack independent evidence"
+        ],
+        "outputTitle": "Evidence-backed productivity investment.",
+        "outputs": [
+          "Measured adoption barriers and cost drivers",
+          "Experimental learning on uptake mechanisms",
+          "A practical scale-up and finance case"
+        ],
+        "methods": [
+          "Enterprise surveys and RCT design",
+          "Energy and productivity measurements",
+          "Adoption incentive analysis",
+          "Cost-effectiveness scenarios"
+        ],
+        "gates": [
+          [
+            "Test",
+            "Measure benefits"
+          ],
+          [
+            "Enable",
+            "Address adoption barriers"
+          ],
+          [
+            "Scale",
+            "Invest with evidence"
+          ]
+        ]
+      }
+    },
+    "reform": {
+      "public": {
+        "label": "05 / INVESTMENT CLIMATE REFORM",
+        "title": "Reducing the cost of doing business through better rules.",
+        "desc": "Complex licensing, unclear institutional mandates and uneven administrative practice can suppress private investment even when demand exists. Reform needs evidence, coordination and delivery oversight.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Regulatory friction without accountability.",
+        "problems": [
+          "Duplicated procedures and unclear requirements",
+          "Private-sector feedback poorly structured",
+          "Reforms not linked to measurable implementation"
+        ],
+        "outputTitle": "A reform programme that can be delivered.",
+        "outputs": [
+          "Prioritised regulatory and institutional fixes",
+          "Public-private consultation mechanisms",
+          "Results framework and accountability measures"
+        ],
+        "methods": [
+          "Regulatory process mapping",
+          "Firm / institution interviews",
+          "Results-based measurement",
+          "Institutional risk and feasibility"
+        ],
+        "gates": [
+          [
+            "Listen",
+            "Measure transaction costs"
+          ],
+          [
+            "Simplify",
+            "Redesign procedures"
+          ],
+          [
+            "Monitor",
+            "Track implementation"
+          ]
+        ]
+      },
+      "private": {
+        "label": "05 / PRIVATE INVESTMENT & COMPLIANCE",
+        "title": "Locating the hidden costs in an expansion decision.",
+        "desc": "Business growth can be blocked by an accumulation of small frictions: permits, land access, logistics, time costs, financing and uncertain administrative practice.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "A growth plan with invisible regulatory costs.",
+        "problems": [
+          "Permit timelines absent from the business plan",
+          "Site and logistics constraints underpriced",
+          "Investor milestones and approvals misaligned"
+        ],
+        "outputTitle": "An implementation-ready expansion pathway.",
+        "outputs": [
+          "Regulatory and transaction-cost map",
+          "Sequenced compliance and investment milestones",
+          "Sensitivity-tested site and supply-chain options"
+        ],
+        "methods": [
+          "Process and transaction-cost audits",
+          "Site / logistics feasibility",
+          "Scenario and risk mapping",
+          "Execution readiness diagnostics"
+        ],
+        "gates": [
+          [
+            "Audit",
+            "Find bottlenecks"
+          ],
+          [
+            "Sequence",
+            "Avoid schedule shocks"
+          ],
+          [
+            "Invest",
+            "Release capital by gate"
+          ]
+        ]
+      }
+    }
+  }
+}

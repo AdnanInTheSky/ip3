@@ -1,0 +1,350 @@
+{
+  "protocol": "ip3-illustration/1",
+  "calculationVersion": "4b7b5395f62d",
+  "model": "market-enterprise",
+  "title": "Market & Enterprise",
+  "evidenceStatus": "Synthetic demonstration; not empirically validated",
+  "scenario": {
+    "key": "sme",
+    "context": "private",
+    "title": "Finding the next viable market for a growing enterprise."
+  },
+  "provenance": {
+    "status": "Synthetic demonstration; not empirically validated",
+    "parameterOrigin": "Original stylised enterprise assumptions; no company observations supplied.",
+    "calibration": "None supplied; no fitted coefficients or observed outcome dataset",
+    "domainReview": "Independent domain sign-off not supplied",
+    "claimApproval": "No new named-client credit approved or asserted",
+    "referenceSHA256": "17a1627d57bb3e22e574942e97e5adcf629554448d66a7ed8c26eb14e81d43a1",
+    "methodReferences": [
+      {
+        "label": "World Bank: Enterprise Surveys",
+        "url": "https://www.enterprisesurveys.org/",
+        "author": "World Bank",
+        "role": "Method or disciplinary context only; not parameter calibration",
+        "publicationDate": "Not established in this catalogue; consult linked record"
+      }
+    ]
+  },
+  "method": "A stylised monthly enterprise with 1,200 units of demand at a price of $120, fixed costs of $29,000, constant demand elasticity and productivity reducing variable unit cost.",
+  "formula": "Units = 1200 × (price/120)^(−elasticity); effective cost = variable cost/(1+productivity); profit = units × (price−effective cost) − 29000; break-even units = ceil(29000/contribution) when contribution > 0.",
+  "limits": "Demand and cost assumptions are synthetic. No taxes, credit, competitors or capacity constraints are modelled. Nonpositive unit contribution means break-even is unattainable under these assumptions.",
+  "guidance": {
+    "question": "What volume covers fixed costs at the selected price and effective variable cost?",
+    "assumption": "Monthly fixed cost is $29,000; demand is 1,200 units at $120 before the selected elasticity adjustment. Productivity reduces variable cost only.",
+    "rule": "Operating profit crosses zero at fixed cost divided by positive unit contribution. Displayed break-even rounds up to a whole unit. With contribution ≤ 0 there is no finite break-even.",
+    "next": "Validate transaction-level demand, capacity, variable and fixed costs, seasonality and competitor responses; investigate whether demand at the proposed price is attainable.",
+    "chart": "Horizontal: units per month. Vertical: operating profit in USD per month. Solid line: profit at fixed selected price/cost; dot: demand implied by the elasticity model; dashed marker: break-even if in range.",
+    "risk": "The volume sweep holds price and effective unit cost fixed; it is not a second demand curve or a forecast of sales.",
+    "parameterOrigin": "Original stylised enterprise assumptions; no company observations supplied."
+  },
+  "inputs": [
+    {
+      "id": "me-price",
+      "default": 125,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Price (USD/unit)",
+      "value": 130
+    },
+    {
+      "id": "me-cost",
+      "default": 78,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Variable cost (USD/unit)",
+      "value": 85
+    },
+    {
+      "id": "me-productivity",
+      "default": 8,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Productivity uplift (%)",
+      "value": 15
+    },
+    {
+      "id": "me-elasticity",
+      "default": 1.3,
+      "min": null,
+      "max": null,
+      "step": null,
+      "label": "Demand elasticity",
+      "value": 1.4
+    }
+  ],
+  "results": [
+    {
+      "measure": "Monthly operating profit",
+      "displayValue": "$31,169"
+    },
+    {
+      "measure": "Operating margin",
+      "displayValue": "22.3%"
+    },
+    {
+      "measure": "Break-even volume",
+      "displayValue": "518units"
+    },
+    {
+      "measure": "Unit contribution",
+      "displayValue": "$56.09"
+    }
+  ],
+  "chart": {
+    "title": "Operating profit at alternative volumes; selected price and effective cost held fixed",
+    "headers": [
+      "Units per month",
+      "Operating profit (USD per month)"
+    ],
+    "rows": [
+      [
+        0,
+        -29000
+      ],
+      [
+        41.666666666666664,
+        -26663.04347826087
+      ],
+      [
+        83.33333333333333,
+        -24326.08695652174
+      ],
+      [
+        125,
+        -21989.130434782608
+      ],
+      [
+        166.66666666666666,
+        -19652.17391304348
+      ],
+      [
+        208.33333333333334,
+        -17315.217391304348
+      ],
+      [
+        250,
+        -14978.260869565218
+      ],
+      [
+        291.6666666666667,
+        -12641.304347826088
+      ],
+      [
+        333.3333333333333,
+        -10304.34782608696
+      ],
+      [
+        375,
+        -7967.391304347828
+      ],
+      [
+        416.6666666666667,
+        -5630.434782608696
+      ],
+      [
+        458.3333333333333,
+        -3293.4782608695677
+      ],
+      [
+        500,
+        -956.5217391304359
+      ],
+      [
+        541.6666666666666,
+        1380.4347826086923
+      ],
+      [
+        583.3333333333334,
+        3717.391304347824
+      ],
+      [
+        625,
+        6054.347826086952
+      ],
+      [
+        666.6666666666666,
+        8391.30434782608
+      ],
+      [
+        708.3333333333334,
+        10728.260869565216
+      ],
+      [
+        750,
+        13065.217391304344
+      ],
+      [
+        791.6666666666666,
+        15402.173913043473
+      ],
+      [
+        833.3333333333334,
+        17739.130434782608
+      ],
+      [
+        875,
+        20076.086956521736
+      ],
+      [
+        916.6666666666666,
+        22413.043478260865
+      ],
+      [
+        958.3333333333334,
+        24750
+      ],
+      [
+        1000,
+        27086.95652173913
+      ],
+      [
+        1041.6666666666667,
+        29423.913043478256
+      ],
+      [
+        1083.3333333333333,
+        31760.869565217385
+      ],
+      [
+        1125,
+        34097.82608695651
+      ],
+      [
+        1166.6666666666667,
+        36434.78260869565
+      ],
+      [
+        1208.3333333333333,
+        38771.73913043477
+      ],
+      [
+        1250,
+        41108.695652173905
+      ],
+      [
+        1291.6666666666667,
+        43445.65217391304
+      ],
+      [
+        1333.3333333333333,
+        45782.60869565216
+      ],
+      [
+        1375,
+        48119.5652173913
+      ],
+      [
+        1416.6666666666667,
+        50456.52173913043
+      ],
+      [
+        1458.3333333333333,
+        52793.47826086955
+      ],
+      [
+        1500,
+        55130.43478260869
+      ],
+      [
+        1541.6666666666667,
+        57467.391304347824
+      ],
+      [
+        1583.3333333333333,
+        59804.347826086945
+      ],
+      [
+        1625,
+        62141.30434782608
+      ],
+      [
+        1666.6666666666667,
+        64478.260869565216
+      ],
+      [
+        1708.3333333333333,
+        66815.21739130434
+      ],
+      [
+        1750,
+        69152.17391304347
+      ],
+      [
+        1791.6666666666667,
+        71489.13043478261
+      ],
+      [
+        1833.3333333333333,
+        73826.08695652173
+      ],
+      [
+        1875,
+        76163.04347826086
+      ],
+      [
+        1916.6666666666667,
+        78500
+      ],
+      [
+        1958.3333333333333,
+        80836.95652173912
+      ],
+      [
+        2000,
+        83173.91304347826
+      ],
+      [
+        2041.6666666666667,
+        85510.86956521739
+      ],
+      [
+        2083.3333333333335,
+        87847.82608695651
+      ],
+      [
+        2125,
+        90184.78260869565
+      ],
+      [
+        2166.6666666666665,
+        92521.73913043477
+      ],
+      [
+        2208.3333333333335,
+        94858.6956521739
+      ],
+      [
+        2250,
+        97195.65217391303
+      ],
+      [
+        2291.6666666666665,
+        99532.60869565216
+      ],
+      [
+        2333.3333333333335,
+        101869.5652173913
+      ],
+      [
+        2375,
+        104206.52173913043
+      ],
+      [
+        2416.6666666666665,
+        106543.47826086954
+      ],
+      [
+        2458.3333333333335,
+        108880.4347826087
+      ],
+      [
+        2500,
+        111217.39130434781
+      ]
+    ]
+  }
+}

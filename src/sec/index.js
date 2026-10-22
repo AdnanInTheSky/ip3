@@ -17,6 +17,16 @@ const next = require('./next');
 function sectorPage(s, idx) {
   const pg = D.sectorPages[s.slug] || null;
   const ctx = { s, idx, pg };
+  const modelLinks = {
+    'climate-energy-resilience':['finance-investment','development-impact','policy-governance'],
+    'education-skills-human-capital':['development-impact','finance-investment','management-delivery'],
+    'health-systems-social-protection':['development-impact','finance-investment','management-delivery'],
+    'digital-government-data-dpi':['policy-governance','management-delivery','market-enterprise'],
+    'governance-institutions-public-finance':['policy-governance','management-delivery','finance-investment'],
+    'economic-transformation-trade-private-sector':['economics-trade','market-enterprise','finance-investment'],
+    'sustainable-finance-esg-circular-economy':['finance-investment','market-enterprise','policy-governance'],
+    'ai-emerging-technology-public-systems':['policy-governance','management-delivery','development-impact'],
+  };
   const body = [
     hero.render(ctx),
     pg ? statement.render(ctx) : '',
@@ -28,6 +38,7 @@ function sectorPage(s, idx) {
     pg ? evidence.render(ctx) : '',
     expertise.render(ctx),
     links.render(ctx),
+    require('../explore').related(modelLinks[s.slug] || ['policy-governance'], 'Explore analytical questions in this sector'),
     pg ? closing(ctx) : '',
     next.render(ctx),
     cta('cta-sector', { eyebrow: s.title }),
