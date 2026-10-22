@@ -3,7 +3,7 @@
   const root=document.querySelector('.ip3-model');if(!root)return;
   const slug=root.dataset.model,button=document.querySelector('[data-model-motion]'),reduce=matchMedia('(prefers-reduced-motion: reduce)');let quiet=reduce.matches;
   const visible=new WeakMap();
-  const pictures=[...root.querySelectorAll('.di-orbit,.me-ecosystem,.et-network,.fi-hero-art')];
+  const pictures=[...root.querySelectorAll('.di-orbit,.me-ecosystem,.et-network,.fi-hero-art,.di-workbench,.me-workbench,.et-workbench,.fi-workbench')];
   function syncMotion(){const pause=quiet||reduce.matches||document.hidden;root.classList.toggle('is-quiet',pause);button.setAttribute('aria-pressed',String(quiet));button.textContent=quiet?'Enable motion':'Pause motion';pictures.forEach(el=>{const stop=pause||visible.get(el)===false;el.toggleAttribute('data-animation-off',stop);el.querySelectorAll('svg').forEach(svg=>{if(stop)svg.pauseAnimations?.();else svg.unpauseAnimations?.()})});}
   button.addEventListener('click',()=>{quiet=!quiet;syncMotion();if(quiet)root.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))});document.addEventListener('visibilitychange',syncMotion);reduce.addEventListener('change',()=>{quiet=reduce.matches;syncMotion()});if('IntersectionObserver'in window){const observer=new IntersectionObserver(es=>{es.forEach(e=>visible.set(e.target,e.isIntersecting));syncMotion()});pictures.forEach(el=>observer.observe(el))}syncMotion();
   const $=id=>document.getElementById(id),text=id=>$(id)?.textContent.trim()||'',number=id=>Number($(id).value),M=window.IP3ModelMath;
