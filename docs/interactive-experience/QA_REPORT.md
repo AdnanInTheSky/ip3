@@ -48,6 +48,12 @@ The single comparison shows similar homepage LCP/CLS and no observed performance
 
 These are local lab measurements, not Vercel-preview measurements, field Core Web Vitals or field INP. Lighthouse TBT is not INP. Hosted checks and deployment behaviour are recorded in the PR separately.
 
+## Hosted review status
+
+Draft PR [#30](https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/30) is open. The first pushed integration head (`6f5c94c`) passed GitHub's content/build/regression check, the dedicated Linux Chromium browser job and the Vercel preview build. A subsequent small caption-typography correction has its own recheck on the PR; current status is available there.
+
+The [Vercel preview](https://ip3-bd-org-git-codex-ip3-interactive-experience-ip-3.vercel.app/explore) redirects an anonymous request to Vercel login. The connected Vercel tool also returned a team-scope 403. Consequently no authenticated hosted page interaction or preview `build.json` validation is claimed. Deployment protection has not been changed. The production-only smoke job is skipped for this preview, as designed.
+
 ## Numerical verification and remaining analytical limits
 
 Independent expected-value tests cover neutral identities, a tariff/FX/elasticity grid, all eight Finance cases over stress/discount boundaries, conventional IRR known roots and NPV residuals, contribution and break-even boundaries, DiD arithmetic and invalid counterfactuals, neutral/adverse workload and delivery capacity/rounding. The browser asserts that displayed values match those calculations. Edge tests additionally exercise touch interactions and mobile accessibility.

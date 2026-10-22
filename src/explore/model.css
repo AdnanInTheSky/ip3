@@ -6,4 +6,5 @@
 .ip3-model .fi-storylabel{color:#24634d}.ip3-model .fi-reference small,.ip3-model .fi-statehead span{color:#803d30}.ip3-model .fi-state.to .fi-statehead span{color:#c0e2ca}.ip3-model .fi-sector button[aria-pressed=true]{color:#fff}
 .ip3-model #fi-counter,.ip3-model #fi-gates p{color:#48574c}
 .ip3-model [data-animation-off],.ip3-model [data-animation-off]::before,.ip3-model [data-animation-off]::after{animation-play-state:paused!important}
+.ip3-model .et-metric>div:last-child{margin-top:9px;color:#91b7a0;font-size:9px;line-height:1.4}
 .explore-model noscript p{padding:16px var(--gutter);background:var(--sand);font-size:.95rem}
