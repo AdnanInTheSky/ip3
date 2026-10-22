@@ -6,3 +6,4 @@
 *.mp4 binary
 *.ico binary
 *.woff* binary
+src/explore/reference/*.html -text

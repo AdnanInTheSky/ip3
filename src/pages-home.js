@@ -4,6 +4,7 @@ const { validateHomeTestimonialsPlacement } = require('../cms/section-placement'
 const { testimonialCards, testimonialsSection } = require('./sections/testimonials');
 const { chainSection } = require('./sections/chain');
 const { evidence } = require('./sections/evidence');
+const explorer = require('./explore');
 
 function hero() {
   const slides = D.hero.map((s, i) => `
@@ -192,7 +193,7 @@ function founder() {
 function home() {
   const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
   const rule = validateHomeTestimonialsPlacement(D.sectionPlacement.homeTestimonials, D.sectionOrder.home, D.testimonials);
-  const renderers = [stats, capabilities, why, sectors, chainSection, evidence, convening, () => proof(Boolean(rule.embedded)), founder];
+  const renderers = [stats, capabilities, why, explorer.preview, sectors, chainSection, evidence, convening, () => proof(Boolean(rule.embedded)), founder];
   const sections = Object.fromEntries(editableSectionOrders.home.default.map((key, i) => [key, renderers[i]]));
   const anchor = rule.before || rule.after;
   if (anchor) {
@@ -206,6 +207,7 @@ function home() {
     title: D.pages.home.title,
     desc: D.pages.home.desc,
     path: '/', body, bodyClass: 'home', jsonld,
+    ...explorer.assets(),
     preload: '<link rel="preload" as="image" href="/assets/img/poster-hero-1.webp" fetchpriority="high">',
   });
 }

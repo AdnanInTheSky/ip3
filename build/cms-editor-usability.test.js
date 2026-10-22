@@ -31,13 +31,18 @@ function field(fields, name) {
   return undefined;
 }
 
-test('existing CMS contract is preserved alongside the approved article extension', () => {
+test('existing CMS contract is preserved alongside article and Explorer section extensions', () => {
   const contract = {
     media: schema.media.filter(item => item.name !== 'insights_images'),
     groups: schema.groups.map(({ name, items }) => ({ name, items: items.filter(item => item !== 'articles') })),
     content: schema.content.filter(item => item.name !== 'articles').map(item => item.name !== 'insights' ? item : ({ ...item,
       fields: item.fields.map(f => f.name !== 'items' ? f : ({ ...f, fields: f.fields.filter(child => child.name !== 'legacyWpId') })) })),
   };
+  assert.ok(field(entry('section_order').fields, 'home').values.includes('Thinking in action'));
+  const orderIndex = contract.content.findIndex(item => item.name === 'section_order');
+  const order = { ...contract.content[orderIndex] };
+  order.fields = order.fields.map(f => f.name === 'home' ? { ...f, values: f.values.filter(value => value !== 'Thinking in action') } : f);
+  contract.content[orderIndex] = order;
   const actual = createHash('sha256').update(JSON.stringify(withoutEditorCopy(contract))).digest('hex');
   assert.equal(actual, contractHash, 'The existing forms must retain their content contract');
 });

@@ -1,0 +1,37 @@
+name: Interactive model browser checks
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  explorer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Start the static preview
+        run: |
+          PORT=3123 node dev-server.js > /tmp/ip3-explorer-server.log 2>&1 &
+          for attempt in $(seq 1 20); do
+            if curl -fsS http://localhost:3123/explore > /dev/null; then exit 0; fi
+            sleep 1
+          done
+          cat /tmp/ip3-explorer-server.log
+          exit 1
+      - run: npm run test:explore:browser
+      - run: node scripts/explore-edge-check.cjs
+      - name: Preserve measured results and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: interactive-experience-${{ github.run_id }}
+          path: docs/interactive-experience/qa/
+          retention-days: 14

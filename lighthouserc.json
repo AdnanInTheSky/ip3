@@ -7,7 +7,14 @@
         "http://localhost/about.html",
         "http://localhost/contact.html",
         "http://localhost/privacy.html",
-        "http://localhost/terms.html"
+        "http://localhost/terms.html",
+        "http://localhost/explore.html",
+        "http://localhost/explore/economics-trade.html",
+        "http://localhost/explore/finance-investment.html",
+        "http://localhost/explore/market-enterprise.html",
+        "http://localhost/explore/development-impact.html",
+        "http://localhost/explore/policy-governance.html",
+        "http://localhost/explore/management-delivery.html"
       ],
       "numberOfRuns": 1,
       "settings": {

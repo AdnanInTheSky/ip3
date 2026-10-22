@@ -14,7 +14,7 @@ const KB = 1024;
 const MB = 1024 * KB;
 const LIMITS = { image: { warn: 500 * KB, max: 2 * MB }, video: { warn: 8 * MB, max: 25 * MB } };
 const EXT = { image: ['.webp', '.jpg', '.jpeg', '.png'], video: ['.mp4', '.webm'] };
-const ROUTES = ['/', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/find-support', '/privacy', '/terms'];
+const ROUTES = ['/', '/about', '/why-ip3', '/approach', '/capabilities', '/sectors', '/engagements', '/insights', '/people', '/contact', '/find-support', '/privacy', '/terms', '/explore', ...require('../cms/explorer-routes').map(slug => `/explore/${slug}`)];
 // The 3D camera on /why-ip3 has one keyframe per scene, in this order.
 const WHY_SCENES = ['complexity', 'evidence', 'insight', 'policy', 'practice', 'impact'];
 const REQUIRED_HEADING_KEYS = [

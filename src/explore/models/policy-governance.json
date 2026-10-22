@@ -1,0 +1,492 @@
+{
+  "order": [
+    "regulation",
+    "institutions",
+    "finance",
+    "dialogue",
+    "digital",
+    "resilience"
+  ],
+  "cases": {
+    "regulation": {
+      "public": {
+        "label": "01 / PUBLIC · REGULATORY REFORM",
+        "title": "When does a regulation actually become easier to comply with?",
+        "desc": "Policy intent is not proof of improved business experience. Map the real administrative journey and ask what changes in the time, cost and uncertainty that users face.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Complex rules create hidden transaction costs.",
+        "problems": [
+          "Multiple approvals delay legitimate business activity",
+          "Paperwork and repeat visits burden smaller enterprises",
+          "Performance is measured by reform completion—not user experience"
+        ],
+        "resultTitle": "A simpler, verifiable compliance journey.",
+        "results": [
+          "Map actual transactions and approval bottlenecks",
+          "Test simplification and automation against service metrics",
+          "Monitor speed, inclusion, predictability and safeguards"
+        ],
+        "methods": [
+          "Regulatory impact analysis",
+          "Administrative process mapping",
+          "Business confidence surveys",
+          "Results-based measurement"
+        ],
+        "steps": [
+          [
+            "Map",
+            "Trace approvals"
+          ],
+          [
+            "Simplify",
+            "Test changes"
+          ],
+          [
+            "Audit",
+            "Verify burden"
+          ]
+        ]
+      },
+      "private": {
+        "label": "01 / PRIVATE · REGULATORY STRATEGY",
+        "title": "How can firms navigate changing rules without losing momentum?",
+        "desc": "Market entry requires more than knowing what the regulation says. Enterprises need clear sequencing, credible compliance costs and operational readiness.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Compliance uncertainty slows expansion.",
+        "problems": [
+          "Procedural risks are discovered late",
+          "Permits and reporting obligations lack ownership",
+          "Costs vary across locations and operating models"
+        ],
+        "resultTitle": "A defensible market-entry compliance roadmap.",
+        "results": [
+          "Identify formal and practical requirements",
+          "Prioritise high-risk steps and credible alternatives",
+          "Assign ownership, milestones and monitoring"
+        ],
+        "methods": [
+          "Regulatory landscape assessment",
+          "Institutional interviews",
+          "Risk and cost mapping",
+          "Business-process redesign"
+        ],
+        "steps": [
+          [
+            "Identify",
+            "Map obligations"
+          ],
+          [
+            "Prioritise",
+            "Rank exposure"
+          ],
+          [
+            "Deliver",
+            "Build controls"
+          ]
+        ]
+      }
+    },
+    "institutions": {
+      "public": {
+        "label": "02 / PUBLIC · INSTITUTIONAL CAPACITY",
+        "title": "Can agencies carry out the mandate they have been given?",
+        "desc": "Large programmes can fail when responsibility, staffing, incentives and information systems are misaligned—even when technical design is sound.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "The mandate exceeds delivery capacity.",
+        "problems": [
+          "Overlapping roles obscure who is accountable",
+          "Digital and personnel systems do not communicate",
+          "Budgets and field-level capabilities are poorly sequenced"
+        ],
+        "resultTitle": "An implementable institutional operating model.",
+        "results": [
+          "Clarify mandates, roles and decision rights",
+          "Sequence workforce, systems and financial needs",
+          "Establish measurable implementation responsibilities"
+        ],
+        "methods": [
+          "Institutional capacity assessment",
+          "Stakeholder and mandate mapping",
+          "Operating-model design",
+          "Implementation readiness analysis"
+        ],
+        "steps": [
+          [
+            "Clarify",
+            "Mandates"
+          ],
+          [
+            "Equip",
+            "Teams & systems"
+          ],
+          [
+            "Monitor",
+            "Delivery"
+          ]
+        ]
+      },
+      "private": {
+        "label": "02 / PRIVATE · ORGANISATIONAL GOVERNANCE",
+        "title": "Who owns the decision after the new strategy is approved?",
+        "desc": "Organisations may adopt ambitious policies yet still lack authority, incentives, workflows and data to execute them.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Strategy and operations remain disconnected.",
+        "problems": [
+          "Duplicated decision authority slows response",
+          "Weak data ownership undermines management reports",
+          "Incentives do not follow approved goals"
+        ],
+        "resultTitle": "A governable operating model.",
+        "results": [
+          "Create explicit decision rights and escalation routes",
+          "Build performance routines, data governance and controls",
+          "Tie execution roles to measurable service outcomes"
+        ],
+        "methods": [
+          "RACI / decision rights mapping",
+          "Process architecture",
+          "Management information systems",
+          "Organisational diagnostics"
+        ],
+        "steps": [
+          [
+            "Align",
+            "Authority"
+          ],
+          [
+            "Execute",
+            "Ownership"
+          ],
+          [
+            "Improve",
+            "KPIs"
+          ]
+        ]
+      }
+    },
+    "finance": {
+      "public": {
+        "label": "03 / PUBLIC · FISCAL ACCOUNTABILITY",
+        "title": "How will local investment be funded, managed and maintained?",
+        "desc": "Public assets create lasting value only when financial responsibilities, revenue models and operating institutions are viable beyond construction.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Capital budgets overlook service sustainability.",
+        "problems": [
+          "Projects enter pipelines without clear O&M financing",
+          "Municipal revenue and expenditure choices are fragmented",
+          "Infrastructure priorities lack transparent appraisal criteria"
+        ],
+        "resultTitle": "A financially credible, accountable investment plan.",
+        "results": [
+          "Connect costs, revenue sources and service duties",
+          "Rank options using economic and fiscal evidence",
+          "Specify monitoring and audit responsibilities"
+        ],
+        "methods": [
+          "Fiscal capacity analysis",
+          "CBA and lifecycle costing",
+          "Municipal revenue diagnostics",
+          "Budget and accountability mapping"
+        ],
+        "steps": [
+          [
+            "Appraise",
+            "Value & costs"
+          ],
+          [
+            "Finance",
+            "O&M model"
+          ],
+          [
+            "Review",
+            "Accountability"
+          ]
+        ]
+      },
+      "private": {
+        "label": "03 / PRIVATE · INVESTMENT GOVERNANCE",
+        "title": "Can management defend how scarce capital is allocated?",
+        "desc": "Capital decisions are governance decisions: stakeholders need transparent assumptions, risk ownership and checks against overconfidence.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Projects compete without comparable evidence.",
+        "problems": [
+          "Business cases use inconsistent assumptions",
+          "Uncertainty is hidden in optimistic point forecasts",
+          "Post-investment review is disconnected from appraisal"
+        ],
+        "resultTitle": "Transparent capital decisions and oversight.",
+        "results": [
+          "Apply consistent appraisal and sensitivity rules",
+          "Document risks, approvals and control thresholds",
+          "Compare realised performance with investment cases"
+        ],
+        "methods": [
+          "Investment appraisal standards",
+          "Scenario and sensitivity analysis",
+          "Risk registers",
+          "Post-investment review"
+        ],
+        "steps": [
+          [
+            "Compare",
+            "Investment cases"
+          ],
+          [
+            "Approve",
+            "Set safeguards"
+          ],
+          [
+            "Review",
+            "Variance"
+          ]
+        ]
+      }
+    },
+    "dialogue": {
+      "public": {
+        "label": "04 / PUBLIC · STAKEHOLDER DIALOGUE",
+        "title": "Who gets heard when policy choices create winners and losers?",
+        "desc": "Reform lasts when it is analytically defensible and politically workable. The process must hear firms, users, vulnerable groups and implementing agencies.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Reform is designed far from the people affected.",
+        "problems": [
+          "Stakeholder positions are reduced to anecdotes",
+          "Trade-offs are not disclosed before decisions",
+          "Consultation is not connected to accountable follow-up"
+        ],
+        "resultTitle": "Evidence-led, transparent reform choices.",
+        "results": [
+          "Surface who bears costs and who gains",
+          "Convene structured and inclusive consultation",
+          "Publish choices, responsibilities and feedback loops"
+        ],
+        "methods": [
+          "Political economy analysis",
+          "Stakeholder mapping",
+          "FGDs / KIIs",
+          "Distributional impact assessment"
+        ],
+        "steps": [
+          [
+            "Listen",
+            "Map voices"
+          ],
+          [
+            "Negotiate",
+            "Trade-offs"
+          ],
+          [
+            "Report",
+            "Follow-up"
+          ]
+        ]
+      },
+      "private": {
+        "label": "04 / PRIVATE · SOCIAL LICENCE & ESG",
+        "title": "Can a firm earn trust in a difficult transition?",
+        "desc": "Enterprises face conflicting expectations from regulators, investors, workers and communities. A credible response must show how concerns shape decisions.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Consultation is treated as a communications exercise.",
+        "problems": [
+          "Worker and community risks are identified too late",
+          "ESG commitments lack grievance and remedy systems",
+          "Investor reporting is weakly linked to operations"
+        ],
+        "resultTitle": "An accountable stakeholder response.",
+        "results": [
+          "Identify affected groups and material concerns",
+          "Link grievances, investments and operational remedies",
+          "Track engagement quality and reported outcomes"
+        ],
+        "methods": [
+          "Materiality analysis",
+          "Stakeholder consultation",
+          "Grievance mechanism review",
+          "ESG governance diagnostics"
+        ],
+        "steps": [
+          [
+            "Listen",
+            "Risks & voice"
+          ],
+          [
+            "Respond",
+            "Controls"
+          ],
+          [
+            "Disclose",
+            "Progress"
+          ]
+        ]
+      }
+    },
+    "digital": {
+      "public": {
+        "label": "05 / PUBLIC · DIGITAL GOVERNMENT",
+        "title": "Does digitalisation remove friction—or simply digitise it?",
+        "desc": "Public services improve only when technology changes the complete experience of agencies and users. An online form alone does not guarantee fair access.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Disconnected systems reproduce old bottlenecks.",
+        "problems": [
+          "Citizens repeatedly submit the same information",
+          "Records are siloed across agencies",
+          "Digital access and appeals are overlooked"
+        ],
+        "resultTitle": "Integrated services with observable safeguards.",
+        "results": [
+          "Redesign the end-to-end transaction, not just the interface",
+          "Map data responsibility and interoperability",
+          "Measure usage, accessibility, burden and redress"
+        ],
+        "methods": [
+          "User journey mapping",
+          "Digital maturity assessment",
+          "Data governance analysis",
+          "Service performance indicators"
+        ],
+        "steps": [
+          [
+            "Design",
+            "User journey"
+          ],
+          [
+            "Connect",
+            "Data & rules"
+          ],
+          [
+            "Verify",
+            "Access & safety"
+          ]
+        ]
+      },
+      "private": {
+        "label": "05 / PRIVATE · DATA GOVERNANCE",
+        "title": "Can a company turn fragmented data into reliable decisions?",
+        "desc": "A dashboard can look sophisticated while hiding inconsistent definitions, opaque permissions and weak internal accountability.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "More data do not automatically mean better decisions.",
+        "problems": [
+          "Teams use competing KPI definitions",
+          "Systems expose sensitive information without controls",
+          "Decisions cannot be traced back to reliable sources"
+        ],
+        "resultTitle": "Trusted management information and controls.",
+        "results": [
+          "Define ownership, validation and access policies",
+          "Link operational indicators to responsible decision-makers",
+          "Audit data quality and decision processes"
+        ],
+        "methods": [
+          "Data maturity review",
+          "Process mining concept",
+          "KPI governance",
+          "Privacy and access-control assessment"
+        ],
+        "steps": [
+          [
+            "Define",
+            "Data rules"
+          ],
+          [
+            "Validate",
+            "Quality"
+          ],
+          [
+            "Decide",
+            "Audit trail"
+          ]
+        ]
+      }
+    },
+    "resilience": {
+      "public": {
+        "label": "06 / PUBLIC · RESILIENT GOVERNANCE",
+        "title": "Who is responsible when a warning must reach the last mile?",
+        "desc": "A warning system is only as effective as the institutions connecting scientific information to accessible action across multiple levels of government.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Mandates and communication channels are fragmented.",
+        "problems": [
+          "Agencies lack interoperable warning protocols",
+          "Last-mile channels can exclude vulnerable users",
+          "Long-term operations have unclear financing"
+        ],
+        "resultTitle": "An inclusive, accountable risk-governance chain.",
+        "results": [
+          "Define roles and escalation between agencies",
+          "Link interoperability, budgets and communication channels",
+          "Stress-test warning reach, accessibility and feedback"
+        ],
+        "methods": [
+          "Risk governance analysis",
+          "Institutional mapping",
+          "Service continuity planning",
+          "Inclusive communications design"
+        ],
+        "steps": [
+          [
+            "Coordinate",
+            "Roles"
+          ],
+          [
+            "Reach",
+            "Last mile"
+          ],
+          [
+            "Test",
+            "Readiness"
+          ]
+        ]
+      },
+      "private": {
+        "label": "06 / PRIVATE · ENTERPRISE RESILIENCE",
+        "title": "Does the business know who acts when the system is disrupted?",
+        "desc": "Supplier risks, climate events and business continuity failures expose weaknesses in management authority and coordination.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Risk plans exist without tested accountability.",
+        "problems": [
+          "Crisis escalation paths are unclear",
+          "Supplier risk is invisible until disruption",
+          "Continuity procedures are seldom exercised"
+        ],
+        "resultTitle": "A tested enterprise resilience governance model.",
+        "results": [
+          "Map dependencies and mission-critical functions",
+          "Assign escalation rights and communication protocols",
+          "Run exercises and track remediation"
+        ],
+        "methods": [
+          "Business continuity assessment",
+          "Scenario stress-testing",
+          "Supplier governance review",
+          "Crisis tabletop exercises"
+        ],
+        "steps": [
+          [
+            "Map",
+            "Exposure"
+          ],
+          [
+            "Assign",
+            "Response"
+          ],
+          [
+            "Rehearse",
+            "Continuity"
+          ]
+        ]
+      }
+    }
+  }
+}

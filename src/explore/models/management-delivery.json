@@ -1,0 +1,492 @@
+{
+  "order": [
+    "strategy",
+    "portfolio",
+    "operating",
+    "digital",
+    "performance",
+    "field"
+  ],
+  "cases": {
+    "strategy": {
+      "public": {
+        "label": "01 / PUBLIC · STRATEGY TO EXECUTION",
+        "title": "What turns an approved investment into a programme that can actually start?",
+        "desc": "An investment appraisal is only the beginning. Delivery requires sequenced work packages, resourced ownership, procurement readiness and practical escalation routes.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "The strategy exists; the delivery chain is incomplete.",
+        "problems": [
+          "Outputs are specified but readiness and dependencies are unclear",
+          "Budget, procurement, staffing and timing assumptions diverge",
+          "Multiple institutions share work without a single action owner"
+        ],
+        "resultTitle": "A costed, owned and sequenced delivery architecture.",
+        "results": [
+          "Translate programme objectives into work packages and milestones",
+          "Match budgets, procurement gates and people to the critical path",
+          "Use readiness checks and escalation rules before mobilisation"
+        ],
+        "methods": [
+          "Theory of change to workplan",
+          "Implementation-readiness assessment",
+          "RACI / responsibility matrix",
+          "Milestone and risk analysis"
+        ],
+        "steps": [
+          [
+            "Frame",
+            "Mandate"
+          ],
+          [
+            "Sequence",
+            "Milestones"
+          ],
+          [
+            "Mobilise",
+            "Teams"
+          ]
+        ]
+      },
+      "private": {
+        "label": "01 / PRIVATE · COMMERCIAL EXECUTION",
+        "title": "Can a growth strategy survive its first 90 days of execution?",
+        "desc": "Enterprise plans often fail between executive approval and the teams responsible for implementing them.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Ambition is distributed; accountability is not.",
+        "problems": [
+          "Commercial goals are disconnected from operational capacity",
+          "Initiatives compete for the same staff and budget",
+          "Success measures are defined too late"
+        ],
+        "resultTitle": "A focused, accountable growth programme.",
+        "results": [
+          "Prioritise initiatives by value and execution feasibility",
+          "Assign initiative owners, milestones and dependencies",
+          "Install review cadences and early-warning indicators"
+        ],
+        "methods": [
+          "Strategy deployment",
+          "90-day execution roadmap",
+          "Resource-capacity analysis",
+          "Initiative scorecards"
+        ],
+        "steps": [
+          [
+            "Prioritise",
+            "Value"
+          ],
+          [
+            "Assign",
+            "Owners"
+          ],
+          [
+            "Review",
+            "Weekly"
+          ]
+        ]
+      }
+    },
+    "portfolio": {
+      "public": {
+        "label": "02 / PUBLIC · PROGRAMME PORTFOLIO",
+        "title": "How do multiple investments become one manageable delivery pipeline?",
+        "desc": "A portfolio needs consistent screening, resource sequencing, governance gates and clear criteria for advancing ideas to investment-ready delivery.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Projects are identified without a common prioritisation logic.",
+        "problems": [
+          "Proposals differ in maturity, costing and evidence",
+          "Sequencing ignores implementation capacity",
+          "Procurement and operations costs emerge too late"
+        ],
+        "resultTitle": "A gated, prioritised investment delivery portfolio.",
+        "results": [
+          "Screen opportunities against shared feasibility and readiness criteria",
+          "Prioritise value, risk, affordability and institutional capacity",
+          "Gate concepts through design, appraisal, funding and execution"
+        ],
+        "methods": [
+          "Portfolio screening",
+          "Stage-gate architecture",
+          "Resource balancing",
+          "Risk and dependency register"
+        ],
+        "steps": [
+          [
+            "Screen",
+            "Options"
+          ],
+          [
+            "Gate",
+            "Readiness"
+          ],
+          [
+            "Sequence",
+            "Pipeline"
+          ]
+        ]
+      },
+      "private": {
+        "label": "02 / PRIVATE · CAPITAL & PROJECT PORTFOLIO",
+        "title": "Which initiatives deserve scarce management attention this quarter?",
+        "desc": "The challenge is not generating a long initiative list; it is making transparent trade-offs across money, people and execution risk.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Too many projects compete for too little capacity.",
+        "problems": [
+          "Aspirational timelines hide resource contention",
+          "Projects are approved without exit criteria",
+          "Portfolio performance lacks a common cadence"
+        ],
+        "resultTitle": "A smaller, executable project portfolio.",
+        "results": [
+          "Rank initiatives by value, readiness and delivery risk",
+          "Reserve capacity for bottlenecks and dependencies",
+          "Stop, sequence or redesign low-readiness initiatives"
+        ],
+        "methods": [
+          "Portfolio rationalisation",
+          "Benefit-risk prioritisation",
+          "Scenario capacity planning",
+          "Stage-gate reviews"
+        ],
+        "steps": [
+          [
+            "Rank",
+            "Trade-offs"
+          ],
+          [
+            "Resource",
+            "Capacity"
+          ],
+          [
+            "Decide",
+            "Gates"
+          ]
+        ]
+      }
+    },
+    "operating": {
+      "public": {
+        "label": "03 / PUBLIC · OPERATING MODEL",
+        "title": "Who makes the decision after the project consultant leaves?",
+        "desc": "A programme needs durable management arrangements—not only a successful launch—to sustain performance and transfer institutional capability.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Governance diagrams do not describe day-to-day decisions.",
+        "problems": [
+          "Decision rights and escalation are overlapping",
+          "Critical knowledge sits with temporary advisers",
+          "Policies lack matching routines, roles and templates"
+        ],
+        "resultTitle": "An operationally credible, transferable management model.",
+        "results": [
+          "Define owners, decision rights and operational handoffs",
+          "Translate policy documents into recurring workflows and controls",
+          "Build institutional documentation and transition capacity"
+        ],
+        "methods": [
+          "Operating model blueprint",
+          "Decision-rights map",
+          "SOP and process design",
+          "Capability transfer plan"
+        ],
+        "steps": [
+          [
+            "Define",
+            "Roles"
+          ],
+          [
+            "Codify",
+            "Processes"
+          ],
+          [
+            "Transfer",
+            "Capability"
+          ]
+        ]
+      },
+      "private": {
+        "label": "03 / PRIVATE · ENTERPRISE OPERATIONS",
+        "title": "Is the organisation structured around how value is actually delivered?",
+        "desc": "Growth frequently exposes handoff failures between commercial, finance, HR and operations teams.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Functions optimise locally while the process stalls.",
+        "problems": [
+          "Orders pass through unclear approval chains",
+          "Management information arrives after decisions are made",
+          "Teams duplicate activity without assigned accountability"
+        ],
+        "resultTitle": "A coherent end-to-end operating model.",
+        "results": [
+          "Map the work as customers and staff experience it",
+          "Redesign decision rights, handoffs and service standards",
+          "Test the revised workflow and build routine feedback"
+        ],
+        "methods": [
+          "Process mapping",
+          "RACI accountability",
+          "Service-level design",
+          "Management controls"
+        ],
+        "steps": [
+          [
+            "Trace",
+            "Process"
+          ],
+          [
+            "Redesign",
+            "Handoffs"
+          ],
+          [
+            "Run",
+            "Controls"
+          ]
+        ]
+      }
+    },
+    "digital": {
+      "public": {
+        "label": "04 / PUBLIC · DIGITAL DELIVERY",
+        "title": "Can digitalisation remove friction rather than simply move it online?",
+        "desc": "Digitising a broken procedure can reproduce the same bottlenecks. Redesign the underlying service, data flows and accountability before automating steps.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Electronic forms preserve manual-era bottlenecks.",
+        "problems": [
+          "Approval chains persist behind a new interface",
+          "Duplicate records and exceptions remain unresolved",
+          "Adoption is counted without service-quality evidence"
+        ],
+        "resultTitle": "A service process designed before it is digitised.",
+        "results": [
+          "Simplify the journey and exception handling first",
+          "Define data handoffs, ownership and quality checks",
+          "Track user time, rework, access and service reliability"
+        ],
+        "methods": [
+          "Service blueprint",
+          "Business process reengineering",
+          "Data governance mapping",
+          "Adoption and quality monitoring"
+        ],
+        "steps": [
+          [
+            "Simplify",
+            "Workflow"
+          ],
+          [
+            "Integrate",
+            "Data"
+          ],
+          [
+            "Verify",
+            "Service"
+          ]
+        ]
+      },
+      "private": {
+        "label": "04 / PRIVATE · PROCESS MODERNISATION",
+        "title": "Will a new enterprise system change how decisions are made?",
+        "desc": "Software only improves delivery when processes, incentives, training and performance signals evolve together.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "New tools arrive without operational redesign.",
+        "problems": [
+          "Data entry burden shifts from one team to another",
+          "Staff revert to spreadsheets and informal approvals",
+          "Leaders lack agreed performance indicators"
+        ],
+        "resultTitle": "A user-centred, measurable system rollout.",
+        "results": [
+          "Define target processes and minimum viable workflows",
+          "Pilot with frontline teams before scaling",
+          "Link training, data quality and management reviews"
+        ],
+        "methods": [
+          "Process redesign",
+          "Pilot and rollout plan",
+          "Change management",
+          "Operational KPI dashboard"
+        ],
+        "steps": [
+          [
+            "Prototype",
+            "Workflow"
+          ],
+          [
+            "Enable",
+            "People"
+          ],
+          [
+            "Scale",
+            "Evidence"
+          ]
+        ]
+      }
+    },
+    "performance": {
+      "public": {
+        "label": "05 / PUBLIC · PERFORMANCE ASSURANCE",
+        "title": "Are delivery reports measuring activities or the change intended?",
+        "desc": "A credible management system distinguishes inputs and milestones from outputs, outcomes, implementation quality and attribution.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Activity reporting is mistaken for programme performance.",
+        "problems": [
+          "Teams focus on spending and milestone completion",
+          "Inconsistent indicators make comparisons unreliable",
+          "Evidence arrives too late to improve implementation"
+        ],
+        "resultTitle": "A learning-oriented delivery and results system.",
+        "results": [
+          "Map results chains and verification responsibilities",
+          "Build quality checks into monitoring and data collection",
+          "Use reviews to adapt delivery without overstating attribution"
+        ],
+        "methods": [
+          "Results framework / logframe",
+          "Indicator protocols",
+          "Data-quality assurance",
+          "Adaptive management review"
+        ],
+        "steps": [
+          [
+            "Define",
+            "Results"
+          ],
+          [
+            "Measure",
+            "Quality"
+          ],
+          [
+            "Adapt",
+            "Decisions"
+          ]
+        ]
+      },
+      "private": {
+        "label": "05 / PRIVATE · PERFORMANCE MANAGEMENT",
+        "title": "Can management distinguish real operational improvement from noise?",
+        "desc": "Enterprise dashboards often aggregate activity while missing the drivers of efficiency, retention and service quality.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "KPIs multiply while management insight weakens.",
+        "problems": [
+          "Metrics do not connect to unit economics or customer outcomes",
+          "Definitions differ by team or location",
+          "Decisions are not logged against resulting performance"
+        ],
+        "resultTitle": "A decision-ready enterprise performance system.",
+        "results": [
+          "Select a small set of actionable, verifiable indicators",
+          "Connect data ownership to operational routines",
+          "Test whether actions improve outcomes over time"
+        ],
+        "methods": [
+          "KPI architecture",
+          "Unit-economics logic",
+          "Measurement assurance",
+          "Management review design"
+        ],
+        "steps": [
+          [
+            "Choose",
+            "Signals"
+          ],
+          [
+            "Validate",
+            "Data"
+          ],
+          [
+            "Learn",
+            "Effect"
+          ]
+        ]
+      }
+    },
+    "field": {
+      "public": {
+        "label": "06 / PUBLIC · FIELD OPERATIONS",
+        "title": "How do geographically distributed teams deliver consistent evidence?",
+        "desc": "Large-scale implementation fails when sampling, training, supervision, data collection and real-time quality assurance are not designed as one field system.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Field teams collect records, but evidence quality varies.",
+        "problems": [
+          "Training and protocols differ across sites",
+          "Errors are detected after field teams have moved on",
+          "Data pipelines and escalation rules are fragmented"
+        ],
+        "resultTitle": "A controlled field execution and evidence pipeline.",
+        "results": [
+          "Standardise instruments, protocols and supervision",
+          "Use live validation, spot checks and field feedback",
+          "Build audit trails and timed escalation for quality problems"
+        ],
+        "methods": [
+          "Field operations planning",
+          "Enumerator training protocol",
+          "Real-time QA dashboards",
+          "Survey implementation audit"
+        ],
+        "steps": [
+          [
+            "Prepare",
+            "Teams"
+          ],
+          [
+            "Monitor",
+            "Quality"
+          ],
+          [
+            "Correct",
+            "Fast"
+          ]
+        ]
+      },
+      "private": {
+        "label": "06 / PRIVATE · MULTI-SITE DELIVERY",
+        "title": "How does an enterprise keep execution consistent across locations?",
+        "desc": "A multi-branch or multi-factory organisation needs standard processes with enough local learning to respond to different realities.",
+        "ref": "Synthetic teaching scenario. No client result is asserted.",
+        "source": "Illustrative analytical application",
+        "problemTitle": "Local teams operate as separate systems.",
+        "problems": [
+          "Process quality depends on individual managers",
+          "Exceptions are hidden until monthly reporting",
+          "Lessons fail to travel between sites"
+        ],
+        "resultTitle": "A repeatable, adaptable multi-site delivery system.",
+        "results": [
+          "Specify non-negotiable operating and data standards",
+          "Provide location-level scorecards and escalation routes",
+          "Share tested improvements and support weaker sites"
+        ],
+        "methods": [
+          "Multi-site SOP design",
+          "Field QA and audit",
+          "Location performance review",
+          "Learning and escalation protocol"
+        ],
+        "steps": [
+          [
+            "Standardise",
+            "Core"
+          ],
+          [
+            "Support",
+            "Sites"
+          ],
+          [
+            "Improve",
+            "Loop"
+          ]
+        ]
+      }
+    }
+  }
+}

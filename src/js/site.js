@@ -863,11 +863,21 @@
   }
 
   /* ---------- boot ---------- */
+  (function initExplorerPrefill(){
+    var src = $('#explorer-prefill'), form = $('#contact-form');
+    if (!src || !form) return;
+    var map; try { map = JSON.parse(src.textContent); } catch (e) { return; }
+    var slug = new URLSearchParams(location.search).get('discipline');
+    if (!Object.prototype.hasOwnProperty.call(map, slug)) return;
+    var choice = map[slug];
+    $$('option', form.elements.focus).forEach(function(option){ if(option.textContent === choice.focus) form.elements.focus.value = option.value; });
+    if (!form.elements.message.value) form.elements.message.value = 'I would like to discuss a ' + choice.title + ' question.\n\n';
+  })();
   initFinder(); initFinderPrefill();
   initChrome(); initForms(); initLazyVideo(); initInteractive(); initHsNative(); initChain(); initEvidence(); initHand(); initWhy(); initTilt();
   // Sector narratives own their motion lifecycle. Keep their policy text visible,
   // use native scrolling, and avoid stacking global reveals/Lenis over the scene.
-  if (d.body.classList.contains('sxp')) {
+  if (d.body.classList.contains('sxp') || d.body.classList.contains('explore-model')) {
     window.addEventListener('load', jumpToHash);
     return;
   }
