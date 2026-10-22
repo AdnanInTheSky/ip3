@@ -7,3 +7,5 @@
 *.ico binary
 *.woff* binary
 src/explore/reference/*.html -text
+docs/interactive-experience/review-2026-10-22/source/* -text
+docs/interactive-experience/qa/review-2026-10-22/*-chart.csv -text
