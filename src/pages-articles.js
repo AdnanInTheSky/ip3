@@ -1,5 +1,5 @@
 'use strict';
-const { esc, page, cfg } = require('./layout');
+const { esc, page, orgId, cfg } = require('./layout');
 const { articlePath } = require('../cms/articles');
 const { renderMarkdown, figure } = require('../cms/article-markdown');
 
@@ -35,8 +35,11 @@ function articlePage(article) {
     <a class="btn btn--ghost" href="/insights">Back to Insights</a>
   </div></section>`;
   const desc = article.summary.length <= 165 ? article.summary : article.summary.slice(0, 162).replace(/\s+\S*$/, '') + '…';
-  return page({ title: article.title, desc, path: articlePath(article), body,
-    jsonld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: article.title,
-      mainEntityOfPage: cfg.url + articlePath(article), ...(article.publishedDate ? { datePublished: article.publishedDate } : {}) }] });
+  return page({ title: article.title, desc, path: articlePath(article), body, ogType: 'article',
+    ...(article.coverImage ? { ogImage: article.coverImage } : {}),
+    jsonld: [{ '@context': 'https://schema.org', '@type': 'Article', headline: article.title, description: desc,
+      mainEntityOfPage: cfg.url + articlePath(article), ...(article.publishedDate ? { datePublished: article.publishedDate } : {}),
+      ...(article.coverImage ? { image: cfg.url + article.coverImage } : {}), articleSection: article.category,
+      author: { '@id': orgId }, publisher: { '@id': orgId } }] });
 }
 module.exports = { renderBody, articleCard, articlePage };

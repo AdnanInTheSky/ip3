@@ -1,4 +1,4 @@
-const { esc, plain, rich, arrow, btn, cta, page, cfg, D } = require('./layout');
+const { esc, plain, rich, arrow, btn, cta, page, orgId, cfg, D } = require('./layout');
 const { editableSectionOrders, renderOrder } = require('../cms/section-order');
 const { validateHomeTestimonialsPlacement } = require('../cms/section-placement');
 const { testimonialCards, testimonialsSection } = require('./sections/testimonials');
@@ -192,7 +192,7 @@ function founder() {
 }
 
 function home() {
-  const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', name: cfg.name, url: cfg.url }];
+  const jsonld = [{ '@context': 'https://schema.org', '@type': 'WebSite', '@id': cfg.url + '/#website', name: cfg.short, alternateName: cfg.name, url: cfg.url, inLanguage: 'en', publisher: { '@id': orgId } }];
   const rule = validateHomeTestimonialsPlacement(D.sectionPlacement.homeTestimonials, D.sectionOrder.home, D.testimonials);
   const renderers = [stats, capabilities, why, explorer.preview, sectors, chainSection, evidence, convening, () => proof(Boolean(rule.embedded)), founder];
   const sections = Object.fromEntries(editableSectionOrders.home.default.map((key, i) => [key, renderers[i]]));

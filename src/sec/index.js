@@ -3,7 +3,7 @@
 // on the record → where we add value / capabilities → connected work (capabilities, engagements, articles) → closing → next-sector portal → CTA.
 // The long-form words live in content/sector-pages/<slug>.json; a sector without that file falls back to hero, expertise and CTA.
 const { D, esc } = require('./util');
-const { page, cta } = require('../layout');
+const { page, cta, orgId, cfg } = require('../layout');
 const hero = require('./hero');
 const statement = require('./statement');
 const scene = require('./scene');
@@ -45,9 +45,12 @@ function sectorPage(s, idx) {
   ].filter(Boolean).join('\n');
   return page({
     title: s.title,
-    desc: `${s.problem} IP3 supports clients with ${s.areas.slice(0, 3).join(', ').toLowerCase()} and more.`,
+    // Name as many service areas as fit the ~160-character search snippet.
+    desc: [3, 2, 1].map((n) => `${s.problem} IP3 supports clients with ${s.areas.slice(0, n).join(', ').toLowerCase()} and more.`).find((d) => d.length <= 160) || s.problem,
     path: `/sectors/${s.slug}`,
     body,
+    jsonld: [{ '@context': 'https://schema.org', '@type': 'Service', name: s.title, description: s.problem, serviceType: s.areas,
+      url: `${cfg.url}/sectors/${s.slug}`, provider: { '@id': orgId } }],
     bodyClass: `sxp sxp--${esc(pg ? pg.scene.type : 'plain')}`,
     styles: '<link rel="stylesheet" href="/assets/css/sectors.css?v=__SECCSSV__">',
     scripts: '<script src="/assets/js/sectors.js?v=__SECJSV__" defer></script>',

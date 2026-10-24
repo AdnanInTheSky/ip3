@@ -152,7 +152,10 @@ function people() {
     cta('cta-people'),
   ];
   const body = [sections[0], renderOrder('people', D.sectionOrder.people, sections.slice(1, -1)), sections.at(-1)].join('\n');
-  return page({ title: pg.title, desc: pg.desc, path: '/people', body });
+  const jsonld = [{ '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: [{ name: f.name, role: f.role }, ...D.people.flatMap((g) => g.members).filter((m) => m.name !== f.name)].map((m, i) => ({
+    '@type': 'ListItem', position: i + 1, item: { '@type': 'Person', name: m.name, jobTitle: m.role, ...(m.slug ? { url: `${cfg.url}/people#${m.slug}` } : {}) },
+  })) }];
+  return page({ title: pg.title, desc: pg.desc, path: '/people', body, jsonld });
 }
 
 /* ---------------- Contact ---------------- */

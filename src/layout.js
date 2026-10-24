@@ -150,20 +150,33 @@ function breadcrumb(href) {
   return { label: item.label, href: item.href };
 }
 
-function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', jsonld = [], noindex = false, preload = '', scripts = '', styles = '' }) {
+// Search results show ~160 characters: keep whole sentences that fit, else cut at a word.
+function metaDesc(s) {
+  if (s.length <= 160) return s;
+  const sentences = s.match(/[^.!?]+[.!?]+(\s|$)/g) || [];
+  let out = '';
+  for (const x of sentences) { if ((out + x).trim().length > 160) break; out += x; }
+  return out.trim().length >= 70 ? out.trim() : s.slice(0, 157).replace(/[\s,;:–—-]+\S*$/, '') + '…';
+}
+const orgId = cfg.url + '/#organization';
+
+function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/og.jpg', ogType = 'website', jsonld = [], noindex = false, preload = '', scripts = '', styles = '' }) {
   const url = cfg.url + (path === '/' ? '/' : path);
   const fullTitle = path === '/' ? title : `${title} | ${cfg.short}`;
+  desc = metaDesc(desc);
   const analytics = cfg.analytics.enabled && cfg.analytics.webAnalyticsPath && cfg.analytics.speedInsightsPath
     ? `<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script><script defer src="${cfg.analytics.webAnalyticsPath}"></script><script>window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };</script><script defer src="${cfg.analytics.speedInsightsPath}"></script>\n`
     : '';
   const org = {
-    '@context': 'https://schema.org', '@type': 'Organization', legalName: cfg.name, name: cfg.short, alternateName: cfg.alt, url: cfg.url,
+    '@context': 'https://schema.org', '@type': 'Organization', '@id': orgId, legalName: cfg.name, name: cfg.short, alternateName: cfg.alt, url: cfg.url,
     logo: cfg.url + '/assets/logo/icon-512.png', foundingDate: String(cfg.founded), email: cfg.email, telephone: cfg.phone,
     address: { '@type': 'PostalAddress', streetAddress: cfg.streetAddress, addressLocality: cfg.addressLocality, postalCode: cfg.postalCode, addressCountry: cfg.countryCode },
+    founder: { '@type': 'Person', name: D.founder.name, jobTitle: D.founder.role },
+    knowsAbout: D.sectors.map((s) => s.title),
   };
   const crumbLd = path === '/' ? null : {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
-    itemListElement: [{ '@type': 'ListItem', position: 1, name: D.navigation.homeLabel, item: cfg.url + '/' }, ...path.split('/').filter(Boolean).map((seg, i, a) => ({ '@type': 'ListItem', position: i + 2, name: seg.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()), item: cfg.url + '/' + a.slice(0, i + 1).join('/') }))],
+    itemListElement: [{ '@type': 'ListItem', position: 1, name: D.navigation.homeLabel, item: cfg.url + '/' }, ...path.split('/').filter(Boolean).map((seg, i, a) => ({ '@type': 'ListItem', position: i + 2, name: i === a.length - 1 ? title : seg.replace(/-/g, ' ').replace(/^./, (c) => c.toUpperCase()), item: cfg.url + '/' + a.slice(0, i + 1).join('/') }))],
   };
   const ld = [org, crumbLd, ...jsonld].filter(Boolean).map((o) => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join('\n');
   return `<!DOCTYPE html>
@@ -176,7 +189,7 @@ function page({ title, desc, path, body, bodyClass = '', ogImage = '/assets/img/
 <link rel="canonical" href="${url}">
 ${noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" content="index,follow,max-image-preview:large">'}
 <meta name="theme-color" content="#12100f">
-<meta property="og:type" content="website"><meta property="og:site_name" content="${cfg.name}">
+<meta property="og:type" content="${ogType}"><meta property="og:site_name" content="${cfg.name}">
 <meta property="og:title" content="${esc(fullTitle)}"><meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${url}"><meta property="og:image" content="${cfg.url}${ogImage}">
 <meta name="twitter:card" content="summary_large_image">
@@ -208,4 +221,4 @@ ${scripts ? `${scripts}\n` : ''}</body>
 `;
 }
 
-module.exports = { esc, plain, rich, strip, arrow, arrowL, btn, header, footer, formBlock, cta, sectionHead, phero, breadcrumb, page, cfg, D };
+module.exports = { esc, plain, rich, strip, arrow, arrowL, btn, header, footer, formBlock, cta, sectionHead, phero, breadcrumb, page, orgId, cfg, D };
