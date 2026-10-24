@@ -653,6 +653,7 @@ html:not(.js) .wy__item p,.wy:not(.is-ready) .wy__item p{margin:12px 0 4px}
 /* ---------- generic content blocks ---------- */
 .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:center}
 .two--top{align-items:start}
+.approach-decision__lead{position:sticky;top:130px;align-self:start}
 .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .cards2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -831,6 +832,7 @@ html:not(.js) .wy__item p,.wy:not(.is-ready) .wy__item p{margin:12px 0 4px}
   .nav,.head__cta .btn{display:none}
   .burger{display:flex}
   .section__head--split,.conv__grid,.cta__grid,.founder,.two,.move,.partners{grid-template-columns:1fr}
+  .approach-decision__lead{position:static}
   .caps,.cards3,.persons{grid-template-columns:repeat(2,1fr)}
   .cards4{grid-template-columns:repeat(2,1fr)}
   .stats{grid-template-columns:repeat(2,1fr)}

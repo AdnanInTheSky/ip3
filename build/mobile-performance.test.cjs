@@ -64,6 +64,23 @@ test('page CSS keeps matching selectors, runtime words/states and functional sel
   for (const preserved of ['.hero{color:red}', '.hero,.other{margin:1px}', '.w .wi{display:inline-block}', '.js .gone{opacity:1}', '.is-ready{color:green}', '.lenis-smooth{height:auto}', ':not(.absent){color:yellow}', ':is(.absent,h1){color:purple}', 'a[href$=".pdf"]{color:orange}', '@keyframes go{from{opacity:0}to{opacity:1}}']) assert.ok(result.includes(preserved), preserved);
   assert.equal(pageCss('.tilt{transform:perspective(900px)}.pdlg__head{display:flex}', '<body></body>'), '.tilt{transform:perspective(900px)}.pdlg__head{display:flex}');
 });
+test('Approach decision lead stops sticking when its two-column layout collapses on mobile', () => {
+  const html = require('../src/pages-inner').approach();
+  const css = fs.readFileSync(path.join(root, 'src/css/site.css'), 'utf8');
+  assert.match(html, /class="approach-decision__lead"/);
+  assert.doesNotMatch(html, /approach-decision__lead[^>]*style=/);
+  const parsed = require('postcss').parse(css);
+  const base = []; let mobile = [];
+  parsed.walkRules('.approach-decision__lead', rule => {
+    if (rule.parent.type === 'atrule' && rule.parent.params.includes('max-width:1040px')) mobile = rule.nodes;
+    else base.push(...rule.nodes);
+  });
+  assert.equal(base.find(node => node.prop === 'position')?.value, 'sticky');
+  assert.equal(mobile.find(node => node.prop === 'position')?.value, 'static');
+  const delivered = require('./page-css.cjs').pageCss(css, html);
+  assert.match(delivered, /\.approach-decision__lead\{position:sticky/);
+  assert.match(delivered, /@media \(max-width:1040px\)\{[\s\S]*?\.approach-decision__lead\{position:static\}/);
+});
 test('gzip negotiation preserves exact response bytes and does not recompress WOFF2', async () => {
   const http = require('node:http'), os = require('node:os'), zlib = require('node:zlib');
   const { sendFile } = require('./http-compression.cjs');
