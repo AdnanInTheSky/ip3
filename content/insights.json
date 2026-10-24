@@ -1,6 +1,7 @@
 {
   "items": [
     {
+      "hidden": false,
       "type": "Research",
       "title": "A Multi-Criteria Innovation Framework for Green Financial Product Design",
       "text": "A blueprint for sustainable finance to speed the green transition in emerging markets. Centred on Bangladesh, it designs context-specific green financial products — rather than copying Western models — using a multi-criteria lens that fuses AHP and TOPSIS to balance financial viability, environmental impact and social inclusion.",
@@ -12,6 +13,7 @@
       "legacyWpId": "17320"
     },
     {
+      "hidden": false,
       "type": "Research",
       "title": "Deploying Data-Driven Tools to Monitor and Enhance Learning Outcomes in Schools",
       "text": "Advanced monitoring and analytics are used to assess how climate and disaster risks affect student performance. Findings show that real-time data integration enables targeted interventions.",
@@ -23,6 +25,7 @@
       "legacyWpId": "7192"
     },
     {
+      "hidden": false,
       "type": "Analysis",
       "title": "Bangladesh’s ESG Transition in 2025: Why It Lags India, Vietnam & ASEAN Peers",
       "text": "By examining multiple sectors, we uncover how embedding sustainability across operations delivers tangible economic, social and environmental returns.",
@@ -34,6 +37,7 @@
       "legacyWpId": "17298"
     },
     {
+      "hidden": false,
       "type": "Case study",
       "title": "Transforming BMDF into a Next-Gen Municipal Financing Institution",
       "text": "IP3 led a transformation roadmap — redesigning governance, introducing innovative finance tools (PPPs, bonds), building institutional capacity and embedding a 10-year business plan.",
@@ -70,18 +74,7 @@
   ],
   "publications": [
     {
-      "kind": "Book chapter",
-      "year": 2024,
-      "title": "Building resilience in Bangladesh's education system: Evidence and policy lessons",
-      "authors": "Kazi Iqbal and Siban Shahana",
-      "publisher": "Asian Development Bank Institute, in Building Resilience in Education Systems (eds. E. M. King and D. Suryadarma)",
-      "href": "https://www.adb.org/publications/building-resilience-in-education-systems",
-      "summary": "What Bangladesh learned about keeping children learning through shocks, and the policy lessons for a more resilient education system.",
-      "people": [
-        "siban-shahana"
-      ]
-    },
-    {
+      "hidden": false,
       "kind": "Journal article",
       "year": 2023,
       "title": "Input subsidies and crop diversity on family farms in Burkina Faso",
@@ -93,10 +86,11 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Report",
       "year": 2022,
       "title": "Bridging the Technological Divide: Technology Adoption by Firms in Developing Countries",
-      "authors": "Xavier Cirera, Diego Comin and Marcio Cruz; IP3 contributed the Bangladesh survey work",
+      "authors": "Xavier Cirera, Diego Comin and Marcio Cruz; IP3 Experts contributed the Bangladesh survey work",
       "publisher": "World Bank",
       "href": "https://openknowledge.worldbank.org/entities/publication/ee3abd08-33db-41b9-86f7-9b3176632083",
       "summary": "A World Bank flagship on why firms in developing countries lag in adopting technology, built on the Firm-level Adoption of Technology survey.",
@@ -105,10 +99,11 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Report",
       "year": 2021,
       "title": "Gearing Up for the Future of Manufacturing in Bangladesh",
-      "authors": "Yunfan Gu, Gaurav Nayyar and Siddharth Sharma; IP3 contributed the Bangladesh survey work",
+      "authors": "Yunfan Gu, Gaurav Nayyar and Siddharth Sharma; IP3 experts contributed the Bangladesh survey work",
       "publisher": "World Bank",
       "href": "http://hdl.handle.net/10986/35879",
       "summary": "How far Bangladeshi manufacturers have adopted new technology, what holds them back, and the reforms that would help, drawing on a survey of 1,200 firms.",
@@ -117,6 +112,7 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Report",
       "year": 2019,
       "title": "Taking Collective Action to Improve Adolescent Nutrition in Bangladesh: Investing in Cost-Effective Interventions",
@@ -129,6 +125,7 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Journal article",
       "year": 2019,
       "title": "Applying a spatially based, weighted parametric valuation model to address property taxation challenges for developing countries",
@@ -141,6 +138,7 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Commentary",
       "year": 2019,
       "title": "The gender gap in employment: women have a low share in quality, gainful jobs",
@@ -153,6 +151,7 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Commentary",
       "year": 2019,
       "title": "Wealth inequality: property tax can close the gap",
@@ -165,6 +164,7 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Book chapter",
       "year": 2016,
       "title": "Can cereal-based cropping technologies only improve the food and livelihood security of the poor smallholders in marginal areas of Bangladesh?",
@@ -177,6 +177,7 @@
       ]
     },
     {
+      "hidden": false,
       "kind": "Report",
       "year": 2015,
       "title": "Financial Soundness Indicators for Financial Sector Stability: A Tale of Three Asian Countries",
