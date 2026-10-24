@@ -1980,6 +1980,24 @@ content:
             type: string
             required: true
             description: "Wrap words in <em>…</em> to show them in the accent colour."
+          - name: lifecycle
+            label: "Lifecycle steps — Capabilities page"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            description: "These four process cards appear on /capabilities. They are not About page sections."
+            fields:
+              - name: title
+                label: "Title"
+                type: string
+                required: true
+              - name: text
+                label: "Text"
+                type: text
+                required: true
           - name: cards
             label: "Capabilities"
             type: object
@@ -4309,40 +4327,6 @@ content:
                 type: string
                 required: true
                 description: "Wrap words in <em>…</em> to show them in the accent colour."
-              - name: text
-                label: "Text"
-                type: text
-                required: true
-          - name: lifecycle
-            label: "Lifecycle steps"
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title}"
-            required: true
-            fields:
-              - name: title
-                label: "Title"
-                type: string
-                required: true
-              - name: text
-                label: "Text"
-                type: text
-                required: true
-          - name: pillars
-            label: "Three areas"
-            type: object
-            list:
-              collapsible:
-                collapsed: true
-                summary: "{title}"
-            required: true
-            fields:
-              - name: title
-                label: "Title"
-                type: string
-                required: true
               - name: text
                 label: "Text"
                 type: text

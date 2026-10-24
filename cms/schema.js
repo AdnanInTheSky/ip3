@@ -199,6 +199,7 @@ module.exports = {
 
     file('capabilities', '10 · Capabilities', 'content/capabilities.json', [
       str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }),
+      pair('lifecycle', 'Lifecycle steps — Capabilities page', { hint: 'These four process cards appear on /capabilities. They are not About page sections.' }),
       list('cards', 'Capabilities', [
         slug(), str('title', 'Title'), str('short', 'Short name'), text('problem', 'The problem a client brings'), strs('deliverables', 'Typical deliverables'),
         str('descriptor', 'Plain-language line under the title', { max: 140, hint: 'The words a buyer would search for, e.g. Policy studies, economic appraisal, regulatory reform and sector strategies.' }),
@@ -305,7 +306,7 @@ module.exports = {
       obj('mission', 'Mission', [str('label', 'Label'), str('title', 'Headline'), text('text', 'Text')]),
       strs('aims', 'Aims'),
       obj('principles', 'Founding principles', [str('eyebrow', 'Small label'), str('h2', 'Heading', { em: true }), text('text', 'Text')]),
-      pair('lifecycle', 'Lifecycle steps'), pair('pillars', 'Three areas'), pair('values', 'Values'), pair('different', 'What makes us different'),
+      pair('values', 'Values'), pair('different', 'What makes us different'),
     ]),
     file('why', '17 · Why choose IP3 (3D journey page)', 'content/why.json', [
       obj('hero', 'Opening screen (headline and intro are under Page titles → Why choose IP3)', [

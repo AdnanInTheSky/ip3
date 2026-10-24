@@ -382,5 +382,23 @@
       ],
       "image": "/assets/img/field/adb-gis-workshop-head-table.webp"
     }
+  ],
+  "lifecycle": [
+    {
+      "title": "Diagnose",
+      "text": "Map systems, institutions, incentives, data ecosystems, risks and underlying policy constraints."
+    },
+    {
+      "title": "Co-design",
+      "text": "Combine evidence, stakeholder knowledge and action research to develop practical policies, programs, regulatory frameworks and institutional solutions."
+    },
+    {
+      "title": "Test & learn",
+      "text": "Pilot interventions, experiment with delivery models, generate implementation evidence and adapt solutions to what works in practice."
+    },
+    {
+      "title": "Implement & scale",
+      "text": "Support institutional adoption, capacity development, digital and data systems, implementation and adaptive MERLA to strengthen performance over time."
+    }
   ]
 }

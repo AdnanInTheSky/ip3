@@ -19,7 +19,7 @@ const ROUTES = ['/', '/about', '/why-ip3', '/approach', '/capabilities', '/secto
 const WHY_SCENES = ['complexity', 'evidence', 'insight', 'policy', 'practice', 'impact'];
 const REQUIRED_HEADING_KEYS = [
   'home-why', 'home-sectors', 'home-engagements', 'home-insights', 'partners-clients', 'partners-funders',
-  'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'about-network',
+  'about-intro', 'about-values', 'about-different', 'about-network',
   'why-capabilities', 'why-sectors', 'why-work', 'why-method', 'cta-why',
   'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes',
   'capabilities-start', 'capability-deliverables', 'capability-applied', 'capability-includes', 'capability-related', 'sector-add-value', 'sector-capabilities',
@@ -28,7 +28,7 @@ const REQUIRED_HEADING_KEYS = [
   'cta-engagements', 'cta-insights', 'cta-people', 'not-found', 'finder-step-sector', 'finder-step-help', 'finder-results',
 ];
 const RICH_HEADING_KEYS = new Set([
-  'finder-results', 'about-intro', 'about-lifecycle', 'about-pillars', 'about-values', 'about-different', 'cta-about',
+  'finder-results', 'about-intro', 'about-values', 'about-different', 'cta-about',
   'why-capabilities', 'why-sectors', 'why-work', 'why-method', 'cta-why',
   'approach-problem', 'approach-standards', 'approach-orbit', 'approach-toolkit', 'approach-outcomes', 'cta-approach',
   'capabilities-start', 'cta-capabilities', 'contact-ways', 'contact-faq', 'cta-engagements',

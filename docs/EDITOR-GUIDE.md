@@ -54,10 +54,13 @@ After a merge to `main`, Content publishing automatically brings `content` up to
 | Header navigation or footer link | Website settings · contact & navigation → header, navigation & footer |
 | Homepage number or testimonial | Homepage content → Numbers or Testimonials |
 | Capability title or service details | Capabilities, assignments & proof → Capabilities |
+| Diagnose, Co-design, Test & learn, Implement & scale process cards | Capabilities, assignments & proof → Capabilities → Lifecycle steps — Capabilities page |
 | Sector order or sector photo | Sectors & sector pages → Sectors |
 | Article or publication | Engagements & insights → Insights |
 
 ### Content fields and website keys
+
+The About CMS forms match the six current middle sections on `/about`. The former About lifecycle and three-area sections, including their retired heading controls, are archived in `docs/content-archive/about-sections-2026-10-25.json` and are not published as About sections. The lifecycle cards remain active on `/capabilities` and are edited in its Capabilities form. An archive is retained source material, not a CMS-editable page or a draft awaiting publication.
 
 Edit the words, descriptions, dates, links, and images intended for visitors. Fields called **Template key**, **Record key**, or **Profile anchor** connect content to page templates, URLs, or related records. They are developer-managed identifiers; leave them unchanged when updating copy or media. A change may break links or page rendering even if the field accepts text.
 

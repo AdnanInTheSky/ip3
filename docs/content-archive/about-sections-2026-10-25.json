@@ -1,0 +1,55 @@
+{
+  "archivedAt": "2026-10-25",
+  "sourceCommit": "bed71d21bde00131225c9754eeaf2d45981f073a",
+  "rendererRemovalCommit": "c5bbaae",
+  "reason": "The owner approved removing unused About CMS controls and archiving their source content. Lifecycle remains in use on Capabilities and moves to its own CMS form.",
+  "sections": {
+    "lifecycle": {
+      "heading": {
+        "slug": "about-lifecycle",
+        "eyebrow": "From insight to implementation",
+        "title": "Our translational approach connects the <em>full lifecycle.</em>"
+      },
+      "content": [
+        {
+          "title": "Diagnose",
+          "text": "Map systems, institutions, incentives, data ecosystems, risks and underlying policy constraints."
+        },
+        {
+          "title": "Co-design",
+          "text": "Combine evidence, stakeholder knowledge and action research to develop practical policies, programs, regulatory frameworks and institutional solutions."
+        },
+        {
+          "title": "Test & learn",
+          "text": "Pilot interventions, experiment with delivery models, generate implementation evidence and adapt solutions to what works in practice."
+        },
+        {
+          "title": "Implement & scale",
+          "text": "Support institutional adoption, capacity development, digital and data systems, implementation and adaptive MERLA to strengthen performance over time."
+        }
+      ],
+      "activeLocation": "content/capabilities.json: lifecycle (rendered on /capabilities)"
+    },
+    "pillars": {
+      "heading": {
+        "slug": "about-pillars",
+        "eyebrow": "Three connected areas of transformation",
+        "title": "One ambition. <em>Three connected systems.</em>"
+      },
+      "content": [
+        {
+          "title": "Climate Action, ESG & Circular Economy",
+          "text": "Translating sustainability ambition into practical strategies for climate action, ESG integration, circular-economy transition, climate finance, resilience and responsible growth."
+        },
+        {
+          "title": "Education & Human Capacity Development",
+          "text": "Action research, policy innovation, data, technology and systems thinking to support education reform, stronger learning systems, skills development and inclusive human development."
+        },
+        {
+          "title": "Institutional Effectiveness, Data & Digital Governance",
+          "text": "Strengthening governance, regulatory systems, organizational effectiveness, data ecosystems, digital transformation and service delivery."
+        }
+      ]
+    }
+  }
+}

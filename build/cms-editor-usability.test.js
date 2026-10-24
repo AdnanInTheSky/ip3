@@ -8,7 +8,7 @@ const schema = require('../cms/schema');
 const { editableSectionOrders } = require('../cms/section-order');
 const { testimonialPlacements, defaultTestimonialPlacement } = require('../cms/section-placement');
 
-const contractHash = '42c57c7c7bc8d5cd7a4345aa80667633b0e9bb9778a003e41d324c784f3fe165';
+const contractHash = '0d2e21fcbe07bc5abba7cd6f57afe34ee81689c533f9f12d356269dbbb2dffa1';
 const editorOnlyKeys = new Set(['label', 'hint', 'summary']);
 function withoutEditorCopy(value) {
   if (Array.isArray(value)) return value.map(withoutEditorCopy);
@@ -31,7 +31,7 @@ function field(fields, name) {
   return undefined;
 }
 
-test('existing CMS contract is preserved alongside article and Explorer section extensions', () => {
+test('CMS contract matches the approved article, Explorer and About field mapping', () => {
   const contract = {
     media: schema.media.filter(item => item.name !== 'insights_images'),
     groups: schema.groups.map(({ name, items }) => ({ name, items: items.filter(item => item !== 'articles') })),
@@ -84,4 +84,44 @@ test('restricted section order and testimonial pilot remain unchanged', () => {
 test('generated Pages CMS configuration matches the schema', () => {
   const result = spawnSync(process.execPath, ['build/cms.js', '--check'], { cwd: path.join(__dirname, '..'), encoding: 'utf8' });
   assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
+});
+
+test('About fields map to visible content and its former lifecycle remains editable on Capabilities', () => {
+  const root = path.join(__dirname, '..');
+  const about = JSON.parse(fs.readFileSync(path.join(root, 'content/about.json'), 'utf8'));
+  const capabilities = JSON.parse(fs.readFileSync(path.join(root, 'content/capabilities.json'), 'utf8'));
+  const copy = JSON.parse(fs.readFileSync(path.join(root, 'content/page-text/about.json'), 'utf8'));
+  const archive = JSON.parse(fs.readFileSync(path.join(root, 'docs/content-archive/about-sections-2026-10-25.json'), 'utf8'));
+  const { parseHTML } = require('linkedom');
+  const pages = require('../src/pages-inner');
+  const normalize = text => text.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  const visible = normalize(parseHTML(pages.about()).document.querySelector('main').textContent);
+  const checkVisible = value => {
+    if (typeof value === 'string') assert.ok(visible.includes(normalize(value)), `About CMS value is not rendered: ${value}`);
+    else Object.values(value).forEach(checkVisible);
+  };
+  checkVisible(about);
+  assert.deepEqual(entry('about').fields.map(f => f.name).sort(), Object.keys(about).sort());
+  for (const key of ['lifecycle', 'pillars']) {
+    assert.equal(field(entry('about').fields, key), undefined);
+    assert.ok(!copy.headings.some(h => h.slug === `about-${key}`));
+    assert.ok(archive.sections[key].content.length > 0);
+  }
+  assert.ok(field(entry('capabilities').fields, 'lifecycle'));
+  const capabilityText = normalize(parseHTML(pages.capabilities()).document.querySelector('main').textContent);
+  capabilities.lifecycle.forEach(step => {
+    assert.ok(capabilityText.includes(normalize(step.title)));
+    assert.ok(capabilityText.includes(normalize(step.text)));
+  });
+  assert.equal(archive.sections.lifecycle.content.length, 4);
+  assert.equal(archive.sections.pillars.content.length, 3);
+  const live = require('../src/data').capabilities.lifecycle[0];
+  const originalTitle = live.title;
+  try {
+    live.title = 'CMS-CAPABILITY-PROCESS-EDIT-CHECK';
+    assert.ok(pages.capabilities().includes(live.title), 'A process edit must reach Capabilities');
+    assert.ok(!pages.about().includes(live.title), 'A Capabilities process edit must not become an About section');
+  } finally {
+    live.title = originalTitle;
+  }
 });
