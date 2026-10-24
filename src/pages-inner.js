@@ -67,7 +67,7 @@ function approach() {
     sec(`${head(esc(s8.subtitle.toLowerCase().replace(/^./, (c) => c.toUpperCase())), rich(D.headings['approach-outcomes'].title), esc(s8.paragraph))}<ul class="arrowlist" data-stagger>${s8.cards.map((c) => { const [a, b] = c.text.split(' → '); return `<li><span>${esc(a)}</span><i>→</i><span>${esc(b || '')}</span></li>`; }).join('')}</ul>`),
     sec(`${head(esc(D.pageText.approach['eyebrow-why-different']), esc(s8.subsection1.title), esc(s8.subsection1.paragraph))}<div class="cards3" data-stagger>${s8.subsection1.cards.map((c) => tile(esc(c.title), esc(c.text))).join('')}</div>`, 'section--paper'),
     sec(`${head(esc(D.pageText.approach['eyebrow-beyond-recommendation']), esc(s8.subsection2.title), esc(s8.subsection2.paragraph))}<div class="cards4" data-stagger>${s8.subsection2.cards.map((c, i) => tile(esc(c.title), esc(c.text), String(i + 1).padStart(2, '0'))).join('')}</div>`),
-    require('./explore').related(['economics-trade','finance-investment','development-impact'],'Explore the method through analytical examples'),
+    require('./explore').related(['economics-trade','finance-investment','market-enterprise','development-impact','policy-governance','management-delivery'],'Explore the method through analytical examples'),
     cta('cta-approach'),
   ].join('\n');
   return page({ title: pg.title, desc: pg.desc, path: '/approach', body });
