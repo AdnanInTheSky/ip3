@@ -339,6 +339,34 @@ content:
                 required: true
                 options:
                   maxlength: 420
+          - name: evidence
+            label: "Evidence map"
+            type: object
+            required: true
+            fields:
+              - name: title
+                label: "Search title (browser & results)"
+                type: string
+                required: true
+                description: "Used for the browser tab and search listings. Search engines may rewrite it. Aim for 70 characters or fewer."
+              - name: desc
+                label: "Search description"
+                type: text
+                required: true
+                description: "Suggested text for search listings; search engines may rewrite it. Aim for 165 characters or fewer."
+              - name: h1
+                label: "On-page headline"
+                type: string
+                required: true
+                description: "Wrap words in <em>…</em> to show them in the accent colour."
+                options:
+                  maxlength: 140
+              - name: lead
+                label: "Opening paragraph under the headline"
+                type: text
+                required: true
+                options:
+                  maxlength: 420
           - name: privacy
             label: "Privacy"
             type: object
@@ -1103,6 +1131,79 @@ content:
         label: "Mandate Finder"
         type: file
         path: content/page-text/finder.json
+        format: json
+        operations:
+          create: false
+          rename: false
+          delete: false
+        fields:
+          - name: headings
+            label: "Headings, eyebrows & leads"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{title}"
+            required: true
+            fields:
+              - name: slug
+                label: "Template key (leave unchanged)"
+                type: string
+                required: true
+                readonly: true
+                description: "Developer-managed link between this copy and the page design. You do not need to edit it."
+                pattern:
+                  regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  message: "Use lowercase letters and numbers separated by hyphens."
+              - name: eyebrow
+                label: "Eyebrow"
+                type: string
+                options:
+                  maxlength: 80
+              - name: title
+                label: "Heading"
+                type: text
+                required: true
+                description: "Keep <em> only on headings where that emphasis already appears."
+                options:
+                  maxlength: 160
+              - name: lead
+                label: "Lead paragraph"
+                type: text
+                options:
+                  maxlength: 420
+          - name: copy
+            label: "Other marketing copy & CTA labels"
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{label}"
+            fields:
+              - name: slug
+                label: "Template key (leave unchanged)"
+                type: string
+                required: true
+                description: "Developer-managed link between this copy and the page design. Leave it as is unless the website maintainer asks you to change it."
+                pattern:
+                  regex: "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+                  message: "Use lowercase letters and numbers separated by hyphens."
+              - name: label
+                label: "Editor label"
+                type: string
+                required: true
+                options:
+                  maxlength: 100
+              - name: text
+                label: "Copy"
+                type: text
+                required: true
+                options:
+                  maxlength: 1000
+      - name: page_text_evidence
+        label: "Evidence map"
+        type: file
+        path: content/page-text/evidence.json
         format: json
         operations:
           create: false

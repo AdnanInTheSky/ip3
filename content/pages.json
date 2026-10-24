@@ -63,6 +63,12 @@
     "h1": "Find the right <em>support.</em>",
     "lead": "Two short questions connect your challenge to IP3's relevant work. It is anonymous: nothing you choose is saved or sent."
   },
+  "evidence": {
+    "title": "Evidence map — IP3 assignments by client, phase and sector",
+    "desc": "An interactive map of IP3's documented assignments: who commissioned each one, where it sits in the delivery chain and which sector it serves.",
+    "h1": "The record, <em>mapped.</em>",
+    "lead": "Every documented IP3 assignment is one dot. Scroll to sort the work by client, by phase of the delivery chain and by sector, then explore it yourself."
+  },
   "privacy": {
     "title": "Privacy Policy",
     "desc": "Privacy Policy for IP3 Consulting Limited."

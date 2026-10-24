@@ -20,7 +20,8 @@
     { "label": "Insights", "href": "/insights" },
     { "label": "People", "href": "/people" },
     { "label": "Contact", "href": "/contact" },
-    { "label": "Mandate Finder", "href": "/find-support" }
+    { "label": "Mandate Finder", "href": "/find-support" },
+    { "label": "Evidence map", "href": "/evidence-map" }
   ],
   "homeLabel": "Home",
   "homeHref": "/",
@@ -45,6 +46,7 @@
     { "label": "Insights", "href": "/insights" },
     { "label": "People", "href": "/people" },
     { "label": "Mandate Finder", "href": "/find-support" },
+    { "label": "Evidence map", "href": "/evidence-map" },
     { "label": "Interactive Explorer", "href": "/explore" }
   ],
   "legal": [

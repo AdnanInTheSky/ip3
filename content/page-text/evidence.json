@@ -1,0 +1,70 @@
+{
+  "headings": [
+    {
+      "slug": "em-intro",
+      "eyebrow": "One dot, one assignment",
+      "title": "Every documented assignment, <em>in one view.</em>",
+      "lead": "Each dot is one assignment in IP3's documented record: the same records shown on Capabilities. Keep scrolling and they sort themselves."
+    },
+    {
+      "slug": "em-client",
+      "eyebrow": "Client",
+      "title": "Who commissioned the work",
+      "lead": "Rows group the assignments by the type of client recorded for each one. Highlighted dots share the client name that appears most often."
+    },
+    {
+      "slug": "em-phase",
+      "eyebrow": "Delivery chain",
+      "title": "Where each assignment sits in the chain",
+      "lead": "The six phases are the delivery chain on the home page. Each assignment is evidence for exactly one phase there."
+    },
+    {
+      "slug": "em-sector",
+      "eyebrow": "Sector",
+      "title": "Which sectors the work serves",
+      "lead": "Rows follow the assignments listed on the eight sector pages. An assignment listed on two sector pages appears in both rows, highlighted."
+    },
+    {
+      "slug": "em-explore",
+      "eyebrow": "Explore",
+      "title": "Sort it and search it <em>yourself.</em>",
+      "lead": "Choose a grouping, type part of a client's name, or select a dot to read the assignment."
+    },
+    {
+      "slug": "em-method",
+      "eyebrow": "How this map is made",
+      "title": "Built only from the published record",
+      "lead": "Client and client type come from each assignment's record. Phases come from the delivery chain on the home page, and sectors from the evidence lists on the sector pages. Nothing is estimated: the counts are recalculated from those sources every time the site is built."
+    }
+  ],
+  "copy": [
+    { "slug": "total-label", "label": "Words after the total number of assignments", "text": "documented assignments" },
+    { "slug": "callout-client", "label": "Client step — computed note", "text": "{{client}} is the most frequent client: {{n}} of {{total}} assignments. The largest client type is {{type}}, with {{typeN}}." },
+    { "slug": "callout-phase", "label": "Phase step — computed note", "text": "The smallest phase has {{min}} assignments; the largest has {{max}}." },
+    { "slug": "callout-sector", "label": "Sector step — computed note", "text": "{{placements}} placements from {{total}} assignments: {{dupes}} appear on more than one sector page." },
+    { "slug": "callout-unplaced", "label": "Added to a computed note when some assignments are not placed", "text": "{{n}} are not listed in this grouping." },
+    { "slug": "unplaced-row", "label": "Row name for assignments not placed in a grouping", "text": "Not listed" },
+    { "slug": "group-label", "label": "Grouping switch name", "text": "Group by" },
+    { "slug": "group-all", "label": "Grouping — none", "text": "All" },
+    { "slug": "group-client", "label": "Grouping — client type", "text": "Client type" },
+    { "slug": "group-phase", "label": "Grouping — phase", "text": "Phase" },
+    { "slug": "group-sector", "label": "Grouping — sector", "text": "Sector" },
+    { "slug": "all-row", "label": "Row name when nothing is grouped", "text": "All assignments" },
+    { "slug": "search-label", "label": "Client search label", "text": "Find a client" },
+    { "slug": "search-hint", "label": "Client search example", "text": "e.g. World Bank" },
+    { "slug": "search-count", "label": "Client search result", "text": "{{n}} of {{total}} assignments name a matching client." },
+    { "slug": "search-none", "label": "Client search — no match", "text": "No client name matches. Try a shorter word." },
+    { "slug": "detail-empty", "label": "Detail panel before a dot is chosen", "text": "Select a dot to read the assignment here." },
+    { "slug": "detail-link", "label": "Link to the full record", "text": "Read the full record" },
+    { "slug": "also-listed", "label": "Note on a second sector placement", "text": "Also listed under" },
+    { "slug": "chart-label", "label": "Chart description (screen readers)", "text": "Dot chart of {{total}} documented assignments, grouped by {{group}}: {{counts}}. The table below lists every assignment." },
+    { "slug": "table-toggle", "label": "Show-table button", "text": "Show every assignment as a table" },
+    { "slug": "th-assignment", "label": "Table heading — assignment", "text": "Assignment" },
+    { "slug": "th-client", "label": "Table heading — client", "text": "Client" },
+    { "slug": "th-type", "label": "Table heading — client type", "text": "Client type" },
+    { "slug": "th-period", "label": "Table heading — period", "text": "Period" },
+    { "slug": "th-phase", "label": "Table heading — phase", "text": "Phase" },
+    { "slug": "th-sector", "label": "Table heading — sectors", "text": "Sectors" },
+    { "slug": "noscript", "label": "Message when JavaScript is off", "text": "The interactive map needs JavaScript. Every assignment is listed in the table below." }
+  ]
+}

@@ -27,7 +27,7 @@ const pageText = (name, label, path) => file(name, `00 · Page text — ${label}
 ]);
 
 const groups = [
-  { name: 'start_here', label: 'Page titles, search & page copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound', 'page_text_finder'] },
+  { name: 'start_here', label: 'Page titles, search & page copy', items: ['pages', 'page_text_home', 'page_text_about', 'page_text_why', 'page_text_approach', 'page_text_capabilities', 'page_text_sectors', 'page_text_engagements', 'page_text_insights', 'page_text_people', 'page_text_notfound', 'page_text_finder', 'page_text_evidence'] },
   { name: 'page_sections', label: 'Page layout · approved section order', items: ['section_order', 'section_placement'] },
   { name: 'home_page', label: 'Homepage content', items: ['home_hero', 'home_stats', 'home_why', 'home_translation', 'home_evidence', 'home_convening', 'home_testimonials', 'home_partners'] },
   { name: 'contact', label: 'Contact page & FAQs', items: ['page_text_contact', 'home_faq'] },
@@ -96,6 +96,7 @@ module.exports = {
     pageText('page_text_contact', 'Contact', 'content/page-text/contact.json'),
     pageText('page_text_notfound', '404', 'content/page-text/notfound.json'),
     pageText('page_text_finder', 'Mandate Finder', 'content/page-text/finder.json'),
+    pageText('page_text_evidence', 'Evidence map', 'content/page-text/evidence.json'),
     file('legal', '00 · Privacy & terms', 'content/legal.json', [
       obj('privacy', 'Privacy policy', [
         str('title', 'Page title', { hint: 'Needs legal review.' }), text('lead', 'Intro paragraph', { hint: 'Needs legal review.' }),
@@ -115,7 +116,7 @@ module.exports = {
     file('pages', '00 · Page titles, search descriptions & headlines', 'content/pages.json', [
       pg('home', 'Home', false), pg('about', 'About', true), pg('why', 'Why choose IP3', true), pg('approach', 'Approach', true), pg('capabilities', 'Capabilities', true),
       pg('sectors', 'Sectors', true), pg('engagements', 'Engagements', true), pg('insights', 'Insights', true),
-      pg('people', 'People', true), pg('contact', 'Contact', true), pg('finder', 'Mandate Finder', true), pg('privacy', 'Privacy', false), pg('terms', 'Terms', false),
+      pg('people', 'People', true), pg('contact', 'Contact', true), pg('finder', 'Mandate Finder', true), pg('evidence', 'Evidence map', true), pg('privacy', 'Privacy', false), pg('terms', 'Terms', false),
     ]),
 
     file('home_hero', '01 · Home — hero headlines, slides & media', 'content/home/hero.json', [

@@ -29,6 +29,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   const { why } = require('../src/pages-why');
   const { articlePage } = require('../src/pages-articles');
   const { finder } = require('../src/pages-finder');
+  const { evidenceMap } = require('../src/pages-evidence');
   const explorer = require('../src/explore');
   const normalizeText = (value) => value.replace(/\r\n/g, '\n');
   const hash = (s) => crypto.createHash('md5').update(s).digest('hex').slice(0, 8);
@@ -54,6 +55,9 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   // the eight /sectors/<slug> pages share one stylesheet and script: src/css/sec and src/js/sec, joined in name order
   const secCss = bundle('src/css/sec', '.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
   const secJs = bundle('src/js/sec', '.js');
+  // /evidence-map: its own stylesheet and D3 chart script
+  const emCss = read('src/css/evidence.css').replace(/\/\*[\s\S]*?\*\//g, '').replace(/\n\s*\n/g, '\n');
+  const emJs = read('src/js/evidence.js');
   write('assets/css/site.css', css);
   write('assets/js/site.js', js);
   write('assets/js/why.js', whyJs);
@@ -61,6 +65,8 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
   write('assets/js/capabilities.js', capJs);
   write('assets/css/sectors.css', secCss);
   write('assets/js/sectors.js', secJs);
+  write('assets/css/evidence.css', emCss);
+  write('assets/js/evidence.js', emJs);
   // Route-local models: no model script, chart or original reference document is preloaded on Home.
   for (const name of ['explorer', 'model']) {
     write(`assets/css/${name}.css`, read(`src/explore/${name}.css`));
@@ -71,7 +77,7 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     write(`assets/css/models/${model.slug}.css`, read(`src/explore/models/${model.slug}.css`));
     write(`assets/js/models/${model.slug}.js`, read(`src/explore/models/${model.slug}.js`));
   }
-  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs), __CAPCSSV__: hash(capCss), __CAPJSV__: hash(capJs), __SECCSSV__: hash(secCss), __SECJSV__: hash(secJs) };
+  const V = { __CSSV__: hash(css), __JSV__: hash(js), __WHYV__: hash(whyJs), __CAPCSSV__: hash(capCss), __CAPJSV__: hash(capJs), __SECCSSV__: hash(secCss), __SECJSV__: hash(secJs), __EMCSSV__: hash(emCss), __EMJSV__: hash(emJs) };
 
   // 2. pages
   const pages = [
@@ -90,12 +96,13 @@ async function build({ root = ROOT, assetRoots = [root], quiet = false, output }
     ['people.html', P.people()],
     ['contact.html', P.contact()],
     ['find-support.html', finder()],
+    ['evidence-map.html', evidenceMap()],
     ['privacy.html', P.legal('privacy')],
     ['terms.html', P.legal('terms')],
     ['404.html', P.notFound()],
   ];
   for (const [file, html] of pages) {
-    let rendered = html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__/g, (m) => V[m]);
+    let rendered = html.replace(/__CSSV__|__JSV__|__WHYV__|__CAPCSSV__|__CAPJSV__|__SECCSSV__|__SECJSV__|__EMCSSV__|__EMJSV__/g, (m) => V[m]);
     if (file === 'index.html' || file === 'explore.html' || file.startsWith('explore/')) {
       const routeCss = require('./page-css.cjs').pageCss(css, rendered);
       const key = file === 'index.html' ? 'home' : file === 'explore.html' ? 'explore' : 'analytical';
