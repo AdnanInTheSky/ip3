@@ -16,9 +16,10 @@ function decodeHtml(value) {
 }
 
 function attr(tag, name) {
-  const expression = new RegExp(`(?:^|\\s)${name}\\s*=\\s*(["'])(.*?)\\1`, 'i');
+  // HTML allows double-quoted, single-quoted and unquoted attribute values.
+  const expression = new RegExp('(?:^|\\s)' + name + '\\s*=\\s*(?:"([^"]*)"|\\x27([^\\x27]*)\\x27|([^\\s"\\x27=<>\\x60]+))', 'i');
   const match = tag.match(expression);
-  return match ? decodeHtml(match[2]) : null;
+  return match ? decodeHtml(match[1] ?? match[2] ?? match[3]) : null;
 }
 
 function verify({ dist = DEFAULT_DIST, siteUrl = process.env.SITE_URL || require('../content/site.json').url } = {}) {

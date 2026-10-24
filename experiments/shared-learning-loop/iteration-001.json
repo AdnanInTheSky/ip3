@@ -1,0 +1,54 @@
+{
+  "schema": "ip3.shared-learning.experiment.v0.1",
+  "experiment_id": "ip3-html-attribute-2026-10-23-001",
+  "task": "Detect broken references in syntactically valid unquoted HTML attributes in the IP3 static-site verifier.",
+  "repository": "mdsyfulhoque-afk/ip3-bd.org",
+  "branch": "experiment/shared-learning-loop-20261023",
+  "pull_request": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/pull/31",
+  "evaluation_policy": "Independent GitHub Actions Content check result; test cases committed before or separately from their respective implementation changes.",
+  "baseline": {
+    "commit": "cd4ae9dbf3e208faa6ae15e4ce39161904ecd70c",
+    "run": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39860345457",
+    "conclusion": "failure",
+    "node_tests": {
+      "passed": 123,
+      "failed": 1
+    },
+    "observed_failure": "New regression failed: /missing-page not detected; unquoted alt incorrectly reported missing."
+  },
+  "correction": {
+    "commit": "8d833de9dad2159e083c43ba3f6afa1be3a58c8b",
+    "run": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39860598112",
+    "conclusion": "success",
+    "node_tests": {
+      "passed": 124,
+      "failed": 0
+    },
+    "change": "Support double-quoted, single-quoted and valid unquoted attributes in check-links.js."
+  },
+  "distinct_positive_case": {
+    "commit": "cfb753baf13b0299c9084a17c15e986347942167",
+    "run": "https://github.com/mdsyfulhoque-afk/ip3-bd.org/actions/runs/39860694209",
+    "conclusion": "success",
+    "node_tests": {
+      "passed": 125,
+      "failed": 0
+    },
+    "assertions": [
+      "Unquoted canonical rel and href are accepted",
+      "Unquoted local href and image references resolve",
+      "Unquoted alt is accepted",
+      "data-src does not confuse src attribute extraction"
+    ]
+  },
+  "reusable_skill": "experiments/shared-learning-loop/skills/html-reference-qa-v0.1.0.md",
+  "learning_claim": {
+    "status": "verified_project_specific_process_improvement",
+    "proof_of_model_weight_change": false,
+    "proof_of_cross_model_generalization": false,
+    "needs_next": "Give the versioned skill to a different AI agent on a previously unseen repository or HTML parser task and compare against a no-skill baseline using identical independent tests and cost ceilings."
+  },
+  "main_modified": false,
+  "merged": false,
+  "release_status": "draft_only"
+}
