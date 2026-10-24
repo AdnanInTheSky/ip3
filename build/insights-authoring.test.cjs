@@ -91,8 +91,8 @@ test('retired preparation status cannot bypass the private-draft decision', () =
   assert.ok(validateArticles(all).some(error=>error.includes('invalid publication status')));
   assert.throws(()=>visibleArticles(all),/invalid publication status/);
 });
-test('content branch explicitly disables Vercel Git deployments while production release stays gated', () => {
-  const config = require('../vercel.json'); assert.equal(config.git.deploymentEnabled.content, false);
+test('content branch explicitly enables automatic Vercel draft previews', () => {
+  const config = require('../vercel.json'); assert.equal(config.git.deploymentEnabled.content, true);
 });
 test('CMS exposes Markdown, editable metadata and dedicated infographic fields with safe new-entry creation', () => {
   const schema = require('../cms/schema'), collection = schema.content.find(c => c.name === 'articles');

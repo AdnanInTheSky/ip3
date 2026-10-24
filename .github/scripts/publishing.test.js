@@ -160,8 +160,10 @@ test('open-content-pr opens or updates a content PR from local Git diff data', a
   assert.match(body.body, /content\/about\.json/);
   assert.match(body.body, /assets\/insights\/editor-fixture\.png/);
   assert.match(body.body, /Create a merge commit/);
-  assert.match(body.body, /approved preview evidence/);
-  assert.doesNotMatch(body.body, /Vercel Preview/);
+  assert.match(body.body, /Vercel Preview/);
+  assert.ok(body.body.includes(checkedSha));
+  assert.match(body.body, /later CMS save requires a fresh review/);
+  assert.doesNotMatch(body.body, /Hostinger/);
 
   const existing = [{ number: 7, html_url: 'https://github.com/owner/site/pull/7' }];
   const updateMock = apiFetchForRepo({ cwd, openPulls: existing });
