@@ -34,6 +34,8 @@ function expected(m, input, cashCase) {
     check(await page.locator('footer').count()===1,m.slug+': duplicate footer');
     check(await page.locator('iframe').count()===0,m.slug+': iframe found');
     check(await page.locator('h1').count()===1,m.slug+': duplicate h1');
+    check(await page.locator('.xp-method,.xp-data-panel,[data-model-export]').count()===0,m.slug+': client-only appendix still rendered');
+    check(await page.locator('[data-model-reset]').count()===1,m.slug+': case reset missing');
     const data=JSON.parse(fs.readFileSync(path.join(__dirname,`../src/explore/models/${m.slug}.json`)));
     for(const key of data.order)for(const context of ['public','private']){
       await page.locator(`.ip3-model [data-case="${key}"]`).click();
@@ -95,7 +97,7 @@ function expected(m, input, cashCase) {
   check(await page.evaluate(()=>document.querySelector('#why-ip3').compareDocumentPosition(document.querySelector('#thinking-in-action'))&Node.DOCUMENT_POSITION_FOLLOWING),'home: incorrect section position');
   for(const slug of catalogue.map(m=>m.slug)){await page.locator(`[data-xp-select="${slug}"]`).click();check((await page.locator('[data-xp-link]').getAttribute('href')).includes(slug),'home: selector '+slug);}
   await page.goto(base+'/contact?discipline=finance-investment&fi-rate=14#contact-form');check((await page.locator('[name=message]').inputValue()).includes('Finance & Investment'),'contact: context prefill missing');check(!(await page.locator('[name=message]').inputValue()).includes('14'),'contact: simulator values leaked');
-  const nojs=await browser.newContext({javaScriptEnabled:false});const staticPage=await nojs.newPage();for(const m of catalogue){await staticPage.goto(base+'/explore/'+m.slug);check((await staticPage.title()).includes(m.title)&&(await staticPage.locator('.xp-transcripts summary').innerText()).includes('Read all '),'noJS: content missing '+m.slug);await staticPage.locator('.xp-transcripts summary').click();check(await staticPage.locator('.xp-transcripts article').count()>=8,'noJS: transcripts missing '+m.slug);}await nojs.close();
+  const nojs=await browser.newContext({javaScriptEnabled:false});const staticPage=await nojs.newPage();for(const m of catalogue){await staticPage.goto(base+'/explore/'+m.slug);check((await staticPage.title()).includes(m.title)&&await staticPage.locator('.ip3-model [data-case]').count()>0,'noJS: primary model content missing '+m.slug);check(await staticPage.locator('.xp-method,.xp-data-panel,[data-model-export]').count()===0,'noJS: client appendix present '+m.slug);}await nojs.close();
   await browser.close();fs.writeFileSync(path.join(OUT,'browser-results.json'),JSON.stringify(report,null,2));
   console.log('BROWSER FAILURES',JSON.stringify(failures));if(failures.length)process.exitCode=1;
 })().catch(async e=>{await activeBrowser?.close();failures.push(e.stack);fs.writeFileSync(path.join(OUT,'browser-results.json'),JSON.stringify(report,null,2));console.error(e);process.exitCode=1});

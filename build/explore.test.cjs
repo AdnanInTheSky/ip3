@@ -77,9 +77,9 @@ test('delivery correct capacity, rounding, baseline and slow/fast boundaries',()
   }
   assert.throws(()=>M.deliveryRate(0,1,0,0));assert.throws(()=>M.deliveryRate(10,1,0,1));
 });
-test('native pages preserve full initial state, static narratives and a single shared shell',()=>{
+test('native pages preserve each interactive model and one shared shell without client-only appendices',()=>{
   const {model,hub}=require('../src/explore');
-  for(const m of catalogue){const html=model(m);assert.equal((html.match(/<main\b/g)||[]).length,1);assert.equal((html.match(/<footer\b/g)||[]).length,1);assert.equal((html.match(/<h1\b/g)||[]).length,1);assert.doesNotMatch(html,/<iframe\b|fonts\.googleapis[^"\n]*(?:DM\+Sans|Newsreader)/);assert.match(html,/Interpretation & methodology/);assert.match(html,/Read all \d+ scenario narratives/);assert.match(html,/Synthetic teaching scenario/);assert.match(html,/\/assets\/js\/model-math\.js\?v=/);}
+  for(const m of catalogue){const html=model(m);assert.equal((html.match(/<main\b/g)||[]).length,1);assert.equal((html.match(/<footer\b/g)||[]).length,1);assert.equal((html.match(/<h1\b/g)||[]).length,1);assert.doesNotMatch(html,/<iframe\b|fonts\.googleapis[^"\n]*(?:DM\+Sans|Newsreader)/);assert.doesNotMatch(html,/Interpretation & methodology|Understand the assumptions|Read all \d+ scenario narratives|Read and reproduce this illustration|Current inputs and reset defaults|Current results and full chart data/);assert.match(html,/data-model-protocol/);assert.match(html,/data-model-reset/);assert.match(html,/data-model-motion/);assert.match(html,/data-case/);assert.match(html,/workbench/);assert.match(html,/\/assets\/js\/model-math\.js\?v=/);}
   assert.equal((hub().match(/data-hub-case/g)||[]).length,12);
 });
 test('native CSS is scoped and no original document or six-model preload enters Home',()=>{
@@ -96,13 +96,13 @@ test('chart protocol includes all plotted points, signed Year 0 and readable ser
   const delivery=M.chartData('management-delivery',[5,50,40,35]);assert.equal(delivery.rows.at(-1)[0],144);near(delivery.rows.at(-1)[2],120);
   assert.throws(()=>M.chartData('unknown',[]));
 });
-test('decision guidance, evidence boundaries, reset and export are present without changing theme or shell',()=>{
+test('client appendix and exports are absent while decision guidance and case reset remain',()=>{
   const {model}=require('../src/explore');
-  for(const m of catalogue){const html=model(m);assert.equal((html.match(/data-model-summary/g)||[]).length,1);assert.match(html,/data-model-reset/);assert.match(html,/data-model-export="json"/);assert.match(html,/data-model-export="csv"/);assert.match(html,/data-model-protocol/);assert.match(html,/Evidence provenance and research context/);assert.match(html,/Current results and full chart data/);assert.match(html,/Reading the threshold/);assert.match(html,/not empirically validated/);assert.ok(!/<iframe\b/.test(html));}
+  for(const m of catalogue){const html=model(m);assert.equal((html.match(/data-model-reset/g)||[]).length,1);assert.doesNotMatch(html,/data-model-export|xp-data-panel|xp-method|model-methodology|data-model-summary|data-model-inputs|data-model-table/);assert.match(html,/data-model-protocol/);assert.match(html,/Reading the threshold/);assert.match(html,/Evidence needed before a real decision/);assert.ok(!/<iframe\b/.test(html));}
 });
 test('rendered protocol has finite accurate bounds, steps and readable defaults in every model',()=>{
   const {parseHTML}=require('linkedom');
-  for(const m of catalogue){const {document}=parseHTML(require('../src/explore').model(m));const p=JSON.parse(document.querySelector('[data-model-protocol]').textContent);for(const x of p.inputs){const n=document.getElementById(x.id);assert.deepEqual([x.min,x.max,x.step],[Number(n.getAttribute('min')),Number(n.getAttribute('max')),Number(n.getAttribute('step'))]);assert.ok([x.min,x.max,x.step,x.default].every(Number.isFinite));assert.ok(x.step>0&&x.default>=x.min&&x.default<=x.max);assert.ok(x.label!==x.id);}assert.doesNotMatch(document.querySelector('[data-model-inputs]').textContent,/NaN|null|undefined/);}
+  for(const m of catalogue){const {document}=parseHTML(require('../src/explore').model(m));const p=JSON.parse(document.querySelector('[data-model-protocol]').textContent);for(const x of p.inputs){const n=document.getElementById(x.id);assert.deepEqual([x.min,x.max,x.step],[Number(n.getAttribute('min')),Number(n.getAttribute('max')),Number(n.getAttribute('step'))]);assert.ok([x.min,x.max,x.step,x.default].every(Number.isFinite));assert.ok(x.step>0&&x.default>=x.min&&x.default<=x.max);assert.ok(x.label!==x.id);}}
 });
 test('new Explorer narratives contain no unapproved survey counts or implied assignment credit',()=>{
   for(const m of catalogue){const html=require('../src/explore').model(m);assert.doesNotMatch(html,/400-firm survey|FIRMS SURVEYED|Sweden–CPD|120 KIIs|documented professional engagement|Cases reflect documented professional/);}
