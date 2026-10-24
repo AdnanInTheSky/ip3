@@ -16,6 +16,10 @@ test('api contains only deployable contact.js', () => {
 
 test('section order renders supported sections in the saved order and rejects fixed-sequence pages', () => {
   assert.equal(renderOrder('people', ['People directory', 'Founder profile'], ['founder-html', 'directory-html']), 'directory-html\nfounder-html');
+  const approachOrder = require('../cms/section-order').editableSectionOrders.approach.default;
+  const reorderedApproach = [approachOrder[2], approachOrder[0], approachOrder[1], ...approachOrder.slice(3)];
+  const approachRenderers = Object.fromEntries(approachOrder.map(key => [key, `${key}-html`]));
+  assert.ok(renderOrder('approach', reorderedApproach, approachRenderers).startsWith('Six movements of reform-html\nStart with the problem-html\n'));
   assert.throws(() => renderOrder('people', ['People directory', 'People directory'], ['founder-html', 'directory-html']), /appears more than once/);
   assert.throws(() => renderOrder('why', [], []), /not editable/);
 });

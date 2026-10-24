@@ -8,7 +8,7 @@ const schema = require('../cms/schema');
 const { editableSectionOrders } = require('../cms/section-order');
 const { testimonialPlacements, defaultTestimonialPlacement } = require('../cms/section-placement');
 
-const contractHash = '0d2e21fcbe07bc5abba7cd6f57afe34ee81689c533f9f12d356269dbbb2dffa1';
+const contractHash = 'c8032e04569038db2bafd159185536cfa9e8d728802f97e2659f5bcc2cc5c7a9';
 const editorOnlyKeys = new Set(['label', 'hint', 'summary']);
 function withoutEditorCopy(value) {
   if (Array.isArray(value)) return value.map(withoutEditorCopy);
@@ -69,8 +69,10 @@ test('common editing tasks have clear form, field, help, and collapsed-list labe
   assert.equal(field(entry('home_testimonials').fields, 'items').summary, '{name}');
 });
 
-test('restricted section order and testimonial pilot remain unchanged', () => {
-  assert.deepEqual(Object.keys(editableSectionOrders), ['home', 'about', 'people', 'contact']);
+test('supported section order includes the editable Approach page and testimonial pilot', () => {
+  assert.deepEqual(Object.keys(editableSectionOrders), ['home', 'about', 'approach', 'people', 'contact']);
+  assert.ok(field(entry('section_order').fields, 'approach').values.includes('Six movements of reform'));
+  assert.equal(editableSectionOrders.approach.default.length, 10);
   assert.deepEqual(Object.keys(testimonialPlacements), [
     'With clients and funders (default)',
     'After selected engagements',
@@ -79,6 +81,40 @@ test('restricted section order and testimonial pilot remain unchanged', () => {
   assert.equal(defaultTestimonialPlacement, 'With clients and funders (default)');
   const saved = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content/section-placement.json'), 'utf8'));
   assert.equal(saved.homeTestimonials, defaultTestimonialPlacement);
+});
+
+test('Approach movement content is CMS-editable, reorderable, and has no pinned animation', () => {
+  const root = path.join(__dirname, '..');
+  const data = require('../src/data');
+  const { approach } = require('../src/pages-inner');
+  const { parseHTML } = require('linkedom');
+  const order = data.sectionOrder.approach;
+  const cards = data.approach.pathway.cards;
+  const savedTitle = cards[0].title;
+  try {
+    assert.equal(field(entry('approach_pathway').fields, 'cards').summary, '{title}');
+    assert.deepEqual(entry('approach_pathway').fields.map(item => item.name).sort(), Object.keys(data.approach.pathway).sort());
+    let document = parseHTML(approach()).document;
+    let section = document.querySelector('.pathway-section');
+    assert.ok(section, 'Six movements must render as a dedicated Approach section');
+    assert.equal(section.querySelectorAll('.move').length, 6);
+    assert.equal(section.querySelectorAll('[data-reveal], [data-stagger], .split').length, 0, 'The section must not depend on site animation hooks');
+    assert.ok(!approach().includes('data-ffilm'), 'Pinned film markup must be removed');
+
+    cards[0].title = 'CMS-EDITED STATIC MOVEMENT';
+    assert.ok(approach().includes(cards[0].title), 'CMS movement copy must render on Approach');
+    assert.equal(field(entry('section_order').fields, 'approach').values.includes('Six movements of reform'), true);
+
+    data.sectionOrder.approach = [...order].reverse();
+    const reordered = approach();
+    assert.ok(reordered.indexOf('class="section pathway-section"') < reordered.indexOf('class="state"'), 'Approach section ordering must follow the saved CMS order');
+  } finally {
+    cards[0].title = savedTitle;
+    data.sectionOrder.approach = order;
+  }
+  const siteScript = fs.readFileSync(path.join(root, 'src/js/site.js'), 'utf8');
+  const stylesheet = fs.readFileSync(path.join(root, 'src/css/site.css'), 'utf8');
+  assert.ok(!siteScript.includes('initFragFilm') && !stylesheet.includes('.ffilm'), 'The retired film animation code and styles must be removed');
 });
 
 test('generated Pages CMS configuration matches the schema', () => {

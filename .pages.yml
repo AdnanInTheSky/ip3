@@ -1202,6 +1202,14 @@ content:
             description: "Drag sections to change their order. The page headline stays first and the contact section stays last. Every section must appear once."
             options:
               values: ["Introduction", "Vision, mission & aims", "Principles", "Our values", "What makes IP3 different", "Our network"]
+          - name: approach
+            label: "Approach — sections after the headline"
+            type: select
+            list: true
+            required: true
+            description: "Drag sections to change their order. The page headline stays first and the contact section stays last. Every section—including Six movements of reform—must appear once."
+            options:
+              values: ["Start with the problem", "Define the decision", "Six movements of reform", "Six commitments", "Learning orbit", "Toolkit", "Outcomes", "Why the IP3 approach is different", "Beyond the recommendation", "Explore analytical examples"]
           - name: people
             label: "People — middle sections"
             type: select

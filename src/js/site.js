@@ -636,7 +636,7 @@
       gsap.from($$('.orbit__node > div', o), { opacity: 0, duration: 0.8, stagger: 0.12, scrollTrigger: { trigger: o, start: 'top 80%', once: true } });
     });
 
-    initFilm(); initGiant(); initTerminal(mm); initFragFilm(mm);
+    initFilm(); initGiant(); initTerminal(mm);
 
     // layout settles after fonts/images
     var refresh = function () { ScrollTrigger.refresh(); };
@@ -712,63 +712,6 @@
         gsap.from(b.children, { y: 32, autoAlpha: 0, duration: 0.75, ease: 'power3.out', stagger: 0.1, clearProps: 'all', scrollTrigger: { trigger: b, start: 'top 85%', once: true } });
       });
       jump = function (i) { var b = $$('[data-beat]', st)[i]; if (b) b.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
-    });
-  }
-
-  /* ---------- six movements as a pinned CSS-3D film: 48 fragments rearrange per movement (portfolio film) ---------- */
-  function initFragFilm(mm) {
-    var ff = $('[data-ffilm]'); if (!ff) return;
-    mm.add('(min-width: 900px) and (min-height: 620px)', function () {
-      ff.classList.add('is-on');
-      var world = $('[data-ffilm-world]', ff), frags = $$('.frag', ff), caps = $$('[data-ffilm-cap]', ff), rail = $$('[data-ffilm-jump]', ff);
-      var ring = $('[data-ffilm-ring]', ff), curve = $('[data-ffilm-curve]', ff);
-      var seed = function (i, s) { var x = Math.sin((i + 1) * s) * 43758.5453; return x - Math.floor(x); };
-      var S = Math.min(1.25, Math.max(0.8, window.innerWidth / 1400));
-      function pose(s, i) {
-        var col = i % 8, row = Math.floor(i / 8), p;
-        if (s === 0) p = { x: (seed(i, 12.19) - 0.5) * 520, y: (seed(i, 32.4) - 0.5) * 340, z: (seed(i, 76.3) - 0.5) * 420, rX: seed(i, 15) * 180, rY: seed(i, 18) * 180, scale: 0.65 + seed(i, 8) * 1.3, opacity: 0.25 + seed(i, 4.8) * 0.75 };
-        else if (s === 1) p = { x: ((i % 3) - 1) * 150 + (seed(i, 5) - 0.5) * 46, y: (Math.floor(i / 3) - 7.5) * 17, z: ((i % 3) - 1) * 75, rX: 0, rY: (i % 3 - 1) * 28, scale: 0.8, opacity: i > 41 ? 0.12 : 0.92 };
-        else if (s === 2) p = { x: (col - 3.5) * 56, y: 67 - Math.exp(-Math.pow((col - 3.5) / 2.3, 2)) * 155 + row * 11, z: (row - 2.5) * 38, rX: 0, rY: 0, scale: 1, opacity: 0.95 };
-        else if (s === 3) { var branch = Math.floor(row / 2) - 1; p = { x: (col - 3.5) * 59, y: branch * (col + 1) * 15, z: branch === 0 ? 88 : -96 - Math.abs(branch) * 70, rX: 0, rY: branch === 0 ? 0 : 45, scale: branch === 0 ? 1.1 : 0.74, opacity: branch === 0 ? 1 : 0.16 }; }
-        else if (s === 4) { var a = (i % 6) * Math.PI / 3, r = 138 + (Math.floor(i / 6) - 3.5) * 3; p = { x: Math.cos(a) * r, y: Math.sin(a) * r * 0.82, z: Math.sin(a) * 22, rX: 0, rY: (i % 6) * 60, scale: 1, opacity: 0.94 }; }
-        else p = { x: (col - 3.5) * 53, y: (row - 2.5) * 42, z: 0, rX: 0, rY: 0, scale: 0.82, opacity: 0.8 };
-        return { x: p.x * S, y: p.y * S, z: p.z * S, rotateX: p.rX, rotateY: p.rY, scale: p.scale, autoAlpha: p.opacity };
-      }
-      var cam = [[-5, -12, 0], [8, 7, -40], [12, -16, 35], [0, 0, 45], [-7, 12, 0], [0, 0, 0]];
-      var n = caps.length;
-      frags.forEach(function (f, i) { gsap.set(f, pose(0, i)); });
-      gsap.set(world, { rotateX: cam[0][0], rotateY: cam[0][1], z: cam[0][2] });
-      gsap.set(caps, { autoAlpha: 0, y: 34 }); gsap.set(caps[0], { autoAlpha: 1, y: 0 });
-      gsap.set([ring, curve], { autoAlpha: 0 });
-      var tl = gsap.timeline({ defaults: { ease: 'none' } });
-      for (var s = 0; s < n - 1; s++) {
-        (function (s) {
-          var nx = s + 1;
-          frags.forEach(function (f, i) { tl.to(f, Object.assign({ duration: 1 }, pose(nx, i)), s); });
-          tl.to(world, { rotateX: cam[nx][0], rotateY: cam[nx][1], z: cam[nx][2], duration: 1 }, s);
-          tl.to(caps[s], { autoAlpha: 0, y: -34, duration: 0.18 }, s + 0.76).to(caps[nx], { autoAlpha: 1, y: 0, duration: 0.24 }, s + 0.78);
-          tl.to(curve, { autoAlpha: nx === 2 ? 1 : 0, duration: 0.3 }, s + 0.2).to(ring, { autoAlpha: nx === 4 ? 1 : 0, duration: 0.3 }, s + 0.2);
-        })(s);
-      }
-      var active = -1;
-      // the scrub keeps easing after the scroll stops, so the rail follows the timeline, not the scroll position
-      tl.eventCallback('onUpdate', function () {
-        var cur = Math.min(n - 1, Math.floor(tl.time() + 0.001));
-        if (cur === active) return; active = cur;
-        ff.setAttribute('data-scene', cur);
-        rail.forEach(function (b, k) { if (k === cur) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); });
-      });
-      var trigger = ScrollTrigger.create({
-        trigger: ff, start: 'top top', end: function () { return '+=' + Math.round(window.innerHeight * (n - 1) * 0.85); },
-        pin: true, scrub: 1.1, animation: tl, anticipatePin: 1, invalidateOnRefresh: true,
-      });
-      function go(e) {
-        var i = Number(e.currentTarget.dataset.ffilmJump);
-        var top = trigger.start + (trigger.end - trigger.start) * Math.min(1, (i + 0.08) / (n - 1));
-        if (lenis) lenis.scrollTo(top, { duration: 1.2 }); else window.scrollTo({ top: top, behavior: 'smooth' });
-      }
-      rail.forEach(function (b) { b.addEventListener('click', go); });
-      return function () { ff.classList.remove('is-on'); ff.removeAttribute('data-scene'); rail.forEach(function (b) { b.removeEventListener('click', go); }); };
     });
   }
 

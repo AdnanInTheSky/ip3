@@ -13,6 +13,12 @@ const editableSectionOrders = {
     hint: 'Drag sections to change their order. The page headline stays first and the contact section stays last. Every section must appear once.',
     default: ['Introduction', 'Vision, mission & aims', 'Principles', 'Our values', 'What makes IP3 different', 'Our network'],
   },
+  approach: {
+    label: 'Approach',
+    fieldLabel: 'Approach — sections after the headline',
+    hint: 'Drag sections to change their order. The page headline stays first and the contact section stays last. Every section—including Six movements of reform—must appear once.',
+    default: ['Start with the problem', 'Define the decision', 'Six movements of reform', 'Six commitments', 'Learning orbit', 'Toolkit', 'Outcomes', 'Why the IP3 approach is different', 'Beyond the recommendation', 'Explore analytical examples'],
+  },
   people: {
     label: 'People',
     fieldLabel: 'People — middle sections',
