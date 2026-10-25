@@ -1,5 +1,6 @@
 const {chromium}=require('@playwright/test'),{default:AxeBuilder}=require('@axe-core/playwright');
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict');
+const heroContent=require('../content/home/hero.json');
 const out=path.resolve(process.env.EXPLORE_QA_OUT||'docs/interactive-experience/review-2026-10-22/FINAL_QA_EVIDENCE'),base=process.env.EXPLORE_BASE_URL||'http://localhost:3123';
 fs.mkdirSync(out,{recursive:true});
 (async()=>{const b=await chromium.launch(),results={browser:b.version(),errors:[],checks:[]};
@@ -21,7 +22,7 @@ try{
   await p.emulateMedia({reducedMotion:'reduce'});await p.waitForFunction(()=>document.querySelector('[data-hero-pause]').disabled);assert.equal(await pause.isDisabled(),true);assert.ok(await p.locator('.hero__slide video').evaluateAll(ns=>ns.every(v=>v.paused)));results.checks.push({dynamicReducedMotion:'pauses all hero videos and disables autoplay control'});
   await c.close();
   const r=await b.newContext({viewport:{width:390,height:1000},reducedMotion:'reduce'}),q=await r.newPage();await q.goto(base+'/');
-  assert.equal(await q.locator('.hero__slide source[src]').count(),0);await q.locator('[data-tab]').last().click();assert.equal(await q.locator('.hero__slide source[src]').count(),0);assert.match(await q.locator('.hero__slide.is-active video').getAttribute('poster'),/education-innovation-poster-lossless/);
+  assert.equal(await q.locator('.hero__slide source[src]').count(),0);await q.locator('[data-tab]').last().click();assert.equal(await q.locator('.hero__slide source[src]').count(),0);const expectedPoster=heroContent.slides.at(-1).video.poster,actualPoster=await q.locator('.hero__slide.is-active video').getAttribute('poster');assert.equal(actualPoster,expectedPoster,'Reduced-motion hero poster should match the current CMS content');assert.ok(actualPoster.startsWith('/assets/img/'));assert.ok(fs.existsSync(path.resolve(__dirname,'..',actualPoster.slice(1))),`CMS hero poster does not exist: ${actualPoster}`);
   results.checks.push({initialReducedMotion:'poster-only, including sixth slide; no MP4 source attached'});await r.close();
   for(const m of require('../src/explore/catalogue')){
     const ctx=await b.newContext({viewport:{width:390,height:1000},reducedMotion:'reduce'}),page=await ctx.newPage();const events=[];page.on('request',req=>{if(req.method()!=='GET')events.push({method:req.method(),url:req.url()})});
