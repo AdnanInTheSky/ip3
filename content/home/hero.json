@@ -39,8 +39,8 @@
       "hidden": false,
       "tab": "Sustainable finance",
       "video": {
-        "src": "/assets/video/hero-2.mp4",
-        "poster": "/assets/img/poster-hero-2.webp"
+        "src": "/assets/video/textile.mp4",
+        "poster": "/assets/img/poster-textile.webp"
       },
       "eyebrow": "Sustainable Finance • ESG Strategy • Circular Economy • Biodiversity Conservation",
       "h1": "Making  <em> sustainability </em> investable.",
@@ -62,8 +62,8 @@
       "hidden": false,
       "tab": "Climate & resilience",
       "video": {
-        "src": "/assets/video/hero-3.mp4",
-        "poster": "/assets/img/poster-hero-3.webp"
+        "src": "/assets/video/waste.mp4",
+        "poster": "/assets/img/poster-waste.webp"
       },
       "eyebrow": "Climate Finance • Energy Transition • Resilience • Livelihoods",
       "h1": "Financing <em>locally led </em> climate resilience.",
