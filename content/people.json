@@ -4,10 +4,11 @@
       "group": "Board & Executive Leadership",
       "members": [
         {
+          "hidden": false,
+          "slug": "mohammad-syful-hoque",
           "name": "Mohammad Syful Hoque",
           "role": "Executive Chairman",
           "focus": "Climate finance, climate adaptation & mitigation, sustainability, ESG strategy, circular economy & biodiversity conservation, trade, industrial growth, technology adoption, impact evaluation, economic, social & environmental feasibility",
-          "slug": "mohammad-syful-hoque",
           "photo": "/assets/img/people/mohammad-syful-hoque.webp",
           "affiliation": "Executive Chairman, IP3 Consulting Limited",
           "bio": [
@@ -19,12 +20,6 @@
             "MSS in Economics, University of Dhaka (2006)",
             "BSS in Economics, University of Dhaka (2005)"
           ]
-        },
-        {
-          "name": "Md. Mazadul Hoque",
-          "role": "Director (Policy & Advisory)",
-          "focus": "Macroeconomic policy, fiscal & monetary policy, trade & FDI, regional connectivity, governance & transparency, migration, employment and development policy",
-          "slug": "md-mazadul-hoque"
         }
       ]
     },
@@ -32,11 +27,13 @@
       "group": "Advisors",
       "members": [
         {
+          "hidden": false,
+          "slug": "prof-dr-niaz-asadullah",
           "name": "Prof. Dr. Niaz Asadullah",
           "role": "Chief Economic Advisor",
           "focus": "Education, institutions, poverty, labor & gender",
-          "slug": "prof-dr-niaz-asadullah",
-          "affiliation": "Professor of Economics, Monash University (Malaysia)",
+          "photo": "/assets/img/people/niaz.jpg",
+          "affiliation": "Professor of Economics, University of Dhaka",
           "bio": [
             "Previously professor at the University of Malaya (2013–2022) and deputy director of its Poverty Studies Centre; earlier, assistant professor at the University of Reading, UK, and lecturer in economics at the University of Dhaka.",
             "More than 75 peer-reviewed journal papers and over 4,400 Google Scholar citations. Heads the Southeast Asia cluster of the Global Labor Organization and has held senior advisory appointments with the Government of Malaysia."
@@ -48,10 +45,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "prof-dr-shafiun-shimul",
           "name": "Prof. Dr. Shafiun Shimul",
           "role": "Policy Advisor (Lead Economist)",
           "focus": "Public health, policy & practice",
-          "slug": "prof-dr-shafiun-shimul",
           "photo": "/assets/img/people/prof-dr-shafiun-nahin-shimul.webp",
           "affiliation": "Professor, Institute of Health Economics, University of Dhaka",
           "bio": [
@@ -64,32 +62,18 @@
             "MSS in Health Economics, University of Dhaka (2004)",
             "MSS and BSS in Economics, University of Dhaka (2003, 2002)"
           ]
-        },
-        {
-          "name": "Prof. Dr. M A Mannan",
-          "role": "Senior Consulting Advisor",
-          "focus": "Education, health, demography & social protection",
-          "slug": "prof-dr-m-a-mannan",
-          "affiliation": "Former Senior Research Fellow, Bangladesh Institute of Development Studies",
-          "bio": [
-            "Has led research and evaluations for UNFPA, UNICEF, UNDP, the World Bank, USAID, CARE, Save the Children, The Asia Foundation and government ministries, including impact analyses of Bangladesh's food-for-work, VGD, VGF and maternity allowance programmes and household surveys under the South Asia WASH Results Programme."
-          ],
-          "education": [
-            "PhD in Economics",
-            "MSc in Demography",
-            "MA in Economics"
-          ]
         }
       ]
     },
     {
-      "group": "Founding Directors",
+      "group": "Directors",
       "members": [
         {
+          "hidden": false,
+          "slug": "barr-zareen-rahman",
           "name": "Barr. Zareen Rahman",
           "role": "Founding Director",
           "focus": "Regulation, PPP formation & legal compliance",
-          "slug": "barr-zareen-rahman",
           "photo": "/assets/img/people/barr-zareen-rahman.webp",
           "affiliation": "Advocate, Supreme Court of Bangladesh",
           "bio": [
@@ -102,10 +86,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "adj-prof-harun-rashid",
           "name": "Adj. Prof. Harun Rashid",
           "role": "Founding Director",
           "focus": "Comparative politics, public policy & conflict management",
-          "slug": "adj-prof-harun-rashid",
           "photo": "/assets/img/people/adj-prof-harun-rashid.webp",
           "affiliation": "Adjunct Professor, Department of Political Science, Kent State University, USA",
           "bio": [
@@ -119,10 +104,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "prof-dr-imran-mahmud",
           "name": "Prof. Dr. Imran Mahmud",
           "role": "Founding Director",
           "focus": "Technology management, digital governance & system training, MIS & database management",
-          "slug": "prof-dr-imran-mahmud",
           "photo": "/assets/img/people/prof-dr-imran-mahmud.webp",
           "affiliation": "Professor and Head, Department of Software Engineering, Daffodil International University",
           "bio": [
@@ -135,10 +121,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "nizam-uddin-ahmed",
           "name": "Nizam Uddin Ahmed",
           "role": "Founding Director",
           "focus": "Data, financial and digital governance & system implementation",
-          "slug": "nizam-uddin-ahmed",
           "photo": "/assets/img/people/nizam-uddin-ahmed.webp",
           "affiliation": "Short-term consultant, World Bank Group Joint Capital Market Program (J-CAP)",
           "bio": [
@@ -148,20 +135,6 @@
             "MBA, Lahore University of Management Sciences (2007)",
             "MA in Physics, Indiana University of Pennsylvania, USA (2002)"
           ]
-        },
-        {
-          "name": "MD Shefatul Islam",
-          "role": "Founding Director, Education & EdTech Policy & Innovation",
-          "focus": "EdTech & blended-learning innovation, curriculum development & textbook authorship, digital capacity building & instructional design",
-          "slug": "md-shefatul-islam",
-          "photo": "/assets/img/people/md-shefatul-islam.webp",
-          "affiliation": "Capacity Development Expert, Aspire to Innovate (a2i), ICT Division",
-          "bio": [
-            "A member of the Bangladesh Civil Service (General Education) since 2017. Has worked on the Blended Education Master Plan technical committee, the National AI Policy and AI guidelines, and the national curriculum reform committee, and has written textbooks for the National Curriculum and Textbook Board."
-          ],
-          "education": [
-            "MSS and BSS (Hons) in Economics, University of Dhaka"
-          ]
         }
       ]
     },
@@ -169,10 +142,11 @@
       "group": "Deputy Directors",
       "members": [
         {
+          "hidden": false,
+          "slug": "prof-dr-tat-thanh-tran",
           "name": "Dr. Tat Thanh Tran",
           "role": "Deputy Director (Practice Area Lead)",
           "focus": "Corporate finance & strategic investment, financial markets, institutions & R&D network policy",
-          "slug": "prof-dr-tat-thanh-tran",
           "photo": "/assets/img/people/prof-dr-tat-thanh-tran.webp",
           "affiliation": "School of Banking and Finance, National Economics University, Vietnam",
           "bio": [
@@ -184,10 +158,12 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "dr-md-abu-zafor-sadek",
           "name": "Dr. Md. Abu Zafor Sadek",
           "role": "Deputy Director (Practice Area Lead)",
           "focus": "Pharmaceutical industry dynamics, strategic market, product & biosimilars development",
-          "slug": "dr-md-abu-zafor-sadek",
+          "photo": "/assets/img/people/abu-bakar-sadek.jpeg",
           "affiliation": "Deputy General Manager, Marketing, UniMed UniHealth Pharmaceuticals Ltd.",
           "bio": [
             "Previously in product management at Renata Limited and Orion Pharmaceuticals, short-term consultant to the World Bank (2019), and adjunct faculty at the Canadian University of Bangladesh. Doctoral research examined the growth potential of biosimilar products in Bangladesh."
@@ -204,10 +180,11 @@
       "group": "Affiliated Research Scholars",
       "members": [
         {
+          "hidden": false,
+          "slug": "dr-sibbir-ahmad",
           "name": "Dr. Sibbir Ahmad",
           "role": "Affiliated Research Scholar",
           "focus": "Applied microeconomics (development, agriculture, labor, health & experimental economics)",
-          "slug": "dr-sibbir-ahmad",
           "photo": "/assets/img/people/dr-sibbir-ahmad.webp",
           "affiliation": "Postdoctoral Research Associate, Department of Economics, University of Virginia",
           "bio": [
@@ -220,10 +197,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "dr-md-latiful-haque",
           "name": "Dr. Md. Latiful Haque",
           "role": "Affiliated Research Scholar",
           "focus": "Environmental, food systems & agricultural policy & practice",
-          "slug": "dr-md-latiful-haque",
           "photo": "/assets/img/people/dr-md-latiful-haque.webp",
           "affiliation": "Wageningen University & Research, the Netherlands",
           "bio": [
@@ -236,10 +214,11 @@
           ]
         },
         {
-          "name": "Asst. Prof. Siban Shahana",
+          "hidden": false,
+          "slug": "siban-shahana",
+          "name": "Siban Shahana",
           "role": "Affiliated Research Scholar",
           "focus": "Public policy economics, education & human resource development",
-          "slug": "siban-shahana",
           "photo": "/assets/img/people/siban-shahana.webp",
           "affiliation": "Research Fellow, Bangladesh Institute of Development Studies",
           "bio": [
@@ -251,10 +230,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "sazia-ahmed",
           "name": "Asst. Prof. Sazia Ahmed",
           "role": "Affiliated Research Scholar",
           "focus": "Agricultural, environmental & health economics",
-          "slug": "sazia-ahmed",
           "photo": "/assets/img/people/sazia-ahmed.webp",
           "affiliation": "Assistant Professor, Economics Discipline, Khulna University",
           "bio": [
@@ -267,10 +247,11 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "dr-md-esraz-ul-zannat",
           "name": "Dr. Md. Esraz-Ul-Zannat",
           "role": "Affiliated Research Scholar",
           "focus": "Disaster risk reduction, Water and climate policy, Urban planning",
-          "slug": "dr-md-esraz-ul-zannat",
           "affiliation": "Department of Urban and Regional Planning, Khulna University of Engineering & Technology",
           "bio": [
             "Works on GIS and remote sensing for disaster management, water, climate change and land-use planning, including urban flood-resilience research and land-use policy for the Khulna Structure Plan under climate-induced flood scenarios."
@@ -286,10 +267,11 @@
       "group": "Support Units",
       "members": [
         {
+          "hidden": false,
+          "slug": "zahidur-rahman",
           "name": "Zahidur Rahman",
           "role": "Practice Area Manager, IP3 Visual Lab",
           "focus": "Digital communication, data visualization & presentation design",
-          "slug": "zahidur-rahman",
           "photo": "/assets/img/people/zahidur-rahman.webp",
           "education": [
             "MBA in Human Resource Management, University of Dhaka",
@@ -297,10 +279,12 @@
           ]
         },
         {
+          "hidden": false,
+          "slug": "md-sadid-uddin",
           "name": "Md. Sadid Uddin",
           "role": "Manager, Administration & Finance",
           "focus": "Administration & finance",
-          "slug": "md-sadid-uddin"
+          "photo": "/assets/img/people/md-sadid-uddin.jpg"
         }
       ]
     }
