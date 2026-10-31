@@ -85,3 +85,5 @@ GitHub Actions runs regression tests, content/CMS validation, a build and link c
   - 100+ projects in total (home page and founder bio); /capabilities shows the 37 documented in the CV. Three engagement summaries keep their page wording and add the CV record (sida-cpd-textile, worldbank-fat, bmdf-transformation).
   - Wording edits made for accuracy: the portfolio's published rewording for four activities, "evaluated" (not "implemented") for the 20 IFC simplification projects, the early-warning outputs described as in preparation, and the CV's geography caveat on three records.
   - The method section's chart and options test are illustrative and labelled so; the 528 figure comes from the green-transition record (400 firms, 120 KIIs, 8 FGDs).
+#   i p 3  
+ 
